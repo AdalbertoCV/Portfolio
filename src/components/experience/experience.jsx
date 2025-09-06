@@ -18,10 +18,10 @@ const Experience = () =>{
 
     return (
         <div className="main-card">
-            <div className="info-card">
-                <h3>Labsol Network (Sep 2023 - Nov 2024)</h3>
-                <p>{infoLabsol}</p>
-                <a href={labsolLink} target="_blank" rel="noopener noreferrer"><img className='education-image' src={labsolLogo} alt='Labsol Logo'></img></a>
+        <div className="info-card">
+                <h3>Radii Manufacturing (Jul 2025 - now)</h3>
+                <p>{infoRadii}</p>
+                <a href={radiiLink} target="_blank" rel="noopener noreferrer"><img className='education-image' src={radii} alt='Radii logo'></img></a>
             </div>
             <div className="info-card">
                 <h3>Freelance Programmer (Jan 2025 - Jul 2025)</h3>
@@ -29,9 +29,9 @@ const Experience = () =>{
                 <img className='education-image' src={freelance} alt='Freelance img'></img>
             </div>
             <div className="info-card">
-                <h3>Radii Manufacturing (Jul 2025 - now)</h3>
-                <p>{infoRadii}</p>
-                <a href={radiiLink} target="_blank" rel="noopener noreferrer"><img className='education-image' src={radii} alt='Radii logo'></img></a>
+                <h3>Labsol Network (Sep 2023 - Nov 2024)</h3>
+                <p>{infoLabsol}</p>
+                <a href={labsolLink} target="_blank" rel="noopener noreferrer"><img className='education-image' src={labsolLogo} alt='Labsol Logo'></img></a>
             </div>
         </div>
     );
