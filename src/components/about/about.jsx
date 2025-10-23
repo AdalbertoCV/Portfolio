@@ -36,7 +36,7 @@ const About = () => {
         setActiveImage(image);
         setIsFullScreen(true);
     };
-    
+
     const closeFullScreen = () =>{
         setIsFullScreen(false);
         setActiveImage(null);
@@ -62,6 +62,9 @@ const About = () => {
 
     return (
         <div className='main-card'>
+            <div className="experience-header">
+                <span className="experience-badge">About Me & Education</span>
+            </div>
             <div className="info-card">
                 <div className='header-container'>
                 <h3>About Me:</h3>
@@ -77,6 +80,7 @@ const About = () => {
     
             <div className="info-card">
                 <h3>Skills</h3>
+                <h2>Technologies & Tools I Work With</h2>
                 <br></br>
                 <br></br>
                 <br></br>

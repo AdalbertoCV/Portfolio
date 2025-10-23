@@ -87,6 +87,9 @@ const MyProjects = () => {
 
   return (
     <div className="main-card">
+      <div className="experience-header">
+        <span className="experience-badge">Featured Projects & Portfolio</span>
+      </div>
 
     {/* Card for Punto Bienestar */}
     <div className="info-card">

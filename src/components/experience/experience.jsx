@@ -10,7 +10,7 @@ const Experience = () =>{
     const infoFreelance = `I am always looking for development projects to provide my clients and employers with high-quality service. I strive to ensure that the products I deliver meet the highest standards. Since January 2025, I have been working on several projects, offering my services as a freelance programmer.
     `;
 
-    const infoRadii = `Radii Manufacturing is a startup focused on automating manufacturing processes to take projects from design to finished parts. With an AI-powered platform and a centralized network of manufacturers, Radii is emerging as one of the most promising startups in Latin America.`;
+    const infoRadii = `Software Engineer at Radii Manufacturing, a startup automating manufacturing processes through an AI-powered platform and a network of manufacturers, emerging as one of the most promising startups in Latin America.`;
 
     const labsolLink = 'https://labsol.cozcyt.gob.mx/';
 
@@ -18,18 +18,24 @@ const Experience = () =>{
 
     return (
         <div className="main-card">
+            <div className="experience-header">
+                <span className="experience-badge">2+ Years of Experience</span>
+            </div>
         <div className="info-card">
                 <h3>Radii Manufacturing (Jul 2025 - now)</h3>
+                <h4>Software Engineer</h4>
                 <p>{infoRadii}</p>
                 <a href={radiiLink} target="_blank" rel="noopener noreferrer"><img className='education-image' src={radii} alt='Radii logo'></img></a>
             </div>
             <div className="info-card">
                 <h3>Freelance Programmer (Jan 2025 - Jul 2025)</h3>
+                <h4>Freelance Software Developer</h4>
                 <p>{infoFreelance}</p>
                 <img className='education-image' src={freelance} alt='Freelance img'></img>
             </div>
             <div className="info-card">
                 <h3>Labsol Network (Sep 2023 - Nov 2024)</h3>
+                <h4>Software Developer Intern</h4>
                 <p>{infoLabsol}</p>
                 <a href={labsolLink} target="_blank" rel="noopener noreferrer"><img className='education-image' src={labsolLogo} alt='Labsol Logo'></img></a>
             </div>
