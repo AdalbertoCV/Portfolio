@@ -160,9 +160,6 @@ const MyProjects = () => {
           </a>
         </div>
         <p>{cargas_description}</p>
-        <br></br>
-        <br></br>
-        <br></br>
         <div className="carousel-container">
           <button
             className="carousel-button left"
@@ -227,8 +224,6 @@ const MyProjects = () => {
           </a>
         </div>
         <p>{rentaZac_description}</p>
-        <br></br>
-        <br></br>
         <div className="carousel-container">
           <button
             className="carousel-button left"

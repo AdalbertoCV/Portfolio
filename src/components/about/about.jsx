@@ -75,15 +75,14 @@ const About = () => {
                 </div>
                 <h2>{nombre} - Backend Developer</h2>
                 <p>{biografia}</p>
-                <img src={image} alt='About Me' className='about-image' />
+                <div className="about-image-container">
+                    <img src={image} alt='About Me' className='about-image' />
+                </div>
             </div>
     
             <div className="info-card">
                 <h3>Skills</h3>
                 <h2>Technologies & Tools I Work With</h2>
-                <br></br>
-                <br></br>
-                <br></br>
                 <div className="skills-grid">
                     <p className='icon-text'> Python <img src={pythonLogo} alt="Python" className="logo-image"/></p>
                     <p className='icon-text'> Java<img src={JavaLogo} alt="Java" className="logo-image" /></p>
