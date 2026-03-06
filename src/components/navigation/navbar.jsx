@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <img src={img} className="navbar-logo"></img>
+            <img src={img} className="navbar-logo" alt="Logo"></img>
             <ul className="nav-links">
                 <li className={location.pathname === "/" ? "active" : ""} onClick={() => navigate('/')}>About Me</li> 
                 <li className={location.pathname === "/projects" ? "active" : ""} onClick={() => navigate('/projects')}>Projects</li> 
