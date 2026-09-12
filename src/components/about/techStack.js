@@ -66,6 +66,7 @@ import nemoclawIcon from '../../images/tech/nemoclaw.svg';
 import openaiIcon from '../../images/tech/openai.svg';
 import copilotIcon from '../../images/tech/githubcopilot.svg';
 import ollamaIcon from '../../images/tech/ollama.svg';
+import n8nIcon from '../../images/tech/n8n.svg';
 import deepseekIcon from '../../images/tech/deepseek.svg';
 import slackIcon from '../../images/tech/slack.svg';
 import jwt from '../../images/jwt.png';
@@ -137,6 +138,10 @@ const TECH_GROUPS = [
       { name: 'NemoClaw', icon: nemoclawIcon },
       { name: 'Ollama', icon: ollamaIcon, mono: true },
       { name: 'DeepSeek', icon: deepseekIcon, mono: true },
+      // Not a coding agent like the rest: n8n is where agents get wired into a
+      // workflow that runs on its own schedule. It earns its place in the group
+      // for the same reason the group exists — it is used, not surveyed.
+      { name: 'n8n', icon: n8nIcon, mono: true },
     ],
   },
   {
