@@ -141,13 +141,18 @@ const cvEs = {
       science: {
         title: 'Automatización, ciencia y fronteras físicas',
         body: 'Analizo los procesos que observo en términos de automatización: qué parte es sistematizable y qué tecnología haría falta para eliminar la intervención manual. Ese mismo criterio se extiende más allá del software hacia la robótica, la mecatrónica y el hardware, donde el código debe producir un efecto físico verificable. Sigo además la nanotecnología, la computación cuántica, la aeronáutica y la astronomía, campos donde la ingeniería opera contra límites físicos reales.',
+        body2: 'Lo que sostiene ese interés es un cambio en la naturaleza del problema: el software que opera sobre materia no admite la corrección diferida. Un sistema embebido o de control trabaja bajo restricciones de tiempo real, tolerancia a fallos y verificación previa al despliegue, porque no existe la opción de parchear en producción — la misma exigencia que impone un instrumento en órbita o un sistema de vuelo. En el extremo opuesto, la computación cuántica y la nanotecnología reconstruyen las capas de abstracción sobre las que trabajo hoy: un modelo de cómputo con su propio régimen de error y su propia clase de algoritmos, y una escala en la que el material deja de comportarse como lo describe la ingeniería clásica. Sigo ambos frentes porque determinan qué será construible en la próxima década y con qué herramientas.',
         tags: [
           'Automatización de procesos',
           'Robótica',
           'Mecatrónica',
           'Hardware y electrónica',
+          'Sistemas embebidos',
+          'Control y tiempo real',
+          'Sistemas autónomos',
           'Nanotecnología',
           'Computación cuántica',
+          'Algoritmos cuánticos',
           'Aeronáutica y espacio',
           'Astronomía',
         ],

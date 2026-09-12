@@ -137,13 +137,18 @@ const cvEn = {
       science: {
         title: 'Automation, science and physical frontiers',
         body: 'I analyse the processes I encounter in terms of automation: which parts are systematisable, and what technology would be required to remove manual intervention. The same criterion extends past software into robotics, mechatronics and hardware, where code has to produce a verifiable physical effect. I also follow nanotechnology, quantum computing, aeronautics and astronomy, fields where engineering operates against real physical limits.',
+        body2: 'What sustains that interest is a change in the nature of the problem: software that operates on matter does not allow for deferred correction. An embedded or control system works under real-time constraints, fault tolerance and pre-deployment verification, because patching in production is not an option — the same demand imposed by an instrument in orbit or a flight system. At the opposite end, quantum computing and nanotechnology rebuild the abstraction layers I work on today: a computational model with its own error regime and its own class of algorithms, and a scale at which material stops behaving as classical engineering describes it. I follow both fronts because they determine what will be buildable over the next decade, and with which tools.',
         tags: [
           'Process automation',
           'Robotics',
           'Mechatronics',
           'Hardware and electronics',
+          'Embedded systems',
+          'Control and real time',
+          'Autonomous systems',
           'Nanotechnology',
           'Quantum computing',
+          'Quantum algorithms',
           'Aeronautics and space',
           'Astronomy',
         ],
