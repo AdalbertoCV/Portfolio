@@ -88,6 +88,64 @@ const cvEn = {
       ],
     },
 
+    lookingKicker: 'Where I am looking',
+    lookingTitle: 'What happens away from the keyboard',
+    lookingLede: 'Four fronts that are not software engineering, and that still end up deciding what I build, how, and why.',
+    looking: {
+      business: {
+        title: 'Business, startups and capital',
+        body: 'I run two companies of my own, and that forces you to learn the other half of the problem: how what you build gets funded, what turns an idea into a business rather than just a system, and when the right call is not the technical one. I follow venture capital, fundraising, and how a company gets structured to survive its own first product.',
+        tags: [
+          'Startups',
+          'Fundraising',
+          'Venture capital',
+          'Product strategy',
+          'Business models',
+          'Innovation',
+          'Fintech and investing',
+        ],
+      },
+      creative: {
+        title: 'Games, animation and digital drawing',
+        body: 'The visual side was never a hobby kept apart from the work: it is where I train composition, rhythm and the eye for detail that later show up in an interface. Game development, animation, video editing and digital drawing — plus an interest in virtual reality as the place where interaction design is still being invented.',
+        tags: [
+          'Game development',
+          'Animation',
+          'Digital drawing',
+          'Virtual reality',
+          'Video editing',
+          'Visual design',
+        ],
+      },
+      music: {
+        title: 'Music, writing and narrative',
+        body: 'I write novels and songs in my own time, and run musical projects of my own — including a track composed entirely as code. It is not an escape from the technical work: holding a novel together means sustaining one long, coherent structure for months, and composing is solving a problem under very hard constraints. Both train exactly what a large system demands.',
+        tags: [
+          'Composition',
+          'Music projects',
+          'Novel writing',
+          'Narrative',
+          'Music production',
+          'Analytical reading',
+        ],
+      },
+      science: {
+        title: 'Automation, science and physical frontiers',
+        body: 'I look at a process and the first thing I think is how it gets automated, or what technology would have to be invented for it to stop being done by hand. It is the same curiosity that pulled me into software, and it never stayed on the screen: I follow robotics, mechatronics and hardware closely — where code stops being abstract and has to move something — and I read about nanotechnology, quantum computing, aeronautics and astronomy, the places where engineering still runs into real physical limits.',
+        tags: [
+          'Process automation',
+          'Robotics',
+          'Mechatronics',
+          'Hardware and electronics',
+          'Nanotechnology',
+          'Quantum computing',
+          'Aeronautics and space',
+          'Astronomy',
+          'Advanced manufacturing',
+        ],
+      },
+    },
+
     educationKicker: 'Education',
     languagesKicker: 'Languages',
     languages: {

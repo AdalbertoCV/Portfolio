@@ -54,6 +54,7 @@ const es = {
       languages: 'Lenguajes',
       backend: 'Backend y arquitectura',
       ai: 'IA, agentes y Machine Learning',
+      aitools: 'Herramientas y agentes de código con IA',
       cloud: 'Nube, plataforma y DevOps',
       data: 'Datos',
       frontend: 'Frontend y móvil',

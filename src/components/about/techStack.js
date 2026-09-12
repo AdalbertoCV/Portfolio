@@ -50,6 +50,15 @@ import trello from '../../images/tech/trello.svg';
 import notion from '../../images/tech/notion.svg';
 import flutter from '../../images/tech/flutter.svg';
 import dart from '../../images/tech/dart.svg';
+import claudeIcon from '../../images/tech/claude.svg';
+import opencodeIcon from '../../images/tech/opencode.svg';
+import openclawIcon from '../../images/tech/openclaw.png';
+import nemoclawIcon from '../../images/tech/nemoclaw.svg';
+import openaiIcon from '../../images/tech/openai.svg';
+import copilotIcon from '../../images/tech/githubcopilot.svg';
+import ollamaIcon from '../../images/tech/ollama.svg';
+import deepseekIcon from '../../images/tech/deepseek.svg';
+import slackIcon from '../../images/tech/slack.svg';
 import jwt from '../../images/jwt.png';
 
 const TECH_GROUPS = [
@@ -88,7 +97,26 @@ const TECH_GROUPS = [
       { name: 'LLM & RAG', concept: 'rag' },
       { name: 'Machine Learning', concept: 'ml' },
       { name: 'Multi-agent', concept: 'multiAgent' },
-      { name: 'AI code agents', concept: 'codeAgents' },
+    ],
+  },
+  {
+    // The agents and runtimes actually used day to day, as opposed to the group
+    // above, which is about building AI systems rather than working with them.
+    // Only tools genuinely in use are listed — this is a CV, not a survey of
+    // what exists.
+    id: 'aitools',
+    items: [
+      { name: 'Claude Code', icon: claudeIcon, mono: true },
+      { name: 'Codex', icon: openaiIcon, mono: true },
+      { name: 'GitHub Copilot', icon: copilotIcon, mono: true },
+      // These three ship their own artwork: OpenCode's app tile carries its
+      // own dark ground, OpenClaw is a red lobster, NemoClaw is an NVIDIA
+      // project and uses their green symbol. None of them invert.
+      { name: 'OpenCode', icon: opencodeIcon },
+      { name: 'OpenClaw', icon: openclawIcon },
+      { name: 'NemoClaw', icon: nemoclawIcon },
+      { name: 'Ollama', icon: ollamaIcon, mono: true },
+      { name: 'DeepSeek', icon: deepseekIcon, mono: true },
     ],
   },
   {
@@ -141,6 +169,7 @@ const TECH_GROUPS = [
       { name: 'Figma', icon: figma },
       { name: 'Miro', icon: miro, mono: true },
       { name: 'Linear', icon: linear, mono: true },
+      { name: 'Slack', icon: slackIcon },
       { name: 'Jira', icon: jira },
       { name: 'Trello', icon: trello },
       { name: 'Notion', icon: notion, mono: true },

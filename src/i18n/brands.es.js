@@ -26,7 +26,7 @@ const brandsEs = {
     enter: 'Entrar',
     statusBuilding: 'En construcción',
     stackselectPitch: 'Bootcamps y evaluación técnica que llevan al desarrollador sin experiencia hasta su primer empleo real.',
-    moonphasePitch: 'Acepta cualquier idea —incluidas las imposibles— y averigua cómo construirla: automatización real e I+D con método y expediente.',
+    moonphasePitch: 'Construyendo el futuro de la tecnología: automatización real e I+D sobre lo que nadie ha resuelto, con método y expediente escrito.',
   },
 
   // ---------------------------------------------------------------- Radii
@@ -185,9 +185,9 @@ const brandsEs = {
     badge: 'CEO y Fundador',
     company: 'Moonphase',
     period: 'En construcción',
-    tagline: 'Lo imposible casi siempre es un problema de perspectiva y de datos.',
+    tagline: 'Construyendo el futuro de la tecnología.',
     heroTitle: 'Automatizamos industrias. Y atacamos lo que todavía nadie ha resuelto.',
-    heroLede: 'Moonphase acepta cualquier idea —incluidas las que suenan imposibles— y averigua cómo construirla. Dos líneas de trabajo: automatización de procesos para industrias, negocios y nichos concretos, e I+D sobre problemas que nadie ha resuelto. Las dos con el mismo método: análisis de factibilidad, alcance acotado, construcción, y un expediente escrito del resultado —incluido el negativo. La ambición es el punto de partida; el método es lo que la vuelve entregable.',
+    heroLede: 'Construir el futuro de la tecnología y llevarla a límites que todavía no tienen nombre: esa es la primera premisa, y el criterio con el que se elige cada proyecto. Moonphase acepta cualquier idea —incluidas las que suenan imposibles— y averigua cómo construirla: automatización de procesos para industrias, negocios y nichos concretos, e I+D sobre problemas que nadie ha resuelto. Las dos líneas con el mismo método —factibilidad, alcance acotado, construcción, y expediente escrito del resultado, incluido el negativo. La ambición es el punto de partida; el método es lo que la vuelve entregable.',
 
     kickers: {
       name: 'El nombre',
@@ -198,7 +198,7 @@ const brandsEs = {
 
     nameTitle: 'De dónde viene el nombre',
     nameBody: 'La luna no se ve igual desde todos los puntos de la Tierra al mismo tiempo: en un lugar es llena y en otro menguante, y las dos observaciones son correctas. Lo que cambia no es la luna — es desde dónde se mide.',
-    nameBody2: 'La factibilidad de un problema se comporta igual. Depende de qué datos existen, qué herramientas hay disponibles y cuánto se ha medido, no de qué tan razonable suena al decirlo en voz alta. Por eso aquí la factibilidad se analiza antes de opinar sobre ella.',
+    nameBody2: 'La factibilidad de un problema se comporta igual: lo imposible casi siempre es un problema de perspectiva y de datos. Depende de qué datos existen, qué herramientas hay disponibles y cuánto se ha medido, no de qué tan razonable suena al decirlo en voz alta. Por eso aquí la factibilidad se analiza antes de opinar sobre ella.',
 
     missionLabel: 'Misión',
     visionLabel: 'Visión',

@@ -37,6 +37,49 @@ const NOW = [
 ];
 
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
+const LOOKING_KEYS = ['business', 'creative', 'music', 'science'];
+
+// One icon per card: a climbing trajectory, a frame with a stylus, a page with
+// a note on it, and an orbit with something in it. Drawn here rather than reused from the
+// concept set — these are section marks at 30px, not skill tiles.
+const LOOK_ICONS = {
+  business: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 20h18" />
+      <path d="M5 17V9M10 17V5M15 17v-7M20 17V7" />
+      <path d="m3.5 6 4-3 4 2.5L20 2" />
+      <path d="M17 2h3v3" />
+    </svg>
+  ),
+  creative: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2.6" y="2.6" width="8.4" height="8.4" rx="2" />
+      <path d="m6 5.4 2.8 1.4L6 8.2z" />
+      <path d="m16.4 12 3.6 3.6L12.4 23H8.8v-3.6z" />
+      <path d="m14.6 13.8 3.6 3.6" />
+    </svg>
+  ),
+  music: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5.5 2.8h8l5 5v13.4h-13z" />
+      <path d="M13.5 2.8v5h5" />
+      <circle cx="9.4" cy="16.7" r="1.9" />
+      <path d="M11.3 16.7v-5.5l4 1.3" />
+    </svg>
+  ),
+  science: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3.2" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.4" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.4" transform="rotate(60 12 12)" />
+      <ellipse cx="12" cy="12" rx="10" ry="4.4" transform="rotate(120 12 12)" />
+    </svg>
+  ),
+};
 const INTEREST_KEYS = ['innovation', 'arts', 'literature', 'gastronomy', 'sports'];
 const CERT_KEYS = ['icp', 'langchain', 'santander', 'somece'];
 
@@ -205,6 +248,30 @@ const About = () => {
             </div>
           </Reveal>
         ))}
+      </Section>
+
+      {/* --------------------------------------------------- looking ahead */}
+      <Section
+        kicker={t('cv.lookingKicker')}
+        title={t('cv.lookingTitle')}
+        lede={t('cv.lookingLede')}
+      >
+        <Reveal className="cv-looking" stagger>
+          {LOOKING_KEYS.map((key) => (
+            <article className="cv-look" key={key}>
+              <div className="cv-look-icon">{LOOK_ICONS[key]}</div>
+              <h3>{t(`cv.looking.${key}.title`)}</h3>
+              <p>{t(`cv.looking.${key}.body`)}</p>
+              <div className="brand-chips">
+                {tl(`cv.looking.${key}.tags`).map((tag) => (
+                  <span className="brand-chip" key={tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </Reveal>
       </Section>
 
       {/* ----------------------------------------------- education + languages */}

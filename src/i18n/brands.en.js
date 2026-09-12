@@ -25,7 +25,7 @@ const brandsEn = {
     enter: 'Enter',
     statusBuilding: 'Building',
     stackselectPitch: 'Bootcamps and technical assessment that take a developer with no experience all the way to a real first job.',
-    moonphasePitch: 'Accepts any idea — the impossible ones included — and works out how to build it: real automation and R&D with method and a written record.',
+    moonphasePitch: 'Building the future of technology: real automation and R&D on what nobody has solved, with method and a written record.',
   },
 
   // ---------------------------------------------------------------- Radii
@@ -184,9 +184,9 @@ const brandsEn = {
     badge: 'CEO & Founder',
     company: 'Moonphase',
     period: 'Building',
-    tagline: 'Impossible is almost always a problem of perspective and data.',
+    tagline: 'Building the future of technology.',
     heroTitle: 'We automate industries. And we attack what nobody has solved yet.',
-    heroLede: 'Moonphase accepts any idea — including the ones that sound impossible — and works out how to build it. Two lines of work: process automation for specific industries, businesses and niches, and R&D on problems nobody has solved. Both run the same method: feasibility analysis, bounded scope, build, and a written record of the result, negative ones included. Ambition is the starting point; the method is what turns it into a deliverable.',
+    heroLede: 'Building the future of technology and pushing it to limits that do not have names yet: that is the first premise, and the standard every project is chosen against. Moonphase accepts any idea — including the ones that sound impossible — and works out how to build it: process automation for specific industries, businesses and niches, and R&D on problems nobody has solved. Both lines run the same method — feasibility, bounded scope, build, and a written record of the result, negative ones included. Ambition is the starting point; the method is what turns it into a deliverable.',
 
     kickers: {
       name: 'The name',
@@ -197,7 +197,7 @@ const brandsEn = {
 
     nameTitle: 'Where the name comes from',
     nameBody: 'The moon does not look the same from every point on Earth at the same time: in one place it is full and in another it is waning, and both observations are correct. What changes is not the moon — it is where you are measuring from.',
-    nameBody2: 'A problem’s feasibility behaves the same way. It depends on what data exists, what tools are available and how much has been measured — not on how reasonable it sounds said out loud. So here feasibility gets analysed before anyone has an opinion about it.',
+    nameBody2: 'A problem’s feasibility behaves the same way: impossible is almost always a problem of perspective and data. It depends on what data exists, what tools are available and how much has been measured — not on how reasonable it sounds said out loud. So here feasibility gets analysed before anyone has an opinion about it.',
 
     missionLabel: 'Mission',
     visionLabel: 'Vision',

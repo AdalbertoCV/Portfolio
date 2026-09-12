@@ -92,6 +92,64 @@ const cvEs = {
       ],
     },
 
+    lookingKicker: 'Hacia dónde miro',
+    lookingTitle: 'Lo que pasa fuera del teclado',
+    lookingLede: 'Cuatro frentes que no son ingeniería de software y que, aun así, terminan decidiendo qué construyo, cómo y por qué.',
+    looking: {
+      business: {
+        title: 'Negocio, startups y capital',
+        body: 'Dirijo dos empresas propias, y eso obliga a aprender el otro lado del problema: cómo se financia lo que se construye, qué convierte una idea en un negocio y no solo en un sistema, y cuándo la decisión correcta no es la técnica. Me interesan el capital de riesgo, el levantamiento de fondos y cómo se estructura una compañía que tiene que sobrevivir a su primer producto.',
+        tags: [
+          'Startups',
+          'Fundraising',
+          'Venture capital',
+          'Estrategia de producto',
+          'Modelos de negocio',
+          'Innovación',
+          'Fintech e inversiones',
+        ],
+      },
+      creative: {
+        title: 'Videojuegos, animación y dibujo digital',
+        body: 'La parte visual nunca fue un hobby separado del trabajo: es donde entreno la composición, el ritmo y el sentido del detalle que después aparecen en una interfaz. Desarrollo de videojuegos, animación, edición de video y dibujo digital — y el interés por la realidad virtual como el lugar donde el diseño de interacción todavía se está inventando.',
+        tags: [
+          'Desarrollo de videojuegos',
+          'Animación',
+          'Dibujo digital',
+          'Realidad virtual',
+          'Edición de video',
+          'Diseño visual',
+        ],
+      },
+      music: {
+        title: 'Música, escritura y narrativa',
+        body: 'Escribo novelas y canciones en mi tiempo libre, y llevo proyectos musicales propios —incluida una pista compuesta enteramente como código. No es una fuga del trabajo técnico: sostener una novela es mantener una estructura larga y coherente durante meses, y componer es resolver un problema con restricciones muy duras. Las dos entrenan exactamente lo que exige un sistema grande.',
+        tags: [
+          'Composición',
+          'Proyectos musicales',
+          'Escritura de novela',
+          'Narrativa',
+          'Producción musical',
+          'Lectura analítica',
+        ],
+      },
+      science: {
+        title: 'Automatización, ciencia y fronteras físicas',
+        body: 'Veo un proceso y lo primero que pienso es cómo se automatiza, o qué tecnología habría que inventar para que deje de hacerse a mano. Es la misma curiosidad que me llevó al software, y nunca se quedó en la pantalla: sigo de cerca la robótica, la mecatrónica y el hardware —donde el código deja de ser abstracto y tiene que mover algo— y leo sobre nanotecnología, computación cuántica, aeronáutica y astronomía, los lugares donde la ingeniería todavía choca con límites físicos de verdad.',
+        tags: [
+          'Automatización de procesos',
+          'Robótica',
+          'Mecatrónica',
+          'Hardware y electrónica',
+          'Nanotecnología',
+          'Computación cuántica',
+          'Aeronáutica y espacio',
+          'Astronomía',
+          'Manufactura avanzada',
+        ],
+      },
+    },
+
     educationKicker: 'Formación',
     languagesKicker: 'Idiomas',
     languages: {
