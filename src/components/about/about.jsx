@@ -163,12 +163,15 @@ const About = () => {
               {t('cv.availability')}
             </li>
             <li>
+              {/* Stacked planes, not a clock: the fact this line carries is
+                  three roles held at the same time, not elapsed time. */}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"
                    strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M12 7v5l3.2 1.9" />
-                <circle cx="12" cy="12" r="9" />
+                <path d="M12 3.2 21 7.6 12 12 3 7.6z" />
+                <path d="m3 12 9 4.4 9-4.4" />
+                <path d="m3 16.4 9 4.4 9-4.4" />
               </svg>
-              {t('experience.badge')}
+              {t('cv.standing')}
             </li>
           </ul>
 

@@ -75,7 +75,6 @@ const es = {
     somece: 'CONGRESO INTERNACIONAL SOMECE 2024',
   },
   experience: {
-    badge: 'Más de 2 Años de Experiencia',
     radii: {
       company: 'Radii Manufacturing',
       period: 'Jul 2025 — Actualidad',

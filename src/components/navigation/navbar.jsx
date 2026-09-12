@@ -6,11 +6,15 @@ import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
 import { useTranslation } from '../../i18n/I18nProvider';
 
+// Ordered by what the visitor is here to weigh: who he is, what he has
+// shipped under real accountability, the companies he runs, and only then the
+// repository catalogue. Projects used to sit second, which put the smallest
+// claim ahead of the two largest.
 const LINKS = [
     { to: '/', labelKey: 'nav.about' },
-    { to: '/projects', labelKey: 'nav.projects' },
     { to: '/experience', labelKey: 'nav.experience' },
     { to: '/ventures', labelKey: 'nav.ventures' },
+    { to: '/projects', labelKey: 'nav.projects' },
 ];
 
 // Brand pages are reached from their hub, so they light that hub up in the bar

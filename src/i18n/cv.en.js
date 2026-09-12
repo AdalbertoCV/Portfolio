@@ -8,6 +8,7 @@ const cvEn = {
     role: 'Full-Stack Software Engineer',
     location: 'Zacatecas, Mexico',
     availability: 'Open to collaborate',
+    standing: 'Founding Engineer · CTO · Founder',
     contactLabel: 'Contact',
 
     profileTitle: 'Professional profile',
