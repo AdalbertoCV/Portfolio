@@ -50,7 +50,16 @@ import trello from '../../images/tech/trello.svg';
 import notion from '../../images/tech/notion.svg';
 import flutter from '../../images/tech/flutter.svg';
 import dart from '../../images/tech/dart.svg';
+import typescriptIcon from '../../images/tech/typescript.svg';
+import goIcon from '../../images/tech/go.svg';
+import phpIcon from '../../images/tech/php.svg';
+import vaadinIcon from '../../images/tech/vaadin.svg';
+import laravelIcon from '../../images/tech/laravel.svg';
+import ginIcon from '../../images/tech/gin.svg';
+import angularIcon from '../../images/tech/angular.svg';
+import astroIcon from '../../images/tech/astro.svg';
 import claudeIcon from '../../images/tech/claude.svg';
+import orcaIcon from '../../images/tech/orca.svg';
 import opencodeIcon from '../../images/tech/opencode.svg';
 import openclawIcon from '../../images/tech/openclaw.png';
 import nemoclawIcon from '../../images/tech/nemoclaw.svg';
@@ -68,7 +77,10 @@ const TECH_GROUPS = [
       { name: 'Python', icon: python },
       { name: 'Java', icon: java },
       { name: 'JavaScript', icon: javascript },
+      { name: 'TypeScript', icon: typescriptIcon },
       { name: 'C#', icon: csharp },
+      { name: 'Go', icon: goIcon },
+      { name: 'PHP', icon: phpIcon },
       { name: 'SQL', concept: 'sql' },
     ],
   },
@@ -80,6 +92,11 @@ const TECH_GROUPS = [
       // card, and too coloured to inverse. It gets a light plate instead.
       { name: 'Django REST', icon: djangorest, plate: true },
       { name: 'Spring Boot', icon: spring },
+      { name: 'Vaadin', icon: vaadinIcon },
+      { name: 'Laravel', icon: laravelIcon },
+      // simple-icons ships one black path, so it inverts in dark like the
+      // other monochrome marks here.
+      { name: 'Gin', icon: ginIcon, mono: true },
       { name: 'Microservices', concept: 'microservices' },
       { name: 'Event-driven', concept: 'eventDriven' },
       { name: 'Distributed systems', concept: 'distributed' },
@@ -112,6 +129,7 @@ const TECH_GROUPS = [
       // These three ship their own artwork: OpenCode's app tile carries its
       // own dark ground, OpenClaw is a red lobster, NemoClaw is an NVIDIA
       // project and uses their green symbol. None of them invert.
+      { name: 'Orca', icon: orcaIcon },
       { name: 'OpenCode', icon: opencodeIcon },
       { name: 'OpenClaw', icon: openclawIcon },
       { name: 'NemoClaw', icon: nemoclawIcon },
@@ -151,6 +169,8 @@ const TECH_GROUPS = [
     id: 'frontend',
     items: [
       { name: 'React', icon: react },
+      { name: 'Angular', icon: angularIcon },
+      { name: 'Astro', icon: astroIcon },
       { name: 'HTML5', icon: html5 },
       { name: 'CSS3', icon: css3 },
       { name: 'Tailwind', icon: tailwind },

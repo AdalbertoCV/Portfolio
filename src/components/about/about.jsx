@@ -37,12 +37,12 @@ const NOW = [
 ];
 
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
-const LOOKING_KEYS = ['business', 'creative', 'arts', 'science'];
+const INTEREST_KEYS = ['innovation', 'business', 'science', 'arts', 'sports', 'culture'];
 
-// One icon per card: a climbing trajectory, a frame with a stylus, a theatre
-// mask, and an orbit with something in it. Drawn here rather than reused from the
-// concept set — these are section marks at 30px, not skill tiles.
-const LOOK_ICONS = {
+// One icon per card. Drawn here rather than reused from the skill-tile concept
+// set: these are section marks at 30px, and they answer to a different
+// vocabulary — a climbing trajectory, a theatre mask, a figure in motion.
+const INTEREST_ICONS = {
   business: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
          strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -50,15 +50,6 @@ const LOOK_ICONS = {
       <path d="M5 17V9M10 17V5M15 17v-7M20 17V7" />
       <path d="m3.5 6 4-3 4 2.5L20 2" />
       <path d="M17 2h3v3" />
-    </svg>
-  ),
-  creative: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
-         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="2.6" y="2.6" width="8.4" height="8.4" rx="2" />
-      <path d="m6 5.4 2.8 1.4L6 8.2z" />
-      <path d="m16.4 12 3.6 3.6L12.4 23H8.8v-3.6z" />
-      <path d="m14.6 13.8 3.6 3.6" />
     </svg>
   ),
   // A theatre mask: the one symbol that reads as "the arts" across music,
@@ -74,6 +65,33 @@ const LOOK_ICONS = {
       <path d="M4.8 4.6 2.6 2.4M19.2 4.6l2.2-2.2" />
     </svg>
   ),
+  innovation: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M9.4 18.2h5.2" />
+      <path d="M10.2 21h3.6" />
+      <path d="M12 2.8a6.2 6.2 0 0 1 3.7 11.2c-.7.5-1.1 1.3-1.1 2.2H9.4c0-.9-.4-1.7-1.1-2.2A6.2 6.2 0 0 1 12 2.8z" />
+      <path d="M20.4 5.2 22 4.4M3.6 5.2 2 4.4M21 11h1.6M1.4 11H3" />
+    </svg>
+  ),
+  sports: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="15.4" cy="4.4" r="1.9" />
+      <path d="m8.2 21 2.6-5.2-2.8-2.6.9-4.9" />
+      <path d="m8.9 8.3 3.6-1.4 2.6 2.6 3 .9" />
+      <path d="m10.8 15.8 3.9 1.2 1.7 4" />
+      <path d="M5.2 11.2 8.9 8.3" />
+    </svg>
+  ),
+  culture: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9.2" />
+      <path d="M2.8 12h18.4" />
+      <path d="M12 2.8c2.4 2.5 3.7 5.8 3.7 9.2s-1.3 6.7-3.7 9.2c-2.4-2.5-3.7-5.8-3.7-9.2S9.6 5.3 12 2.8z" />
+    </svg>
+  ),
   science: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
          strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -84,7 +102,6 @@ const LOOK_ICONS = {
     </svg>
   ),
 };
-const INTEREST_KEYS = ['innovation', 'arts', 'literature', 'gastronomy', 'sports'];
 const CERT_KEYS = ['icp', 'langchain', 'santander', 'somece'];
 
 const TechTile = ({ item }) => (
@@ -254,30 +271,6 @@ const About = () => {
         ))}
       </Section>
 
-      {/* --------------------------------------------------- looking ahead */}
-      <Section
-        kicker={t('cv.lookingKicker')}
-        title={t('cv.lookingTitle')}
-        lede={t('cv.lookingLede')}
-      >
-        <Reveal className="cv-looking" stagger>
-          {LOOKING_KEYS.map((key) => (
-            <article className="cv-look" key={key}>
-              <div className="cv-look-icon">{LOOK_ICONS[key]}</div>
-              <h3>{t(`cv.looking.${key}.title`)}</h3>
-              <p>{t(`cv.looking.${key}.body`)}</p>
-              <div className="brand-chips">
-                {tl(`cv.looking.${key}.tags`).map((tag) => (
-                  <span className="brand-chip" key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </Reveal>
-      </Section>
-
       {/* ----------------------------------------------- education + languages */}
       <Section kicker={t('cv.educationKicker')} title={t('education.heading').replace(':', '')}>
         <Reveal className="cv-split">
@@ -350,8 +343,16 @@ const About = () => {
         <Reveal className="cv-interests" stagger>
           {INTEREST_KEYS.map((key) => (
             <article className="cv-interest" key={key}>
+              <div className="cv-interest-icon">{INTEREST_ICONS[key]}</div>
               <h3>{t(`cv.interests.${key}.title`)}</h3>
               <p>{t(`cv.interests.${key}.body`)}</p>
+              <div className="brand-chips">
+                {tl(`cv.interests.${key}.tags`).map((tag) => (
+                  <span className="brand-chip" key={tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </article>
           ))}
         </Reveal>

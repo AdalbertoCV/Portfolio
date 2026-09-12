@@ -1106,26 +1106,15 @@ html {
     border-radius: inherit;
 }
 
-.nav-links li::before {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--color-text-primary);
-    transition: width var(--transition-base);
-}
-
-.nav-links li:hover::before {
-    width: 60%;
-}
-
+/* Hover shows a pill and a colour change, and nothing else. It used to also
+   grow a 60%-wide underline anchored 8px off the bottom and lift the item 2px,
+   which meant three affordances firing at once: the short underline read as a
+   stray dash sitting inside the pill, and the lift left the hovered item
+   visibly higher than its neighbours. The pill is the same language the active
+   item already speaks, so it is the one that stays. */
 .nav-links li:hover {
     color: var(--color-text-primary);
     background: var(--color-navlink-hover);
-    transform: translateY(-2px);
 }
 
 .navbar-controls {
@@ -1696,12 +1685,6 @@ html {
         padding: 14px 16px;
     }
 
-    /* The underline sweep is a pointer affordance; in a stacked sheet it draws
-       a stray dash under each row. */
-    .nav-links-sheet li::before {
-        display: none;
-    }
-
     /* Fixed-size (no grow, no shrink) so the control group's touch targets are
        never squeezed - the logo gives up space instead. */
     .navbar-controls {
@@ -1832,11 +1815,7 @@ button:focus-visible {
         transform: translateY(-50%);
     }
 
-    /* The growing underline and the ripple are both hover-only flourishes. */
-    .nav-links li:hover::before {
-        width: 0;
-    }
-
+    /* The ripple is a hover-only flourish. */
     .experience-badge:hover::before {
         transform: translate(-50%, -50%) scale(0);
     }

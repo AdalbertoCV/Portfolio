@@ -518,54 +518,6 @@
 }
 
 /* ============================================================================
-   INTERESTS
-   ========================================================================= */
-
-.cv-interests {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 18px;
-}
-
-.cv-interest {
-    position: relative;
-    padding: 26px 24px 26px 26px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border-primary);
-    background: var(--color-bg-card);
-    overflow: hidden;
-}
-
-/* A hairline down the left edge instead of another icon set — five more icons
-   here would compete with the 40 logos two sections up. */
-.cv-interest::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 22px;
-    bottom: 22px;
-    width: 2px;
-    background: var(--color-text-tertiary);
-    opacity: 0.5;
-}
-
-.cv-interest h3 {
-    font-size: 0.98rem;
-    line-height: 1.35;
-    letter-spacing: -0.02em;
-    color: var(--color-text-primary);
-    margin: 0 0 10px;
-}
-
-.cv-interest p {
-    font-size: 0.9rem;
-    line-height: 1.65;
-    color: var(--color-text-secondary);
-    margin: 0;
-    text-align: left;
-}
-
-/* ============================================================================
    RESPONSIVE
    ========================================================================= */
 
@@ -669,20 +621,20 @@
 }
 
 /* ============================================================================
-   LOOKING AHEAD
+   INTERESTS
    ----------------------------------------------------------------------------
-   Two wide cards rather than the narrow grid used elsewhere on this page: each
+   Wide cards rather than the narrow grid used elsewhere on this page: each
    carries a paragraph plus its own chip row, and at 250px that combination
    turns into a column of single-word lines.
    ========================================================================= */
 
-.cv-looking {
+.cv-interests {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
 }
 
-.cv-look {
+.cv-interest {
     padding: 30px 28px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
@@ -691,7 +643,7 @@
         box-shadow var(--transition-base);
 }
 
-.cv-look-icon {
+.cv-interest-icon {
     width: 30px;
     height: 30px;
     color: var(--color-text-tertiary);
@@ -699,19 +651,19 @@
     transition: color var(--transition-base);
 }
 
-.cv-look-icon svg {
+.cv-interest-icon svg {
     width: 100%;
     height: 100%;
 }
 
-.cv-look h3 {
+.cv-interest h3 {
     font-size: 1.12rem;
     letter-spacing: -0.025em;
     color: var(--color-text-primary);
     margin: 0 0 12px;
 }
 
-.cv-look p {
+.cv-interest p {
     font-size: 0.94rem;
     line-height: 1.7;
     color: var(--color-text-secondary);
@@ -720,23 +672,23 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .cv-look:hover {
+    .cv-interest:hover {
         border-color: var(--color-border-hover);
         transform: translateY(-3px);
         box-shadow: var(--shadow-md);
     }
 
-    .cv-look:hover .cv-look-icon {
+    .cv-interest:hover .cv-interest-icon {
         color: var(--color-text-primary);
     }
 }
 
 @media (max-width: 768px) {
-    .cv-looking {
+    .cv-interests {
         grid-template-columns: 1fr;
     }
 
-    .cv-look {
+    .cv-interest {
         padding: 24px 18px;
     }
 }
