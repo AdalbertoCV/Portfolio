@@ -37,10 +37,10 @@ const NOW = [
 ];
 
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
-const LOOKING_KEYS = ['business', 'creative', 'music', 'science'];
+const LOOKING_KEYS = ['business', 'creative', 'arts', 'science'];
 
-// One icon per card: a climbing trajectory, a frame with a stylus, a page with
-// a note on it, and an orbit with something in it. Drawn here rather than reused from the
+// One icon per card: a climbing trajectory, a frame with a stylus, a theatre
+// mask, and an orbit with something in it. Drawn here rather than reused from the
 // concept set — these are section marks at 30px, not skill tiles.
 const LOOK_ICONS = {
   business: (
@@ -61,13 +61,17 @@ const LOOK_ICONS = {
       <path d="m14.6 13.8 3.6 3.6" />
     </svg>
   ),
-  music: (
+  // A theatre mask: the one symbol that reads as "the arts" across music,
+  // literature, cinema and stage, rather than picking one of them. The page
+  // with a note it replaces said "sheet music" and nothing else.
+  arts: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
          strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M5.5 2.8h8l5 5v13.4h-13z" />
-      <path d="M13.5 2.8v5h5" />
-      <circle cx="9.4" cy="16.7" r="1.9" />
-      <path d="M11.3 16.7v-5.5l4 1.3" />
+      <path d="M4.8 4.6h14.4v7.1c0 4.6-3.2 8.3-7.2 8.3s-7.2-3.7-7.2-8.3z" />
+      <path d="M8.2 9.5c.7-.7 1.8-.7 2.5 0" />
+      <path d="M13.3 9.5c.7-.7 1.8-.7 2.5 0" />
+      <path d="M9.3 14.2c1.7 1.3 3.7 1.3 5.4 0" />
+      <path d="M4.8 4.6 2.6 2.4M19.2 4.6l2.2-2.2" />
     </svg>
   ),
   science: (

@@ -121,16 +121,18 @@ const cvEs = {
           'Diseño visual',
         ],
       },
-      music: {
-        title: 'Música, escritura y narrativa',
-        body: 'Escribo novelas y canciones en mi tiempo libre, y llevo proyectos musicales propios —incluida una pista compuesta enteramente como código. No es una fuga del trabajo técnico: sostener una novela es mantener una estructura larga y coherente durante meses, y componer es resolver un problema con restricciones muy duras. Las dos entrenan exactamente lo que exige un sistema grande.',
+      arts: {
+        title: 'Arte, música y literatura',
+        body: 'El arte no es un descanso del trabajo técnico: es la otra mitad de cómo pienso. Me apasionan la música, la literatura, el cine, el teatro y la moda, y los sigo con la misma seriedad con la que sigo la ingeniería. Escribo novelas y canciones, y llevo proyectos musicales propios. Es donde se entrenan la estructura, el ritmo y el criterio estético — tres cosas que después no se pueden improvisar frente a una interfaz.',
         tags: [
-          'Composición',
-          'Proyectos musicales',
+          'Música',
+          'Literatura',
           'Escritura de novela',
-          'Narrativa',
-          'Producción musical',
-          'Lectura analítica',
+          'Composición',
+          'Cine',
+          'Teatro',
+          'Moda',
+          'Proyectos musicales',
         ],
       },
       science: {

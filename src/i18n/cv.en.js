@@ -117,16 +117,18 @@ const cvEn = {
           'Visual design',
         ],
       },
-      music: {
-        title: 'Music, writing and narrative',
-        body: 'I write novels and songs in my own time, and run musical projects of my own — including a track composed entirely as code. It is not an escape from the technical work: holding a novel together means sustaining one long, coherent structure for months, and composing is solving a problem under very hard constraints. Both train exactly what a large system demands.',
+      arts: {
+        title: 'Art, music and literature',
+        body: 'Art is not a break from the technical work: it is the other half of how I think. Music, literature, cinema, theatre and fashion are things I follow with the same seriousness I give engineering. I write novels and songs, and run musical projects of my own. That is where structure, rhythm and aesthetic judgement are trained — three things that cannot be improvised later in front of an interface.',
         tags: [
-          'Composition',
-          'Music projects',
+          'Music',
+          'Literature',
           'Novel writing',
-          'Narrative',
-          'Music production',
-          'Analytical reading',
+          'Composition',
+          'Cinema',
+          'Theatre',
+          'Fashion',
+          'Music projects',
         ],
       },
       science: {
