@@ -74,7 +74,7 @@ const reposEn = {
       },
       stroke: {
         title: 'Stroke prediction',
-        body: 'Stroke risk classification on a dataset that is only ~5% positive: imputation, feature selection with Boruta, class balancing with ROSE, and evaluation by ROC/AUC.',
+        body: 'Stroke risk classification in R, on a dataset that is only ~5% positive: imputation, feature selection with Boruta, class balancing with ROSE, and evaluation by ROC/AUC.',
       },
       sharemesomething: {
         title: 'Share me something',

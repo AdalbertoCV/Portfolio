@@ -53,8 +53,8 @@ const en = {
     groups: {
       languages: 'Languages',
       backend: 'Backend & architecture',
-      ai: 'AI, agents & Machine Learning',
-      aitools: 'AI tooling, agents & automation',
+      ai: 'AI systems I build',
+      aitools: 'Agents and models I work with',
       cloud: 'Cloud, platform & DevOps',
       data: 'Data',
       frontend: 'Frontend & mobile',

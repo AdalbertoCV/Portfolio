@@ -76,7 +76,7 @@ const reposEs = {
       },
       stroke: {
         title: 'Predicción de ictus',
-        body: 'Clasificación de riesgo de accidente cerebrovascular sobre un dataset con apenas ~5% de casos positivos: imputación, selección de variables con Boruta, balanceo con ROSE y evaluación por curva ROC/AUC.',
+        body: 'Clasificación de riesgo de accidente cerebrovascular en R, sobre un dataset con apenas ~5% de casos positivos: imputación, selección de variables con Boruta, balanceo con ROSE y evaluación por curva ROC/AUC.',
       },
       sharemesomething: {
         title: 'Share me something',

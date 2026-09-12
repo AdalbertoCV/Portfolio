@@ -53,8 +53,8 @@ const es = {
     groups: {
       languages: 'Lenguajes',
       backend: 'Backend y arquitectura',
-      ai: 'IA, agentes y Machine Learning',
-      aitools: 'Herramientas de IA, agentes y automatización',
+      ai: 'Sistemas de IA que construyo',
+      aitools: 'Agentes y modelos con los que trabajo',
       cloud: 'Nube, plataforma y DevOps',
       data: 'Datos',
       frontend: 'Frontend y móvil',

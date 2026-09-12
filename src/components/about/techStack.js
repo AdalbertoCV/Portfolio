@@ -22,6 +22,9 @@ import django from '../../images/tech/django.svg';
 import djangorest from '../../images/tech/djangorest.svg';
 import spring from '../../images/tech/spring.svg';
 import langchain from '../../images/tech/langchain.svg';
+import pandasIcon from '../../images/tech/pandas.svg';
+import colabIcon from '../../images/tech/googlecolab.svg';
+import kaggleIcon from '../../images/tech/kaggle.svg';
 import aws from '../../images/tech/aws.svg';
 import azure from '../../images/tech/azure.svg';
 import docker from '../../images/tech/docker.svg';
@@ -53,6 +56,7 @@ import dart from '../../images/tech/dart.svg';
 import typescriptIcon from '../../images/tech/typescript.svg';
 import goIcon from '../../images/tech/go.svg';
 import phpIcon from '../../images/tech/php.svg';
+import rIcon from '../../images/tech/r.svg';
 import vaadinIcon from '../../images/tech/vaadin.svg';
 import laravelIcon from '../../images/tech/laravel.svg';
 import ginIcon from '../../images/tech/gin.svg';
@@ -82,6 +86,7 @@ const TECH_GROUPS = [
       { name: 'C#', icon: csharp },
       { name: 'Go', icon: goIcon },
       { name: 'PHP', icon: phpIcon },
+      { name: 'R', icon: rIcon, mono: true },
       { name: 'SQL', concept: 'sql' },
     ],
   },
@@ -107,6 +112,11 @@ const TECH_GROUPS = [
     ],
   },
   {
+    // Two AI groups, split on one axis: this one is what AI systems get built
+    // WITH — libraries, the ML working surface, and the architectures they add
+    // up to. The next one is AI products used as a practitioner. The labels in
+    // the dictionary carry that distinction, so neither group has to be read
+    // against the other to make sense.
     id: 'ai',
     items: [
       { name: 'LangChain', icon: langchain, mono: true },
@@ -115,13 +125,14 @@ const TECH_GROUPS = [
       { name: 'LLM & RAG', concept: 'rag' },
       { name: 'Machine Learning', concept: 'ml' },
       { name: 'Multi-agent', concept: 'multiAgent' },
+      { name: 'pandas', icon: pandasIcon, mono: true },
+      { name: 'Google Colab', icon: colabIcon, mono: true },
+      { name: 'Kaggle', icon: kaggleIcon, mono: true },
     ],
   },
   {
-    // The agents and runtimes actually used day to day, as opposed to the group
-    // above, which is about building AI systems rather than working with them.
-    // Only tools genuinely in use are listed — this is a CV, not a survey of
-    // what exists.
+    // The agents and runtimes actually used day to day. Only tools genuinely in
+    // use are listed — this is a CV, not a survey of what exists.
     id: 'aitools',
     items: [
       { name: 'Claude Code', icon: claudeIcon, mono: true },
