@@ -5,27 +5,27 @@
 const brandsEs = {
   timeline: {
     badge: 'Trayectoria',
-    title: 'Cuatro frentes, una misma obsesión',
-    lede: 'Construyo software donde el resultado importa: una plataforma de manufactura con IA, una casa de desarrollo a medida, clientes propios y el laboratorio donde empezó todo.',
+    title: 'Cuatro frentes, un mismo criterio',
+    lede: 'Cuatro contextos de desarrollo con responsabilidad sobre el resultado: una plataforma de manufactura con IA, una casa de desarrollo a medida, cartera propia de clientes, y el laboratorio público donde inició mi formación profesional.',
     featuredLabel: 'Foco actual',
     present: 'Actualidad',
     readStory: 'Ver la historia completa',
     visitSite: 'Visitar sitio',
     yearsLabel: 'años construyendo',
     venturesTitle: 'Y dos empresas propias',
-    venturesLede: 'No solo escribo el código. También decido qué se construye, por qué y para quién.',
+    venturesLede: 'Más allá del desarrollo, la responsabilidad incluye definir qué se construye, con qué criterio y para qué mercado.',
     venturesCta: 'Conocer Ventures',
   },
 
   ventures: {
     badge: 'Ventures',
-    title: 'Dos empresas, dos sillas',
-    lede: 'En una dirijo la tecnología. En la otra dirijo la compañía. Las dos nacieron de la misma idea: que el talento y las ideas se desperdician por falta de un lugar donde aterrizar.',
+    title: 'Dos empresas, dos responsabilidades',
+    lede: 'En una dirijo la tecnología; en la otra, la compañía. Ambas parten del mismo diagnóstico: el talento y las ideas se pierden por ausencia de una estructura que los reciba y los ejecute.',
     roleCto: 'CTO y Cofundador',
     roleCeo: 'CEO y Fundador',
     enter: 'Entrar',
     statusBuilding: 'En construcción',
-    stackselectPitch: 'Bootcamps y evaluación técnica que llevan al desarrollador sin experiencia hasta su primer empleo real.',
+    stackselectPitch: 'Bootcamps y plataforma de evaluación técnica orientados a la colocación laboral de desarrolladores sin experiencia previa.',
     moonphasePitch: 'Construyendo el futuro de la tecnología: automatización real e I+D sobre lo que nadie ha resuelto, con método y expediente escrito.',
   },
 
@@ -59,7 +59,7 @@ const brandsEs = {
     whatNote: 'Aeroespacial, automotriz e industrial. Proximidad geográfica, costos competitivos y beneficios T-MEC para cadenas de suministro de Estados Unidos.',
 
     howTitle: 'Cómo funciona',
-    howLede: 'Cuatro pasos que antes tomaban semanas de ida y vuelta por correo.',
+    howLede: 'Cuatro etapas que en el proceso tradicional requieren semanas de intercambio manual.',
     how: {
       upload: {
         title: 'Análisis automático',
@@ -67,20 +67,20 @@ const brandsEs = {
       },
       quote: {
         title: 'Cotización instantánea',
-        body: 'Precio y tiempo de entrega en segundos, con material y acabado configurables. Sin esperar a que un vendedor conteste.',
+        body: 'Precio y tiempo de entrega en segundos, con material y acabado configurables, sin dependencia de un ciclo de respuesta comercial.',
       },
       produce: {
         title: 'Producción gestionada',
-        body: 'El equipo de ingeniería asigna el trabajo a socios auditados y supervisa la ejecución. La red se elige por capacidad real, no por disponibilidad.',
+        body: 'El equipo de ingeniería asigna el trabajo a socios auditados y supervisa la ejecución. La selección de la red responde a capacidad verificada y no a disponibilidad inmediata.',
       },
       trace: {
         title: 'Trazabilidad completa',
-        body: 'La entrega llega con documentación, certificados de material y reportes de inspección CMM. Todo el expediente, no solo la pieza.',
+        body: 'La entrega incluye documentación completa, certificados de material y reportes de inspección CMM: el expediente íntegro además de la pieza.',
       },
     },
 
     buildTitle: 'Lo que construyo ahí',
-    buildLede: 'Entré como ingeniero fundador. Eso significa que el stack, la arquitectura y las prácticas de ingeniería sobre las que se levanta la plataforma se decidieron —y se siguen decidiendo— con mi voz en la mesa.',
+    buildLede: 'Mi incorporación como ingeniero fundador implica participación directa en la definición del stack, la arquitectura y las prácticas de ingeniería sobre las que se construye la plataforma, tanto en su diseño inicial como en su evolución.',
     build: {
       backend: {
         title: 'Servicios backend del núcleo',
@@ -88,11 +88,11 @@ const brandsEs = {
       },
       workers: {
         title: 'Workers en la nube',
-        body: 'Construyo y mantengo workers sobre AWS y Azure que automatizan el procesamiento de datos y eliminan carga manual del equipo.',
+        body: 'Construyo y mantengo workers sobre AWS y Azure que automatizan el procesamiento de datos y reducen la carga operativa manual del equipo.',
       },
       agents: {
         title: 'Agentes de IA',
-        body: 'Desarrollo agentes con LangGraph y LangChain que automatizan decisiones y operaciones internas que antes exigían criterio humano en cada paso.',
+        body: 'Desarrollo agentes con LangGraph y LangChain que automatizan decisiones y operaciones internas que previamente requerían intervención humana en cada etapa.',
       },
       ml: {
         title: 'Automatización con Machine Learning',
@@ -109,7 +109,7 @@ const brandsEs = {
     },
 
     stackTitle: 'El stack',
-    stackLede: 'Elegido por el problema, no por costumbre.',
+    stackLede: 'Seleccionado en función de los requisitos del problema.',
     groups: {
       services: 'Servicios y datos',
       cloud: 'Nube y plataforma',
@@ -118,7 +118,7 @@ const brandsEs = {
     },
 
     closingTitle: 'Por qué importa',
-    closingBody: 'Una pieza mal cotizada retrasa una línea de producción. Un proveedor sin trazabilidad frena una certificación aeroespacial. El software que escribo aquí no es una capa de conveniencia sobre un proceso que ya funcionaba: es el proceso. Esa es la parte que me mantiene.',
+    closingBody: 'Una pieza mal cotizada retrasa una línea de producción; un proveedor sin trazabilidad bloquea una certificación aeroespacial. El software desarrollado aquí no constituye una capa de conveniencia sobre un proceso preexistente: es el proceso mismo, y esa condición define el nivel de exigencia del trabajo.',
   },
 
   // ---------------------------------------------------------- StackSelect
@@ -128,7 +128,7 @@ const brandsEs = {
     period: 'En constitución',
     tagline: 'Talento.',
     heroTitle: 'El puente entre lo que enseña la universidad y lo que pide la industria',
-    heroLede: 'StackSelect prepara, evalúa y coloca desarrolladores sin experiencia laboral en su primer empleo real. No vendemos cursos: mandamos a la persona lista a trabajar.',
+    heroLede: 'StackSelect forma, evalúa y coloca desarrolladores sin experiencia laboral en su primer empleo profesional. El entregable no es el curso, sino el candidato en condiciones de incorporarse.',
 
     kickers: {
       name: 'El nombre',
@@ -139,10 +139,10 @@ const brandsEs = {
       purpose: 'El propósito',
     },
     nameTitle: 'El nombre',
-    nameBody: '«Stack» es el stack tecnológico —las herramientas con las que trabaja un desarrollador. «Select» es seleccionar y conectar ese talento con las empresas. Juntos dicen exactamente lo que hacemos: elegir a los mejores desarrolladores y colocarlos en el mercado laboral.',
+    nameBody: '«Stack» designa el conjunto de herramientas con las que trabaja un desarrollador. «Select» refiere a la selección y vinculación de ese talento con las empresas. La combinación describe la operación con precisión: identificar a los mejores desarrolladores y colocarlos en el mercado laboral.',
 
     problemTitle: 'El problema',
-    problemBody: 'Existe una brecha enorme entre lo que se aprende en la universidad y lo que realmente piden las empresas. Desarrolladores talentosos se quedan sin empleo por falta de experiencia práctica, sin saber cómo prepararse para una entrevista técnica ni qué se espera de ellos el primer día.',
+    problemBody: 'Existe una brecha documentada entre la formación universitaria y los requisitos reales del sector. Desarrolladores con capacidad técnica permanecen sin empleo por ausencia de experiencia práctica, sin preparación específica para una entrevista técnica ni referencias sobre lo que se espera de ellos en el ejercicio profesional.',
     problemStat: 'Recién egresados sin un primer contacto con un empleo real',
 
     solutionTitle: 'La solución',
@@ -150,34 +150,34 @@ const brandsEs = {
     solution: {
       train: {
         title: 'Bootcamps especializados',
-        body: 'Contenidos enfocados en el conocimiento real que pide la industria, respaldados por experiencias de profesionales que ya están adentro.',
+        body: 'Contenidos orientados al conocimiento que la industria requiere efectivamente, validados por profesionales en ejercicio dentro del sector.',
       },
       assess: {
         title: 'Evaluación técnica',
-        body: 'Una plataforma que mide lo que la empresa va a medir, para que la entrevista técnica deje de ser un terreno desconocido.',
+        body: 'Plataforma que evalúa bajo los mismos criterios que aplicará la empresa contratante, eliminando la incertidumbre del proceso de entrevista técnica.',
       },
       place: {
         title: 'Colocación real',
-        body: 'Evaluamos, capacitamos si hace falta, y enviamos al candidato listo a trabajar. La colocación es el entregable, no un extra.',
+        body: 'El proceso evalúa, capacita donde es necesario y presenta al candidato en condiciones de incorporarse. La colocación constituye el entregable, no un servicio adicional.',
       },
     },
 
     edgeTitle: 'Qué nos distingue',
-    edgeBody: 'La competencia vende preparación. Nosotros vendemos colocación laboral real y rápida: evaluamos, capacitamos si es necesario, y enviamos al candidato listo a trabajar.',
-    edgeHonest: 'Y lo que todavía no tenemos: somos una marca nueva. Aún no hay reconocimiento ni casos de éxito que mostrar. Eso se construye entregando, no prometiendo.',
+    edgeBody: 'La oferta del sector se concentra en la preparación. Nuestra propuesta es la colocación laboral efectiva y en plazos cortos: evaluación, capacitación cuando corresponde, y presentación del candidato en condiciones de incorporarse.',
+    edgeHonest: 'Limitación actual: la marca es de creación reciente y aún no cuenta con reconocimiento de mercado ni casos de éxito documentados. Esa base se construye sobre resultados entregados.',
 
     valuesTitle: 'Valores',
     values: {
-      commitment: { title: 'Compromiso', body: 'Con el candidato hasta que está colocado, no hasta que termina el curso.' },
-      empathy: { title: 'Empatía', body: 'Entender de dónde viene quien todavía no ha tenido su primera oportunidad.' },
-      solidarity: { title: 'Solidaridad', body: 'El conocimiento que abre una puerta no se guarda.' },
+      commitment: { title: 'Compromiso', body: 'El acompañamiento al candidato se extiende hasta su colocación efectiva, no hasta el término del programa formativo.' },
+      empathy: { title: 'Empatía', body: 'Comprender el punto de partida real de quien aún no ha accedido a su primera oportunidad profesional.' },
+      solidarity: { title: 'Solidaridad', body: 'El conocimiento que habilita el acceso al mercado laboral se transmite, no se reserva.' },
     },
 
     purposeTitle: 'El propósito',
     purposeBody: 'Apoyar al talento joven mexicano a entrar a la industria de tecnologías de la información, y reducir la tasa de desempleo de recién graduados y titulados.',
 
     roleTitle: 'Mi rol como CTO',
-    roleBody: 'Defino la dirección técnica de la compañía: la arquitectura de la plataforma de evaluación, el stack sobre el que se construye, el contenido técnico de los bootcamps y el criterio con el que se decide si un candidato está listo. La promesa de colocación solo se sostiene si la evaluación es honesta — y esa evaluación es un problema de ingeniería.',
+    roleBody: 'Defino la dirección técnica de la compañía: arquitectura de la plataforma de evaluación, stack de construcción, contenido técnico de los bootcamps y criterios de certificación de un candidato. La promesa de colocación solo es sostenible si la evaluación es rigurosa, y esa evaluación constituye en sí misma un problema de ingeniería.',
   },
 
   // ------------------------------------------------------------ Moonphase
@@ -202,7 +202,7 @@ const brandsEs = {
 
     missionLabel: 'Misión',
     visionLabel: 'Visión',
-    missionBody: 'Convertir en sistemas que funcionan las ideas de automatización, innovación e invención que hoy solo existen en la cabeza de alguien. Y cuando algo todavía no se puede, dejar por escrito qué lo impide y qué haría falta — para volver el día que sí se pueda.',
+    missionBody: 'Convertir en sistemas operativos las ideas de automatización, innovación e invención que hoy solo existen en formulación. Cuando una solución no resulta viable, documentar formalmente qué la impide y qué condiciones la habilitarían, para retomarla cuando esas condiciones cambien.',
     visionBody: 'Ser la empresa que más ideas imposibles convirtió en realidad, y que dejó documentado el camino hacia las que todavía no. La métrica principal es el impacto: cuántas cosas existen en el mundo que no existirían sin nosotros. El tamaño viene después, y viene como consecuencia.',
 
     methodTitle: 'El método',
@@ -236,14 +236,14 @@ const brandsEs = {
     laneOne: {
       label: 'Carril 1',
       title: 'Automatización aplicada',
-      body: 'Procesos concretos de industrias, negocios y nichos: inventario que se lleva a mano, reportería que vive en hojas de cálculo, operación sin trazabilidad, integraciones que hoy resuelve una persona copiando datos entre sistemas. Alcance cerrado, entregable medible y cliente real.',
-      note: 'Financia la operación y construye el músculo técnico que el carril 2 necesita.',
+      body: 'Procesos concretos de industrias, negocios y nichos: control de inventario manual, reportería sobre hojas de cálculo, operación sin trazabilidad, e integraciones resueltas mediante transferencia manual de datos entre sistemas. Alcance cerrado, entregable medible y cliente identificado.',
+      note: 'Financia la operación y desarrolla la capacidad técnica que requiere el carril 2.',
     },
     laneTwo: {
       label: 'Carril 2',
       title: 'I+D sobre problemas abiertos',
       body: 'Tecnología que todavía no existe, preguntas abiertas y problemas que la industria dio por cerrados, de cualquier área del conocimiento. No se miden por éxito sino por conocimiento producido: qué se descartó, con qué evidencia, y qué haría falta para avanzar. Se parten en pedazos ejecutables siempre que el problema lo permita, y se atacan aunque la probabilidad esté en contra.',
-      note: 'Aquí es donde se inventa. Un «no se puede» con evidencia y mapa es un entregable, no un proyecto fallido.',
+      note: 'Es la línea de invención. Un resultado negativo con evidencia y mapa de condiciones constituye un entregable, no un proyecto fallido.',
     },
 
     valuesTitle: 'Siete valores',
@@ -277,8 +277,8 @@ const brandsEs = {
       },
       craft: {
         title: 'Oficio y sustento',
-        motto: 'El almacén y el problema abierto, con la misma seriedad.',
-        body: 'No existe el proyecto «menor». El músculo técnico que se construye resolviendo cien problemas concretos es exactamente el que hace falta el día que atacas uno que nadie ha resuelto — y es el que paga la investigación.',
+        motto: 'El proyecto operativo y el problema abierto, con el mismo estándar.',
+        body: 'No existe el proyecto «menor». La capacidad técnica que se acumula resolviendo cien problemas concretos es la misma que se requiere al abordar uno sin solución conocida, y es la que financia la investigación.',
       },
       betterWorld: {
         title: 'Deseo de mejorar el mundo',
@@ -288,7 +288,7 @@ const brandsEs = {
     },
 
     roleTitle: 'Mi rol como CEO',
-    roleBody: 'Fundé Moonphase y dirijo la compañía: qué entra como proyecto, cómo se reparte el esfuerzo entre los dos carriles, y qué queda escrito cuando algo no se puede. La parte difícil del puesto no es elegir qué construir — es sostener el método cuando un proyecto de I+D lleva tres meses sin resultado y la salida cómoda es dejar de documentarlo.',
+    roleBody: 'Fundé Moonphase y dirijo la compañía: criterios de admisión de proyectos, distribución del esfuerzo entre los dos carriles, y documentación de los resultados negativos. La dificultad del puesto no reside en decidir qué construir, sino en sostener el método cuando un proyecto de I+D acumula tres meses sin resultado y la alternativa cómoda es suspender su documentación.',
   },
 
   // ------------------------------------------------------------- Evodeps

@@ -4,7 +4,7 @@ const reposEn = {
   repos: {
     badge: 'Projects',
     title: 'Everything I have built',
-    lede: 'Systems delivered to real institutions, university projects, architecture exercises and engineering practice. The ones with an interface carry their screenshots; the rest — APIs, pipelines, data structures — carry a signature generated from their name.',
+    lede: 'Systems delivered to institutions, academic projects, architecture exercises and engineering practice. Projects with an interface include screenshots; the rest — APIs, pipelines and data structures — are identified by a signature generated from their name.',
     countLabel: 'projects',
     privateLabel: 'Private',
     viewRepo: 'View repository',
@@ -22,7 +22,7 @@ const reposEn = {
     items: {
       nocturno: {
         title: 'Nocturno 108',
-        body: 'A jazz-hop track written as code in Strudel, with a player of its own: an audio engine synthesised from scratch in Web Audio — no samples, no libraries — a dancing avatar on the beat, a live piano roll and a mixer.',
+        body: 'A jazz-hop track composed as code in Strudel, with a purpose-built player: an audio engine synthesised from scratch on Web Audio — no samples, no external libraries — an avatar synchronised to the beat, a real-time piano roll and a mixer.',
       },
       etl: {
         title: 'ETL → Dgraph',
@@ -30,15 +30,15 @@ const reposEn = {
       },
       pubsub: {
         title: 'SMAM — Publish/Subscribe',
-        body: 'The publisher-subscriber pattern applied to real-time vital-sign monitoring: wearable publishers and three independent subscribers over ActiveMQ with STOMP. Producers never learn who consumes them.',
+        body: 'The publisher-subscriber pattern applied to real-time vital-sign monitoring: wearable publishers and three independent subscribers over ActiveMQ with STOMP, with full decoupling between producers and consumers.',
       },
       sockets: {
         title: 'TCP Sockets',
-        body: 'Client-server chat over raw TCP sockets, with file transfer and a Swing interface. No framework hiding the handshake; concurrency handled by hand, MVC at both ends.',
+        body: 'Client-server chat over raw TCP sockets, with file transfer and a Swing interface. The handshake and concurrency are implemented explicitly, with no framework abstraction, and MVC at both ends.',
       },
       pooedd: {
         title: 'OOP and Data Structures',
-        body: 'Around 340 Java classes. Lists, stacks, queues, trees, graphs and heaps built from scratch — no Collections — plus OOP practice with JDBC, a DAO layer, REST services and Android.',
+        body: 'Around 340 Java classes: lists, stacks, queues, trees, graphs and heaps implemented from scratch, without recourse to Collections, alongside OOP practice over JDBC, a DAO layer, REST services and Android.',
       },
       testing: {
         title: 'Software testing',
@@ -54,7 +54,7 @@ const reposEn = {
       },
       retos: {
         title: 'Coding challenges',
-        body: 'Sustained practice on the problems that show up in technical interviews: algorithms, data structures and complexity.',
+        body: 'Sustained practice on the class of problem a technical interview sets: algorithms, data structures and complexity analysis.',
       },
       frameworks: {
         title: 'Web frameworks with Django',
@@ -66,11 +66,11 @@ const reposEn = {
       },
       visualnet: {
         title: 'Visual .NET',
-        body: 'The full route in C#: from console OOP to Windows Forms, and on to ASP.NET Core MVC with Entity Framework Core, migrations and Identity.',
+        body: 'A full run through C#: console applications with OOP, Windows Forms, and ASP.NET Core MVC with Entity Framework Core, migrations and Identity.',
       },
       picoctf: {
         title: 'CTF writeups',
-        body: 'Around 160 picoCTF and OverTheWire Bandit challenges solved and documented: web, cryptography, forensics, reverse engineering and binary exploitation. The reasoning, not just the flag.',
+        body: 'Around 160 picoCTF and OverTheWire Bandit challenges solved and documented: web, cryptography, forensics, reverse engineering and binary exploitation. The write-ups record the full reasoning, not only the result.',
       },
       stroke: {
         title: 'Stroke prediction',
@@ -78,7 +78,7 @@ const reposEn = {
       },
       sharemesomething: {
         title: 'Share me something',
-        body: 'A shared diary between two people: a Python API and a JavaScript web client. Private repository.',
+        body: 'A shared journal between two users: a Python API and a JavaScript web client. Private repository.',
       },
     },
   },

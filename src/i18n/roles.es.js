@@ -12,7 +12,7 @@ const rolesEs = {
       badge: 'Software Engineer',
       company: 'Evodeps',
       period: 'Actualidad',
-      tagline: 'Adaptarse es el producto.',
+      tagline: 'La adaptabilidad como requisito técnico.',
       heroTitle: 'Software, equipamiento y prototipos a la medida de cada cliente',
       heroLede: 'Evodeps desarrolla software, equipamiento y prototipos e implementaciones tecnológicas personalizadas según las necesidades y el presupuesto de cada cliente. Trabajo ahí como Software Engineer, dentro de equipos interdisciplinarios de desarrollo, diseño y prototipado.',
 
@@ -29,15 +29,15 @@ const rolesEs = {
       whatNote: 'El mayor diferenciador es la capacidad de adaptarse a las necesidades específicas de cada cliente: mejores precios, calidad y eficiencia en el servicio, en lugar de vender siempre la misma solución.',
 
       offerTitle: 'Tres frentes, un mismo encargo',
-      offerLede: 'Lo que el proyecto pida, no lo que sea más cómodo de producir.',
+      offerLede: 'El alcance lo define el proyecto, no la conveniencia de producción.',
       offer: {
         software: {
           title: 'Desarrollo de software',
-          body: 'Sistemas construidos alrededor del proceso real del cliente, no alrededor de una plantilla. Es donde paso la mayor parte del tiempo.',
+          body: 'Sistemas construidos sobre el proceso real del cliente en lugar de sobre una plantilla. Concentra la mayor parte de mi trabajo en la empresa.',
         },
         equipment: {
           title: 'Equipamiento',
-          body: 'La parte física del encargo: el equipo que hace falta para que la solución funcione en el lugar donde tiene que funcionar.',
+          body: 'El componente físico del proyecto: el equipamiento necesario para que la solución opere en su entorno real de uso.',
         },
         prototypes: {
           title: 'Prototipos e implementaciones',
@@ -51,7 +51,7 @@ const rolesEs = {
       visionBody: 'Ser líderes en desarrollo tecnológico a nivel global, reconocidos por ofrecer soluciones personalizadas y de alta calidad que superen las expectativas. Un referente en innovación y adaptabilidad, promoviendo un futuro donde tecnología y creatividad transformen el panorama empresarial y social.',
 
       valuesTitle: 'Seis valores',
-      valuesLede: 'No están en la pared: describen cómo se decide cuando el cliente, el presupuesto y el plazo empujan en direcciones distintas.',
+      valuesLede: 'Operan como criterios de decisión cuando cliente, presupuesto y plazo imponen restricciones incompatibles entre sí.',
       values: {
         innovation: {
           title: 'Innovación',
@@ -63,7 +63,7 @@ const rolesEs = {
         },
         team: {
           title: 'Equipo colaborativo',
-          body: 'Colaboración entre los equipos interdisciplinarios de desarrollo, diseño y prototipado, para que la sinergia sea efectiva y no declarativa.',
+          body: 'Colaboración efectiva entre los equipos interdisciplinarios de desarrollo, diseño y prototipado a lo largo de todo el ciclo del proyecto.',
         },
         adaptability: {
           title: 'Adaptabilidad',
@@ -80,7 +80,7 @@ const rolesEs = {
       },
 
       roleTitle: 'Mi rol como Software Engineer',
-      roleBody: 'Construyo el software de los proyectos y trabajo dentro de equipos interdisciplinarios, con diseño y prototipado en la misma mesa. La parte que más me ha enseñado es la adaptabilidad como requisito técnico y no como discurso comercial: cuando cada cliente trae un proceso, un presupuesto y un plazo distintos, la arquitectura tiene que poder doblarse sin romperse, y eso se decide desde la primera conversación.',
+      roleBody: 'Desarrollo el software de los proyectos dentro de equipos interdisciplinarios, en coordinación directa con diseño y prototipado. El aprendizaje central ha sido tratar la adaptabilidad como un requisito de arquitectura y no como un argumento comercial: cuando cada cliente presenta un proceso, un presupuesto y un plazo distintos, el sistema debe admitir variación sin comprometer su integridad, y esa condición se define desde el levantamiento inicial de requerimientos.',
     },
 
     // ----------------------------------------------------------- Freelance
@@ -88,9 +88,9 @@ const rolesEs = {
       badge: 'Software Engineer · Independiente',
       company: 'Trabajo independiente',
       period: 'Ene 2025 — Actualidad',
-      tagline: 'La puerta a los equipos multidisciplinarios.',
-      heroTitle: 'Trabajo por mi cuenta, con equipos que no son solo de ingeniería',
-      heroLede: 'Desarrollo software para clientes de industrias distintas como ingeniero independiente. Es lo que me abrió las puertas a trabajar dentro de equipos multidisciplinarios —diseñadores, expertos del dominio, otros ingenieros— y en proyectos de alto impacto donde el resultado se mide fuera del repositorio.',
+      tagline: 'El acceso a los equipos multidisciplinarios.',
+      heroTitle: 'Ingeniería independiente dentro de equipos multidisciplinarios',
+      heroLede: 'Desarrollo software para clientes de distintas industrias como ingeniero independiente. Esta vía dio acceso a equipos multidisciplinarios —diseño, expertos de dominio y otros ingenieros— y a proyectos de alto impacto cuyo resultado se evalúa fuera del repositorio.',
 
       kickers: {
         why: 'Por qué existe',
@@ -100,27 +100,27 @@ const rolesEs = {
       },
 
       whyTitle: 'Lo que abrió',
-      whyBody: 'Trabajar por cuenta propia me puso en mesas donde la ingeniería era una voz entre varias. Ahí aprendí que un sistema no se juzga por su elegancia interna sino por si el experto del dominio lo reconoce como su proceso, si el diseñador puede sostener la experiencia encima, y si el negocio puede operarlo el lunes.',
-      whyBody2: 'Esa es la diferencia entre escribir código que cumple el requerimiento y construir algo que la gente realmente usa. No la aprendí en un curso: la aprendí teniendo que responder yo por el resultado, desde la primera conversación hasta la entrega.',
+      whyBody: 'El trabajo por cuenta propia sitúa a la ingeniería como una disciplina entre varias en la mesa de decisión. De ahí proviene el criterio central: un sistema no se evalúa por su elegancia interna, sino por si el experto de dominio lo reconoce como su proceso, si el diseño puede sostener una experiencia sobre él, y si la operación puede ejecutarlo desde el primer día.',
+      whyBody2: 'Esa distinción separa el código que satisface un requerimiento del sistema que efectivamente se adopta. Es un criterio que se adquiere asumiendo la responsabilidad completa del resultado, desde el levantamiento inicial hasta la entrega.',
 
       howTitle: 'Cómo trabajo',
-      howLede: 'El mismo método con un cliente de una industria que de otra. Lo que cambia es cuánto dominio tengo que aprender antes de escribir la primera línea.',
+      howLede: 'El método se mantiene constante entre industrias. La variable es el volumen de conocimiento de dominio que debe incorporarse antes de escribir la primera línea.',
       how: {
         domain: {
           title: 'Entender el dominio primero',
-          body: 'Antes de proponer arquitectura, entender el proceso real: quién lo hace hoy, con qué, y qué se rompe cuando falla. Un sistema que no modela el dominio correctamente es deuda desde el primer commit.',
+          body: 'Antes de proponer arquitectura, documentar el proceso real: quién lo ejecuta, con qué herramientas y qué consecuencias tiene su falla. Un sistema que modela incorrectamente el dominio constituye deuda técnica desde el primer commit.',
         },
         choose: {
           title: 'Elegir por el problema',
-          body: 'Tecnología de vanguardia y bien respaldada según lo que el problema pide, no por costumbre ni por lo que ya sé. La decisión se justifica con trade-offs, no con preferencia.',
+          body: 'Selección de tecnología actual y con soporte sostenido en función de los requisitos del problema. Cada decisión se documenta mediante análisis de trade-offs y no por preferencia o familiaridad.',
         },
         build: {
           title: 'Construir con el equipo',
-          body: 'Dentro de equipos multidisciplinarios: diseño, expertos del dominio y otros ingenieros. La arquitectura se discute con quien va a vivir encima de ella.',
+          body: 'Dentro de equipos multidisciplinarios de diseño, expertos de dominio y otros ingenieros. La arquitectura se valida con quienes construirán y operarán sobre ella.',
         },
         own: {
           title: 'Responder por el resultado',
-          body: 'De la primera conversación a la entrega. Sin un equipo detrás sobre el cual repartir la responsabilidad, entregar mal se nota de inmediato — y esa presión mejora el trabajo.',
+          body: 'Responsabilidad completa desde el levantamiento hasta la entrega. Sin una estructura sobre la cual distribuir la rendición de cuentas, la calidad del resultado es directamente atribuible, lo que eleva el estándar de ejecución.',
         },
       },
 
@@ -128,24 +128,24 @@ const rolesEs = {
       gave: {
         interdisciplinary: {
           title: 'Equipos interdisciplinarios',
-          body: 'Trabajar con diseñadores y expertos del dominio como pares, no como clientes internos a los que se entrega un producto terminado.',
+          body: 'Colaboración con diseño y expertos de dominio en calidad de pares durante todo el desarrollo, y no como receptores de un producto ya terminado.',
         },
         impact: {
           title: 'Proyectos de alto impacto',
-          body: 'Sistemas donde el resultado se mide fuera del código: un proceso que deja de doler, un negocio que puede escalar, una decisión que ahora tiene datos.',
+          body: 'Sistemas cuyo resultado se mide fuera del código: un proceso operativo corregido, un negocio en condiciones de escalar, una decisión respaldada por datos.',
         },
         judgement: {
           title: 'Criterio tecnológico',
-          body: 'Aplicar arquitecturas modernas, tecnología emergente y buenas prácticas para resolver problemas complejos — y saber cuándo lo emergente todavía no es la respuesta.',
+          body: 'Aplicación de arquitecturas modernas, tecnología emergente y buenas prácticas a problemas complejos, incluido el criterio para determinar cuándo la opción emergente aún no es la adecuada.',
         },
         ownership: {
           title: 'Responsabilidad completa',
-          body: 'Alcance, tiempos, entrega y lo que pasa después. Es la escuela más rápida que conozco para aprender a estimar.',
+          body: 'Alcance, plazos, entrega y soporte posterior. Es el marco más exigente para desarrollar capacidad de estimación realista.',
         },
       },
 
       roleTitle: 'Lo que sigo sosteniendo',
-      roleBody: 'Sigo tomando proyectos propios en paralelo a Radii y Evodeps, y no por el ingreso: es donde mantengo el músculo de entrar a un dominio que no conozco y salir con un sistema que sus expertos reconocen como suyo. Es el mismo músculo que necesito para todo lo demás que construyo.',
+      roleBody: 'Mantengo proyectos propios en paralelo a Radii y Evodeps por una razón concreta: sostienen la capacidad de incorporarse a un dominio desconocido y producir un sistema que sus propios especialistas validan. Esa competencia es transversal a todo lo demás que construyo.',
     },
 
     // -------------------------------------------------------------- Labsol
@@ -155,7 +155,7 @@ const rolesEs = {
       period: 'Sep 2023 — Nov 2024',
       tagline: 'Innovation Techs & Open Labs.',
       heroTitle: 'El laboratorio donde Zacatecas forma a quienes construyen su tecnología',
-      heroLede: 'El Laboratorio de Software Libre del COZCYT es el lugar por donde pasan miles de estudiantes zacatecanos a hacer sus prácticas, y desde donde se construye software real para las instituciones del estado. Estuve ahí catorce meses, y salí con dos sistemas entregados y en uso.',
+      heroLede: 'El Laboratorio de Software Libre del COZCYT concentra las prácticas profesionales de miles de estudiantes zacatecanos y desarrolla software en producción para las instituciones del estado. Permanecí catorce meses y entregué dos sistemas, ambos en uso.',
 
       kickers: {
         what: 'El lugar',
@@ -165,48 +165,48 @@ const rolesEs = {
       },
 
       whatTitle: 'Qué es Labsol',
-      whatBody: 'Un laboratorio de software libre del Consejo Zacatecano de Ciencia, Tecnología e Innovación. Dos cosas a la vez: la escuela práctica donde miles de estudiantes del estado hacen sus prácticas profesionales y su servicio social, y el equipo que construye el software que usan las instituciones públicas de Zacatecas.',
-      whatNote: 'Las dos cosas se sostienen entre sí: los proyectos son reales porque hay instituciones esperándolos, y los estudiantes se forman porque el trabajo tiene consecuencias.',
+      whatBody: 'Laboratorio de software libre del Consejo Zacatecano de Ciencia, Tecnología e Innovación. Cumple dos funciones simultáneas: formación práctica para miles de estudiantes del estado que cursan ahí sus prácticas profesionales y servicio social, y desarrollo del software que operan las instituciones públicas de Zacatecas.',
+      whatNote: 'Ambas funciones se refuerzan mutuamente: los proyectos son reales porque existen instituciones que dependen de ellos, y la formación es efectiva porque el trabajo tiene consecuencias verificables.',
 
       deliveredTitle: 'Dos sistemas, dos instituciones',
-      deliveredLede: 'No fueron ejercicios. Los dos se entregaron y se usan.',
+      deliveredLede: 'Ambos sistemas se entregaron formalmente y permanecen en operación.',
       delivered: {
         cosiap: {
           title: 'COSIAP — Sistema de Apoyos',
           org: 'Consejo Zacatecano de Ciencia, Tecnología e Innovación',
-          body: 'Cada solicitud de financiamiento público para investigación y emprendimiento se entregaba en papel. La plataforma digitalizó el proceso completo: los solicitantes suben su documentación y los administradores gestionan todo en un solo sistema.',
+          body: 'Cada solicitud de financiamiento público para investigación y emprendimiento se tramitaba en papel. La plataforma digitalizó el proceso completo: los solicitantes cargan su documentación y los administradores gestionan el ciclo íntegro desde un solo sistema.',
         },
         cargas: {
           title: 'Sistema de Cargas UAIE',
           org: 'Universidad Autónoma de Zacatecas',
-          body: 'Los coordinadores arman el horario de cada semestre, asignan profesores y concentran la información de los cursos en un lugar, mientras el sistema detecta conflictos entre profesores y grupos antes de publicar — el problema para el que se encargó.',
+          body: 'Los coordinadores construyen el horario de cada semestre, asignan profesorado y centralizan la información de los cursos, mientras el sistema detecta conflictos entre docentes y grupos antes de la publicación, que era el requerimiento central del encargo.',
         },
       },
       deliveredCta: 'Ver ambos en Proyectos',
 
       learnedTitle: 'Lo que se aprende entregando',
-      learnedLede: 'Liderar dos proyectos de punta a punta enseña cosas que un curso no alcanza a cubrir.',
+      learnedLede: 'Liderar dos proyectos de punta a punta desarrolla competencias que la formación académica no alcanza a cubrir.',
       learned: {
         endToEnd: {
           title: 'Entrega de principio a fin',
-          body: 'Ser responsable del resultado completo, no de una tarea dentro de él. Es lo que afianzó mi desarrollo full-stack más que cualquier otra cosa.',
+          body: 'Responsabilidad sobre el resultado completo y no sobre una tarea dentro de él. Fue el factor determinante en la consolidación de mi perfil full-stack.',
         },
         requirements: {
           title: 'Análisis de requerimientos',
-          body: 'Traducir lo que una institución dice que necesita a lo que su proceso realmente hace. Casi nunca es lo mismo.',
+          body: 'Traducir lo que una institución declara necesitar a lo que su proceso ejecuta en la práctica. Rara vez coinciden.',
         },
         design: {
           title: 'Diseño y pruebas',
-          body: 'Diseño de software y pruebas sobre sistemas que iban a usarse de verdad, con usuarios que no podían darse el lujo de que fallara.',
+          body: 'Diseño de software y pruebas sobre sistemas destinados a producción, con usuarios para quienes una falla tenía consecuencias operativas directas.',
         },
         management: {
           title: 'Gestión de proyecto',
-          body: 'Ciclos ágiles, planeación, y la conversación incómoda de avisar un retraso antes de la fecha y no el día de la entrega.',
+          body: 'Ciclos ágiles, planeación y comunicación temprana de desviaciones de cronograma, anticipándose a la fecha comprometida.',
         },
       },
 
       roleTitle: 'Por qué sigue contando',
-      roleBody: 'Fue mi primer contacto con software que le importa a alguien más que a mí. Dos instituciones públicas dependiendo de que algo funcione cambia por completo cómo escribes: no hay "ya después lo arreglo" cuando del otro lado hay un investigador esperando su apoyo o un coordinador publicando horarios. Ese estándar es el que me llevé, y es el que sigo usando.',
+      roleBody: 'Fue mi primer contacto con software del que dependen terceros. Dos instituciones públicas operando sobre el sistema modifican por completo el estándar de trabajo: la corrección diferida deja de ser una opción cuando del otro lado hay un investigador esperando la resolución de su apoyo o un coordinador publicando horarios. Ese estándar es el que conservo.',
     },
   },
 };

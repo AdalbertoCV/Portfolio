@@ -4,27 +4,27 @@
 const brandsEn = {
   timeline: {
     badge: 'Track record',
-    title: 'Four fronts, one obsession',
-    lede: 'I build software where the outcome matters: an AI-powered manufacturing platform, a custom development house, my own clients, and the lab where it all started.',
+    title: 'Four fronts, one standard',
+    lede: 'Four development contexts carrying responsibility for the outcome: an AI-powered manufacturing platform, a custom development house, an independent client portfolio, and the public laboratory where my professional training began.',
     featuredLabel: 'Current focus',
     present: 'Present',
     readStory: 'Read the full story',
     visitSite: 'Visit site',
     yearsLabel: 'years building',
     venturesTitle: 'And two companies of my own',
-    venturesLede: "I don't just write the code. I also decide what gets built, why, and for whom.",
+    venturesLede: 'Beyond development, the responsibility extends to defining what gets built, on what basis, and for which market.',
     venturesCta: 'See Ventures',
   },
 
   ventures: {
     badge: 'Ventures',
-    title: 'Two companies, two seats',
-    lede: 'In one I run the technology. In the other I run the company. Both started from the same idea: talent and ideas go to waste for lack of somewhere to land.',
+    title: 'Two companies, two roles',
+    lede: 'In one I run the technology; in the other, the company. Both proceed from the same diagnosis: talent and ideas are lost for want of a structure to receive and execute them.',
     roleCto: 'CTO & Co-founder',
     roleCeo: 'CEO & Founder',
     enter: 'Enter',
     statusBuilding: 'Building',
-    stackselectPitch: 'Bootcamps and technical assessment that take a developer with no experience all the way to a real first job.',
+    stackselectPitch: 'Bootcamps and a technical assessment platform directed at placing developers with no prior experience into employment.',
     moonphasePitch: 'Building the future of technology: real automation and R&D on what nobody has solved, with method and a written record.',
   },
 
@@ -58,7 +58,7 @@ const brandsEn = {
     whatNote: 'Aerospace, automotive and industrial. Geographic proximity, competitive cost and USMCA advantages for United States supply chains.',
 
     howTitle: 'How it works',
-    howLede: 'Four steps that used to take weeks of email back and forth.',
+    howLede: 'Four stages that in the traditional process require weeks of manual exchange.',
     how: {
       upload: {
         title: 'Automatic analysis',
@@ -66,20 +66,20 @@ const brandsEn = {
       },
       quote: {
         title: 'Instant quote',
-        body: 'Price and lead time in seconds, with material and finishing configurable. No waiting on a sales rep to reply.',
+        body: 'Price and lead time in seconds, with material and finishing configurable, without dependence on a commercial response cycle.',
       },
       produce: {
         title: 'Managed production',
-        body: 'The engineering team assigns the work to audited partners and supervises execution. The network is chosen on real capability, not on who happens to be free.',
+        body: 'The engineering team assigns the work to audited partners and supervises execution. Network selection responds to verified capability rather than immediate availability.',
       },
       trace: {
         title: 'Full traceability',
-        body: 'Delivery arrives with documentation, material certificates and CMM inspection reports. The whole file, not just the part.',
+        body: 'Delivery includes complete documentation, material certificates and CMM inspection reports: the full record alongside the part itself.',
       },
     },
 
     buildTitle: 'What I build there',
-    buildLede: 'I joined as a founding engineer. That means the stack, the architecture and the engineering practices the platform stands on were decided — and still are — with my voice at the table.',
+    buildLede: 'Joining as a founding engineer means direct participation in defining the stack, the architecture and the engineering practices the platform is built on, both in their initial design and in their evolution.',
     build: {
       backend: {
         title: 'Core backend services',
@@ -87,11 +87,11 @@ const brandsEn = {
       },
       workers: {
         title: 'Cloud workers',
-        body: 'I build and maintain workers on AWS and Azure that automate data processing and take manual load off the team.',
+        body: 'I build and maintain workers on AWS and Azure that automate data processing and reduce the team’s manual operational load.',
       },
       agents: {
         title: 'AI agents',
-        body: 'I develop agents with LangGraph and LangChain that automate decisions and internal operations that used to need human judgement at every step.',
+        body: 'I develop agents with LangGraph and LangChain that automate decisions and internal operations previously requiring human intervention at every stage.',
       },
       ml: {
         title: 'Machine Learning automation',
@@ -108,7 +108,7 @@ const brandsEn = {
     },
 
     stackTitle: 'The stack',
-    stackLede: 'Chosen for the problem, not out of habit.',
+    stackLede: 'Selected against the requirements of the problem.',
     groups: {
       services: 'Services and data',
       cloud: 'Cloud and platform',
@@ -117,7 +117,7 @@ const brandsEn = {
     },
 
     closingTitle: 'Why it matters',
-    closingBody: 'A mis-quoted part stalls a production line. A supplier without traceability blocks an aerospace certification. The software I write here is not a convenience layer over a process that already worked: it is the process. That is the part that keeps me here.',
+    closingBody: 'A mis-quoted part stalls a production line; a supplier without traceability blocks an aerospace certification. The software built here is not a convenience layer over a pre-existing process: it is the process itself, and that condition sets the standard the work is held to.',
   },
 
   // ---------------------------------------------------------- StackSelect
@@ -127,7 +127,7 @@ const brandsEn = {
     period: 'Incorporating',
     tagline: 'Talent.',
     heroTitle: 'The bridge between what university teaches and what industry asks for',
-    heroLede: 'StackSelect trains, assesses and places developers with no work experience into a real first job. We do not sell courses: we send the person ready to work.',
+    heroLede: 'StackSelect trains, assesses and places developers with no work experience into their first professional role. The deliverable is not the course, but the candidate in a position to start.',
 
     kickers: {
       name: 'The name',
@@ -138,10 +138,10 @@ const brandsEn = {
       purpose: 'The purpose',
     },
     nameTitle: 'The name',
-    nameBody: '"Stack" is the technology stack — the tools a developer works with. "Select" is selecting that talent and connecting it to companies. Together they say exactly what we do: choose the best developers and place them in the job market.',
+    nameBody: '"Stack" denotes the set of tools a developer works with. "Select" refers to selecting that talent and connecting it to companies. The combination describes the operation precisely: identify the strongest developers and place them in the job market.',
 
     problemTitle: 'The problem',
-    problemBody: 'There is an enormous gap between what university teaches and what companies actually ask for. Talented developers stay unemployed for lack of practical experience, with no idea how to prepare for a technical interview or what is expected of them on day one.',
+    problemBody: 'There is a documented gap between university training and the sector’s actual requirements. Technically capable developers remain unemployed for want of practical experience, with no specific preparation for a technical interview and no reference for what professional practice expects of them.',
     problemStat: 'Recent graduates with no first contact with a real job',
 
     solutionTitle: 'The solution',
@@ -149,34 +149,34 @@ const brandsEn = {
     solution: {
       train: {
         title: 'Specialised bootcamps',
-        body: 'Content focused on the real knowledge industry asks for, backed by the experience of professionals already inside it.',
+        body: 'Content directed at the knowledge industry effectively requires, validated by professionals currently practising in the sector.',
       },
       assess: {
         title: 'Technical assessment',
-        body: 'A platform that measures what the company is going to measure, so the technical interview stops being unfamiliar ground.',
+        body: 'A platform that assesses against the same criteria the hiring company will apply, removing the uncertainty of the technical interview process.',
       },
       place: {
         title: 'Real placement',
-        body: 'We assess, train where needed, and send the candidate ready to work. Placement is the deliverable, not an add-on.',
+        body: 'The process assesses, trains where required, and presents the candidate in a position to start. Placement is the deliverable, not an additional service.',
       },
     },
 
     edgeTitle: 'What sets us apart',
-    edgeBody: 'The competition sells preparation. We sell real, fast job placement: we assess, train if necessary, and send the candidate ready to work.',
-    edgeHonest: 'And what we do not have yet: we are a new brand. There is no recognition and no success stories to show. That gets built by delivering, not by promising.',
+    edgeBody: 'The sector’s offering concentrates on preparation. Our proposition is effective placement on short timelines: assessment, training where appropriate, and presentation of the candidate in a position to start.',
+    edgeHonest: 'Current limitation: the brand is recently established and holds no market recognition or documented track record. That base is built on delivered results.',
 
     valuesTitle: 'Values',
     values: {
-      commitment: { title: 'Commitment', body: 'To the candidate until they are placed, not until the course ends.' },
-      empathy: { title: 'Empathy', body: 'Understanding where someone comes from when they have never had a first chance.' },
-      solidarity: { title: 'Solidarity', body: 'Knowledge that opens a door does not get hoarded.' },
+      commitment: { title: 'Commitment', body: 'Support for the candidate extends through to effective placement, not to the end of the training programme.' },
+      empathy: { title: 'Empathy', body: 'Understanding the actual starting point of someone who has not yet accessed a first professional opportunity.' },
+      solidarity: { title: 'Solidarity', body: 'Knowledge that enables access to the job market is transmitted, not withheld.' },
     },
 
     purposeTitle: 'The purpose',
     purposeBody: 'To help young Mexican talent get into the information technology industry, and to lower the unemployment rate among recent graduates.',
 
     roleTitle: 'My role as CTO',
-    roleBody: 'I set the technical direction of the company: the architecture of the assessment platform, the stack it is built on, the technical content of the bootcamps, and the standard by which a candidate is judged ready. The placement promise only holds if the assessment is honest — and that assessment is an engineering problem.',
+    roleBody: 'I set the technical direction of the company: architecture of the assessment platform, the stack it is built on, the technical content of the bootcamps, and the criteria by which a candidate is certified ready. The placement promise is only sustainable if the assessment is rigorous, and that assessment is itself an engineering problem.',
   },
 
   // ------------------------------------------------------------ Moonphase
@@ -201,7 +201,7 @@ const brandsEn = {
 
     missionLabel: 'Mission',
     visionLabel: 'Vision',
-    missionBody: 'Turn the automation, innovation and invention ideas that today exist only in someone’s head into systems that work. And when something is not possible yet, put in writing what blocks it and what it would take — so we can come back the day it is.',
+    missionBody: 'Turn the automation, innovation and invention ideas that today exist only as proposals into operating systems. Where a solution is not viable, formally document what prevents it and what conditions would enable it, so it can be resumed when those conditions change.',
     visionBody: 'To be the company that turned the most impossible ideas into reality, and that documented the road to the ones still out of reach. The primary metric is impact: how many things exist in the world that would not exist without us. Size comes later, and it comes as a consequence.',
 
     methodTitle: 'The method',
@@ -235,14 +235,14 @@ const brandsEn = {
     laneOne: {
       label: 'Lane 1',
       title: 'Applied automation',
-      body: 'Concrete processes in industries, businesses and niches: inventory tracked by hand, reporting that lives in spreadsheets, operations with no traceability, integrations a person currently handles by copying data between systems. Closed scope, measurable deliverable, real client.',
-      note: 'It funds the operation and builds the technical muscle lane 2 needs.',
+      body: 'Concrete processes in industries, businesses and niches: manual inventory control, spreadsheet-based reporting, operations without traceability, and integrations resolved by transferring data between systems by hand. Closed scope, measurable deliverable, identified client.',
+      note: 'It funds the operation and develops the technical capability lane 2 requires.',
     },
     laneTwo: {
       label: 'Lane 2',
       title: 'R&D on open problems',
       body: 'Technology that does not exist yet, open questions, and problems the industry has written off, from any field of knowledge. They are measured not by success but by knowledge produced: what was ruled out, on what evidence, and what it would take to move forward. They get split into buildable pieces wherever the problem allows, and they get attacked even when the odds are against them.',
-      note: 'This is where invention happens. An "it cannot be done" with evidence and a map is a deliverable, not a failed project.',
+      note: 'This is the invention line. A negative result with evidence and a map of conditions is a deliverable, not a failed project.',
     },
 
     valuesTitle: 'Seven values',
@@ -276,8 +276,8 @@ const brandsEn = {
       },
       craft: {
         title: 'Craft and livelihood',
-        motto: 'The warehouse and the open problem, taken equally seriously.',
-        body: 'There is no such thing as a "minor" project. The technical muscle built solving a hundred concrete problems is exactly the one needed the day you attack one nobody has solved — and it is what pays for the research.',
+        motto: 'The operational project and the open problem, held to one standard.',
+        body: 'There is no such thing as a "minor" project. The technical capability accumulated solving a hundred concrete problems is the same one required when addressing a problem with no known solution, and it is what funds the research.',
       },
       betterWorld: {
         title: 'Wanting a better world',
@@ -287,7 +287,7 @@ const brandsEn = {
     },
 
     roleTitle: 'My role as CEO',
-    roleBody: 'I founded Moonphase and I run the company: what gets accepted as a project, how effort is split between the two lanes, and what gets written down when something turns out to be impossible. The hard part of the job is not choosing what to build — it is holding the method when an R&D project has gone three months without a result and the comfortable way out is to stop documenting it.',
+    roleBody: 'I founded Moonphase and I run the company: the criteria by which projects are admitted, how effort is distributed across the two lanes, and the documentation of negative results. The difficulty of the role is not choosing what to build, but holding the method when an R&D project has run three months without a result and the comfortable option is to suspend its documentation.',
   },
 
   // ------------------------------------------------------------- Evodeps

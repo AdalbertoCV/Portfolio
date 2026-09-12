@@ -7,7 +7,7 @@ const rolesEn = {
       badge: 'Software Engineer',
       company: 'Evodeps',
       period: 'Present',
-      tagline: 'Adapting is the product.',
+      tagline: 'Adaptability as a technical requirement.',
       heroTitle: 'Software, equipment and prototypes built to each client’s measure',
       heroLede: 'Evodeps develops software, equipment and custom technology prototypes and implementations, sized to each client’s needs and budget. I work there as a Software Engineer, inside cross-functional teams of development, design and prototyping.',
 
@@ -24,15 +24,15 @@ const rolesEn = {
       whatNote: 'The main differentiator is the ability to adapt to each client’s specific needs — better pricing, quality and efficiency of service — instead of selling the same solution every time.',
 
       offerTitle: 'Three fronts, one brief',
-      offerLede: 'Whatever the project asks for, not whatever is most convenient to produce.',
+      offerLede: 'Scope is set by the project, not by what is convenient to produce.',
       offer: {
         software: {
           title: 'Software development',
-          body: 'Systems built around the client’s real process, not around a template. This is where I spend most of my time.',
+          body: 'Systems built on the client’s actual process rather than on a template. This accounts for most of my work at the company.',
         },
         equipment: {
           title: 'Equipment',
-          body: 'The physical half of the brief: the hardware needed for the solution to work in the place it actually has to work.',
+          body: 'The physical component of the project: the equipment required for the solution to operate in its real environment of use.',
         },
         prototypes: {
           title: 'Prototypes and implementations',
@@ -46,7 +46,7 @@ const rolesEn = {
       visionBody: 'To lead technology development globally, recognised for delivering custom, high-quality solutions that exceed expectations. A reference point for innovation and adaptability, promoting a future where technology and creativity reshape the business and social landscape.',
 
       valuesTitle: 'Six values',
-      valuesLede: 'Not wall decoration: they describe how decisions get made when the client, the budget and the deadline pull in different directions.',
+      valuesLede: 'They function as decision criteria when client, budget and deadline impose mutually incompatible constraints.',
       values: {
         innovation: {
           title: 'Innovation',
@@ -58,7 +58,7 @@ const rolesEn = {
         },
         team: {
           title: 'Collaborative teams',
-          body: 'Collaboration across the cross-functional development, design and prototyping teams, so the synergy is real rather than declared.',
+          body: 'Effective collaboration across the cross-functional development, design and prototyping teams throughout the project lifecycle.',
         },
         adaptability: {
           title: 'Adaptability',
@@ -75,7 +75,7 @@ const rolesEn = {
       },
 
       roleTitle: 'My role as a Software Engineer',
-      roleBody: 'I build the software on these projects and work inside cross-functional teams, with design and prototyping at the same table. The part that has taught me most is adaptability as a technical requirement rather than a sales line: when every client brings a different process, budget and deadline, the architecture has to bend without breaking — and that is decided in the first conversation.',
+      roleBody: 'I develop the software on these projects within cross-functional teams, in direct coordination with design and prototyping. The central lesson has been treating adaptability as an architectural requirement rather than a commercial argument: when every client presents a different process, budget and deadline, the system must accommodate variation without compromising its integrity, and that condition is set during initial requirements gathering.',
     },
 
     // ----------------------------------------------------------- Freelance
@@ -83,9 +83,9 @@ const rolesEn = {
       badge: 'Software Engineer · Independent',
       company: 'Independent work',
       period: 'Jan 2025 — Present',
-      tagline: 'The door into multidisciplinary teams.',
-      heroTitle: 'Working on my own, with teams that are anything but',
-      heroLede: 'I build software for clients across different industries as an independent engineer. It is what opened the door to working inside multidisciplinary teams — designers, domain experts, other engineers — and on high-impact projects where the result is measured outside the repository.',
+      tagline: 'Access to multidisciplinary teams.',
+      heroTitle: 'Independent engineering inside multidisciplinary teams',
+      heroLede: 'I build software for clients across different industries as an independent engineer. This route provided access to multidisciplinary teams — design, domain experts and other engineers — and to high-impact projects whose results are assessed outside the repository.',
 
       kickers: {
         why: 'Why it exists',
@@ -95,27 +95,27 @@ const rolesEn = {
       },
 
       whyTitle: 'What it opened',
-      whyBody: 'Working for myself put me at tables where engineering was one voice among several. That is where I learned a system is not judged on its internal elegance but on whether the domain expert recognises it as their process, whether the designer can hold an experience on top of it, and whether the business can operate it on Monday.',
-      whyBody2: 'That is the difference between writing code that satisfies the requirement and building something people actually use. I did not learn it on a course: I learned it by being the one accountable for the result, from the first conversation through to delivery.',
+      whyBody: 'Independent work places engineering as one discipline among several at the decision table. The central criterion follows from that: a system is not assessed on its internal elegance, but on whether the domain expert recognises it as their process, whether design can sustain an experience on top of it, and whether operations can run it from day one.',
+      whyBody2: 'That distinction separates code that satisfies a requirement from a system that is actually adopted. It is judgement acquired by holding full accountability for the result, from initial gathering through to delivery.',
 
       howTitle: 'How I work',
-      howLede: 'The same method with a client in one industry as in another. What changes is how much domain I have to learn before writing the first line.',
+      howLede: 'The method stays constant across industries. The variable is the volume of domain knowledge that has to be absorbed before writing the first line.',
       how: {
         domain: {
           title: 'Understand the domain first',
-          body: 'Before proposing architecture, understand the real process: who does it today, with what, and what breaks when it fails. A system that models the domain wrong is debt from the first commit.',
+          body: 'Before proposing architecture, document the actual process: who executes it, with which tools, and what the consequences of its failure are. A system that models the domain incorrectly constitutes technical debt from the first commit.',
         },
         choose: {
           title: 'Choose for the problem',
-          body: 'Modern, well-supported technology chosen for what the problem asks for, not out of habit or out of what I already know. The decision is justified by trade-offs, not by preference.',
+          body: 'Current, well-supported technology selected against the requirements of the problem. Each decision is documented through trade-off analysis rather than preference or familiarity.',
         },
         build: {
           title: 'Build with the team',
-          body: 'Inside multidisciplinary teams: design, domain experts and other engineers. Architecture is discussed with the people who will live on top of it.',
+          body: 'Within multidisciplinary teams of design, domain experts and other engineers. Architecture is validated with those who will build and operate on top of it.',
         },
         own: {
           title: 'Own the result',
-          body: 'From the first conversation to delivery. With no team to spread the accountability across, delivering badly shows immediately — and that pressure improves the work.',
+          body: 'Full responsibility from gathering through to delivery. With no structure across which to distribute accountability, the quality of the result is directly attributable, which raises the standard of execution.',
         },
       },
 
@@ -123,24 +123,24 @@ const rolesEn = {
       gave: {
         interdisciplinary: {
           title: 'Multidisciplinary teams',
-          body: 'Working with designers and domain experts as peers, not as internal clients handed a finished product.',
+          body: 'Collaboration with design and domain experts as peers throughout development, rather than as recipients of a finished product.',
         },
         impact: {
           title: 'High-impact projects',
-          body: 'Systems where the result is measured outside the code: a process that stops hurting, a business that can scale, a decision that finally has data behind it.',
+          body: 'Systems whose result is measured outside the code: an operational process corrected, a business positioned to scale, a decision supported by data.',
         },
         judgement: {
           title: 'Technical judgement',
-          body: 'Applying modern architectures, emerging technology and best practice to complex problems — and knowing when the emerging option is not yet the answer.',
+          body: 'Applying modern architectures, emerging technology and best practice to complex problems, including the judgement to determine when the emerging option is not yet appropriate.',
         },
         ownership: {
           title: 'Full ownership',
-          body: 'Scope, timelines, delivery and whatever happens afterwards. It is the fastest school I know for learning how to estimate.',
+          body: 'Scope, timelines, delivery and subsequent support. It is the most demanding framework for developing realistic estimation.',
         },
       },
 
       roleTitle: 'What I keep doing',
-      roleBody: 'I still take my own projects alongside Radii and Evodeps, and not for the income: it is where I keep the muscle of walking into a domain I do not know and walking out with a system its experts recognise as theirs. It is the same muscle everything else I build depends on.',
+      roleBody: 'I maintain my own projects alongside Radii and Evodeps for a specific reason: they sustain the capacity to enter an unfamiliar domain and produce a system its own specialists validate. That competency is transferable to everything else I build.',
     },
 
     // -------------------------------------------------------------- Labsol
@@ -150,7 +150,7 @@ const rolesEn = {
       period: 'Sep 2023 — Nov 2024',
       tagline: 'Innovation Techs & Open Labs.',
       heroTitle: 'The lab where Zacatecas trains the people who build its technology',
-      heroLede: 'The COZCYT Free Software Laboratory is where thousands of Zacatecan students pass through for their practical training, and where real software gets built for the state’s institutions. I spent fourteen months there, and left with two systems delivered and in use.',
+      heroLede: 'The COZCYT Free Software Laboratory hosts the professional placements of thousands of Zacatecan students and develops production software for the state’s institutions. I spent fourteen months there and delivered two systems, both in use.',
 
       kickers: {
         what: 'The place',
@@ -160,48 +160,48 @@ const rolesEn = {
       },
 
       whatTitle: 'What Labsol is',
-      whatBody: 'A free software laboratory of the Zacatecan Council of Science, Technology and Innovation. Two things at once: the practical school where thousands of the state’s students do their professional placements and social service, and the team that builds the software Zacatecas’ public institutions run on.',
-      whatNote: 'The two hold each other up: the projects are real because institutions are waiting on them, and the students learn because the work has consequences.',
+      whatBody: 'A free software laboratory of the Zacatecan Council of Science, Technology and Innovation. It serves two simultaneous functions: practical training for thousands of the state’s students completing professional placements and social service, and development of the software Zacatecas’ public institutions operate on.',
+      whatNote: 'The two functions reinforce each other: the projects are real because institutions depend on them, and the training is effective because the work has verifiable consequences.',
 
       deliveredTitle: 'Two systems, two institutions',
-      deliveredLede: 'Not exercises. Both were delivered, and both are in use.',
+      deliveredLede: 'Both systems were formally delivered and remain in operation.',
       delivered: {
         cosiap: {
           title: 'COSIAP — Grant management',
           org: 'Zacatecan Council of Science, Technology and Innovation',
-          body: 'Every application for public research and entrepreneurship funding arrived on paper. The platform moved the whole process online: applicants upload their documentation and administrators manage everything in one system.',
+          body: 'Every application for public research and entrepreneurship funding was processed on paper. The platform digitised the entire process: applicants upload their documentation and administrators manage the full cycle from a single system.',
         },
         cargas: {
           title: 'UAIE Course-load System',
           org: 'Autonomous University of Zacatecas',
-          body: 'Coordinators build each semester’s timetable, assign professors and keep course information in one place, while the system catches conflicts between professors and class groups before publication — the problem it was commissioned for.',
+          body: 'Coordinators build each semester’s timetable, assign teaching staff and centralise course information, while the system detects conflicts between faculty and class groups ahead of publication, which was the central requirement of the commission.',
         },
       },
       deliveredCta: 'See both in Projects',
 
       learnedTitle: 'What delivering teaches',
-      learnedLede: 'Leading two projects end to end teaches things a course cannot reach.',
+      learnedLede: 'Leading two projects end to end develops competencies that academic training does not reach.',
       learned: {
         endToEnd: {
           title: 'End-to-end delivery',
-          body: 'Being accountable for the whole result, not for a task inside it. It sharpened my full-stack development more than anything else.',
+          body: 'Accountability for the complete result rather than for a task within it. It was the determining factor in consolidating my full-stack profile.',
         },
         requirements: {
           title: 'Requirements analysis',
-          body: 'Translating what an institution says it needs into what its process actually does. They are almost never the same thing.',
+          body: 'Translating what an institution states it needs into what its process actually executes. The two rarely coincide.',
         },
         design: {
           title: 'Design and testing',
-          body: 'Software design and testing on systems that were going to be used for real, by users who could not afford them to fail.',
+          body: 'Software design and testing on systems destined for production, with users for whom a failure carried direct operational consequences.',
         },
         management: {
           title: 'Project management',
-          body: 'Agile cycles, planning, and the uncomfortable conversation of flagging a delay ahead of the date rather than on delivery day.',
+          body: 'Agile cycles, planning, and early communication of schedule deviations, ahead of the committed date.',
         },
       },
 
       roleTitle: 'Why it still counts',
-      roleBody: 'It was my first contact with software that mattered to someone other than me. Two public institutions depending on something working changes how you write entirely: there is no "I will fix it later" when a researcher is waiting on their grant or a coordinator is publishing timetables. That standard is what I took with me, and it is the one I still work to.',
+      roleBody: 'It was my first contact with software that third parties depend on. Two public institutions operating on the system changes the standard of work entirely: deferred correction stops being an option when a researcher is waiting on the resolution of their grant or a coordinator is publishing timetables. That standard is the one I have kept.',
     },
   },
 };

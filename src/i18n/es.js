@@ -41,7 +41,7 @@ const es = {
     heading: 'Sobre Mí:',
     name: 'Adal Cerrillo',
     role: 'Software Engineer',
-    bio: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS y Azure que automatizan el procesamiento de datos, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad que sostienen una plataforma de microservicios. Trabajo con Python, Java, JavaScript y C#, sobre Django, Spring Boot y React, y mis intereses van hacia los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Me formé como Ingeniero de Software en la Universidad Autónoma de Zacatecas. Lo que me mueve es la innovación continua: usar tecnología emergente para influir en hacia dónde va la industria del software, y combinar ingeniería, diseño y visión de negocio para construir soluciones que perduren.',
+    bio: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS y Azure que automatizan el procesamiento de datos, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad que sostienen una plataforma de microservicios. Trabajo con Python, Java, JavaScript y C#, sobre Django, Spring Boot y React, y mis intereses van hacia los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Me formé como Ingeniero de Software en la Universidad Autónoma de Zacatecas. Mi eje de trabajo es la innovación continua: aplicar tecnología emergente para incidir en la dirección de la industria del software, e integrar ingeniería, diseño y criterio de negocio en soluciones sostenibles a largo plazo.',
     downloadCv: 'Descargar CV',
     cvFormat: 'PDF',
     openInBrowser: 'Abrir en el navegador',
@@ -66,7 +66,7 @@ const es = {
     heading: 'Educación:',
     university: 'Universidad Autónoma de Zacatecas',
     years: '(2020 - 2024)',
-    body: 'Obtuve mi formación académica como Software Engineer en la Unidad Académica de Ingeniería Eléctrica de la Universidad Autónoma de Zacatecas. Fue ahí donde cultivé mi curiosidad y creatividad en el desarrollo de sistemas de software, además de adquirir conocimientos sólidos para desarrollar soluciones de alta calidad, siempre respaldadas por las mejores prácticas.',
+    body: 'Cursé la formación de Ingeniero de Software en la Unidad Académica de Ingeniería Eléctrica de la Universidad Autónoma de Zacatecas, donde consolidé la base técnica del desarrollo de sistemas y el criterio para construir soluciones de alta calidad sustentadas en buenas prácticas de ingeniería.',
     description: 'La Universidad Autónoma de Zacatecas Francisco García Salinas (UAZ) es la principal institución de educación superior de Zacatecas, México. Está organizada en áreas y unidades académicas enfocadas en la docencia, la investigación, la extensión y la gestión académica. La UAZ recibe a estudiantes de Zacatecas y de otros estados en campos como biología, humanidades, ingeniería, idiomas, artes, agronomía y ciencias exactas. La universidad promueve activamente la ciencia, la tecnología y la innovación.',
   },
   certifications: {
@@ -86,7 +86,7 @@ const es = {
       company: 'Freelance',
       period: 'Ene 2025 — Actualidad',
       title: 'Software Engineer',
-      body: 'Desarrollo software para clientes como ingeniero independiente, trabajando dentro de equipos multidisciplinarios — diseñadores, expertos del dominio y otros ingenieros — para convertir problemas de negocio en sistemas que la gente realmente usa. Elijo tecnología de vanguardia y bien respaldada según el problema, no por costumbre, y me hago responsable del resultado desde la primera conversación hasta la entrega.',
+      body: 'Desarrollo software para clientes como ingeniero independiente, dentro de equipos multidisciplinarios —diseño, expertos del dominio y otros ingenieros— con el objetivo de traducir problemas de negocio en sistemas efectivamente adoptados. La selección tecnológica responde a los requisitos del problema y se documenta mediante análisis de trade-offs, con responsabilidad íntegra sobre el resultado desde el levantamiento inicial hasta la entrega.',
     },
     labsol: {
       company: 'Labsol Network',
@@ -100,7 +100,7 @@ const es = {
     pbienestar: {
       title: 'Sistema de Agendamiento de Citas',
       label: 'Punto Bienestar',
-      body: 'Sistema de agendamiento de citas para una clínica de atención psicológica profesional. Los administradores gestionan la disponibilidad de los especialistas y revisan los detalles de cada cita antes de confirmarla, manteniendo el criterio clínico en el proceso en lugar de dejar el agendamiento a una cola automatizada. El sistema notifica por correo electrónico a pacientes, especialistas y administradores cada vez que una cita cambia, y registra las citas confirmadas en el Google Calendar de los usuarios mediante la API de Calendar, para que los recordatorios lleguen donde la gente ya los revisa. El acceso está protegido con autenticación JSON Web Token.',
+      body: 'Sistema de agendamiento de citas para una clínica de atención psicológica profesional. Los administradores gestionan la disponibilidad de los especialistas y revisan los detalles de cada cita antes de confirmarla, manteniendo el criterio clínico en el proceso en lugar de dejar el agendamiento a una cola automatizada. El sistema notifica por correo electrónico a pacientes, especialistas y administradores cada vez que una cita cambia, y registra las citas confirmadas en el Google Calendar de los usuarios mediante la API de Calendar, de modo que los recordatorios operen sobre la herramienta de agenda que ya utilizan. El acceso está protegido con autenticación JSON Web Token.',
     },
     cosiap: {
       title: 'Sistema de Apoyos COZCyT',
@@ -115,12 +115,12 @@ const es = {
     bazarSol: {
       title: 'Bazar Sol',
       label: 'Bazar Sol',
-      body: 'Plataforma de comercio electrónico para una tienda de ropa, desarrollada como proyecto universitario. Los administradores gestionan el catálogo: dan de alta existencias, ajustan precios y mantienen las descripciones de los productos. Los clientes lo exploran, guardan una lista privada de favoritos y agregan artículos al carrito para reservarlos.',
+      body: 'Plataforma de comercio electrónico para una tienda de ropa, desarrollada como proyecto universitario. Los administradores gestionan el catálogo: dan de alta existencias, ajustan precios y mantienen las descripciones de los productos. Los clientes consultan el catálogo, mantienen una lista privada de favoritos y agregan artículos al carrito para reservarlos.',
     },
     rentazac: {
       title: 'RentaZac',
       label: 'RentaZac',
-      body: 'Plataforma de anuncios de renta para la comunidad estudiantil de Zacatecas. Estudiantes y arrendadores de la ciudad coordinaban el alojamiento mediante publicaciones en redes sociales; RentaZac les da a ambos un lugar dedicado para publicar y explorar rentas. Desarrollada como proyecto universitario.',
+      body: 'Plataforma de anuncios de renta para la comunidad estudiantil de Zacatecas. Estudiantes y arrendadores de la ciudad coordinaban el alojamiento mediante publicaciones dispersas en redes sociales; RentaZac centraliza la publicación y la búsqueda en una plataforma dedicada. Desarrollada como proyecto universitario.',
     },
   },
 };

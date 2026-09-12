@@ -17,10 +17,10 @@ const cvEs = {
     profileTitle: 'Perfil profesional',
     profileKicker: 'Quién soy',
     profileBody: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS y Azure, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad de una plataforma de microservicios.',
-    profileBody2: 'Trabajo con Python, Java, JavaScript y C#, sobre Django, Spring Boot y React, y mis intereses van hacia los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Lo que me mueve es la innovación continua: usar tecnología emergente para influir en hacia dónde va la industria del software, y combinar ingeniería, diseño y visión de negocio para construir soluciones que perduren.',
+    profileBody2: 'Trabajo con Python, Java, JavaScript, TypeScript, C#, Go y PHP, sobre Django, Spring Boot, Laravel y React. Mis áreas de interés técnico son los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Mi enfoque profesional combina la adopción rigurosa de tecnología emergente con criterios de ingeniería, diseño y negocio, orientado a construir sistemas sostenibles en el tiempo.',
 
     nowKicker: 'Ahora mismo',
-    nowTitle: 'Cuatro frentes en paralelo',
+    nowTitle: 'Cuatro frentes simultáneos',
     now: {
       radii: {
         label: 'Founding Software Engineer',
@@ -44,11 +44,11 @@ const cvEs = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'Tecnologías con las que construyo',
-    skillsLede: 'Elegidas por el problema, no por costumbre. Lo que uso a diario está arriba; lo que exploro, al final.',
+    skillsLede: 'Seleccionadas en función del problema y no por familiaridad. El listado avanza de uso cotidiano a áreas en exploración.',
 
     practiceKicker: 'Práctica de ingeniería',
     practiceTitle: 'Cómo trabajo, no solo con qué',
-    practiceLede: 'Un stack se aprende. Lo que distingue un sistema que aguanta de uno que no son estas decisiones.',
+    practiceLede: 'Un stack se aprende; el criterio con el que se toman estas decisiones es lo que determina si un sistema resiste en producción.',
     practice: {
       systems: 'Diseño de sistemas y arquitectura',
       systemsItems: [
@@ -112,11 +112,11 @@ const cvEs = {
 
     interestsKicker: 'Intereses',
     interestsTitle: 'De dónde sale la forma en que pienso',
-    interestsLede: 'No son pasatiempos de relleno. Cada uno entrena algo que termina apareciendo en cómo resuelvo problemas — y varios de ellos deciden directamente qué construyo y por qué.',
+    interestsLede: 'Cada uno desarrolla una capacidad que se traslada al trabajo técnico, y varios de ellos influyen directamente en qué construyo y con qué criterio.',
     interests: {
       innovation: {
         title: 'Innovación constante y prospectiva',
-        body: 'Me empapo de información todos los días: documentales, podcasts, lectura científica y de negocio, papers y seguimiento de tecnología emergente. No es consumo pasivo. Es de donde sale saber qué se está volviendo posible antes de que sea obvio, y lo que me permite elegir tecnología por criterio en lugar de por moda.',
+        body: 'Mantengo una rutina diaria de actualización: documentales, podcasts, publicaciones científicas y de negocio, y seguimiento sistemático de tecnología emergente. El objetivo es identificar qué capacidades se vuelven viables antes de que se generalicen, y sostener decisiones tecnológicas sobre criterio verificable en lugar de sobre tendencia.',
         tags: [
           'Documentales',
           'Podcasts',
@@ -128,7 +128,7 @@ const cvEs = {
       },
       business: {
         title: 'Negocio, startups y capital',
-        body: 'Dirijo dos empresas propias, y eso obliga a aprender el otro lado del problema: cómo se financia lo que se construye, qué convierte una idea en un negocio y no solo en un sistema, y cuándo la decisión correcta no es la técnica. Me interesan el capital de riesgo, el levantamiento de fondos y cómo se estructura una compañía que tiene que sobrevivir a su primer producto.',
+        body: 'Dirigir dos empresas propias exige comprender la dimensión que no es técnica: cómo se financia lo que se construye, qué distingue un negocio viable de un sistema bien hecho, y en qué casos la decisión correcta no corresponde al criterio de ingeniería. Sigo de cerca el capital de riesgo, los procesos de levantamiento de fondos y la estructuración de compañías más allá de su primer producto.',
         tags: [
           'Startups',
           'Fundraising',
@@ -140,7 +140,7 @@ const cvEs = {
       },
       science: {
         title: 'Automatización, ciencia y fronteras físicas',
-        body: 'Veo un proceso y lo primero que pienso es cómo se automatiza, o qué tecnología habría que inventar para que deje de hacerse a mano. Es la misma curiosidad que me llevó al software, y nunca se quedó en la pantalla: sigo de cerca la robótica, la mecatrónica y el hardware —donde el código deja de ser abstracto y tiene que mover algo— y leo sobre nanotecnología, computación cuántica, aeronáutica y astronomía, los lugares donde la ingeniería todavía choca con límites físicos de verdad.',
+        body: 'Analizo los procesos que observo en términos de automatización: qué parte es sistematizable y qué tecnología haría falta para eliminar la intervención manual. Ese mismo criterio se extiende más allá del software hacia la robótica, la mecatrónica y el hardware, donde el código debe producir un efecto físico verificable. Sigo además la nanotecnología, la computación cuántica, la aeronáutica y la astronomía, campos donde la ingeniería opera contra límites físicos reales.',
         tags: [
           'Automatización de procesos',
           'Robótica',
@@ -154,7 +154,7 @@ const cvEs = {
       },
       arts: {
         title: 'El arte, en todas sus formas',
-        body: 'El arte no es un descanso del trabajo técnico: es la otra mitad de cómo pienso. La música, la literatura, el cine, el teatro, la moda, el dibujo y la animación los sigo con la misma seriedad con la que sigo la ingeniería. Escribo novelas y canciones, llevo proyectos musicales propios y dibujo. Ahí se entrenan la estructura, el ritmo y el criterio estético — tres cosas que después no se pueden improvisar frente a una interfaz.',
+        body: 'La formación artística ocupa un lugar equivalente al técnico en mi criterio profesional. Sigo con rigor la música, la literatura, el cine, el teatro, la moda, el dibujo y la animación. En el plano práctico escribo novela y canción, y desarrollo proyectos musicales propios. Esa disciplina desarrolla el manejo de la estructura, el ritmo y el criterio estético, competencias directamente aplicables al diseño de interfaces y de producto.',
         tags: [
           'Música',
           'Literatura',
@@ -169,12 +169,12 @@ const cvEs = {
         ],
       },
       sports: {
-        title: 'Deporte, disciplina y movimiento',
-        body: 'Entreno en el gimnasio de forma constante y hago parkour, y cualquier deporte de equipo me resulta interesante por la coordinación que exige. Los deportes extremos —BMX, skate— me atraen por la misma razón que la ingeniería: hay que leer el terreno, calcular el riesgo y comprometerse con la decisión. De ahí salen la constancia, la resiliencia y la convicción de que un rendimiento sostenible vale más que un pico.',
+        title: 'Deporte y disciplina física',
+        body: 'Mantengo una rutina de entrenamiento constante. Me interesan los deportes de equipo por la coordinación y la lectura de situación que demandan, y disciplinas como el parkour, el BMX y el skate por la relación que establecen entre riesgo calculado y ejecución precisa. De esa práctica provienen la constancia, la resiliencia y el criterio de que el rendimiento sostenido supera al pico aislado.',
         tags: [
-          'Gimnasio',
-          'Parkour',
+          'Entrenamiento de fuerza',
           'Deportes de equipo',
+          'Parkour',
           'BMX',
           'Skate',
           'Deportes extremos',
@@ -183,7 +183,7 @@ const cvEs = {
       },
       culture: {
         title: 'Gastronomía, viajes y otras culturas',
-        body: 'Viajar y comer bien no son el objetivo: son la excusa. Lo que busco es entender cómo vive y piensa gente que no creció donde yo, porque cada cultura resuelve los mismos problemas de formas que a mí no se me habrían ocurrido. Esa curiosidad es exactamente la misma que uso al entrar a un dominio técnico que no conozco, y por eso enriquece el trabajo en lugar de competir con él.',
+        body: 'El viaje y la gastronomía funcionan como vía de acceso a otras culturas. El interés real está en observar cómo poblaciones con contextos distintos resuelven problemas equivalentes, con soluciones que no surgirían desde un solo marco de referencia. Es el mismo ejercicio que aplico al incorporarme a un dominio técnico desconocido, y por eso constituye un complemento del trabajo y no una distracción.',
         tags: [
           'Culturas del mundo',
           'Gastronomía',

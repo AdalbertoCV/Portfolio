@@ -13,10 +13,10 @@ const cvEn = {
     profileTitle: 'Professional profile',
     profileKicker: 'Who I am',
     profileBody: 'Full-stack software engineer building backend services, cloud infrastructure and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS and Azure, develop AI agents with LangGraph and LangChain, and maintain the CI/CD pipelines and observability of a microservices platform.',
-    profileBody2: 'I work across Python, Java, JavaScript and C#, with Django, Spring Boot and React, and my interests run to distributed systems, event-driven architecture, LLM systems and RAG, and platform engineering. What drives me is continuous innovation: using emerging technology to shape where the software industry is going, and combining engineering with design and business thinking to build solutions that last.',
+    profileBody2: 'I work across Python, Java, JavaScript, TypeScript, C#, Go and PHP, with Django, Spring Boot, Laravel and React. My technical focus areas are distributed systems, event-driven architecture, LLM systems and RAG, and platform engineering. My professional approach combines the rigorous adoption of emerging technology with engineering, design and business criteria, directed at systems that remain sustainable over time.',
 
     nowKicker: 'Right now',
-    nowTitle: 'Four fronts in parallel',
+    nowTitle: 'Four concurrent fronts',
     now: {
       radii: {
         label: 'Founding Software Engineer',
@@ -40,11 +40,11 @@ const cvEn = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'What I build with',
-    skillsLede: 'Chosen for the problem, not out of habit. What I use daily is at the top; what I explore is at the end.',
+    skillsLede: 'Selected according to the problem rather than to familiarity. The list runs from daily use through to areas under exploration.',
 
     practiceKicker: 'Engineering practice',
     practiceTitle: 'How I work, not just what with',
-    practiceLede: 'A stack can be learned. What separates a system that holds from one that does not is these decisions.',
+    practiceLede: 'A stack can be learned; the judgement behind these decisions is what determines whether a system holds in production.',
     practice: {
       systems: 'Systems design and architecture',
       systemsItems: [
@@ -108,11 +108,11 @@ const cvEn = {
 
     interestsKicker: 'Interests',
     interestsTitle: 'Where the way I think comes from',
-    interestsLede: 'Not filler hobbies. Each one trains something that ends up showing in how I solve problems — and several of them decide outright what I build and why.',
+    interestsLede: 'Each develops a capability that carries over into the technical work, and several of them bear directly on what I build and on what basis.',
     interests: {
       innovation: {
         title: 'Constant innovation and foresight',
-        body: 'I soak up information every day: documentaries, podcasts, scientific and business reading, papers, and tracking emerging technology. It is not passive consumption. It is where knowing what is becoming possible before it is obvious comes from, and what lets me choose technology on judgement rather than on fashion.',
+        body: 'I maintain a daily research routine: documentaries, podcasts, scientific and business publications, and systematic tracking of emerging technology. The purpose is to identify which capabilities become viable before they are widely adopted, and to ground technology decisions in verifiable judgement rather than in trend.',
         tags: [
           'Documentaries',
           'Podcasts',
@@ -124,7 +124,7 @@ const cvEn = {
       },
       business: {
         title: 'Business, startups and capital',
-        body: 'I run two companies of my own, and that forces you to learn the other half of the problem: how what you build gets funded, what turns an idea into a business rather than just a system, and when the right call is not the technical one. I follow venture capital, fundraising, and how a company gets structured to survive its own first product.',
+        body: 'Running two companies of my own requires understanding the dimension that is not technical: how the work gets funded, what separates a viable business from a well-built system, and where the correct decision does not follow from engineering criteria. I follow venture capital, fundraising processes, and how companies are structured to outlast their first product.',
         tags: [
           'Startups',
           'Fundraising',
@@ -136,7 +136,7 @@ const cvEn = {
       },
       science: {
         title: 'Automation, science and physical frontiers',
-        body: 'I look at a process and the first thing I think is how it gets automated, or what technology would have to be invented for it to stop being done by hand. It is the same curiosity that pulled me into software, and it never stayed on the screen: I follow robotics, mechatronics and hardware closely — where code stops being abstract and has to move something — and I read about nanotechnology, quantum computing, aeronautics and astronomy, the places where engineering still runs into real physical limits.',
+        body: 'I analyse the processes I encounter in terms of automation: which parts are systematisable, and what technology would be required to remove manual intervention. The same criterion extends past software into robotics, mechatronics and hardware, where code has to produce a verifiable physical effect. I also follow nanotechnology, quantum computing, aeronautics and astronomy, fields where engineering operates against real physical limits.',
         tags: [
           'Process automation',
           'Robotics',
@@ -150,7 +150,7 @@ const cvEn = {
       },
       arts: {
         title: 'Art, in all its forms',
-        body: 'Art is not a break from the technical work: it is the other half of how I think. Music, literature, cinema, theatre, fashion, drawing and animation are things I follow with the same seriousness I give engineering. I write novels and songs, run musical projects of my own, and draw. That is where structure, rhythm and aesthetic judgement are trained — three things that cannot be improvised later in front of an interface.',
+        body: 'Artistic training holds a place equivalent to the technical one in how I work. I follow music, literature, cinema, theatre, fashion, drawing and animation with the same rigour. In practice I write novels and songs, and develop musical projects of my own. That discipline builds command of structure, rhythm and aesthetic judgement — competencies that apply directly to interface and product design.',
         tags: [
           'Music',
           'Literature',
@@ -165,12 +165,12 @@ const cvEn = {
         ],
       },
       sports: {
-        title: 'Sport, discipline and movement',
-        body: 'I train at the gym consistently and do parkour, and any team sport interests me for the coordination it demands. Extreme sports — BMX, skate — pull me in for the same reason engineering does: you have to read the terrain, price the risk and commit to the decision. That is where consistency, resilience and the conviction that sustainable performance beats a peak all come from.',
+        title: 'Sport and physical discipline',
+        body: 'I keep a consistent training routine. Team sports interest me for the coordination and situational reading they demand, and disciplines such as parkour, BMX and skate for the relationship they establish between calculated risk and precise execution. That practice is the source of consistency, resilience, and the view that sustained performance outweighs an isolated peak.',
         tags: [
-          'Gym',
-          'Parkour',
+          'Strength training',
           'Team sports',
+          'Parkour',
           'BMX',
           'Skate',
           'Extreme sports',
@@ -179,7 +179,7 @@ const cvEn = {
       },
       culture: {
         title: 'Food, travel and other cultures',
-        body: 'Travelling and eating well are not the point: they are the excuse. What I am after is understanding how people who did not grow up where I did live and think, because every culture solves the same problems in ways that would never have occurred to me. That curiosity is exactly the one I use walking into a technical domain I do not know, which is why it enriches the work rather than competing with it.',
+        body: 'Travel and food serve as a route into other cultures. The real interest is in observing how populations with different contexts solve equivalent problems, arriving at solutions that would not emerge from a single frame of reference. It is the same exercise I apply when entering an unfamiliar technical domain, and for that reason it complements the work rather than competing with it.',
         tags: [
           'World cultures',
           'Gastronomy',
