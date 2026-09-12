@@ -1,24 +1,46 @@
 import { Link } from 'react-router-dom';
 import labsolLogo from '../../images/Labsol.png';
-import freelance from '../../images/freelance.png';
 import radii from '../../images/radii.png';
 import evodeps from '../../images/evodeps.png';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowRight, ArrowUpRight, Reveal } from '../brand/parts';
 import RadiiArt from '../marks/RadiiArt';
+import VenturesRoadmap from '../ventures/VenturesRoadmap';
+import { EvodepsArt, FreelanceArt, FreelanceMark, LabsolArt } from '../marks/RoleArt';
 
 // Roles where someone else did the hiring. The two companies Adalberto founded
 // live on /ventures — see the note there for why they are not on this list.
 //
 // `base` is the dictionary path rather than a set of copied strings, so a role
 // keeps one source of truth across this page and its own brand page.
+//
+// Each row carries the same artwork and colour world as its own story page, so
+// the card is a preview of where it goes rather than a grey box that happens to
+// link there.
 const ROLES = [
-  { id: 'evodeps', base: 'evodeps', logo: evodeps, to: '/evodeps', link: 'https://evodeps.com/' },
-  { id: 'freelance', base: 'experience.freelance', logo: freelance, to: '/freelance' },
+  {
+    id: 'evodeps',
+    base: 'evodeps',
+    logo: <img className="timeline-logo" src={evodeps} alt="" aria-hidden="true" />,
+    Art: EvodepsArt,
+    to: '/evodeps',
+    link: 'https://evodeps.com/',
+  },
+  {
+    id: 'freelance',
+    base: 'experience.freelance',
+    // The three overlapping rings rather than the stock illustration of a man
+    // in a headset: that clipart is not an identity, and it fights the card's
+    // own colour world.
+    logo: <FreelanceMark className="timeline-logo timeline-logo-mark" />,
+    Art: FreelanceArt,
+    to: '/freelance',
+  },
   {
     id: 'labsol',
     base: 'experience.labsol',
-    logo: labsolLogo,
+    logo: <img className="timeline-logo" src={labsolLogo} alt="" aria-hidden="true" />,
+    Art: LabsolArt,
     to: '/labsol',
     link: 'https://labsol.cozcyt.gob.mx/',
   },
@@ -73,39 +95,44 @@ const Experience = () => {
       </Reveal>
 
       <ol className="timeline">
-        {ROLES.map(({ id, base, logo, to, link }) => (
+        {ROLES.map(({ id, base, logo, Art, to, link }) => (
           <li className="timeline-item" key={id}>
-            <Reveal className="timeline-row">
+            <Reveal className="timeline-row" data-brand={id}>
               <span className="timeline-dot" aria-hidden="true" />
               <article className="timeline-card">
-                <div className="timeline-head">
-                  <img className="timeline-logo" src={logo} alt={t(`${base}.company`)} />
-                  <div className="timeline-heading">
-                    <h2>{t(`${base}.company`)}</h2>
-                    <p className="timeline-role">{t(`${base}.title`)}</p>
-                  </div>
-                  <span className="timeline-period">{t(`${base}.period`)}</span>
+                <div className="timeline-art" aria-hidden="true">
+                  <Art />
                 </div>
-                <p className="timeline-body">{t(`${base}.body`)}</p>
-                {/* The story is the primary action; the company's own site is
-                    secondary, so it reads as a footnote rather than competing
-                    with it. */}
-                <div className="timeline-actions">
-                  <Link className="timeline-story" to={to}>
-                    {t('timeline.readStory')}
-                    <ArrowRight />
-                  </Link>
-                  {link ? (
-                    <a
-                      className="timeline-link"
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t('timeline.visitSite')}
-                      <ArrowUpRight />
-                    </a>
-                  ) : null}
+                <div className="timeline-inner">
+                  <div className="timeline-head">
+                    {logo}
+                    <div className="timeline-heading">
+                      <h2>{t(`${base}.company`)}</h2>
+                      <p className="timeline-role">{t(`${base}.title`)}</p>
+                    </div>
+                    <span className="timeline-period">{t(`${base}.period`)}</span>
+                  </div>
+                  <p className="timeline-body">{t(`${base}.body`)}</p>
+                  {/* The story is the primary action; the company's own site is
+                      secondary, so it reads as a footnote rather than competing
+                      with it. */}
+                  <div className="timeline-actions">
+                    <Link className="brand-link-out" to={to}>
+                      {t('timeline.readStory')}
+                      <ArrowRight />
+                    </Link>
+                    {link ? (
+                      <a
+                        className="featured-out"
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t('timeline.visitSite')}
+                        <ArrowUpRight />
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
               </article>
             </Reveal>
@@ -114,10 +141,11 @@ const Experience = () => {
       </ol>
 
       <Reveal className="hub-teaser">
-        <div>
+        <div className="hub-teaser-copy">
           <h2 className="brand-h2">{t('timeline.venturesTitle')}</h2>
           <p className="brand-p">{t('timeline.venturesLede')}</p>
         </div>
+        <VenturesRoadmap />
         <Link className="brand-link-out hub-teaser-cta" to="/ventures">
           {t('timeline.venturesCta')}
           <ArrowRight />
