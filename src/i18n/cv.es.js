@@ -164,6 +164,7 @@ const cvEs = {
       arts: {
         title: 'El arte, en todas sus formas',
         body: 'La formación artística ocupa un lugar equivalente al técnico en mi criterio profesional. Sigo con rigor la música, la literatura, el cine, el teatro, la moda, el dibujo y la animación. En el plano práctico escribo novela y canción, y desarrollo proyectos musicales propios. Esa disciplina desarrolla el manejo de la estructura, el ritmo y el criterio estético, competencias directamente aplicables al diseño de interfaces y de producto.',
+        link: 'Escuchar los proyectos musicales',
         body2: 'El videojuego y los medios inmersivos concentran mi atención de forma particular: son la única disciplina donde narrativa, composición musical, arte visual y arquitectura de software se resuelven en un mismo artefacto, y donde la decisión estética es indistinguible de la decisión técnica. Estudio el diseño de sistemas de juego, los motores gráficos y el trabajo en tiempo real en 3D, junto con la realidad virtual y aumentada como los formatos que están redefiniendo la relación entre interfaz, espacio y usuario.',
         tags: [
           'Música',

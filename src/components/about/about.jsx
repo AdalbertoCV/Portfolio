@@ -6,6 +6,7 @@ import linkedinLogo from '../../images/linkedin.png';
 import mailLogo from '../../images/Mail.jpg';
 import GitHubLogo from '../../images/GitHub.png';
 import YoutubeLogo from '../../images/Youtube.png';
+import soundcloudMark from '../../images/soundcloud.svg';
 import UAZLogo from '../../images/UAZ.jpg';
 import someceImage from '../../images/Achievements/constancia1.png';
 import ICPImage from '../../images/Achievements/constancia2.png';
@@ -35,6 +36,16 @@ const NOW = [
   { id: 'ventures', to: '/ventures' },
   { id: 'contract', to: '/experience' },
 ];
+
+// An interest card can carry one outbound link, where the card makes a claim
+// that has somewhere to be verified. The arts card says he writes songs and
+// runs musical projects; this is where that stops being an assertion.
+const INTEREST_LINKS = {
+  arts: {
+    href: 'https://soundcloud.com/adal-cerrillo-oficial',
+    mark: soundcloudMark,
+  },
+};
 
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
 const INTEREST_KEYS = ['innovation', 'business', 'science', 'arts', 'sports', 'culture'];
@@ -353,6 +364,18 @@ const About = () => {
                   itself on a miss, so a card without one renders nothing. */}
               {t(`cv.interests.${key}.body2`) !== `cv.interests.${key}.body2` && (
                 <p>{t(`cv.interests.${key}.body2`)}</p>
+              )}
+              {INTEREST_LINKS[key] && (
+                <a
+                  className="cv-interest-link"
+                  href={INTEREST_LINKS[key].href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={INTEREST_LINKS[key].mark} alt="" aria-hidden="true" />
+                  {t(`cv.interests.${key}.link`)}
+                  <ArrowUpRight />
+                </a>
               )}
               <div className="brand-chips">
                 {tl(`cv.interests.${key}.tags`).map((tag) => (

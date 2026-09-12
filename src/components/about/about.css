@@ -679,6 +679,48 @@
     margin-top: auto;
 }
 
+/* The one outbound link a card may carry. It sits between the prose and the
+   chips, and it is the only place on this page where a brand colour appears
+   at text size — which is the point: it reads as evidence, not decoration. */
+.cv-interest-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 9px;
+    margin: 0 0 22px;
+    padding: 9px 15px;
+    border: 1px solid var(--color-border-primary);
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 650;
+    color: var(--color-text-primary);
+    background: var(--color-bg-tertiary);
+    text-decoration: none;
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.cv-interest-link img {
+    width: 17px;
+    height: 17px;
+}
+
+.cv-interest-link svg {
+    width: 14px;
+    height: 14px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-interest-link:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-2px);
+    }
+
+    .cv-interest-link:hover svg {
+        transform: translate(3px, -3px);
+    }
+}
+
 @media (hover: hover) and (pointer: fine) {
     .cv-interest:hover {
         border-color: var(--color-border-hover);

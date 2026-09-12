@@ -157,6 +157,7 @@ const cvEn = {
       arts: {
         title: 'Art, in all its forms',
         body: 'Artistic training holds a place equivalent to the technical one in how I work. I follow music, literature, cinema, theatre, fashion, drawing and animation with the same rigour. In practice I write novels and songs, and develop musical projects of my own. That discipline builds command of structure, rhythm and aesthetic judgement — competencies that apply directly to interface and product design.',
+        link: 'Listen to the musical projects',
         body2: 'Video games and immersive media hold my attention in particular: they are the one discipline where narrative, musical composition, visual art and software architecture resolve into a single artefact, and where the aesthetic decision is indistinguishable from the technical one. I study game systems design, graphics engines and real-time 3D work, alongside virtual and augmented reality as the formats redefining the relationship between interface, space and user.',
         tags: [
           'Music',
