@@ -84,6 +84,60 @@
     --brand-tint: rgba(109, 40, 217, 0.08);
 }
 
+/* Evodeps — custom software shaped to each client. Their own navy and azure,
+   pushed to a cooler royal blue so it never reads as Radii's instrument cyan
+   sitting one page over. */
+[data-brand='evodeps'] {
+    --brand-ink: #04060f;
+    --brand-ink-2: #101c3a;
+    --brand-core: #6a9bff;
+    --brand-core-2: #a8c6ff;
+    --brand-soft: #8a99bd;
+    --brand-on-ink: #eef3ff;
+    --brand-text: #6a9bff;
+    --brand-tint: rgba(106, 155, 255, 0.12);
+}
+
+:root[data-theme='light'] [data-brand='evodeps'] {
+    --brand-text: #1d4ed8;
+    --brand-tint: rgba(29, 78, 216, 0.08);
+}
+
+/* Freelance — no company, so no borrowed identity. Amber, the accent from the
+   GitHub profile, on a warm near-black: this page is his own practice. */
+[data-brand='freelance'] {
+    --brand-ink: #0d0a04;
+    --brand-ink-2: #2a1e08;
+    --brand-core: #f5b942;
+    --brand-core-2: #ffd98a;
+    --brand-soft: #a8977a;
+    --brand-on-ink: #fdf6e7;
+    --brand-text: #f5b942;
+    --brand-tint: rgba(245, 185, 66, 0.12);
+}
+
+:root[data-theme='light'] [data-brand='freelance'] {
+    --brand-text: #a16207;
+    --brand-tint: rgba(161, 98, 7, 0.08);
+}
+
+/* Labsol — straight off their own mark: navy ground, coral accent. */
+[data-brand='labsol'] {
+    --brand-ink: #060b14;
+    --brand-ink-2: #142740;
+    --brand-core: #f2624c;
+    --brand-core-2: #7ea6d8;
+    --brand-soft: #8fa3bd;
+    --brand-on-ink: #eef4fb;
+    --brand-text: #f2624c;
+    --brand-tint: rgba(242, 98, 76, 0.12);
+}
+
+:root[data-theme='light'] [data-brand='labsol'] {
+    --brand-text: #c2410c;
+    --brand-tint: rgba(194, 65, 12, 0.08);
+}
+
 /* ============================================================================
    PAGE SHELL
    ========================================================================= */

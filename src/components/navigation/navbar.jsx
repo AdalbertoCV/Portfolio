@@ -17,6 +17,9 @@ const LINKS = [
 // rather than leaving no entry marked as current.
 const PARENT_OF = {
     '/radii': '/experience',
+    '/evodeps': '/experience',
+    '/freelance': '/experience',
+    '/labsol': '/experience',
     '/stackselect': '/ventures',
     '/moonphase': '/ventures',
 };

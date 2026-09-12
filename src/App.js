@@ -12,6 +12,9 @@ import Ventures from './components/ventures/ventures';
 import RadiiPage from './components/brand/RadiiPage';
 import StackSelectPage from './components/brand/StackSelectPage';
 import MoonphasePage from './components/brand/MoonphasePage';
+import EvodepsPage from './components/brand/EvodepsPage';
+import FreelancePage from './components/brand/FreelancePage';
+import LabsolPage from './components/brand/LabsolPage';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
 
@@ -46,6 +49,9 @@ function App() {
               <Route path="/radii" element={<RadiiPage />} />
               <Route path="/stackselect" element={<StackSelectPage />} />
               <Route path="/moonphase" element={<MoonphasePage />} />
+              <Route path="/evodeps" element={<EvodepsPage />} />
+              <Route path="/freelance" element={<FreelancePage />} />
+              <Route path="/labsol" element={<LabsolPage />} />
             </Routes>
           </Router>
         </div>

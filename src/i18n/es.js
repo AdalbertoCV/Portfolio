@@ -1,4 +1,5 @@
 import brandsEs from './brands.es';
+import rolesEs from './roles.es';
 import reposEs from './repos.es';
 import cvEs from './cv.es';
 
@@ -6,6 +7,7 @@ const es = {
   ...brandsEs,
   ...cvEs,
   ...reposEs,
+  ...rolesEs,
   nav: {
     about: 'Sobre Mí',
     projects: 'Proyectos',

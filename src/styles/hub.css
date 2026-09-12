@@ -690,3 +690,52 @@ img.brand-hero-mark {
 .featured-body {
     max-width: 78ch;
 }
+
+/* The two actions on a timeline card. The story is the one that matters, so it
+   carries weight and an accent; the company's own site sits beside it as a
+   quieter aside. */
+.timeline-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 22px;
+    margin-top: 18px;
+}
+
+.timeline-story {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-secondary);
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    font-size: 0.86rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.timeline-story svg {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--transition-base);
+}
+
+/* Reset the standalone link's own top margin — the row owns the spacing now. */
+.timeline-actions .timeline-link {
+    margin-top: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .timeline-story:hover {
+        border-color: var(--color-border-hover);
+        background: var(--color-bg-card-hover);
+    }
+
+    .timeline-story:hover svg {
+        transform: translateX(4px);
+    }
+}

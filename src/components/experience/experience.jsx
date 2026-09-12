@@ -13,9 +13,15 @@ import RadiiArt from '../marks/RadiiArt';
 // `base` is the dictionary path rather than a set of copied strings, so a role
 // keeps one source of truth across this page and its own brand page.
 const ROLES = [
-  { id: 'evodeps', base: 'evodeps', logo: evodeps, link: 'https://evodeps.com/' },
-  { id: 'freelance', base: 'experience.freelance', logo: freelance },
-  { id: 'labsol', base: 'experience.labsol', logo: labsolLogo, link: 'https://labsol.cozcyt.gob.mx/' },
+  { id: 'evodeps', base: 'evodeps', logo: evodeps, to: '/evodeps', link: 'https://evodeps.com/' },
+  { id: 'freelance', base: 'experience.freelance', logo: freelance, to: '/freelance' },
+  {
+    id: 'labsol',
+    base: 'experience.labsol',
+    logo: labsolLogo,
+    to: '/labsol',
+    link: 'https://labsol.cozcyt.gob.mx/',
+  },
 ];
 
 const RADII_URL = 'https://www.radii.com.mx/es';
@@ -67,7 +73,7 @@ const Experience = () => {
       </Reveal>
 
       <ol className="timeline">
-        {ROLES.map(({ id, base, logo, link }) => (
+        {ROLES.map(({ id, base, logo, to, link }) => (
           <li className="timeline-item" key={id}>
             <Reveal className="timeline-row">
               <span className="timeline-dot" aria-hidden="true" />
@@ -81,12 +87,26 @@ const Experience = () => {
                   <span className="timeline-period">{t(`${base}.period`)}</span>
                 </div>
                 <p className="timeline-body">{t(`${base}.body`)}</p>
-                {link ? (
-                  <a className="timeline-link" href={link} target="_blank" rel="noopener noreferrer">
-                    {t('timeline.visitSite')}
-                    <ArrowUpRight />
-                  </a>
-                ) : null}
+                {/* The story is the primary action; the company's own site is
+                    secondary, so it reads as a footnote rather than competing
+                    with it. */}
+                <div className="timeline-actions">
+                  <Link className="timeline-story" to={to}>
+                    {t('timeline.readStory')}
+                    <ArrowRight />
+                  </Link>
+                  {link ? (
+                    <a
+                      className="timeline-link"
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t('timeline.visitSite')}
+                      <ArrowUpRight />
+                    </a>
+                  ) : null}
+                </div>
               </article>
             </Reveal>
           </li>

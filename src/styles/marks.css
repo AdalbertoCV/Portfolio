@@ -261,3 +261,115 @@
         opacity: 0;
     }
 }
+
+/* ------------------------------------------------------------------ Evodeps
+   Modules settling into place: the same system re-cut to a different client's
+   shape. Only the "fitted" ones move, so the grid reads as being assembled
+   rather than as everything wobbling at once. */
+
+.ev-module {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.ev-module-fitted {
+    animation: evFit 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes evFit {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    45% { transform: scale(0.94); opacity: 0.55; }
+    70% { transform: scale(1.01); opacity: 1; }
+}
+
+/* ---------------------------------------------------------------- Freelance
+   Three disciplines drifting out of phase, and client threads lighting up in
+   sequence as work arrives. */
+
+.fl-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: flDrift 12s ease-in-out infinite;
+}
+
+.fl-ring-2 { animation-delay: -4s; }
+.fl-ring-3 { animation-delay: -8s; }
+
+@keyframes flDrift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(2.5%, -2%); }
+}
+
+.fl-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: flPulse 3.4s ease-in-out infinite;
+}
+
+@keyframes flPulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.14); opacity: 1; }
+}
+
+.fl-thread {
+    stroke-dasharray: 6 14;
+    animation: flTravel 9s linear infinite;
+}
+
+@keyframes flTravel {
+    from { stroke-dashoffset: 200; }
+    to { stroke-dashoffset: 0; }
+}
+
+.fl-client {
+    animation: flArrive 7s ease-in-out infinite;
+}
+
+@keyframes flArrive {
+    0%, 100% { opacity: 0.32; r: 7; }
+    50% { opacity: 1; r: 9; }
+}
+
+/* ------------------------------------------------------------------- Labsol
+   Commits travelling down the lanes and merging into two delivered systems. */
+
+.lab-commit {
+    animation: labTravel 9.6s linear infinite;
+}
+
+@keyframes labTravel {
+    0% { transform: translateX(0); opacity: 0; }
+    8% { opacity: 0.85; }
+    82% { opacity: 0.85; }
+    100% { transform: translateX(760px); opacity: 0; }
+}
+
+.lab-delivered {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: labLand 4.8s ease-in-out infinite;
+}
+
+@keyframes labLand {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.18); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ev-module-fitted,
+    .fl-ring,
+    .fl-node,
+    .fl-thread,
+    .fl-client,
+    .lab-commit,
+    .lab-delivered {
+        animation: none !important;
+    }
+
+    /* The travelling commits sit stacked at the lane entry with motion off,
+       which reads as a defect. Hide them and leave the lanes and the two
+       delivered nodes, which carry the idea on their own. */
+    .lab-commit {
+        opacity: 0;
+    }
+}

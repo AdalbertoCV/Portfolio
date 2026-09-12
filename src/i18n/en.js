@@ -1,4 +1,5 @@
 import brandsEn from './brands.en';
+import rolesEn from './roles.en';
 import reposEn from './repos.en';
 import cvEn from './cv.en';
 
@@ -6,6 +7,7 @@ const en = {
   ...brandsEn,
   ...cvEn,
   ...reposEn,
+  ...rolesEn,
   nav: {
     about: 'About Me',
     projects: 'Projects',
