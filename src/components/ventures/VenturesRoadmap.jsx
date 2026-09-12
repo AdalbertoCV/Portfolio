@@ -2,32 +2,43 @@ import { MoonphaseMark } from '../marks/MoonphaseMark';
 import { StackSelectMark } from '../marks/StackSelectMark';
 
 // The teaser that sends a reader from the timeline to Ventures. A road that
-// climbs through milestones and then forks into the two companies, with each
-// branch ending in that company's actual mark — so the strip is a preview of
-// the destination rather than decoration.
+// climbs through milestones and forks into the two companies, each branch
+// ending in that company's actual mark — so the strip previews the destination
+// rather than decorating the paragraph.
 //
-// It draws itself once, on reveal, rather than looping: this sits at the foot
-// of a long page, and a permanent animation down there is something you notice
-// while trying to read the paragraph next to it. The keyframes are keyed off
-// the `.is-visible` class the reveal observer already adds.
+// The road draws itself once on reveal. After that, sparks run the climb on a
+// loop and each milestone lights as one passes: the delays below are derived
+// from where the milestone sits along the path, so the lighting is caused by
+// the spark rather than merely happening near it.
+
+// Declared once and shared: the <path> renders it, and the sparks follow it
+// through `offset-path`. Two copies of this string would drift apart.
+const ROAD = 'M18 120 C 62 116, 88 104, 122 88 S 190 60, 238 48';
+
+const ROAD_START_X = 18;
+const ROAD_SPAN_X = 220;
+
+// Seconds. The sparks only start once the road has finished drawing.
+const DRAW_DELAY = 1.2;
+const RUN_DURATION = 3.2;
 
 const MILESTONES = [
-  [46, 168],
-  [110, 150],
-  [172, 122],
-  [232, 96],
+  [55, 113],
+  [100, 96],
+  [150, 74],
+  [198, 57],
 ];
 
 const VenturesRoadmap = () => (
   <div className="ventures-roadmap" aria-hidden="true">
-    <svg className="vr-track" viewBox="0 0 420 200" preserveAspectRatio="xMidYMid meet" focusable="false">
+    <svg className="vr-track" viewBox="0 0 420 140" preserveAspectRatio="xMidYMid meet" focusable="false">
       {/* The road so far, climbing left to right. */}
       <path
         className="vr-path vr-path-main"
-        d="M20 178 C 70 172, 96 158, 130 140 S 196 112, 236 92"
+        d={ROAD}
         fill="none"
         stroke="currentColor"
-        strokeOpacity="0.55"
+        strokeOpacity="0.5"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
@@ -35,40 +46,85 @@ const VenturesRoadmap = () => (
       {/* The fork: two companies out of one trajectory. */}
       <path
         className="vr-path vr-path-up"
-        d="M236 92 C 286 68, 318 54, 366 48"
+        d="M238 48 C 282 38, 312 32, 352 30"
         fill="none"
         stroke="currentColor"
-        strokeOpacity="0.45"
+        strokeOpacity="0.4"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeDasharray="6 8"
       />
       <path
         className="vr-path vr-path-down"
-        d="M236 92 C 286 104, 318 128, 366 146"
+        d="M238 48 C 282 58, 312 78, 352 104"
         fill="none"
         stroke="currentColor"
-        strokeOpacity="0.45"
+        strokeOpacity="0.4"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeDasharray="6 8"
       />
 
-      {MILESTONES.map(([cx, cy], index) => (
-        <circle
-          key={`${cx}-${cy}`}
-          className="vr-milestone"
-          cx={cx}
-          cy={cy}
-          r="4.5"
-          fill="currentColor"
-          fillOpacity="0.5"
-          style={{ animationDelay: `${0.25 + index * 0.14}s` }}
-        />
-      ))}
+      {MILESTONES.map(([cx, cy], index) => {
+        // How far along the climb this milestone sits, so it can light exactly
+        // as a spark reaches it.
+        const progress = (cx - ROAD_START_X) / ROAD_SPAN_X;
+        return (
+          <circle
+            key={`${cx}-${cy}`}
+            className="vr-milestone"
+            cx={cx}
+            cy={cy}
+            r="4"
+            fill="currentColor"
+            fillOpacity="0.45"
+            style={{
+              // Two animations: the one-off pop as the road draws, then the
+              // repeating flash as each spark passes.
+              animationDelay: `${0.25 + index * 0.12}s, ${DRAW_DELAY + progress * RUN_DURATION}s`,
+            }}
+          />
+        );
+      })}
 
       {/* Where the fork happens — the point the whole strip is about. */}
-      <circle className="vr-junction" cx="236" cy="92" r="7" fill="currentColor" />
+      <circle
+        className="vr-junction"
+        cx="238"
+        cy="48"
+        r="6.5"
+        fill="currentColor"
+        style={{ animationDelay: `0.95s, ${DRAW_DELAY + RUN_DURATION * 0.97}s` }}
+      />
+
+      {/* The sparks. `cx`/`cy` stay at the origin because `offset-path` places
+          them; any offset here would be added on top of the path position. */}
+      {[0, 1].map((index) => (
+        <g key={index}>
+          <circle
+            className="vr-spark vr-spark-glow"
+            cx="0"
+            cy="0"
+            r="9"
+            fill="currentColor"
+            style={{
+              offsetPath: `path("${ROAD}")`,
+              animationDelay: `${DRAW_DELAY + index * (RUN_DURATION / 2)}s`,
+            }}
+          />
+          <circle
+            className="vr-spark"
+            cx="0"
+            cy="0"
+            r="3"
+            fill="currentColor"
+            style={{
+              offsetPath: `path("${ROAD}")`,
+              animationDelay: `${DRAW_DELAY + index * (RUN_DURATION / 2)}s`,
+            }}
+          />
+        </g>
+      ))}
     </svg>
 
     {/* The two destinations, each in its own colour scope so the marks arrive

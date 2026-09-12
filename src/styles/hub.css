@@ -737,18 +737,21 @@ img.brand-hero-mark {
 /* ============================================================================
    VENTURES TEASER — the roadmap strip
    ----------------------------------------------------------------------------
-   Draws once when the teaser scrolls into view rather than looping: it lives at
-   the foot of a long page, and a permanently moving graphic there competes with
-   the paragraph beside it. Everything keys off `.is-visible`, which the reveal
-   observer already applies.
+   The road draws itself once when the teaser scrolls into view; after that,
+   sparks run the climb on a loop and each milestone lights as one passes. The
+   per-milestone delays are computed in the component from its position along
+   the path, so the lighting is caused by the spark rather than just timed near
+   it.
    ========================================================================= */
 
 .ventures-roadmap {
     position: relative;
-    flex: 1 1 300px;
-    max-width: 420px;
-    min-width: 240px;
-    aspect-ratio: 21 / 10;
+    flex: 1 1 260px;
+    max-width: 340px;
+    min-width: 210px;
+    /* Matches the 420x140 viewBox — a shallower strip than the copy beside it,
+       so it reads as a footnote to the paragraph rather than a second column. */
+    aspect-ratio: 3 / 1;
     color: var(--color-text-tertiary);
 }
 
@@ -758,8 +761,8 @@ img.brand-hero-mark {
     overflow: visible;
 }
 
-/* The road and the two branches cut themselves in. 640 comfortably exceeds the
-   longest path, so the offset starts fully hidden whatever the exact length. */
+/* The road cuts itself in. 640 comfortably exceeds the path length, so the
+   offset starts fully hidden whatever the exact measurement. */
 .vr-path {
     stroke-dasharray: 640;
     stroke-dashoffset: 640;
@@ -769,8 +772,8 @@ img.brand-hero-mark {
     animation: vrDraw 1.1s cubic-bezier(0.65, 0, 0.35, 1) 0.1s forwards;
 }
 
-/* The branches keep their dashed look, so they animate by travelling rather
-   than by drawing — a dashed path cannot use the dashoffset trick for both. */
+/* The branches keep their dashed look, so they arrive by fading in rather than
+   by drawing — a dashed path cannot use the dashoffset trick for both. */
 .hub-teaser.is-visible .vr-path-up,
 .hub-teaser.is-visible .vr-path-down {
     stroke-dasharray: 6 8;
@@ -792,6 +795,43 @@ img.brand-hero-mark {
     to { opacity: 1; transform: none; }
 }
 
+/* ------------------------------------------------------------- the sparks */
+
+.vr-spark {
+    opacity: 0;
+    /* Without this the circle is rotated to follow the path's tangent, which
+       does nothing for a dot and costs a composite per frame. */
+    offset-rotate: 0deg;
+}
+
+.vr-spark-glow {
+    opacity: 0;
+}
+
+.hub-teaser.is-visible .vr-spark {
+    animation: vrRun 3.2s linear infinite;
+}
+
+.hub-teaser.is-visible .vr-spark-glow {
+    animation: vrRunGlow 3.2s linear infinite;
+}
+
+@keyframes vrRun {
+    0% { offset-distance: 0%; opacity: 0; }
+    12% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes vrRunGlow {
+    0% { offset-distance: 0%; opacity: 0; }
+    12% { opacity: 0.16; }
+    88% { opacity: 0.16; }
+    100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* --------------------------------------------------------- the milestones */
+
 .vr-milestone,
 .vr-junction {
     opacity: 0;
@@ -799,12 +839,18 @@ img.brand-hero-mark {
     transform-origin: center;
 }
 
+/* Two animations: the one-off pop as the road draws, then the repeating flash
+   as each spark reaches this point. Both delays come from the component. */
 .hub-teaser.is-visible .vr-milestone {
-    animation: vrPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation:
+        vrPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        vrLit 3.2s linear infinite;
 }
 
 .hub-teaser.is-visible .vr-junction {
-    animation: vrPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
+    animation:
+        vrPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        vrLit 3.2s linear infinite;
 }
 
 /* Ease-out-expo, not an overshoot curve: a marker landing on a map settles,
@@ -814,11 +860,20 @@ img.brand-hero-mark {
     to { opacity: 1; transform: scale(1); }
 }
 
+/* Brief, and back down well before the next spark: a milestone that stays lit
+   is just a brighter dot. */
+@keyframes vrLit {
+    0% { fill-opacity: 0.45; transform: scale(1); }
+    5% { fill-opacity: 1; transform: scale(1.5); }
+    16% { fill-opacity: 0.45; transform: scale(1); }
+    100% { fill-opacity: 0.45; transform: scale(1); }
+}
+
 /* ------------------------------------------------------- the two endpoints */
 
 .vr-end {
     position: absolute;
-    width: 13%;
+    width: 11%;
     aspect-ratio: 1;
     display: grid;
     place-items: center;
@@ -826,25 +881,28 @@ img.brand-hero-mark {
     color: var(--brand-core);
     background: var(--color-bg-primary);
     border: 1px solid color-mix(in srgb, var(--brand-core) 45%, transparent);
-    box-shadow: 0 0 0 5px color-mix(in srgb, var(--brand-core) 10%, transparent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-core) 10%, transparent);
     opacity: 0;
     transform: scale(0.4);
 }
 
 .vr-end svg {
-    width: 76%;
-    height: 76%;
+    width: 74%;
+    height: 74%;
 }
 
-/* Positioned to land on the two path endpoints in the 420x200 viewBox. */
+/* Positioned so each circle's centre lands on its branch endpoint in the
+   420x140 viewBox. The element is 11% of the container's WIDTH square, so its
+   height is 33% of the container's height at this 3:1 ratio — hence the
+   asymmetric half-offsets below. */
 .vr-end-up {
-    left: 80.5%;
-    top: 12%;
+    left: 78.3%;
+    top: 5%;
 }
 
 .vr-end-down {
-    left: 80.5%;
-    top: 61%;
+    left: 78.3%;
+    top: 55.7%;
 }
 
 .hub-teaser.is-visible .vr-end {
@@ -860,10 +918,10 @@ img.brand-hero-mark {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* The teaser is now copy, roadmap, button — it needs to be able to wrap into
-   two rows without the roadmap collapsing to nothing. */
+/* The teaser is copy, roadmap, button — it has to be able to wrap without the
+   roadmap collapsing to nothing. */
 .hub-teaser-copy {
-    flex: 1 1 320px;
+    flex: 1 1 300px;
     min-width: 0;
 }
 
@@ -892,5 +950,11 @@ img.brand-hero-mark {
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
+    }
+
+    /* A spark parked at the start of the road is just a stray dot. */
+    .vr-spark,
+    .vr-spark-glow {
+        display: none;
     }
 }
