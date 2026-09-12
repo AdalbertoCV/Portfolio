@@ -1,0 +1,669 @@
+/* ============================================================================
+   THE CV PAGE
+   ----------------------------------------------------------------------------
+   This page is the résumé: identity, profile, what is happening now, the stack,
+   engineering practice, education, languages, certifications and interests. It
+   reuses the brand-page primitives (Section, kicker, chips) so the portfolio
+   reads as one system, and adds only the pieces a CV needs.
+   ========================================================================= */
+
+.cv-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: calc(var(--navbar-h, 120px) + 48px) 24px 96px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Same monochrome defaults as .hub-page: the brand-scoped primitives used
+       here resolve to the portfolio's own palette. */
+    --brand-core: var(--color-text-primary);
+    --brand-core-2: var(--color-text-secondary);
+    --brand-ink: var(--color-bg-primary);
+    --brand-ink-2: var(--color-bg-tertiary);
+    --brand-soft: var(--color-text-secondary);
+    --brand-on-ink: var(--color-text-primary);
+    --brand-text: var(--color-text-primary);
+    --brand-tint: var(--color-navlink-hover);
+}
+
+/* ============================================================================
+   IDENTITY HEADER
+   ========================================================================= */
+
+.cv-hero {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 44px;
+    align-items: center;
+    padding: 40px 44px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* A single soft wash behind the portrait, so the card has a light source
+   instead of being a flat slab. */
+.cv-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(46% 90% at 12% 20%, var(--color-sheen), transparent 70%);
+    pointer-events: none;
+}
+
+.cv-hero > * {
+    position: relative;
+}
+
+.cv-hero-portrait {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--color-border-secondary);
+    box-shadow: var(--shadow-xl);
+}
+
+.cv-hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.15);
+    transition: filter var(--transition-slow), transform var(--transition-slow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-hero:hover .cv-hero-portrait img {
+        filter: grayscale(0);
+        transform: scale(1.04);
+    }
+}
+
+.cv-name {
+    font-size: clamp(1.9rem, 4.4vw, 3rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    color: var(--color-text-primary);
+    margin: 14px 0 8px;
+}
+
+.cv-role {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 1.9vw, 1.2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text-secondary);
+    margin: 0 0 18px;
+}
+
+.cv-facts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin: 0 0 24px;
+    padding: 0;
+}
+
+.cv-facts li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+}
+
+.cv-facts svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+
+.cv-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+.cv-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    margin-bottom: 24px;
+}
+
+.cv-actions .brand-link-out .cv-button-icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cv-socials {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-tertiary);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.cv-socials img {
+    width: 21px;
+    height: 21px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-socials a:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-2px);
+    }
+}
+
+/* ============================================================================
+   NOW — three live fronts
+   ========================================================================= */
+
+.cv-now {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.cv-now-card {
+    display: flex;
+    flex-direction: column;
+    padding: 26px 24px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    text-decoration: none;
+    transition: border-color var(--transition-base), transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.cv-now-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 12px;
+}
+
+.cv-now-card h3 {
+    font-size: 1.12rem;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+    margin: 0 0 10px;
+}
+
+.cv-now-card p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    margin: 0 0 18px;
+    text-align: left;
+    flex: 1 1 auto;
+}
+
+.cv-now-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.86rem;
+    font-weight: 650;
+    color: var(--color-text-primary);
+}
+
+.cv-now-cta svg {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-now-card:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .cv-now-card:hover .cv-now-cta svg {
+        transform: translateX(5px);
+    }
+}
+
+/* ============================================================================
+   TECH TILES
+   ----------------------------------------------------------------------------
+   Tiles rather than a row of small chips: the logos are the point, and at chip
+   size they are decoration you cannot actually read.
+   ========================================================================= */
+
+.tech-group + .tech-group {
+    margin-top: 30px;
+}
+
+.tech-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.tech-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 18px 8px 14px;
+    min-height: 106px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    text-align: center;
+    transition: border-color var(--transition-base), transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.tech-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+/* Solid-black marks only (flagged in techStack.js). Inverting a full-colour
+   logo would invent colours the brand does not own, so those are left alone. */
+:root[data-theme='dark'] .tech-icon[data-mono='true'] {
+    filter: invert(1);
+}
+
+/* A coloured mark that is simply too dark for the dark card, and too coloured
+   to invert (inverting maroon gives cyan). It gets the same treatment as the
+   Radii wordmark on the brand pages: sit it on a light plate and keep its real
+   colours. */
+:root[data-theme='dark'] .tech-icon[data-plate='true'] {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+/* Stands in for a logo where none exists, so the grid has no holes in it. */
+.tech-monogram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    border: 1px solid var(--color-border-secondary);
+    background: var(--color-bg-tertiary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--color-text-secondary);
+}
+
+.tech-name {
+    font-size: 0.76rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--color-text-secondary);
+    letter-spacing: -0.01em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .tech-tile:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .tech-tile:hover .tech-name {
+        color: var(--color-text-primary);
+    }
+}
+
+/* ============================================================================
+   EDUCATION + LANGUAGES
+   ========================================================================= */
+
+.cv-split {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.cv-edu {
+    display: flex;
+    gap: 22px;
+    padding: 28px 26px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+}
+
+.cv-edu-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    flex: 0 0 auto;
+    background: #ffffff;
+    padding: 6px;
+    box-shadow: var(--shadow-sm);
+}
+
+.cv-edu h3 {
+    font-size: 1.1rem;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+    margin: 0 0 4px;
+}
+
+.cv-edu-meta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+    margin: 0 0 14px;
+}
+
+.cv-languages {
+    padding: 28px 26px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+}
+
+.cv-language {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border-primary);
+}
+
+.cv-language:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.cv-language-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+}
+
+.cv-language-level {
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+    text-align: right;
+}
+
+/* ============================================================================
+   CERTIFICATIONS
+   ========================================================================= */
+
+.cv-certs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.cv-cert {
+    padding: 24px 22px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.cv-cert-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 14px;
+}
+
+.cv-cert h3 {
+    font-size: 0.98rem;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    color: var(--color-text-primary);
+    margin: 0 0 8px;
+}
+
+.cv-cert-issuer {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+    margin: 0;
+}
+
+.cv-proof-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.cv-proof {
+    padding: 0;
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-tertiary);
+    overflow: hidden;
+    cursor: zoom-in;
+    flex: 0 1 300px;
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.cv-proof img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-cert:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-3px);
+    }
+
+    .cv-proof:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-2px);
+    }
+}
+
+/* ============================================================================
+   INTERESTS
+   ========================================================================= */
+
+.cv-interests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.cv-interest {
+    position: relative;
+    padding: 26px 24px 26px 26px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    overflow: hidden;
+}
+
+/* A hairline down the left edge instead of another icon set — five more icons
+   here would compete with the 40 logos two sections up. */
+.cv-interest::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+    width: 2px;
+    background: var(--color-text-tertiary);
+    opacity: 0.5;
+}
+
+.cv-interest h3 {
+    font-size: 0.98rem;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+    margin: 0 0 10px;
+}
+
+.cv-interest p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: left;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 900px) {
+    .cv-hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        justify-items: center;
+        text-align: center;
+        padding: 34px 24px;
+    }
+
+    .cv-hero-portrait {
+        width: 190px;
+    }
+
+    .cv-facts,
+    .cv-actions,
+    .cv-socials {
+        justify-content: center;
+    }
+
+    .cv-split {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .cv-page {
+        padding: calc(var(--navbar-h, 140px) + 28px) 16px 72px;
+    }
+
+    .cv-hero {
+        padding: 28px 18px;
+    }
+
+    .cv-edu {
+        flex-direction: column;
+        gap: 16px;
+        padding: 22px 18px;
+    }
+
+    .cv-languages {
+        padding: 22px 18px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+        gap: 10px;
+    }
+
+    .tech-tile {
+        min-height: 96px;
+        padding: 14px 6px 12px;
+    }
+
+    .cv-proof {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .tech-grid {
+        grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    }
+
+    .tech-name {
+        font-size: 0.71rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cv-page {
+        animation: none;
+    }
+}
+
+/* The drawn concept marks sit at the same optical weight as the vendor logos
+   next to them: same 34px box, but stroked in the text colour rather than a
+   brand colour, so a row mixing both still reads as one set. */
+.tech-concept {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-base);
+}
+
+.tech-concept svg {
+    width: 28px;
+    height: 28px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .tech-tile:hover .tech-concept {
+        color: var(--color-text-primary);
+    }
+}

@@ -1,0 +1,692 @@
+/* ============================================================================
+   HUB PAGES — /experience and /ventures
+   ----------------------------------------------------------------------------
+   These two pages stay in the portfolio's monochrome world and borrow a brand
+   colour only where a specific company is on screen (the Radii feature card,
+   the two venture tiles). That keeps the brand pages themselves feeling like a
+   door you walk through rather than more of the same.
+   ========================================================================= */
+
+.hub-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: calc(var(--navbar-h, 120px) + 56px) 24px 96px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Monochrome defaults for the brand-scoped primitives reused here
+       (.brand-link-out, .brand-h2, .brand-p). A nested [data-brand] overrides
+       them for the element that actually belongs to a company. */
+    --brand-core: var(--color-text-primary);
+    --brand-core-2: var(--color-text-secondary);
+    --brand-ink: var(--color-bg-primary);
+    --brand-ink-2: var(--color-bg-tertiary);
+    --brand-soft: var(--color-text-secondary);
+    --brand-on-ink: var(--color-text-primary);
+    --brand-text: var(--color-text-primary);
+    --brand-tint: var(--color-navlink-hover);
+}
+
+/* ------------------------------------------------------------------ header */
+
+.hub-header {
+    max-width: 62ch;
+    margin: 0 0 48px;
+}
+
+.hub-badge {
+    display: inline-block;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-secondary);
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.hub-title {
+    font-size: clamp(2rem, 5.4vw, 3.5rem);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+    color: var(--color-text-primary);
+    margin: 0 0 18px;
+}
+
+.hub-lede {
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: left;
+}
+
+/* ============================================================================
+   FEATURED ROLE — Radii
+   ========================================================================= */
+
+.featured-role {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    background: radial-gradient(130% 120% at 78% 10%, var(--brand-ink-2), var(--brand-ink) 62%);
+    border: 1px solid color-mix(in srgb, var(--brand-core) 26%, transparent);
+    box-shadow: var(--shadow-xl);
+    margin-bottom: 72px;
+}
+
+/* The full artwork, cropped into the card and pushed back so the copy on top
+   never loses contrast. */
+.featured-art {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.75;
+    /* Fades the art out from under the text column on wide screens. On a phone
+       the copy spans the whole card, so the mask flattens to a plain veil. */
+    -webkit-mask-image: linear-gradient(100deg, transparent 8%, #000 62%);
+    mask-image: linear-gradient(100deg, transparent 8%, #000 62%);
+}
+
+.featured-inner {
+    position: relative;
+    padding: 56px 48px;
+    max-width: 68ch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    color: var(--brand-on-ink);
+}
+
+.featured-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--brand-core) 42%, transparent);
+    background: color-mix(in srgb, var(--brand-core) 12%, transparent);
+    color: var(--brand-core);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.featured-logo {
+    height: 44px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    margin-top: 6px;
+}
+
+/* The wordmark is in the logo image; this repeats it for anyone the image
+   fails for, and for the document outline. */
+.featured-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.featured-role-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    color: var(--brand-on-ink);
+    margin: 6px 0 0;
+}
+
+.featured-period {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--brand-core);
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+
+.featured-body {
+    font-size: 1rem;
+    line-height: 1.72;
+    color: var(--brand-soft);
+    margin: 6px 0 0;
+    text-align: left;
+}
+
+.featured-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    margin-top: 14px;
+}
+
+.featured-out {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand-soft);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.featured-out svg {
+    width: 14px;
+    height: 14px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .featured-out:hover {
+        color: var(--brand-core);
+    }
+
+    .featured-out:hover svg {
+        transform: translate(2px, -2px);
+    }
+}
+
+/* ============================================================================
+   TIMELINE
+   ========================================================================= */
+
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-row {
+    position: relative;
+    padding-left: 44px;
+    padding-bottom: 24px;
+}
+
+/* The spine. Drawn on the row rather than the list so the last item's line
+   stops at its own dot instead of running off the end of the page. */
+.timeline-row::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        var(--color-border-secondary),
+        var(--color-border-primary)
+    );
+}
+
+.timeline-item:last-child .timeline-row::before {
+    bottom: auto;
+    height: 28px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 5px;
+    top: 26px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-text-tertiary);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.timeline-card {
+    padding: 26px 28px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    transition: border-color var(--transition-base), transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.timeline-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.timeline-logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    flex: 0 0 auto;
+    background: var(--color-bg-tertiary);
+    padding: 5px;
+}
+
+.timeline-heading {
+    flex: 1 1 180px;
+    min-width: 0;
+}
+
+.timeline-heading h2 {
+    font-size: 1.15rem;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+    margin: 0 0 3px;
+}
+
+.timeline-role {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.timeline-period {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.timeline-body {
+    font-size: 0.95rem;
+    line-height: 1.72;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: left;
+}
+
+.timeline-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 16px;
+    color: var(--color-text-primary);
+    font-size: 0.86rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border-hover);
+    padding-bottom: 2px;
+    transition: border-color var(--transition-base), gap var(--transition-base);
+}
+
+.timeline-link svg {
+    width: 13px;
+    height: 13px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .timeline-row:hover .timeline-dot {
+        border-color: var(--color-text-primary);
+        transform: scale(1.18);
+    }
+
+    .timeline-row:hover .timeline-card {
+        border-color: var(--color-border-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .timeline-link:hover {
+        gap: 11px;
+    }
+}
+
+/* ============================================================================
+   TEASER STRIP
+   ========================================================================= */
+
+.hub-teaser {
+    margin-top: 64px;
+    padding: 40px 40px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.hub-teaser .brand-h2 {
+    margin-bottom: 10px;
+}
+
+.hub-teaser .brand-p {
+    margin: 0;
+    max-width: 52ch;
+}
+
+.hub-teaser-cta {
+    flex: 0 0 auto;
+}
+
+/* ============================================================================
+   VENTURE TILES
+   ========================================================================= */
+
+.venture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.venture-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    min-height: 420px;
+    padding: 36px 32px 30px;
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    background: radial-gradient(120% 110% at 20% 0%, var(--brand-ink-2), var(--brand-ink) 65%);
+    border: 1px solid color-mix(in srgb, var(--brand-core) 24%, transparent);
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-base), box-shadow var(--transition-base),
+        border-color var(--transition-base);
+}
+
+/* A soft brand bloom that grows on hover — the tile lighting up as you reach
+   for it, rather than a border colour change nobody notices. */
+.venture-glow {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(60% 50% at 78% 18%, var(--brand-core), transparent 70%);
+    opacity: 0.1;
+    transition: opacity var(--transition-slow);
+}
+
+.venture-mark {
+    width: 84px;
+    height: 84px;
+    flex: 0 0 auto;
+    color: var(--brand-core);
+}
+
+.venture-mark svg {
+    width: 100%;
+    height: 100%;
+}
+
+.venture-body {
+    flex: 1 1 auto;
+}
+
+.venture-role {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand-core);
+    margin-bottom: 12px;
+}
+
+.venture-name {
+    font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    color: var(--brand-on-ink);
+    margin: 0 0 14px;
+}
+
+.venture-pitch {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--brand-soft);
+    margin: 0;
+    text-align: left;
+}
+
+.venture-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 22px;
+    border-top: 1px solid color-mix(in srgb, var(--brand-core) 18%, transparent);
+}
+
+.venture-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--brand-soft);
+}
+
+.venture-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand-core);
+}
+
+.venture-enter {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: var(--brand-core);
+}
+
+.venture-enter svg {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .venture-card:hover {
+        transform: translateY(-5px);
+        border-color: color-mix(in srgb, var(--brand-core) 55%, transparent);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .venture-card:hover .venture-glow {
+        opacity: 0.26;
+    }
+
+    .venture-card:hover .venture-enter svg {
+        transform: translateX(5px);
+    }
+}
+
+/* ============================================================================
+   BRAND-PAGE ODDS AND ENDS
+   ========================================================================= */
+
+.brand-lead-p {
+    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--color-text-primary);
+}
+
+.brand-values-hint {
+    font-size: 0.82rem;
+    color: var(--color-text-tertiary);
+    margin: 0 0 12px;
+    text-align: left;
+}
+
+.brand-footer-nav {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.brand-footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-base), gap var(--transition-base);
+}
+
+.brand-footer-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .brand-footer-link:hover {
+        color: var(--brand-text);
+        gap: 14px;
+    }
+}
+
+/* Visible to assistive technology only. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 900px) {
+    .featured-art {
+        -webkit-mask-image: none;
+        mask-image: none;
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 768px) {
+    .hub-page {
+        padding: calc(var(--navbar-h, 140px) + 32px) 16px 72px;
+    }
+
+    .featured-inner {
+        padding: 34px 22px;
+    }
+
+    .featured-role {
+        margin-bottom: 52px;
+    }
+
+    .timeline-row {
+        padding-left: 32px;
+    }
+
+    .timeline-row::before {
+        left: 6px;
+    }
+
+    .timeline-dot {
+        left: 0;
+    }
+
+    .timeline-card {
+        padding: 22px 18px;
+    }
+
+    .timeline-period {
+        white-space: normal;
+        flex-basis: 100%;
+    }
+
+    .hub-teaser {
+        padding: 28px 22px;
+        margin-top: 48px;
+    }
+
+    .venture-card {
+        min-height: auto;
+        padding: 28px 22px 24px;
+    }
+
+    .venture-mark {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hub-page {
+        animation: none;
+    }
+}
+
+/* ============================================================================
+   LOGO PLATES
+   ----------------------------------------------------------------------------
+   Radii's wordmark is black type on an orange disc over a transparent ground,
+   and Evodeps' is deep navy. Both vanish on a dark surface. A light plate keeps
+   each company's real colours, where inverting them would invent a logo the
+   company does not own.
+   ========================================================================= */
+
+img.brand-hero-mark,
+.featured-logo,
+.timeline-logo {
+    background: #ffffff;
+    box-shadow: var(--shadow-md);
+}
+
+img.brand-hero-mark {
+    height: 64px;
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+}
+
+.featured-logo {
+    height: 54px;
+    padding: 9px 16px;
+    border-radius: var(--radius-md);
+}
+
+.timeline-logo {
+    padding: 6px;
+}
+
+/* A 1180px card runs ~115 characters per line, which is roughly twice a
+   comfortable measure. The card can stay wide; the prose inside it cannot. */
+.timeline-body,
+.featured-body {
+    max-width: 78ch;
+}

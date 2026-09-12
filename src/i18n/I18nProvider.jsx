@@ -1,7 +1,13 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import en from './en';
 import es from './es';
-import { detectLanguage, readStoredLanguage, translate, writeStoredLanguage } from './i18n';
+import {
+  detectLanguage,
+  readStoredLanguage,
+  translate,
+  translateList,
+  writeStoredLanguage,
+} from './i18n';
 
 const DICTIONARIES = { en, es };
 const I18nContext = createContext(null);
@@ -31,7 +37,13 @@ export const I18nProvider = ({ children }) => {
 
   const value = useMemo(() => {
     const dictionary = DICTIONARIES[lang] || en;
-    return { lang, setLang, toggleLang, t: (key) => translate(dictionary, key) };
+    return {
+      lang,
+      setLang,
+      toggleLang,
+      t: (key) => translate(dictionary, key),
+      tl: (key) => translateList(dictionary, key),
+    };
   }, [lang, setLang, toggleLang]);
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;

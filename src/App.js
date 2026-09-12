@@ -1,10 +1,17 @@
 import { useEffect } from 'react';
 import './App.css';
+import './styles/brand.css';
+import './styles/marks.css';
+import './styles/hub.css';
 import About from './components/about/about';
 import Experience from './components/experience/experience';
 import Navbar from './components/navigation/navbar';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import MyProjects from './components/projects/projects';
+import Ventures from './components/ventures/ventures';
+import RadiiPage from './components/brand/RadiiPage';
+import StackSelectPage from './components/brand/StackSelectPage';
+import MoonphasePage from './components/brand/MoonphasePage';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
 
@@ -33,6 +40,12 @@ function App() {
               <Route path="/" element={<About />} />
               <Route path="/experience" element={<Experience />} />
               <Route path="/projects" element={<MyProjects/>} />
+              <Route path="/ventures" element={<Ventures />} />
+              {/* Brand stories. Reached from the timeline and the ventures hub,
+                  but each is a real URL so it can be linked to on its own. */}
+              <Route path="/radii" element={<RadiiPage />} />
+              <Route path="/stackselect" element={<StackSelectPage />} />
+              <Route path="/moonphase" element={<MoonphasePage />} />
             </Routes>
           </Router>
         </div>

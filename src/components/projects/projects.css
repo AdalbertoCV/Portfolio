@@ -1,0 +1,340 @@
+/* ============================================================================
+   PROJECTS
+   ----------------------------------------------------------------------------
+   One card shape for everything. A project with screenshots shows them in the
+   cover and opens a lightbox; a project without shows a signature generated
+   from its name. Below the cover the two are identical, which is the point: a
+   repository with nothing to photograph is not a lesser project.
+   ========================================================================= */
+
+.projects-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: calc(var(--navbar-h, 120px) + 48px) 24px 96px;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* The brand-scoped primitives borrowed here (.hub-badge,
+       .brand-stack-title) resolve to the portfolio's own monochrome palette. */
+    --brand-text: var(--color-text-primary);
+    --brand-tint: var(--color-navlink-hover);
+}
+
+/* ------------------------------------------------------------------ header */
+
+.projects-header {
+    max-width: 64ch;
+    margin: 0 auto 52px;
+    text-align: center;
+}
+
+.projects-title {
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+    color: var(--color-text-primary);
+    margin: 18px 0 16px;
+}
+
+.projects-lede {
+    font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.projects-count {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+    margin: 0;
+}
+
+.projects-count strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+/* ------------------------------------------------------------------- grid */
+
+.project-group + .project-group {
+    margin-top: 48px;
+}
+
+.project-group .brand-stack-title {
+    margin-bottom: 16px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* The institutional work has real interface screenshots, and a 310px cover
+   wastes them. Wider tracks, so those covers are actually readable. */
+.project-grid.is-wide {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+/* ------------------------------------------------------------------- card */
+
+.project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    transition: border-color var(--transition-base), transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.project-cover {
+    position: relative;
+    aspect-ratio: 5 / 2;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border-primary);
+    background: var(--color-bg-tertiary);
+    display: block;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.project-glyph {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Fades the generated pattern into the card so the cover reads as part of the
+   surface rather than as a pasted-in thumbnail. Screenshots keep their own
+   edge, so this only applies to the glyph. */
+.project-cover:not(.project-cover-button)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 35%, var(--color-bg-card));
+    opacity: 0.85;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+}
+
+/* The cover is its own control when there are shots to open. It sits above the
+   stretched card link so a click here opens the gallery rather than the repo. */
+.project-cover-button {
+    cursor: zoom-in;
+    z-index: 2;
+}
+
+.project-cover-badge {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 650;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.project-cover-badge svg {
+    width: 12px;
+    height: 12px;
+}
+
+.project-body {
+    padding: 18px 22px 16px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    font-size: 1.05rem;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    color: var(--color-text-primary);
+    margin: 0 0 4px;
+}
+
+/* The repository slug, set in mono so it reads as an identifier rather than as
+   a second title. */
+.project-slug {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-size: 0.76rem;
+    color: var(--color-text-tertiary);
+    margin: 0 0 12px;
+    word-break: break-word;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    line-height: 1.62;
+    color: var(--color-text-secondary);
+    margin: 0 0 16px;
+    text-align: left;
+    flex: 1 1 auto;
+}
+
+.project-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+}
+
+.project-tags li {
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-tertiary);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+}
+
+.project-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 14px 22px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.project-lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+}
+
+.project-lang-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+}
+
+.project-open,
+.project-private {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8rem;
+    font-weight: 650;
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.project-private {
+    font-weight: 500;
+    color: var(--color-text-tertiary);
+}
+
+.project-open svg,
+.project-private svg {
+    width: 14px;
+    height: 14px;
+    transition: transform var(--transition-base);
+}
+
+/* Stretched link: the whole card opens the repository, without the invalid
+   markup of nesting the cover's <button> inside an <a>. */
+.project-open::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.project-card.is-private {
+    /* Nothing to click through to. */
+    opacity: 0.86;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .project-card:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .project-card:hover .project-open svg {
+        transform: translate(3px, -3px);
+    }
+
+    .project-card:hover .project-cover:not(.project-cover-button)::after {
+        opacity: 0.6;
+    }
+
+    .project-card:hover .project-cover img {
+        transform: scale(1.04);
+    }
+}
+
+/* Keyboard users get the same affordance the stretched link gives a mouse. */
+.project-open:focus-visible::after {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: -3px;
+    border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+    .projects-page {
+        padding: calc(var(--navbar-h, 140px) + 28px) 16px 72px;
+    }
+
+    .projects-header {
+        margin-bottom: 36px;
+    }
+
+    .project-grid,
+    .project-grid.is-wide {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-group + .project-group {
+        margin-top: 36px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .projects-page {
+        animation: none;
+    }
+}

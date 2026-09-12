@@ -1,7 +1,25 @@
+import brandsEn from './brands.en';
+import reposEn from './repos.en';
+import cvEn from './cv.en';
+
 const en = {
-  nav: { about: 'About Me', projects: 'Projects', experience: 'Experience' },
+  ...brandsEn,
+  ...cvEn,
+  ...reposEn,
+  nav: {
+    about: 'About Me',
+    projects: 'Projects',
+    experience: 'Experience',
+    ventures: 'Ventures',
+    menu: 'Menu',
+    closeMenu: 'Close menu',
+  },
   common: {
     language: 'Language',
+    back: 'Back',
+    backToExperience: 'Back to Experience',
+    backToVentures: 'Back to Ventures',
+    scroll: 'Scroll',
     themeToLight: 'Switch to light theme',
     themeToDark: 'Switch to dark theme',
     openRepo: 'source repository',
@@ -15,13 +33,11 @@ const en = {
     tapToZoom: 'Tap image to zoom',
     dragToExplore: 'Drag to explore',
     enlargedImage: 'Enlarged image',
-    moonphaseLabel: 'Moonphase',
-    comingSoon: 'Coming soon…',
   },
   about: {
     badge: 'About Me & Education',
     heading: 'About Me:',
-    name: 'Adalberto Cerrillo Vázquez',
+    name: 'Adal Cerrillo',
     role: 'Software Engineer',
     bio: 'Full-stack software engineer building backend services, cloud infrastructure, and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS and Azure that automate data processing, develop AI agents with LangGraph and LangChain, and maintain the CI/CD pipelines and observability that hold a microservices platform together. I work across Python, Java, JavaScript and C#, with Django, Spring Boot and React, and my interests run to distributed systems, event-driven architecture, LLM systems and RAG, and platform engineering. I trained as a software engineer at the Autonomous University of Zacatecas. What drives me is continuous innovation — using emerging technology to shape where the software industry is going, and combining engineering with design and business thinking to build solutions that last.',
     downloadCv: 'Download CV',
@@ -32,6 +48,16 @@ const en = {
   skills: {
     heading: 'Skills',
     subheading: 'Technologies & Tools I Work With',
+    groups: {
+      languages: 'Languages',
+      backend: 'Backend & architecture',
+      ai: 'AI, agents & Machine Learning',
+      cloud: 'Cloud, platform & DevOps',
+      data: 'Data',
+      frontend: 'Frontend & mobile',
+      tools: 'Tooling & practice',
+      frontier: 'Frontiers I explore',
+    },
   },
   education: {
     heading: 'Education:',
@@ -49,19 +75,19 @@ const en = {
     badge: '2+ Years of Experience',
     radii: {
       company: 'Radii Manufacturing',
-      period: '(Jul 2025 - now)',
+      period: 'Jul 2025 — Present',
       title: 'Founding Software Engineer',
       body: "Founding Software Engineer at Radii Manufacturing, a startup automating manufacturing through an AI-powered platform and a network of manufacturers, and one of the most promising startups in Latin America. I define the company's technical direction alongside the founding team — the stack, the architecture, and the engineering practices the platform is built on — turning an early-stage product into a system the business can scale on.",
     },
     freelance: {
       company: 'Freelance',
-      period: '(Jan 2025 - now)',
+      period: 'Jan 2025 — Present',
       title: 'Software Engineer',
       body: 'I build software for clients as an independent engineer, working inside multidisciplinary teams — designers, domain experts, and other engineers — to turn business problems into systems people actually use. I pick modern, well-supported technology to fit each problem rather than out of habit, and stay accountable for the result from the first conversation through to delivery.',
     },
     labsol: {
       company: 'Labsol Network',
-      period: '(Sep 2023 - Nov 2024)',
+      period: 'Sep 2023 — Nov 2024',
       title: 'Software Developer Intern',
       body: 'Part of the Free Software Laboratory team at COZCYT, where I led two projects delivered to the Autonomous University of Zacatecas and the Zacatecan Council of Science, Technology and Innovation. Owning delivery end to end sharpened my full-stack development, requirements analysis, software design, testing, and project management.',
     },

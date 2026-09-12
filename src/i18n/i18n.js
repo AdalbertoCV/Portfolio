@@ -31,8 +31,25 @@ export function writeStoredLanguage(lang) {
 // "experience.radii.body" rather than as blank space nobody notices.
 // Own properties only: traversing the prototype chain would let a key like
 // 'constructor.name' resolve to an unrelated string instead of reporting a miss.
+// Same lookup as translate(), but for the dictionary's list entries — the CV's
+// chip rows and interest cards, where the number of items is content, not code,
+// and should be editable in one place per language.
+// Returns [] on a miss rather than the key: a stray key string rendered as a
+// chip looks like real content, where an empty row is visibly missing.
+export function translateList(dictionary, key) {
+  const value = readPath(dictionary, key);
+  return Array.isArray(value) ? value : [];
+}
+
 export function translate(dictionary, key) {
-  const value = String(key)
+  const value = readPath(dictionary, key);
+  return typeof value === 'string' ? value : key;
+}
+
+// Own properties only: traversing the prototype chain would let a key like
+// 'constructor.name' resolve to an unrelated string instead of reporting a miss.
+function readPath(dictionary, key) {
+  return String(key)
     .split('.')
     .reduce(
       (node, part) =>
@@ -41,5 +58,4 @@ export function translate(dictionary, key) {
           : undefined,
       dictionary
     );
-  return typeof value === 'string' ? value : key;
 }

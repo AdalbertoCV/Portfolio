@@ -1,7 +1,25 @@
+import brandsEs from './brands.es';
+import reposEs from './repos.es';
+import cvEs from './cv.es';
+
 const es = {
-  nav: { about: 'Sobre Mí', projects: 'Proyectos', experience: 'Experiencia' },
+  ...brandsEs,
+  ...cvEs,
+  ...reposEs,
+  nav: {
+    about: 'Sobre Mí',
+    projects: 'Proyectos',
+    experience: 'Experiencia',
+    ventures: 'Ventures',
+    menu: 'Menú',
+    closeMenu: 'Cerrar menú',
+  },
   common: {
     language: 'Idioma',
+    back: 'Volver',
+    backToExperience: 'Volver a Experiencia',
+    backToVentures: 'Volver a Ventures',
+    scroll: 'Desplázate',
     themeToLight: 'Cambiar a tema claro',
     themeToDark: 'Cambiar a tema oscuro',
     openRepo: 'repositorio de código',
@@ -15,13 +33,11 @@ const es = {
     tapToZoom: 'Toca la imagen para hacer zoom',
     dragToExplore: 'Arrastra para explorar',
     enlargedImage: 'Imagen ampliada',
-    moonphaseLabel: 'Moonphase',
-    comingSoon: 'Muy pronto…',
   },
   about: {
     badge: 'Sobre Mí y Educación',
     heading: 'Sobre Mí:',
-    name: 'Adalberto Cerrillo Vázquez',
+    name: 'Adal Cerrillo',
     role: 'Software Engineer',
     bio: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS y Azure que automatizan el procesamiento de datos, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad que sostienen una plataforma de microservicios. Trabajo con Python, Java, JavaScript y C#, sobre Django, Spring Boot y React, y mis intereses van hacia los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Me formé como Ingeniero de Software en la Universidad Autónoma de Zacatecas. Lo que me mueve es la innovación continua: usar tecnología emergente para influir en hacia dónde va la industria del software, y combinar ingeniería, diseño y visión de negocio para construir soluciones que perduren.',
     downloadCv: 'Descargar CV',
@@ -32,6 +48,16 @@ const es = {
   skills: {
     heading: 'Habilidades',
     subheading: 'Tecnologías y Herramientas que Utilizo',
+    groups: {
+      languages: 'Lenguajes',
+      backend: 'Backend y arquitectura',
+      ai: 'IA, agentes y Machine Learning',
+      cloud: 'Nube, plataforma y DevOps',
+      data: 'Datos',
+      frontend: 'Frontend y móvil',
+      tools: 'Herramientas y práctica',
+      frontier: 'Fronteras que exploro',
+    },
   },
   education: {
     heading: 'Educación:',
@@ -49,19 +75,19 @@ const es = {
     badge: 'Más de 2 Años de Experiencia',
     radii: {
       company: 'Radii Manufacturing',
-      period: '(Jul 2025 - actualidad)',
+      period: 'Jul 2025 — Actualidad',
       title: 'Founding Software Engineer',
       body: 'Founding Software Engineer en Radii Manufacturing, una startup que automatiza procesos de manufactura mediante una plataforma con inteligencia artificial y una red de fabricantes, y una de las startups más prometedoras de Latinoamérica. Defino la dirección técnica de la empresa junto al equipo fundador — el stack, la arquitectura y las prácticas de ingeniería sobre las que se construye la plataforma — convirtiendo un producto en etapa temprana en un sistema sobre el que el negocio puede escalar.',
     },
     freelance: {
       company: 'Freelance',
-      period: '(Ene 2025 - actualidad)',
+      period: 'Ene 2025 — Actualidad',
       title: 'Software Engineer',
       body: 'Desarrollo software para clientes como ingeniero independiente, trabajando dentro de equipos multidisciplinarios — diseñadores, expertos del dominio y otros ingenieros — para convertir problemas de negocio en sistemas que la gente realmente usa. Elijo tecnología de vanguardia y bien respaldada según el problema, no por costumbre, y me hago responsable del resultado desde la primera conversación hasta la entrega.',
     },
     labsol: {
       company: 'Labsol Network',
-      period: '(Sep 2023 - Nov 2024)',
+      period: 'Sep 2023 — Nov 2024',
       title: 'Software Developer Intern',
       body: 'Formé parte del equipo del Laboratorio de Software Libre del COZCYT, donde lideré dos proyectos entregados a la Universidad Autónoma de Zacatecas y al Consejo Zacatecano de Ciencia, Tecnología e Innovación. Ser responsable de la entrega de principio a fin afianzó mi desarrollo full-stack, análisis de requerimientos, diseño de software, pruebas y gestión de proyectos.',
     },

@@ -1,0 +1,263 @@
+/* ============================================================================
+   BRAND MARKS & HERO ARTWORK
+   ----------------------------------------------------------------------------
+   Motion for the hand-drawn SVG identities. Every animation here is decorative;
+   the reduced-motion block at the bottom stops all of it at once rather than
+   each component opting out on its own.
+   ========================================================================= */
+
+/* ---------------------------------------------------------------- StackSelect
+   An isometric stack of slabs with the top one lifted out: "Stack" is the
+   pile, "Select" is the one that leaves it. */
+
+.ss-mark {
+    overflow: visible;
+}
+
+.ss-slab {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/* The two unselected slabs breathe very slightly out of phase, so the stack
+   reads as alive without pulling attention off the lifted one. */
+.ss-slab-base {
+    animation: ssSettle 5s ease-in-out infinite;
+}
+
+.ss-slab-base-2 {
+    animation-delay: -2.5s;
+}
+
+@keyframes ssSettle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(0.6px); }
+}
+
+.ss-selected {
+    animation: ssLift 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes ssLift {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2.6px); }
+}
+
+/* The bracket above the stack is the selection cursor. It tightens as the slab
+   rises, the way a caliper closes on a part. */
+.ss-caret {
+    animation: ssCaret 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform-origin: 32px 8px;
+}
+
+@keyframes ssCaret {
+    0%, 100% { opacity: 0.45; transform: scale(1); }
+    50% { opacity: 1; transform: scale(0.9); }
+}
+
+/* A light pass that travels down the stack, like a scanner reading it. */
+.ss-scan {
+    animation: ssScan 4.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes ssScan {
+    0% { opacity: 0; transform: translateY(-14px); }
+    18% { opacity: 0.9; }
+    72% { opacity: 0; transform: translateY(24px); }
+    100% { opacity: 0; transform: translateY(24px); }
+}
+
+/* StackSelect hero field: columns of slabs, one of which is picked. */
+.ss-field-col {
+    animation: ssFieldDrift 14s ease-in-out infinite;
+}
+
+@keyframes ssFieldDrift {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.ss-field-pick {
+    animation: ssFieldPick 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes ssFieldPick {
+    0%, 100% { transform: translateY(0); opacity: 0.75; }
+    45%, 65% { transform: translateY(-26px); opacity: 1; }
+}
+
+/* ----------------------------------------------------------------- Moonphase
+   One disc, lit differently. The terminator sweeps across a mask, so the shape
+   moves through real phases instead of cross-fading between two pictures. */
+
+.mp-terminator {
+    animation: mpPhase 16s ease-in-out infinite;
+}
+
+@keyframes mpPhase {
+    0% { transform: translateX(-44px); }
+    50% { transform: translateX(44px); }
+    100% { transform: translateX(-44px); }
+}
+
+.mp-orbit {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mpOrbit 18s linear infinite;
+}
+
+@keyframes mpOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.mp-hero-terminator {
+    animation: mpHeroPhase 22s ease-in-out infinite;
+}
+
+@keyframes mpHeroPhase {
+    0% { transform: translateX(-660px); }
+    50% { transform: translateX(660px); }
+    100% { transform: translateX(-660px); }
+}
+
+.mp-hero-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mpOrbitSlow 46s linear infinite;
+}
+
+.mp-hero-ring-2 {
+    animation-duration: 68s;
+    animation-direction: reverse;
+}
+
+@keyframes mpOrbitSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.mp-star {
+    animation: mpTwinkle 4s ease-in-out infinite;
+}
+
+@keyframes mpTwinkle {
+    0%, 100% { opacity: 0.22; }
+    50% { opacity: 0.85; }
+}
+
+/* --------------------------------------------------------------------- Radii
+   Concentric radii, a toolpath that draws itself, and an inspection sweep.
+   The name is the geometry: everything is measured from one centre. */
+
+.rd-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: rdSpin 40s linear infinite;
+}
+
+.rd-ring-2 {
+    animation-duration: 64s;
+    animation-direction: reverse;
+}
+
+.rd-ring-3 {
+    animation-duration: 96s;
+}
+
+@keyframes rdSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* stroke-dashoffset on a known path length: the line appears to be cut by a
+   tool rather than faded in. */
+.rd-path {
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: rdDraw 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes rdDraw {
+    0% { stroke-dashoffset: 1400; }
+    45% { stroke-dashoffset: 0; }
+    85% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* The cutter head that rides the path. */
+.rd-head {
+    animation: rdHead 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes rdHead {
+    0% { opacity: 0; }
+    6% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.rd-sweep {
+    animation: rdSweep 7s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes rdSweep {
+    0% { opacity: 0; transform: translateX(-180px); }
+    20% { opacity: 0.7; }
+    80% { opacity: 0; transform: translateX(1200px); }
+    100% { opacity: 0; transform: translateX(1200px); }
+}
+
+.rd-tick {
+    animation: rdTick 3.2s ease-in-out infinite;
+}
+
+@keyframes rdTick {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.7; }
+}
+
+/* --------------------------------------------------------- Shared behaviours */
+
+/* Marks used as a link/button target lean in on hover. */
+@media (hover: hover) and (pointer: fine) {
+    .venture-card:hover .brand-mark-lg {
+        transform: scale(1.04);
+    }
+}
+
+.brand-mark-lg {
+    transition: transform var(--transition-slow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ss-slab-base,
+    .ss-selected,
+    .ss-caret,
+    .ss-scan,
+    .ss-field-col,
+    .ss-field-pick,
+    .mp-terminator,
+    .mp-orbit,
+    .mp-hero-terminator,
+    .mp-hero-ring,
+    .mp-star,
+    .rd-ring,
+    .rd-path,
+    .rd-head,
+    .rd-sweep,
+    .rd-tick {
+        animation: none !important;
+    }
+
+    /* The toolpath is the whole point of the Radii artwork — show it finished
+       rather than showing nothing. */
+    .rd-path {
+        stroke-dashoffset: 0;
+    }
+
+    .ss-scan,
+    .rd-sweep {
+        opacity: 0;
+    }
+}

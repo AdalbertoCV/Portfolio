@@ -42,6 +42,8 @@
     --color-navlink-hover: rgba(255, 255, 255, 0.05);
     --color-contact-hover: rgba(255, 255, 255, 0.03);
     --color-navbar-sweep: rgba(255, 255, 255, 0.1);
+    /* The mobile menu panel. Solid, not translucent - see .nav-sheet. */
+    --color-sheet-bg: #141414;
 
     /* Page background wash */
     --wash-1: rgba(40, 40, 40, 0.3);
@@ -117,6 +119,7 @@
     --color-navlink-hover: rgba(0, 0, 0, 0.05);
     --color-contact-hover: rgba(0, 0, 0, 0.04);
     --color-navbar-sweep: rgba(0, 0, 0, 0.06);
+    --color-sheet-bg: #ffffff;
 
     --wash-1: rgba(215, 215, 220, 0.45);
     --wash-2: rgba(228, 228, 235, 0.4);
@@ -508,21 +511,26 @@ body::after {
     75% { transform: scale(1.1) translateY(-2px) rotate(5deg); }
 }
 
+/* An inline SVG now, not a bitmap. It draws itself in `currentColor`, so the
+   theme is a colour change rather than the filter/invert pair this used to
+   need — and it stays sharp at any density.
+   Height drives the size and the width follows the 6.4:1 viewBox; max-width is
+   only a floor-guard for very narrow bars. */
 .navbar-logo {
-    max-width: 300px;
-    max-height: 50px;
-    filter: brightness(1.2);
-    transition: all var(--transition-base);
+    height: 46px;
+    width: auto;
+    max-width: 270px;
+    flex: 0 0 auto;
+    color: var(--color-text-primary);
+    opacity: 0.92;
+    transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
-.navbar-logo:hover {
-    filter: brightness(1.4);
-    transform: scale(1.02);
-}
-
-/* Greyscale artwork authored for a dark bar; inverting is exact here. */
-:root[data-theme='light'] .navbar-logo {
-    filter: invert(1) brightness(0.85);
+@media (hover: hover) and (pointer: fine) {
+    .navbar-logo:hover {
+        opacity: 1;
+        transform: scale(1.02);
+    }
 }
 
 .icon-text {
@@ -979,8 +987,26 @@ body::after {
     box-sizing: border-box;
     box-shadow: var(--shadow-lg), inset 0 -1px 0 var(--color-edge-highlight);
     border-bottom: 1px solid var(--color-border-primary);
-    transition: all var(--transition-base);
+
+    /* NEVER `transition: all` here. This is the phone bug that kept coming
+       back: `all` transitions geometry too - transform, top, left, width. A
+       fixed bar's geometry is not supposed to be animated, but the engine
+       recomputes it constantly on mobile: the URL bar collapses when focus
+       scrolls the page, the visual viewport resizes, and the browser nudges
+       fixed elements to match. Each of those instant, imperceptible
+       corrections was being stretched into a visible 0.3s slide, which is why
+       the bar appeared to animate itself off the screen whenever anything
+       took focus. Only the paint properties may transition. */
+    transition: background var(--transition-base), border-color var(--transition-base),
+        box-shadow var(--transition-base);
     animation: slideDown 0.5s ease-out;
+}
+
+/* Focusing something scrolls it into view, and the browser does not know the
+   top ~73px of the viewport is covered. Without this the focused element lands
+   underneath the bar - the other half of what made focus feel broken here. */
+html {
+    scroll-padding-top: calc(var(--navbar-h, 120px) + 16px);
 }
 
 @keyframes slideDown {
@@ -991,6 +1017,16 @@ body::after {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* The entry slide is a desktop flourish. On a phone it is the exact motion the
+   bug produced, so if it ever replays - a remount, a hot reload - it reads as
+   the bug coming back, and it costs half a second of the bar not being on
+   screen at all. Skipped on small screens and whenever motion is reduced. */
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+    .navbar {
+        animation: none;
     }
 }
 
@@ -1127,56 +1163,42 @@ body::after {
     }
 }
 
-.moonphase {
-    position: relative;
-    display: inline-flex;
+/* ---------------------------------------------------------------- mobile menu
+   The links live in the bar on desktop and in a sheet below it on a phone.
+   Both lists are always in the DOM; which one is shown is a CSS decision, so
+   there is no layout-measuring JS deciding it and nothing to get out of step. */
+
+.navbar-menu-button,
+.nav-sheet {
+    display: none;
 }
 
-/* Not modal: it does not dim the page or lock scroll. It is a footnote.
-   Anchored to the viewport, not to the button: the moon control sits in the
-   middle of a three-control row, so a popover anchored to it (position:
-   absolute; right: 0) can run off the left edge of a narrow viewport no
-   matter how its width is clamped. Fixed positioning plus a viewport-relative
-   offset keeps it on-screen regardless of where the button lands - but only
-   because the markup portals this element to <body>. `.navbar` sets
-   `backdrop-filter`, which establishes a containing block for its fixed
-   descendants, so left in place this element would anchor to the navbar's
-   box instead of the viewport wherever an engine honors that rule. */
-.moonphase-popover {
-    position: fixed;
-    top: calc(var(--navbar-h, 120px) + 8px);
-    right: max(12px, 3vw);
-    z-index: 1100;
-    width: min(260px, calc(100vw - 24px));
-    padding: 18px 20px;
-    border-radius: var(--radius-lg);
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border-secondary);
-    box-shadow: var(--shadow-lg);
-    animation: fadeInScale var(--transition-base);
+.menu-bar {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
-.moonphase-popover:focus { outline: none; }
-
-.moonphase-popover-icon {
-    width: 26px;
-    height: 26px;
-    color: var(--color-text-primary);
-    margin-bottom: 10px;
+.menu-bar-x1,
+.menu-bar-x2 {
+    opacity: 0;
+    transform: scale(0.7);
 }
 
-.moonphase-name {
-    margin: 0;
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--color-text-primary);
+.navbar.menu-open .menu-bar-top {
+    opacity: 0;
+    transform: translateY(3px);
 }
 
-.moonphase-soon {
-    margin: 4px 0 0;
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
+.navbar.menu-open .menu-bar-bottom {
+    opacity: 0;
+    transform: translateY(-3px);
+}
+
+.navbar.menu-open .menu-bar-x1,
+.navbar.menu-open .menu-bar-x2 {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .language-toggle {
@@ -1417,12 +1439,13 @@ body::after {
     .navbar {
         width: 100%;
         flex-direction: row;
-        flex-wrap: wrap;
+        /* Never wrap. One row, one height - see the .nav-sheet note below for
+           why a wrapping bar was the bug. */
+        flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 20px;
-        gap: 0 12px;
-        row-gap: 8px;
+        padding: 14px 16px;
+        gap: 12px;
     }
 
     /* Shrinks so the logo and the control group always share row one,
@@ -1432,12 +1455,16 @@ body::after {
        breaks) at min-width rather than its natural/max size, which is what
        lets it give up space instead of forcing a wrap. min-width is the
        floor that keeps it legible. */
+    /* No `order`: the control group carries no order of its own, so giving the
+       logo order:1 pushed it *after* the controls and mirrored the whole bar.
+       DOM order is already the order we want. It may shrink (the controls must
+       never be squeezed) but has no flex-basis of 0, so it keeps its natural
+       width whenever there is room. */
     .navbar-logo {
-        order: 1;
-        flex: 1 1 0;
-        min-width: 64px;
-        max-width: 140px;
-        max-height: 36px;
+        flex: 0 1 auto;
+        min-width: 0;
+        height: 27px;
+        max-width: 160px;
     }
 
     .main-card {
@@ -1600,37 +1627,89 @@ body::after {
         gap: 2px;
     }
 
-    .nav-links {
-        order: 3;
-        width: 100%;
+    /* The inline row is replaced by the sheet below the bar. This is the fix
+       for the phone bug: the row used to wrap onto a second line inside the
+       bar, which made the bar's own height a function of its contents. Every
+       height change rewrote --navbar-h, which moved each page's top margin,
+       which changed document height, which showed/hid the mobile URL bar,
+       which resized the viewport and re-ran the wrap - so touching anything
+       could set the bar shuffling and overflowing. With the links out of the
+       flow, the bar is exactly one fixed row and cannot re-wrap at all. */
+    .nav-links-inline {
+        display: none;
+    }
+
+    .navbar-menu-button {
+        display: inline-flex;
+    }
+
+    .nav-sheet {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 10px 16px 16px;
+        /* Opaque, unlike the bar above it. The bar is a thin strip where a
+           translucent blur reads as depth; the sheet is a 220px panel, and at
+           that size the page showing through it just makes the labels hard to
+           read. */
+        background: var(--color-sheet-bg);
+        border-bottom: 1px solid var(--color-border-primary);
+        box-shadow: var(--shadow-lg);
+        transform-origin: top center;
+        transition: opacity var(--transition-base), transform var(--transition-base),
+            visibility var(--transition-base);
+    }
+
+    .nav-sheet[data-open='false'] {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+    }
+
+    .nav-sheet[data-open='true'] {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav-links-sheet {
+        flex-direction: column;
+        align-items: stretch;
         gap: 4px;
-        flex-wrap: wrap;
-        justify-content: center;
+        width: 100%;
     }
 
-    .nav-links li {
-        font-size: 14px;
+    .nav-links-sheet li {
+        display: block;
+        font-size: 15px;
     }
 
-    .nav-link-button {
-        padding: 10px 16px;
+    .nav-links-sheet .nav-link-button {
+        padding: 14px 16px;
+        text-align: left;
     }
 
     .navbar li.active .nav-link-button {
-        padding: 10px 20px;
+        padding: 14px 16px;
     }
 
-    /* Beside the logo, not alone on a third row: that row cost ~55px of a
-       phone screen and read as an orphan. Fixed-size (no grow, no shrink) so
-       the control group's touch targets are never squeezed - the logo gives
-       up space instead. */
+    /* The underline sweep is a pointer affordance; in a stacked sheet it draws
+       a stray dash under each row. */
+    .nav-links-sheet li::before {
+        display: none;
+    }
+
+    /* Fixed-size (no grow, no shrink) so the control group's touch targets are
+       never squeezed - the logo gives up space instead. */
     .navbar-controls {
-        order: 2;
         width: auto;
         justify-content: flex-end;
         margin-top: 0;
         flex: 0 0 auto;
-        flex-shrink: 0;
+        gap: 6px;
     }
 }
 
@@ -1717,4 +1796,75 @@ button:focus-visible {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-scrollbar-thumb-hover);
+}
+
+/* ============================================
+   TOUCH: DO NOT LATCH HOVER STATES
+   ============================================
+   A coarse pointer keeps :hover on the last element tapped until something
+   else is tapped, so every lift, scale and wiggle above stays stuck after a
+   tap - which is what made the navbar look like it was shifting and drifting
+   once a link had been touched. These are pointer affordances with nothing to
+   communicate on a touchscreen, so they are switched off in one place rather
+   than by wrapping a dozen separate rule blocks.
+
+   Each reset restores the element's own base transform, not `none`: the
+   carousel and card arrows are centred with translateY(-50%), and clearing
+   that would drop them out of position. */
+@media (hover: none), (pointer: coarse) {
+    .nav-links li:hover,
+    .navbar-logo:hover,
+    .logo-image:hover,
+    .about-image-container:hover,
+    .carousel-image:hover,
+    .education-image:hover,
+    .contact-item:hover,
+    .skills-card:hover,
+    .experience-badge:hover,
+    .info-card:hover,
+    .contact-card:hover {
+        transform: none;
+        animation: none;
+    }
+
+    .card-navigation:hover,
+    .carousel-button:hover {
+        transform: translateY(-50%);
+    }
+
+    /* The growing underline and the ripple are both hover-only flourishes. */
+    .nav-links li:hover::before {
+        width: 0;
+    }
+
+    .experience-badge:hover::before {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+/* ============================================
+   SKILLS — grouped
+   ============================================ */
+.skills-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* The shared chip group carries its own top margin for the brand pages, where
+   groups are siblings in flowing prose. Here the flex gap already spaces them. */
+.skills-groups .brand-stack-group + .brand-stack-group {
+    margin-top: 0;
+}
+
+/* Eight groups of chips do not belong in a one-third column next to the bio.
+   This card takes the full row on wide screens. */
+@media (min-width: 1024px) {
+    .main-card .info-card.skills-card-wide {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }

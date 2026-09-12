@@ -1,23 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
-import githubImage from '../../images/GitHub.png';
-import BSImage1 from '../../images/Projects/bazar_sol_1.png';
-import BSImage2 from '../../images/Projects/bazar_sol_2.png';
-import BSImage3 from '../../images/Projects/bazar_sol_3.png';
-import RZImage1 from '../../images/Projects/rentazac1.png';
-import RZImage2 from '../../images/Projects/rentazac2.png';
-import RZImage3 from '../../images/Projects/rentazac3.png';
-import cargasI1 from '../../images/Projects/cargas1.png';
-import cargasI2 from '../../images/Projects/cargas2.png';
-import cargasI3 from '../../images/Projects/cargas3.png';
-import cosiap1 from '../../images/Projects/COSIAP1.png';
-import cosiap2 from '../../images/Projects/COSIAP2.png';
-import cosiap3 from '../../images/Projects/COSIAP3.png';
-import cosiap4 from '../../images/Projects/COSIAP4.png';
-import pbienestar1 from '../../images/Projects/PuntoBienestar1.jpeg';
-import pbienestar2 from '../../images/Projects/PuntoBienestar2.jpeg';
-import pbienestar3 from '../../images/Projects/PuntoBienestar3.jpeg';
+import { Reveal } from '../brand/parts';
+import ProjectCard from './ProjectCard';
+import CATALOGUE, { PROJECT_COUNT } from './catalogue';
+import './projects.css';
 
 const SWIPE_THRESHOLD = 50;
 const MAX_SCROLLBAR_WIDTH = 40;
@@ -53,65 +40,11 @@ const CollapseIcon = () => (
   </svg>
 );
 
-const ProjectCard = ({ title, link, description, images, label, onExpand }) => {
-  const { t } = useTranslation();
-  const [index, setIndex] = useState(0);
-
-  const step = (delta) =>
-    setIndex((previous) => (previous + delta + images.length) % images.length);
-
-  return (
-    <div className="info-card">
-      <div className="header-container">
-        <h3>{title}</h3>
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${title} ${t('common.openRepo')}`}
-          >
-            <img className="logo-image" src={githubImage} alt="GitHub" />
-          </a>
-        )}
-      </div>
-      <p>{description}</p>
-      <div className="carousel-container">
-        {images.length > 1 && (
-          <button
-            className="carousel-button left"
-            onClick={() => step(-1)}
-            aria-label={`${label}: ${t('common.prevShot')}`}
-          >
-            <ChevronIcon direction="left" />
-          </button>
-        )}
-        <img
-          className="carousel-image"
-          onClick={() => onExpand({ images, index, setIndex, label })}
-          src={images[index]}
-          alt={`${label} ${index + 1}`}
-          style={{ maxWidth: '100%', height: 'auto' }}
-        />
-        {images.length > 1 && (
-          <button
-            className="carousel-button right"
-            onClick={() => step(1)}
-            aria-label={`${label}: ${t('common.nextShot')}`}
-          >
-            <ChevronIcon direction="right" />
-          </button>
-        )}
-      </div>
-    </div>
-  );
-};
-
 const MyProjects = () => {
   const { t } = useTranslation();
   // Holds the whole slide list, not a single image, so the expanded view can be
   // navigated without closing it. `setIndex` belongs to the card that opened
-  // the view, so its inline carousel stays on whatever slide you leave on.
+  // the view, so its cover stays on whatever slide you leave on.
   const [lightbox, setLightbox] = useState(null);
   // These are ~1920x890 desktop screenshots. Fitted to a portrait phone they
   // come out around a fifth of the screen height, which is unreadable, so the
@@ -131,8 +64,7 @@ const MyProjects = () => {
     setZoomed(false);
     setLightbox((current) => {
       if (!current) return current;
-      const nextIndex =
-        (current.index + delta + current.images.length) % current.images.length;
+      const nextIndex = (current.index + delta + current.images.length) % current.images.length;
       return { ...current, index: nextIndex };
     });
   }, []);
@@ -233,168 +165,122 @@ const MyProjects = () => {
     stepLightbox(travelled < 0 ? 1 : -1);
   };
 
-  const bazar_Sol_link = 'https://github.com/AdalbertoCV/Bazar_Sol';
-
-  const bazarSolImages = [BSImage1, BSImage2, BSImage3];
-
-  const rentazac_link = 'https://github.com/Viky-Gomez/RentaZac';
-
-  const RentaZacImages = [RZImage1, RZImage2, RZImage3];
-
-  const cargas_link = 'https://labsol.cozcyt.gob.mx/git/devops-lab/sistema-de-cargas-uaie';
-
-  const CargasImages = [cargasI1, cargasI2, cargasI3];
-
-  const cosiap_link = 'https://labsol.cozcyt.gob.mx/git/RafaUC/cosiap';
-
-  const CosiapImages = [cosiap1, cosiap2, cosiap3, cosiap4];
-
-  const pbienestarImages = [pbienestar1, pbienestar2, pbienestar3];
-
   const hasMultiple = lightbox && lightbox.images.length > 1;
 
   return (
-    <div className="main-card">
-      <div className="experience-header">
-        <span className="experience-badge">{t('projects.badge')}</span>
-      </div>
+    <div className="projects-page">
+      <Reveal className="projects-header">
+        <span className="hub-badge">{t('repos.badge')}</span>
+        <h1 className="projects-title">{t('repos.title')}</h1>
+        <p className="projects-lede">{t('repos.lede')}</p>
+        <p className="projects-count">
+          <strong>{PROJECT_COUNT}</strong> {t('repos.countLabel')}
+        </p>
+      </Reveal>
 
-      <ProjectCard
-        title={t('projects.pbienestar.title')}
-        description={t('projects.pbienestar.body')}
-        images={pbienestarImages}
-        label={t('projects.pbienestar.label')}
-        onExpand={setLightbox}
-      />
+      {CATALOGUE.map(({ id, projects, wide }) => (
+        <Reveal className="project-group" key={id}>
+          <h2 className="brand-stack-title">{t(`repos.groups.${id}`)}</h2>
+          <div className={`project-grid${wide ? ' is-wide' : ''}`}>
+            {projects.map((project) => (
+              <ProjectCard project={project} onExpand={setLightbox} key={project.key} />
+            ))}
+          </div>
+        </Reveal>
+      ))}
 
-      <ProjectCard
-        title={t('projects.cosiap.title')}
-        link={cosiap_link}
-        description={t('projects.cosiap.body')}
-        images={CosiapImages}
-        label={t('projects.cosiap.label')}
-        onExpand={setLightbox}
-      />
-
-      <ProjectCard
-        title={t('projects.cargas.title')}
-        link={cargas_link}
-        description={t('projects.cargas.body')}
-        images={CargasImages}
-        label={t('projects.cargas.label')}
-        onExpand={setLightbox}
-      />
-
-      <ProjectCard
-        title={t('projects.bazarSol.title')}
-        link={bazar_Sol_link}
-        description={t('projects.bazarSol.body')}
-        images={bazarSolImages}
-        label={t('projects.bazarSol.label')}
-        onExpand={setLightbox}
-      />
-
-      <ProjectCard
-        title={t('projects.rentazac.title')}
-        link={rentazac_link}
-        description={t('projects.rentazac.body')}
-        images={RentaZacImages}
-        label={t('projects.rentazac.label')}
-        onExpand={setLightbox}
-      />
-
-      {/* Portalled to <body>: `.main-card` is `position: relative; z-index: 2`,
-          so it traps a nested overlay in its stacking context and the fixed
-          navbar (z-index 1000) paints over the whole thing. */}
-      {lightbox && createPortal(
-        <div
-          className="fullscreen-overlay"
-          onClick={closeLightbox}
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${lightbox.label} — ${t('common.screenshots')}`}
-        >
-          <button className="fullscreen-close" onClick={closeLightbox} aria-label={t('common.close')}>
-            <CloseIcon />
-          </button>
-
-          {canZoom && (
+      {/* Portalled to <body>: the page is a stacking context, so a nested
+          overlay would render underneath the navbar. */}
+      {lightbox &&
+        createPortal(
+          <div className="fullscreen-overlay" onClick={closeLightbox}>
             <button
-              className="fullscreen-zoom"
+              className="fullscreen-close"
               onClick={(event) => {
                 event.stopPropagation();
-                setZoomed((current) => !current);
+                closeLightbox();
               }}
-              aria-pressed={zoomed}
-              aria-label={zoomed ? t('common.zoomOut') : t('common.zoomIn')}
+              aria-label={t('common.close')}
             >
-              {zoomed ? <CollapseIcon /> : <ExpandIcon />}
+              <CloseIcon />
             </button>
-          )}
 
-          {hasMultiple && (
-            <button
-              className="fullscreen-nav left"
-              onClick={(event) => {
-                event.stopPropagation();
-                stepLightbox(-1);
-              }}
-              aria-label={t('common.prevShot')}
-            >
-              <ChevronIcon direction="left" />
-            </button>
-          )}
+            {canZoom && (
+              <button
+                className="fullscreen-zoom"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setZoomed((current) => !current);
+                }}
+                aria-label={zoomed ? t('common.zoomOut') : t('common.zoomIn')}
+              >
+                {zoomed ? <CollapseIcon /> : <ExpandIcon />}
+              </button>
+            )}
 
-          <figure
-            className={`fullscreen-figure${zoomed ? ' is-zoomed' : ''}`}
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div
-              className="fullscreen-viewport"
-              ref={viewportRef}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-            >
-              <img
-                src={lightbox.images[lightbox.index]}
-                alt={`${lightbox.label} ${lightbox.index + 1} ${t('common.of')} ${lightbox.images.length}`}
-                className="fullscreen-image"
-                onLoad={measureFit}
-                onClick={canZoom ? () => setZoomed((current) => !current) : undefined}
-                style={canZoom ? { cursor: zoomed ? 'zoom-out' : 'zoom-in' } : undefined}
-              />
-            </div>
-            <figcaption className="fullscreen-counter">
-              {lightbox.label}
-              {hasMultiple && (
-                <>
-                  <span aria-hidden="true">·</span>
-                  <strong>{lightbox.index + 1}</strong> / {lightbox.images.length}
-                </>
-              )}
-              {canZoom && (
-                <span className="fullscreen-hint">
-                  {zoomed ? t('common.dragToExplore') : t('common.tapToZoom')}
-                </span>
-              )}
-            </figcaption>
-          </figure>
+            {hasMultiple && (
+              <button
+                className="fullscreen-nav left"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  stepLightbox(-1);
+                }}
+                aria-label={t('common.prevShot')}
+              >
+                <ChevronIcon direction="left" />
+              </button>
+            )}
 
-          {hasMultiple && (
-            <button
-              className="fullscreen-nav right"
-              onClick={(event) => {
-                event.stopPropagation();
-                stepLightbox(1);
-              }}
-              aria-label={t('common.nextShot')}
+            <figure
+              className={`fullscreen-figure${zoomed ? ' is-zoomed' : ''}`}
+              onClick={(event) => event.stopPropagation()}
             >
-              <ChevronIcon direction="right" />
-            </button>
-          )}
-        </div>,
-        document.body
-      )}
+              <div
+                className="fullscreen-viewport"
+                ref={viewportRef}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+              >
+                <img
+                  src={lightbox.images[lightbox.index]}
+                  alt={`${lightbox.label} ${lightbox.index + 1} ${t('common.of')} ${lightbox.images.length}`}
+                  className="fullscreen-image"
+                  onLoad={measureFit}
+                  onClick={canZoom ? () => setZoomed((current) => !current) : undefined}
+                  style={canZoom ? { cursor: zoomed ? 'zoom-out' : 'zoom-in' } : undefined}
+                />
+              </div>
+              <figcaption className="fullscreen-counter">
+                {lightbox.label}
+                {hasMultiple && (
+                  <>
+                    <span aria-hidden="true">·</span>
+                    <strong>{lightbox.index + 1}</strong> / {lightbox.images.length}
+                  </>
+                )}
+                {canZoom && (
+                  <span className="fullscreen-hint">
+                    {zoomed ? t('common.dragToExplore') : t('common.tapToZoom')}
+                  </span>
+                )}
+              </figcaption>
+            </figure>
+
+            {hasMultiple && (
+              <button
+                className="fullscreen-nav right"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  stepLightbox(1);
+                }}
+                aria-label={t('common.nextShot')}
+              >
+                <ChevronIcon direction="right" />
+              </button>
+            )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 };

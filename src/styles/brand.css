@@ -1,0 +1,981 @@
+/* ============================================================================
+   BRAND WORLDS
+   ----------------------------------------------------------------------------
+   The portfolio itself stays monochrome. Each brand page opens its own colour
+   world through one `data-brand` attribute on a wrapper, which redefines a
+   small token set that every rule below reads. Nothing here hardcodes a brand
+   colour, so adding a fourth brand is one token block.
+
+   The hero is a full-bleed brand canvas that keeps its deep ground in BOTH
+   themes — it reads as stepping into the company. Everything below the hero
+   follows the site theme and only borrows the brand as accent, so a light
+   reader is not trapped in a dark page.
+   ========================================================================= */
+
+/* Defined on :root as well as on [data-brand] so the brand-scoped primitives
+   (chips, kickers, notes) can also be used on the monochrome pages, where they
+   resolve to the site's own palette instead of failing to compute. */
+:root,
+[data-brand] {
+    --brand-ink: var(--color-bg-primary);
+    --brand-ink-2: var(--color-bg-tertiary);
+    --brand-core: var(--color-text-primary);
+    --brand-core-2: var(--color-text-secondary);
+    --brand-soft: var(--color-text-secondary);
+    --brand-on-ink: var(--color-text-primary);
+    /* Readable on the *page* surface, which flips with the theme. Defaults to
+       the hero colour and is overridden for light below, where a neon accent
+       on white fails contrast. */
+    --brand-text: var(--brand-core);
+    --brand-tint: var(--color-navlink-hover);
+}
+
+/* Radii — precision manufacturing. Steel navy ground, instrument cyan, the
+   blue of a CAD viewport. */
+[data-brand='radii'] {
+    --brand-ink: #04070f;
+    --brand-ink-2: #0a1628;
+    --brand-core: #22d3ee;
+    --brand-core-2: #3b82f6;
+    --brand-soft: #7c93ad;
+    --brand-on-ink: #eaf6fb;
+    --brand-text: #22d3ee;
+    --brand-tint: rgba(34, 211, 238, 0.1);
+}
+
+:root[data-theme='light'] [data-brand='radii'] {
+    --brand-text: #0e7490;
+    --brand-tint: rgba(14, 116, 144, 0.08);
+}
+
+/* StackSelect — talent selected out of a stack. Graphite ground, signal green,
+   with amber reserved for the one slab that gets picked. */
+[data-brand='stackselect'] {
+    --brand-ink: #050c08;
+    --brand-ink-2: #0d1c13;
+    --brand-core: #34d399;
+    --brand-core-2: #a3e635;
+    --brand-soft: #86a894;
+    --brand-on-ink: #eafaf1;
+    --brand-text: #34d399;
+    --brand-tint: rgba(52, 211, 153, 0.1);
+}
+
+:root[data-theme='light'] [data-brand='stackselect'] {
+    --brand-text: #047857;
+    --brand-tint: rgba(4, 120, 87, 0.08);
+}
+
+/* Moonphase — the same circle lit differently. Deep space violet, lunar
+   silver, the pale glow of a terminator line. */
+[data-brand='moonphase'] {
+    --brand-ink: #070512;
+    --brand-ink-2: #150f2e;
+    --brand-core: #a78bfa;
+    --brand-core-2: #e2e8f0;
+    --brand-soft: #9a93b8;
+    --brand-on-ink: #f1effa;
+    --brand-text: #a78bfa;
+    --brand-tint: rgba(167, 139, 250, 0.12);
+}
+
+:root[data-theme='light'] [data-brand='moonphase'] {
+    --brand-text: #6d28d9;
+    --brand-tint: rgba(109, 40, 217, 0.08);
+}
+
+/* ============================================================================
+   PAGE SHELL
+   ========================================================================= */
+
+.brand-page {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    /* The hero is full-bleed, so the page itself carries no top margin — the
+       hero reserves navbar clearance with its own padding instead. */
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--brand-on-ink);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background var(--transition-base), border-color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.brand-back svg {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .brand-back:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .brand-back:hover svg {
+        transform: translateX(-3px);
+    }
+}
+
+/* ============================================================================
+   HERO — full-bleed brand canvas
+   ========================================================================= */
+
+.brand-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: radial-gradient(120% 100% at 50% 0%, var(--brand-ink-2) 0%, var(--brand-ink) 62%);
+    color: var(--brand-on-ink);
+    padding: calc(var(--navbar-h, 120px) + 72px) 48px 88px;
+    min-height: min(88vh, 820px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* The animated SVG art sits behind the copy and never intercepts a tap. */
+.brand-hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Keeps the bottom edge from cutting the artwork off hard. */
+.brand-hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 140px;
+    background: linear-gradient(to bottom, transparent, var(--brand-ink));
+    pointer-events: none;
+    z-index: -1;
+}
+
+.brand-hero-inner {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.brand-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--brand-core) 40%, transparent);
+    background: color-mix(in srgb, var(--brand-core) 12%, transparent);
+    color: var(--brand-core);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* A live dot, so "current focus" reads as ongoing rather than historic. */
+.brand-eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand-core);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand-core) 70%, transparent);
+    animation: brandPulse 2.4s ease-out infinite;
+}
+
+@keyframes brandPulse {
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand-core) 60%, transparent); }
+    70% { box-shadow: 0 0 0 10px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.brand-hero-mark {
+    height: 56px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+}
+
+.brand-title {
+    font-size: clamp(2.3rem, 6.2vw, 4.4rem);
+    line-height: 1.03;
+    letter-spacing: -0.035em;
+    max-width: 17ch;
+    margin: 0;
+    color: var(--brand-on-ink);
+}
+
+/* The last word of the headline carries the brand colour — one accent, not a
+   rainbow, so the eye lands where the sentence resolves. */
+.brand-title em {
+    font-style: normal;
+    color: var(--brand-core);
+}
+
+.brand-lede {
+    font-size: clamp(1rem, 1.6vw, 1.18rem);
+    line-height: 1.65;
+    color: var(--brand-soft);
+    max-width: 62ch;
+    margin: 0;
+    text-align: left;
+}
+
+.brand-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.95rem, 1.7vw, 1.15rem);
+    font-weight: 600;
+    color: var(--brand-core);
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.brand-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    color: var(--brand-soft);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.brand-hero-meta strong {
+    color: var(--brand-on-ink);
+    font-weight: 600;
+}
+
+.brand-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.brand-link-out {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: var(--brand-core);
+    color: var(--brand-ink);
+    font-weight: 650;
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    box-shadow: 0 6px 24px color-mix(in srgb, var(--brand-core) 28%, transparent);
+}
+
+.brand-link-out svg {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .brand-link-out:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px color-mix(in srgb, var(--brand-core) 40%, transparent);
+    }
+
+    .brand-link-out:hover svg {
+        transform: translate(2px, -2px);
+    }
+}
+
+/* ============================================================================
+   SECTIONS — these follow the site theme, brand appears only as accent
+   ========================================================================= */
+
+.brand-body {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+}
+
+.brand-section {
+    padding: 72px 0 0;
+}
+
+.brand-section-head {
+    max-width: 68ch;
+    margin: 0 0 36px;
+}
+
+.brand-kicker {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand-text);
+    margin: 0 0 14px;
+}
+
+/* A short rule under the kicker that draws itself in when the section enters. */
+.brand-kicker::after {
+    content: '';
+    display: block;
+    width: 34px;
+    height: 2px;
+    margin-top: 10px;
+    background: var(--brand-text);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.reveal.is-visible .brand-kicker::after {
+    transform: scaleX(1);
+}
+
+.brand-h2 {
+    font-size: clamp(1.65rem, 3.4vw, 2.5rem);
+    line-height: 1.14;
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary);
+    margin: 0 0 16px;
+}
+
+.brand-p {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    margin: 0 0 14px;
+    text-align: left;
+}
+
+.brand-p:last-child {
+    margin-bottom: 0;
+}
+
+.brand-note {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-text-tertiary);
+    border-left: 2px solid var(--brand-text);
+    padding-left: 16px;
+    margin: 20px 0 0;
+    text-align: left;
+}
+
+/* ============================================================================
+   STATS
+   ========================================================================= */
+
+.brand-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1px;
+    background: var(--color-border-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.brand-stat {
+    background: var(--color-bg-card);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background var(--transition-base);
+}
+
+.brand-stat-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--brand-text);
+    line-height: 1;
+}
+
+.brand-stat-label {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    text-align: left;
+    margin: 0;
+}
+
+/* ============================================================================
+   STEPS — numbered process
+   ========================================================================= */
+
+.brand-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    counter-reset: brandstep;
+}
+
+.brand-step {
+    position: relative;
+    padding: 28px 24px 26px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    overflow: hidden;
+    transition: border-color var(--transition-base), transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+/* The number is drawn as an outline so it reads as a plate stamp rather than
+   competing with the step title for weight. */
+.brand-step-num {
+    counter-increment: brandstep;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin-bottom: 14px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--brand-text);
+    opacity: 0.55;
+}
+
+.brand-step-num::before {
+    content: counter(brandstep, decimal-leading-zero);
+}
+
+.brand-step h3 {
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+    margin: 0 0 10px;
+}
+
+.brand-step p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: left;
+}
+
+/* A hairline that runs across the top on hover, like a machine pass. */
+.brand-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--brand-text), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-slow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .brand-step:hover,
+    .brand-card:hover {
+        border-color: color-mix(in srgb, var(--brand-text) 45%, transparent);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .brand-step:hover::before {
+        transform: scaleX(1);
+    }
+}
+
+/* ============================================================================
+   CARD GRID
+   ========================================================================= */
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.brand-card {
+    padding: 28px 26px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    transition: border-color var(--transition-base), transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.brand-card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 18px;
+    color: var(--brand-text);
+}
+
+.brand-card h3 {
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+    margin: 0 0 10px;
+}
+
+.brand-card p {
+    font-size: 0.92rem;
+    line-height: 1.68;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: left;
+}
+
+/* ============================================================================
+   STACK CHIPS
+   ========================================================================= */
+
+.brand-stack-group + .brand-stack-group {
+    margin-top: 26px;
+}
+
+.brand-stack-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin: 0 0 12px;
+}
+
+.brand-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.brand-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: border-color var(--transition-base), color var(--transition-base),
+        background var(--transition-base);
+}
+
+.brand-chip img,
+.brand-chip svg {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .brand-chip:hover {
+        border-color: color-mix(in srgb, var(--brand-text) 50%, transparent);
+        color: var(--color-text-primary);
+        background: var(--brand-tint);
+    }
+}
+
+/* ============================================================================
+   PULL QUOTE / PRINCIPLE PLATE
+   ========================================================================= */
+
+.brand-principle {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    padding: 56px 40px;
+    background: radial-gradient(120% 130% at 50% 0%, var(--brand-ink-2), var(--brand-ink));
+    color: var(--brand-on-ink);
+    text-align: center;
+    border: 1px solid color-mix(in srgb, var(--brand-core) 22%, transparent);
+}
+
+.brand-principle-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand-core);
+    margin: 0 0 24px;
+}
+
+.brand-principle-line {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.25rem, 3.1vw, 2rem);
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.03em;
+    margin: 0 auto;
+    max-width: 22ch;
+    color: var(--brand-on-ink);
+}
+
+.brand-principle-line + .brand-principle-line {
+    margin-top: 18px;
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    font-weight: 600;
+    color: var(--brand-core);
+    max-width: 34ch;
+}
+
+.brand-principle-body {
+    margin: 30px auto 0;
+    max-width: 60ch;
+    font-size: 0.95rem;
+    line-height: 1.72;
+    color: var(--brand-soft);
+    text-align: left;
+}
+
+/* ============================================================================
+   TWO LANES
+   ========================================================================= */
+
+.brand-lanes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 20px;
+}
+
+.brand-lane {
+    position: relative;
+    padding: 32px 28px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    overflow: hidden;
+}
+
+.brand-lane[data-lane='two'] {
+    border-color: color-mix(in srgb, var(--brand-text) 35%, transparent);
+    background: linear-gradient(160deg, var(--brand-tint), var(--color-bg-card) 55%);
+}
+
+.brand-lane-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand-text);
+    margin: 0 0 12px;
+}
+
+.brand-lane h3 {
+    font-size: 1.3rem;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+    margin: 0 0 12px;
+}
+
+.brand-lane p {
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0;
+    text-align: left;
+}
+
+.brand-lane-note {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--color-border-secondary);
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--brand-text);
+}
+
+/* ============================================================================
+   VALUES — expandable list
+   ========================================================================= */
+
+.brand-values {
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.brand-value {
+    border-bottom: 1px solid var(--color-border-primary);
+}
+
+.brand-value-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 4px;
+    background: none;
+    border: none;
+    font: inherit;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    text-align: left;
+    transition: color var(--transition-base);
+}
+
+.brand-value-index {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-text);
+    flex: 0 0 auto;
+    width: 26px;
+    letter-spacing: 0.04em;
+}
+
+.brand-value-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    flex: 1 1 auto;
+}
+
+.brand-value-motto {
+    font-size: 0.88rem;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+    flex: 1 1 auto;
+    text-align: right;
+}
+
+.brand-value-chevron {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    color: var(--color-text-tertiary);
+    transition: transform var(--transition-base), color var(--transition-base);
+}
+
+.brand-value.is-open .brand-value-chevron {
+    transform: rotate(180deg);
+    color: var(--brand-text);
+}
+
+/* Height is animated through a grid row rather than max-height, so the value
+   never has to be guessed and long copy cannot get clipped. */
+.brand-value-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-slow);
+}
+
+.brand-value.is-open .brand-value-panel {
+    grid-template-rows: 1fr;
+}
+
+.brand-value-panel > div {
+    overflow: hidden;
+}
+
+.brand-value-panel p {
+    font-size: 0.95rem;
+    line-height: 1.72;
+    color: var(--color-text-secondary);
+    margin: 0 0 24px;
+    padding-left: 44px;
+    max-width: 72ch;
+    text-align: left;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .brand-value-trigger:hover .brand-value-name {
+        color: var(--brand-text);
+    }
+}
+
+/* ============================================================================
+   CLOSING CTA
+   ========================================================================= */
+
+.brand-closing {
+    margin-top: 80px;
+    padding: 48px 40px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-closing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(80% 120% at 0% 0%, var(--brand-tint), transparent 60%);
+    pointer-events: none;
+}
+
+.brand-closing > * {
+    position: relative;
+}
+
+/* ============================================================================
+   SCROLL REVEAL
+   ========================================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Children stagger behind their revealed parent. */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-stagger.is-visible > * {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.12s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.19s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.26s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.33s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.4s; }
+
+/* ============================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 768px) {
+    .brand-hero {
+        padding: calc(var(--navbar-h, 140px) + 40px) 20px 64px;
+        min-height: auto;
+    }
+
+    .brand-title {
+        max-width: none;
+    }
+
+    .brand-body {
+        padding: 0 16px 72px;
+    }
+
+    .brand-section {
+        padding-top: 56px;
+    }
+
+    .brand-principle {
+        padding: 40px 22px;
+    }
+
+    .brand-closing {
+        padding: 34px 22px;
+    }
+
+    .brand-stat {
+        padding: 22px 18px;
+    }
+
+    /* The motto is a second column on desktop; stacked under a 1.05rem title on
+       a phone it reads as a stray caption, so it moves into the open panel. */
+    .brand-value-motto {
+        display: none;
+    }
+
+    .brand-value-panel p {
+        padding-left: 44px;
+    }
+
+    .brand-value-panel .brand-value-motto-inline {
+        display: block;
+        font-style: italic;
+        color: var(--brand-text);
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand-value-trigger {
+        gap: 12px;
+    }
+
+    .brand-value-panel p {
+        padding-left: 0;
+    }
+}
+
+.brand-value-motto-inline {
+    display: none;
+}
+
+/* ============================================================================
+   REDUCED MOTION
+   Everything above is decorative. Honour the OS switch by landing each element
+   in its final state instead of animating into it.
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-stagger > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .brand-eyebrow-dot {
+        animation: none;
+    }
+
+    .brand-kicker::after {
+        transform: scaleX(1);
+        transition: none;
+    }
+
+    .brand-page {
+        animation: none;
+    }
+}
+
+/* A mission/vision card carries one statement and no heading, so the statement
+   itself has to hold the weight a heading would have. */
+.brand-lane-statement {
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    line-height: 1.68;
+    color: var(--color-text-primary);
+    margin: 0;
+    text-align: left;
+}
