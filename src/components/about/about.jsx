@@ -346,6 +346,11 @@ const About = () => {
               <div className="cv-interest-icon">{INTEREST_ICONS[key]}</div>
               <h3>{t(`cv.interests.${key}.title`)}</h3>
               <p>{t(`cv.interests.${key}.body`)}</p>
+              {/* Optional second paragraph: translate() hands back the key
+                  itself on a miss, so a card without one renders nothing. */}
+              {t(`cv.interests.${key}.body2`) !== `cv.interests.${key}.body2` && (
+                <p>{t(`cv.interests.${key}.body2`)}</p>
+              )}
               <div className="brand-chips">
                 {tl(`cv.interests.${key}.tags`).map((tag) => (
                   <span className="brand-chip" key={tag}>

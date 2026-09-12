@@ -635,6 +635,8 @@
 }
 
 .cv-interest {
+    display: flex;
+    flex-direction: column;
     padding: 30px 28px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
@@ -669,6 +671,12 @@
     color: var(--color-text-secondary);
     margin: 0 0 20px;
     text-align: left;
+}
+
+/* Cards in a row stretch to the tallest. Sending the chips to the bottom
+   turns the leftover space into a shared baseline instead of dead air. */
+.cv-interest .brand-chips {
+    margin-top: auto;
 }
 
 @media (hover: hover) and (pointer: fine) {
