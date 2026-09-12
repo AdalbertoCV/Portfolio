@@ -61,7 +61,7 @@ import astroIcon from '../../images/tech/astro.svg';
 import claudeIcon from '../../images/tech/claude.svg';
 import orcaIcon from '../../images/tech/orca.svg';
 import opencodeIcon from '../../images/tech/opencode.svg';
-import openclawIcon from '../../images/tech/openclaw.png';
+import openclawIcon from '../../images/tech/openclaw.svg';
 import nemoclawIcon from '../../images/tech/nemoclaw.svg';
 import openaiIcon from '../../images/tech/openai.svg';
 import copilotIcon from '../../images/tech/githubcopilot.svg';
@@ -126,9 +126,11 @@ const TECH_GROUPS = [
       { name: 'Claude Code', icon: claudeIcon, mono: true },
       { name: 'Codex', icon: openaiIcon, mono: true },
       { name: 'GitHub Copilot', icon: copilotIcon, mono: true },
-      // These three ship their own artwork: OpenCode's app tile carries its
-      // own dark ground, OpenClaw is a red lobster, NemoClaw is an NVIDIA
-      // project and uses their green symbol. None of them invert.
+      // These three ship their own artwork and none of them invert. OpenCode's
+      // app tile carries its own dark ground; OpenClaw is Molty, their mascot,
+      // taken as SVG rather than the app icon PNG — that one is RGB with no
+      // alpha, so on a dark card it rendered as a white block around the
+      // lobster; NemoClaw is an NVIDIA project and uses their green symbol.
       { name: 'Orca', icon: orcaIcon },
       { name: 'OpenCode', icon: opencodeIcon },
       { name: 'OpenClaw', icon: openclawIcon },
