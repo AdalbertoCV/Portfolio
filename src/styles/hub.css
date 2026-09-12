@@ -958,3 +958,126 @@ img.brand-hero-mark {
         display: none;
     }
 }
+
+/* ============================================================================
+   TIMELINE — the light running down the spine
+   ----------------------------------------------------------------------------
+   The same idea as the ventures roadmap: a spark travels the line and each
+   marker lights as it passes. Here the line is the timeline spine and the
+   markers are the company dots.
+
+   The spark is a gradient band swept with background-position rather than a
+   translated element, because its travel distance is the row's height and CSS
+   cannot express "translate by my parent's height" — a percentage on translateY
+   resolves against the element itself. background-position percentages DO
+   resolve against the box, so the sweep works at any row height without JS
+   measuring anything.
+
+   One shared cycle, sliced by --row: row 0 travels during the first slice, row
+   1 the next, row 2 the last, then all three rest. That is what makes it read
+   as one light descending rather than three blinking in place.
+   ========================================================================= */
+
+.timeline {
+    --tl-cycle: 5s;
+    --tl-slice: 1.4s;
+    --tl-band: 70px;
+}
+
+/* The list carries `is-visible` only to start the sparks together; its own
+   entrance is handled by the rows inside it, so the fade is neutralised here
+   rather than playing twice. */
+ol.timeline.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.timeline-row::after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 0;
+    width: 5px;
+    pointer-events: none;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        color-mix(in srgb, var(--brand-core) 55%, transparent) 45%,
+        var(--brand-core) 55%,
+        transparent 100%
+    );
+    background-size: 100% var(--tl-band);
+    background-repeat: no-repeat;
+    background-position: 0 calc(-1 * var(--tl-band));
+    opacity: 0;
+    filter: blur(0.5px);
+}
+
+/* The last row's spine stops at its own dot, so its slice is a short glow at
+   the end of the descent rather than a full sweep. */
+.timeline-item:last-child .timeline-row::after {
+    bottom: auto;
+    height: 28px;
+}
+
+.timeline.is-visible .timeline-row::after {
+    animation: tlSpark var(--tl-cycle) linear infinite;
+    animation-delay: calc(var(--row, 0) * var(--tl-slice));
+}
+
+/* 28% of a 5s cycle is 1.4s — one slice. After that the band parks below the
+   row and waits for the next descent. */
+@keyframes tlSpark {
+    0% { background-position: 0 calc(-1 * var(--tl-band)); opacity: 0; }
+    4% { opacity: 1; }
+    24% { opacity: 1; }
+    28% { background-position: 0 calc(100% + var(--tl-band)); opacity: 0; }
+    100% { background-position: 0 calc(100% + var(--tl-band)); opacity: 0; }
+}
+
+/* The ping fires on a ring around the dot, not on the dot itself: an infinite
+   animation on the dot would outrank the hover rule and kill it. */
+.timeline-dot::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid var(--brand-core);
+    opacity: 0;
+    transform: scale(0.6);
+    pointer-events: none;
+}
+
+/* The dot sits ~22px into the spine, so the spark reaches it early in its own
+   slice — hence the small constant on top of the row's stagger. */
+.timeline.is-visible .timeline-dot::after {
+    animation: tlPing var(--tl-cycle) linear infinite;
+    animation-delay: calc(var(--row, 0) * var(--tl-slice) + 0.18s);
+}
+
+@keyframes tlPing {
+    0% { opacity: 0; transform: scale(0.6); }
+    2% { opacity: 0.85; transform: scale(0.95); }
+    12% { opacity: 0; transform: scale(2.2); }
+    100% { opacity: 0; transform: scale(2.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* A parked gradient band and a frozen ring are both just stray marks. */
+    .timeline-row::after,
+    .timeline-dot::after {
+        display: none;
+    }
+}
+
+/* The spark band is 5px wide and centred on the 1px spine, so it has to move
+   with it. This has to live after the band's own rule rather than up in the
+   main responsive block: same specificity, so source order decides, and the
+   band is defined further down the file. */
+@media (max-width: 768px) {
+    .timeline-row::after {
+        left: 4px;
+    }
+}

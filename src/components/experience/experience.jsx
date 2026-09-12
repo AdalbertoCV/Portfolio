@@ -94,10 +94,18 @@ const Experience = () => {
         </div>
       </Reveal>
 
-      <ol className="timeline">
-        {ROLES.map(({ id, base, logo, Art, to, link }) => (
+      {/* The list is a Reveal purely so the spark that runs down the spine
+          starts for every row at the same moment. If each row gated its own
+          spark, row two would start counting only once it scrolled into view
+          and the light would stop reading as one continuous descent. The list's
+          own fade is switched off in CSS — the rows still fade in themselves. */}
+      <Reveal as="ol" className="timeline">
+        {ROLES.map(({ id, base, logo, Art, to, link }, index) => (
           <li className="timeline-item" key={id}>
-            <Reveal className="timeline-row" data-brand={id}>
+            {/* --row drives the stagger: each row's spark runs its own slice of
+                the shared cycle, so the light descends rather than flashing
+                everywhere at once. */}
+            <Reveal className="timeline-row" data-brand={id} style={{ '--row': index }}>
               <span className="timeline-dot" aria-hidden="true" />
               <article className="timeline-card">
                 <div className="timeline-art" aria-hidden="true">
@@ -138,7 +146,7 @@ const Experience = () => {
             </Reveal>
           </li>
         ))}
-      </ol>
+      </Reveal>
 
       <Reveal className="hub-teaser">
         <div className="hub-teaser-copy">
