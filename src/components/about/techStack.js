@@ -300,13 +300,6 @@ const TECH_GROUPS = [
     ],
   },
   {
-    // The one joke in the file, and the only group whose label does the work.
-    // Left in deliberately: everybody who learned to program in Spanish started
-    // here, and the logo is the real one.
-    id: 'joke',
-    items: [{ name: 'PSeInt', icon: pseintIcon }],
-  },
-  {
     id: 'frontier',
     items: [
       { name: 'Blockchain / Web3', concept: 'blockchain' },
@@ -317,6 +310,13 @@ const TECH_GROUPS = [
       { name: 'Optimization', concept: 'optimization' },
       { name: 'Control systems', concept: 'control' },
     ],
+  },
+  {
+    // Last on purpose: the joke only works once the reader has been through the
+    // whole serious list. Everybody who learned to program in Spanish started
+    // here, and the logo is the real one.
+    id: 'joke',
+    items: [{ name: 'PSeInt', icon: pseintIcon }],
   },
 ];
 

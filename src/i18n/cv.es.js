@@ -15,7 +15,7 @@ const cvEs = {
     // Three seats held at once. This is the line the page is aimed at — it
     // replaced a count of years, which is the weakest number on the page and
     // was occupying the best space on it.
-    standing: 'Founding Engineer · CTO · Fundador',
+    standing: 'Founding Software Engineer · CEO · CTO · Technoholic',
     contactLabel: 'Contacto',
 
     profileTitle: 'Perfil profesional',
