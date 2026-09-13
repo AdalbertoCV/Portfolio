@@ -707,6 +707,53 @@
 /* The one outbound link a card may carry. It sits between the prose and the
    chips, and it is the only place on this page where a brand colour appears
    at text size — which is the point: it reads as evidence, not decoration. */
+/* Deliberately quieter than anything around it: a joke that shouts would read
+   as a mistake in a CV. Click it and it deals the next one. */
+.cv-egg {
+    margin-top: 28px;
+}
+
+.cv-egg-button {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    padding: 18px 20px;
+    border: 1px dashed var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.cv-egg-mark {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    color: var(--color-text-tertiary);
+}
+
+.cv-egg-mark svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cv-egg-text {
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--color-text-tertiary);
+    max-width: 72ch;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-egg-button:hover {
+        border-color: var(--color-border-hover);
+        background: var(--color-bg-tertiary);
+    }
+}
+
 .cv-interest-link {
     display: inline-flex;
     align-items: center;

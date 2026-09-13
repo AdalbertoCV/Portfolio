@@ -118,6 +118,15 @@ const cvEn = {
     certsProofLabel: 'Credentials',
     certsProofHint: 'Tap a credential to enlarge it',
 
+    eggLabel: 'Next joke',
+    jokes: [
+      'Stated life goal: to be the real-life Tony Stark, Jarvis included. The suit is on version 0.1, but Jarvis already runs locally — and unlike the original, this one asks for approval before deploying to production.',
+      'When the suit is finally ready, the first ticket will be "the arc reactor has no integration tests".',
+      'My favourite stack is still coffee, a terminal, and the phrase "it works on my machine".',
+      'I know exactly how many unfinished projects I have. That figure is classified.',
+      'The most elegant architecture I have ever designed is still the one I diagrammed before reading the full requirements.',
+    ],
+
     interestsKicker: 'Interests',
     interestsTitle: 'Where the way I think comes from',
     interestsLede: 'Each develops a capability that carries over into the technical work, and several of them bear directly on what I build and on what basis.',
@@ -125,6 +134,7 @@ const cvEn = {
       innovation: {
         title: 'Constant innovation and foresight',
         body: 'I maintain a daily research routine: documentaries, podcasts, scientific and business publications, and systematic tracking of emerging technology. The purpose is to identify which capabilities become viable before they are widely adopted, and to ground technology decisions in verifiable judgement rather than in trend.',
+        body2: 'That tracking is only worth anything if it ends in a criterion for adoption. I judge a technology by its actual maturity — API stability, its record of breaking changes, the quality of the documentation, the size of the ecosystem, and who answers when something fails — rather than by the size of its announcement. Before committing to a decision I build a proof of concept scoped to the specific risk I want to measure, because adopting too early is paid for in maintenance and too late in platform debt. Foresight serves the same practical end: anticipating which of today\'s constraints — compute cost, latency, model size, regulation — stops being one within a project\'s horizon, and which architectural decisions are worth keeping reversible until then.',
         tags: [
           'Documentaries',
           'Podcasts',
@@ -137,6 +147,7 @@ const cvEn = {
       business: {
         title: 'Business, startups and capital',
         body: 'Running two companies of my own requires understanding the dimension that is not technical: how the work gets funded, what separates a viable business from a well-built system, and where the correct decision does not follow from engineering criteria. I follow venture capital, fundraising processes, and how companies are structured to outlast their first product.',
+        body2: 'The same interest runs through e-commerce and through markets. On the commerce side it is the operating detail of a store that has to sell: catalogue, checkout, payments, conversion and the numbers that say whether any of it worked. On the market side it is crypto, digital assets and investing — asset classes, risk, custody and the infrastructure underneath them, which is the point where the financial reading and the engineering one stop being separate subjects.',
         tags: [
           'Startups',
           'Fundraising',
@@ -144,6 +155,25 @@ const cvEn = {
           'Product strategy',
           'Business models',
           'Fintech and investing',
+          'E-commerce',
+          'Cryptocurrency',
+          'Digital assets',
+          'Markets and investing',
+        ],
+      },
+      security: {
+        title: 'Cybersecurity and offensive security',
+        body: 'I study systems from the attacking side as well, because it is the only way to know how well built the thing you are defending actually is. I work in controlled labs through the stages that make up an intrusion test: reconnaissance and network scanning, traffic analysis, reviewing web applications against the known classes of failure, and checking how much a credential is really worth.',
+        body2: 'What interests me is not the tool but the judgement it leaves behind: an architecture reads differently once you have seen where it breaks. Attack surface, secret handling, trust boundaries between services, and what stays exposed when one component gives way are design decisions, not a layer added at the end.',
+        tags: [
+          'Pentesting',
+          'Offensive security',
+          'Network traffic analysis',
+          'Web security and OWASP',
+          'Reconnaissance and scanning',
+          'Hardening',
+          'Applied cryptography',
+          'Threat modelling',
         ],
       },
       science: {
@@ -190,6 +220,7 @@ const cvEn = {
       sports: {
         title: 'Sport and physical discipline',
         body: 'I keep a consistent training routine. Team sports interest me for the coordination and situational reading they demand, and disciplines such as parkour, BMX and skate for the relationship they establish between calculated risk and precise execution. That practice is the source of consistency, resilience, and the view that sustained performance outweighs an isolated peak.',
+        body2: 'Training also works as a model for the work itself: progressive load, measurement against concrete variables, and planned recovery, with the evidence that effort without rest degrades the result rather than improving it. It is the same logic behind sustaining a long delivery pace instead of relying on heroic sprints. The risk disciplines supply the other half: in parkour or BMX the jump is assessed before it is attempted, trained in parts, and kept with a way out if the move does not land — the exact equivalent of bounding the blast radius of a change, rolling it out in stages, and having a reversion plan before touching production.',
         tags: [
           'Strength training',
           'Team sports',
@@ -203,6 +234,7 @@ const cvEn = {
       culture: {
         title: 'Food, travel and other cultures',
         body: 'Travel and food serve as a route into other cultures. The real interest is in observing how populations with different contexts solve equivalent problems, arriving at solutions that would not emerge from a single frame of reference. It is the same exercise I apply when entering an unfamiliar technical domain, and for that reason it complements the work rather than competing with it.',
+        body2: 'In professional practice this shows up in two places. The first is requirements gathering: understanding someone else\'s domain means observing how the people who operate it actually work, rather than imposing the mental model you arrived with — the difference between a system that gets adopted and one that sits unused. The second is building product for more than one market: language, date and currency formats, local regulation, payment methods and usage expectations are not a cosmetic pass at the end of a project; they are data-model and architecture decisions, made early or paid for later.',
         tags: [
           'World cultures',
           'Gastronomy',

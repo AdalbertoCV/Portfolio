@@ -192,6 +192,58 @@ const ICONS = {
     </svg>
   ),
 
+  // Indented lines that are almost code: pseudocode, drawn as what it is.
+  pseudocode: (
+    <svg {...base}>
+      <rect x="3" y="3.4" width="18" height="17.2" rx="2" />
+      <path d="M6.6 8h7.2" />
+      <path d="M9 11.6h8.4" />
+      <path d="M9 15.2h5.4" />
+      <path d="M6.6 18.8h4.2" />
+    </svg>
+  ),
+
+  // Start, decide, branch: the first diagram anybody draws.
+  flowchart: (
+    <svg {...base}>
+      <rect x="7.2" y="2.4" width="9.6" height="4" rx="2" />
+      <path d="M12 9.2 16 12.8 12 16.4 8 12.8z" />
+      <path d="M12 6.4v2.8" />
+      <path d="M16 12.8h3.3a1.5 1.5 0 0 1 1.5 1.5v2.1" />
+      <path d="M8 12.8H4.7a1.5 1.5 0 0 0-1.5 1.5v2.1" />
+      <rect x="1.4" y="17.2" width="3.6" height="4.4" rx="1.2" />
+      <rect x="19" y="17.2" width="3.6" height="4.4" rx="1.2" />
+    </svg>
+  ),
+
+  // A cart, because a store is a cart before it is anything else.
+  ecommerce: (
+    <svg {...base}>
+      <path d="M2.6 3.4h2.2l2.4 10.4h9.6l2-7.2H6.1" />
+      <circle cx="9.4" cy="19" r="1.6" />
+      <circle cx="16.6" cy="19" r="1.6" />
+    </svg>
+  ),
+
+  // A card being taken: the checkout, not the accounting.
+  payments: (
+    <svg {...base}>
+      <rect x="2.6" y="5.4" width="18.8" height="13.2" rx="2" />
+      <path d="M2.6 9.8h18.8" />
+      <path d="M6 14.6h3.4" />
+      <path d="M16.8 14.6h1.6" />
+    </svg>
+  ),
+
+  // What people searched for, and what the traffic did next.
+  seo: (
+    <svg {...base}>
+      <circle cx="10.4" cy="10.4" r="6.2" />
+      <path d="m15 15 5.4 5.4" />
+      <path d="M7.6 12.2v-2M10.4 12.2V8.6M13.2 12.2v-4.6" />
+    </svg>
+  ),
+
   // A rack: the machine you rent and then have to run yourself.
   vps: (
     <svg {...base}>

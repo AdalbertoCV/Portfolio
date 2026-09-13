@@ -78,6 +78,25 @@ import vercelIcon from '../../images/tech/vercel.svg';
 import contaboIcon from '../../images/tech/contabo.svg';
 import hostingerIcon from '../../images/tech/hostinger.svg';
 import obsidianIcon from '../../images/tech/obsidian.svg';
+import adonisIcon from '../../images/tech/adonisjs.svg';
+import nodeIcon from '../../images/tech/nodedotjs.svg';
+import expressIcon from '../../images/tech/express.svg';
+import nextIcon from '../../images/tech/nextdotjs.svg';
+import vueIcon from '../../images/tech/vuedotjs.svg';
+import fastapiIcon from '../../images/tech/fastapi.svg';
+import flaskIcon from '../../images/tech/flask.svg';
+import rustIcon from '../../images/tech/rust.svg';
+import cIcon from '../../images/tech/c.svg';
+import cppIcon from '../../images/tech/cplusplus.svg';
+import kotlinIcon from '../../images/tech/kotlin.svg';
+import graphqlIcon from '../../images/tech/graphql.svg';
+import rabbitmqIcon from '../../images/tech/rabbitmq.svg';
+import kafkaIcon from '../../images/tech/apachekafka.svg';
+import supabaseIcon from '../../images/tech/supabase.svg';
+import wordpressIcon from '../../images/tech/wordpress.svg';
+import woocommerceIcon from '../../images/tech/woocommerce.svg';
+import elementorIcon from '../../images/tech/elementor.svg';
+import pseintIcon from '../../images/tech/pseint.png';
 import kaliIcon from '../../images/tech/kalilinux.svg';
 import wiresharkIcon from '../../images/tech/wireshark.svg';
 import burpIcon from '../../images/tech/burpsuite.svg';
@@ -96,6 +115,13 @@ const TECH_GROUPS = [
       { name: 'Go', icon: goIcon },
       { name: 'PHP', icon: phpIcon },
       { name: 'R', icon: rIcon, mono: true },
+      // The systems end: C and C++ where the code has to answer to the
+      // hardware, Rust where that has to happen without the footguns, Kotlin
+      // on the JVM side next to Java.
+      { name: 'Rust', icon: rustIcon, mono: true },
+      { name: 'C', icon: cIcon, mono: true },
+      { name: 'C++', icon: cppIcon, mono: true },
+      { name: 'Kotlin', icon: kotlinIcon, mono: true },
       { name: 'SQL', concept: 'sql' },
     ],
   },
@@ -107,6 +133,11 @@ const TECH_GROUPS = [
       // card, and too coloured to inverse. It gets a light plate instead.
       { name: 'Django REST', icon: djangorest, plate: true },
       { name: 'Spring Boot', icon: spring },
+      { name: 'Node.js', icon: nodeIcon, mono: true },
+      { name: 'AdonisJS', icon: adonisIcon, mono: true },
+      { name: 'Express', icon: expressIcon, mono: true },
+      { name: 'FastAPI', icon: fastapiIcon, mono: true },
+      { name: 'Flask', icon: flaskIcon, mono: true },
       { name: 'Vaadin', icon: vaadinIcon },
       { name: 'Laravel', icon: laravelIcon },
       // simple-icons ships one black path, so it inverts in dark like the
@@ -115,6 +146,10 @@ const TECH_GROUPS = [
       { name: 'Microservices', concept: 'microservices' },
       { name: 'Event-driven', concept: 'eventDriven' },
       { name: 'Distributed systems', concept: 'distributed' },
+      { name: 'GraphQL', icon: graphqlIcon, mono: true },
+      // The two brokers behind the event-driven and streaming claims above.
+      { name: 'RabbitMQ', icon: rabbitmqIcon, mono: true },
+      { name: 'Apache Kafka', icon: kafkaIcon, mono: true },
       { name: 'JWT', icon: jwt },
       { name: 'OAuth', concept: 'oauth' },
       { name: 'Async task flows', concept: 'async' },
@@ -211,6 +246,7 @@ const TECH_GROUPS = [
       { name: 'MongoDB', icon: mongodb },
       { name: 'Redis', icon: redis },
       { name: 'SQLite', icon: sqlite },
+      { name: 'Supabase', icon: supabaseIcon, mono: true },
       { name: 'Oracle', icon: oracle },
       { name: 'Stream processing', concept: 'stream' },
       { name: 'Time-series', concept: 'timeSeries' },
@@ -220,6 +256,8 @@ const TECH_GROUPS = [
     id: 'frontend',
     items: [
       { name: 'React', icon: react },
+      { name: 'Next.js', icon: nextIcon, mono: true },
+      { name: 'Vue', icon: vueIcon, mono: true },
       { name: 'Angular', icon: angularIcon },
       { name: 'Astro', icon: astroIcon },
       { name: 'HTML5', icon: html5 },
@@ -228,6 +266,20 @@ const TECH_GROUPS = [
       { name: 'Bootstrap', icon: bootstrap },
       { name: 'Flutter', icon: flutter },
       { name: 'Dart', icon: dart },
+    ],
+  },
+  {
+    // The CMS end of the work, which is a different job from the frontend
+    // group above: a site somebody else has to edit afterwards, and a store
+    // that has to take money.
+    id: 'web',
+    items: [
+      { name: 'WordPress', icon: wordpressIcon, mono: true },
+      { name: 'WooCommerce', icon: woocommerceIcon, mono: true },
+      { name: 'Elementor', icon: elementorIcon, mono: true },
+      { name: 'E-commerce', concept: 'ecommerce' },
+      { name: 'Payments & checkout', concept: 'payments' },
+      { name: 'SEO & analytics', concept: 'seo' },
     ],
   },
   {
@@ -245,6 +297,17 @@ const TECH_GROUPS = [
       { name: 'Trello', icon: trello },
       { name: 'Notion', icon: notion, mono: true },
       { name: 'Obsidian', icon: obsidianIcon, mono: true },
+    ],
+  },
+  {
+    // The one joke in the file, and the only group whose label does the work.
+    // Left in deliberately: everybody who learned to program in Spanish started
+    // here, and the logo is the real one.
+    id: 'joke',
+    items: [
+      { name: 'PSeInt', icon: pseintIcon },
+      { name: 'Pseudocode', concept: 'pseudocode' },
+      { name: 'Flowcharts', concept: 'flowchart' },
     ],
   },
   {

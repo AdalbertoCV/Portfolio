@@ -125,6 +125,15 @@ const cvEs = {
     certsProofLabel: 'Constancias',
     certsProofHint: 'Toca una constancia para ampliarla',
 
+    eggLabel: 'Siguiente chiste',
+    jokes: [
+      'Objetivo de vida declarado: ser el Tony Stark de la vida real, con todo y su Jarvis. El traje va en la versión 0.1, pero Jarvis ya corre en local — y, a diferencia del original, este sí pide permiso antes de desplegar a producción.',
+      'Cuando el traje esté listo, el primer ticket será «el reactor arc no tiene tests de integración».',
+      'Mi stack favorito sigue siendo café, terminal y la frase «en mi máquina sí funciona».',
+      'Sé exactamente cuántos proyectos tengo sin terminar. Esa cifra está clasificada.',
+      'La arquitectura más elegante que he diseñado sigue siendo la del diagrama que hice antes de leer los requerimientos completos.',
+    ],
+
     interestsKicker: 'Intereses',
     interestsTitle: 'De dónde sale la forma en que pienso',
     interestsLede: 'Cada uno desarrolla una capacidad que se traslada al trabajo técnico, y varios de ellos influyen directamente en qué construyo y con qué criterio.',
@@ -132,6 +141,7 @@ const cvEs = {
       innovation: {
         title: 'Innovación constante y prospectiva',
         body: 'Mantengo una rutina diaria de actualización: documentales, podcasts, publicaciones científicas y de negocio, y seguimiento sistemático de tecnología emergente. El objetivo es identificar qué capacidades se vuelven viables antes de que se generalicen, y sostener decisiones tecnológicas sobre criterio verificable en lugar de sobre tendencia.',
+        body2: 'Ese seguimiento solo sirve si termina en criterio de adopción. Evalúo una tecnología por su madurez real —estabilidad de la API, historial de cambios incompatibles, calidad de la documentación, tamaño del ecosistema y quién responde cuando algo falla— y no por la magnitud de su anuncio. Antes de comprometer una decisión construyo una prueba de concepto acotada al riesgo que quiero medir, porque adoptar demasiado pronto se paga en mantenimiento y demasiado tarde se paga en deuda de plataforma. La prospectiva tiene el mismo fin práctico: anticipar qué restricción de hoy —costo de cómputo, latencia, tamaño de modelo, regulación— deja de serlo en el horizonte de un proyecto, y qué decisiones de arquitectura conviene dejar reversibles hasta entonces.',
         tags: [
           'Documentales',
           'Podcasts',
@@ -144,6 +154,7 @@ const cvEs = {
       business: {
         title: 'Negocio, startups y capital',
         body: 'Dirigir dos empresas propias exige comprender la dimensión que no es técnica: cómo se financia lo que se construye, qué distingue un negocio viable de un sistema bien hecho, y en qué casos la decisión correcta no corresponde al criterio de ingeniería. Sigo de cerca el capital de riesgo, los procesos de levantamiento de fondos y la estructuración de compañías más allá de su primer producto.',
+        body2: 'El mismo interés se extiende al e-commerce y a los mercados. Del lado del comercio es el detalle operativo de una tienda que tiene que vender: catálogo, checkout, pagos, conversión y los números que indican si algo de eso funcionó. Del lado de los mercados son las criptomonedas, los activos digitales y la inversión — clases de activo, riesgo, custodia y la infraestructura que los sostiene, que es el punto donde la lectura financiera y la de ingeniería dejan de ser temas separados.',
         tags: [
           'Startups',
           'Fundraising',
@@ -151,6 +162,25 @@ const cvEs = {
           'Estrategia de producto',
           'Modelos de negocio',
           'Fintech e inversiones',
+          'E-commerce',
+          'Criptomonedas',
+          'Activos digitales',
+          'Mercados e inversión',
+        ],
+      },
+      security: {
+        title: 'Ciberseguridad y seguridad ofensiva',
+        body: 'Estudio los sistemas también desde el lado del atacante, porque es la única forma de saber qué tan bien construido está lo que uno defiende. Trabajo en laboratorios controlados sobre las etapas que componen una prueba de intrusión: reconocimiento y escaneo de red, análisis de tráfico, revisión de aplicaciones web contra las clases de falla conocidas, y verificación de qué tan resistente es realmente una credencial.',
+        body2: 'Lo que me interesa no es la herramienta sino el criterio que deja: una arquitectura se evalúa distinto cuando uno ya vio por dónde se rompe. Superficie de ataque, manejo de secretos, límites de confianza entre servicios y qué queda expuesto cuando un componente cede son decisiones de diseño, no una capa que se agrega al final.',
+        tags: [
+          'Pentesting',
+          'Seguridad ofensiva',
+          'Análisis de tráfico de red',
+          'Seguridad web y OWASP',
+          'Reconocimiento y escaneo',
+          'Hardening',
+          'Criptografía aplicada',
+          'Modelado de amenazas',
         ],
       },
       science: {
@@ -197,6 +227,7 @@ const cvEs = {
       sports: {
         title: 'Deporte y disciplina física',
         body: 'Mantengo una rutina de entrenamiento constante. Me interesan los deportes de equipo por la coordinación y la lectura de situación que demandan, y disciplinas como el parkour, el BMX y el skate por la relación que establecen entre riesgo calculado y ejecución precisa. De esa práctica provienen la constancia, la resiliencia y el criterio de que el rendimiento sostenido supera al pico aislado.',
+        body2: 'El entrenamiento funciona además como modelo de trabajo: carga progresiva, medición sobre variables concretas y recuperación planificada, con la evidencia de que el sobreesfuerzo sin descanso degrada el resultado en lugar de mejorarlo. Es la misma lógica con la que sostengo un ritmo de entrega largo sin depender de sprints heroicos. Las disciplinas de riesgo aportan la otra mitad: en parkour o en BMX el salto se evalúa antes de ejecutarlo, se entrena por partes y se conserva una salida si la maniobra no sale — el equivalente exacto de acotar el radio de impacto de un cambio, probarlo por etapas y tener un plan de reversión antes de tocar producción.',
         tags: [
           'Entrenamiento de fuerza',
           'Deportes de equipo',
@@ -210,6 +241,7 @@ const cvEs = {
       culture: {
         title: 'Gastronomía, viajes y otras culturas',
         body: 'El viaje y la gastronomía funcionan como vía de acceso a otras culturas. El interés real está en observar cómo poblaciones con contextos distintos resuelven problemas equivalentes, con soluciones que no surgirían desde un solo marco de referencia. Es el mismo ejercicio que aplico al incorporarme a un dominio técnico desconocido, y por eso constituye un complemento del trabajo y no una distracción.',
+        body2: 'En la práctica profesional eso se traduce en dos cosas. La primera es el levantamiento de requerimientos: entender un dominio ajeno exige observar cómo trabaja realmente quien lo opera, en lugar de imponer el modelo mental con el que uno llegó — la diferencia entre un sistema que se adopta y uno que se queda sin usar. La segunda es la construcción de producto para más de un mercado: idioma, formato de fecha y moneda, normativa local, medios de pago y expectativas de uso no son un ajuste cosmético al final del proyecto, son decisiones de modelo de datos y de arquitectura que se toman al principio o se pagan después.',
         tags: [
           'Culturas del mundo',
           'Gastronomía',

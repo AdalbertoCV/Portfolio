@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import image from '../../images/AboutMe.jpg';
@@ -48,7 +48,15 @@ const INTEREST_LINKS = {
 };
 
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
-const INTEREST_KEYS = ['innovation', 'business', 'science', 'arts', 'sports', 'culture'];
+const INTEREST_KEYS = [
+  'innovation',
+  'business',
+  'science',
+  'security',
+  'arts',
+  'sports',
+  'culture',
+];
 
 // One icon per card. Drawn here rather than reused from the skill-tile concept
 // set: these are section marks at 30px, and they answer to a different
@@ -93,6 +101,17 @@ const INTEREST_ICONS = {
       <path d="m8.9 8.3 3.6-1.4 2.6 2.6 3 .9" />
       <path d="m10.8 15.8 3.9 1.2 1.7 4" />
       <path d="M5.2 11.2 8.9 8.3" />
+    </svg>
+  ),
+  // A shield read from the inside: the seam down the middle is where an
+  // attacker gets in, which is the half of security this card is about.
+  security: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2.6 4.4 5.8v6.1c0 4.6 3.1 8.1 7.6 9.5 4.5-1.4 7.6-4.9 7.6-9.5V5.8z" />
+      <path d="M12 2.6v18.8" />
+      <path d="M8.4 9.4h.01M8.4 13.4h.01" />
+      <path d="M15.6 9.4h1.4M15.6 13.4h1.4" />
     </svg>
   ),
   culture: (
@@ -150,6 +169,20 @@ const TechTile = ({ item }) => (
 const About = () => {
   const { t, tl } = useTranslation();
   const [activeImage, setActiveImage] = useState(null);
+  const [joke, setJoke] = useState(0);
+  const jokes = tl('cv.jokes');
+
+  // For whoever opens devtools on a portfolio, which is its own kind of
+  // introduction. Runs once per mount, says nothing the page needs.
+  useEffect(() => {
+    console.log(
+      '%cJ.A.R.V.I.S.%c  booting…  arc reactor at 100%%, suit still in v0.1.\n' +
+        'Sí, leíste bien: el objetivo es ser el Tony Stark de la vida real.\n' +
+        `¿Buscas al ingeniero detrás de esto? ${EMAIL}`,
+      'font-weight:700;letter-spacing:.12em',
+      'font-weight:400'
+    );
+  }, []);
 
   const certificates = [
     { key: 'icp', src: ICPImage, label: t('cv.certs.icp.name') },
@@ -412,6 +445,28 @@ const About = () => {
               </div>
             </article>
           ))}
+        </Reveal>
+
+        {/* The one unserious thing on the page. Clicking it deals the next
+            joke; the first one is the honest answer to what all of the above
+            is actually aiming at. */}
+        <Reveal className="cv-egg">
+          <button
+            type="button"
+            className="cv-egg-button"
+            onClick={() => setJoke((n) => (n + 1) % jokes.length)}
+            aria-label={t('cv.eggLabel')}
+          >
+            <span className="cv-egg-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+                   strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4.4" />
+                <circle cx="12" cy="12" r="8.6" />
+                <path d="M12 3.4v1.8M12 18.8v1.8M3.4 12h1.8M18.8 12h1.8" />
+              </svg>
+            </span>
+            <span className="cv-egg-text">{jokes[joke]}</span>
+          </button>
         </Reveal>
       </Section>
 
