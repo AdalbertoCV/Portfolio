@@ -69,6 +69,7 @@ import openclawIcon from '../../images/tech/openclaw.svg';
 import nemoclawIcon from '../../images/tech/nemoclaw.svg';
 import openaiIcon from '../../images/tech/openai.svg';
 import copilotIcon from '../../images/tech/githubcopilot.svg';
+import cursorIcon from '../../images/tech/cursor.svg';
 import ollamaIcon from '../../images/tech/ollama.svg';
 import n8nIcon from '../../images/tech/n8n.svg';
 import deepseekIcon from '../../images/tech/deepseek.svg';
@@ -181,6 +182,7 @@ const TECH_GROUPS = [
     items: [
       { name: 'Claude Code', icon: claudeIcon, mono: true },
       { name: 'Codex', icon: openaiIcon, mono: true },
+      { name: 'Cursor', icon: cursorIcon, mono: true },
       { name: 'GitHub Copilot', icon: copilotIcon, mono: true },
       // These three ship their own artwork and none of them invert. OpenCode's
       // app tile carries its own dark ground; OpenClaw is Molty, their mascot,
