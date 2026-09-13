@@ -37,7 +37,13 @@ export const useReveal = () => {
       },
       // Fires slightly before the element is fully on screen, so the motion has
       // finished by the time the reader's eye arrives.
-      { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
+      //
+      // threshold stays at 0: a ratio threshold is a share of the ELEMENT, and
+      // a section taller than the viewport can never reach it — on a phone the
+      // interests grid runs to ~6700px against an 800px screen, so 0.1 was
+      // unreachable and the whole section stayed at opacity 0. The rootMargin
+      // below already supplies the early trigger that the threshold was for.
+      { rootMargin: '0px 0px -10% 0px', threshold: 0 }
     );
 
     observer.observe(node);

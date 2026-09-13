@@ -929,6 +929,8 @@
 .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.26s; }
 .reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.33s; }
 .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.4s; }
+.reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 0.47s; }
+.reveal-stagger.is-visible > *:nth-child(8) { transition-delay: 0.54s; }
 
 /* ============================================================================
    RESPONSIVE
