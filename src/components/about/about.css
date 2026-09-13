@@ -444,14 +444,18 @@
    CERTIFICATIONS
    ========================================================================= */
 
+/* Flex rather than a fixed grid: a card with prose takes the whole row, and
+   the short cards left over share whatever row they land in instead of
+   sitting in two narrow tracks with the rest of the row empty. */
 .cv-certs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     margin-bottom: 36px;
 }
 
 .cv-cert {
+    flex: 1 1 220px;
     padding: 24px 22px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
@@ -484,7 +488,7 @@
 /* A credential with a written-up context needs room for prose, so it takes the
    full row instead of sitting in a 220px column next to bare cards. */
 .cv-cert[data-detail] {
-    grid-column: 1 / -1;
+    flex-basis: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

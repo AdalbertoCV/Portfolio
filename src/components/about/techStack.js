@@ -73,6 +73,15 @@ import ollamaIcon from '../../images/tech/ollama.svg';
 import n8nIcon from '../../images/tech/n8n.svg';
 import deepseekIcon from '../../images/tech/deepseek.svg';
 import slackIcon from '../../images/tech/slack.svg';
+import herokuIcon from '../../images/tech/heroku.svg';
+import vercelIcon from '../../images/tech/vercel.svg';
+import contaboIcon from '../../images/tech/contabo.svg';
+import hostingerIcon from '../../images/tech/hostinger.svg';
+import obsidianIcon from '../../images/tech/obsidian.svg';
+import kaliIcon from '../../images/tech/kalilinux.svg';
+import wiresharkIcon from '../../images/tech/wireshark.svg';
+import burpIcon from '../../images/tech/burpsuite.svg';
+import metasploitIcon from '../../images/tech/metasploit.svg';
 import jwt from '../../images/jwt.png';
 
 const TECH_GROUPS = [
@@ -163,11 +172,35 @@ const TECH_GROUPS = [
       { name: 'Docker', icon: docker },
       { name: 'Kubernetes', icon: kubernetes },
       { name: 'Linux', icon: linux },
+      // Where things actually get deployed, from a push-to-deploy PaaS down to
+      // a bare VPS that has to be provisioned by hand. All four marks are
+      // simple-icons monochrome, so the dark-mode inversion covers them.
+      { name: 'Vercel', icon: vercelIcon, mono: true },
+      { name: 'Heroku', icon: herokuIcon, mono: true },
+      { name: 'Contabo', icon: contaboIcon, mono: true },
+      { name: 'Hostinger', icon: hostingerIcon, mono: true },
+      { name: 'VPS & self-hosting', concept: 'vps' },
+      { name: 'Networking & topologies', concept: 'networking' },
+      { name: 'DNS & domains', concept: 'dns' },
       { name: 'IaC', concept: 'iac' },
       { name: 'CI/CD', concept: 'cicd' },
       { name: 'Observability', concept: 'observability' },
       { name: 'Cloud security', concept: 'cloudSecurity' },
       { name: 'FinOps', concept: 'finops' },
+    ],
+  },
+  {
+    // Security from the attacking side. The two without a vendor mark —
+    // simple-icons carries neither — get a drawn icon like every other
+    // logo-less tile, rather than a monogram.
+    id: 'security',
+    items: [
+      { name: 'Kali Linux', icon: kaliIcon, mono: true },
+      { name: 'Wireshark', icon: wiresharkIcon, mono: true },
+      { name: 'Burp Suite', icon: burpIcon, mono: true },
+      { name: 'Metasploit', icon: metasploitIcon, mono: true },
+      { name: 'Nmap', concept: 'portScan' },
+      { name: 'John the Ripper', concept: 'passwordCrack' },
     ],
   },
   {
@@ -211,6 +244,7 @@ const TECH_GROUPS = [
       { name: 'Jira', icon: jira },
       { name: 'Trello', icon: trello },
       { name: 'Notion', icon: notion, mono: true },
+      { name: 'Obsidian', icon: obsidianIcon, mono: true },
     ],
   },
   {

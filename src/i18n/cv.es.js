@@ -106,7 +106,12 @@ const cvEs = {
     certsKicker: 'Certificaciones',
     certsTitle: 'Certificaciones y logros',
     certs: {
-      icp: { name: 'Web 3.0 — Internet Computer', issuer: 'ICP Hub Latam', year: '2023' },
+      icp: {
+        name: 'Web 3.0 — Internet Computer',
+        issuer: 'ICP Hub Latam',
+        year: '2023',
+        body: 'Programa ICP Developer de la comunidad ICP Hub Latam, cursado del 11 al 18 de septiembre de 2023: entrenamiento enfocado a la capacitación de desarrolladores en el protocolo de Internet Computer, la red sobre la que las aplicaciones se ejecutan on-chain en lugar de apoyarse en un servidor tradicional.',
+      },
       langchain: { name: 'Agentes de IA con LangChain', issuer: 'Platzi', year: '2025' },
       santander: { name: 'Tecnologías Emergentes', issuer: 'Santander', year: '2024' },
       somece: {

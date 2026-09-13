@@ -192,6 +192,64 @@ const ICONS = {
     </svg>
   ),
 
+  // A rack: the machine you rent and then have to run yourself.
+  vps: (
+    <svg {...base}>
+      <rect x="3" y="4" width="18" height="6" rx="1.6" />
+      <rect x="3" y="14" width="18" height="6" rx="1.6" />
+      <path d="M6.5 7h.01M9.5 7h.01M6.5 17h.01M9.5 17h.01" />
+      <path d="M17.5 7h1.2M17.5 17h1.2" />
+    </svg>
+  ),
+
+  // A topology, not a cloud: nodes wired through a centre, which is the thing
+  // a network diagram is actually about.
+  networking: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="2.4" />
+      <circle cx="12" cy="3.6" r="1.8" />
+      <circle cx="12" cy="20.4" r="1.8" />
+      <circle cx="3.8" cy="17" r="1.8" />
+      <circle cx="20.2" cy="17" r="1.8" />
+      <path d="M12 5.4v4.2" />
+      <path d="M12 14.4v4.2" />
+      <path d="m10.1 13.3-4.6 2.8" />
+      <path d="m13.9 13.3 4.6 2.8" />
+    </svg>
+  ),
+
+  // A name resolving to an address: the globe and the record that points at it.
+  dns: (
+    <svg {...base}>
+      <circle cx="9" cy="9" r="6.2" />
+      <path d="M2.9 9h12.2" />
+      <path d="M9 2.8c3.2 3.5 3.2 8.9 0 12.4-3.2-3.5-3.2-8.9 0-12.4z" />
+      <path d="M13.6 19.2h7.5" />
+      <path d="m18.4 16.5 2.7 2.7-2.7 2.7" />
+    </svg>
+  ),
+
+  // A sweep across ports: some answer, most do not.
+  portScan: (
+    <svg {...base}>
+      <rect x="3" y="8.5" width="18" height="7" rx="1.6" />
+      <path d="M7 8.5v7M11 8.5v7M15 8.5v7" />
+      <path d="M9 4.6V6.8M13 4.6V6.8" />
+      <circle cx="17.8" cy="12" r="1.5" />
+    </svg>
+  ),
+
+  // A key being worked on until the lock opens.
+  passwordCrack: (
+    <svg {...base}>
+      <circle cx="7.2" cy="14.8" r="3.4" />
+      <path d="m9.7 12.4 7.2-7.2" />
+      <path d="m14.6 7.5 2 2" />
+      <path d="m16.9 5.2 2 2" />
+      <path d="M20.6 13.5 18 16.1M18 13.5l2.6 2.6" />
+    </svg>
+  ),
+
   // What the cloud costs, going the right way.
   finops: (
     <svg {...base}>

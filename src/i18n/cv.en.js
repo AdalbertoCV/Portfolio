@@ -99,7 +99,12 @@ const cvEn = {
     certsKicker: 'Certifications',
     certsTitle: 'Certifications and achievements',
     certs: {
-      icp: { name: 'Web 3.0 — Internet Computer', issuer: 'ICP Hub Latam', year: '2023' },
+      icp: {
+        name: 'Web 3.0 — Internet Computer',
+        issuer: 'ICP Hub Latam',
+        year: '2023',
+        body: 'The ICP Developer program run by the ICP Hub Latam community, taken from 11 to 18 September 2023: developer training on the Internet Computer protocol, the network where applications run on-chain instead of leaning on a conventional server.',
+      },
       langchain: { name: 'AI Agents with LangChain', issuer: 'Platzi', year: '2025' },
       santander: { name: 'Emerging Technologies', issuer: 'Santander', year: '2024' },
       somece: {
