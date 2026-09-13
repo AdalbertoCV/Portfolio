@@ -186,6 +186,21 @@ const cvEn = {
           'Astronomy',
         ],
       },
+      learning: {
+        title: 'Cognition, learning and teaching',
+        body: 'I am interested in how something difficult is actually learned, and in why most technical material fails to explain it. I follow the work on memory, attention and cognitive load, and test it against my own study method: retrieval practice instead of rereading, spaced review, and real projects as the criterion for whether a concept was understood rather than merely recognised. Educational technology is where that interest turns into formal research — it is the subject of the paper I presented at the SOMECE International Congress in 2024.',
+        body2: 'The other half is transmission. I run a company dedicated to training and placing technical talent, I mentor, and I document what I build; in all three the problem is the same: ordering a subject for someone who does not yet have the mental model you already read it with. That forces a separation between what is essential and what is incidental, naming things for what they do, and showing the path of decisions rather than only the result. The effect on engineering is direct: an API, an error message and an architecture document are problems of cognitive load before they are problems of style, and they are designed the way an explanation is — around what the reader has to hold in their head to use them well.',
+        tags: [
+          'Cognitive science',
+          'Learning and memory',
+          'Spaced repetition',
+          'Cognitive load',
+          'Educational technology',
+          'Mentoring and training',
+          'Knowledge management',
+          'Technical writing',
+        ],
+      },
       arts: {
         title: 'Art, in all its forms',
         body: 'Artistic training holds a place equivalent to the technical one in how I work. I follow music, literature, cinema, theatre, fashion, drawing and animation with the same rigour. In practice I write novels and songs, and develop musical projects of my own. That discipline builds command of structure, rhythm and aesthetic judgement — competencies that apply directly to interface and product design.',

@@ -53,6 +53,7 @@ const INTEREST_KEYS = [
   'business',
   'science',
   'security',
+  'learning',
   'arts',
   'sports',
   'culture',
@@ -112,6 +113,18 @@ const INTEREST_ICONS = {
       <path d="M12 2.6v18.8" />
       <path d="M8.4 9.4h.01M8.4 13.4h.01" />
       <path d="M15.6 9.4h1.4M15.6 13.4h1.4" />
+    </svg>
+  ),
+  // A head with a path through it: knowledge as a route that gets built, not a
+  // container that gets filled. The node outside is the part that gets handed
+  // to somebody else, which is the half of this card that is about teaching.
+  learning: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M8.4 21.2v-3.6a7.4 7.4 0 1 1 9.6-8.6c1.6.4 2.7 1.5 2.7 2.8 0 .9-.8 1.5-1.8 1.5h-1.3v2.4a1.9 1.9 0 0 1-1.9 1.9h-1.9v3.6" />
+      <circle cx="9.8" cy="11.6" r="1.3" />
+      <circle cx="13.8" cy="9.2" r="1.3" />
+      <path d="m11 10.9 1.7-1" />
     </svg>
   ),
   culture: (

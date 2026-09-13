@@ -193,6 +193,21 @@ const cvEs = {
           'Astronomía',
         ],
       },
+      learning: {
+        title: 'Cognición, aprendizaje y enseñanza',
+        body: 'Me interesa cómo se aprende algo difícil, y por qué la mayoría de los materiales técnicos fallan en explicarlo. Sigo el trabajo sobre memoria, atención y carga cognitiva, y lo pongo a prueba en mi propio método de estudio: práctica de recuperación en lugar de relectura, repaso espaciado, y proyectos reales como criterio de que un concepto quedó entendido y no solo reconocido. La tecnología educativa es el terreno donde ese interés se vuelve investigación formal — es el tema del artículo que presenté en el Congreso Internacional SOMECE 2024.',
+        body2: 'La otra mitad es la transmisión. Dirijo una empresa dedicada a formar y colocar talento técnico, doy mentoría y documento lo que construyo, y en los tres casos el problema es el mismo: ordenar un tema para alguien que todavía no tiene el modelo mental con el que uno ya lo lee. Eso obliga a distinguir entre lo esencial y lo accesorio, a nombrar las cosas por lo que hacen y a mostrar el camino de decisión y no solo el resultado. El efecto sobre la ingeniería es directo: una API, un mensaje de error y un documento de arquitectura son problemas de carga cognitiva antes que de estilo, y se diseñan igual que una explicación — por lo que el lector tiene que sostener en la cabeza para usarlos bien.',
+        tags: [
+          'Ciencia cognitiva',
+          'Aprendizaje y memoria',
+          'Repaso espaciado',
+          'Carga cognitiva',
+          'Tecnología educativa',
+          'Mentoría y formación',
+          'Gestión del conocimiento',
+          'Divulgación técnica',
+        ],
+      },
       arts: {
         title: 'El arte, en todas sus formas',
         body: 'La formación artística ocupa un lugar equivalente al técnico en mi criterio profesional. Sigo con rigor la música, la literatura, el cine, el teatro, la moda, el dibujo y la animación. En el plano práctico escribo novela y canción, y desarrollo proyectos musicales propios. Esa disciplina desarrolla el manejo de la estructura, el ritmo y el criterio estético, competencias directamente aplicables al diseño de interfaces y de producto.',
