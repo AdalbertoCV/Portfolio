@@ -115,6 +115,13 @@ const INTEREST_ICONS = {
 };
 const CERT_KEYS = ['icp', 'langchain', 'santander', 'somece'];
 
+/* A certificate only carries a link when there is something published to point
+   at — the SOMECE proceedings the paper appears in. */
+const CERT_LINKS = {
+  somece:
+    'https://www.google.com.mx/books/edition/Proleg%C3%B3menos_de_la_Inteligencia_Artific/m-I2EQAAQBAJ?hl=es&gbpv=1&pg=PA111&printsec=frontcover',
+};
+
 const TechTile = ({ item }) => (
   <li className="tech-tile">
     {item.icon ? (
@@ -314,19 +321,38 @@ const About = () => {
       {/* -------------------------------------------------------------- certs */}
       <Section kicker={t('cv.certsKicker')} title={t('cv.certsTitle')}>
         <Reveal className="cv-certs" stagger>
-          {CERT_KEYS.map((key) => (
-            <article className="cv-cert" key={key}>
-              <svg className="cv-cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <circle cx="12" cy="9" r="5.5" />
-                <path d="m8.2 13.6-1.4 7L12 18l5.2 2.6-1.4-7" />
-              </svg>
-              <h3>{t(`cv.certs.${key}.name`)}</h3>
-              <p className="cv-cert-issuer">
-                {t(`cv.certs.${key}.issuer`)} · {t(`cv.certs.${key}.year`)}
-              </p>
-            </article>
-          ))}
+          {CERT_KEYS.map((key) => {
+            /* translate() hands back the key itself on a miss, so a card
+               without a written-up context renders as the plain credential. */
+            const body = t(`cv.certs.${key}.body`);
+            const hasBody = body !== `cv.certs.${key}.body`;
+
+            return (
+              <article className="cv-cert" key={key} data-detail={hasBody ? 'true' : undefined}>
+                <svg className="cv-cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="9" r="5.5" />
+                  <path d="m8.2 13.6-1.4 7L12 18l5.2 2.6-1.4-7" />
+                </svg>
+                <h3>{t(`cv.certs.${key}.name`)}</h3>
+                <p className="cv-cert-issuer">
+                  {t(`cv.certs.${key}.issuer`)} · {t(`cv.certs.${key}.year`)}
+                </p>
+                {hasBody && <p className="cv-cert-body">{body}</p>}
+                {CERT_LINKS[key] && (
+                  <a
+                    className="cv-interest-link cv-cert-link"
+                    href={CERT_LINKS[key]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t(`cv.certs.${key}.link`)}
+                    <ArrowUpRight />
+                  </a>
+                )}
+              </article>
+            );
+          })}
         </Reveal>
 
         <Reveal className="cv-proofs">
