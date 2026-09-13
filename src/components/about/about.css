@@ -542,6 +542,82 @@
     }
 }
 
+/* Events sit below the credentials in the same section. One card, laid out as
+   mark + prose so the organiser's wordmark reads as the identity of the thing
+   rather than as decoration on top of it. */
+.cv-events {
+    margin-top: 36px;
+}
+
+.cv-event {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 22px;
+    margin-top: 4px;
+    padding: 24px 22px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+/* The official wordmark is drawn in #e5e5e5 — near-white, and invisible on a
+   light card. Rather than repaint someone else's logo, it keeps its real
+   colour and gets the dark ground it was drawn for, in both themes. */
+.cv-event-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 180px;
+    padding: 16px 18px;
+    border-radius: var(--radius-md);
+    background: #101010;
+}
+
+.cv-event-mark img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.cv-event-copy {
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cv-event-copy h4 {
+    font-size: 0.98rem;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    color: var(--color-text-primary);
+    margin: 0 0 8px;
+}
+
+.cv-event-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 26px;
+    margin-top: 18px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-event:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 600px) {
+    .cv-event-mark {
+        width: 150px;
+    }
+}
+
 /* ============================================================================
    RESPONSIVE
    ========================================================================= */

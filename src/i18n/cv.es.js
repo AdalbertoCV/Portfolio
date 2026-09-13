@@ -125,6 +125,19 @@ const cvEs = {
     certsProofLabel: 'Constancias',
     certsProofHint: 'Toca una constancia para ampliarla',
 
+    eventsLabel: 'Eventos',
+    events: {
+      rbr: {
+        name: 'Release Before Ready',
+        issuer: 'Querétaro',
+        year: 'Agosto 2026',
+        body: 'Serie de hackathones presentada por 500 Global y Descubre.vc, con formato de un solo día: construir algo y mostrarlo en público antes de que esté terminado, que es justo lo que le da nombre al evento. Lo que llevé ahí fue una migración completa de Azure a AWS, es decir mover la infraestructura de una nube a otra dentro de esa única jornada, entre configuración, refactorización y migración. La parte difícil no fue el traslado en sí sino los modelos de visión: entender qué cambia realmente al pasarlos de Azure AI Foundry a AWS Bedrock. Terminé el día con tres servicios de la arquitectura migrados.',
+        body2: 'El mismo día hubo un reto paralelo de una hora, sin ganador y por puro gusto: componer música como código en Strudel. De ahí salió Nocturno 108, la pista con reproductor propio, pad de producción e instrumentos y el avatar sincronizado al pulso.',
+        link: 'Ver el evento',
+        projectLink: 'Ver en proyectos',
+      },
+    },
+
     interestsKicker: 'Intereses',
     interestsTitle: 'De dónde sale la forma en que pienso',
     interestsLede: 'Cada uno desarrolla una capacidad que se traslada al trabajo técnico, y varios de ellos influyen directamente en qué construyo y con qué criterio.',

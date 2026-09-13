@@ -10,6 +10,7 @@ import soundcloudMark from '../../images/soundcloud.svg';
 import UAZLogo from '../../images/UAZ.jpg';
 import someceImage from '../../images/Achievements/constancia1.png';
 import ICPImage from '../../images/Achievements/constancia2.png';
+import rbrMark from '../../images/releasebeforeready.svg';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowRight, ArrowUpRight, Reveal, Section } from '../brand/parts';
 import TECH_GROUPS, { monogram } from './techStack';
@@ -20,6 +21,7 @@ const EMAIL = 'adalc3488@gmail.com';
 const LINKEDIN = 'https://www.linkedin.com/in/adalbertocerrillo/';
 const GITHUB = 'https://github.com/AdalbertoCV';
 const YOUTUBE = 'https://www.youtube.com/@acerrillosoftware';
+const RBR_URL = 'https://www.releasebeforeready.com/es/eventos';
 
 const SOCIALS = [
   { href: `mailto:${EMAIL}`, img: mailLogo, label: 'Email', external: false },
@@ -415,6 +417,44 @@ const About = () => {
               </button>
             ))}
           </div>
+        </Reveal>
+
+        {/* A hackathon is not a credential, so it sits after the certificates
+            rather than among them: one card, the organiser's own wordmark, and
+            what was actually built there. */}
+        <Reveal className="cv-events">
+          <h3 className="brand-stack-title">{t('cv.eventsLabel')}</h3>
+          <article className="cv-event">
+            <span className="cv-event-mark">
+              <img src={rbrMark} alt="" aria-hidden="true" loading="lazy" />
+            </span>
+            <div className="cv-event-copy">
+              <h4>{t('cv.events.rbr.name')}</h4>
+              <p className="cv-cert-issuer">
+                {t('cv.events.rbr.issuer')} · {t('cv.events.rbr.year')}
+              </p>
+              <p className="cv-cert-body">{t('cv.events.rbr.body')}</p>
+              <p className="cv-cert-body">{t('cv.events.rbr.body2')}</p>
+              {/* Two destinations, because the day produced two things: the
+                  event itself, and the track that is already catalogued as a
+                  project on this site. */}
+              <div className="cv-event-links">
+                <a
+                  className="cv-interest-link"
+                  href={RBR_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('cv.events.rbr.link')}
+                  <ArrowUpRight />
+                </a>
+                <Link className="cv-interest-link" to="/projects">
+                  {t('cv.events.rbr.projectLink')}
+                  <ArrowRight />
+                </Link>
+              </div>
+            </div>
+          </article>
         </Reveal>
       </Section>
 
