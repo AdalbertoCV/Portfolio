@@ -169,8 +169,6 @@ const TechTile = ({ item }) => (
 const About = () => {
   const { t, tl } = useTranslation();
   const [activeImage, setActiveImage] = useState(null);
-  const [joke, setJoke] = useState(0);
-  const jokes = tl('cv.jokes');
 
   // For whoever opens devtools on a portfolio, which is its own kind of
   // introduction. Runs once per mount, says nothing the page needs.
@@ -445,28 +443,6 @@ const About = () => {
               </div>
             </article>
           ))}
-        </Reveal>
-
-        {/* The one unserious thing on the page. Clicking it deals the next
-            joke; the first one is the honest answer to what all of the above
-            is actually aiming at. */}
-        <Reveal className="cv-egg">
-          <button
-            type="button"
-            className="cv-egg-button"
-            onClick={() => setJoke((n) => (n + 1) % jokes.length)}
-            aria-label={t('cv.eggLabel')}
-          >
-            <span className="cv-egg-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
-                   strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="4.4" />
-                <circle cx="12" cy="12" r="8.6" />
-                <path d="M12 3.4v1.8M12 18.8v1.8M3.4 12h1.8M18.8 12h1.8" />
-              </svg>
-            </span>
-            <span className="cv-egg-text">{jokes[joke]}</span>
-          </button>
         </Reveal>
       </Section>
 

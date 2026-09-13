@@ -304,11 +304,7 @@ const TECH_GROUPS = [
     // Left in deliberately: everybody who learned to program in Spanish started
     // here, and the logo is the real one.
     id: 'joke',
-    items: [
-      { name: 'PSeInt', icon: pseintIcon },
-      { name: 'Pseudocode', concept: 'pseudocode' },
-      { name: 'Flowcharts', concept: 'flowchart' },
-    ],
+    items: [{ name: 'PSeInt', icon: pseintIcon }],
   },
   {
     id: 'frontier',

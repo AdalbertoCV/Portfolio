@@ -8,6 +8,23 @@ const es = {
   ...cvEs,
   ...reposEs,
   ...rolesEs,
+  // El pie de página: un chiste a la vez, con avance manual. Nada aquí se mueve
+  // solo, porque una línea que se cambia mientras alguien la lee es peor chiste
+  // que el que reemplaza.
+  footer: {
+    kicker: 'Nota al pie',
+    prev: 'Chiste anterior',
+    next: 'Siguiente chiste',
+    go: 'Ir al chiste',
+    credit: '© 2026 Adal Cerrillo · Hecho a mano, con más café del recomendable.',
+    jokes: [
+      'Objetivo de vida declarado: ser el Tony Stark de la vida real, con todo y su Jarvis. El traje va en la versión 0.1, pero Jarvis ya corre en local — y, a diferencia del original, este sí pide permiso antes de desplegar a producción.',
+      'Cuando el traje esté listo, el primer ticket será «el reactor arc no tiene tests de integración».',
+      'Mi stack favorito sigue siendo café, terminal y la frase «en mi máquina sí funciona».',
+      'Sé exactamente cuántos proyectos tengo sin terminar. Esa cifra está clasificada.',
+      'La arquitectura más elegante que he diseñado sigue siendo la del diagrama que hice antes de leer los requerimientos completos.',
+    ],
+  },
   nav: {
     about: 'Sobre Mí',
     projects: 'Proyectos',
@@ -61,7 +78,7 @@ const es = {
       frontend: 'Frontend y móvil',
       web: 'CMS, e-commerce y web',
       tools: 'Herramientas y práctica',
-      joke: 'Y sobre todo, experto en PSeInt',
+      joke: 'Y sobre todo, experto en PSeInt (broma)',
       frontier: 'Fronteras que exploro',
     },
   },

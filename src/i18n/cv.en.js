@@ -118,15 +118,6 @@ const cvEn = {
     certsProofLabel: 'Credentials',
     certsProofHint: 'Tap a credential to enlarge it',
 
-    eggLabel: 'Next joke',
-    jokes: [
-      'Stated life goal: to be the real-life Tony Stark, Jarvis included. The suit is on version 0.1, but Jarvis already runs locally — and unlike the original, this one asks for approval before deploying to production.',
-      'When the suit is finally ready, the first ticket will be "the arc reactor has no integration tests".',
-      'My favourite stack is still coffee, a terminal, and the phrase "it works on my machine".',
-      'I know exactly how many unfinished projects I have. That figure is classified.',
-      'The most elegant architecture I have ever designed is still the one I diagrammed before reading the full requirements.',
-    ],
-
     interestsKicker: 'Interests',
     interestsTitle: 'Where the way I think comes from',
     interestsLede: 'Each develops a capability that carries over into the technical work, and several of them bear directly on what I build and on what basis.',

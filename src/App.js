@@ -6,6 +6,7 @@ import './styles/hub.css';
 import About from './components/about/about';
 import Experience from './components/experience/experience';
 import Navbar from './components/navigation/navbar';
+import SiteFooter from './components/navigation/SiteFooter';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import MyProjects from './components/projects/projects';
 import Ventures from './components/ventures/ventures';
@@ -53,6 +54,7 @@ function App() {
               <Route path="/freelance" element={<FreelancePage />} />
               <Route path="/labsol" element={<LabsolPage />} />
             </Routes>
+            <SiteFooter />
           </Router>
         </div>
       </I18nProvider>

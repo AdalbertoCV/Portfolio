@@ -125,15 +125,6 @@ const cvEs = {
     certsProofLabel: 'Constancias',
     certsProofHint: 'Toca una constancia para ampliarla',
 
-    eggLabel: 'Siguiente chiste',
-    jokes: [
-      'Objetivo de vida declarado: ser el Tony Stark de la vida real, con todo y su Jarvis. El traje va en la versión 0.1, pero Jarvis ya corre en local — y, a diferencia del original, este sí pide permiso antes de desplegar a producción.',
-      'Cuando el traje esté listo, el primer ticket será «el reactor arc no tiene tests de integración».',
-      'Mi stack favorito sigue siendo café, terminal y la frase «en mi máquina sí funciona».',
-      'Sé exactamente cuántos proyectos tengo sin terminar. Esa cifra está clasificada.',
-      'La arquitectura más elegante que he diseñado sigue siendo la del diagrama que hice antes de leer los requerimientos completos.',
-    ],
-
     interestsKicker: 'Intereses',
     interestsTitle: 'De dónde sale la forma en que pienso',
     interestsLede: 'Cada uno desarrolla una capacidad que se traslada al trabajo técnico, y varios de ellos influyen directamente en qué construyo y con qué criterio.',

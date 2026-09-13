@@ -1,0 +1,121 @@
+/* The footer carries one joke at a time and nothing else, so it is built to be
+   quiet: a hairline above it, tertiary text, and controls that only gain
+   contrast on hover. */
+
+.site-footer {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 32px 46px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.site-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.site-footer-joke {
+    min-width: 0;
+}
+
+.site-footer-kicker {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 8px;
+}
+
+.site-footer-text {
+    font-size: 0.92rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    margin: 0;
+    max-width: 78ch;
+}
+
+.site-footer-controls {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-footer-arrow {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--color-border-primary);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    transition: color var(--transition-base), border-color var(--transition-base),
+        background var(--transition-base);
+}
+
+.site-footer-arrow svg {
+    width: 16px;
+    height: 16px;
+}
+
+.site-footer-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.site-footer-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-border-primary);
+    cursor: pointer;
+    transition: background var(--transition-base), transform var(--transition-base);
+}
+
+.site-footer-dot[data-active] {
+    background: var(--color-text-secondary);
+    transform: scale(1.25);
+}
+
+.site-footer-credit {
+    margin: 26px 0 0;
+    font-size: 0.78rem;
+    color: var(--color-text-tertiary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .site-footer-arrow:hover {
+        color: var(--color-text-primary);
+        border-color: var(--color-border-hover);
+        background: var(--color-bg-tertiary);
+    }
+
+    .site-footer-dot:hover {
+        background: var(--color-text-tertiary);
+    }
+}
+
+/* Stacked on a phone: the controls sit under the line they move, still on one
+   row, so the thumb reaches both arrows. */
+@media (max-width: 720px) {
+    .site-footer {
+        padding: 28px 24px 40px;
+    }
+
+    .site-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+}

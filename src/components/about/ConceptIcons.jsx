@@ -192,30 +192,6 @@ const ICONS = {
     </svg>
   ),
 
-  // Indented lines that are almost code: pseudocode, drawn as what it is.
-  pseudocode: (
-    <svg {...base}>
-      <rect x="3" y="3.4" width="18" height="17.2" rx="2" />
-      <path d="M6.6 8h7.2" />
-      <path d="M9 11.6h8.4" />
-      <path d="M9 15.2h5.4" />
-      <path d="M6.6 18.8h4.2" />
-    </svg>
-  ),
-
-  // Start, decide, branch: the first diagram anybody draws.
-  flowchart: (
-    <svg {...base}>
-      <rect x="7.2" y="2.4" width="9.6" height="4" rx="2" />
-      <path d="M12 9.2 16 12.8 12 16.4 8 12.8z" />
-      <path d="M12 6.4v2.8" />
-      <path d="M16 12.8h3.3a1.5 1.5 0 0 1 1.5 1.5v2.1" />
-      <path d="M8 12.8H4.7a1.5 1.5 0 0 0-1.5 1.5v2.1" />
-      <rect x="1.4" y="17.2" width="3.6" height="4.4" rx="1.2" />
-      <rect x="19" y="17.2" width="3.6" height="4.4" rx="1.2" />
-    </svg>
-  ),
-
   // A cart, because a store is a cart before it is anything else.
   ecommerce: (
     <svg {...base}>
