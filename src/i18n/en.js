@@ -20,6 +20,12 @@ const en = {
       'My favourite stack is still coffee, a terminal, and the phrase "it works on my machine".',
       'I know exactly how many unfinished projects I have. That figure is classified.',
       'The most elegant architecture I have ever designed is still the one I diagrammed before reading the full requirements.',
+      'I ran a penetration test against my own house. The router won.',
+      'I know seven programming languages and still google "how to center a div".',
+      'My estimates are honest, and they always have to be doubled. Both of those are true at once.',
+      'My disaster recovery plan is thoroughly documented. It is called git push.',
+      'PSeInt is still the only environment that never broke a migration on me.',
+      'I have forty tabs open and every one of them is "the important one".',
     ],
   },
   nav: {

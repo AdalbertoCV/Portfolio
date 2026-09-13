@@ -23,6 +23,12 @@ const es = {
       'Mi stack favorito sigue siendo café, terminal y la frase «en mi máquina sí funciona».',
       'Sé exactamente cuántos proyectos tengo sin terminar. Esa cifra está clasificada.',
       'La arquitectura más elegante que he diseñado sigue siendo la del diagrama que hice antes de leer los requerimientos completos.',
+      'Le hice una prueba de intrusión a mi propia casa. Ganó el router.',
+      'Sé siete lenguajes de programación y aun así busco en Google «cómo centrar un div».',
+      'Mis estimaciones son honestas y siempre hay que multiplicarlas por dos. Las dos cosas son ciertas al mismo tiempo.',
+      'Mi plan de recuperación ante desastres está perfectamente documentado. Se llama git push.',
+      'PSeInt sigue siendo el único entorno que jamás me rompió una migración.',
+      'Tengo cuarenta pestañas abiertas y todas son «la importante».',
     ],
   },
   nav: {
