@@ -26,6 +26,9 @@ const brandsEn = {
     statusBuilding: 'Building',
     stackselectPitch: 'Bootcamps and a technical assessment platform directed at placing developers with no prior experience into employment.',
     moonphasePitch: 'Building the future of technology: real automation and R&D on what nobody has solved, with method and a written record.',
+    projectsTitle: 'Want to see more of my work?',
+    projectsLede: 'Explore my projects: the full catalogue of what I have built, from APIs and data pipelines to interfaces and a jazz-hop track composed as code.',
+    projectsCta: 'Explore projects',
   },
 
   // ---------------------------------------------------------------- Radii

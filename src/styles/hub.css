@@ -926,7 +926,8 @@ img.brand-hero-mark {
 }
 
 @media (max-width: 900px) {
-    .ventures-roadmap {
+    .ventures-roadmap,
+    .projects-mosaic {
         order: 3;
         max-width: none;
         width: 100%;
@@ -955,6 +956,135 @@ img.brand-hero-mark {
     /* A spark parked at the start of the road is just a stray dot. */
     .vr-spark,
     .vr-spark-glow {
+        display: none;
+    }
+}
+
+/* ============================================================================
+   PROJECTS MOSAIC — the strip from Ventures to Projects
+   ----------------------------------------------------------------------------
+   Sibling of the roadmap above, one page further along: same strip, same
+   "draw in on reveal, then loop" shape, different subject. A road suited
+   Ventures — one trajectory, two companies. A catalogue has no trajectory, so
+   this is the catalogue itself, drawn in the Truchet tiling the project covers
+   use, with six tiles carrying the languages the catalogue actually runs on.
+
+   The mosaic draws itself diagonally once. After that a slanted scanner
+   crosses it on a loop and each repository tile flashes as the beam reaches
+   it; the per-tile delays are computed in the component from where the beam
+   arrives, so the flash is caused by the scanner rather than just timed near
+   it.
+   ========================================================================= */
+
+.projects-mosaic {
+    position: relative;
+    flex: 1 1 260px;
+    max-width: 340px;
+    min-width: 210px;
+    /* Matches the 420x140 viewBox, same as the roadmap, so the two teasers
+       hold the same proportion at the foot of their pages. */
+    aspect-ratio: 3 / 1;
+    color: var(--color-text-tertiary);
+    /* The beam runs past both edges of the viewBox, and the tiling has no
+       natural border. Both are handled by dissolving the strip at its sides
+       rather than cutting it: a hard crop would read as a boxed thumbnail
+       pasted next to the paragraph. */
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+}
+
+.pm-track {
+    width: 100%;
+    height: 100%;
+}
+
+/* --------------------------------------------------------------- the tiles */
+
+/* 120 comfortably exceeds a single cell's arc length, so each tile starts
+   fully hidden whatever the exact measurement. */
+.pm-tile {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+}
+
+.hub-teaser.is-visible .pm-tile {
+    animation: pmDraw 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes pmDraw {
+    to { stroke-dashoffset: 0; }
+}
+
+/* -------------------------------------------------------------- the scanner */
+
+.pm-beam {
+    opacity: 0;
+}
+
+.hub-teaser.is-visible .pm-beam {
+    animation: pmSweep 3.2s linear 1.15s infinite;
+}
+
+/* translate in user units: the group sits in the 420-wide viewBox, so the run
+   is expressed in the same coordinates the component computes its delays in. */
+@keyframes pmSweep {
+    0% { opacity: 0; transform: translateX(0); }
+    8% { opacity: 1; }
+    94% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(446px); }
+}
+
+/* ---------------------------------------------------------- the repositories */
+
+.pm-repo {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/* Two animations: the one-off pop as the mosaic draws, then the repeating
+   flash as the scanner reaches this tile. Both delays come from the component. */
+.hub-teaser.is-visible .pm-repo {
+    animation:
+        pmPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        pmLit 3.2s linear infinite;
+}
+
+/* Ease-out-expo: a tile resolving out of the pattern settles into place, it
+   does not bounce onto it. */
+@keyframes pmPop {
+    from { opacity: 0; transform: scale(0.3); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Brief, and back down well before the beam returns: a tile that stays lit is
+   just a brighter square. The glow is drawn with a shadow rather than a scale
+   alone so the language colour is what reads, not the size change. */
+@keyframes pmLit {
+    0% { fill-opacity: 0.75; transform: scale(1); filter: none; }
+    6% { fill-opacity: 1; transform: scale(1.45); filter: drop-shadow(0 0 6px currentColor); }
+    20% { fill-opacity: 0.75; transform: scale(1); filter: none; }
+    100% { fill-opacity: 0.75; transform: scale(1); filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Land everything finished: the strip still says "a catalogue, in these
+       languages", it just does not travel to get there. */
+    .pm-tile {
+        stroke-dashoffset: 0 !important;
+        animation: none !important;
+    }
+
+    .pm-repo {
+        opacity: 1 !important;
+        fill-opacity: 0.75;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    /* A beam parked at the left edge is just a stray smudge. */
+    .pm-beam {
         display: none;
     }
 }

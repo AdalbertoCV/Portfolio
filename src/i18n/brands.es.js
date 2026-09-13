@@ -27,6 +27,9 @@ const brandsEs = {
     statusBuilding: 'En construcción',
     stackselectPitch: 'Bootcamps y plataforma de evaluación técnica orientados a la colocación laboral de desarrolladores sin experiencia previa.',
     moonphasePitch: 'Construyendo el futuro de la tecnología: automatización real e I+D sobre lo que nadie ha resuelto, con método y expediente escrito.',
+    projectsTitle: '¿Quieres ver más de mi trabajo?',
+    projectsLede: 'Explora mis proyectos: el catálogo completo de lo que he construido, de APIs y pipelines de datos a interfaces y una pista de jazz-hop compuesta como código.',
+    projectsCta: 'Explorar proyectos',
   },
 
   // ---------------------------------------------------------------- Radii

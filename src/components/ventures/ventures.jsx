@@ -3,6 +3,7 @@ import { useTranslation } from '../../i18n/I18nProvider';
 import { StackSelectMark } from '../marks/StackSelectMark';
 import { MoonphaseMark } from '../marks/MoonphaseMark';
 import { ArrowRight, Reveal } from '../brand/parts';
+import ProjectsMosaic from '../projects/ProjectsMosaic';
 
 // The two companies Adalberto founded, as opposed to the roles on /experience
 // where someone else hired him. The split is the whole point of this page
@@ -64,6 +65,20 @@ const Ventures = () => {
             <span className="sr-only">{` — ${t(roleKey)}`}</span>
           </Link>
         ))}
+      </Reveal>
+
+      {/* The same hand-off the timeline makes to Ventures: a page ends by
+          pointing at the next one rather than at nothing. */}
+      <Reveal className="hub-teaser">
+        <div className="hub-teaser-copy">
+          <h2 className="brand-h2">{t('ventures.projectsTitle')}</h2>
+          <p className="brand-p">{t('ventures.projectsLede')}</p>
+        </div>
+        <ProjectsMosaic />
+        <Link className="brand-link-out hub-teaser-cta" to="/projects">
+          {t('ventures.projectsCta')}
+          <ArrowRight />
+        </Link>
       </Reveal>
     </div>
   );

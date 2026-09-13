@@ -30,7 +30,7 @@ const LANGUAGE_COLORS = {
 export const languageColor = (language) => LANGUAGE_COLORS[language] || '#8b8b94';
 
 // FNV-1a: small, fast, and well spread for short strings.
-const hashOf = (text) => {
+export const hashOf = (text) => {
   let hash = 2166136261;
   for (let i = 0; i < text.length; i += 1) {
     hash ^= text.charCodeAt(i);
@@ -40,7 +40,7 @@ const hashOf = (text) => {
 };
 
 // mulberry32 — a tiny deterministic PRNG, seeded from the hash above.
-const makeRandom = (seed) => {
+export const makeRandom = (seed) => {
   let state = seed >>> 0;
   return () => {
     state = (state + 0x6d2b79f5) >>> 0;
