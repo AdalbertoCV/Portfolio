@@ -40,7 +40,7 @@ const en = {
   contact: {
     badge: 'Contact',
     title: 'Let’s talk',
-    lede: 'If you have a project, a role or a technical question, write to me. I answer everything that comes in.',
+    lede: 'If you have a project, want to collaborate on something, want to be part of my community, or just want to share an idea, write to me. I answer everything that comes in.',
     fields: {
       name: 'Name',
       email: 'Email',
@@ -57,7 +57,6 @@ const en = {
     sending: 'Sending…',
     sent: 'Message sent. I will reply as soon as I read it.',
     error: 'That did not send. Write to me directly at adalc3488@gmail.com.',
-    noKey: 'The form does not have its Web3Forms access key configured yet, so the button is disabled. The address above works in the meantime.',
   },
   common: {
     language: 'Language',

@@ -10,14 +10,18 @@ import './contact.css';
    server code, and the alternative — a mailto: link — hands the visitor a mail
    client they may not have configured and loses the message if they do not.
 
-   The access key is public on purpose. Create React App inlines every
-   REACT_APP_* value into the bundle, so there is no such thing as a secret
-   here; Web3Forms keys are designed for that and only ever deliver to the one
-   address the key was issued for.
+   The access key sits here in the source rather than in an environment
+   variable, which sounds wrong and is not. Create React App inlines every
+   REACT_APP_* value into the bundle at build time, so an env var would end up
+   in exactly the same shipped JavaScript that this line does — it would buy no
+   secrecy, only a second place to configure on every host the site is deployed
+   to. A Web3Forms key is designed to be public and only ever delivers to the
+   one address it was issued for, so the worst a copy of it can do is send mail
+   to that address.
    ======================================================================== */
 
 const ENDPOINT = 'https://api.web3forms.com/submit';
-const ACCESS_KEY = process.env.REACT_APP_WEB3FORMS_KEY;
+const ACCESS_KEY = '6b54da08-526a-4df8-aee1-8f8885e6a9e7';
 const EMAIL = 'adalc3488@gmail.com';
 
 const FIELDS = [
@@ -70,10 +74,6 @@ const ContactPage = () => {
 
       <Section>
         <Reveal className="contact-card">
-          {/* Not disabled on a missing key: a form that silently does nothing
-              is worse than one that says why. */}
-          {!ACCESS_KEY && <p className="contact-note contact-note-setup">{t('contact.noKey')}</p>}
-
           {/* A "did not send" sitting next to a form the visitor has already
               started rewriting is stale advice, so the outcome clears on the
               first keystroke after it. */}
@@ -112,7 +112,7 @@ const ContactPage = () => {
             <input type="checkbox" name="botcheck" className="contact-botcheck" tabIndex="-1" autoComplete="off" />
 
             <div className="contact-actions">
-              <button className="contact-submit" type="submit" disabled={status === 'sending' || !ACCESS_KEY}>
+              <button className="contact-submit" type="submit" disabled={status === 'sending'}>
                 {status === 'sending' ? t('contact.sending') : t('contact.send')}
               </button>
 

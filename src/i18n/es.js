@@ -43,7 +43,7 @@ const es = {
   contact: {
     badge: 'Contacto',
     title: 'Hablemos',
-    lede: 'Si tienes un proyecto, una vacante o una pregunta técnica, escríbeme. Respondo a todo lo que llega.',
+    lede: 'Si tienes un proyecto, quieres colaborar en algo, formar parte de mi comunidad o simplemente compartir una idea, escríbeme. Respondo a todo lo que llega.',
     fields: {
       name: 'Nombre',
       email: 'Correo',
@@ -60,7 +60,6 @@ const es = {
     sending: 'Enviando…',
     sent: 'Mensaje enviado. Te respondo en cuanto lo lea.',
     error: 'No se pudo enviar. Escríbeme directo a adalc3488@gmail.com.',
-    noKey: 'El formulario todavía no tiene su access key de Web3Forms configurada, así que el botón está deshabilitado. Mientras tanto, el correo de arriba funciona.',
   },
   common: {
     language: 'Idioma',
