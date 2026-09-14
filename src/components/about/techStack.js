@@ -25,6 +25,8 @@ import langchain from '../../images/tech/langchain.svg';
 import pandasIcon from '../../images/tech/pandas.svg';
 import colabIcon from '../../images/tech/googlecolab.svg';
 import kaggleIcon from '../../images/tech/kaggle.svg';
+import tensorflowIcon from '../../images/tech/tensorflow.svg';
+import huggingfaceIcon from '../../images/tech/huggingface.svg';
 import aws from '../../images/tech/aws.svg';
 import azure from '../../images/tech/azure.svg';
 import docker from '../../images/tech/docker.svg';
@@ -34,6 +36,10 @@ import mysql from '../../images/tech/mysql.svg';
 import postgresql from '../../images/tech/postgresql.svg';
 import sqlite from '../../images/tech/sqlite.svg';
 import oracle from '../../images/tech/oracle.svg';
+import airflowIcon from '../../images/tech/apacheairflow.svg';
+import sparkIcon from '../../images/tech/apachespark.svg';
+import dbtIcon from '../../images/tech/dbt.svg';
+import snowflakeIcon from '../../images/tech/snowflake.svg';
 import mongodb from '../../images/tech/mongodb.svg';
 import redis from '../../images/tech/redis.svg';
 import react from '../../images/tech/react.svg';
@@ -73,6 +79,7 @@ import cursorIcon from '../../images/tech/cursor.svg';
 import ollamaIcon from '../../images/tech/ollama.svg';
 import n8nIcon from '../../images/tech/n8n.svg';
 import deepseekIcon from '../../images/tech/deepseek.svg';
+import grokIcon from '../../images/tech/grok.svg';
 import slackIcon from '../../images/tech/slack.svg';
 import herokuIcon from '../../images/tech/heroku.svg';
 import vercelIcon from '../../images/tech/vercel.svg';
@@ -170,6 +177,8 @@ const TECH_GROUPS = [
       { name: 'LLM & RAG', concept: 'rag' },
       { name: 'Machine Learning', concept: 'ml' },
       { name: 'Multi-agent', concept: 'multiAgent' },
+      { name: 'TensorFlow', icon: tensorflowIcon, mono: true },
+      { name: 'Hugging Face', icon: huggingfaceIcon, mono: true },
       { name: 'pandas', icon: pandasIcon, mono: true },
       { name: 'Google Colab', icon: colabIcon, mono: true },
       { name: 'Kaggle', icon: kaggleIcon, mono: true },
@@ -195,6 +204,11 @@ const TECH_GROUPS = [
       { name: 'NemoClaw', icon: nemoclawIcon },
       { name: 'Ollama', icon: ollamaIcon, mono: true },
       { name: 'DeepSeek', icon: deepseekIcon, mono: true },
+      // xAI ships Grok only as an app tile — a white glyph on its own near-black
+      // rounded square, with Figma blur filters attached. The two strokes were
+      // lifted out of it so the mark arrives monochrome like the rest of the
+      // wall and inverts with them.
+      { name: 'Grok', icon: grokIcon, mono: true },
       // Not a coding agent like the rest: n8n is where agents get wired into a
       // workflow that runs on its own schedule. It earns its place in the group
       // for the same reason the group exists — it is used, not surveyed.
@@ -250,6 +264,13 @@ const TECH_GROUPS = [
       { name: 'SQLite', icon: sqlite },
       { name: 'Supabase', icon: supabaseIcon, mono: true },
       { name: 'Oracle', icon: oracle },
+      // The pipeline, in the order it runs: orchestration, processing,
+      // transformation, warehouse. All four are simple-icons monochrome, so
+      // the dark-mode inversion covers them.
+      { name: 'Apache Airflow', icon: airflowIcon, mono: true },
+      { name: 'Apache Spark', icon: sparkIcon, mono: true },
+      { name: 'dbt', icon: dbtIcon, mono: true },
+      { name: 'Snowflake', icon: snowflakeIcon, mono: true },
       { name: 'Stream processing', concept: 'stream' },
       { name: 'Time-series', concept: 'timeSeries' },
     ],
