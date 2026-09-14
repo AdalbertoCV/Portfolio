@@ -373,3 +373,65 @@
         opacity: 0;
     }
 }
+
+/* ---------------------------------------------------------------------- UAZ
+   The curriculum map advancing one semester at a time. Every element carries
+   the same 9s cycle and differs only in delay, which is what makes the light
+   read as one pass across the degree rather than as nodes blinking. */
+
+.uaz-subject {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: uazTerm 9s ease-in-out infinite;
+}
+
+/* Brief, and well back down before the light returns: a subject that stays lit
+   is just a brighter dot. */
+@keyframes uazTerm {
+    0% { transform: scale(1); fill-opacity: 0.07; stroke-opacity: 0.2; }
+    4% { transform: scale(1.6); fill-opacity: 0.8; stroke-opacity: 1; }
+    16% { transform: scale(1); fill-opacity: 0.07; stroke-opacity: 0.2; }
+    100% { transform: scale(1); fill-opacity: 0.07; stroke-opacity: 0.2; }
+}
+
+/* The chain draws forward as the light leaves its semester, so the edge reads
+   as the prerequisite being carried into the next term. */
+.uaz-edge {
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    animation: uazChain 9s ease-in-out infinite;
+}
+
+@keyframes uazChain {
+    0% { stroke-dashoffset: 140; stroke-opacity: 0.16; }
+    5% { stroke-dashoffset: 140; stroke-opacity: 0.16; }
+    13% { stroke-dashoffset: 0; stroke-opacity: 0.7; }
+    32% { stroke-dashoffset: 0; stroke-opacity: 0.16; }
+    100% { stroke-dashoffset: 0; stroke-opacity: 0.16; }
+}
+
+.uaz-term {
+    stroke-opacity: 0;
+    animation: uazMarker 9s ease-in-out infinite;
+}
+
+@keyframes uazMarker {
+    0% { stroke-opacity: 0; }
+    4% { stroke-opacity: 0.22; }
+    16% { stroke-opacity: 0; }
+    100% { stroke-opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Land the map finished: nine semesters, every chain joined. It still says
+       what it has to say, it just does not walk there. */
+    .uaz-subject,
+    .uaz-term {
+        animation: none !important;
+    }
+
+    .uaz-edge {
+        stroke-dashoffset: 0 !important;
+        animation: none !important;
+    }
+}

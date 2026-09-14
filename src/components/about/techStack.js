@@ -267,8 +267,8 @@ const TECH_GROUPS = [
       // The pipeline, in the order it runs: orchestration, processing,
       // transformation, warehouse. All four are simple-icons monochrome, so
       // the dark-mode inversion covers them.
-      { name: 'Apache Airflow', icon: airflowIcon, mono: true },
-      { name: 'Apache Spark', icon: sparkIcon, mono: true },
+      { name: 'Airflow', icon: airflowIcon, mono: true },
+      { name: 'Spark', icon: sparkIcon, mono: true },
       { name: 'dbt', icon: dbtIcon, mono: true },
       { name: 'Snowflake', icon: snowflakeIcon, mono: true },
       { name: 'Stream processing', concept: 'stream' },

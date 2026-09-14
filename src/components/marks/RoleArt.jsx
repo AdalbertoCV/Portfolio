@@ -261,3 +261,115 @@ export const LabsolArt = () => {
     </svg>
   );
 };
+
+/**
+ * UAZ — the degree itself. The curriculum map: nine semester columns with the
+ * real number of subjects in each, prerequisite chains running left to right,
+ * and a light that advances one semester at a time until the map is lit and
+ * starts over.
+ *
+ * The counts are not invented. They are the published plan — 42 subjects
+ * across nine semesters — so the artwork is the thing the page is about rather
+ * than a lattice that merely suggests one.
+ */
+export const UazArt = () => {
+  const id = useId();
+  const halo = `${id}-halo`;
+
+  // Subjects per semester, first to ninth. 5+5+5+5+4+4+4+5+5 = 42.
+  const COLUMNS = [5, 5, 5, 5, 4, 4, 4, 5, 5];
+
+  const X0 = 90;
+  const GAP_X = 128;
+  const GAP_Y = 112;
+  const MID = 400;
+
+  // One full pass of the light across all nine semesters.
+  const CYCLE = 9;
+  const STEP = CYCLE / COLUMNS.length;
+
+  const nodeAt = (col, row, count) => [X0 + col * GAP_X, MID + (row - (count - 1) / 2) * GAP_Y];
+
+  // The prerequisite chains, as rows that carry across columns: the maths
+  // sequence, the programming sequence, and the software engineering sequence
+  // that runs the length of the degree. Only these three are drawn — every
+  // edge would be a thicket, and these are the spines the plan is built on.
+  const CHAINS = [0, 2, 3];
+
+  return (
+    <svg
+      className="brand-hero-canvas"
+      viewBox="0 0 1200 800"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <radialGradient id={halo} cx="50%" cy="45%" r="65%">
+          <stop offset="0%" stopColor="var(--brand-core)" stopOpacity="0.14" />
+          <stop offset="100%" stopColor="var(--brand-core)" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      <rect width="1200" height="800" fill={`url(#${halo})`} />
+
+      {/* The chains between semesters. Each edge belongs to the column it
+          leaves, so it lights with that semester. */}
+      <g fill="none" strokeWidth="1.6" strokeLinecap="round">
+        {COLUMNS.slice(0, -1).map((count, col) =>
+          CHAINS.filter((row) => row < count && row < COLUMNS[col + 1]).map((row) => {
+            const [x1, y1] = nodeAt(col, row, count);
+            const [x2, y2] = nodeAt(col + 1, row, COLUMNS[col + 1]);
+            return (
+              <path
+                key={`edge-${col}-${row}`}
+                className="uaz-edge"
+                d={`M${x1 + 9} ${y1} C ${x1 + 58} ${y1}, ${x2 - 58} ${y2}, ${x2 - 9} ${y2}`}
+                stroke="var(--brand-core-2)"
+                strokeOpacity="0.16"
+                style={{ animationDelay: `${col * STEP}s` }}
+              />
+            );
+          })
+        )}
+      </g>
+
+      {/* The subjects. */}
+      {COLUMNS.map((count, col) =>
+        Array.from({ length: count }, (_, row) => {
+          const [cx, cy] = nodeAt(col, row, count);
+          return (
+            <circle
+              key={`node-${col}-${row}`}
+              className="uaz-subject"
+              cx={cx}
+              cy={cy}
+              r="7"
+              fill="var(--brand-core)"
+              fillOpacity="0.07"
+              stroke="var(--brand-core)"
+              strokeOpacity="0.2"
+              strokeWidth="1.4"
+              style={{ animationDelay: `${col * STEP + row * 0.06}s` }}
+            />
+          );
+        })
+      )}
+
+      {/* The semester marker: the column the light is currently on. */}
+      {COLUMNS.map((count, col) => (
+        <line
+          key={`term-${col}`}
+          className="uaz-term"
+          x1={X0 + col * GAP_X}
+          y1={MID - 300}
+          x2={X0 + col * GAP_X}
+          y2={MID + 300}
+          stroke="var(--brand-core)"
+          strokeWidth="1.2"
+          style={{ animationDelay: `${col * STEP}s` }}
+        />
+      ))}
+    </svg>
+  );
+};

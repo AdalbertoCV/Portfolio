@@ -44,6 +44,7 @@ const es = {
     back: 'Volver',
     backToExperience: 'Volver a Experiencia',
     backToVentures: 'Volver a Ventures',
+    backToAbout: 'Volver a Sobre Mí',
     scroll: 'Desplázate',
     themeToLight: 'Cambiar a tema claro',
     themeToDark: 'Cambiar a tema oscuro',

@@ -32,6 +32,66 @@ const brandsEs = {
     projectsCta: 'Explorar proyectos',
   },
 
+  // ------------------------------------------------------------------ UAZ
+  uaz: {
+    badge: 'Formación',
+    heroTitle: 'Ingeniería de Software',
+    tagline: 'Nueve semestres, 310 créditos y la carrera que me dio criterio.',
+    heroLede: 'No estudié programación: estudié ingeniería de software, que es otra cosa. El programa está construido sobre la idea de que escribir código es la parte fácil, y que lo difícil —entender qué hay que construir, decidir cómo, y sostener la calidad de lo construido— también se enseña. Esa diferencia es la que sigo usando todos los días.',
+    period: '2020 — 2024',
+
+    statsTitle: 'El plan, en números',
+    stats: {
+      semesters: { value: '9', label: 'Semestres' },
+      subjects: { value: '42', label: 'Asignaturas' },
+      labs: { value: '8', label: 'Laboratorios' },
+      credits: { value: '310', label: 'Créditos totales' },
+    },
+
+    kickers: {
+      program: 'El programa',
+      plan: 'La malla',
+      teaching: 'Los profesores',
+    },
+
+    programTitle: 'Una carrera que el estado necesitaba que existiera',
+    programBody: 'El programa de Ingeniería de Software de la UAZ no nació como una variante de Ingeniería en Computación. Se creó después de estudiar la situación de la industria del desarrollo de software y se presentó ante la sociedad zacatecana el 3 de diciembre de 2009, con el propósito explícito de formar a los profesionales que esa industria necesitaba en el estado. En 2010 comenzó la construcción del edificio que hoy aloja a Ingeniería de Software e Ingeniería en Computación, en Ciudad Universitaria Siglo XXI.',
+    programBody2: 'Ese origen se nota en el plan. No es un tronco común de computación con unas materias de software encima: la ingeniería de software es la columna, y todo lo demás —matemáticas, programación, bases de datos— está ahí para sostenerla. Es la razón por la que salí sabiendo levantar requerimientos y discutir una arquitectura, y no solamente escribir un programa que compila.',
+    programNote: 'Los datos del programa y de su fundación provienen del sitio oficial de la licenciatura.',
+
+    planTitle: 'Cinco cadenas que corren en paralelo',
+    planLede: 'La malla se lee por columnas —nueve semestres— pero se entiende por renglones: cadenas de asignaturas donde cada una es prerrequisito de la siguiente. Estas son las cinco que la sostienen, con sus materias reales.',
+    chains: {
+      maths: {
+        title: 'Matemáticas',
+        body: 'Los primeros semestres son de matemáticas antes que de código, y es lo correcto. El álgebra lineal y las discretas son las que después aparecen en un algoritmo de grafos o en una transformación de datos; la probabilidad y estadística es la que permite leer un modelo en lugar de creerle. Nada de esto se siente útil mientras se cursa, y todo aparece años después.',
+      },
+      programming: {
+        title: 'Programación y algoritmos',
+        body: 'La cadena que va de la lógica al análisis de algoritmos, con laboratorio en casi cada peldaño. Lo importante no fue aprender sintaxis sino aprender a razonar sobre costo: por qué una estructura de datos y no otra, y qué se paga por esa decisión cuando el volumen crece. Esa parte la llevé también fuera del aula: participé en varios concursos ICPC durante la carrera, que es el mismo razonamiento pero contra reloj y sin posibilidad de negociar con el problema.',
+      },
+      engineering: {
+        title: 'Ingeniería de software',
+        body: 'La columna de la carrera y lo que la distingue. Diez asignaturas que van de levantar requerimientos a mantener lo que ya está en producción, pasando por arquitectura, calidad y administración de proyectos. Proceso de Software Personal y Proceso de Software en Equipo son las dos que más me marcaron: medir el propio trabajo y después sostener el de un equipo es una disciplina que casi nadie aprende en un curso.',
+      },
+      data: {
+        title: 'Datos, web y seguridad',
+        body: 'Dos cursos de bases de datos con laboratorio, desarrollo de aplicaciones web, seguridad en redes y sistemas, y negocios electrónicos al final. Es la cadena que conecta la carrera con lo que efectivamente se despliega, y donde la seguridad aparece como materia propia y no como un apéndice.',
+      },
+      practice: {
+        title: 'Investigación y práctica profesional',
+        body: 'La carrera no termina en un examen. Termina en dos seminarios —investigación y tesis— y en dos periodos de práctica profesional: servicio social y estancia. Ahí fue donde entré a Labsol, y donde lo aprendido en clase se encontró por primera vez con un usuario que no era el profesor.',
+      },
+    },
+
+    teachingTitle: 'Profesores que enseñaban criterio, no temario',
+    teachingBody: 'Tuve excelentes profesores. Lo digo sabiendo que es la frase que todo el mundo escribe sobre su universidad, así que vale la pena precisar en qué lo fueron: enseñaban el porqué de las decisiones, no el procedimiento para llegar a la respuesta esperada. Una arquitectura se defendía, un requerimiento se discutía, y una entrega se evaluaba por lo que resolvía y no por si corría.',
+    teachingBody2: 'Eso dejó dos cosas. La primera es la base técnica, exigente y sostenida por un plan bien construido. La segunda, y la que no esperaba, es la creatividad: cuando a alguien se le enseña que casi siempre hay más de una solución defendible, deja de buscar la respuesta correcta y empieza a diseñar. Buena parte de cómo trabajo hoy —evaluar trade-offs por escrito, construir una prueba acotada antes de comprometer una decisión— empezó como un hábito de aula.',
+
+    closingTitle: 'Lo que me llevé',
+    closingBody: 'Salí con el criterio para decidir qué construir y con qué método, que es lo que sostiene todo lo demás en este sitio: las dos empresas, el trabajo por contrato y la plataforma que ayudo a construir en Radii. La carrera no me enseñó las tecnologías con las que trabajo hoy —varias no existían cuando entré— sino la forma de evaluarlas y adoptarlas, que es lo único que no caduca.',
+  },
+
   // ---------------------------------------------------------------- Radii
   radii: {
     badge: 'Founding Software Engineer',

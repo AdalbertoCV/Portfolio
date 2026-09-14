@@ -115,6 +115,7 @@ const cvEn = {
         link: 'Read the published paper',
       },
     },
+    educationCta: 'See the degree in full',
     certsProofLabel: 'Credentials',
     certsProofHint: 'Tap a credential to enlarge it',
 

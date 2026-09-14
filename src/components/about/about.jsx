@@ -349,6 +349,10 @@ const About = () => {
                 {t('about.role')} · {t('education.years')}
               </p>
               <p className="brand-p">{t('education.body')}</p>
+              <Link className="cv-interest-link cv-cert-link" to="/uaz">
+                {t('cv.educationCta')}
+                <ArrowRight />
+              </Link>
             </div>
           </article>
 

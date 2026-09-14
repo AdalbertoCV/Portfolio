@@ -41,6 +41,7 @@ const en = {
     back: 'Back',
     backToExperience: 'Back to Experience',
     backToVentures: 'Back to Ventures',
+    backToAbout: 'Back to About',
     scroll: 'Scroll',
     themeToLight: 'Switch to light theme',
     themeToDark: 'Switch to dark theme',

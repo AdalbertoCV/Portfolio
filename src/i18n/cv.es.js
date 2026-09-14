@@ -122,6 +122,7 @@ const cvEs = {
         link: 'Leer el artículo publicado',
       },
     },
+    educationCta: 'Ver la carrera a fondo',
     certsProofLabel: 'Constancias',
     certsProofHint: 'Toca una constancia para ampliarla',
 

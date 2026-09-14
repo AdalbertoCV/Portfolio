@@ -31,6 +31,66 @@ const brandsEn = {
     projectsCta: 'Explore projects',
   },
 
+  // ------------------------------------------------------------------ UAZ
+  uaz: {
+    badge: 'Education',
+    heroTitle: 'Software Engineering',
+    tagline: 'Nine semesters, 310 credits, and the degree that gave me judgement.',
+    heroLede: 'I did not study programming: I studied software engineering, which is a different thing. The programme is built on the premise that writing code is the easy part, and that the hard part — working out what has to be built, deciding how, and holding the quality of what was built — can be taught too. That distinction is the one I still use every day.',
+    period: '2020 — 2024',
+
+    statsTitle: 'The plan, in numbers',
+    stats: {
+      semesters: { value: '9', label: 'Semesters' },
+      subjects: { value: '42', label: 'Subjects' },
+      labs: { value: '8', label: 'Laboratories' },
+      credits: { value: '310', label: 'Total credits' },
+    },
+
+    kickers: {
+      program: 'The programme',
+      plan: 'The curriculum',
+      teaching: 'The faculty',
+    },
+
+    programTitle: 'A degree the state needed to exist',
+    programBody: 'The UAZ software engineering programme was not created as a variant of computer engineering. It was designed after a study of the state of the software development industry and presented to the people of Zacatecas on 3 December 2009, with the explicit purpose of training the professionals that industry needed in the state. Construction of the building that now houses software and computer engineering began in 2010, at Ciudad Universitaria Siglo XXI.',
+    programBody2: 'That origin shows in the plan. It is not a computing core with a few software courses on top: software engineering is the spine, and everything else — mathematics, programming, databases — is there to hold it up. It is why I came out able to elicit requirements and argue an architecture, rather than only to write a program that compiles.',
+    programNote: 'The programme details and its founding date come from the degree’s own official site.',
+
+    planTitle: 'Five chains running in parallel',
+    planLede: 'The curriculum reads in columns — nine semesters — but it is understood in rows: chains of subjects where each is the prerequisite for the next. These are the five that hold it up, with their actual courses.',
+    chains: {
+      maths: {
+        title: 'Mathematics',
+        body: 'The first semesters are mathematics before they are code, and rightly so. Linear algebra and discrete maths are what later surface in a graph algorithm or a data transformation; probability and statistics is what lets you read a model instead of believing it. None of it feels useful while you are taking it, and all of it turns up years later.',
+      },
+      programming: {
+        title: 'Programming and algorithms',
+        body: 'The chain that runs from logic to algorithm analysis, with a laboratory at nearly every rung. What mattered was not learning syntax but learning to reason about cost: why this data structure and not that one, and what that decision charges you once the volume grows. I took that part outside the classroom too: I competed in several ICPC contests during the degree, which is the same reasoning against a clock, with no room to negotiate with the problem.',
+      },
+      engineering: {
+        title: 'Software engineering',
+        body: 'The spine of the degree and what sets it apart. Ten subjects running from eliciting requirements to maintaining what is already in production, by way of architecture, quality and project management. Personal Software Process and Team Software Process are the two that marked me most: measuring your own work and then sustaining a team’s is a discipline almost nobody learns from a course.',
+      },
+      data: {
+        title: 'Data, web and security',
+        body: 'Two database courses with laboratories, web application development, network and systems security, and electronic business at the end. This is the chain that connects the degree to what actually gets deployed, and where security appears as a subject of its own rather than as an appendix.',
+      },
+      practice: {
+        title: 'Research and professional practice',
+        body: 'The degree does not end in an exam. It ends in two seminars — research and thesis — and in two periods of professional practice: social service and a placement. That is where I joined Labsol, and where what I had learned in class first met a user who was not the lecturer.',
+      },
+    },
+
+    teachingTitle: 'Faculty who taught judgement, not a syllabus',
+    teachingBody: 'I had excellent teachers. I say it knowing it is the sentence everyone writes about their university, so it is worth being precise about how: they taught the why behind decisions, not the procedure for reaching the expected answer. An architecture had to be defended, a requirement had to be argued, and a delivery was judged by what it solved rather than by whether it ran.',
+    teachingBody2: 'That left two things. The first is the technical base, demanding and resting on a well-built plan. The second, and the one I did not expect, is creativity: once you are taught that there is almost always more than one defensible solution, you stop looking for the correct answer and start designing. A good deal of how I work now — weighing trade-offs in writing, building a scoped proof before committing to a decision — began as a classroom habit.',
+
+    closingTitle: 'What I took with me',
+    closingBody: 'I came out with the judgement to decide what to build and by what method, which is what holds up everything else on this site: the two companies, the contract work, and the platform I help build at Radii. The degree did not teach me the technologies I work with today — several did not exist when I started — but how to evaluate and adopt them, which is the only part that does not expire.',
+  },
+
   // ---------------------------------------------------------------- Radii
   radii: {
     badge: 'Founding Software Engineer',

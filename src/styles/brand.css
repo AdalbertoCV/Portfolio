@@ -138,6 +138,25 @@
     --brand-tint: rgba(194, 65, 12, 0.08);
 }
 
+/* UAZ — the university's own shield: gold on a deep institutional blue. The
+   ground is what separates it from Freelance, which also runs on a warm
+   accent: that page sits on a near-black, this one on the shield's blue. */
+[data-brand='uaz'] {
+    --brand-ink: #05102b;
+    --brand-ink-2: #0e2456;
+    --brand-core: #f7c948;
+    --brand-core-2: #7fa8f0;
+    --brand-soft: #93a6c9;
+    --brand-on-ink: #eef3fd;
+    --brand-text: #f7c948;
+    --brand-tint: rgba(247, 201, 72, 0.12);
+}
+
+:root[data-theme='light'] [data-brand='uaz'] {
+    --brand-text: #854d0e;
+    --brand-tint: rgba(133, 77, 14, 0.08);
+}
+
 /* ============================================================================
    PAGE SHELL
    ========================================================================= */
@@ -1034,4 +1053,57 @@
     color: var(--color-text-primary);
     margin: 0;
     text-align: left;
+}
+
+/* ============================================================================
+   UAZ CURRICULUM CHAINS
+   ----------------------------------------------------------------------------
+   One block per chain: what it was for, then the subjects themselves. Stacked
+   rather than gridded, because the subject lists are long and uneven and a
+   two-column grid would leave one side ragged at every breakpoint.
+   ========================================================================= */
+
+.uaz-chain + .uaz-chain {
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.uaz-chain-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.uaz-chain-icon {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-primary);
+    background: var(--brand-tint);
+    color: var(--brand-text);
+}
+
+.uaz-chain-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.uaz-chain h3 {
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.uaz-chain p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    max-width: 68ch;
+    margin: 0 0 16px;
 }
