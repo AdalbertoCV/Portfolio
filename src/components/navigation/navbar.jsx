@@ -15,6 +15,7 @@ const LINKS = [
     { to: '/experience', labelKey: 'nav.experience' },
     { to: '/ventures', labelKey: 'nav.ventures' },
     { to: '/projects', labelKey: 'nav.projects' },
+    { to: '/contact', labelKey: 'nav.contact' },
 ];
 
 // Brand pages are reached from their hub, so they light that hub up in the bar

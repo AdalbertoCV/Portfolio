@@ -1,0 +1,203 @@
+/* ============================================================================
+   CONTACT
+   ----------------------------------------------------------------------------
+   One card, four fields, one button. The page is deliberately the quietest on
+   the site: a contact form's only job is to be filled in, so nothing here
+   competes with the fields.
+   ========================================================================= */
+
+.contact-head {
+    max-width: 760px;
+    margin-bottom: 8px;
+}
+
+.contact-head .cv-role {
+    max-width: 60ch;
+}
+
+.contact-direct {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 0.92rem;
+    font-weight: 650;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border-hover);
+    padding-bottom: 3px;
+    transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.contact-direct svg {
+    width: 14px;
+    height: 14px;
+}
+
+.contact-card {
+    padding: 36px 34px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+}
+
+/* Two columns for the short fields, one for everything that needs room. The
+   subject line spans because a truncated subject is the one a reader skips. */
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.contact-field[data-span='full'] {
+    grid-column: 1 / -1;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    color: var(--color-text-secondary);
+}
+
+.contact-input {
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.contact-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.contact-input:focus {
+    outline: none;
+    border-color: var(--color-text-primary);
+    box-shadow: 0 0 0 3px var(--color-navlink-hover);
+}
+
+/* Vertical only: a form field that can be dragged wider than its card is a
+   layout bug the visitor gets to trigger. */
+.contact-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    margin-top: 4px;
+}
+
+.contact-submit {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 999px;
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: transform var(--transition-base), opacity var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.contact-submit:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.contact-status {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Empty while idle or sending, so the row does not reserve a blank line under
+   the button for a message that is not there yet. */
+.contact-status:empty {
+    display: none;
+}
+
+.contact-status[data-state='sent'] {
+    color: #15803d;
+}
+
+.contact-status[data-state='error'] {
+    color: #b91c1c;
+}
+
+:root[data-theme='dark'] .contact-status[data-state='sent'] {
+    color: #4ade80;
+}
+
+:root[data-theme='dark'] .contact-status[data-state='error'] {
+    color: #f87171;
+}
+
+.contact-note {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0 0 22px;
+}
+
+.contact-note-setup {
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-tertiary);
+}
+
+/* Off-screen rather than display:none — a bot reads the computed style and
+   skips anything hidden, which is exactly what the trap must not do. */
+.contact-botcheck {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contact-direct:hover {
+        color: var(--color-text-primary);
+        border-color: var(--color-text-primary);
+    }
+
+    .contact-submit:not(:disabled):hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-card {
+        padding: 26px 20px;
+    }
+
+    .contact-form {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+}

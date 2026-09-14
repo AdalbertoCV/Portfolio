@@ -17,6 +17,7 @@ import EvodepsPage from './components/brand/EvodepsPage';
 import FreelancePage from './components/brand/FreelancePage';
 import LabsolPage from './components/brand/LabsolPage';
 import UazPage from './components/brand/UazPage';
+import ContactPage from './components/contact/ContactPage';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
 
@@ -57,6 +58,7 @@ function App() {
               {/* Education, told the same way as the roles. Reached from the
                   education card on the CV. */}
               <Route path="/uaz" element={<UazPage />} />
+              <Route path="/contact" element={<ContactPage />} />
             </Routes>
             <SiteFooter />
           </Router>
