@@ -341,20 +341,25 @@ const About = () => {
       {/* ----------------------------------------------- education + languages */}
       <Section kicker={t('cv.educationKicker')} title={t('education.heading').replace(':', '')}>
         <Reveal className="cv-split">
-          <article className="cv-edu">
-            <img className="cv-edu-logo" src={UAZLogo} alt={t('education.university')} />
-            <div>
+          {/* The whole card is the link, and it carries the degree page's own
+              colour world rather than sitting in the page's white. It is the
+              one card here that opens a story, and it was the quietest thing
+              on a wall of coloured tiles. */}
+          <Link className="cv-edu" data-brand="uaz" to="/uaz">
+            <span className="cv-edu-glow" aria-hidden="true" />
+            <img className="cv-edu-logo" src={UAZLogo} alt="" aria-hidden="true" />
+            <div className="cv-edu-copy">
               <h3>{t('education.university')}</h3>
               <p className="cv-edu-meta">
                 {t('about.role')} · {t('education.years')}
               </p>
-              <p className="brand-p">{t('education.body')}</p>
-              <Link className="cv-interest-link cv-cert-link" to="/uaz">
+              <p className="cv-edu-body">{t('education.body')}</p>
+              <span className="cv-edu-cta">
                 {t('cv.educationCta')}
                 <ArrowRight />
-              </Link>
+              </span>
             </div>
-          </article>
+          </Link>
 
           <aside className="cv-languages">
             <h3 className="brand-stack-title">{t('cv.languagesKicker')}</h3>

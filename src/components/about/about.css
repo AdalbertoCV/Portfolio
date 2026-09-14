@@ -369,39 +369,117 @@
     gap: 20px;
     align-items: start;
 }
-
+/* The one card on this page that opens a story, so it is built like the
+   Ventures tiles rather than like the cards around it: it keeps the degree
+   page's deep ground in BOTH themes, which is what makes it read as a door
+   into somewhere instead of another white panel. */
 .cv-edu {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: flex;
-    gap: 22px;
-    padding: 28px 26px;
+    gap: 24px;
+    padding: 32px 30px;
     border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border-primary);
-    background: var(--color-bg-card);
+    text-decoration: none;
+    background: radial-gradient(125% 115% at 16% 0%, var(--brand-ink-2), var(--brand-ink) 68%);
+    border: 1px solid color-mix(in srgb, var(--brand-core) 28%, transparent);
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-base), box-shadow var(--transition-base),
+        border-color var(--transition-base);
+}
+
+/* A gold bloom that grows on hover — the card lighting up as you reach for it,
+   rather than a border colour change nobody notices. */
+.cv-edu-glow {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(55% 70% at 82% 12%, var(--brand-core), transparent 70%);
+    opacity: 0.12;
+    transition: opacity var(--transition-slow);
+}
+
+.cv-edu-copy {
+    min-width: 0;
 }
 
 .cv-edu-logo {
-    width: 64px;
-    height: 64px;
+    width: 68px;
+    height: 68px;
     object-fit: contain;
     border-radius: var(--radius-md);
     flex: 0 0 auto;
     background: #ffffff;
-    padding: 6px;
+    padding: 7px;
     box-shadow: var(--shadow-sm);
 }
 
 .cv-edu h3 {
-    font-size: 1.1rem;
-    letter-spacing: -0.025em;
-    color: var(--color-text-primary);
-    margin: 0 0 4px;
+    font-size: 1.24rem;
+    letter-spacing: -0.03em;
+    color: var(--brand-on-ink);
+    margin: 0 0 5px;
 }
 
 .cv-edu-meta {
     font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--color-text-tertiary);
+    font-weight: 600;
+    color: var(--brand-core);
     margin: 0 0 14px;
+}
+
+.cv-edu-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--brand-soft);
+    max-width: 62ch;
+    margin: 0 0 22px;
+}
+
+/* Solid gold on the deep ground: the strongest call to action on the page,
+   which is right, because it is the only one that leads anywhere new. */
+.cv-edu-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: var(--brand-core);
+    color: var(--brand-ink);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    transition: gap var(--transition-base), box-shadow var(--transition-base);
+}
+
+.cv-edu-cta svg {
+    width: 16px;
+    height: 16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-edu:hover {
+        transform: translateY(-4px);
+        border-color: color-mix(in srgb, var(--brand-core) 55%, transparent);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .cv-edu:hover .cv-edu-glow {
+        opacity: 0.26;
+    }
+
+    .cv-edu:hover .cv-edu-cta {
+        gap: 13px;
+        box-shadow: 0 6px 22px color-mix(in srgb, var(--brand-core) 35%, transparent);
+    }
+}
+
+@media (max-width: 560px) {
+    .cv-edu {
+        flex-direction: column;
+        gap: 18px;
+    }
 }
 
 .cv-languages {
