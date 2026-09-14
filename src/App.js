@@ -16,6 +16,7 @@ import MoonphasePage from './components/brand/MoonphasePage';
 import EvodepsPage from './components/brand/EvodepsPage';
 import FreelancePage from './components/brand/FreelancePage';
 import LabsolPage from './components/brand/LabsolPage';
+import CasePage from './components/brand/CasePage';
 import UazPage from './components/brand/UazPage';
 import ContactPage from './components/contact/ContactPage';
 import { ThemeProvider } from './theme/ThemeProvider';
@@ -55,6 +56,7 @@ function App() {
               <Route path="/evodeps" element={<EvodepsPage />} />
               <Route path="/freelance" element={<FreelancePage />} />
               <Route path="/labsol" element={<LabsolPage />} />
+              <Route path="/case" element={<CasePage />} />
               {/* Education, told the same way as the roles. Reached from the
                   education card on the CV. */}
               <Route path="/uaz" element={<UazPage />} />

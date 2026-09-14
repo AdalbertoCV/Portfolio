@@ -5,8 +5,8 @@
 const brandsEs = {
   timeline: {
     badge: 'Trayectoria',
-    title: 'Cuatro frentes, un mismo criterio',
-    lede: 'Cuatro contextos de desarrollo con responsabilidad sobre el resultado: una plataforma de manufactura con IA, una casa de desarrollo a medida, cartera propia de clientes, y el laboratorio público donde inició mi formación profesional.',
+    title: 'Cinco frentes, un mismo criterio',
+    lede: 'Cinco frentes con responsabilidad sobre el resultado: una plataforma de manufactura con IA, una casa de desarrollo a medida, cartera propia de clientes, el laboratorio público donde inició mi formación profesional, y tres años enseñando las materias que sostienen la carrera.',
     featuredLabel: 'Foco actual',
     present: 'Actualidad',
     readStory: 'Ver la historia completa',

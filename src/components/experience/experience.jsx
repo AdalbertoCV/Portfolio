@@ -6,7 +6,7 @@ import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowRight, ArrowUpRight, Reveal } from '../brand/parts';
 import RadiiArt from '../marks/RadiiArt';
 import VenturesRoadmap from '../ventures/VenturesRoadmap';
-import { EvodepsArt, FreelanceArt, FreelanceMark, LabsolArt } from '../marks/RoleArt';
+import { CaseArt, CaseMark, EvodepsArt, FreelanceArt, FreelanceMark, LabsolArt } from '../marks/RoleArt';
 
 // Roles where someone else did the hiring. The two companies Adalberto founded
 // live on /ventures — see the note there for why they are not on this list.
@@ -43,6 +43,16 @@ const ROLES = [
     Art: LabsolArt,
     to: '/labsol',
     link: 'https://labsol.cozcyt.gob.mx/',
+  },
+  {
+    id: 'case',
+    base: 'experience.case',
+    // Same reasoning as Freelance: the centre has no mark of its own to
+    // borrow, so the row draws the thing the role was — one node handing
+    // something to another — rather than sitting behind an empty grey square.
+    logo: <CaseMark className="timeline-logo timeline-logo-mark" />,
+    Art: CaseArt,
+    to: '/case',
   },
 ];
 

@@ -157,6 +157,27 @@
     --brand-tint: rgba(133, 77, 14, 0.08);
 }
 
+/* CASE — the learning centre. Rose on a deep plum ground, with a periwinkle
+   secondary for the links between people. It is the one warm-but-not-amber
+   world left on the site, which matters here: this page sits in the same list
+   as Labsol's coral and Freelance's amber, and a mentoring page that borrows
+   either of them would read as a third instance of the same role. */
+[data-brand='case'] {
+    --brand-ink: #150710;
+    --brand-ink-2: #3b1029;
+    --brand-core: #f472b6;
+    --brand-core-2: #a5b4fc;
+    --brand-soft: #c2a0b0;
+    --brand-on-ink: #fdeef6;
+    --brand-text: #f472b6;
+    --brand-tint: rgba(244, 114, 182, 0.12);
+}
+
+:root[data-theme='light'] [data-brand='case'] {
+    --brand-text: #be185d;
+    --brand-tint: rgba(190, 24, 93, 0.08);
+}
+
 /* ============================================================================
    PAGE SHELL
    ========================================================================= */
@@ -1106,4 +1127,100 @@
     color: var(--color-text-secondary);
     max-width: 68ch;
     margin: 0 0 16px;
+}
+
+/* ============================================================================
+   CASE — THE SUBJECT LIST
+   ----------------------------------------------------------------------------
+   Five subjects, deliberately not five cards. The page already carries a stat
+   row and a card grid; a third boxed grid would flatten the whole thing into
+   one texture. This is a syllabus instead: hairline rules, the subject on the
+   left with the single line that says how it fails, and the explanation facing
+   it. The rule above each row is what carries the brand colour on hover, so
+   the list reads down as one column rather than as five separate objects.
+   ========================================================================= */
+
+.case-subjects {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.case-subject {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 8px 40px;
+    padding: 30px 6px;
+    border-bottom: 1px solid var(--color-border-primary);
+    transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.case-subject-index {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--brand-text);
+    opacity: 0.7;
+}
+
+.case-subject h3 {
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin: 6px 0 10px;
+    transition: color var(--transition-base);
+}
+
+/* The failure mode, set as a quiet caption under the name: it is the line that
+   makes the list worth reading, but it is not the heading. */
+.case-subject-wall {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    max-width: 30ch;
+}
+
+.case-subject-body {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    /* Top-aligned and pushed down past the index, so the first line of the
+       explanation starts level with the subject it explains rather than
+       floating above it. */
+    align-self: start;
+    padding-top: 26px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    max-width: 62ch;
+    margin: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .case-subject:hover {
+        background: var(--brand-tint);
+        border-color: color-mix(in srgb, var(--brand-text) 35%, transparent);
+    }
+
+    .case-subject:hover h3 {
+        color: var(--brand-text);
+    }
+}
+
+@media (max-width: 768px) {
+    .case-subject {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 26px 4px;
+    }
+
+    .case-subject-body {
+        grid-column: 1;
+        grid-row: auto;
+        padding-top: 0;
+        margin-top: 14px;
+    }
 }

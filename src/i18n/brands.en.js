@@ -4,8 +4,8 @@
 const brandsEn = {
   timeline: {
     badge: 'Track record',
-    title: 'Four fronts, one standard',
-    lede: 'Four development contexts carrying responsibility for the outcome: an AI-powered manufacturing platform, a custom development house, an independent client portfolio, and the public laboratory where my professional training began.',
+    title: 'Five fronts, one standard',
+    lede: 'Five fronts carrying responsibility for the outcome: an AI-powered manufacturing platform, a custom development house, an independent client portfolio, the public laboratory where my professional training began, and three years teaching the subjects the degree is built on.',
     featuredLabel: 'Current focus',
     present: 'Present',
     readStory: 'Read the full story',

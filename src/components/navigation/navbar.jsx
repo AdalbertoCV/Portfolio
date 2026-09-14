@@ -25,6 +25,7 @@ const PARENT_OF = {
     '/evodeps': '/experience',
     '/freelance': '/experience',
     '/labsol': '/experience',
+    '/case': '/experience',
     '/stackselect': '/ventures',
     '/moonphase': '/ventures',
 };

@@ -203,6 +203,88 @@ const rolesEn = {
       roleTitle: 'Why it still counts',
       roleBody: 'It was my first contact with software that third parties depend on. Two public institutions operating on the system changes the standard of work entirely: deferred correction stops being an option when a researcher is waiting on the resolution of their grant or a coordinator is publishing timetables. That standard is the one I have kept.',
     },
+
+    // ---------------------------------------------------------------- CASE
+    case: {
+      badge: 'Academic Mentor',
+      company: 'CASE · Centre for Learning and Student Services',
+      period: '2022 — 2024',
+      tagline: 'You have not mastered a topic until someone else understands it.',
+      heroTitle: 'Three years teaching the subjects that decide who stays in the degree',
+      heroLede: 'CASE is where an engineering student goes when a subject is getting away from them. I spent three years there as an academic mentor to Software Engineering and Computer Engineering students, across five subjects: Algebra, Calculus, Object-Oriented Programming, Data Structures, and Discrete Mathematics. More than thirty students came through those sessions.',
+
+      kickers: {
+        what: 'The centre',
+        subjects: 'The subjects',
+        learned: 'What teaching leaves behind',
+      },
+
+      statsTitle: 'Three years, in numbers',
+      stats: {
+        years: { value: '3', label: 'Years mentoring' },
+        students: { value: '30+', label: 'Students supported' },
+        subjects: { value: '5', label: 'Subjects mentored' },
+        programs: { value: '2', label: 'Engineering programmes' },
+      },
+
+      whatTitle: 'Where students ask for help before they drop out',
+      whatBody: 'The Centre for Learning and Student Services supports students who need academic help with the subjects giving them trouble. They come from Software Engineering and Computer Engineering, almost always at the point where the subject stopped making sense several weeks earlier and the assessment is already in sight.',
+      whatNote: 'I mentored there from 2022 to 2024, while taking my own degree. The subjects I taught were the ones I had passed a year or two earlier, which is the concrete advantage of a peer mentor: I still remembered precisely where I had got stuck myself.',
+
+      subjectsTitle: 'Five subjects, five different ways to get stuck',
+      subjectsLede: 'They are not five equally hard subjects: each one fails for a reason of its own. Mentoring well means identifying which of the five reasons is in front of you before you start explaining.',
+      subjects: {
+        algebra: {
+          title: 'Algebra',
+          wall: 'Carried over from secondary school',
+          body: 'It is rarely the new topic that fails — it is an earlier gap the semester already treats as closed. The work is finding where the chain broke and rebuilding from there, not repeating the lecture more slowly.',
+        },
+        calculus: {
+          title: 'Calculus',
+          wall: 'Studied as a recipe book',
+          body: 'Differentiation rules get memorised with no picture of what is being measured, and the method holds until the first problem that is not phrased like the example. Recovering the interpretation — what a rate of change means here — pays off more than another round of exercises.',
+        },
+        oop: {
+          title: 'Object-Oriented Programming',
+          wall: 'The syntax is learnable, the model is not',
+          body: 'Writing a class is straightforward; deciding what deserves to be a class is not. The real difficulty is modelling, and it is resolved by talking the problem through out loud before touching the editor.',
+        },
+        dataStructures: {
+          title: 'Data Structures',
+          wall: 'Treated as a catalogue to memorise',
+          body: 'Lists, stacks, queues, and trees get studied as loose definitions rather than as decisions with a cost attached. The moment the question becomes why this one and not that one, and what you pay when volume grows, the subject organises itself.',
+        },
+        discrete: {
+          title: 'Discrete Mathematics',
+          wall: 'Abstract until it shows up in the code',
+          body: 'Logic, sets, relations, and graphs feel foreign while they stay on the board. They hold once they are connected to something the student has already written: a compound condition, a query, a traversal.',
+        },
+      },
+
+      learnedTitle: 'What teaching does to the person teaching',
+      learnedLede: 'None of these four capabilities develops from programming alone, and all four are used every day inside a team.',
+      learned: {
+        transfer: {
+          title: 'Transferring knowledge',
+          body: 'Knowing something and being able to hand it over are two different capabilities, and the second one is trained. It forces you to build the explanation that works for the person in front of you — not the one that worked for you — and to read from their question exactly where the gap sits.',
+        },
+        teamwork: {
+          title: 'Working as a team',
+          body: 'A session is shared work with a common goal and a real deadline. You move at the other person’s pace, adjust the plan mid-session, and accept that the method that worked last week is no use today.',
+        },
+        support: {
+          title: 'Standing alongside',
+          body: 'Students arriving at CASE usually arrive demoralised, and the obstacle is not always technical. Staying with someone until they recover the confidence to try it alone is part of the brief, and it is what separates mentoring from a list of answers.',
+        },
+        lead: {
+          title: 'Leading',
+          body: 'Running a session means setting the order, holding the pace, and answering for the outcome without solving it in the other person’s place. It was the first form of leadership I exercised, and it is the same one I use presenting an architecture to a team.',
+        },
+      },
+
+      roleTitle: 'Why it still counts',
+      roleBody: 'A large part of engineering consists of getting another person to understand something: a domain expert who has to recognise their own process inside a system, a team about to build on an architecture, someone reading the code two years later. I did not develop that capability by writing software. I developed it at a whiteboard, explaining recursion until the person on the other side understood it.',
+    },
   },
 };
 

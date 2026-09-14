@@ -373,3 +373,189 @@ export const UazArt = () => {
     </svg>
   );
 };
+
+/**
+ * CASE — mentoring. Knowledge propagating outward: one mentor node, three arcs
+ * of students, and a light that travels along the links and then leaves each
+ * student emitting a ring of their own.
+ *
+ * The count is not decorative. Three arcs of 8, 10 and 12 make the thirty-odd
+ * students the page actually claims, so the canvas states the same fact the
+ * stats do rather than suggesting a vague network.
+ */
+const MENTOR = [300, 400];
+
+// radius, how many students, and the half-angle the arc opens across. The arcs
+// open to the right, into the empty half of the canvas, so the hero copy that
+// sits over the left of the frame never lands on a dense field of nodes.
+const ARCS = [
+  { r: 250, count: 8, spread: 60 },
+  { r: 430, count: 10, spread: 70 },
+  { r: 610, count: 12, spread: 78 },
+];
+
+const RAD = Math.PI / 180;
+
+// Every arc, resolved to points and to the parent each student learned from:
+// the nearest node on the arc before it, or the mentor for the first arc.
+const CASE_ARCS = ARCS.map(({ r, count, spread }, arc) => {
+  const points = Array.from({ length: count }, (_, i) => {
+    const angle = -spread + (i * (spread * 2)) / (count - 1);
+    return [
+      MENTOR[0] + r * Math.cos(angle * RAD),
+      MENTOR[1] + r * Math.sin(angle * RAD),
+    ];
+  });
+  return { arc, points };
+});
+
+const parentOf = (arc, index, count) => {
+  if (arc === 0) return MENTOR;
+  const prev = CASE_ARCS[arc - 1].points;
+  return prev[Math.min(prev.length - 1, Math.round((index * (prev.length - 1)) / (count - 1)))];
+};
+
+export const CaseArt = () => {
+  const id = useId();
+  const halo = `${id}-halo`;
+
+  // One pass of the light outward, arc by arc. Every element shares the cycle
+  // and differs only in delay, so it reads as a single wave leaving the mentor
+  // rather than as thirty dots blinking on their own clocks.
+  const STEP = 1.9;
+
+  return (
+    <svg
+      className="brand-hero-canvas"
+      viewBox="0 0 1200 800"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <radialGradient id={halo} cx="26%" cy="50%" r="62%">
+          <stop offset="0%" stopColor="var(--brand-core)" stopOpacity="0.17" />
+          <stop offset="100%" stopColor="var(--brand-core)" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      <rect width="1200" height="800" fill={`url(#${halo})`} />
+
+      {/* The links. Each one belongs to the arc it arrives at, so it draws
+          forward just before that arc lights. */}
+      <g fill="none" strokeWidth="1.5" strokeLinecap="round">
+        {CASE_ARCS.map(({ arc, points }) =>
+          points.map(([x, y], i) => {
+            const [px, py] = parentOf(arc, i, points.length);
+            return (
+              <line
+                key={`link-${arc}-${i}`}
+                className="case-link"
+                x1={px}
+                y1={py}
+                x2={x}
+                y2={y}
+                stroke="var(--brand-core-2)"
+                strokeOpacity="0.1"
+                style={{ animationDelay: `${arc * STEP}s` }}
+              />
+            );
+          })
+        )}
+      </g>
+
+      {/* The students, and the ring each one emits once it has understood —
+          the beat the whole canvas exists for: what was received gets passed
+          on rather than stopping there. */}
+      {CASE_ARCS.map(({ arc, points }) =>
+        points.map(([x, y], i) => {
+          const delay = arc * STEP + i * 0.05;
+          return (
+            <g key={`node-${arc}-${i}`}>
+              <circle
+                className="case-pass"
+                cx={x}
+                cy={y}
+                r="9"
+                fill="none"
+                stroke="var(--brand-core)"
+                strokeWidth="1.6"
+                style={{ animationDelay: `${delay + 0.35}s` }}
+              />
+              <circle
+                className="case-node"
+                cx={x}
+                cy={y}
+                r="8"
+                fill="var(--brand-core)"
+                fillOpacity="0.06"
+                stroke="var(--brand-core)"
+                strokeOpacity="0.22"
+                strokeWidth="1.5"
+                style={{ animationDelay: `${delay}s` }}
+              />
+            </g>
+          );
+        })
+      )}
+
+      {/* The mentor. Solid and always lit: the one node on the canvas that is
+          not waiting for the wave to reach it. */}
+      <circle className="case-source-halo" cx={MENTOR[0]} cy={MENTOR[1]} r="34"
+              fill="var(--brand-core)" fillOpacity="0.1" />
+      <circle cx={MENTOR[0]} cy={MENTOR[1]} r="20" fill="none"
+              stroke="var(--brand-core)" strokeWidth="2.5" strokeOpacity="0.6" />
+      <circle cx={MENTOR[0]} cy={MENTOR[1]} r="9" fill="var(--brand-core)" />
+    </svg>
+  );
+};
+
+/**
+ * The CASE mark. The centre has no logo of its own to borrow, so the mark draws
+ * the transaction instead: one node that already knows, one that is receiving,
+ * and the ring the second one gains once it does.
+ */
+export const CaseMark = ({ className, title }) => {
+  const id = useId();
+  const grad = `${id}-grad`;
+
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 64 64"
+      role={title ? 'img' : undefined}
+      aria-hidden={title ? undefined : true}
+      aria-label={title || undefined}
+      focusable="false"
+    >
+      {title ? <title>{title}</title> : null}
+      <defs>
+        <radialGradient id={grad}>
+          <stop offset="0%" stopColor="var(--brand-core-2, #a5b4fc)" />
+          <stop offset="100%" stopColor="var(--brand-core, #f472b6)" />
+        </radialGradient>
+      </defs>
+
+      {/* Set on the diagonal rather than side by side: two nodes on one axis
+          leave the top and bottom of the box empty, and at the 56px the hero
+          gives a mark that reads as a third of the size every other role's
+          logo gets. */}
+
+      {/* The one who already knows. */}
+      <circle cx="19" cy="45" r="9.5" fill={`url(#${grad})`} />
+      <circle className="case-mark-ring" cx="19" cy="45" r="15" fill="none"
+              stroke="var(--brand-core, #f472b6)" strokeOpacity="0.35" strokeWidth="1.8" />
+
+      {/* What travels between them. */}
+      <line className="case-mark-link" x1="27" y1="37" x2="37" y2="27"
+            stroke="var(--brand-core, #f472b6)" strokeOpacity="0.8" strokeWidth="2.4"
+            strokeLinecap="round" />
+
+      {/* The one receiving it, and the ring they gain. */}
+      <circle className="case-mark-node" cx="45" cy="19" r="8.5" fill="none"
+              stroke="var(--brand-core, #f472b6)" strokeWidth="2.6" />
+      <circle className="case-mark-pass" cx="45" cy="19" r="8.5" fill="none"
+              stroke="var(--brand-core, #f472b6)" strokeWidth="1.8" />
+    </svg>
+  );
+};

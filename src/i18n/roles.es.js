@@ -208,6 +208,88 @@ const rolesEs = {
       roleTitle: 'Por qué sigue contando',
       roleBody: 'Fue mi primer contacto con software del que dependen terceros. Dos instituciones públicas operando sobre el sistema modifican por completo el estándar de trabajo: la corrección diferida deja de ser una opción cuando del otro lado hay un investigador esperando la resolución de su apoyo o un coordinador publicando horarios. Ese estándar es el que conservo.',
     },
+
+    // ---------------------------------------------------------------- CASE
+    case: {
+      badge: 'Mentor Académico',
+      company: 'CASE · Centro de Aprendizaje y Servicios Escolares',
+      period: '2022 — 2024',
+      tagline: 'Un tema no se domina hasta que alguien más lo entiende.',
+      heroTitle: 'Tres años explicando las materias que deciden quién sigue en la carrera',
+      heroLede: 'El CASE es el lugar al que llega un estudiante de ingeniería cuando una materia se le está yendo de las manos. Estuve ahí tres años como mentor académico de Ingeniería de Software e Ingeniería en Computación, sobre cinco asignaturas: Álgebra, Cálculo, Programación Orientada a Objetos, Estructura de Datos y Matemáticas Discretas. Más de treinta estudiantes pasaron por esas sesiones.',
+
+      kickers: {
+        what: 'El centro',
+        subjects: 'Las materias',
+        learned: 'Lo que deja enseñar',
+      },
+
+      statsTitle: 'Tres años, en números',
+      stats: {
+        years: { value: '3', label: 'Años como mentor' },
+        students: { value: '30+', label: 'Estudiantes acompañados' },
+        subjects: { value: '5', label: 'Asignaturas mentoreadas' },
+        programs: { value: '2', label: 'Programas de ingeniería' },
+      },
+
+      whatTitle: 'Dónde se pide ayuda antes de darse de baja',
+      whatBody: 'El Centro de Aprendizaje y Servicios Escolares atiende a los estudiantes que necesitan apoyo académico en las materias que se les están dificultando. Llegan de Ingeniería de Software y de Ingeniería en Computación, casi siempre en el punto en que la asignatura dejó de entenderse varias semanas atrás y la evaluación ya está encima.',
+      whatNote: 'Mentoreé ahí de 2022 a 2024, mientras cursaba mi propia carrera. Las materias que daba eran las que había aprobado uno o dos años antes, que es la ventaja concreta del mentor par: todavía recordaba con precisión dónde me había atorado yo.',
+
+      subjectsTitle: 'Cinco asignaturas, cinco formas distintas de atorarse',
+      subjectsLede: 'No son cinco materias difíciles por igual: cada una falla por una razón propia. Mentorear bien consiste en identificar cuál de las cinco razones se tiene enfrente antes de empezar a explicar.',
+      subjects: {
+        algebra: {
+          title: 'Álgebra',
+          wall: 'Llega arrastrada del bachillerato',
+          body: 'Rara vez falla el tema nuevo: falla un hueco anterior que el semestre ya da por cerrado. El trabajo consiste en encontrar en qué punto se rompió la cadena y reconstruir desde ahí, no en repetir la clase más despacio.',
+        },
+        calculus: {
+          title: 'Cálculo',
+          wall: 'Se estudia como recetario',
+          body: 'Se memorizan reglas de derivación sin una imagen de qué se está midiendo, y el método aguanta hasta el primer problema que no viene planteado como el ejemplo. Recuperar la interpretación —qué significa aquí una razón de cambio— rinde más que otra tanda de ejercicios.',
+        },
+        oop: {
+          title: 'Programación Orientada a Objetos',
+          wall: 'La sintaxis se aprende, el modelo no',
+          body: 'Escribir una clase es sencillo; decidir qué merece ser una clase, no. La dificultad real está en el modelado, y se resuelve discutiendo el problema en voz alta antes de tocar el editor.',
+        },
+        dataStructures: {
+          title: 'Estructura de Datos',
+          wall: 'Se ve como un catálogo que memorizar',
+          body: 'Listas, pilas, colas y árboles se estudian como definiciones sueltas en lugar de como decisiones con un costo asociado. En cuanto la pregunta cambia a por qué esta y no aquella, y qué se paga cuando el volumen crece, la materia se ordena sola.',
+        },
+        discrete: {
+          title: 'Matemáticas Discretas',
+          wall: 'Parece abstracta hasta que aparece en el código',
+          body: 'Lógica, conjuntos, relaciones y grafos se sienten ajenos mientras se quedan en el pizarrón. Se sostienen cuando se conectan con algo que el estudiante ya escribió: una condición compuesta, una consulta, un recorrido.',
+        },
+      },
+
+      learnedTitle: 'Lo que enseñar le hace a quien enseña',
+      learnedLede: 'Ninguna de estas cuatro capacidades se desarrolla programando a solas, y las cuatro se usan todos los días dentro de un equipo.',
+      learned: {
+        transfer: {
+          title: 'Transferir conocimiento',
+          body: 'Saber algo y poder entregarlo son dos capacidades distintas, y la segunda se entrena. Obliga a construir la explicación que le sirve a quien está enfrente —no la que me sirvió a mí— y a leer en la pregunta que hace dónde está exactamente el hueco.',
+        },
+        teamwork: {
+          title: 'Trabajar en equipo',
+          body: 'Una sesión es trabajo compartido con un objetivo común y un plazo real. Se avanza al ritmo del otro, se ajusta el plan a media sesión y se acepta que el método que funcionó la semana pasada hoy no sirve.',
+        },
+        support: {
+          title: 'Acompañar',
+          body: 'Quien llega al CASE suele llegar desmoralizado, y el obstáculo no siempre es técnico. Sostener a alguien hasta que recupera la confianza para intentarlo solo es parte del encargo, y es lo que separa una mentoría de una lista de respuestas.',
+        },
+        lead: {
+          title: 'Liderar',
+          body: 'Dirigir una sesión es fijar el orden, poner el ritmo y responder por el resultado sin resolverlo en lugar del otro. Fue la primera forma de liderazgo que ejercí, y es la misma que uso cuando presento una arquitectura ante un equipo.',
+        },
+      },
+
+      roleTitle: 'Por qué sigue contando',
+      roleBody: 'Buena parte de la ingeniería consiste en lograr que otra persona entienda algo: un experto de dominio que debe reconocer su proceso dentro de un sistema, un equipo que va a construir sobre una arquitectura, alguien que lee el código dos años después. Esa capacidad no la desarrollé escribiendo software. La desarrollé frente a un pizarrón, explicando recursión hasta que del otro lado alguien la entendía.',
+    },
   },
 };
 

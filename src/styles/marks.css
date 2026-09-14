@@ -435,3 +435,124 @@
         animation: none !important;
     }
 }
+
+/* --------------------------------------------------------------------- CASE
+   Knowledge leaving one node and arriving at thirty. Everything shares a 12s
+   cycle and differs only in delay, so the canvas reads as one wave travelling
+   outward — and every student, once lit, emits a ring of their own, which is
+   the whole point of the page. */
+
+.case-link {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 220;
+    animation: caseReach 12s ease-in-out infinite;
+}
+
+@keyframes caseReach {
+    0% { stroke-dashoffset: 220; stroke-opacity: 0.1; }
+    3% { stroke-opacity: 0.55; }
+    10% { stroke-dashoffset: 0; stroke-opacity: 0.5; }
+    28% { stroke-dashoffset: 0; stroke-opacity: 0.12; }
+    100% { stroke-dashoffset: 0; stroke-opacity: 0.1; }
+}
+
+.case-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: caseLearn 12s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* It settles back brighter than it started for a while, then fades: a student
+   who has understood is not the same dot they were before the light arrived. */
+@keyframes caseLearn {
+    0% { transform: scale(1); fill-opacity: 0.06; stroke-opacity: 0.22; }
+    8% { transform: scale(1.45); fill-opacity: 0.85; stroke-opacity: 1; }
+    20% { transform: scale(1); fill-opacity: 0.18; stroke-opacity: 0.5; }
+    58% { transform: scale(1); fill-opacity: 0.06; stroke-opacity: 0.22; }
+    100% { transform: scale(1); fill-opacity: 0.06; stroke-opacity: 0.22; }
+}
+
+.case-pass {
+    animation: casePass 12s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes casePass {
+    0% { r: 9; stroke-opacity: 0; }
+    4% { stroke-opacity: 0.5; }
+    18% { r: 36; stroke-opacity: 0; }
+    100% { r: 9; stroke-opacity: 0; }
+}
+
+.case-source-halo {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: caseSource 4.6s ease-in-out infinite;
+}
+
+@keyframes caseSource {
+    0%, 100% { transform: scale(1); fill-opacity: 0.1; }
+    50% { transform: scale(1.12); fill-opacity: 0.18; }
+}
+
+/* The mark: the same transaction at 64px. */
+
+.case-mark-link {
+    stroke-dasharray: 4 9;
+    animation: caseMarkTravel 3.6s linear infinite;
+}
+
+@keyframes caseMarkTravel {
+    from { stroke-dashoffset: 26; }
+    to { stroke-dashoffset: 0; }
+}
+
+.case-mark-node {
+    animation: caseMarkGain 3.6s ease-in-out infinite;
+}
+
+@keyframes caseMarkGain {
+    0%, 100% { stroke-opacity: 0.4; }
+    60% { stroke-opacity: 1; }
+}
+
+.case-mark-pass {
+    animation: caseMarkPass 3.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes caseMarkPass {
+    0%, 55% { r: 8.5; stroke-opacity: 0; }
+    65% { stroke-opacity: 0.6; }
+    100% { r: 19; stroke-opacity: 0; }
+}
+
+.case-mark-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: caseSource 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Land it finished: every link joined, every student lit at rest. The
+       canvas still says "one source, thirty nodes" without travelling there. */
+    .case-node,
+    .case-source-halo,
+    .case-mark-link,
+    .case-mark-node,
+    .case-mark-ring {
+        animation: none !important;
+    }
+
+    .case-link {
+        stroke-dashoffset: 0 !important;
+        stroke-opacity: 0.3 !important;
+        animation: none !important;
+    }
+
+    /* The emitted rings only exist as motion — at rest they stack on top of
+       their own node and read as a defect. */
+    .case-pass,
+    .case-mark-pass {
+        animation: none !important;
+        stroke-opacity: 0 !important;
+    }
+}

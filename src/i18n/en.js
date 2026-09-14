@@ -139,6 +139,12 @@ const en = {
       title: 'Software Developer Intern',
       body: 'Part of the Free Software Laboratory team at COZCYT, where I led two projects delivered to the Autonomous University of Zacatecas and the Zacatecan Council of Science, Technology and Innovation. Owning delivery end to end sharpened my full-stack development, requirements analysis, software design, testing, and project management.',
     },
+    case: {
+      company: 'Centre for Learning and Student Services',
+      period: '2022 — 2024',
+      title: 'Academic Mentor',
+      body: 'Three years as an academic mentor at CASE, supporting Software Engineering and Computer Engineering students through the subjects giving them trouble: Algebra, Calculus, Object-Oriented Programming, Data Structures, and Discrete Mathematics. More than thirty students supported. Teaching is where I developed knowledge transfer, teamwork, and the first form of leadership I exercised.',
+    },
   },
   projects: {
     badge: 'Featured Projects & Portfolio',

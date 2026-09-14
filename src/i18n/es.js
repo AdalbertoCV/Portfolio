@@ -142,6 +142,12 @@ const es = {
       title: 'Software Developer Intern',
       body: 'Formé parte del equipo del Laboratorio de Software Libre del COZCYT, donde lideré dos proyectos entregados a la Universidad Autónoma de Zacatecas y al Consejo Zacatecano de Ciencia, Tecnología e Innovación. Ser responsable de la entrega de principio a fin afianzó mi desarrollo full-stack, análisis de requerimientos, diseño de software, pruebas y gestión de proyectos.',
     },
+    case: {
+      company: 'Centro de Aprendizaje y Servicios Escolares',
+      period: '2022 — 2024',
+      title: 'Mentor Académico',
+      body: 'Tres años como mentor académico en el CASE, apoyando a estudiantes de Ingeniería de Software e Ingeniería en Computación en las materias que se les dificultaban: Álgebra, Cálculo, Programación Orientada a Objetos, Estructura de Datos y Matemáticas Discretas. Más de treinta estudiantes acompañados. Enseñar es donde desarrollé la transferencia de conocimiento, el trabajo en equipo y la primera forma de liderazgo que ejercí.',
+    },
   },
   projects: {
     badge: 'Proyectos Destacados y Portafolio',
