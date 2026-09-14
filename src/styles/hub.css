@@ -1211,3 +1211,145 @@ ol.timeline.reveal {
         left: 4px;
     }
 }
+
+/* ============================================================================
+   THE CONTACT CHAIN
+   ----------------------------------------------------------------------------
+   The strip that closes the loop at the foot of Projects. Same 420x140 frame
+   and the same draw-then-loop shape as the Ventures roadmap, so the three
+   hand-offs across the site read as one device rather than three ideas.
+   ========================================================================= */
+
+.contact-chain {
+    position: relative;
+    flex: 1 1 260px;
+    max-width: 340px;
+    min-width: 210px;
+    aspect-ratio: 3 / 1;
+    color: var(--color-text-tertiary);
+}
+
+.cc-track {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* 640 comfortably exceeds the path length, so the offset starts fully hidden
+   whatever the exact measurement. */
+.cc-path {
+    stroke-dasharray: 640;
+    stroke-dashoffset: 640;
+}
+
+.hub-teaser.is-visible .cc-path {
+    animation: ccDraw 1.15s cubic-bezier(0.65, 0, 0.35, 1) 0.1s forwards;
+}
+
+@keyframes ccDraw {
+    to { stroke-dashoffset: 0; }
+}
+
+.cc-link,
+.cc-end {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.hub-teaser.is-visible .cc-link {
+    animation:
+        ccPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        ccLit 3.4s linear infinite;
+}
+
+/* The open end settles and then stays put. It is the only mark on the strip
+   that is not a record of something already done, so it does not blink along
+   with the rest. */
+.hub-teaser.is-visible .cc-end {
+    animation: ccPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes ccPop {
+    from { opacity: 0; transform: scale(0.2); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Brief, and back down well before the signal returns: a link that stays lit
+   is just a brighter dot. */
+@keyframes ccLit {
+    0% { fill-opacity: 0.45; transform: scale(1); }
+    4% { fill-opacity: 1; transform: scale(1.5); }
+    14% { fill-opacity: 0.45; transform: scale(1); }
+    100% { fill-opacity: 0.45; transform: scale(1); }
+}
+
+/* The bloom: the signal arriving at the end of the chain and going out into
+   the world rather than stopping. */
+.cc-bloom {
+    opacity: 0;
+}
+
+.hub-teaser.is-visible .cc-bloom {
+    animation: ccBloom 3.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes ccBloom {
+    0% { r: 7; opacity: 0; }
+    6% { opacity: 0.6; }
+    26% { r: 22; opacity: 0; }
+    100% { r: 7; opacity: 0; }
+}
+
+.cc-signal,
+.cc-signal-glow {
+    opacity: 0;
+    /* Without this the circle is rotated to follow the path's tangent, which
+       does nothing for a dot and costs a composite per frame. */
+    offset-rotate: 0deg;
+}
+
+.hub-teaser.is-visible .cc-signal {
+    animation: ccRun 3.4s linear infinite;
+}
+
+.hub-teaser.is-visible .cc-signal-glow {
+    animation: ccRunGlow 3.4s linear infinite;
+}
+
+@keyframes ccRun {
+    0% { offset-distance: 0%; opacity: 0; }
+    12% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes ccRunGlow {
+    0% { offset-distance: 0%; opacity: 0; }
+    12% { opacity: 0.16; }
+    88% { opacity: 0.16; }
+    100% { offset-distance: 100%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Land the chain finished: drawn, every link placed, the end open. It says
+       the same thing standing still. */
+    .cc-path {
+        stroke-dashoffset: 0;
+    }
+
+    .hub-teaser.is-visible .cc-path,
+    .hub-teaser.is-visible .cc-link,
+    .hub-teaser.is-visible .cc-end {
+        animation: none;
+        opacity: 1;
+    }
+
+    /* The signal and the bloom only exist as motion. */
+    .hub-teaser.is-visible .cc-signal,
+    .hub-teaser.is-visible .cc-signal-glow,
+    .hub-teaser.is-visible .cc-bloom {
+        animation: none;
+        opacity: 0;
+    }
+}

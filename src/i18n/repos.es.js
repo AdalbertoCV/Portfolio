@@ -12,6 +12,12 @@ const reposEs = {
     viewRepo: 'Ver repositorio',
     viewShots: 'Ver capturas',
 
+    // El último eslabón: la cadena de páginas termina aquí y entrega al lector
+    // a Contacto en lugar de dejarlo sin salida al final del catálogo.
+    contactTitle: 'Hasta aquí llega el recorrido',
+    contactLede: 'Ya viste de dónde vengo, dónde he trabajado, qué estoy construyendo y todo lo que he entregado. Lo único que falta es la parte que no puedo escribir yo solo.',
+    contactCta: 'Escríbeme',
+
     groups: {
       clients: 'Clientes e instituciones',
       creative: 'Creativo y experimental',

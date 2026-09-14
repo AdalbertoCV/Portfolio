@@ -10,6 +10,12 @@ const reposEn = {
     viewRepo: 'View repository',
     viewShots: 'View screenshots',
 
+    // The last link: the chain of pages ends here and hands the reader to
+    // Contact rather than leaving them at a dead end below the catalogue.
+    contactTitle: 'This is where the trail ends',
+    contactLede: 'You have seen where I come from, where I have worked, what I am building, and everything I have delivered. The only part left is the one I cannot write on my own.',
+    contactCta: 'Get in touch',
+
     groups: {
       clients: 'Clients and institutions',
       creative: 'Creative and experimental',
