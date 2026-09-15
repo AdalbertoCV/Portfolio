@@ -18,7 +18,10 @@ const RADII_URL = 'https://www.radii.com.mx/es';
 
 const STAT_KEYS = ['tolerance', 'lead', 'quote', 'certs'];
 const STEP_KEYS = ['upload', 'quote', 'produce', 'trace'];
-const BUILD_KEYS = ['backend', 'workers', 'agents', 'ml', 'platform', 'product'];
+// The outcome figures, which are the only numbers on this page that belong to
+// the engineer rather than to the platform.
+const IMPACT_KEYS = ['quote', 'ops', 'infra', 'tickets'];
+const BUILD_KEYS = ['quoting', 'backend', 'workers', 'agents', 'ml', 'platform', 'product'];
 
 // Product names stay in their own language in both dictionaries, so the stack
 // lives in code rather than costing two translated copies of the same word.
@@ -48,6 +51,17 @@ const ICONS = {
       <rect x="3" y="4" width="18" height="6" rx="2" />
       <rect x="3" y="14" width="18" height="6" rx="2" />
       <path d="M7 7h.01M7 17h.01" />
+    </svg>
+  ),
+  // A pricing curve with the quoted point marked on it: the algorithm and its
+  // output, which is what this card is about.
+  quoting: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3.5 19.5V4.5" />
+      <path d="M3.5 19.5h16" />
+      <path d="M6.5 16.5c3.4 0 4.2-8 11-8" />
+      <circle cx="17.5" cy="8.5" r="1.9" fill="currentColor" stroke="none" />
     </svg>
   ),
   workers: (
@@ -154,6 +168,26 @@ const RadiiPage = () => {
           />
         </Section>
 
+        {/* Outcomes before responsibilities. "I design the services" is a job
+            description; five days to one is the thing a reader cannot get from
+            anybody else's page. */}
+        <Section
+          kicker={t('radii.kickers.impact')}
+          title={t('radii.impactTitle')}
+          lede={t('radii.impactLede')}
+        >
+          <StatGrid
+            items={IMPACT_KEYS.map((key) => ({
+              key,
+              value: t(`radii.impact.${key}.value`),
+              label: t(`radii.impact.${key}.label`),
+            }))}
+          />
+          <Reveal>
+            <p className="brand-note">{t('radii.impactNote')}</p>
+          </Reveal>
+        </Section>
+
         <Section
           kicker={t('radii.kickers.build')}
           title={t('radii.buildTitle')}
@@ -186,6 +220,7 @@ const RadiiPage = () => {
             </a>
           </div>
         </Closing>
+
 
         <BrandFooterNav to="/experience" labelKey="common.backToExperience" />
       </div>

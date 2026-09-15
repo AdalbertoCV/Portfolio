@@ -119,6 +119,7 @@ const StackSelectPage = () => {
           <p className="brand-p">{t('stackselect.roleBody')}</p>
         </Closing>
 
+
         <BrandFooterNav to="/ventures" labelKey="common.backToVentures" />
       </div>
     </div>

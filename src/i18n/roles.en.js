@@ -6,7 +6,7 @@ const rolesEn = {
     evodeps: {
       badge: 'Software Engineer',
       company: 'Evodeps',
-      period: 'Present',
+      period: '2025 — Present',
       tagline: 'Adaptability as a technical requirement.',
       heroTitle: 'Software, equipment and prototypes built to each client’s measure',
       heroLede: 'Evodeps develops software, equipment and custom technology prototypes and implementations, sized to each client’s needs and budget. I work there as a Software Engineer, inside cross-functional teams of development, design and prototyping.',
@@ -206,12 +206,12 @@ const rolesEn = {
 
     // ---------------------------------------------------------------- CASE
     case: {
-      badge: 'Academic Mentor',
+      badge: 'Peer Mentoring · Student Volunteer',
       company: 'CASE · Centre for Learning and Student Services',
-      period: '2022 — 2024',
+      period: '2022 — 2023',
       tagline: 'You have not mastered a topic until someone else understands it.',
-      heroTitle: 'Three years teaching the subjects that decide who stays in the degree',
-      heroLede: 'CASE is where an engineering student goes when a subject is getting away from them. I spent three years there as an academic mentor to Software Engineering and Computer Engineering students, across five subjects: Algebra, Calculus, Object-Oriented Programming, Data Structures, and Discrete Mathematics. More than thirty students came through those sessions.',
+      heroTitle: 'Two years as a peer mentor, back when I was the student',
+      heroLede: 'CASE is where an engineering student goes when a subject is getting away from them. For two years, while taking my own degree, I volunteered there as a peer mentor to other Software Engineering and Computer Engineering students, across five subjects — Algebra, Calculus, Object-Oriented Programming, Data Structures, and Discrete Mathematics. More than thirty students came through those sessions. What it built was community: people a year or two behind me who stopped being alone with the subject.',
 
       kickers: {
         what: 'The centre',
@@ -219,9 +219,9 @@ const rolesEn = {
         learned: 'What teaching leaves behind',
       },
 
-      statsTitle: 'Three years, in numbers',
+      statsTitle: 'Two years, in numbers',
       stats: {
-        years: { value: '3', label: 'Years mentoring' },
+        years: { value: '2', label: 'Years mentoring' },
         students: { value: '30+', label: 'Students supported' },
         subjects: { value: '5', label: 'Subjects mentored' },
         programs: { value: '2', label: 'Engineering programmes' },
@@ -229,7 +229,7 @@ const rolesEn = {
 
       whatTitle: 'Where students ask for help before they drop out',
       whatBody: 'The Centre for Learning and Student Services supports students who need academic help with the subjects giving them trouble. They come from Software Engineering and Computer Engineering, almost always at the point where the subject stopped making sense several weeks earlier and the assessment is already in sight.',
-      whatNote: 'I mentored there from 2022 to 2024, while taking my own degree. The subjects I taught were the ones I had passed a year or two earlier, which is the concrete advantage of a peer mentor: I still remembered precisely where I had got stuck myself.',
+      whatNote: 'I volunteered there through 2022 and 2023, while taking my own degree. The subjects I covered were the ones I had passed a year or two earlier, which is the whole point of a peer mentor: I still remembered precisely where I had got stuck myself, and the person opposite was a classmate.',
 
       subjectsTitle: 'Five subjects, five different ways to get stuck',
       subjectsLede: 'They are not five equally hard subjects: each one fails for a reason of its own. Mentoring well means identifying which of the five reasons is in front of you before you start explaining.',

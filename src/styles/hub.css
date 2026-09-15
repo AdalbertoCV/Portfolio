@@ -405,6 +405,43 @@
     flex: 0 0 auto;
 }
 
+/* ----------------------------------------------------------------------------
+   THE CLOSING BAND
+   The same teaser shell, at the foot of every page. Two differences: it stacks
+   its own actions, and it carries the direct address under the button — some
+   readers will never fill in a form, and the alternative to giving them an
+   address is that they close the tab.
+   ------------------------------------------------------------------------- */
+
+.talk-band {
+    margin-top: 72px;
+}
+
+.talk-band-actions {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.talk-band-direct {
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.talk-band-direct:hover,
+.talk-band-direct:focus-visible {
+    color: var(--color-text-primary);
+    border-bottom-color: var(--color-border-hover);
+}
+
+
 /* ============================================================================
    VENTURE TILES
    ========================================================================= */
@@ -1215,9 +1252,15 @@ ol.timeline.reveal {
 /* ============================================================================
    THE CONTACT CHAIN
    ----------------------------------------------------------------------------
-   The strip that closes the loop at the foot of Projects. Same 420x140 frame
-   and the same draw-then-loop shape as the Ventures roadmap, so the three
-   hand-offs across the site read as one device rather than three ideas.
+   The invitation at the foot of Projects: two ends and a message going back
+   and forth between them. Same 420x140 frame and the same draw-then-loop shape
+   as the Ventures roadmap, so the three hand-offs across the site read as one
+   device rather than three ideas.
+
+   One cycle, one phase table, every delay derived from it: the signal leaves
+   at 5%, lands at 45%, and the node it reaches blooms on that same 45%. The
+   reply is the identical animation started half a cycle later, which is why
+   nothing here needs a second set of keyframes to stay in step.
    ========================================================================= */
 
 .contact-chain {
@@ -1227,6 +1270,7 @@ ol.timeline.reveal {
     min-width: 210px;
     aspect-ratio: 3 / 1;
     color: var(--color-text-tertiary);
+    --cc-cycle: 4s;
 }
 
 .cc-track {
@@ -1235,39 +1279,40 @@ ol.timeline.reveal {
     overflow: visible;
 }
 
-/* 640 comfortably exceeds the path length, so the offset starts fully hidden
-   whatever the exact measurement. */
+/* 640 comfortably exceeds either arc's length, so the offset starts fully
+   hidden whatever the exact measurement. */
 .cc-path {
     stroke-dasharray: 640;
     stroke-dashoffset: 640;
 }
 
 .hub-teaser.is-visible .cc-path {
-    animation: ccDraw 1.15s cubic-bezier(0.65, 0, 0.35, 1) 0.1s forwards;
+    animation: ccDraw 1.05s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 @keyframes ccDraw {
     to { stroke-dashoffset: 0; }
 }
 
-.cc-link,
-.cc-end {
+.cc-node,
+.cc-halo {
     opacity: 0;
     transform-box: fill-box;
     transform-origin: center;
 }
 
-.hub-teaser.is-visible .cc-link {
+/* Two animations on the node: the one-off pop as it is placed, then the beat
+   it gives every time the other end's signal arrives. */
+.hub-teaser.is-visible .cc-node {
     animation:
-        ccPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-        ccLit 3.4s linear infinite;
+        ccPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        ccLit var(--cc-cycle) linear infinite;
 }
 
-/* The open end settles and then stays put. It is the only mark on the strip
-   that is not a record of something already done, so it does not blink along
-   with the rest. */
-.hub-teaser.is-visible .cc-end {
-    animation: ccPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.hub-teaser.is-visible .cc-halo {
+    animation:
+        ccPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        ccBreathe var(--cc-cycle) ease-in-out infinite;
 }
 
 @keyframes ccPop {
@@ -1275,30 +1320,37 @@ ol.timeline.reveal {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* Brief, and back down well before the signal returns: a link that stays lit
-   is just a brighter dot. */
+/* Brief, and back down well before the next arrival: a node that stays lit is
+   just a brighter dot. */
 @keyframes ccLit {
-    0% { fill-opacity: 0.45; transform: scale(1); }
-    4% { fill-opacity: 1; transform: scale(1.5); }
-    14% { fill-opacity: 0.45; transform: scale(1); }
-    100% { fill-opacity: 0.45; transform: scale(1); }
+    0%, 42% { transform: scale(1); }
+    48% { transform: scale(1.7); }
+    62% { transform: scale(1); }
+    100% { transform: scale(1); }
 }
 
-/* The bloom: the signal arriving at the end of the chain and going out into
-   the world rather than stopping. */
+/* The halo tightens as the signal comes in and relaxes once it has landed —
+   the node reacting to something approaching rather than pulsing on its own. */
+@keyframes ccBreathe {
+    0%, 100% { transform: scale(1); stroke-opacity: 0.35; }
+    40% { transform: scale(0.88); stroke-opacity: 0.6; }
+    55% { transform: scale(1.12); stroke-opacity: 0.18; }
+}
+
+/* The bloom: the signal arriving and opening out rather than stopping. */
 .cc-bloom {
     opacity: 0;
 }
 
 .hub-teaser.is-visible .cc-bloom {
-    animation: ccBloom 3.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    animation: ccBloom var(--cc-cycle) cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 @keyframes ccBloom {
-    0% { r: 7; opacity: 0; }
-    6% { opacity: 0.6; }
-    26% { r: 22; opacity: 0; }
-    100% { r: 7; opacity: 0; }
+    0%, 43% { r: 9; opacity: 0; }
+    48% { opacity: 0.55; }
+    70% { r: 26; opacity: 0; }
+    100% { r: 26; opacity: 0; }
 }
 
 .cc-signal,
@@ -1310,42 +1362,59 @@ ol.timeline.reveal {
 }
 
 .hub-teaser.is-visible .cc-signal {
-    animation: ccRun 3.4s linear infinite;
+    animation: ccRun var(--cc-cycle) cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
 .hub-teaser.is-visible .cc-signal-glow {
-    animation: ccRunGlow 3.4s linear infinite;
+    animation: ccRunGlow var(--cc-cycle) cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
+/* Parked at the far end for the second half of the cycle, invisible, while the
+   other arc carries the reply. */
 @keyframes ccRun {
-    0% { offset-distance: 0%; opacity: 0; }
+    0%, 5% { offset-distance: 0%; opacity: 0; }
     12% { opacity: 1; }
-    88% { opacity: 1; }
-    100% { offset-distance: 100%; opacity: 0; }
+    38% { opacity: 1; }
+    45%, 100% { offset-distance: 100%; opacity: 0; }
 }
 
 @keyframes ccRunGlow {
-    0% { offset-distance: 0%; opacity: 0; }
+    0%, 5% { offset-distance: 0%; opacity: 0; }
     12% { opacity: 0.16; }
-    88% { opacity: 0.16; }
-    100% { offset-distance: 100%; opacity: 0; }
+    38% { opacity: 0.16; }
+    45%, 100% { offset-distance: 100%; opacity: 0; }
+}
+
+/* The tail. Same ride, started a fraction of a second later, so each copy sits
+   where the head was — the streak is spacing rather than a drawn line. Must
+   come after the rule above: same specificity, so source order decides which
+   keyframes the trail circles actually run. */
+.hub-teaser.is-visible .cc-signal-trail {
+    animation: ccRunTrail var(--cc-cycle) cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes ccRunTrail {
+    0%, 5% { offset-distance: 0%; opacity: 0; }
+    12% { opacity: var(--cc-trail, 0.4); }
+    38% { opacity: var(--cc-trail, 0.4); }
+    45%, 100% { offset-distance: 100%; opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    /* Land the chain finished: drawn, every link placed, the end open. It says
-       the same thing standing still. */
+    /* Land the exchange drawn: both arcs closed, both ends present. It says the
+       same thing standing still. */
     .cc-path {
         stroke-dashoffset: 0;
     }
 
     .hub-teaser.is-visible .cc-path,
-    .hub-teaser.is-visible .cc-link,
-    .hub-teaser.is-visible .cc-end {
+    .hub-teaser.is-visible .cc-node,
+    .hub-teaser.is-visible .cc-halo {
         animation: none;
         opacity: 1;
     }
 
-    /* The signal and the bloom only exist as motion. */
+    /* The signals and the blooms only exist as motion. */
     .hub-teaser.is-visible .cc-signal,
     .hub-teaser.is-visible .cc-signal-glow,
     .hub-teaser.is-visible .cc-bloom {

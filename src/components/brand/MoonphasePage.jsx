@@ -191,6 +191,7 @@ const MoonphasePage = () => {
           <p className="brand-p">{t('moonphase.roleBody')}</p>
         </Closing>
 
+
         <BrandFooterNav to="/ventures" labelKey="common.backToVentures" />
       </div>
     </div>

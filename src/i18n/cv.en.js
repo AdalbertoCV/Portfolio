@@ -5,24 +5,33 @@
 const cvEn = {
   cv: {
     badge: 'Résumé',
-    role: 'Full-Stack Software Engineer',
+    // The line under the name. "Full-Stack Software Engineer" is the title
+    // two hundred thousand people share; this one is the one thing about the
+    // page that nobody else can write.
+    role: 'Founding Software Engineer · Founder of two companies',
+    claim:
+      'I build the backend, the cloud workers and the AI agents behind Radii Manufacturing’s platform — the software that turns a CAD file into a quoted, manufactured, traceable part. Alongside it I am building Moonphase and StackSelect.',
+    seeWork: 'See what I build',
     location: 'Zacatecas, Mexico',
     availability: 'Open to collaborate',
-    standing: 'Founding Software Engineer · CEO · CTO · Technoholic',
+    standing: 'Backend · Cloud · AI systems',
     contactLabel: 'Contact',
 
     profileTitle: 'Professional profile',
     profileKicker: 'Who I am',
-    profileBody: 'Full-stack software engineer building backend services, cloud infrastructure and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS and Azure, develop AI agents with LangGraph and LangChain, and maintain the CI/CD pipelines and observability of a microservices platform.',
+    profileBody: 'Full-stack software engineer building backend services, cloud infrastructure and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS and Azure, develop AI agents with LangGraph and LangChain, and maintain the CI/CD pipelines and observability of a microservices platform. I migrated the platform’s entire infrastructure in two weeks and built its automatic quoting engine — a mathematical pricing algorithm that took an account manager’s average quoting time from five days to one.',
     profileBody2: 'I work across Python, Java, JavaScript, TypeScript, C#, Go and PHP, with Django, Spring Boot, Laravel and React. My technical focus areas are distributed systems, event-driven architecture, LLM systems and RAG, and platform engineering. My professional approach combines the rigorous adoption of emerging technology with engineering, design and business criteria, directed at systems that remain sustainable over time.',
 
     nowKicker: 'Right now',
-    nowTitle: 'Four concurrent fronts',
+    // No count in the heading: it used to say "four", the grid renders three
+    // cards, and the first claim on the page that the page itself contradicts
+    // is an expensive one. Naming them says more than counting them anyway.
+    nowTitle: 'Radii, two companies of my own, and independent clients',
     now: {
       radii: {
         label: 'Founding Software Engineer',
         org: 'Radii Manufacturing',
-        body: 'AI-powered manufacturing platform. Backend services, cloud workers, agents and platform.',
+        body: 'AI-powered manufacturing platform. Backend services, cloud workers, agents and platform. Quoting down from five days to one; 80% of operations automated.',
         cta: 'Read the story',
       },
       ventures: {
@@ -41,7 +50,11 @@ const cvEn = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'What I build with',
-    skillsLede: 'Selected according to the problem rather than to familiarity. The list runs from daily use through to areas under exploration.',
+    skillsLede: 'Selected according to the problem rather than to familiarity. What is in production today comes first; the full list, down to what I am still exploring, is one click away.',
+    skillsCoreLabel: 'In production today',
+    skillsCoreNote: 'The stack behind Radii’s platform, which is where most of my week goes.',
+    skillsExpand: 'See the full stack',
+    skillsCollapse: 'Hide the full stack',
 
     practiceKicker: 'Engineering practice',
     practiceTitle: 'How I work, not just what with',

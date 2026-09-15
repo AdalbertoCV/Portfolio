@@ -1,113 +1,129 @@
 // The teaser that sends a reader from Projects to Contact — the third sibling
-// of VenturesRoadmap and ProjectsMosaic, and the one that closes the loop.
+// of VenturesRoadmap and ProjectsMosaic.
 //
-// The site is a chain: About hands off to Experience, Experience to Ventures,
-// Ventures to Projects. A reader standing at the foot of the catalogue has
-// walked the whole thing, so the strip draws that walk literally — four links
-// already travelled, rising left to right, and one final node still open.
+// It used to draw the site as a trail that ran out here. It no longer does:
+// the invitation is not "you reached the end", it is "let's talk", so the
+// strip draws a conversation instead. Two nodes — me and whoever is reading —
+// with a signal that goes out along the upper arc, blooms as it lands, and
+// comes back along the lower one. Neither end is the open one; the loop never
+// settles, because an exchange is the thing that has not happened yet.
 //
-// The chain draws itself once on reveal. After that a signal runs it on a loop
-// and each link lights as the signal passes; the delays are derived from where
-// the link sits along the path, so the lighting is caused by the signal rather
-// than merely happening near it. The last node does not flash like the others:
-// it blooms, because it is the one thing on the strip that has not happened
-// yet.
+// Both arcs draw themselves once on reveal, then the exchange runs forever.
+// The two signals share one keyframe and one cycle: the reply is simply the
+// same animation half a cycle later, so the two can never drift apart.
 
-// Declared once and shared: the <path> renders it and the signal follows it
-// through `offset-path`. Two copies of this string would drift apart.
-const CHAIN = 'M20 104 C 58 100, 76 78, 108 74 S 160 86, 194 68 S 250 48, 284 58 S 340 64, 372 38';
+// Declared once and shared: the <path> renders each arc and its signal follows
+// it through `offset-path`. Two copies of these strings would drift apart.
+// Deliberately not each other's mirror: a perfectly symmetric pair of arcs
+// draws an eye, and the two ends of a conversation are not the same shape.
+const OUT = 'M78 70 C 134 12, 268 18, 342 64';
+const BACK = 'M342 64 C 286 124, 148 122, 78 70';
 
-const CHAIN_START_X = 20;
-const CHAIN_SPAN_X = 352;
+const ME = [78, 70];
+const YOU = [342, 64];
 
-// Seconds. The signal only starts once the chain has finished drawing.
-const DRAW_DELAY = 1.2;
-const RUN_DURATION = 3.4;
+// Seconds. The exchange only starts once both arcs have finished drawing, and
+// the reply leaves exactly half a cycle after the message did.
+const DRAW_DELAY = 1.15;
+const CYCLE = 4;
+const HALF = CYCLE / 2;
 
-// The pages already read, in order. Each sits exactly on a path anchor, so a
-// link never floats beside the chain it belongs to.
-const LINKS = [
-  [20, 104],
-  [108, 74],
-  [194, 68],
-  [284, 58],
+// The head, its glow, and two dimmer copies a fraction of a second behind it.
+// The tail is the same animation started late rather than a drawn streak: a
+// stroked trail would have to be re-measured for each arc, and this reads as
+// travel for three more circles and no geometry.
+const TRAIL = [
+  { r: 2.6, opacity: 0.45, lag: 0.07 },
+  { r: 1.8, opacity: 0.22, lag: 0.14 },
 ];
 
-const END = [372, 38];
+const Signal = ({ path, delay }) => {
+  // `cx`/`cy` stay at the origin because `offset-path` places the circle; any
+  // offset here would be added on top of the path position.
+  const ride = (extra = 0) => ({
+    offsetPath: `path("${path}")`,
+    animationDelay: `${delay + extra}s`,
+  });
 
-const progressAt = (x) => (x - CHAIN_START_X) / CHAIN_SPAN_X;
+  return (
+    <>
+      <circle className="cc-signal cc-signal-glow" cx="0" cy="0" r="11" fill="currentColor" style={ride()} />
+      {TRAIL.map(({ r, opacity, lag }) => (
+        <circle
+          key={lag}
+          className="cc-signal cc-signal-trail"
+          cx="0"
+          cy="0"
+          r={r}
+          fill="currentColor"
+          style={{ ...ride(lag), '--cc-trail': opacity }}
+        />
+      ))}
+      <circle className="cc-signal" cx="0" cy="0" r="3.5" fill="currentColor" style={ride()} />
+    </>
+  );
+};
+
+const Node = ({ at, popDelay, bloomDelay }) => (
+  <>
+    {/* The ring the arriving signal opens up into. Drawn under the node so the
+        node stays the solid thing and the bloom reads as its echo. */}
+    <circle
+      className="cc-bloom"
+      cx={at[0]}
+      cy={at[1]}
+      r="10"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      style={{ animationDelay: `${bloomDelay}s` }}
+    />
+    <circle
+      className="cc-halo"
+      cx={at[0]}
+      cy={at[1]}
+      r="10.5"
+      fill="none"
+      stroke="currentColor"
+      strokeOpacity="0.35"
+      strokeWidth="1.5"
+      style={{ animationDelay: `${popDelay}s` }}
+    />
+    <circle
+      className="cc-node"
+      cx={at[0]}
+      cy={at[1]}
+      r="5.5"
+      fill="currentColor"
+      style={{ animationDelay: `${popDelay}s, ${bloomDelay}s` }}
+    />
+  </>
+);
 
 const ContactChain = () => (
   <div className="contact-chain" aria-hidden="true">
     <svg className="cc-track" viewBox="0 0 420 140" preserveAspectRatio="xMidYMid meet" focusable="false">
-      <path
-        className="cc-path"
-        d={CHAIN}
-        fill="none"
-        stroke="currentColor"
-        strokeOpacity="0.5"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-
-      {LINKS.map(([cx, cy], index) => (
-        <circle
-          key={`${cx}-${cy}`}
-          className="cc-link"
-          cx={cx}
-          cy={cy}
-          r="4"
-          fill="currentColor"
-          fillOpacity="0.45"
-          style={{
-            // Two animations: the one-off pop as the chain draws, then the
-            // repeating flash as the signal reaches this link.
-            animationDelay: `${0.2 + index * 0.12}s, ${DRAW_DELAY + progressAt(cx) * RUN_DURATION}s`,
-          }}
+      {[OUT, BACK].map((d, index) => (
+        <path
+          key={d}
+          className="cc-path"
+          d={d}
+          fill="none"
+          stroke="currentColor"
+          strokeOpacity={index === 0 ? 0.5 : 0.28}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          style={{ animationDelay: `${0.1 + index * 0.22}s` }}
         />
       ))}
 
-      {/* The open end. Drawn as a ring rather than a dot — every link behind it
-          is closed, and this one is not. */}
-      <circle
-        className="cc-bloom"
-        cx={END[0]}
-        cy={END[1]}
-        r="7"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        style={{ animationDelay: `${DRAW_DELAY + RUN_DURATION * 0.98}s` }}
-      />
-      <circle
-        className="cc-end"
-        cx={END[0]}
-        cy={END[1]}
-        r="7"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        style={{ animationDelay: '0.9s' }}
-      />
+      {/* Each node lights when the other one's signal reaches it: the reply
+          lands back home half a cycle after the message lands away. */}
+      <Node at={ME} popDelay={0.35} bloomDelay={DRAW_DELAY + HALF} />
+      <Node at={YOU} popDelay={0.55} bloomDelay={DRAW_DELAY} />
 
-      {/* The signal. `cx`/`cy` stay at the origin because `offset-path` places
-          it; any offset here would be added on top of the path position. */}
-      <circle
-        className="cc-signal cc-signal-glow"
-        cx="0"
-        cy="0"
-        r="9"
-        fill="currentColor"
-        style={{ offsetPath: `path("${CHAIN}")`, animationDelay: `${DRAW_DELAY}s` }}
-      />
-      <circle
-        className="cc-signal"
-        cx="0"
-        cy="0"
-        r="3"
-        fill="currentColor"
-        style={{ offsetPath: `path("${CHAIN}")`, animationDelay: `${DRAW_DELAY}s` }}
-      />
+      <Signal path={OUT} delay={DRAW_DELAY} />
+      <Signal path={BACK} delay={DRAW_DELAY + HALF} />
     </svg>
   </div>
 );

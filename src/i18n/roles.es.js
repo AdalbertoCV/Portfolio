@@ -11,7 +11,7 @@ const rolesEs = {
     evodeps: {
       badge: 'Software Engineer',
       company: 'Evodeps',
-      period: 'Actualidad',
+      period: '2025 — Actualidad',
       tagline: 'La adaptabilidad como requisito técnico.',
       heroTitle: 'Software, equipamiento y prototipos a la medida de cada cliente',
       heroLede: 'Evodeps desarrolla software, equipamiento y prototipos e implementaciones tecnológicas personalizadas según las necesidades y el presupuesto de cada cliente. Trabajo ahí como Software Engineer, dentro de equipos interdisciplinarios de desarrollo, diseño y prototipado.',
@@ -211,12 +211,12 @@ const rolesEs = {
 
     // ---------------------------------------------------------------- CASE
     case: {
-      badge: 'Mentor Académico',
+      badge: 'Mentoría entre pares · Voluntariado estudiantil',
       company: 'CASE · Centro de Aprendizaje y Servicios Escolares',
-      period: '2022 — 2024',
+      period: '2022 — 2023',
       tagline: 'Un tema no se domina hasta que alguien más lo entiende.',
-      heroTitle: 'Tres años explicando las materias que deciden quién sigue en la carrera',
-      heroLede: 'El CASE es el lugar al que llega un estudiante de ingeniería cuando una materia se le está yendo de las manos. Estuve ahí tres años como mentor académico de Ingeniería de Software e Ingeniería en Computación, sobre cinco asignaturas: Álgebra, Cálculo, Programación Orientada a Objetos, Estructura de Datos y Matemáticas Discretas. Más de treinta estudiantes pasaron por esas sesiones.',
+      heroTitle: 'Dos años como mentor par, cuando el estudiante era yo',
+      heroLede: 'El CASE es el lugar al que llega un estudiante de ingeniería cuando una materia se le está yendo de las manos. Durante dos años, mientras cursaba mi propia carrera, hice voluntariado ahí como mentor par de otros estudiantes de Ingeniería de Software e Ingeniería en Computación, sobre cinco asignaturas — Álgebra, Cálculo, Programación Orientada a Objetos, Estructura de Datos y Matemáticas Discretas. Más de treinta estudiantes pasaron por esas sesiones. Lo que se construyó ahí fue comunidad: gente uno o dos años atrás de mí que dejó de estar sola con la materia.',
 
       kickers: {
         what: 'El centro',
@@ -224,9 +224,9 @@ const rolesEs = {
         learned: 'Lo que deja enseñar',
       },
 
-      statsTitle: 'Tres años, en números',
+      statsTitle: 'Dos años, en números',
       stats: {
-        years: { value: '3', label: 'Años como mentor' },
+        years: { value: '2', label: 'Años como mentor' },
         students: { value: '30+', label: 'Estudiantes acompañados' },
         subjects: { value: '5', label: 'Asignaturas mentoreadas' },
         programs: { value: '2', label: 'Programas de ingeniería' },
@@ -234,7 +234,7 @@ const rolesEs = {
 
       whatTitle: 'Dónde se pide ayuda antes de darse de baja',
       whatBody: 'El Centro de Aprendizaje y Servicios Escolares atiende a los estudiantes que necesitan apoyo académico en las materias que se les están dificultando. Llegan de Ingeniería de Software y de Ingeniería en Computación, casi siempre en el punto en que la asignatura dejó de entenderse varias semanas atrás y la evaluación ya está encima.',
-      whatNote: 'Mentoreé ahí de 2022 a 2024, mientras cursaba mi propia carrera. Las materias que daba eran las que había aprobado uno o dos años antes, que es la ventaja concreta del mentor par: todavía recordaba con precisión dónde me había atorado yo.',
+      whatNote: 'Hice voluntariado ahí durante 2022 y 2023, mientras cursaba mi propia carrera. Las materias que daba eran las que había aprobado uno o dos años antes, que es justamente el punto de la mentoría entre pares: todavía recordaba con precisión dónde me había atorado yo, y del otro lado había un compañero de carrera.',
 
       subjectsTitle: 'Cinco asignaturas, cinco formas distintas de atorarse',
       subjectsLede: 'No son cinco materias difíciles por igual: cada una falla por una razón propia. Mentorear bien consiste en identificar cuál de las cinco razones se tiene enfrente antes de empezar a explicar.',

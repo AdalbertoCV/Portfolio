@@ -116,9 +116,9 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.86rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-text-tertiary);
+    color: var(--color-text-secondary);
 }
 
 .cv-facts svg {
@@ -165,8 +165,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    /* 44px, not 42: two pixels under the touch-target floor is still under it,
+       and these four are the only way to reach him from the first viewport. */
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: 1px solid var(--color-border-primary);
     background: var(--color-bg-tertiary);
@@ -215,7 +217,7 @@
     font-weight: 700;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--color-text-tertiary);
+    color: var(--color-text-secondary);
     margin-bottom: 12px;
 }
 
@@ -514,7 +516,7 @@
 .cv-language-level {
     font-size: 0.84rem;
     font-weight: 500;
-    color: var(--color-text-tertiary);
+    color: var(--color-text-secondary);
     text-align: right;
 }
 
@@ -559,7 +561,7 @@
 .cv-cert-issuer {
     font-size: 0.82rem;
     font-weight: 500;
-    color: var(--color-text-tertiary);
+    color: var(--color-text-secondary);
     margin: 0;
 }
 
@@ -919,5 +921,179 @@
 
     .cv-interest {
         padding: 24px 18px;
+    }
+}
+
+/* ============================================================================
+   THE CLAIM, AND THE TWO ACTIONS UNDER IT
+   ----------------------------------------------------------------------------
+   The hero used to hand a visitor a job title and a PDF. The sentence below the
+   title is the specific thing he does; the primary action is the proof of it,
+   and the CV steps back to secondary — a PDF is what somebody downloads once
+   they are interested, not the thing that interests them.
+   ========================================================================= */
+
+.cv-claim {
+    max-width: 58ch;
+    margin: 0 0 22px;
+    font-size: clamp(0.98rem, 1.5vw, 1.06rem);
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+}
+
+.cv-primary {
+    /* The hero sits on the page ground rather than inside a brand world, so
+       --brand-core is not set here and the button would fall back to whatever
+       the last brand page left behind. */
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.22);
+}
+
+.cv-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-hover);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.cv-secondary .cv-button-icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* 19.6px tall was the worst target on the page. The rule that decorated it
+   drew its line on the bottom of the box, so growing the box to 44px would
+   have left the underline floating well below the words — it is drawn from the
+   text instead, where it stays put. */
+.cv-actions .cv-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-bottom: 0;
+    border-bottom: 0;
+    text-decoration: underline;
+    text-decoration-color: var(--color-border-hover);
+    text-underline-offset: 5px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-actions .cv-link:hover {
+        text-decoration-color: currentColor;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-secondary:hover {
+        border-color: var(--color-text-primary);
+        background: var(--color-bg-tertiary);
+    }
+}
+
+
+/* ============================================================================
+   ENGINEERING PRACTICE
+   ----------------------------------------------------------------------------
+   Thirty-one statements about how the work gets done. They used to be pill
+   chips, which is the form a keyword cloud takes — fine for tags nobody reads
+   individually, wrong for claims. Here the group name holds its own column and
+   the claims run down the page one per line, separated by hairlines: the
+   typography of a reference document rather than of a tag list.
+   ========================================================================= */
+
+.practice-block {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 0 56px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.practice-block + .practice-block {
+    margin-top: 30px;
+}
+
+/* Sticky so the group name stays beside its own rows on a long list — the
+   reader never has to scroll back up to find out which group they are in. */
+.practice-title {
+    position: sticky;
+    top: calc(var(--navbar-h, 120px) + 24px);
+    align-self: start;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+}
+
+.practice-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* Two columns of rows, not two columns of text: each entry is short enough
+       that one per full-width line would leave most of the row empty. */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    column-gap: 44px;
+}
+
+.practice-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 13px 0;
+    font-size: 0.93rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border-primary);
+    transition: color var(--transition-base);
+}
+
+/* A rule, not a bullet or a glyph: the list already reads as a list, so the
+   marker's only job is to hold the left edge and to have somewhere to go on
+   hover. */
+.practice-rule {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 1px;
+    background: var(--color-text-tertiary);
+    transform: translateY(-4px);
+    transition: width var(--transition-base), background var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .practice-list li:hover {
+        color: var(--color-text-primary);
+    }
+
+    .practice-list li:hover .practice-rule {
+        width: 24px;
+        background: var(--color-text-primary);
+    }
+}
+
+@media (max-width: 900px) {
+    .practice-block {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+        padding-top: 24px;
+    }
+
+    .practice-title {
+        position: static;
     }
 }

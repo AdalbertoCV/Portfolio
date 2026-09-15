@@ -5,7 +5,7 @@ const brandsEn = {
   timeline: {
     badge: 'Track record',
     title: 'Five fronts, one standard',
-    lede: 'Five fronts carrying responsibility for the outcome: an AI-powered manufacturing platform, a custom development house, an independent client portfolio, the public laboratory where my professional training began, and three years teaching the subjects the degree is built on.',
+    lede: 'Five fronts carrying responsibility for the outcome: an AI-powered manufacturing platform, a custom development house, an independent client portfolio, the public laboratory where my professional training began, and two years of peer mentoring on the subjects the degree is built on.',
     featuredLabel: 'Current focus',
     present: 'Present',
     readStory: 'Read the full story',
@@ -105,6 +105,7 @@ const brandsEn = {
       what: 'The platform',
       how: 'The process',
       build: 'My role inside',
+      impact: 'What changed',
       stack: 'Tooling',
       closing: 'The why',
     },
@@ -141,12 +142,42 @@ const brandsEn = {
       },
     },
 
+    // Every number on this page above this point belongs to Radii. These are
+    // the only ones that belong to the engineer, which is the whole reason the
+    // section exists: "I design the services" is a job description, and a
+    // reader cannot tell it apart from someone who watched a course.
+    impactTitle: 'What has changed since I joined',
+    impactLede: 'Founding engineer on a platform in its first year. These are the figures the work has moved, not the platform’s specifications.',
+    impact: {
+      quote: {
+        value: '5 days → 1',
+        label: 'Average time an account manager needs to quote a part',
+      },
+      ops: {
+        value: '80%',
+        label: 'Of the operations team’s recurring work, automated with AI agents',
+      },
+      infra: {
+        value: '2 weeks',
+        label: 'To migrate the platform’s entire infrastructure',
+      },
+      tickets: {
+        value: '700+',
+        label: 'Tickets closed',
+      },
+    },
+    impactNote: 'Over 4,000 code contributions since July 2025, across the whole platform.',
+
     buildTitle: 'What I build there',
     buildLede: 'Joining as a founding engineer means direct participation in defining the stack, the architecture and the engineering practices the platform is built on, both in their initial design and in their evolution.',
     build: {
       backend: {
         title: 'Core backend services',
         body: 'I design and develop the services powering core manufacturing workflows, with a focus on system scalability and reliability.',
+      },
+      quoting: {
+        title: 'The automatic quoting engine',
+        body: 'I built the engine that prices a part: a mathematical algorithm that turns geometry, material, finishing and volume into a price and a lead time. It is the piece that moved an account manager’s average quoting time from five days to one.',
       },
       workers: {
         title: 'Cloud workers',
@@ -356,7 +387,7 @@ const brandsEn = {
   // ------------------------------------------------------------- Evodeps
   evodeps: {
     company: 'Evodeps',
-    period: 'Present',
+    period: '2025 — Present',
     title: 'Software Engineer',
     short: 'Custom software, equipment and technology prototypes shaped around each client.',
     body: 'Evodeps develops software, equipment and custom technology prototypes and implementations, sized to each client’s needs and budget. Its main differentiator is adaptability: adjusting process, scope and technology to what the project actually asks for, rather than selling the same solution every time. I work there as a Software Engineer, inside cross-functional teams of development, design and prototyping.',

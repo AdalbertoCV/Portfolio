@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowUpRight, Reveal, Section } from '../brand/parts';
+import { CONTACT_EMAIL } from '../../site';
 import './contact.css';
 
 /* ==========================================================================
@@ -22,7 +23,7 @@ import './contact.css';
 
 const ENDPOINT = 'https://api.web3forms.com/submit';
 const ACCESS_KEY = '6b54da08-526a-4df8-aee1-8f8885e6a9e7';
-const EMAIL = 'adalc3488@gmail.com';
+
 
 const FIELDS = [
   { name: 'name', type: 'text', autoComplete: 'name', required: true },
@@ -66,8 +67,8 @@ const ContactPage = () => {
         <span className="hub-badge">{t('contact.badge')}</span>
         <h1 className="cv-name">{t('contact.title')}</h1>
         <p className="cv-role">{t('contact.lede')}</p>
-        <a className="contact-direct" href={`mailto:${EMAIL}`}>
-          {EMAIL}
+        <a className="contact-direct" href={`mailto:${CONTACT_EMAIL}`}>
+          {CONTACT_EMAIL}
           <ArrowUpRight />
         </a>
       </Reveal>
@@ -109,7 +110,18 @@ const ContactPage = () => {
 
             {/* Web3Forms' own honeypot. A bot fills every field it finds; a
                 person never sees this one. */}
-            <input type="checkbox" name="botcheck" className="contact-botcheck" tabIndex="-1" autoComplete="off" />
+            {/* aria-hidden as well as off-screen: positioned at -9999px it is
+                still in the accessibility tree, so a screen-reader user was
+                being read "botcheck, checkbox, unchecked" in the middle of the
+                form. */}
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="contact-botcheck"
+              tabIndex="-1"
+              autoComplete="off"
+              aria-hidden="true"
+            />
 
             <div className="contact-actions">
               <button className="contact-submit" type="submit" disabled={status === 'sending'}>

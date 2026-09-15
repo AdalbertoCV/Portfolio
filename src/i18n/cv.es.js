@@ -9,27 +9,36 @@
 const cvEs = {
   cv: {
     badge: 'Currículum',
-    role: 'Full-Stack Software Engineer',
+    // La línea bajo el nombre. "Full-Stack Software Engineer" es el título que
+    // comparten doscientas mil personas; esta es la única cosa de la página que
+    // nadie más puede escribir.
+    role: 'Founding Software Engineer · Fundador de dos empresas',
+    claim:
+      'Construyo el backend, los workers en la nube y los agentes de IA detrás de la plataforma de Radii Manufacturing: el software que convierte un archivo CAD en una pieza cotizada, fabricada y trazable. En paralelo construyo Moonphase y StackSelect.',
+    seeWork: 'Ver lo que construyo',
     location: 'Zacatecas, México',
     availability: 'Abierto a colaborar',
     // Three seats held at once. This is the line the page is aimed at — it
     // replaced a count of years, which is the weakest number on the page and
     // was occupying the best space on it.
-    standing: 'Founding Software Engineer · CEO · CTO · Technoholic',
+    standing: 'Backend · Nube · Sistemas de IA',
     contactLabel: 'Contacto',
 
     profileTitle: 'Perfil profesional',
     profileKicker: 'Quién soy',
-    profileBody: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS y Azure, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad de una plataforma de microservicios.',
+    profileBody: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS y Azure, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad de una plataforma de microservicios. Migré la infraestructura completa de la plataforma en dos semanas y construí su cotizador automático: un algoritmo matemático de precios que llevó el tiempo promedio de cotización de un account manager de cinco días a uno.',
     profileBody2: 'Trabajo con Python, Java, JavaScript, TypeScript, C#, Go y PHP, sobre Django, Spring Boot, Laravel y React. Mis áreas de interés técnico son los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Mi enfoque profesional combina la adopción rigurosa de tecnología emergente con criterios de ingeniería, diseño y negocio, orientado a construir sistemas sostenibles en el tiempo.',
 
     nowKicker: 'Ahora mismo',
-    nowTitle: 'Cuatro frentes simultáneos',
+    // Sin número en el título: decía "cuatro", la retícula renderiza tres
+    // tarjetas, y la primera afirmación de la página que la página misma
+    // contradice sale cara. Nombrarlos dice más que contarlos.
+    nowTitle: 'Radii, dos empresas propias y clientes independientes',
     now: {
       radii: {
         label: 'Founding Software Engineer',
         org: 'Radii Manufacturing',
-        body: 'Plataforma de manufactura con IA. Servicios backend, workers en la nube, agentes y plataforma.',
+        body: 'Plataforma de manufactura con IA. Servicios backend, workers en la nube, agentes y plataforma. Cotización de cinco días a uno; 80% de la operación automatizada.',
         cta: 'Ver la historia',
       },
       ventures: {
@@ -48,7 +57,11 @@ const cvEs = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'Tecnologías con las que construyo',
-    skillsLede: 'Seleccionadas en función del problema y no por familiaridad. El listado avanza de uso cotidiano a áreas en exploración.',
+    skillsLede: 'Seleccionadas según el problema, no según la familiaridad. Primero lo que está en producción hoy; la lista completa, hasta lo que sigo explorando, está a un clic.',
+    skillsCoreLabel: 'En producción hoy',
+    skillsCoreNote: 'El stack detrás de la plataforma de Radii, que es donde se va la mayor parte de mi semana.',
+    skillsExpand: 'Ver el stack completo',
+    skillsCollapse: 'Ocultar el stack completo',
 
     practiceKicker: 'Práctica de ingeniería',
     practiceTitle: 'Cómo trabajo, no solo con qué',

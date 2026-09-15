@@ -11,11 +11,95 @@ const es = {
   // El pie de página: un chiste a la vez, con avance manual. Nada aquí se mueve
   // solo, porque una línea que se cambia mientras alguien la lee es peor chiste
   // que el que reemplaza.
+  // Título y descripción por ruta, aplicados por <RouteMeta>. Los unfurlers no
+  // ejecutan JavaScript, así que public/index.html lleva la versión que ve una
+  // vista previa de enlace; estas existen para la pestaña, el marcador, el
+  // historial y los rastreadores que sí renderizan la página.
+  // La banda de cierre bajo el catálogo de proyectos. Al resto de las rutas se
+  // llega a Contacto por el navbar y el pie, así que esta es la única página
+  // que gana una banda propia: es donde termina quien recorrió todo el trabajo.
+  talk: {
+    title: '¿Quieres trabajar conmigo o compartir ideas?',
+    lede:
+      'Contáctame. Un proyecto que quieras construir, un equipo al que quieras sumarme o una idea que quieras pensar en voz alta: las tres son buenas razones para empezar la conversación.',
+    cta: 'Escríbeme',
+  },
+  meta: {
+    home: {
+      title: 'Adal Cerrillo — Founding Software Engineer',
+      description:
+        'Founding Software Engineer en Radii Manufacturing: construyo el backend, la nube y los sistemas de IA detrás de una plataforma de manufactura. Fundador de Moonphase y StackSelect.',
+    },
+    experience: {
+      title: 'Experiencia · Adal Cerrillo',
+      description:
+        'Cinco frentes, un estándar: Radii Manufacturing, clientes independientes, Evodeps, LABSOL Network y mentoría entre pares en el CASE.',
+    },
+    ventures: {
+      title: 'Ventures · Adal Cerrillo',
+      description:
+        'Moonphase y StackSelect: las dos empresas que fundé, para qué existe cada una y en qué punto está hoy.',
+    },
+    projects: {
+      title: 'Proyectos · Adal Cerrillo',
+      description:
+        'Veinte proyectos, desde sistemas entregados a instituciones públicas hasta investigación y experimentos: qué resuelve cada uno, su stack y su repositorio.',
+    },
+    contact: {
+      title: 'Contacto · Adal Cerrillo',
+      description:
+        'Un proyecto que quieras construir, un equipo al que quieras sumarme o una idea que quieras pensar en voz alta. Escríbeme.',
+    },
+    radii: {
+      title: 'Radii Manufacturing · Adal Cerrillo',
+      description:
+        'Founding Software Engineer: el backend, los workers en la nube y los agentes de IA detrás de una plataforma que convierte un archivo CAD en una pieza cotizada, fabricada y trazable.',
+    },
+    stackselect: {
+      title: 'StackSelect · Adal Cerrillo',
+      description:
+        'Bootcamps y plataforma de evaluación técnica orientados a colocar en su primer empleo a desarrolladores sin experiencia previa.',
+    },
+    moonphase: {
+      title: 'Moonphase · Adal Cerrillo',
+      description:
+        'Automatización real e I+D sobre lo que nadie ha resuelto todavía, con método y expediente escrito.',
+    },
+    evodeps: {
+      title: 'Evodeps · Adal Cerrillo',
+      description: 'Software, equipo y prototipos hechos a la medida de cada cliente.',
+    },
+    freelance: {
+      title: 'Ingeniería independiente · Adal Cerrillo',
+      description:
+        'Ingeniería dentro de equipos multidisciplinarios: convertir problemas de negocio en sistemas que de verdad se adoptan.',
+    },
+    labsol: {
+      title: 'LABSOL Network · Adal Cerrillo',
+      description:
+        'El Laboratorio de Software Libre del COZCYT, donde lideré dos proyectos entregados a la Universidad Autónoma de Zacatecas y al consejo estatal de ciencia.',
+    },
+    case: {
+      title: 'CASE · Adal Cerrillo',
+      description:
+        'Dos años como mentor par, explicando las cinco materias que deciden quién sigue en una carrera de ingeniería.',
+    },
+    uaz: {
+      title: 'Ingeniería de Software, UAZ · Adal Cerrillo',
+      description:
+        'La carrera detrás del trabajo: Ingeniería de Software en la Universidad Autónoma de Zacatecas, y lo que realmente enseñó.',
+    },
+  },
   footer: {
+    tagline: 'Founding Software Engineer. Backend, nube y sistemas de IA — y las dos empresas que estoy construyendo.',
+    exploreLabel: 'Explorar',
+    reachLabel: 'Contacto',
+    cvLabel: 'Currículum',
+    cvDownload: 'Descargar CV (PDF)',
+    cvOpen: 'Abrir en el navegador',
     kicker: 'Nota al pie',
     prev: 'Chiste anterior',
     next: 'Siguiente chiste',
-    go: 'Ir al chiste',
     credit: '© 2026 Adal Cerrillo · Hecho a mano, con más café del recomendable.',
     jokes: [
       'Objetivo de vida declarado: ser el Tony Stark de la vida real, con todo y su Jarvis. El traje va en la versión 0.1, pero Jarvis ya corre en local — y, a diferencia del original, este sí pide permiso antes de desplegar a producción.',
@@ -62,6 +146,7 @@ const es = {
     error: 'No se pudo enviar. Escríbeme directo a adalc3488@gmail.com.',
   },
   common: {
+    skipToContent: 'Saltar al contenido',
     language: 'Idioma',
     back: 'Volver',
     backToExperience: 'Volver a Experiencia',
@@ -128,7 +213,7 @@ const es = {
       company: 'Radii Manufacturing',
       period: 'Jul 2025 — Actualidad',
       title: 'Founding Software Engineer',
-      body: 'Founding Software Engineer en Radii Manufacturing, una startup que automatiza procesos de manufactura mediante una plataforma con inteligencia artificial y una red de fabricantes, y una de las startups más prometedoras de Latinoamérica. Defino la dirección técnica de la empresa junto al equipo fundador — el stack, la arquitectura y las prácticas de ingeniería sobre las que se construye la plataforma — convirtiendo un producto en etapa temprana en un sistema sobre el que el negocio puede escalar.',
+      body: 'Founding Software Engineer en Radii Manufacturing, una startup que automatiza procesos de manufactura mediante una plataforma con inteligencia artificial y una red de fabricantes, y una de las startups más prometedoras de Latinoamérica. Defino la dirección técnica de la empresa junto al equipo fundador — el stack, la arquitectura y las prácticas de ingeniería sobre las que se construye la plataforma — convirtiendo un producto en etapa temprana en un sistema sobre el que el negocio puede escalar. En el primer año: la infraestructura completa de la plataforma migrada en dos semanas, el cotizador automático construido sobre un algoritmo matemático de precios — que llevó el tiempo promedio de cotización de un account manager de cinco días a uno — y el 80% del trabajo recurrente del equipo operativo automatizado con agentes de IA.',
     },
     freelance: {
       company: 'Freelance',
@@ -144,9 +229,9 @@ const es = {
     },
     case: {
       company: 'Centro de Aprendizaje y Servicios Escolares',
-      period: '2022 — 2024',
-      title: 'Mentor Académico',
-      body: 'Tres años como mentor académico en el CASE, apoyando a estudiantes de Ingeniería de Software e Ingeniería en Computación en las materias que se les dificultaban: Álgebra, Cálculo, Programación Orientada a Objetos, Estructura de Datos y Matemáticas Discretas. Más de treinta estudiantes acompañados. Enseñar es donde desarrollé la transferencia de conocimiento, el trabajo en equipo y la primera forma de liderazgo que ejercí.',
+      period: '2022 — 2023',
+      title: 'Mentor par · Voluntariado estudiantil',
+      body: 'Dos años de voluntariado en el CASE mientras yo mismo cursaba la carrera, apoyando a otros estudiantes de Ingeniería de Software e Ingeniería en Computación en las materias que se les dificultaban: Álgebra, Cálculo, Programación Orientada a Objetos, Estructura de Datos y Matemáticas Discretas. Más de treinta estudiantes pasaron por esas sesiones. Fue la comunidad estudiantil cuidándose a sí misma, y ahí aprendí a entregar el conocimiento en lugar de solo tenerlo.',
     },
   },
   projects: {

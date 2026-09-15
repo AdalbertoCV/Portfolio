@@ -175,6 +175,7 @@ const UazPage = () => {
           <p className="brand-p">{t('uaz.closingBody')}</p>
         </Closing>
 
+
         <BrandFooterNav to="/" labelKey="common.backToAbout" />
       </div>
     </div>

@@ -136,6 +136,7 @@ const LabsolPage = () => {
           <p className="brand-p">{t('roles.labsol.roleBody')}</p>
         </Closing>
 
+
         <BrandFooterNav to="/experience" labelKey="common.backToExperience" />
       </div>
     </div>

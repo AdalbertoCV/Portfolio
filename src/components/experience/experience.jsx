@@ -8,8 +8,11 @@ import RadiiArt from '../marks/RadiiArt';
 import VenturesRoadmap from '../ventures/VenturesRoadmap';
 import { CaseArt, CaseMark, EvodepsArt, FreelanceArt, FreelanceMark, LabsolArt } from '../marks/RoleArt';
 
-// Roles where someone else did the hiring. The two companies Adalberto founded
-// live on /ventures — see the note there for why they are not on this list.
+// Roles where someone else did the hiring, plus CASE — which was not a job at
+// all but the student chapter that came before them, kept here because the
+// timeline is the whole path and that is where it starts. The two companies
+// Adalberto founded live on /ventures — see the note there for why they are
+// not on this list.
 //
 // `base` is the dictionary path rather than a set of copied strings, so a role
 // keeps one source of truth across this page and its own brand page.

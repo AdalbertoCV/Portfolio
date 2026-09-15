@@ -135,6 +135,7 @@ const CasePage = () => {
           <p className="brand-p">{t('roles.case.roleBody')}</p>
         </Closing>
 
+
         <BrandFooterNav to="/experience" labelKey="common.backToExperience" />
       </div>
     </div>

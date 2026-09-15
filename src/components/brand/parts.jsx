@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
+import { CONTACT_EMAIL } from '../../site';
+import ContactChain from '../contact/ContactChain';
 
 /* ==========================================================================
    Shared building blocks for the three brand pages. They exist so a brand page
@@ -213,6 +215,38 @@ export const Closing = ({ title, children }) => (
     {children}
   </Reveal>
 );
+
+/**
+ * The closing band at the foot of the project catalogue.
+ *
+ * Only there: Contact is one tap away in the navbar and in every footer, so a
+ * band on each of the story pages would be the third invitation on the same
+ * screen. The catalogue is the exception because it is where a reader who has
+ * gone through the whole body of work runs out of pages.
+ */
+export const TalkBand = () => {
+  const { t } = useTranslation();
+  return (
+    <Reveal className="hub-teaser talk-band">
+      <div className="hub-teaser-copy">
+        <h2 className="brand-h2">{t('talk.title')}</h2>
+        <p className="brand-p">{t('talk.lede')}</p>
+      </div>
+      <ContactChain />
+      <div className="talk-band-actions">
+        <Link className="brand-link-out hub-teaser-cta" to="/contact">
+          {t('talk.cta')}
+          <ArrowRight />
+        </Link>
+        {/* The direct address next to the form, because some readers will never
+            fill in a form and the alternative is that they close the tab. */}
+        <a className="talk-band-direct" href={`mailto:${CONTACT_EMAIL}`}>
+          {CONTACT_EMAIL}
+        </a>
+      </div>
+    </Reveal>
+  );
+};
 
 /**
  * Back link rendered at the foot of a brand page, so a reader who has scrolled

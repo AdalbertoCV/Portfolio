@@ -1,0 +1,132 @@
+<!--
+  Source for public/og-image.png — the image every link preview of this site
+  shows. Not served: it lives here so the picture can be regenerated rather
+  than re-drawn.
+
+  To re-render: copy this file into public/, open it at 958x502 with
+  document.documentElement.style.zoom = 0.8 on a 1.25 DPR display, capture the
+  viewport to public/og-image.png, and delete the copy.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&family=Cinzel:wght@600&display=swap"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      body {
+        background: #0a0a0a;
+        color: #fafafa;
+        font-family: Inter, system-ui, sans-serif;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 72px 80px;
+      }
+
+      /* The same node-and-arc language the site uses for every hand-off, at
+         poster scale and bled off the right edge so it reads as a fragment of
+         a larger system rather than as a decoration placed in a corner. */
+      .art { position: absolute; inset: 0; pointer-events: none; }
+
+      .row { display: flex; align-items: center; gap: 22px; position: relative; }
+
+      .mark {
+        width: 54px; height: 54px; border-radius: 14px;
+        border: 1px solid rgba(250, 250, 250, 0.22);
+        display: grid; place-items: center;
+      }
+
+      .wordmark {
+        font-family: Cinzel, Georgia, serif;
+        font-size: 21px; font-weight: 600; letter-spacing: 0.22em;
+        text-transform: uppercase; color: rgba(250, 250, 250, 0.72);
+      }
+
+      h1 {
+        position: relative;
+        font-family: Poppins, Inter, sans-serif;
+        font-size: 92px; font-weight: 800; line-height: 1.02;
+        letter-spacing: -0.045em;
+        max-width: 15ch;
+      }
+
+      h1 em { font-style: normal; color: #f97362; }
+
+      .lede {
+        position: relative;
+        margin-top: 26px;
+        font-size: 27px; line-height: 1.42; font-weight: 400;
+        color: rgba(250, 250, 250, 0.68);
+        max-width: 38ch;
+      }
+
+      .foot {
+        position: relative;
+        display: flex; align-items: center; gap: 18px;
+        font-size: 21px; font-weight: 500;
+        color: rgba(250, 250, 250, 0.55);
+      }
+
+      .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
+      .sep { color: rgba(250, 250, 250, 0.26); }
+    </style>
+  </head>
+  <body>
+    <svg class="art" viewBox="0 0 1200 630" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#f97362" stop-opacity="0" />
+          <stop offset="0.55" stop-color="#f97362" stop-opacity="0.55" />
+          <stop offset="1" stop-color="#f97362" stop-opacity="0.9" />
+        </linearGradient>
+      </defs>
+      <g stroke="url(#fade)" stroke-width="2" stroke-linecap="round">
+        <path d="M640 600 C 810 560, 900 430, 1040 392 S 1240 330, 1330 250" />
+        <path d="M700 630 C 880 600, 980 470, 1120 430" stroke-opacity="0.45" />
+        <path d="M980 630 C 1060 540, 1120 470, 1240 440" stroke-opacity="0.3" />
+      </g>
+      <g fill="#f97362">
+        <circle cx="1040" cy="392" r="7" />
+        <circle cx="1120" cy="430" r="5" fill-opacity="0.6" />
+        <circle cx="900" cy="430" r="5" fill-opacity="0.45" />
+      </g>
+      <circle cx="1040" cy="392" r="20" stroke="#f97362" stroke-opacity="0.35" stroke-width="1.5" />
+    </svg>
+
+    <div class="row">
+      <span class="mark">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fafafa"
+             stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2.5" y="4" width="19" height="16" rx="3" />
+          <path d="M7.5 9.5 5 12l2.5 2.5" />
+          <path d="M12 9.5 14.5 12 12 14.5" />
+          <circle cx="17.6" cy="16.4" r="1.6" />
+        </svg>
+      </span>
+      <span class="wordmark">Adal Cerrillo</span>
+    </div>
+
+    <div>
+      <h1>Founding&nbsp;Software<br />Engineer at <em>Radii</em></h1>
+      <p class="lede">
+        Backend, cloud and AI systems behind an AI manufacturing platform.
+        Founder of Moonphase and StackSelect.
+      </p>
+    </div>
+
+    <div class="foot">
+      <span class="dot"></span>
+      <span>Open to collaborate</span>
+      <span class="sep">·</span>
+      <span>Zacatecas, México</span>
+    </div>
+  </body>
+</html>

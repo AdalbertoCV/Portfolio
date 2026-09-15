@@ -1,9 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
-import { ArrowRight, Reveal } from '../brand/parts';
-import ContactChain from '../contact/ContactChain';
+import { Reveal, TalkBand } from '../brand/parts';
 import ProjectCard from './ProjectCard';
 import CATALOGUE, { PROJECT_COUNT } from './catalogue';
 import './projects.css';
@@ -191,20 +189,7 @@ const MyProjects = () => {
         </Reveal>
       ))}
 
-      {/* The last hand-off. The timeline points at Ventures, Ventures points
-          at Projects, and the catalogue is where the chain would otherwise
-          stop — so it closes the loop and points at Contact. */}
-      <Reveal className="hub-teaser">
-        <div className="hub-teaser-copy">
-          <h2 className="brand-h2">{t('repos.contactTitle')}</h2>
-          <p className="brand-p">{t('repos.contactLede')}</p>
-        </div>
-        <ContactChain />
-        <Link className="brand-link-out hub-teaser-cta" to="/contact">
-          {t('repos.contactCta')}
-          <ArrowRight />
-        </Link>
-      </Reveal>
+      <TalkBand />
 
       {/* Portalled to <body>: the page is a stacking context, so a nested
           overlay would render underneath the navbar. */}

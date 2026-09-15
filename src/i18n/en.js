@@ -8,11 +8,96 @@ const en = {
   ...cvEn,
   ...reposEn,
   ...rolesEn,
+  // Per-route <title> and description, applied by <RouteMeta>. Unfurlers never
+  // run JavaScript, so public/index.html carries the version a link preview
+  // shows; these exist for the browser tab, the bookmark, the history entry,
+  // and the crawlers that do render the page.
+  // The closing band under the project catalogue. Every other route reaches
+  // Contact through the navbar and the footer, so this is the one page that
+  // earns a band of its own: it is where a reader who has gone through the
+  // whole body of work ends up.
+  talk: {
+    title: 'Want to work together, or just share ideas?',
+    lede:
+      'Write to me. A project you want built, a team you want me on, or an idea you want to think through out loud — all three are good reasons to start the conversation.',
+    cta: 'Get in touch',
+  },
+  meta: {
+    home: {
+      title: 'Adal Cerrillo — Founding Software Engineer',
+      description:
+        'Founding Software Engineer at Radii Manufacturing, building the backend, cloud and AI systems behind an AI manufacturing platform. Founder of Moonphase and StackSelect.',
+    },
+    experience: {
+      title: 'Experience · Adal Cerrillo',
+      description:
+        'Five fronts, one standard: Radii Manufacturing, independent clients, Evodeps, LABSOL Network and peer mentoring at CASE.',
+    },
+    ventures: {
+      title: 'Ventures · Adal Cerrillo',
+      description:
+        'Moonphase and StackSelect: the two companies I founded, what each one is for, and where each one stands today.',
+    },
+    projects: {
+      title: 'Projects · Adal Cerrillo',
+      description:
+        'Twenty projects, from systems delivered to public institutions to research and experiments: what each one solves, its stack, and its repository.',
+    },
+    contact: {
+      title: 'Contact · Adal Cerrillo',
+      description:
+        'A project you want built, a team you want me on, or an idea you want to think through out loud. Write to me.',
+    },
+    radii: {
+      title: 'Radii Manufacturing · Adal Cerrillo',
+      description:
+        'Founding Software Engineer: the backend, the cloud workers and the AI agents behind a platform that turns a CAD file into a quoted, manufactured, traceable part.',
+    },
+    stackselect: {
+      title: 'StackSelect · Adal Cerrillo',
+      description:
+        'Bootcamps and a technical assessment platform aimed at placing developers with no prior experience into their first job.',
+    },
+    moonphase: {
+      title: 'Moonphase · Adal Cerrillo',
+      description:
+        'Real automation and R&D on what nobody has solved yet, with method and a written record.',
+    },
+    evodeps: {
+      title: 'Evodeps · Adal Cerrillo',
+      description: 'Software, equipment and prototypes built to each client’s measure.',
+    },
+    freelance: {
+      title: 'Independent engineering · Adal Cerrillo',
+      description:
+        'Engineering inside multidisciplinary teams: turning business problems into systems that are actually adopted.',
+    },
+    labsol: {
+      title: 'LABSOL Network · Adal Cerrillo',
+      description:
+        'The free-software lab at COZCYT, where I led two projects delivered to the Autonomous University of Zacatecas and the state science council.',
+    },
+    case: {
+      title: 'CASE · Adal Cerrillo',
+      description:
+        'Two years as a peer mentor, teaching the five subjects that decide who stays in an engineering degree.',
+    },
+    uaz: {
+      title: 'Software Engineering, UAZ · Adal Cerrillo',
+      description:
+        'The degree behind the work: Software Engineering at the Autonomous University of Zacatecas, and what it actually taught.',
+    },
+  },
   footer: {
+    tagline: 'Founding Software Engineer. Backend, cloud and AI systems — and the two companies I am building.',
+    exploreLabel: 'Explore',
+    reachLabel: 'Reach me',
+    cvLabel: 'Curriculum',
+    cvDownload: 'Download CV (PDF)',
+    cvOpen: 'Open in the browser',
     kicker: 'Footnote',
     prev: 'Previous joke',
     next: 'Next joke',
-    go: 'Go to joke',
     credit: '© 2026 Adal Cerrillo · Handmade, on more coffee than advisable.',
     jokes: [
       'Stated life goal: to be the real-life Tony Stark, Jarvis included. The suit is on version 0.1, but Jarvis already runs locally — and unlike the original, this one asks for approval before deploying to production.',
@@ -59,6 +144,7 @@ const en = {
     error: 'That did not send. Write to me directly at adalc3488@gmail.com.',
   },
   common: {
+    skipToContent: 'Skip to content',
     language: 'Language',
     back: 'Back',
     backToExperience: 'Back to Experience',
@@ -125,7 +211,7 @@ const en = {
       company: 'Radii Manufacturing',
       period: 'Jul 2025 — Present',
       title: 'Founding Software Engineer',
-      body: "Founding Software Engineer at Radii Manufacturing, a startup automating manufacturing through an AI-powered platform and a network of manufacturers, and one of the most promising startups in Latin America. I define the company's technical direction alongside the founding team — the stack, the architecture, and the engineering practices the platform is built on — turning an early-stage product into a system the business can scale on.",
+      body: "Founding Software Engineer at Radii Manufacturing, a startup automating manufacturing through an AI-powered platform and a network of manufacturers, and one of the most promising startups in Latin America. I define the company's technical direction alongside the founding team — the stack, the architecture, and the engineering practices the platform is built on — turning an early-stage product into a system the business can scale on. In the first year: the platform’s entire infrastructure migrated in two weeks, the automatic quoting engine built on a mathematical pricing algorithm — which took an account manager’s average quoting time from five days to one — and 80% of the operations team’s recurring work automated with AI agents.",
     },
     freelance: {
       company: 'Freelance',
@@ -141,9 +227,9 @@ const en = {
     },
     case: {
       company: 'Centre for Learning and Student Services',
-      period: '2022 — 2024',
-      title: 'Academic Mentor',
-      body: 'Three years as an academic mentor at CASE, supporting Software Engineering and Computer Engineering students through the subjects giving them trouble: Algebra, Calculus, Object-Oriented Programming, Data Structures, and Discrete Mathematics. More than thirty students supported. Teaching is where I developed knowledge transfer, teamwork, and the first form of leadership I exercised.',
+      period: '2022 — 2023',
+      title: 'Peer Mentor · Student Volunteer',
+      body: 'Two years volunteering at CASE while I was an undergraduate myself, helping other Software Engineering and Computer Engineering students through the subjects giving them trouble: Algebra, Calculus, Object-Oriented Programming, Data Structures, and Discrete Mathematics. More than thirty students came through those sessions. It was the student community looking after itself, and it is where I learned to hand knowledge over rather than just hold it.',
     },
   },
   projects: {

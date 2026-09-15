@@ -1,6 +1,7 @@
-/* The footer carries one joke at a time and nothing else, so it is built to be
-   quiet: a hairline above it, tertiary text, and controls that only gain
-   contrast on hover. */
+/* The footer now does two jobs, in this order: it is the last chance to send a
+   reader somewhere useful, and only then is it the one place on the site that
+   is not serious. The link block is set quietly — tertiary labels, secondary
+   links — so it never competes with the closing band directly above it. */
 
 .site-footer {
     max-width: 1180px;
@@ -9,11 +10,74 @@
     border-top: 1px solid var(--color-border-primary);
 }
 
+/* The brand column is wider than the three link columns: it carries a sentence,
+   they carry single words. */
+.site-footer-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    padding-bottom: 34px;
+}
+
+.site-footer-name {
+    margin: 0 0 8px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+}
+
+.site-footer-tagline {
+    margin: 0;
+    max-width: 34ch;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.site-footer-label {
+    margin: 0 0 14px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+}
+
+.site-footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Vertical padding rather than a taller line-height: it makes each row a 40px
+   target without opening a gap the eye has to cross between links. */
+.site-footer-nav a {
+    display: inline-block;
+    padding: 9px 0;
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.site-footer-nav a:hover,
+.site-footer-nav a:focus-visible {
+    color: var(--color-text-primary);
+}
+
 .site-footer-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-border-primary);
 }
 
 .site-footer-joke {
@@ -43,49 +107,48 @@
     flex: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
+/* 44px: the arrows used to be 34, which is under every touch-target guideline
+   there is, and they sit at the very bottom of the page where a thumb is least
+   accurate. The ring stays 34 — padding does the work. */
 .site-footer-arrow {
+    position: relative;
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     padding: 0;
-    border: 1px solid var(--color-border-primary);
-    border-radius: 999px;
+    border: 0;
     background: transparent;
     color: var(--color-text-tertiary);
     cursor: pointer;
-    transition: color var(--transition-base), border-color var(--transition-base),
-        background var(--transition-base);
+    transition: color var(--transition-base);
+}
+
+.site-footer-arrow::before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--color-border-primary);
+    border-radius: 999px;
+    transition: border-color var(--transition-base), background var(--transition-base);
 }
 
 .site-footer-arrow svg {
+    position: relative;
     width: 16px;
     height: 16px;
 }
 
-.site-footer-dots {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.site-footer-dot {
-    width: 7px;
-    height: 7px;
-    padding: 0;
-    border: 0;
-    border-radius: 999px;
-    background: var(--color-border-primary);
-    cursor: pointer;
-    transition: background var(--transition-base), transform var(--transition-base);
-}
-
-.site-footer-dot[data-active] {
-    background: var(--color-text-secondary);
-    transform: scale(1.25);
+.site-footer-count {
+    min-width: 44px;
+    text-align: center;
+    font-size: 0.76rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-tertiary);
 }
 
 .site-footer-credit {
@@ -97,12 +160,20 @@
 @media (hover: hover) and (pointer: fine) {
     .site-footer-arrow:hover {
         color: var(--color-text-primary);
+    }
+
+    .site-footer-arrow:hover::before {
         border-color: var(--color-border-hover);
         background: var(--color-bg-tertiary);
     }
+}
 
-    .site-footer-dot:hover {
-        background: var(--color-text-tertiary);
+/* Two columns before one: four columns at tablet width leaves each link column
+   about nine characters wide. */
+@media (max-width: 900px) {
+    .site-footer-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
     }
 }
 

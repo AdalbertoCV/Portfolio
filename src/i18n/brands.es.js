@@ -6,7 +6,7 @@ const brandsEs = {
   timeline: {
     badge: 'Trayectoria',
     title: 'Cinco frentes, un mismo criterio',
-    lede: 'Cinco frentes con responsabilidad sobre el resultado: una plataforma de manufactura con IA, una casa de desarrollo a medida, cartera propia de clientes, el laboratorio público donde inició mi formación profesional, y tres años enseñando las materias que sostienen la carrera.',
+    lede: 'Cinco frentes con responsabilidad sobre el resultado: una plataforma de manufactura con IA, una casa de desarrollo a medida, cartera propia de clientes, el laboratorio público donde inició mi formación profesional, y dos años de mentoría entre pares sobre las materias que sostienen la carrera.',
     featuredLabel: 'Foco actual',
     present: 'Actualidad',
     readStory: 'Ver la historia completa',
@@ -103,6 +103,7 @@ const brandsEs = {
     visitSite: 'radii.com.mx',
 
     kickers: {
+      impact: 'Lo que cambió',
       what: 'La plataforma',
       how: 'El proceso',
       build: 'Mi rol adentro',
@@ -142,12 +143,42 @@ const brandsEs = {
       },
     },
 
+    // Todos los números de esta página hasta aquí son de Radii. Estos son los
+    // únicos que son del ingeniero, que es justo la razón de la sección:
+    // "diseño los servicios" es una descripción de puesto, y un lector no
+    // puede distinguirla de alguien que vio un curso.
+    impactTitle: 'Qué ha cambiado desde que entré',
+    impactLede: 'Ingeniero fundador de una plataforma en su primer año. Estas son las cifras que ha movido el trabajo, no las especificaciones de la plataforma.',
+    impact: {
+      quote: {
+        value: '5 días → 1',
+        label: 'Tiempo promedio que tarda un account manager en cotizar una pieza',
+      },
+      ops: {
+        value: '80%',
+        label: 'Del trabajo recurrente del equipo operativo, automatizado con agentes de IA',
+      },
+      infra: {
+        value: '2 semanas',
+        label: 'Para migrar la infraestructura completa de la plataforma',
+      },
+      tickets: {
+        value: '700+',
+        label: 'Tickets cerrados',
+      },
+    },
+    impactNote: 'Más de 4,000 aportaciones de código desde julio de 2025, sobre toda la plataforma.',
+
     buildTitle: 'Lo que construyo ahí',
     buildLede: 'Mi incorporación como ingeniero fundador implica participación directa en la definición del stack, la arquitectura y las prácticas de ingeniería sobre las que se construye la plataforma, tanto en su diseño inicial como en su evolución.',
     build: {
       backend: {
         title: 'Servicios backend del núcleo',
         body: 'Diseño y desarrollo los servicios que sostienen los flujos centrales de manufactura, con foco en escalabilidad y confiabilidad del sistema.',
+      },
+      quoting: {
+        title: 'El cotizador automático',
+        body: 'Construí el motor que pone precio a una pieza: un algoritmo matemático que convierte geometría, material, acabado y volumen en un precio y un tiempo de entrega. Es la pieza que llevó el tiempo promedio de cotización de un account manager de cinco días a uno.',
       },
       workers: {
         title: 'Workers en la nube',
@@ -357,7 +388,7 @@ const brandsEs = {
   // ------------------------------------------------------------- Evodeps
   evodeps: {
     company: 'Evodeps',
-    period: 'Actualidad',
+    period: '2025 — Actualidad',
     title: 'Software Engineer',
     short: 'Desarrollo de software, equipamiento y prototipos tecnológicos a la medida de cada cliente.',
     body: 'Evodeps desarrolla software, equipamiento y prototipos e implementaciones tecnológicas personalizadas según las necesidades y el presupuesto de cada cliente. Su mayor diferenciador es la adaptabilidad: ajustar procesos, alcance y tecnología a lo que el proyecto realmente pide, en lugar de vender siempre la misma solución. Trabajo ahí como Software Engineer, dentro de equipos interdisciplinarios de desarrollo, diseño y prototipado.',
