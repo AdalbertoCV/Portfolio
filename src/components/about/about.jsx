@@ -22,6 +22,7 @@ import {
 } from '../../site';
 import TECH_GROUPS, { monogram } from './techStack';
 import READING from './reading';
+import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
 import './about.css';
@@ -159,6 +160,16 @@ const About = () => {
       'font-weight:400'
     );
   }, []);
+
+  if (process.env.NODE_ENV === 'development') {
+    PRACTICE_GROUPS.forEach((group) => {
+      const items = tl(`cv.practice.${group}Items`).length;
+      const icons = PRACTICE_ICONS[group]?.length || 0;
+      if (items !== icons) {
+        console.warn(`[practice] ${group}: ${items} items but ${icons} icons`);
+      }
+    });
+  }
 
   const certificates = [
     { key: 'icp', src: ICPImage, label: t('cv.certs.icp.name') },
@@ -319,9 +330,9 @@ const About = () => {
           <Reveal className="practice-block" key={group}>
             <h3 className="practice-title">{t(`cv.practice.${group}`)}</h3>
             <ul className="practice-list">
-              {tl(`cv.practice.${group}Items`).map((item) => (
+              {tl(`cv.practice.${group}Items`).map((item, index) => (
                 <li key={item}>
-                  <span className="practice-rule" aria-hidden="true" />
+                  <ConceptIcon className="list-icon" name={PRACTICE_ICONS[group][index]} />
                   {item}
                 </li>
               ))}
@@ -486,9 +497,9 @@ const About = () => {
               onToggle={() => toggleShelf(id)}
             >
               <ul className="reading-list">
-                {books.map(({ title, author }) => (
+                {books.map(({ title, author, icon }) => (
                   <li key={title}>
-                    <span className="reading-rule" aria-hidden="true" />
+                    <ConceptIcon className="list-icon" name={icon} />
                     <span className="reading-book">
                       <span className="reading-title">{title}</span>
                       <span className="reading-author">{author}</span>

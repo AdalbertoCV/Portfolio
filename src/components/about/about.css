@@ -1165,7 +1165,7 @@
 
 .practice-list li {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 14px;
     padding: 13px 0;
     font-size: 0.93rem;
@@ -1175,16 +1175,23 @@
     transition: color var(--transition-base);
 }
 
-/* A rule, not a bullet or a glyph: the list already reads as a list, so the
-   marker's only job is to hold the left edge and to have somewhere to go on
+/* A drawn mark per line, shared by the practice list and the shelves. It
+   carries meaning a dash could not — a balance for a trade-off, a spike on a
+   timeline for a postmortem — and it gives the row something to answer with on
    hover. */
-.practice-rule {
+.list-icon {
     flex: 0 0 auto;
-    width: 14px;
-    height: 1px;
-    background: var(--color-text-tertiary);
-    transform: translateY(-4px);
-    transition: width var(--transition-base), background var(--transition-base);
+    display: inline-flex;
+    width: 17px;
+    height: 17px;
+    color: var(--color-text-tertiary);
+    transform: translateY(3px);
+    transition: color var(--transition-base), transform var(--transition-base);
+}
+
+.list-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1192,9 +1199,10 @@
         color: var(--color-text-primary);
     }
 
-    .practice-list li:hover .practice-rule {
-        width: 24px;
-        background: var(--color-text-primary);
+    .practice-list li:hover .list-icon,
+    .reading-list li:hover .list-icon {
+        color: var(--color-text-primary);
+        transform: translateY(3px) scale(1.08);
     }
 }
 
@@ -1229,19 +1237,10 @@
 
 .reading-list li {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 14px;
     padding: 13px 0;
     border-bottom: 1px solid var(--color-border-primary);
-}
-
-.reading-rule {
-    flex: 0 0 auto;
-    width: 14px;
-    height: 1px;
-    background: var(--color-text-tertiary);
-    transform: translateY(-6px);
-    transition: width var(--transition-base), background var(--transition-base);
 }
 
 .reading-book {
@@ -1265,8 +1264,4 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .reading-list li:hover .reading-rule {
-        width: 24px;
-        background: var(--color-text-primary);
-    }
 }

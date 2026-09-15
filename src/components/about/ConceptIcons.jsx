@@ -1,7 +1,8 @@
-// Hand-drawn icons for the skills that have no vendor logo, because a
-// two-letter monogram is a placeholder and reads as one. Each icon draws the
-// thing itself — a pub/sub fan-out, a feedback loop, a chain of blocks — so the
-// grid stays legible as engineering rather than as a wall of initials.
+// The site's drawn icon vocabulary: the skills that have no vendor logo, the
+// fields on the frontier, the engineering practices, and the reading shelves.
+// Each icon draws the thing itself — a pub/sub fan-out, a feedback loop, a
+// balance for a trade-off — so a list stays legible as engineering rather than
+// as a row of identical bullets.
 //
 // All of them share one grammar with the icons on the brand pages: 24×24,
 // `currentColor`, 1.6 stroke, round caps. That is what keeps 37 vendor logos
@@ -546,6 +547,334 @@ const ICONS = {
       <path d="M13 2.8 6.5 13h4.8l-1.3 8.2L17 10.6h-4.8z" />
       <path d="M3 20.5h4.4" />
       <path d="M16.8 20.5h4.4" />
+    </svg>
+  ),
+  // --------------------------------------------------- practice and reading
+  // The engineering-practice list and the reading shelves. These are not
+  // technologies, so the rule is the same but the vocabulary is different: a
+  // balance for a trade-off, a scale for capacity, a spike on a timeline for
+  // a postmortem. Where an existing mark already says the thing — the eye for
+  // observability, the descent for optimisation — it is reused rather than
+  // redrawn in a second dialect.
+
+  architecture: (
+    <svg {...base}>
+      <rect x="3" y="3.5" width="7" height="6" rx="1.5" />
+      <rect x="14" y="3.5" width="7" height="6" rx="1.5" />
+      <rect x="8.5" y="14.5" width="7" height="6" rx="1.5" />
+      <path d="M6.5 9.5v2.5h11V9.5" />
+      <path d="M12 12v2.5" />
+    </svg>
+  ),
+
+  // A balance: two options, and the weight you have to accept either way.
+  tradeoff: (
+    <svg {...base}>
+      <path d="M12 4v16" />
+      <path d="M7.5 20h9" />
+      <path d="M4 8h16" />
+      <path d="M4 8 1.8 13a2.6 2.6 0 0 0 4.4 0z" />
+      <path d="M20 8l2.2 5a2.6 2.6 0 0 1-4.4 0z" />
+    </svg>
+  ),
+
+  dataModel: (
+    <svg {...base}>
+      <rect x="2.5" y="3" width="8" height="6" rx="1.4" />
+      <rect x="13.5" y="15" width="8" height="6" rx="1.4" />
+      <path d="M6.5 9v5.2a1.8 1.8 0 0 0 1.8 1.8h5.2" />
+      <path d="M5 5.4h3.2M5 7h2" />
+      <path d="M16 17.4h3.2M16 19h2" />
+    </svg>
+  ),
+
+  // Same box, more of it, and the headroom you planned for.
+  scale: (
+    <svg {...base}>
+      <rect x="2.5" y="14" width="5" height="6.5" rx="1.2" />
+      <rect x="9.5" y="9.5" width="5" height="11" rx="1.2" />
+      <rect x="16.5" y="5" width="5" height="15.5" rx="1.2" />
+      <path d="M2.5 3.2h6" strokeDasharray="2 1.8" />
+    </svg>
+  ),
+
+  // Where it breaks, and what it takes down with it.
+  risk: (
+    <svg {...base}>
+      <path d="M12 3.2 21.4 19.4a1.6 1.6 0 0 1-1.4 2.4H4a1.6 1.6 0 0 1-1.4-2.4z" />
+      <path d="M12 9.6v4.2" />
+      <path d="M12 17.6h.01" />
+    </svg>
+  ),
+
+  // One path fails, the other carries the traffic.
+  resilience: (
+    <svg {...base}>
+      <circle cx="4" cy="12" r="2.2" />
+      <circle cx="20" cy="12" r="2.2" />
+      <path d="M6.2 12h11.6" />
+      <path d="M6.6 10.4c2.6-4.6 8.2-4.6 10.8 0" strokeDasharray="2.2 1.8" />
+      <path d="m10.4 16.4 3.2-3.2M10.4 13.2l3.2 3.2" />
+    </svg>
+  ),
+
+  // The spike, after the fact, read rather than reacted to.
+  postmortem: (
+    <svg {...base}>
+      <path d="M2.5 15.5h4l2-6 2.6 9 2.2-5.4 1.6 2.4h2" />
+      <path d="M2.5 20.5h19" />
+      <circle cx="17.6" cy="6.4" r="3.4" />
+      <path d="m20.2 9 1.6 1.6" />
+    </svg>
+  ),
+
+  // A ledger of what was borrowed to ship sooner.
+  debt: (
+    <svg {...base}>
+      <rect x="3" y="3.5" width="18" height="17" rx="2.4" />
+      <path d="M7.5 8.5h9" />
+      <path d="M7.5 12.5h6" />
+      <path d="m14.6 17.4 1.8-1.8 1.8 1.8" />
+      <path d="M16.4 15.6v4.4" />
+    </svg>
+  ),
+
+  // The shield drawn into the plan, not bolted on after it.
+  secureDesign: (
+    <svg {...base}>
+      <path d="M4 5.6 12 2.8l8 2.8v6.1c0 4.6-3.3 8.2-8 9.5-4.7-1.3-8-4.9-8-9.5z" />
+      <path d="M9 11.4h6" strokeDasharray="1.8 1.6" />
+      <path d="M12 8.4v6" strokeDasharray="1.8 1.6" />
+    </svg>
+  ),
+
+  // Two arms, one measurement, a decision that follows from it.
+  experiment: (
+    <svg {...base}>
+      <path d="M12 3v4.4" />
+      <path d="M12 7.4 6.2 18.6a1.5 1.5 0 0 0 1.3 2.2h9a1.5 1.5 0 0 0 1.3-2.2z" />
+      <path d="M8.4 14.6h7.2" />
+      <path d="M9.6 3h4.8" />
+    </svg>
+  ),
+
+  // Request in at one end, value out at the other, everything in between owned.
+  endToEnd: (
+    <svg {...base}>
+      <circle cx="3.6" cy="12" r="1.8" />
+      <circle cx="12" cy="12" r="2.6" />
+      <circle cx="20.4" cy="12" r="1.8" />
+      <path d="M5.4 12h4M14.6 12h4" />
+      <path d="M12 5.4v4M12 14.6v4" strokeDasharray="2 1.8" />
+    </svg>
+  ),
+
+  team: (
+    <svg {...base}>
+      <circle cx="8.4" cy="8" r="3" />
+      <circle cx="16.6" cy="9.4" r="2.4" />
+      <path d="M2.8 19.6a5.6 5.6 0 0 1 11.2 0" />
+      <path d="M15.4 14.6a4.4 4.4 0 0 1 5.8 4.3" />
+    </svg>
+  ),
+
+  // A fixed-length loop that ends in something shippable.
+  scrum: (
+    <svg {...base}>
+      <path d="M20.6 12a8.6 8.6 0 1 1-2.6-6.1" />
+      <path d="M20.8 3.6v4.6h-4.6" />
+      <path d="m9 12.4 2.2 2.2 4.2-4.6" />
+    </svg>
+  ),
+
+  projectPlan: (
+    <svg {...base}>
+      <path d="M3 4.5h9" />
+      <path d="M7 9.5h11" />
+      <path d="M5 14.5h8" />
+      <path d="M10 19.5h9" />
+    </svg>
+  ),
+
+  docs: (
+    <svg {...base}>
+      <path d="M6 2.8h8.6L19 7.2v12.5a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5V4.3A1.5 1.5 0 0 1 6 2.8z" />
+      <path d="M14 2.8v4.6h4.6" />
+      <path d="M8 12.6h7M8 16.2h5" />
+    </svg>
+  ),
+
+  // Three different shapes, one table.
+  crossFunctional: (
+    <svg {...base}>
+      <circle cx="6" cy="6.4" r="3" />
+      <rect x="14.6" y="3.4" width="6" height="6" rx="1.4" />
+      <path d="M12 14.6 15.4 21H8.6z" />
+      <path d="M9 7.4h5" strokeDasharray="2 1.6" />
+      <path d="M16.6 10.4 13.4 15" strokeDasharray="2 1.6" />
+    </svg>
+  ),
+
+  // Rough, fast, and enough to answer the question.
+  prototype: (
+    <svg {...base}>
+      <rect x="3" y="4" width="18" height="16" rx="2.4" strokeDasharray="3 2.4" />
+      <path d="m13.4 8.4-4 4.6h3.4l-1.2 3.6 4.2-4.8h-3.4z" />
+    </svg>
+  ),
+
+  // The thing being handed over, and the person it lands with.
+  mentoring: (
+    <svg {...base}>
+      <circle cx="5" cy="12" r="2.6" fill="currentColor" stroke="none" />
+      <circle cx="19" cy="12" r="2.6" />
+      <path d="M8 12h5.4" />
+      <path d="m11.8 9.6 2.4 2.4-2.4 2.4" />
+    </svg>
+  ),
+
+  // You carry it, including the part that went wrong.
+  ownership: (
+    <svg {...base}>
+      <path d="M12 2.8 20 6.6v5.6c0 4.4-3.2 7.9-8 9-4.8-1.1-8-4.6-8-9V6.6z" />
+      <path d="m8.8 12 2.2 2.2 4.2-4.4" />
+    </svg>
+  ),
+
+  // Planted where nothing was.
+  entrepreneur: (
+    <svg {...base}>
+      <path d="M6.5 21V3.2" />
+      <path d="M6.5 4.4h11.2l-2 3.6 2 3.6H6.5" />
+      <circle cx="6.5" cy="21" r="1.4" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+
+  // Where it goes, and the fork you chose not to take.
+  strategy: (
+    <svg {...base}>
+      <circle cx="4.4" cy="19.6" r="1.8" />
+      <path d="M6 18.4C10 14 8.6 9 14.4 6.4" />
+      <path d="M6.6 16.4c3-.4 5-1.6 6-4" strokeDasharray="2 1.8" />
+      <circle cx="16.8" cy="5.4" r="2.6" />
+      <path d="M19.4 5.4h2.2" />
+    </svg>
+  ),
+
+  marketing: (
+    <svg {...base}>
+      <path d="M3.4 9.4v4.6a1.4 1.4 0 0 0 1.4 1.4h2.6l6.8 4.2V4.4L7.4 8.6H4.8a1.4 1.4 0 0 0-1.4 1.4z" />
+      <path d="M17.6 8.6c1.4 1.8 1.4 5 0 6.8" />
+      <path d="M20.4 6c2.4 3 2.4 9 0 12" />
+    </svg>
+  ),
+
+  finance: (
+    <svg {...base}>
+      <path d="M7 4.4v15.2M7 7h.01" />
+      <rect x="4.6" y="8.4" width="4.8" height="7.2" rx="1.2" />
+      <path d="M17 4.4v15.2" />
+      <rect x="14.6" y="6.6" width="4.8" height="10.8" rx="1.2" />
+      <path d="M2.5 21h19" />
+    </svg>
+  ),
+
+  robotics: (
+    <svg {...base}>
+      <rect x="7.4" y="2.8" width="9.2" height="6" rx="2" />
+      <path d="M10.4 5.8h.01M13.6 5.8h.01" />
+      <path d="M12 8.8v3.4" />
+      <path d="M12 12.2 5 16v5" />
+      <path d="M12 12.2 19 16" />
+      <path d="M17.4 21v-3.4" />
+      <path d="M3 21h4M15.4 21h4" />
+    </svg>
+  ),
+
+  // Compass and curve: the two halves of how an exact science is done.
+  exactSciences: (
+    <svg {...base}>
+      <path d="M12 3.4v3.2" />
+      <circle cx="12" cy="4.4" r="1.6" />
+      <path d="m11.2 6.2-5 14.4" />
+      <path d="m12.8 6.2 5 14.4" />
+      <path d="M8.8 14.6h6.4" />
+    </svg>
+  ),
+
+  research: (
+    <svg {...base}>
+      <path d="M6 2.8h7.6L18 7.2v6" />
+      <path d="M13 2.8v4.6h4.6" />
+      <path d="M6 2.8A1.5 1.5 0 0 0 4.5 4.3v15.4A1.5 1.5 0 0 0 6 21.2h5" />
+      <circle cx="16.8" cy="16.8" r="3.4" />
+      <path d="m19.4 19.4 2 2" />
+    </svg>
+  ),
+
+  ethicalHacking: (
+    <svg {...base}>
+      <path d="M4 5.6 12 2.8l8 2.8v6.1c0 4.6-3.3 8.2-8 9.5-4.7-1.3-8-4.9-8-9.5z" />
+      <path d="m9.4 9.6 2.2 2.2-2.2 2.2" />
+      <path d="M13.4 14.4h2.6" />
+    </svg>
+  ),
+
+  // Two gears: the point is not either one, it is that they mesh.
+  integration: (
+    <svg {...base}>
+      <circle cx="8.6" cy="8.6" r="3.2" />
+      <path d="M8.6 2.6v1.6M8.6 13v1.6M2.6 8.6h1.6M13 8.6h1.6M4.4 4.4l1.1 1.1M11.7 11.7l1.1 1.1M12.8 4.4l-1.1 1.1M5.5 11.7l-1.1 1.1" />
+      <circle cx="16.6" cy="16.6" r="2.6" />
+      <path d="M16.6 11.6v1.2M16.6 20.4v1.2M11.6 16.6h1.2M20.4 16.6h1.2" />
+    </svg>
+  ),
+
+  // ------------------------------------------------------------ the shelves
+  // The books take a small vocabulary rather than one mark each: a shelf where
+  // six titles share the "agents" mark is telling the reader something true
+  // about those six, which thirty bespoke drawings would not.
+
+  // The caret waiting for the instruction.
+  prompt: (
+    <svg {...base}>
+      <rect x="2.8" y="4.4" width="18.4" height="15.2" rx="2.4" />
+      <path d="m7 10 2.4 2.4L7 14.8" />
+      <path d="M12.4 14.8h4.6" />
+    </svg>
+  ),
+
+  // The weight a decision carries once a person is on the other side of it.
+  ethics: (
+    <svg {...base}>
+      <circle cx="12" cy="5" r="2.4" />
+      <path d="M12 7.4v4.2" />
+      <path d="M4.6 11.6h14.8" />
+      <path d="M4.6 11.6 2.6 16a2.4 2.4 0 0 0 4 0z" />
+      <path d="m19.4 11.6 2 4.4a2.4 2.4 0 0 1-4 0z" />
+      <path d="M8.6 21h6.8" />
+      <path d="M12 11.6V21" />
+    </svg>
+  ),
+
+  // The chisel, not the material.
+  craft: (
+    <svg {...base}>
+      <path d="m14.6 3.4 6 6-8.8 8.8-6-6z" />
+      <path d="m11.8 18.2-3 3H3.4l2.4-3z" />
+      <path d="m12.6 5.4 6 6" />
+    </svg>
+  ),
+
+  // Same behaviour, different shape.
+  refactor: (
+    <svg {...base}>
+      <rect x="2.6" y="3.4" width="7.4" height="7.4" rx="1.6" />
+      <circle cx="17.8" cy="17.2" r="3.8" />
+      <path d="M14.2 4.6h5.4v5.4" />
+      <path d="M19.6 4.6 14.6 9.6" />
+      <path d="M9.6 19.4H4.2V14" />
+      <path d="M4.2 19.4 9.2 14.4" />
     </svg>
   ),
 };
