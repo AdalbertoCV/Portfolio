@@ -57,11 +57,7 @@ const cvEs = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'Tecnologías con las que construyo',
-    skillsLede: 'Seleccionadas según el problema, no según la familiaridad. Primero lo que está en producción hoy; la lista completa, hasta lo que sigo explorando, está a un clic.',
-    skillsCoreLabel: 'En producción hoy',
-    skillsCoreNote: 'El stack detrás de la plataforma de Radii, que es donde se va la mayor parte de mi semana.',
-    skillsExpand: 'Ver el stack completo',
-    skillsCollapse: 'Ocultar el stack completo',
+    skillsLede: 'Seleccionadas en función del problema y no por familiaridad. El listado avanza de uso cotidiano a áreas en exploración.',
 
     practiceKicker: 'Práctica de ingeniería',
     practiceTitle: 'Cómo trabajo, no solo con qué',

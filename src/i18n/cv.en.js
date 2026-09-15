@@ -50,11 +50,7 @@ const cvEn = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'What I build with',
-    skillsLede: 'Selected according to the problem rather than to familiarity. What is in production today comes first; the full list, down to what I am still exploring, is one click away.',
-    skillsCoreLabel: 'In production today',
-    skillsCoreNote: 'The stack behind Radii’s platform, which is where most of my week goes.',
-    skillsExpand: 'See the full stack',
-    skillsCollapse: 'Hide the full stack',
+    skillsLede: 'Selected according to the problem rather than to familiarity. The list runs from daily use through to areas under exploration.',
 
     practiceKicker: 'Engineering practice',
     practiceTitle: 'How I work, not just what with',

@@ -307,21 +307,24 @@
     flex: 0 0 auto;
 }
 
-/* Solid-black marks only (flagged in techStack.js). Inverting a full-colour
-   logo would invent colours the brand does not own, so those are left alone. */
+/* Every mark on the wall is a silhouette, so the whole grid reverses with the
+   theme instead of a third of it staying lit. */
 :root[data-theme='dark'] .tech-icon[data-mono='true'] {
     filter: invert(1);
 }
 
-/* A coloured mark that is simply too dark for the dark card, and too coloured
-   to invert (inverting maroon gives cyan). It gets the same treatment as the
-   Radii wordmark on the brand pages: sit it on a light plate and keep its real
-   colours. */
-:root[data-theme='dark'] .tech-icon[data-plate='true'] {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 3px;
+/* The two marks that only exist as PNGs cannot be recoloured in the file, so
+   they are flattened to a solid silhouette by filter: desaturate, crush to
+   black, and invert that in the dark theme. Alpha survives both, which is why
+   this reads as the same mark rather than as a box. */
+.tech-icon[data-flat='true'] {
+    filter: grayscale(1) brightness(0);
 }
+
+:root[data-theme='dark'] .tech-icon[data-flat='true'] {
+    filter: grayscale(1) brightness(0) invert(1);
+}
+
 
 /* Stands in for a logo where none exists, so the grid has no holes in it. */
 .tech-monogram {

@@ -64,7 +64,7 @@ const TechTile = ({ item }) => (
         aria-hidden="true"
         loading="lazy"
         data-mono={item.mono ? 'true' : undefined}
-        data-plate={item.plate ? 'true' : undefined}
+        data-flat={item.flat ? 'true' : undefined}
       />
     ) : item.concept ? (
       <ConceptIcon className="tech-concept" name={item.concept} />
