@@ -1,12 +1,26 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
-import { Reveal, TalkBand } from '../brand/parts';
+import { ArrowUpRight, Reveal, TalkBand } from '../brand/parts';
 import ProjectCard from './ProjectCard';
-import CATALOGUE, { PROJECT_COUNT } from './catalogue';
+import { languageColor } from './ProjectGlyph';
+import CATALOGUE, { LANGUAGES, PROJECT_COUNT } from './catalogue';
 import './projects.css';
 
 const SWIPE_THRESHOLD = 50;
+
+// Matches a project against the search box. Name, language and tags rather
+// than the body copy: a reader typing "django" wants the Django projects, not
+// every paragraph that mentions it.
+const matches = (project, query, language) => {
+  if (language && project.language !== language) return false;
+  if (!query) return true;
+  const needle = query.trim().toLowerCase();
+  if (!needle) return true;
+  return [project.name, project.language, ...(project.tags || [])]
+    .filter(Boolean)
+    .some((field) => field.toLowerCase().includes(needle));
+};
 const MAX_SCROLLBAR_WIDTH = 40;
 
 const ChevronIcon = ({ direction }) => (
@@ -51,6 +65,11 @@ const MyProjects = () => {
   // expanded view can switch from fit-the-whole-thing to fill-the-height and
   // pan sideways.
   const [zoomed, setZoomed] = useState(false);
+  // The catalogue carries 46 tags and nine languages and used none of them.
+  // Twenty cards is more than a reader scans, and "show me the Django ones" is
+  // the question they actually arrive with.
+  const [query, setQuery] = useState('');
+  const [language, setLanguage] = useState('');
   const [canZoom, setCanZoom] = useState(false);
   const touchStartX = useRef(null);
   const viewportRef = useRef(null);
@@ -167,6 +186,14 @@ const MyProjects = () => {
 
   const hasMultiple = lightbox && lightbox.images.length > 1;
 
+  const filtered = CATALOGUE.map((group) => ({
+    ...group,
+    projects: group.projects.filter((project) => matches(project, query, language)),
+  })).filter((group) => group.projects.length > 0);
+
+  const shown = filtered.reduce((total, group) => total + group.projects.length, 0);
+  const filtering = Boolean(query || language);
+
   return (
     <div className="projects-page">
       <Reveal className="projects-header">
@@ -174,20 +201,109 @@ const MyProjects = () => {
         <h1 className="projects-title">{t('repos.title')}</h1>
         <p className="projects-lede">{t('repos.lede')}</p>
         <p className="projects-count">
-          <strong>{PROJECT_COUNT}</strong> {t('repos.countLabel')}
+          <strong>{filtering ? `${shown} / ${PROJECT_COUNT}` : PROJECT_COUNT}</strong>{' '}
+          {t('repos.countLabel')}
         </p>
       </Reveal>
 
-      {CATALOGUE.map(({ id, projects, wide }) => (
+      <Reveal className="projects-filter">
+        <label className="projects-search">
+          <span className="sr-only">{t('repos.searchLabel')}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
+               strokeLinecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m16.5 16.5 4 4" />
+          </svg>
+          <input
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder={t('repos.searchPlaceholder')}
+          />
+        </label>
+
+        {/* Languages rather than all 46 tags: nine chips is a row, and the tags
+            are reachable through the search box anyway. */}
+        <div className="projects-langs" role="group" aria-label={t('repos.filterLabel')}>
+          <button
+            type="button"
+            className="projects-lang"
+            data-active={language === '' ? 'true' : undefined}
+            aria-pressed={language === ''}
+            onClick={() => setLanguage('')}
+          >
+            {t('repos.allLanguages')}
+          </button>
+          {LANGUAGES.map((name) => (
+            <button
+              type="button"
+              className="projects-lang"
+              key={name}
+              data-active={language === name ? 'true' : undefined}
+              aria-pressed={language === name}
+              onClick={() => setLanguage(language === name ? '' : name)}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+      </Reveal>
+
+      {filtered.map(({ id, projects, wide, compact }) => (
         <Reveal className="project-group" key={id}>
           <h2 className="brand-stack-title">{t(`repos.groups.${id}`)}</h2>
-          <div className={`project-grid${wide ? ' is-wide' : ''}`}>
-            {projects.map((project) => (
-              <ProjectCard project={project} onExpand={setLightbox} key={project.key} />
-            ))}
-          </div>
+          {compact ? (
+            <ul className="project-compact">
+              {projects.map(({ key, name, url, language: lang, tags }) => (
+                <li key={key}>
+                  <span className="project-compact-dot" style={{ background: languageColor(lang) }} />
+                  <span className="project-compact-copy">
+                    <span className="project-compact-name">{t(`repos.items.${key}.title`)}</span>
+                    {/* Several entries carry their own language among the tags,
+                        so it is not printed twice. */}
+                    <span className="project-compact-meta">
+                      {[lang, ...(tags || []).filter((tag) => tag !== lang)].join(' · ')}
+                    </span>
+                  </span>
+                  {url ? (
+                    <a
+                      className="project-compact-link"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {name}
+                      <ArrowUpRight />
+                    </a>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className={`project-grid${wide ? ' is-wide' : ''}`}>
+              {projects.map((project) => (
+                <ProjectCard project={project} onExpand={setLightbox} key={project.key} />
+              ))}
+            </div>
+          )}
         </Reveal>
       ))}
+
+      {shown === 0 && (
+        <Reveal className="projects-empty">
+          <p>{t('repos.noMatches')}</p>
+          <button
+            type="button"
+            className="tech-toggle"
+            onClick={() => {
+              setQuery('');
+              setLanguage('');
+            }}
+          >
+            {t('repos.clearFilters')}
+          </button>
+        </Reveal>
+      )}
 
       <TalkBand />
 

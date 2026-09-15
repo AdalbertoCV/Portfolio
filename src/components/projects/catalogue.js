@@ -172,7 +172,34 @@ const CATALOGUE = [
     ],
   },
   {
+    id: 'security',
+    projects: [
+      {
+        key: 'picoctf',
+        copy: 'repos.items.picoctf',
+        name: 'Writeups_picoCTF',
+        url: `${OWNER}/Writeups_picoCTF`,
+        language: 'Shell',
+        tags: ['picoCTF', 'Bandit', 'Forensics'],
+      },
+      {
+        key: 'stroke',
+        copy: 'repos.items.stroke',
+        name: 'stroke_classification_RF',
+        url: `${OWNER}/stroke_classification_RF`,
+        language: 'R',
+        tags: ['R', 'Random Forest', 'Boruta', 'ROSE'],
+      },
+    ],
+  },
+  {
+    // A card gives a project a cover, a body and two actions — the weight of
+    // something somebody uses. These four are exercises from the degree, and
+    // at that weight they were dragging the client systems down to their
+    // level. Listed rather than carded: still here, still linked, no longer
+    // competing with a clinic's scheduling system.
     id: 'practice',
+    compact: true,
     projects: [
       {
         key: 'testing',
@@ -208,28 +235,14 @@ const CATALOGUE = [
       },
     ],
   },
-  {
-    id: 'security',
-    projects: [
-      {
-        key: 'picoctf',
-        copy: 'repos.items.picoctf',
-        name: 'Writeups_picoCTF',
-        url: `${OWNER}/Writeups_picoCTF`,
-        language: 'Shell',
-        tags: ['picoCTF', 'Bandit', 'Forensics'],
-      },
-      {
-        key: 'stroke',
-        copy: 'repos.items.stroke',
-        name: 'stroke_classification_RF',
-        url: `${OWNER}/stroke_classification_RF`,
-        language: 'R',
-        tags: ['R', 'Random Forest', 'Boruta', 'ROSE'],
-      },
-    ],
-  },
 ];
+
+// Every language in the catalogue, in the order the projects appear, so the
+// filter row is built from the data rather than from a second list somebody
+// has to remember to update.
+export const LANGUAGES = [
+  ...new Set(CATALOGUE.flatMap(({ projects }) => projects.map((project) => project.language))),
+].filter(Boolean);
 
 export const PROJECT_COUNT = CATALOGUE.reduce(
   (total, group) => total + group.projects.length,

@@ -338,3 +338,197 @@
         animation: none;
     }
 }
+
+/* ============================================================================
+   FILTER
+   ----------------------------------------------------------------------------
+   Twenty cards is more than anybody scans, and the catalogue was already
+   carrying nine languages and forty-six tags it never used. The box searches
+   names, languages and tags; the chips are languages only, because nine is a
+   row and forty-six is another wall.
+   ========================================================================= */
+
+.projects-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 20px;
+    margin: 0 0 40px;
+}
+
+.projects-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 260px;
+    max-width: 380px;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    color: var(--color-text-tertiary);
+    transition: border-color var(--transition-base);
+}
+
+.projects-search:focus-within {
+    border-color: var(--color-border-hover);
+}
+
+.projects-search svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+
+.projects-search input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-text-primary);
+    font-family: inherit;
+    font-size: 0.92rem;
+    padding: 11px 0;
+}
+
+.projects-search input:focus {
+    outline: none;
+}
+
+/* The browser's own clear button sits at a different size and colour in every
+   engine, and the chips already offer a way back to everything. */
+.projects-search input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.projects-langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.projects-lang {
+    min-height: 34px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-primary);
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color var(--transition-base), border-color var(--transition-base),
+        background var(--transition-base);
+}
+
+.projects-lang[data-active] {
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+    color: var(--color-bg-primary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .projects-lang:hover:not([data-active]) {
+        color: var(--color-text-primary);
+        border-color: var(--color-border-hover);
+    }
+}
+
+.projects-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 36px 0 12px;
+    color: var(--color-text-secondary);
+}
+
+.projects-empty p {
+    margin: 0;
+}
+
+/* ============================================================================
+   COURSEWORK, LISTED
+   ----------------------------------------------------------------------------
+   Same ruled list the engineering-practice section uses. A card would give
+   these the weight of a system somebody runs, which is the weight they were
+   borrowing from the client work above them.
+   ========================================================================= */
+
+.project-compact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.project-compact li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 2px;
+    border-bottom: 1px solid var(--color-border-primary);
+}
+
+.project-compact-dot {
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.project-compact-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.project-compact-name {
+    display: block;
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.project-compact-meta {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.8rem;
+    color: var(--color-text-tertiary);
+}
+
+.project-compact-link {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 44px;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.project-compact-link svg {
+    width: 13px;
+    height: 13px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .project-compact-link:hover {
+        color: var(--color-text-primary);
+    }
+}
+
+@media (max-width: 620px) {
+    .project-compact li {
+        flex-wrap: wrap;
+    }
+
+    .project-compact-link {
+        margin-left: 23px;
+    }
+}

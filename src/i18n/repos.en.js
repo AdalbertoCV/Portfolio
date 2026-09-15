@@ -7,6 +7,12 @@ const reposEn = {
     lede: 'Systems delivered to institutions, academic projects, architecture exercises and engineering practice. Projects with an interface include screenshots; the rest — APIs, pipelines and data structures — are identified by a signature generated from their name.',
     countLabel: 'projects',
     privateLabel: 'Private',
+    searchLabel: 'Search the catalogue',
+    searchPlaceholder: 'Django, Kafka, a project name…',
+    filterLabel: 'Filter by language',
+    allLanguages: 'All',
+    noMatches: 'Nothing in the catalogue matches that.',
+    clearFilters: 'Clear the filters',
     viewRepo: 'View repository',
     viewShots: 'View screenshots',
 

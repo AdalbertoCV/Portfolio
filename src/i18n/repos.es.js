@@ -9,6 +9,12 @@ const reposEs = {
     lede: 'Sistemas entregados a instituciones, proyectos académicos, ejercicios de arquitectura y práctica de ingeniería. Los proyectos con interfaz incluyen capturas; el resto —APIs, pipelines y estructuras de datos— se identifica mediante una firma generada a partir de su nombre.',
     countLabel: 'proyectos',
     privateLabel: 'Privado',
+    searchLabel: 'Buscar en el catálogo',
+    searchPlaceholder: 'Django, Kafka, el nombre de un proyecto…',
+    filterLabel: 'Filtrar por lenguaje',
+    allLanguages: 'Todos',
+    noMatches: 'Nada en el catálogo coincide con eso.',
+    clearFilters: 'Limpiar los filtros',
     viewRepo: 'Ver repositorio',
     viewShots: 'Ver capturas',
 
