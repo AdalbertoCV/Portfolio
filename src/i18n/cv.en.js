@@ -128,8 +128,18 @@ const cvEn = {
         year: '2023',
         body: 'The ICP Developer program run by the ICP Hub Latam community, taken from 11 to 18 September 2023: developer training on the Internet Computer protocol, the network where applications run on-chain instead of leaning on a conventional server.',
       },
-      langchain: { name: 'AI Agents with LangChain', issuer: 'Platzi', year: '2025' },
-      santander: { name: 'Emerging Technologies', issuer: 'Santander', year: '2024' },
+      langchain: {
+        name: 'AI Agents with LangChain',
+        issuer: 'Platzi',
+        year: '2025',
+        body: 'Training on building agents with LangChain: tools, memory, and the orchestration that turns a language model from something that answers into something that acts. It is the same ground the agent work at Radii stands on, where those ideas run in production under LangGraph.',
+      },
+      santander: {
+        name: 'Emerging Technologies',
+        issuer: 'Santander',
+        year: '2024',
+        body: 'A survey of the technologies reshaping industry — artificial intelligence, data, cloud and distributed systems among them — framed by what each one changes for a business rather than by how it is implemented. It is the one credential on this list that is about the criteria for adopting a technology rather than about building with it.',
+      },
       somece: {
         name: 'SOMECE International Congress',
         issuer: 'SOMECE',

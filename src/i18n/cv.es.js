@@ -135,8 +135,18 @@ const cvEs = {
         year: '2023',
         body: 'Programa ICP Developer de la comunidad ICP Hub Latam, cursado del 11 al 18 de septiembre de 2023: entrenamiento enfocado a la capacitación de desarrolladores en el protocolo de Internet Computer, la red sobre la que las aplicaciones se ejecutan on-chain en lugar de apoyarse en un servidor tradicional.',
       },
-      langchain: { name: 'Agentes de IA con LangChain', issuer: 'Platzi', year: '2025' },
-      santander: { name: 'Tecnologías Emergentes', issuer: 'Santander', year: '2024' },
+      langchain: {
+        name: 'Agentes de IA con LangChain',
+        issuer: 'Platzi',
+        year: '2025',
+        body: 'Formación en construcción de agentes con LangChain: herramientas, memoria y la orquestación que convierte a un modelo de lenguaje en algo que actúa y no solo responde. Es el mismo terreno sobre el que se apoya el trabajo con agentes en Radii, donde esas ideas corren en producción bajo LangGraph.',
+      },
+      santander: {
+        name: 'Tecnologías Emergentes',
+        issuer: 'Santander',
+        year: '2024',
+        body: 'Un recorrido por las tecnologías que están reconfigurando la industria —inteligencia artificial, datos, nube y sistemas distribuidos entre ellas— planteado desde qué cambia cada una para un negocio y no desde cómo se implementa. Es la única credencial de esta lista que trata sobre el criterio para adoptar una tecnología y no sobre construir con ella.',
+      },
       somece: {
         name: 'Congreso Internacional SOMECE',
         issuer: 'SOMECE',
