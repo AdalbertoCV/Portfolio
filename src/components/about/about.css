@@ -272,18 +272,18 @@
    ========================================================================= */
 
 /* ----------------------------------------------------------------------------
-   THE STACK, FOLDED
-   Twelve rows instead of a wall. Each row states its own size, so the section
-   still says how wide the stack is without making the reader scroll past it.
+   FOLDED LISTS — the stack, and the shelves
+   Rows instead of a wall. Each row states its own size, so a folded section
+   still says how big it is without making the reader scroll past it.
    ------------------------------------------------------------------------- */
 
-.tech-disclosure {
+.fold-all {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 6px;
 }
 
-.tech-toggle-all {
+.fold-all-button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -299,24 +299,24 @@
     transition: color var(--transition-base);
 }
 
-.tech-groups {
+.fold-list {
     list-style: none;
     margin: 0;
     padding: 0;
     border-top: 1px solid var(--color-border-primary);
 }
 
-.tech-group {
+.fold-row {
     border-bottom: 1px solid var(--color-border-primary);
 }
 
-.tech-group h3 {
+.fold-row h3 {
     margin: 0;
 }
 
 /* The whole row is the control: a 12px chevron is a poor target, and the row
    is the thing a reader is already pointing at. */
-.tech-group-head {
+.fold-head {
     width: 100%;
     display: flex;
     align-items: center;
@@ -333,13 +333,13 @@
     cursor: pointer;
 }
 
-.tech-group-name {
+.fold-name {
     flex: 1 1 auto;
     min-width: 0;
 }
 
 /* The count is the reason the folded row still carries information. */
-.tech-group-count {
+.fold-count {
     flex: 0 0 auto;
     font-family: inherit;
     font-size: 0.78rem;
@@ -351,7 +351,7 @@
     padding: 3px 10px;
 }
 
-.tech-chevron {
+.fold-chevron {
     flex: 0 0 auto;
     width: 16px;
     height: 16px;
@@ -359,27 +359,27 @@
     transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.tech-chevron.is-open {
+.fold-chevron.is-open {
     transform: rotate(180deg);
 }
 
-.tech-group .tech-grid {
+.fold-row .tech-grid {
     padding-bottom: 22px;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .tech-toggle-all:hover {
+    .fold-all-button:hover {
         color: var(--color-text-primary);
     }
 
-    .tech-group-head:hover .tech-chevron,
-    .tech-toggle-all:hover .tech-chevron {
+    .fold-head:hover .fold-chevron,
+    .fold-all-button:hover .fold-chevron {
         color: var(--color-text-primary);
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .tech-chevron {
+    .fold-chevron {
         transition: none;
     }
 }
@@ -1207,5 +1207,66 @@
 
     .practice-title {
         position: static;
+    }
+}
+
+/* ============================================================================
+   RECOMMENDED READING
+   ----------------------------------------------------------------------------
+   Set like the engineering-practice list rather than like the stack: a book is
+   a line of text, and a cover would be an image the site does not own and
+   could not recolour to match the rest of the page.
+   ========================================================================= */
+
+.reading-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 22px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    column-gap: 44px;
+}
+
+.reading-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--color-border-primary);
+}
+
+.reading-rule {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 1px;
+    background: var(--color-text-tertiary);
+    transform: translateY(-6px);
+    transition: width var(--transition-base), background var(--transition-base);
+}
+
+.reading-book {
+    min-width: 0;
+}
+
+.reading-title {
+    display: block;
+    font-size: 0.93rem;
+    line-height: 1.45;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.reading-author {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--color-text-secondary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .reading-list li:hover .reading-rule {
+        width: 24px;
+        background: var(--color-text-primary);
     }
 }

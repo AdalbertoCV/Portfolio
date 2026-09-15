@@ -114,6 +114,18 @@ const cvEs = {
       english: { name: 'Inglés', level: 'C1 — Avanzado' },
     },
 
+    readingKicker: 'Lectura',
+    readingTitle: 'Literatura recomendada',
+    readingLede:
+      'Los libros que le paso a quien pregunta por dónde empezar, y los que vuelvo a abrir.',
+    readingGroups: {
+      ai: 'IA y LLMs',
+      craft: 'Oficio de ingeniería',
+      leadership: 'Liderazgo y equipos',
+    },
+    readingExpandAll: 'Abrir todas las estanterías',
+    readingCollapseAll: 'Cerrar todas las estanterías',
+
     certsKicker: 'Certificaciones',
     certsTitle: 'Certificaciones y logros',
     certs: {

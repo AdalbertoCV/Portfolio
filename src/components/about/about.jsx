@@ -21,6 +21,7 @@ import {
   YOUTUBE,
 } from '../../site';
 import TECH_GROUPS, { monogram } from './techStack';
+import READING from './reading';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
 import './about.css';
@@ -53,6 +54,49 @@ const CERT_LINKS = {
   somece:
     'https://www.google.com.mx/books/edition/Proleg%C3%B3menos_de_la_Inteligencia_Artific/m-I2EQAAQBAJ?hl=es&gbpv=1&pg=PA111&printsec=frontcover',
 };
+
+/**
+ * One folded row: a name, how many things are behind it, and a way in. Two
+ * sections use it — the stack and the reading list — and both were long enough
+ * that open by default meant a reader scrolled past them rather than read them.
+ *
+ * Children are rendered only when open rather than hidden with CSS. For the
+ * stack that is 253 logo requests a reader who never opens a group does not
+ * pay for; for the books it keeps the DOM honest.
+ */
+const Fold = ({ id, title, count, open, onToggle, children }) => (
+  <li className="fold-row">
+    <h3>
+      <button
+        type="button"
+        className="fold-head"
+        onClick={onToggle}
+        aria-expanded={open}
+        aria-controls={id}
+      >
+        <span className="fold-name">{title}</span>
+        <span className="fold-count">{count}</span>
+        <Chevron className={`fold-chevron${open ? ' is-open' : ''}`} />
+      </button>
+    </h3>
+    <div id={id} hidden={!open}>
+      {open && children}
+    </div>
+  </li>
+);
+
+/**
+ * The control above a set of folds. Its label states what the click does, not
+ * what the current state is, which is the one that stays true after the click.
+ */
+const FoldAll = ({ allOpen, onToggle, openLabel, closeLabel }) => (
+  <Reveal className="fold-all">
+    <button type="button" className="fold-all-button" onClick={onToggle}>
+      {allOpen ? closeLabel : openLabel}
+      <Chevron className={`fold-chevron${allOpen ? ' is-open' : ''}`} />
+    </button>
+  </Reveal>
+);
 
 const TechTile = ({ item }) => (
   <li className="tech-tile">
@@ -94,6 +138,15 @@ const About = () => {
     setOpenGroups((open) =>
       open.length === TECH_GROUPS.length ? [] : TECH_GROUPS.map((group) => group.id)
     );
+
+  const [openShelves, setOpenShelves] = useState([]);
+  const allShelvesOpen = openShelves.length === READING.length;
+
+  const toggleShelf = (id) =>
+    setOpenShelves((open) => (open.includes(id) ? open.filter((x) => x !== id) : [...open, id]));
+
+  const toggleAllShelves = () =>
+    setOpenShelves((open) => (open.length === READING.length ? [] : READING.map((g) => g.id)));
 
   // For whoever opens devtools on a portfolio, which is its own kind of
   // introduction. Runs once per mount, says nothing the page needs.
@@ -223,46 +276,30 @@ const About = () => {
           twelve rows: the group name, how many marks are in it, and a way in.
           Nothing was cut — the count on each row is the whole group. */}
       <Section kicker={t('cv.skillsKicker')} title={t('cv.skillsTitle')} lede={t('cv.skillsLede')}>
-        <Reveal className="tech-disclosure">
-          <button type="button" className="tech-toggle-all" onClick={toggleAllGroups}>
-            {allGroupsOpen ? t('cv.skillsCollapseAll') : t('cv.skillsExpandAll')}
-            <Chevron className={`tech-chevron${allGroupsOpen ? ' is-open' : ''}`} />
-          </button>
-        </Reveal>
+        <FoldAll
+          allOpen={allGroupsOpen}
+          onToggle={toggleAllGroups}
+          openLabel={t('cv.skillsExpandAll')}
+          closeLabel={t('cv.skillsCollapseAll')}
+        />
 
-        <Reveal as="ul" className="tech-groups">
-          {TECH_GROUPS.map(({ id, items }) => {
-            const open = openGroups.includes(id);
-            return (
-              <li className="tech-group" key={id}>
-                <h3>
-                  <button
-                    type="button"
-                    className="tech-group-head"
-                    onClick={() => toggleGroup(id)}
-                    aria-expanded={open}
-                    aria-controls={`stack-${id}`}
-                  >
-                    <span className="tech-group-name">{t(`skills.groups.${id}`)}</span>
-                    <span className="tech-group-count">{items.length}</span>
-                    <Chevron className={`tech-chevron${open ? ' is-open' : ''}`} />
-                  </button>
-                </h3>
-                {/* Mounted on open rather than hidden with CSS: 253 logos is 253
-                    requests, and a reader who never opens a group should not
-                    pay for them. */}
-                <div id={`stack-${id}`} hidden={!open}>
-                  {open && (
-                    <ul className="tech-grid">
-                      {items.map((item) => (
-                        <TechTile item={item} key={item.name} />
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </li>
-            );
-          })}
+        <Reveal as="ul" className="fold-list">
+          {TECH_GROUPS.map(({ id, items }) => (
+            <Fold
+              key={id}
+              id={`stack-${id}`}
+              title={t(`skills.groups.${id}`)}
+              count={items.length}
+              open={openGroups.includes(id)}
+              onToggle={() => toggleGroup(id)}
+            >
+              <ul className="tech-grid">
+                {items.map((item) => (
+                  <TechTile item={item} key={item.name} />
+                ))}
+              </ul>
+            </Fold>
+          ))}
         </Reveal>
       </Section>
 
@@ -419,6 +456,48 @@ const About = () => {
               </div>
             </div>
           </article>
+        </Reveal>
+      </Section>
+
+      {/* ------------------------------------------------------------- reading */}
+      {/* Folded like the stack, and for the same reason: twenty-five books
+          listed flat is a wall, and the shelf a reader wants is the one they
+          came looking for. */}
+      <Section
+        kicker={t('cv.readingKicker')}
+        title={t('cv.readingTitle')}
+        lede={t('cv.readingLede')}
+      >
+        <FoldAll
+          allOpen={allShelvesOpen}
+          onToggle={toggleAllShelves}
+          openLabel={t('cv.readingExpandAll')}
+          closeLabel={t('cv.readingCollapseAll')}
+        />
+
+        <Reveal as="ul" className="fold-list">
+          {READING.map(({ id, books }) => (
+            <Fold
+              key={id}
+              id={`shelf-${id}`}
+              title={t(`cv.readingGroups.${id}`)}
+              count={books.length}
+              open={openShelves.includes(id)}
+              onToggle={() => toggleShelf(id)}
+            >
+              <ul className="reading-list">
+                {books.map(({ title, author }) => (
+                  <li key={title}>
+                    <span className="reading-rule" aria-hidden="true" />
+                    <span className="reading-book">
+                      <span className="reading-title">{title}</span>
+                      <span className="reading-author">{author}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Fold>
+          ))}
         </Reveal>
       </Section>
 

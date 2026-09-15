@@ -107,6 +107,18 @@ const cvEn = {
       english: { name: 'English', level: 'C1 — Advanced' },
     },
 
+    readingKicker: 'Reading',
+    readingTitle: 'Recommended reading',
+    readingLede:
+      'The books I hand to somebody who asks where to start, and the ones I go back to.',
+    readingGroups: {
+      ai: 'AI and LLMs',
+      craft: 'Engineering craft',
+      leadership: 'Leadership and teams',
+    },
+    readingExpandAll: 'Open every shelf',
+    readingCollapseAll: 'Close every shelf',
+
     certsKicker: 'Certifications',
     certsTitle: 'Certifications and achievements',
     certs: {

@@ -5,7 +5,7 @@
 //
 // All of them share one grammar with the icons on the brand pages: 24×24,
 // `currentColor`, 1.6 stroke, round caps. That is what keeps 37 vendor logos
-// and 26 drawn marks reading as one set.
+// and every drawn mark reading as one set.
 
 const base = {
   viewBox: '0 0 24 24',
@@ -381,6 +381,171 @@ const ICONS = {
       <path d="M20 3.5v6a1.5 1.5 0 0 1-1.5 1.5H16" />
       <path d="m10.2 5.3 1.8-1.8 1.8 1.8" />
       <path d="m14.2 12.7 1.8-1.8-1.8-1.8" />
+    </svg>
+  ),
+  // ---------------------------------------------------------------- frontier
+  // Everything below is a field rather than a tool, so there is no vendor mark
+  // to borrow and every one of them is drawn. Each draws the mechanism, not a
+  // mascot: a qubit on its Bloch sphere, a lattice standing in for the hard
+  // problem post-quantum cryptography rests on, weights travelling back to a
+  // centre without the data that produced them.
+
+  // A qubit: the Bloch sphere with its state vector, which is the whole point
+  // — a position on a sphere rather than one of two poles.
+  quantum: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="8.5" />
+      <ellipse cx="12" cy="12" rx="8.5" ry="3.4" />
+      <path d="M12 12 16.4 6.6" />
+      <circle cx="16.4" cy="6.6" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+
+  // The lattice problem the post-quantum schemes stand on, with the shortest
+  // vector marked.
+  postQuantum: (
+    <svg {...base}>
+      <path d="M3 18.5 9 6.5" />
+      <path d="M9.5 20 16 5" />
+      <path d="M2.5 13.5h18" />
+      <path d="M5 8.5h15" />
+      <circle cx="7.2" cy="13.5" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="14.4" cy="8.5" r="1.4" fill="currentColor" stroke="none" />
+      <path d="M7.2 13.5 14.4 8.5" strokeWidth="2.2" />
+    </svg>
+  ),
+
+  // A die with a neuron on it: computation shaped like the brain rather than
+  // like a bus and a clock.
+  neuromorphic: (
+    <svg {...base}>
+      <rect x="4.5" y="4.5" width="15" height="15" rx="3" />
+      <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2" />
+      <circle cx="9.4" cy="10.4" r="1.5" />
+      <circle cx="14.8" cy="9.2" r="1.2" />
+      <circle cx="13.6" cy="14.6" r="1.2" />
+      <path d="m10.8 10 2.8-.6M10.4 11.7l2.6 2.2" />
+    </svg>
+  ),
+
+  // A frame held in space: the screen stops being the surface and becomes a
+  // volume.
+  spatial: (
+    <svg {...base}>
+      <path d="M12 2.8 20.5 7v10L12 21.2 3.5 17V7z" />
+      <path d="M3.5 7 12 11.3 20.5 7" />
+      <path d="M12 11.3v9.9" />
+    </svg>
+  ),
+
+  // A signal read off the head and turned into a line somebody can act on.
+  bci: (
+    <svg {...base}>
+      <path d="M15.5 18.5v2.8" />
+      <path d="M8.2 20.4v-3.2a6.8 6.8 0 1 1 9.4-7.9c1.4.4 2.4 1.4 2.4 2.6 0 .8-.7 1.4-1.6 1.4h-1.2v2.2a1.7 1.7 0 0 1-1.7 1.7h-1.7" />
+      <path d="M5.5 10.6h1.6l1-2.2 1.4 4 1.1-2.4h1.5" />
+    </svg>
+  ),
+
+  // Act, observe, get rewarded, act again — the loop that is the method.
+  reinforcement: (
+    <svg {...base}>
+      <rect x="2.5" y="8.5" width="7" height="7" rx="1.8" />
+      <rect x="14.5" y="8.5" width="7" height="7" rx="1.8" />
+      <path d="M9.5 10.6h5" />
+      <path d="m12.8 8.9 1.9 1.7-1.9 1.7" />
+      <path d="M14.5 14h-5" />
+      <path d="m11.2 12.3-1.9 1.7 1.9 1.7" />
+      <path d="M12 2.5v3.4" />
+      <path d="m10.3 4.6 1.7-2.1 1.7 2.1" />
+    </svg>
+  ),
+
+  // An eye reading a grid: the picture arrives as numbers.
+  vision: (
+    <svg {...base}>
+      <path d="M1.8 12s3.8-6.4 10.2-6.4S22.2 12 22.2 12s-3.8 6.4-10.2 6.4S1.8 12 1.8 12z" />
+      <circle cx="12" cy="12" r="3.1" />
+      <path d="M9.6 9.6h4.8v4.8H9.6z" strokeWidth="1.1" strokeDasharray="1.6 1.4" />
+    </svg>
+  ),
+
+  // Weights travelling back to the centre; the data never leaves the edge.
+  federated: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="3" />
+      <circle cx="4.2" cy="5.4" r="2.2" />
+      <circle cx="19.8" cy="5.4" r="2.2" />
+      <circle cx="4.2" cy="18.6" r="2.2" />
+      <circle cx="19.8" cy="18.6" r="2.2" />
+      <path d="m6 6.8 3.6 3M18 6.8l-3.6 3M6 17.2l3.6-3M18 17.2l-3.6-3" strokeDasharray="2.2 1.8" />
+    </svg>
+  ),
+
+  // A lock that stays shut while the work happens inside it.
+  privacyComputing: (
+    <svg {...base}>
+      <rect x="3.5" y="10" width="17" height="10.5" rx="2.4" />
+      <path d="M7.4 10V7.2a4.6 4.6 0 0 1 9.2 0V10" />
+      <path d="M9.2 15.2h5.6" />
+      <path d="M12 12.6v5.2" />
+    </svg>
+  ),
+
+  // A property proved over the whole space, not sampled at a few points.
+  formalVerification: (
+    <svg {...base}>
+      <path d="M8 3.5H6.2A1.7 1.7 0 0 0 4.5 5.2v5.1L2.8 12l1.7 1.7v5.1a1.7 1.7 0 0 0 1.7 1.7H8" />
+      <path d="M16 3.5h1.8a1.7 1.7 0 0 1 1.7 1.7v5.1L21.2 12l-1.7 1.7v5.1a1.7 1.7 0 0 1-1.7 1.7H16" />
+      <path d="m9.2 12.2 2 2 3.6-4.4" />
+    </svg>
+  ),
+
+  // A part that exists because it was built up in layers, which is a different
+  // set of constraints from one that was cut down from a block.
+  additive: (
+    <svg {...base}>
+      <path d="M9 2.8h6v3.4l-1.4 2.2h-3.2L9 6.2z" />
+      <path d="M12 8.4v2.2" />
+      <path d="M6.5 20.5h11" />
+      <path d="M8.2 17.4h7.6" />
+      <path d="M9.4 14.3h5.2" />
+    </svg>
+  ),
+
+  // Many cheap agents, one behaviour that none of them holds on its own.
+  swarm: (
+    <svg {...base}>
+      <circle cx="6" cy="7.4" r="1.7" />
+      <circle cx="12" cy="4.6" r="1.7" />
+      <circle cx="18" cy="8" r="1.7" />
+      <circle cx="8.4" cy="13.6" r="1.7" />
+      <circle cx="15.2" cy="14.4" r="1.7" />
+      <circle cx="11.4" cy="19.6" r="1.7" />
+      <path d="m7.4 8.4 3.2 3.8M13.6 6l3.2 1.2M16.8 9.4l-.6 3.4M10.1 14.6l3.4.4M13.9 15.8l-1.7 2.4M9 15.2l1.6 3" strokeDasharray="2 1.6" />
+    </svg>
+  ),
+
+  // The arrow that says which way the effect runs, which correlation cannot.
+  causal: (
+    <svg {...base}>
+      <circle cx="5" cy="6" r="2.2" />
+      <circle cx="19" cy="6" r="2.2" />
+      <circle cx="12" cy="18" r="2.2" />
+      <path d="M7.2 6h9.6" />
+      <path d="m14.8 4.4 2 1.6-2 1.6" />
+      <path d="M6.2 8 10.6 16" />
+      <path d="m8.5 15 2.3 1 .3-2.5" />
+      <path d="M17.8 8 13.4 16" strokeDasharray="2 1.8" />
+    </svg>
+  ),
+
+  // Work measured by what it costs to run, not only by whether it runs.
+  greenCompute: (
+    <svg {...base}>
+      <path d="M13 2.8 6.5 13h4.8l-1.3 8.2L17 10.6h-4.8z" />
+      <path d="M3 20.5h4.4" />
+      <path d="M16.8 20.5h4.4" />
     </svg>
   ),
 };
