@@ -50,7 +50,9 @@ const cvEn = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'What I build with',
-    skillsLede: 'Selected according to the problem rather than to familiarity. The list runs from daily use through to areas under exploration.',
+    skillsLede: 'Selected according to the problem rather than to familiarity. The list runs from daily use through to areas under exploration — open the group you care about.',
+    skillsExpandAll: 'Open every group',
+    skillsCollapseAll: 'Close every group',
 
     practiceKicker: 'Engineering practice',
     practiceTitle: 'How I work, not just what with',

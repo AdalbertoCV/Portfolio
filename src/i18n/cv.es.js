@@ -57,7 +57,9 @@ const cvEs = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'Tecnologías con las que construyo',
-    skillsLede: 'Seleccionadas en función del problema y no por familiaridad. El listado avanza de uso cotidiano a áreas en exploración.',
+    skillsLede: 'Seleccionadas en función del problema y no por familiaridad. El listado avanza de uso cotidiano a áreas en exploración; abre el grupo que te interese.',
+    skillsExpandAll: 'Abrir todos los grupos',
+    skillsCollapseAll: 'Cerrar todos los grupos',
 
     practiceKicker: 'Práctica de ingeniería',
     practiceTitle: 'Cómo trabajo, no solo con qué',

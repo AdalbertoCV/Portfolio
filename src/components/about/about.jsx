@@ -11,7 +11,7 @@ import someceImage from '../../images/Achievements/constancia1.png';
 import ICPImage from '../../images/Achievements/constancia2.png';
 import rbrMark from '../../images/releasebeforeready.svg';
 import { useTranslation } from '../../i18n/I18nProvider';
-import { ArrowRight, ArrowUpRight, Reveal, Section } from '../brand/parts';
+import { ArrowRight, ArrowUpRight, Chevron, Reveal, Section } from '../brand/parts';
 import {
   CONTACT_EMAIL,
   CV_FILENAME,
@@ -82,6 +82,18 @@ const TechTile = ({ item }) => (
 const About = () => {
   const { t, tl } = useTranslation();
   const [activeImage, setActiveImage] = useState(null);
+  // Open groups, by id. An array rather than a Set so the render reads the
+  // same way it is written.
+  const [openGroups, setOpenGroups] = useState([]);
+  const allGroupsOpen = openGroups.length === TECH_GROUPS.length;
+
+  const toggleGroup = (id) =>
+    setOpenGroups((open) => (open.includes(id) ? open.filter((x) => x !== id) : [...open, id]));
+
+  const toggleAllGroups = () =>
+    setOpenGroups((open) =>
+      open.length === TECH_GROUPS.length ? [] : TECH_GROUPS.map((group) => group.id)
+    );
 
   // For whoever opens devtools on a portfolio, which is its own kind of
   // introduction. Runs once per mount, says nothing the page needs.
@@ -206,17 +218,52 @@ const About = () => {
       </Section>
 
       {/* --------------------------------------------------------------- stack */}
+      {/* Twelve groups and 285 tiles is a wall, and a wall is something a
+          reader scrolls past rather than reads. Folded, the same content is
+          twelve rows: the group name, how many marks are in it, and a way in.
+          Nothing was cut — the count on each row is the whole group. */}
       <Section kicker={t('cv.skillsKicker')} title={t('cv.skillsTitle')} lede={t('cv.skillsLede')}>
-        {TECH_GROUPS.map(({ id, items }) => (
-          <Reveal className="tech-group" key={id}>
-            <h3 className="brand-stack-title">{t(`skills.groups.${id}`)}</h3>
-            <ul className="tech-grid">
-              {items.map((item) => (
-                <TechTile item={item} key={item.name} />
-              ))}
-            </ul>
-          </Reveal>
-        ))}
+        <Reveal className="tech-disclosure">
+          <button type="button" className="tech-toggle-all" onClick={toggleAllGroups}>
+            {allGroupsOpen ? t('cv.skillsCollapseAll') : t('cv.skillsExpandAll')}
+            <Chevron className={`tech-chevron${allGroupsOpen ? ' is-open' : ''}`} />
+          </button>
+        </Reveal>
+
+        <Reveal as="ul" className="tech-groups">
+          {TECH_GROUPS.map(({ id, items }) => {
+            const open = openGroups.includes(id);
+            return (
+              <li className="tech-group" key={id}>
+                <h3>
+                  <button
+                    type="button"
+                    className="tech-group-head"
+                    onClick={() => toggleGroup(id)}
+                    aria-expanded={open}
+                    aria-controls={`stack-${id}`}
+                  >
+                    <span className="tech-group-name">{t(`skills.groups.${id}`)}</span>
+                    <span className="tech-group-count">{items.length}</span>
+                    <Chevron className={`tech-chevron${open ? ' is-open' : ''}`} />
+                  </button>
+                </h3>
+                {/* Mounted on open rather than hidden with CSS: 253 logos is 253
+                    requests, and a reader who never opens a group should not
+                    pay for them. */}
+                <div id={`stack-${id}`} hidden={!open}>
+                  {open && (
+                    <ul className="tech-grid">
+                      {items.map((item) => (
+                        <TechTile item={item} key={item.name} />
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </Reveal>
       </Section>
 
       {/* ------------------------------------------------------------ practice */}
