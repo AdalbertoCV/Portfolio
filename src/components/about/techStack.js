@@ -114,6 +114,21 @@ import wiresharkIcon from '../../images/tech/wireshark.svg';
 import burpIcon from '../../images/tech/burpsuite.svg';
 import metasploitIcon from '../../images/tech/metasploit.svg';
 import jwt from '../../images/jwt.png';
+import metaIcon from '../../images/tech/meta.svg';
+import unityIcon from '../../images/tech/unity.svg';
+import unrealengineIcon from '../../images/tech/unrealengine.svg';
+import godotengineIcon from '../../images/tech/godotengine.svg';
+import blenderIcon from '../../images/tech/blender.svg';
+import asepriteIcon from '../../images/tech/aseprite.svg';
+import riveIcon from '../../images/tech/rive.svg';
+import lottiefilesIcon from '../../images/tech/lottiefiles.svg';
+import davinciresolveIcon from '../../images/tech/davinciresolve.svg';
+import obsstudioIcon from '../../images/tech/obsstudio.svg';
+import ffmpegIcon from '../../images/tech/ffmpeg.svg';
+import audacityIcon from '../../images/tech/audacity.svg';
+import gimpIcon from '../../images/tech/gimp.svg';
+import kritaIcon from '../../images/tech/krita.svg';
+import inkscapeIcon from '../../images/tech/inkscape.svg';
 import langgraphIcon from '../../images/tech/langgraph.svg';
 import scalaIcon from '../../images/tech/scala.svg';
 import swiftIcon from '../../images/tech/swift.svg';
@@ -431,6 +446,10 @@ const TECH_GROUPS = [
       { name: 'Replicate', icon: replicateIcon, mono: true },
       { name: 'Mistral', icon: mistralaiIcon, mono: true },
       { name: 'Perplexity', icon: perplexityIcon, mono: true },
+      // Meta has not published a mark for Muse, so the tile carries Meta's own,
+      // the way Codex carries OpenAI's and NemoClaw carries NVIDIA's. The name
+      // says which product it is.
+      { name: 'Muse (Meta)', icon: metaIcon, mono: true },
     ],
   },
   {
@@ -610,6 +629,27 @@ const TECH_GROUPS = [
       { name: 'E-commerce', concept: 'ecommerce' },
       { name: 'Payments & checkout', concept: 'payments' },
       { name: 'SEO & analytics', concept: 'seo' },
+    ],
+  },
+  {
+    // Engines, 3D, video, audio and raster/vector. The half of the craft that
+    // produces something to look at rather than something to call.
+    id: 'media',
+    items: [
+      { name: 'Unity', icon: unityIcon, mono: true },
+      { name: 'Unreal Engine', icon: unrealengineIcon, mono: true },
+      { name: 'Godot', icon: godotengineIcon, mono: true },
+      { name: 'Blender', icon: blenderIcon, mono: true },
+      { name: 'Aseprite', icon: asepriteIcon, mono: true },
+      { name: 'Rive', icon: riveIcon, mono: true },
+      { name: 'Lottie', icon: lottiefilesIcon, mono: true },
+      { name: 'DaVinci Resolve', icon: davinciresolveIcon, mono: true },
+      { name: 'OBS Studio', icon: obsstudioIcon, mono: true },
+      { name: 'FFmpeg', icon: ffmpegIcon, mono: true },
+      { name: 'Audacity', icon: audacityIcon, mono: true },
+      { name: 'GIMP', icon: gimpIcon, mono: true },
+      { name: 'Krita', icon: kritaIcon, mono: true },
+      { name: 'Inkscape', icon: inkscapeIcon, mono: true },
     ],
   },
   {

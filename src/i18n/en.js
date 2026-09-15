@@ -189,6 +189,7 @@ const en = {
       data: 'Data',
       frontend: 'Frontend & mobile',
       web: 'CMS, e-commerce & web',
+      media: 'Games, animation & multimedia',
       tools: 'Tooling & practice',
       joke: 'And, above all, expert in PSeInt (joke)',
       frontier: 'Frontiers I explore',
