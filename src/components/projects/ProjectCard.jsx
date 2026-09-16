@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
-import PlayGlyph from './PlayGlyph';
+import ProjectCover, { hasCover } from './ProjectCovers';
 import ProjectGlyph, { languageColor } from './ProjectGlyph';
 
 /* ==========================================================================
@@ -73,8 +73,14 @@ const ProjectCard = ({ project, onExpand }) => {
           </span>
         </button>
       ) : (
-        <div className="project-cover">
-          {to ? <PlayGlyph /> : <ProjectGlyph name={name} language={language} />}
+        // A drawn cover where the project has one, and the generated Truchet
+        // signature for whatever is left.
+        <div className={`project-cover${hasCover(key) ? ' is-drawn' : ''}`}>
+          {hasCover(key) ? (
+            <ProjectCover projectKey={key} />
+          ) : (
+            <ProjectGlyph name={name} language={language} />
+          )}
         </div>
       )}
 

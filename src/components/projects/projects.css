@@ -128,6 +128,26 @@
     height: 100%;
 }
 
+/* The drawn covers carry no colour of their own: they take the page's ink at
+   low strength, so they read as a diagram printed on the card rather than as
+   artwork stuck on top of it. */
+.project-cover.is-drawn {
+    color: var(--color-text-primary);
+}
+
+.project-glyph-drawn {
+    opacity: 0.58;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    transition: opacity var(--transition-slow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .project-card:hover .project-glyph-drawn {
+        opacity: 0.72;
+    }
+}
+
 /* Fades the generated pattern into the card so the cover reads as part of the
    surface rather than as a pasted-in thumbnail. Screenshots keep their own
    edge, so this only applies to the glyph. */

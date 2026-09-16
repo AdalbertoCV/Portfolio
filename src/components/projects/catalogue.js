@@ -20,6 +20,12 @@ import cosiap1 from '../../images/Projects/COSIAP1.png';
 import cosiap2 from '../../images/Projects/COSIAP2.png';
 import cosiap3 from '../../images/Projects/COSIAP3.png';
 import cosiap4 from '../../images/Projects/COSIAP4.png';
+import nocturno1 from '../../images/Projects/nocturno1.png';
+import nocturno2 from '../../images/Projects/nocturno2.png';
+import nocturno3 from '../../images/Projects/nocturno3.png';
+import tcc1 from '../../images/Projects/tcc1.png';
+import tcc2 from '../../images/Projects/tcc2.png';
+import tcc3 from '../../images/Projects/tcc3.png';
 import pbienestar1 from '../../images/Projects/PuntoBienestar1.jpeg';
 import pbienestar2 from '../../images/Projects/PuntoBienestar2.jpeg';
 import pbienestar3 from '../../images/Projects/PuntoBienestar3.jpeg';
@@ -74,6 +80,7 @@ const CATALOGUE = [
         url: `${OWNER}/nocturno-108`,
         language: 'JavaScript',
         tags: ['Strudel', 'Web Audio', 'JS'],
+        shots: [nocturno2, nocturno1, nocturno3],
       },
       {
         // The only card here you can open without leaving the site: the game
@@ -163,6 +170,7 @@ const CATALOGUE = [
         url: `${OWNER}/The-Code-Company-Website`,
         language: 'CSS',
         tags: ['Django', 'SCSS'],
+        shots: [tcc1, tcc2, tcc3],
       },
       {
         key: 'visualnet',
