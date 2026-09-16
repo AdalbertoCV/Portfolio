@@ -893,6 +893,101 @@ const ICONS = {
       <path d="M4.2 19.4 9.2 14.4" />
     </svg>
   ),
+  // Nine more fields, and like every other frontier they are drawn: there is
+  // no vendor mark for "zero-knowledge proofs".
+
+  // The model opened up: the answer, and the part of it you can point at.
+  explainable: (
+    <svg {...base}>
+      <rect x="2.6" y="5" width="12" height="14" rx="2.2" />
+      <path d="M5.6 9.2h6M5.6 12.4h6M5.6 15.6h3.4" />
+      <circle cx="17.8" cy="12" r="3.6" />
+      <path d="m20.6 14.8 1.4 1.4" />
+    </svg>
+  ),
+
+  // A neuron wired to a rule: the two halves that spent forty years apart.
+  neuroSymbolic: (
+    <svg {...base}>
+      <circle cx="6" cy="7" r="2.2" />
+      <circle cx="6" cy="17" r="2.2" />
+      <path d="M8.2 8.2 10.6 12l-2.4 3.8" />
+      <rect x="12.6" y="8" width="8.8" height="8" rx="2" />
+      <path d="M15.2 11h3.6M15.2 13.4h2" />
+    </svg>
+  ),
+
+  // A world kept inside the model, and rolled forward to see what happens.
+  worldModel: (
+    <svg {...base}>
+      <rect x="2.8" y="4.4" width="18.4" height="15.2" rx="2.4" />
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M7.8 12h8.4" />
+      <path d="M12 7.8c1.7 1.9 1.7 6.5 0 8.4-1.7-1.9-1.7-6.5 0-8.4z" />
+    </svg>
+  ),
+
+  // Intelligence with a body, and therefore with consequences.
+  embodied: (
+    <svg {...base}>
+      <rect x="7.6" y="3" width="8.8" height="6.4" rx="2" />
+      <path d="M10.4 6.2h.01M13.6 6.2h.01" />
+      <path d="M12 9.4V13" />
+      <path d="M8 21v-4.6a4 4 0 0 1 8 0V21" />
+      <path d="M4.4 14.6a8 8 0 0 1 2.2-4.4" strokeDasharray="2 1.8" />
+      <path d="M19.6 14.6a8 8 0 0 0-2.2-4.4" strokeDasharray="2 1.8" />
+    </svg>
+  ),
+
+  // Proof that you know it, handed over without handing it over.
+  zeroKnowledge: (
+    <svg {...base}>
+      <rect x="3.4" y="10.2" width="10.4" height="9.4" rx="2.2" />
+      <path d="M6.2 10.2V7.6a3.4 3.4 0 0 1 6.8 0v2.6" />
+      <path d="m15.6 14.6 2 2 4-4.6" />
+    </svg>
+  ),
+
+  // The data stays sealed while the computation happens inside.
+  confidential: (
+    <svg {...base}>
+      <path d="M12 2.6 20 5.6v6.2c0 4.5-3.2 8-8 9.2-4.8-1.2-8-4.7-8-9.2V5.6z" />
+      <rect x="8.6" y="9.2" width="6.8" height="6.4" rx="1.4" />
+      <path d="M10.4 7.6v1.6M13.6 7.6v1.6M10.4 15.6v1.6M13.6 15.6v1.6" />
+    </svg>
+  ),
+
+  // Data generated from a seed rather than collected from the world.
+  syntheticData: (
+    <svg {...base}>
+      <ellipse cx="7.6" cy="6" rx="4.8" ry="2.2" />
+      <path d="M2.8 6v5.4c0 1.2 2.1 2.2 4.8 2.2s4.8-1 4.8-2.2V6" />
+      <ellipse cx="16.4" cy="13.6" rx="4.8" ry="2.2" strokeDasharray="2.4 2" />
+      <path d="M11.6 13.6V19c0 1.2 2.1 2.2 4.8 2.2s4.8-1 4.8-2.2v-5.4" strokeDasharray="2.4 2" />
+      <path d="m10.6 9.6 3.4 2.4" />
+    </svg>
+  ),
+
+  // The helix as a dataset, which is what it became.
+  bioinformatics: (
+    <svg {...base}>
+      <path d="M7.4 2.8c0 5.4 9.2 7.2 9.2 12.6 0 3.2-2.4 5.8-4.6 5.8" />
+      <path d="M16.6 2.8c0 5.4-9.2 7.2-9.2 12.6 0 3.2 2.4 5.8 4.6 5.8" />
+      <path d="M8.6 7h6.8M7.6 11.4h8.8M8.8 16.4h6.4" />
+    </svg>
+  ),
+
+  // A machine deciding its own next move, and the path it is checking.
+  autonomous: (
+    <svg {...base}>
+      <rect x="3" y="10.6" width="18" height="6.4" rx="2" />
+      <circle cx="7.6" cy="19" r="1.8" />
+      <circle cx="16.4" cy="19" r="1.8" />
+      <path d="M6.6 10.6 8.2 6.8h7.6l1.6 3.8" />
+      <path d="M12 2.6v2.2" />
+      <path d="M9 3.6c1.8-1.2 4.2-1.2 6 0" strokeDasharray="1.8 1.6" />
+    </svg>
+  ),
 };
 
 const ConceptIcon = ({ name, className }) => {

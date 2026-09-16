@@ -115,6 +115,31 @@ import burpIcon from '../../images/tech/burpsuite.svg';
 import metasploitIcon from '../../images/tech/metasploit.svg';
 import jwt from '../../images/jwt.png';
 import metaIcon from '../../images/tech/meta.svg';
+import pytorchIcon from '../../images/tech/pytorch.svg';
+import scikitlearnIcon from '../../images/tech/scikitlearn.svg';
+import kerasIcon from '../../images/tech/keras.svg';
+import numpyIcon from '../../images/tech/numpy.svg';
+import jupyterIcon from '../../images/tech/jupyter.svg';
+import opencvIcon from '../../images/tech/opencv.svg';
+import lmstudioIcon from '../../images/tech/lmstudio.svg';
+import notebooklmIcon from '../../images/tech/notebooklm.svg';
+import v0Icon from '../../images/tech/v0.svg';
+import warpIcon from '../../images/tech/warp.svg';
+import raycastIcon from '../../images/tech/raycast.svg';
+import hashcatIcon from '../../images/tech/hashcat.svg';
+import snortIcon from '../../images/tech/snort.svg';
+import pfsenseIcon from '../../images/tech/pfsense.svg';
+import opnsenseIcon from '../../images/tech/opnsense.svg';
+import keepassxcIcon from '../../images/tech/keepassxc.svg';
+import yubicoIcon from '../../images/tech/yubico.svg';
+import p5dotjsIcon from '../../images/tech/p5dotjs.svg';
+import processingfoundationIcon from '../../images/tech/processingfoundation.svg';
+import spineIcon from '../../images/tech/spine.svg';
+import bitwigIcon from '../../images/tech/bitwig.svg';
+import penpotIcon from '../../images/tech/penpot.svg';
+import excalidrawIcon from '../../images/tech/excalidraw.svg';
+import tldrawIcon from '../../images/tech/tldraw.svg';
+import sketchIcon from '../../images/tech/sketch.svg';
 import shopifyIcon from '../../images/tech/shopify.svg';
 import drupalIcon from '../../images/tech/drupal.svg';
 import joomlaIcon from '../../images/tech/joomla.svg';
@@ -455,6 +480,12 @@ const TECH_GROUPS = [
       { name: 'Ray', icon: rayIcon, mono: true },
       { name: 'vLLM', icon: vllmIcon, mono: true },
       { name: 'Weights & Biases', icon: weightsandbiasesIcon, mono: true },
+      { name: 'PyTorch', icon: pytorchIcon, mono: true },
+      { name: 'scikit-learn', icon: scikitlearnIcon, mono: true },
+      { name: 'Keras', icon: kerasIcon, mono: true },
+      { name: 'NumPy', icon: numpyIcon, mono: true },
+      { name: 'Jupyter', icon: jupyterIcon, mono: true },
+      { name: 'OpenCV', icon: opencvIcon, mono: true },
     ],
   },
   {
@@ -502,6 +533,11 @@ const TECH_GROUPS = [
       { name: 'Muse (Meta)', icon: metaIcon, mono: true },
       { name: 'ElevenLabs', icon: elevenlabsIcon, mono: true },
       { name: 'Suno', icon: sunoIcon, mono: true },
+      { name: 'LM Studio', icon: lmstudioIcon, mono: true },
+      { name: 'NotebookLM', icon: notebooklmIcon, mono: true },
+      { name: 'v0', icon: v0Icon, mono: true },
+      { name: 'Warp', icon: warpIcon, mono: true },
+      { name: 'Raycast', icon: raycastIcon, mono: true },
     ],
   },
   {
@@ -590,6 +626,12 @@ const TECH_GROUPS = [
       { name: 'Let’s Encrypt', icon: letsencryptIcon, mono: true },
       { name: 'Bitwarden', icon: bitwardenIcon, mono: true },
       { name: 'GnuPG', icon: gnuprivacyguardIcon, mono: true },
+      { name: 'Hashcat', icon: hashcatIcon, mono: true },
+      { name: 'Snort', icon: snortIcon, mono: true },
+      { name: 'pfSense', icon: pfsenseIcon, mono: true },
+      { name: 'OPNsense', icon: opnsenseIcon, mono: true },
+      { name: 'KeePassXC', icon: keepassxcIcon, mono: true },
+      { name: 'YubiKey', icon: yubicoIcon, mono: true },
     ],
   },
   {
@@ -735,6 +777,14 @@ const TECH_GROUPS = [
       { name: 'Kdenlive', icon: kdenliveIcon, mono: true },
       { name: 'LMMS', icon: lmmsIcon, mono: true },
       { name: 'Ardour', icon: ardourIcon, mono: true },
+      { name: 'p5.js', icon: p5dotjsIcon, mono: true },
+      { name: 'Processing', icon: processingfoundationIcon, mono: true },
+      { name: 'Spine', icon: spineIcon, mono: true },
+      { name: 'Bitwig', icon: bitwigIcon, mono: true },
+      { name: 'Penpot', icon: penpotIcon, mono: true },
+      { name: 'Excalidraw', icon: excalidrawIcon, mono: true },
+      { name: 'tldraw', icon: tldrawIcon, mono: true },
+      { name: 'Sketch', icon: sketchIcon, mono: true },
     ],
   },
   {
@@ -770,6 +820,10 @@ const TECH_GROUPS = [
       { name: 'Renovate', icon: renovateIcon, mono: true },
       { name: 'Markdown', icon: markdownIcon, mono: true },
       { name: 'LaTeX', icon: latexIcon, mono: true },
+      // Last in the group on purpose: the joke only works once a reader has
+      // been through the whole serious list. Everybody who learned to program
+      // in Spanish started here, and the logo is the real one.
+      { name: 'PSeInt', icon: pseintIcon, flat: true },
     ],
   },
   {
@@ -796,14 +850,16 @@ const TECH_GROUPS = [
       { name: 'Swarm intelligence', concept: 'swarm' },
       { name: 'Causal inference', concept: 'causal' },
       { name: 'Sustainable computing', concept: 'greenCompute' },
+      { name: 'Explainable AI', concept: 'explainable' },
+      { name: 'Neuro-symbolic AI', concept: 'neuroSymbolic' },
+      { name: 'World models', concept: 'worldModel' },
+      { name: 'Embodied AI', concept: 'embodied' },
+      { name: 'Zero-knowledge proofs', concept: 'zeroKnowledge' },
+      { name: 'Confidential computing', concept: 'confidential' },
+      { name: 'Synthetic data', concept: 'syntheticData' },
+      { name: 'Bioinformatics', concept: 'bioinformatics' },
+      { name: 'Autonomous systems', concept: 'autonomous' },
     ],
-  },
-  {
-    // Last on purpose: the joke only works once the reader has been through the
-    // whole serious list. Everybody who learned to program in Spanish started
-    // here, and the logo is the real one.
-    id: 'joke',
-    items: [{ name: 'PSeInt', icon: pseintIcon, flat: true }],
   },
 ];
 

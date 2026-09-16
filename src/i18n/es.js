@@ -193,7 +193,6 @@ const es = {
       web: 'CMS, e-commerce y web',
       media: 'Videojuegos, animación y multimedia',
       tools: 'Herramientas y práctica',
-      joke: 'Y sobre todo, experto en PSeInt (broma)',
       frontier: 'Fronteras que exploro',
     },
   },
