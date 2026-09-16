@@ -173,6 +173,20 @@ const cvEs = {
         link: 'Ver el evento',
         projectLink: 'Ver en proyectos',
       },
+      innovafest: {
+        name: 'InnovaFest 2026',
+        issuer: 'Querétaro Centro de Congresos',
+        year: 'Agosto 2026',
+        body: 'Encuentro nacional de innovación y emprendimiento: fondos de inversión, prototipos, conferencias y vinculación entre empresas, universidades y proyectos. Esta vez no fui de público. Estuve del otro lado del stand, representando a Radii y explicando en persona la plataforma que construyo: qué resuelve, cómo funciona y por qué una pieza fabricada puede rastrearse hasta el archivo CAD del que salió.',
+        link: 'Ver el evento',
+      },
+      talentland: {
+        name: 'Talent Land 2024',
+        issuer: 'Guadalajara, Jalisco',
+        year: '2024',
+        body: 'El encuentro de talento y tecnología más grande de México: empresarios, emprendedores y gente que ya construyó algo presentando sus proyectos ante miles de jóvenes, con la idea explícita de empujarlos a construir los suyos. Fui como estudiante, que es exactamente para quien está hecho. Dos años después volví a un evento así, pero del otro lado del stand.',
+        link: 'Ver el evento',
+      },
     },
 
     interestsKicker: 'Intereses',

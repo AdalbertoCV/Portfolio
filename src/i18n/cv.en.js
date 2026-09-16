@@ -166,6 +166,20 @@ const cvEn = {
         link: 'See the event',
         projectLink: 'See it in projects',
       },
+      innovafest: {
+        name: 'InnovaFest 2026',
+        issuer: 'Querétaro Convention Centre',
+        year: 'August 2026',
+        body: 'The national innovation and entrepreneurship meeting: investment funds, prototypes, talks, and matchmaking between companies, universities and projects. This time I was not in the audience. I was on the other side of the stand, representing Radii and explaining the platform I build in person — what it solves, how it works, and why a manufactured part can be traced back to the CAD file it came from.',
+        link: 'View the event',
+      },
+      talentland: {
+        name: 'Talent Land 2024',
+        issuer: 'Guadalajara, Jalisco',
+        year: '2024',
+        body: 'The largest talent and technology gathering in Mexico: founders, entrepreneurs and people who have already built something presenting their projects to thousands of young people, with the explicit aim of pushing them to build their own. I went as a student, which is exactly who it is for. Two years later I was back at an event like it, on the other side of the stand.',
+        link: 'View the event',
+      },
     },
 
     interestsKicker: 'Interests',

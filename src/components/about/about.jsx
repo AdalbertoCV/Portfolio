@@ -10,6 +10,8 @@ import UAZLogo from '../../images/UAZ.jpg';
 import someceImage from '../../images/Achievements/constancia1.png';
 import ICPImage from '../../images/Achievements/constancia2.png';
 import rbrMark from '../../images/releasebeforeready.svg';
+import innovafestMark from '../../images/innovafest.svg';
+import talentlandMark from '../../images/talentland.svg';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowRight, ArrowUpRight, Chevron, Reveal, Section } from '../brand/parts';
 import {
@@ -28,7 +30,20 @@ import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
 import './about.css';
 
-const RBR_URL = 'https://www.releasebeforeready.com/es/eventos';
+// The events, newest first. Each one is a wordmark, a line of copy and at
+// most two destinations: the event itself, and — where the day produced
+// something catalogued here — the project it turned into.
+const EVENTS = [
+  {
+    key: 'rbr',
+    mark: rbrMark,
+    url: 'https://www.releasebeforeready.com/es/eventos',
+    project: '/projects',
+    paragraphs: 2,
+  },
+  { key: 'innovafest', mark: innovafestMark, url: 'https://innovafest.mx/encuentros/queretaro' },
+  { key: 'talentland', mark: talentlandMark, url: 'https://www.talent-land.mx/' },
+];
 
 const SOCIALS = [
   { href: `mailto:${CONTACT_EMAIL}`, img: mailLogo, label: 'Email', external: false },
@@ -509,42 +524,46 @@ const About = () => {
           </div>
         </Reveal>
 
-        {/* A hackathon is not a credential, so it sits after the certificates
-            rather than among them: one card, the organiser's own wordmark, and
-            what was actually built there. */}
+        {/* Rooms I was in. Not credentials — which is why they sit after the
+            certificates rather than among them — but they are the part of a
+            career that a certificate cannot record: who I went as. */}
         <Reveal className="cv-events">
           <h3 className="brand-stack-title">{t('cv.eventsLabel')}</h3>
-          <article className="cv-event">
-            <span className="cv-event-mark">
-              <img src={rbrMark} alt="" aria-hidden="true" loading="lazy" />
-            </span>
-            <div className="cv-event-copy">
-              <h4>{t('cv.events.rbr.name')}</h4>
-              <p className="cv-cert-issuer">
-                {t('cv.events.rbr.issuer')} · {t('cv.events.rbr.year')}
-              </p>
-              <p className="cv-cert-body">{t('cv.events.rbr.body')}</p>
-              <p className="cv-cert-body">{t('cv.events.rbr.body2')}</p>
-              {/* Two destinations, because the day produced two things: the
-                  event itself, and the track that is already catalogued as a
-                  project on this site. */}
-              <div className="cv-event-links">
-                <a
-                  className="cv-interest-link"
-                  href={RBR_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('cv.events.rbr.link')}
-                  <ArrowUpRight />
-                </a>
-                <Link className="cv-interest-link" to="/projects">
-                  {t('cv.events.rbr.projectLink')}
-                  <ArrowRight />
-                </Link>
+          {EVENTS.map((event) => (
+            <article className="cv-event" key={event.key}>
+              <span className="cv-event-mark">
+                <img src={event.mark} alt="" aria-hidden="true" loading="lazy" />
+              </span>
+              <div className="cv-event-copy">
+                <h4>{t(`cv.events.${event.key}.name`)}</h4>
+                <p className="cv-cert-issuer">
+                  {t(`cv.events.${event.key}.issuer`)} · {t(`cv.events.${event.key}.year`)}
+                </p>
+                <p className="cv-cert-body">{t(`cv.events.${event.key}.body`)}</p>
+                {event.paragraphs === 2 ? (
+                  <p className="cv-cert-body">{t(`cv.events.${event.key}.body2`)}</p>
+                ) : null}
+                <div className="cv-event-links">
+                  <a
+                    className="cv-interest-link"
+                    href={event.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t(`cv.events.${event.key}.link`)}
+                    <ArrowUpRight />
+                  </a>
+                  {/* Only where the day produced something catalogued here. */}
+                  {event.project ? (
+                    <Link className="cv-interest-link" to={event.project}>
+                      {t(`cv.events.${event.key}.projectLink`)}
+                      <ArrowRight />
+                    </Link>
+                  ) : null}
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          ))}
         </Reveal>
       </Section>
 
