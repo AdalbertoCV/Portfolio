@@ -128,23 +128,440 @@
     height: 100%;
 }
 
-/* The drawn covers carry no colour of their own: they take the page's ink at
-   low strength, so they read as a diagram printed on the card rather than as
-   artwork stuck on top of it. */
-.project-cover.is-drawn {
-    color: var(--color-text-primary);
-}
+/* ============================================================================
+   DRAWN COVERS
+   ----------------------------------------------------------------------------
+   These are full-bleed panels, not diagrams laid over the card, so they get no
+   padding and none of the fade the generated signatures get — they stand in
+   for a screenshot and they behave like one.
+
+   Each keyframe below moves only transform or opacity, and the whole set is
+   inside one prefers-reduced-motion query: a reader who has asked the system
+   for stillness gets nine posters that hold their pose instead of nine loops.
+   ========================================================================= */
 
 .project-glyph-drawn {
-    opacity: 0.58;
-    padding: 10px 14px;
-    box-sizing: border-box;
-    transition: opacity var(--transition-slow);
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .project-card:hover .project-glyph-drawn {
-        opacity: 0.72;
+/* No fade over a poster: the gradient exists to settle a pale generated
+   pattern into the card, and these are not pale. */
+.project-cover.is-drawn::after {
+    display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    /* Dashed lines that run, so a path reads as carrying something. */
+    .cov-flow {
+        animation: cov-flow 1.1s linear infinite;
+    }
+
+    /* A node or a step lighting up as the sequence reaches it. */
+    .cov-node,
+    .cov-visit {
+        animation: cov-visit 2.4s ease-in-out infinite;
+    }
+
+    .cov-slot {
+        animation: cov-slot 1.4s ease-in-out infinite;
+    }
+
+    /* ETL → Dgraph: nothing else to add, the paths and nodes carry it. */
+
+    /* Pub/sub: one message in, then the same message out three ways. */
+    .cov-msg-in {
+        animation: cov-msg-in 2.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+
+    .cov-msg-out-1 {
+        animation: cov-msg-out-1 2.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+
+    .cov-msg-out-2 {
+        animation: cov-msg-out-2 2.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+
+    .cov-msg-out-3 {
+        animation: cov-msg-out-3 2.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+
+    /* Sockets: the packet crosses, in the order the handshake happens. */
+    .cov-hs-fwd {
+        animation: cov-hs-fwd 3.15s cubic-bezier(0.4, 0, 0.5, 1) infinite;
+    }
+
+    .cov-hs-back {
+        animation: cov-hs-back 3.15s cubic-bezier(0.4, 0, 0.5, 1) infinite;
+    }
+
+    /* Frameworks: the request sweeping down the stack. */
+    .cov-layer {
+        transform-origin: 118px 0;
+        animation: cov-layer 2.2s ease-in-out infinite;
+    }
+
+    /* Visual.NET: fields filling, and the four operations taking turns. */
+    .cov-fill {
+        transform-origin: 90px 0;
+        animation: cov-fill 3.4s ease-in-out infinite;
+    }
+
+    .cov-turn {
+        animation: cov-turn 3.6s ease-in-out infinite;
+    }
+
+    /* ShareMeSomething: the handover, over and over. */
+    .cov-handover {
+        animation: cov-handover 3.4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+
+    /* picoCTF: the flag types itself, and the caret keeps its place. */
+    .cov-type {
+        transform-origin: 46px 0;
+        animation: cov-type 4.4s steps(19, end) infinite;
+    }
+
+    .cov-caret {
+        animation: cov-caret 4.4s steps(19, end) infinite,
+            cov-blink 1s steps(2, end) infinite;
+    }
+
+    /* Random forest: the trees vote and the bar fills. */
+    .cov-vote {
+        transform-origin: 140px 0;
+        animation: cov-vote 3.4s ease-out infinite;
+    }
+
+    /* The game: ground scrolling, laptop hopping, bugs coming at it. */
+    .cov-ground {
+        animation: cov-ground 0.6s linear infinite;
+    }
+
+    .cov-hop {
+        animation: cov-hop 1.35s cubic-bezier(0.3, 0, 0.5, 1) infinite;
+    }
+
+    .cov-bug {
+        animation: cov-bug 5.7s linear infinite;
+    }
+}
+
+@keyframes cov-flow {
+    to {
+        stroke-dashoffset: -24;
+    }
+}
+
+@keyframes cov-visit {
+    0%,
+    62%,
+    100% {
+        opacity: 0.4;
+    }
+
+    12%,
+    26% {
+        opacity: 1;
+    }
+}
+
+@keyframes cov-slot {
+    0%,
+    100% {
+        opacity: 0.25;
+    }
+
+    45% {
+        opacity: 0.95;
+    }
+}
+
+@keyframes cov-msg-in {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    34% {
+        transform: translateX(44px);
+        opacity: 1;
+    }
+
+    40%,
+    100% {
+        transform: translateX(44px);
+        opacity: 0;
+    }
+}
+
+@keyframes cov-msg-out-1 {
+    0%,
+    44% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    84% {
+        transform: translate(62px, -45px);
+        opacity: 1;
+    }
+
+    92%,
+    100% {
+        transform: translate(62px, -45px);
+        opacity: 0;
+    }
+}
+
+@keyframes cov-msg-out-2 {
+    0%,
+    44% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    84% {
+        transform: translate(62px, 0);
+        opacity: 1;
+    }
+
+    92%,
+    100% {
+        transform: translate(62px, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes cov-msg-out-3 {
+    0%,
+    44% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    84% {
+        transform: translate(62px, 45px);
+        opacity: 1;
+    }
+
+    92%,
+    100% {
+        transform: translate(62px, 45px);
+        opacity: 0;
+    }
+}
+
+@keyframes cov-hs-fwd {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    4% {
+        opacity: 1;
+    }
+
+    28% {
+        transform: translateX(266px);
+        opacity: 1;
+    }
+
+    33%,
+    100% {
+        transform: translateX(266px);
+        opacity: 0;
+    }
+}
+
+@keyframes cov-hs-back {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    4% {
+        opacity: 1;
+    }
+
+    28% {
+        transform: translateX(-266px);
+        opacity: 1;
+    }
+
+    33%,
+    100% {
+        transform: translateX(-266px);
+        opacity: 0;
+    }
+}
+
+@keyframes cov-layer {
+    0%,
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    18% {
+        opacity: 0.26;
+        transform: scaleX(1);
+    }
+
+    42% {
+        opacity: 0;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes cov-fill {
+    0%,
+    100% {
+        transform: scaleX(0);
+        opacity: 0.55;
+    }
+
+    30%,
+    72% {
+        transform: scaleX(1);
+        opacity: 0.85;
+    }
+}
+
+@keyframes cov-turn {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    8%,
+    22% {
+        opacity: 1;
+    }
+
+    32% {
+        opacity: 0.45;
+    }
+}
+
+@keyframes cov-handover {
+    0% {
+        transform: translateX(-88px) scale(0.86);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    46%,
+    58% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+
+    88% {
+        transform: translateX(88px) scale(0.86);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(88px) scale(0.86);
+        opacity: 0;
+    }
+}
+
+@keyframes cov-type {
+    0% {
+        transform: scaleX(0);
+    }
+
+    38%,
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes cov-caret {
+    0% {
+        transform: translateX(0);
+    }
+
+    38%,
+    100% {
+        transform: translateX(146px);
+    }
+}
+
+@keyframes cov-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes cov-vote {
+    0%,
+    100% {
+        transform: scaleX(0);
+    }
+
+    58%,
+    88% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes cov-ground {
+    to {
+        transform: translateX(-24px);
+    }
+}
+
+@keyframes cov-hop {
+    0%,
+    46%,
+    100% {
+        transform: translateY(0);
+    }
+
+    18% {
+        transform: translateY(-34px);
+    }
+
+    30% {
+        transform: translateY(-38px);
+    }
+}
+
+@keyframes cov-bug {
+    0% {
+        transform: translateX(420px);
+    }
+
+    100% {
+        transform: translateX(-40px);
     }
 }
 
