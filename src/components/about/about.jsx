@@ -121,6 +121,9 @@ const FoldAll = ({ allOpen, onToggle, openLabel, closeLabel }) => (
  */
 const TechMark = ({ item, t }) => {
   const built = PROJECT_TECH[item.name];
+  // One tile needs its label translated rather than taken from its own name:
+  // the parenthesis is the joke, and the joke is in Spanish.
+  const label = item.labelKey ? t(item.labelKey) : item.name;
 
   const face = (
     <>
@@ -150,7 +153,7 @@ const TechMark = ({ item, t }) => {
           </span>
         ) : null}
       </span>
-      <span className="tech-name">{item.name}</span>
+      <span className="tech-name">{label}</span>
     </>
   );
 

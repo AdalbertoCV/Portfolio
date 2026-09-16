@@ -823,7 +823,7 @@ const TECH_GROUPS = [
       // Last in the group on purpose: the joke only works once a reader has
       // been through the whole serious list. Everybody who learned to program
       // in Spanish started here, and the logo is the real one.
-      { name: 'PSeInt', icon: pseintIcon, flat: true },
+      { name: 'PSeInt', labelKey: 'skills.pseint', icon: pseintIcon, flat: true },
     ],
   },
   {

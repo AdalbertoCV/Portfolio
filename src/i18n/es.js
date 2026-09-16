@@ -195,6 +195,7 @@ const es = {
       tools: 'Herramientas y práctica',
       frontier: 'Fronteras que exploro',
     },
+    pseint: 'PSeInt (broma)',
   },
   education: {
     heading: 'Educación:',

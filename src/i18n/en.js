@@ -193,6 +193,7 @@ const en = {
       tools: 'Tooling & practice',
       frontier: 'Frontiers I explore',
     },
+    pseint: 'PSeInt (joke)',
   },
   education: {
     heading: 'Education:',
