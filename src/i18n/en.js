@@ -22,6 +22,31 @@ const en = {
       'Write to me. A project you want built, a team you want me on, or an idea you want to think through out loud — all three are good reasons to start the conversation.',
     cta: 'Get in touch',
   },
+  // The game. Two voices: one for somebody who chose to come here, one for
+  // somebody who arrived by mistyping a URL and deserves better than a blank
+  // page.
+  play: {
+    badge: 'Coffee break',
+    title: 'A laptop that jumps bugs',
+    lede:
+      'Every bug on the track is one I have actually shipped. The deploys floating past are worth 25 points, and missing one costs nothing — which is the only honest way to price a bonus in a game where the floor is already lava.',
+    lostBadge: 'Error 404',
+    lostTitle: 'This page does not exist',
+    lostLede:
+      'Something in the URL is off, or something on this site is. Either way, here is a laptop that jumps bugs while you decide where you meant to go.',
+    score: 'Score',
+    dodged: 'Bugs dodged',
+    best: 'Best',
+    ready: 'Ready when you are.',
+    over: 'A bug got through. It happens in production too.',
+    start: 'Start',
+    again: 'Again',
+    hint: 'Space, arrow up, or tap to jump.',
+    canvasLabel: 'A pixel-art laptop running and jumping over bugs',
+    note:
+      'Written for this page: one canvas, no dependencies, and a hitbox slightly smaller than the sprite because pixel-perfect collision feels like cheating to the person holding the spacebar.',
+    back: 'Back to the serious pages',
+  },
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -82,6 +107,11 @@ const en = {
       description:
         'Two years as a peer mentor, teaching the five subjects that decide who stays in an engineering degree.',
     },
+    play: {
+      title: 'A laptop that jumps bugs · Adal Cerrillo',
+      description:
+        'A small endless runner written for this site: a pixel-art laptop jumping the bugs I have actually shipped.',
+    },
     uaz: {
       title: 'Software Engineering, UAZ · Adal Cerrillo',
       description:
@@ -96,6 +126,7 @@ const en = {
     cvDownload: 'Download CV (PDF)',
     cvOpen: 'Open in the browser',
     kicker: 'Footnote',
+    play: 'Or go jump some bugs →',
     prev: 'Previous joke',
     next: 'Next joke',
     credit: '© 2026 Adal Cerrillo · Handmade, on more coffee than advisable.',

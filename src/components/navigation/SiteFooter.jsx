@@ -97,6 +97,11 @@ const SiteFooter = () => {
         <div className="site-footer-joke">
           <span className="site-footer-kicker">{t('footer.kicker')}</span>
           <p className="site-footer-text">{jokes[index]}</p>
+          {/* The door to the game. Here rather than in the navigation: this is
+              the corner of the site that is already not serious. */}
+          <Link className="site-footer-play" to="/play">
+            {t('footer.play')}
+          </Link>
         </div>
 
         <div className="site-footer-controls">

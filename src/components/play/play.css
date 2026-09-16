@@ -1,0 +1,177 @@
+/* ============================================================================
+   THE GAME
+   ----------------------------------------------------------------------------
+   The one place on the site that is allowed to be pixels. It still takes its
+   ink from the page rather than bringing a palette of its own, so a laptop
+   jumping bugs reads as part of this site and not as an iframe from 2009.
+   ========================================================================= */
+
+.play-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: calc(var(--navbar-h, 120px) + 48px) 24px 96px;
+    position: relative;
+    z-index: 2;
+
+    /* The single colour the canvas draws with, read from CSS so the theme
+       toggle reaches inside the game. */
+    --play-ink: var(--color-text-primary);
+}
+
+.play-head {
+    max-width: 62ch;
+    margin: 0 0 40px;
+}
+
+.play-title {
+    font-size: clamp(2rem, 5.4vw, 3.5rem);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+    color: var(--color-text-primary);
+    margin: 0 0 18px;
+}
+
+.play-lede {
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* ------------------------------------------------------------- the machine */
+
+.play-frame {
+    position: relative;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    padding: 22px;
+    overflow: hidden;
+}
+
+.play-scores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    margin-bottom: 14px;
+}
+
+.play-score {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.play-score-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+}
+
+.play-canvas {
+    display: block;
+    width: 100%;
+    /* The world is 800x220; the element keeps that ratio at every width so the
+       game is the same game on a phone. */
+    aspect-ratio: 800 / 220;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------- the overlay */
+
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px;
+    text-align: center;
+    background: color-mix(in srgb, var(--color-bg-card) 82%, transparent);
+    backdrop-filter: blur(2px);
+}
+
+.play-overlay p {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.play-start {
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
+    box-shadow: none;
+}
+
+.play-hint {
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    color: var(--color-text-secondary) !important;
+}
+
+/* ---------------------------------------------------------------- the foot */
+
+.play-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px 28px;
+    margin-top: 26px;
+}
+
+.play-note {
+    margin: 0;
+    max-width: 58ch;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--color-text-tertiary);
+}
+
+.play-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.play-back svg {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .play-back:hover svg {
+        transform: translateX(4px);
+    }
+}
+
+@media (max-width: 720px) {
+    .play-page {
+        padding: calc(var(--navbar-h, 120px) + 32px) 20px 72px;
+    }
+
+    .play-frame {
+        padding: 16px;
+    }
+
+    .play-scores {
+        gap: 8px 18px;
+    }
+}

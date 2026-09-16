@@ -190,3 +190,20 @@
         gap: 18px;
     }
 }
+
+/* The way into the game, kept as quiet as the joke it sits under. */
+.site-footer-play {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .site-footer-play:hover {
+        color: var(--color-text-primary);
+    }
+}

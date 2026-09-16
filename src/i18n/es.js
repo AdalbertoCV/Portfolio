@@ -24,6 +24,30 @@ const es = {
       'Contáctame. Un proyecto que quieras construir, un equipo al que quieras sumarme o una idea que quieras pensar en voz alta: las tres son buenas razones para empezar la conversación.',
     cta: 'Escríbeme',
   },
+  // El juego. Dos voces: una para quien vino a propósito y otra para quien
+  // llegó equivocándose de URL y merece algo mejor que una página en blanco.
+  play: {
+    badge: 'Pausa para el café',
+    title: 'Una laptop que salta bugs',
+    lede:
+      'Cada bug de la pista es uno que de verdad he mandado a producción. Los deploys que pasan volando valen 25 puntos, y fallar uno no cuesta nada: es la única forma honesta de cobrar un bonus en un juego donde el suelo ya es lava.',
+    lostBadge: 'Error 404',
+    lostTitle: 'Esta página no existe',
+    lostLede:
+      'Algo está mal en la URL, o algo está mal en este sitio. En cualquier caso, aquí hay una laptop saltando bugs mientras decides a dónde querías ir.',
+    score: 'Puntos',
+    dodged: 'Bugs esquivados',
+    best: 'Récord',
+    ready: 'Cuando quieras.',
+    over: 'Se coló un bug. También pasa en producción.',
+    start: 'Empezar',
+    again: 'Otra vez',
+    hint: 'Espacio, flecha arriba o toca para saltar.',
+    canvasLabel: 'Una laptop en pixel art corriendo y saltando bugs',
+    note:
+      'Escrito para esta página: un canvas, cero dependencias, y una caja de colisión un poco más chica que el sprite, porque la colisión exacta al píxel se siente tramposa para quien tiene el dedo en la barra espaciadora.',
+    back: 'Volver a las páginas serias',
+  },
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -84,6 +108,11 @@ const es = {
       description:
         'Dos años como mentor par, explicando las cinco materias que deciden quién sigue en una carrera de ingeniería.',
     },
+    play: {
+      title: 'Una laptop que salta bugs · Adal Cerrillo',
+      description:
+        'Un pequeño endless runner escrito para este sitio: una laptop en pixel art saltando los bugs que de verdad he mandado a producción.',
+    },
     uaz: {
       title: 'Ingeniería de Software, UAZ · Adal Cerrillo',
       description:
@@ -98,6 +127,7 @@ const es = {
     cvDownload: 'Descargar CV (PDF)',
     cvOpen: 'Abrir en el navegador',
     kicker: 'Nota al pie',
+    play: 'O ve a saltar unos bugs →',
     prev: 'Chiste anterior',
     next: 'Siguiente chiste',
     credit: '© 2026 Adal Cerrillo · Hecho a mano, con más café del recomendable.',

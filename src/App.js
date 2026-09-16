@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import './App.css';
 import './styles/brand.css';
 import './styles/marks.css';
@@ -23,6 +23,10 @@ import UazPage from './components/brand/UazPage';
 import ContactPage from './components/contact/ContactPage';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
+
+// Lazy: a canvas game is dead weight in the bundle for every visitor who came
+// to read about the work, and most of them will never open this route.
+const Play = lazy(() => import('./components/play/Play'));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -66,6 +70,27 @@ function App() {
                     education card on the CV. */}
                 <Route path="/uaz" element={<UazPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+
+                {/* A laptop that jumps bugs. On its own route, and reused by
+                    the catch-all below: a mistyped URL used to render nothing
+                    at all, and now it renders the one thing here that exists
+                    purely for fun. */}
+                <Route
+                  path="/play"
+                  element={
+                    <Suspense fallback={null}>
+                      <Play />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="*"
+                  element={
+                    <Suspense fallback={null}>
+                      <Play notFound />
+                    </Suspense>
+                  }
+                />
               </Routes>
             </main>
             <SiteFooter />

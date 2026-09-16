@@ -34,6 +34,7 @@ const PAGES = {
   '/labsol': 'labsol',
   '/case': 'case',
   '/uaz': 'uaz',
+  '/play': 'play',
 };
 
 // Creates the tag on first use rather than assuming index.html already has it,
