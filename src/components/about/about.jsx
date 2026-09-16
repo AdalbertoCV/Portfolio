@@ -377,7 +377,6 @@ const About = () => {
                 onKeyDown={(event) => stepGroup(event, id)}
               >
                 <span className="stack-tab-name">{t(`skills.groups.${id}`)}</span>
-                <span className="stack-tab-count">{items.length}</span>
               </button>
             ))}
           </div>

@@ -476,22 +476,9 @@
     min-width: 0;
 }
 
-.stack-tab-count {
-    flex: 0 0 auto;
-    font-size: 0.72rem;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    color: var(--color-text-tertiary);
-    transition: color var(--transition-base);
-}
-
 .stack-tab[aria-selected='true'] {
     background: var(--color-bg-card);
     color: var(--color-text-primary);
-}
-
-.stack-tab[aria-selected='true'] .stack-tab-count {
-    color: var(--color-text-secondary);
 }
 
 .stack-tab:focus-visible {
@@ -673,11 +660,6 @@
         border-color: var(--color-text-primary);
         background: var(--color-text-primary);
         color: var(--color-bg-primary);
-    }
-
-    .stack-tab[aria-selected='true'] .stack-tab-count {
-        color: var(--color-bg-primary);
-        opacity: 0.7;
     }
 
     .stack-marks {
