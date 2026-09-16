@@ -115,6 +115,51 @@ import burpIcon from '../../images/tech/burpsuite.svg';
 import metasploitIcon from '../../images/tech/metasploit.svg';
 import jwt from '../../images/jwt.png';
 import metaIcon from '../../images/tech/meta.svg';
+import shopifyIcon from '../../images/tech/shopify.svg';
+import drupalIcon from '../../images/tech/drupal.svg';
+import joomlaIcon from '../../images/tech/joomla.svg';
+import strapiIcon from '../../images/tech/strapi.svg';
+import contentfulIcon from '../../images/tech/contentful.svg';
+import sanityIcon from '../../images/tech/sanity.svg';
+import ghostIcon from '../../images/tech/ghost.svg';
+import webflowIcon from '../../images/tech/webflow.svg';
+import wixIcon from '../../images/tech/wix.svg';
+import squarespaceIcon from '../../images/tech/squarespace.svg';
+import prestashopIcon from '../../images/tech/prestashop.svg';
+import bigcommerceIcon from '../../images/tech/bigcommerce.svg';
+import stripeIcon from '../../images/tech/stripe.svg';
+import paypalIcon from '../../images/tech/paypal.svg';
+import mercadopagoIcon from '../../images/tech/mercadopago.svg';
+import googleanalyticsIcon from '../../images/tech/googleanalytics.svg';
+import googletagmanagerIcon from '../../images/tech/googletagmanager.svg';
+import googlesearchconsoleIcon from '../../images/tech/googlesearchconsole.svg';
+import hotjarIcon from '../../images/tech/hotjar.svg';
+import mailchimpIcon from '../../images/tech/mailchimp.svg';
+import hubspotIcon from '../../images/tech/hubspot.svg';
+import algoliaIcon from '../../images/tech/algolia.svg';
+import cloudinaryIcon from '../../images/tech/cloudinary.svg';
+import netlifyIcon from '../../images/tech/netlify.svg';
+import pwaIcon from '../../images/tech/pwa.svg';
+import openglIcon from '../../images/tech/opengl.svg';
+import vulkanIcon from '../../images/tech/vulkan.svg';
+import webglIcon from '../../images/tech/webgl.svg';
+import raylibIcon from '../../images/tech/raylib.svg';
+import monogameIcon from '../../images/tech/monogame.svg';
+import kdenliveIcon from '../../images/tech/kdenlive.svg';
+import lmmsIcon from '../../images/tech/lmms.svg';
+import ardourIcon from '../../images/tech/ardour.svg';
+import npmIcon from '../../images/tech/npm.svg';
+import pnpmIcon from '../../images/tech/pnpm.svg';
+import yarnIcon from '../../images/tech/yarn.svg';
+import turborepoIcon from '../../images/tech/turborepo.svg';
+import nxIcon from '../../images/tech/nx.svg';
+import insomniaIcon from '../../images/tech/insomnia.svg';
+import codecovIcon from '../../images/tech/codecov.svg';
+import renovateIcon from '../../images/tech/renovate.svg';
+import markdownIcon from '../../images/tech/markdown.svg';
+import latexIcon from '../../images/tech/latex.svg';
+import elevenlabsIcon from '../../images/tech/elevenlabs.svg';
+import sunoIcon from '../../images/tech/suno.svg';
 import unityIcon from '../../images/tech/unity.svg';
 import unrealengineIcon from '../../images/tech/unrealengine.svg';
 import godotengineIcon from '../../images/tech/godotengine.svg';
@@ -455,6 +500,8 @@ const TECH_GROUPS = [
       // the way Codex carries OpenAI's and NemoClaw carries NVIDIA's. The name
       // says which product it is.
       { name: 'Muse (Meta)', icon: metaIcon, mono: true },
+      { name: 'ElevenLabs', icon: elevenlabsIcon, mono: true },
+      { name: 'Suno', icon: sunoIcon, mono: true },
     ],
   },
   {
@@ -634,6 +681,31 @@ const TECH_GROUPS = [
       { name: 'E-commerce', concept: 'ecommerce' },
       { name: 'Payments & checkout', concept: 'payments' },
       { name: 'SEO & analytics', concept: 'seo' },
+      { name: 'Shopify', icon: shopifyIcon, mono: true },
+      { name: 'Drupal', icon: drupalIcon, mono: true },
+      { name: 'Joomla', icon: joomlaIcon, mono: true },
+      { name: 'Strapi', icon: strapiIcon, mono: true },
+      { name: 'Contentful', icon: contentfulIcon, mono: true },
+      { name: 'Sanity', icon: sanityIcon, mono: true },
+      { name: 'Ghost', icon: ghostIcon, mono: true },
+      { name: 'Webflow', icon: webflowIcon, mono: true },
+      { name: 'Wix', icon: wixIcon, mono: true },
+      { name: 'Squarespace', icon: squarespaceIcon, mono: true },
+      { name: 'PrestaShop', icon: prestashopIcon, mono: true },
+      { name: 'BigCommerce', icon: bigcommerceIcon, mono: true },
+      { name: 'Stripe', icon: stripeIcon, mono: true },
+      { name: 'PayPal', icon: paypalIcon, mono: true },
+      { name: 'Mercado Pago', icon: mercadopagoIcon, mono: true },
+      { name: 'Google Analytics', icon: googleanalyticsIcon, mono: true },
+      { name: 'Tag Manager', icon: googletagmanagerIcon, mono: true },
+      { name: 'Search Console', icon: googlesearchconsoleIcon, mono: true },
+      { name: 'Hotjar', icon: hotjarIcon, mono: true },
+      { name: 'Mailchimp', icon: mailchimpIcon, mono: true },
+      { name: 'HubSpot', icon: hubspotIcon, mono: true },
+      { name: 'Algolia', icon: algoliaIcon, mono: true },
+      { name: 'Cloudinary', icon: cloudinaryIcon, mono: true },
+      { name: 'Netlify', icon: netlifyIcon, mono: true },
+      { name: 'PWA', icon: pwaIcon, mono: true },
     ],
   },
   {
@@ -655,6 +727,14 @@ const TECH_GROUPS = [
       { name: 'GIMP', icon: gimpIcon, mono: true },
       { name: 'Krita', icon: kritaIcon, mono: true },
       { name: 'Inkscape', icon: inkscapeIcon, mono: true },
+      { name: 'OpenGL', icon: openglIcon, mono: true },
+      { name: 'Vulkan', icon: vulkanIcon, mono: true },
+      { name: 'WebGL', icon: webglIcon, mono: true },
+      { name: 'raylib', icon: raylibIcon, mono: true },
+      { name: 'MonoGame', icon: monogameIcon, mono: true },
+      { name: 'Kdenlive', icon: kdenliveIcon, mono: true },
+      { name: 'LMMS', icon: lmmsIcon, mono: true },
+      { name: 'Ardour', icon: ardourIcon, mono: true },
     ],
   },
   {
@@ -680,6 +760,16 @@ const TECH_GROUPS = [
       { name: 'Jest', icon: jestIcon, mono: true },
       { name: 'Vitest', icon: vitestIcon, mono: true },
       { name: 'Testing Library', icon: testinglibraryIcon, mono: true },
+      { name: 'npm', icon: npmIcon, mono: true },
+      { name: 'pnpm', icon: pnpmIcon, mono: true },
+      { name: 'Yarn', icon: yarnIcon, mono: true },
+      { name: 'Turborepo', icon: turborepoIcon, mono: true },
+      { name: 'Nx', icon: nxIcon, mono: true },
+      { name: 'Insomnia', icon: insomniaIcon, mono: true },
+      { name: 'Codecov', icon: codecovIcon, mono: true },
+      { name: 'Renovate', icon: renovateIcon, mono: true },
+      { name: 'Markdown', icon: markdownIcon, mono: true },
+      { name: 'LaTeX', icon: latexIcon, mono: true },
     ],
   },
   {

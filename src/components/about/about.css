@@ -572,6 +572,24 @@
     height: 27px;
 }
 
+/* The wall is monochrome by design, so the whole grid reverses with the
+   theme. This went missing when the chip experiment was cut out, which is why
+   every black mark disappeared into the dark ground. */
+:root[data-theme='dark'] .tech-icon[data-mono='true'] {
+    filter: invert(1);
+}
+
+/* The two marks that exist only as PNGs cannot be recoloured in the file, so
+   they are flattened by filter instead: desaturate, crush to black, and invert
+   that in the dark theme. Alpha survives both. */
+.tech-icon[data-flat='true'] {
+    filter: grayscale(1) brightness(0);
+}
+
+:root[data-theme='dark'] .tech-icon[data-flat='true'] {
+    filter: grayscale(1) brightness(0) invert(1);
+}
+
 .stack-mark .tech-name {
     font-size: 0.78rem;
     font-weight: 500;
