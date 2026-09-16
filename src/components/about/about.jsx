@@ -282,15 +282,10 @@ const About = () => {
             </li>
           </ul>
 
-          {/* The proof is the primary action and the CV is secondary, which is
-              the reverse of how this read before. A PDF is what somebody
-              downloads once they are already interested; it is a poor thing to
-              ask for on a phone from a reader who is not yet. */}
+          {/* One action, not two. The navbar already carries every route this
+              hero could point at, so a button that duplicated one of them was
+              only competing with the CV for the same click. */}
           <div className="cv-actions">
-            <Link className="brand-link-out cv-primary" to="/radii">
-              {t('cv.seeWork')}
-              <ArrowRight />
-            </Link>
             <a className="cv-secondary" href={CV_PATH} download={CV_FILENAME}>
               <svg className="cv-button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M12 3v12" />

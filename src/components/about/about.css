@@ -1241,12 +1241,11 @@
 }
 
 /* ============================================================================
-   THE CLAIM, AND THE TWO ACTIONS UNDER IT
+   THE CLAIM, AND THE ACTION UNDER IT
    ----------------------------------------------------------------------------
-   The hero used to hand a visitor a job title and a PDF. The sentence below the
-   title is the specific thing he does; the primary action is the proof of it,
-   and the CV steps back to secondary — a PDF is what somebody downloads once
-   they are interested, not the thing that interests them.
+   The sentence below the title is the specific thing he does. Under it there is
+   one action — the CV — because every route a second button could have pointed
+   at is already in the navbar, one row above.
    ========================================================================= */
 
 .cv-claim {
@@ -1255,15 +1254,6 @@
     font-size: clamp(0.98rem, 1.5vw, 1.06rem);
     line-height: 1.65;
     color: var(--color-text-secondary);
-}
-
-.cv-primary {
-    /* The hero sits on the page ground rather than inside a brand world, so
-       --brand-core is not set here and the button would fall back to whatever
-       the last brand page left behind. */
-    background: var(--color-text-primary);
-    color: var(--color-bg-primary);
-    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.22);
 }
 
 .cv-secondary {

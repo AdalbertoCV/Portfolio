@@ -15,7 +15,6 @@ const cvEs = {
     role: 'Founding Software Engineer · Fundador de dos empresas',
     claim:
       'Construyo el backend, los workers en la nube y los agentes de IA detrás de la plataforma de Radii Manufacturing: el software que convierte un archivo CAD en una pieza cotizada, fabricada y trazable. En paralelo construyo Moonphase y StackSelect.',
-    seeWork: 'Ver lo que construyo',
     location: 'Zacatecas, México',
     availability: 'Abierto a colaborar',
     // Three seats held at once. This is the line the page is aimed at — it
