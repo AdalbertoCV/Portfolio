@@ -46,11 +46,6 @@ const NOW = [
   { id: 'contract', to: '/experience' },
 ];
 
-// How many marks a folded group shows of itself. Three fits in one row on a
-// phone, which is the constraint that decides it: any more and the preview
-// wraps, and a preview that wraps is the wall again in instalments.
-const PREVIEW_TILES = 3;
-
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
 
 const CERT_KEYS = ['icp', 'langchain', 'santander', 'somece'];
@@ -63,16 +58,20 @@ const CERT_LINKS = {
 };
 
 /**
- * One folded row: a name, how many things are behind it, and a way in. Two
- * sections use it — the stack and the reading list — and both were long enough
- * that open by default meant a reader scrolled past them rather than read them.
+ * One folded row, used by the reading shelves.
  *
- * Children are rendered only when open rather than hidden with CSS. For the
- * stack that is 253 logo requests a reader who never opens a group does not
- * pay for; for the books it keeps the DOM honest.
+ * The stack tried this three times and none of them held: a section whose
+ * value is visual disappoints the moment it is a list of headings, and no
+ * amount of affordance fixes that — so the stack is open and this is not its
+ * problem any more. A shelf of book titles is a different case: it is text,
+ * it reads fine folded, and three rows beat thirty.
+ *
+ * One signal, at the left, where reading starts: a bordered plus. It is the
+ * oldest disclosure control there is and the only thing on the row that looks
+ * like a control.
  */
-const Fold = ({ id, title, count, open, onToggle, preview, children }) => (
-  <li className="fold-row">
+const Fold = ({ id, title, open, onToggle, label, children }) => (
+  <li className={`fold-row${open ? ' is-open' : ''}`}>
     <h3>
       <button
         type="button"
@@ -81,15 +80,18 @@ const Fold = ({ id, title, count, open, onToggle, preview, children }) => (
         aria-expanded={open}
         aria-controls={id}
       >
+        <span className="fold-sign" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+               strokeLinecap="round" focusable="false">
+            <path d="M5 12h14" />
+            <path className="fold-sign-bar" d="M12 5v14" />
+          </svg>
+        </span>
+
         <span className="fold-name">{title}</span>
-        <span className="fold-count">{count}</span>
-        <Chevron className={`fold-chevron${open ? ' is-open' : ''}`} />
+        <span className="sr-only">{` — ${label}`}</span>
       </button>
     </h3>
-    {/* Closed, a row states its name and its size but shows nothing of what
-        is in it. The preview is the first few marks of the group: enough to
-        recognise the group by sight, not enough to be the wall again. */}
-    {!open && preview ? preview : null}
     <div id={id} hidden={!open}>
       {open && children}
     </div>
@@ -110,71 +112,95 @@ const FoldAll = ({ allOpen, onToggle, openLabel, closeLabel }) => (
 );
 
 /**
- * A tile states that he knows something. Where the catalogue can prove it, the
- * tile also says how many projects stand behind it and opens the catalogue
- * filtered to exactly those — "I know this" becoming "here is where I used
- * it", which is a different claim.
+ * One technology: its mark, its name, and — where the catalogue can prove it —
+ * how many projects stand behind it, linking to exactly those.
  *
- * The link is stretched over the tile rather than wrapped around its contents,
- * so the markup and the grid stay exactly as they were. Tiles with nothing
- * public behind them grow no affordance at all: most of what backs them is in
- * private repositories, which the projects page now says out loud.
+ * No card around it. Cards were what made 315 of these into a wall; with one
+ * group on screen the grid itself is the container, and the marks can have the
+ * room they were never given.
  */
-const TechTile = ({ item, t }) => {
+const TechMark = ({ item, t }) => {
   const built = PROJECT_TECH[item.name];
-  return (
-  <li className={`tech-tile${built ? ' is-linked' : ''}`}>
-    {item.icon ? (
-      <img
-        className="tech-icon"
-        src={item.icon}
-        alt=""
-        aria-hidden="true"
-        loading="lazy"
-        data-mono={item.mono ? 'true' : undefined}
-        data-flat={item.flat ? 'true' : undefined}
-      />
-    ) : item.concept ? (
-      <ConceptIcon className="tech-concept" name={item.concept} />
-    ) : (
-      // Last resort only — every current entry has either a logo or a concept
-      // icon, so this should never render.
-      <span className="tech-monogram" aria-hidden="true">
-        {monogram(item.name)}
+
+  const face = (
+    <>
+      <span className="stack-mark-art">
+        {item.icon ? (
+          <img
+            className="tech-icon"
+            src={item.icon}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            data-mono={item.mono ? 'true' : undefined}
+            data-flat={item.flat ? 'true' : undefined}
+          />
+        ) : item.concept ? (
+          <ConceptIcon className="tech-concept" name={item.concept} />
+        ) : (
+          // Last resort only — every current entry has either a logo or a
+          // concept icon, so this should never render.
+          <span className="tech-monogram" aria-hidden="true">
+            {monogram(item.name)}
+          </span>
+        )}
+        {built ? (
+          <span className="tech-receipt" aria-hidden="true">
+            {built}
+          </span>
+        ) : null}
       </span>
-    )}
-    <span className="tech-name">{item.name}</span>
-    {built ? (
-      <>
-        <span className="tech-receipt" aria-hidden="true">
-          {built}
-        </span>
+      <span className="tech-name">{item.name}</span>
+    </>
+  );
+
+  return (
+    <li className={`stack-mark${built ? ' is-linked' : ''}`}>
+      {built ? (
         <Link
-          className="tech-stretch"
+          className="stack-mark-link"
           to={`/projects?tech=${encodeURIComponent(item.name)}`}
           aria-label={`${item.name} — ${built} ${t('cv.skillsReceipt')}`}
-        />
-      </>
-    ) : null}
-  </li>
+        >
+          {face}
+        </Link>
+      ) : (
+        face
+      )}
+    </li>
   );
 };
 
 const About = () => {
   const { t, tl } = useTranslation();
   const [activeImage, setActiveImage] = useState(null);
-  // Open groups, by id. An array rather than a Set so the render reads the
-  // same way it is written.
-  const [openGroups, setOpenGroups] = useState([]);
-  const allGroupsOpen = openGroups.length === TECH_GROUPS.length;
+  // Which group the stack is showing. The first one, so the section is never
+  // an empty frame waiting to be clicked.
+  const [group, setGroup] = useState(TECH_GROUPS[0].id);
 
-  const toggleGroup = (id) =>
-    setOpenGroups((open) => (open.includes(id) ? open.filter((x) => x !== id) : [...open, id]));
+  // On a phone the index is a row that scrolls sideways, so the group being
+  // shown can end up off-screen after an arrow key. Only the rail moves:
+  // scrollIntoView would take the page with it, which on a section this far
+  // down reads as the page throwing the reader somewhere.
+  useEffect(() => {
+    const tab = document.getElementById(`stack-tab-${group}`);
+    const rail = tab?.parentElement;
+    if (!rail || rail.scrollWidth <= rail.clientWidth) return;
+    rail.scrollTo({ left: Math.max(0, tab.offsetLeft - 24), behavior: 'smooth' });
+  }, [group]);
 
-  const toggleAllGroups = () =>
-    setOpenGroups((open) =>
-      open.length === TECH_GROUPS.length ? [] : TECH_GROUPS.map((group) => group.id)
-    );
+  // Arrow keys walk the index, which is what a tablist is expected to do and
+  // what makes it usable without a mouse.
+  const stepGroup = (event, id) => {
+    const keys = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
+    const step = keys[event.key];
+    if (!step) return;
+    event.preventDefault();
+    const index = TECH_GROUPS.findIndex((entry) => entry.id === id);
+    const next = TECH_GROUPS[(index + step + TECH_GROUPS.length) % TECH_GROUPS.length];
+    setGroup(next.id);
+    document.getElementById(`stack-tab-${next.id}`)?.focus();
+  };
 
   const [openShelves, setOpenShelves] = useState([]);
   const allShelvesOpen = openShelves.length === READING.length;
@@ -323,37 +349,49 @@ const About = () => {
           twelve rows: the group name, how many marks are in it, and a way in.
           Nothing was cut — the count on each row is the whole group. */}
       <Section kicker={t('cv.skillsKicker')} title={t('cv.skillsTitle')} lede={t('cv.skillsLede')}>
-        <FoldAll
-          allOpen={allGroupsOpen}
-          onToggle={toggleAllGroups}
-          openLabel={t('cv.skillsExpandAll')}
-          closeLabel={t('cv.skillsCollapseAll')}
-        />
+        {/* An index and a panel, rather than everything at once or nothing
+            at all.
 
-        <Reveal as="ul" className="fold-list">
-          {TECH_GROUPS.map(({ id, items }) => (
-            <Fold
-              key={id}
-              id={`stack-${id}`}
-              title={t(`skills.groups.${id}`)}
-              count={items.length}
-              open={openGroups.includes(id)}
-              onToggle={() => toggleGroup(id)}
-              preview={
-                <ul className="tech-grid is-preview">
-                  {items.slice(0, PREVIEW_TILES).map((item) => (
-                    <TechTile item={item} t={t} key={item.name} />
-                  ))}
-                </ul>
-              }
-            >
-              <ul className="tech-grid">
-                {items.map((item) => (
-                  <TechTile item={item} t={t} key={item.name} />
-                ))}
-              </ul>
-            </Fold>
-          ))}
+            Four earlier attempts argued about how to fold 315 entries into a
+            page; all of them were answering the wrong question. The section
+            does not need to show every group at once — it needs to say how
+            many groups there are, let a reader pick one, and give that one
+            room to breathe. Twelve names on the left, one group's marks on
+            the right, and the wall never happens. */}
+        <Reveal className="stack">
+          <div className="stack-index" role="tablist" aria-label={t('cv.skillsTitle')}>
+            {TECH_GROUPS.map(({ id, items }) => (
+              <button
+                type="button"
+                role="tab"
+                id={`stack-tab-${id}`}
+                aria-selected={group === id}
+                aria-controls={`stack-panel-${id}`}
+                tabIndex={group === id ? 0 : -1}
+                className="stack-tab"
+                key={id}
+                onClick={() => setGroup(id)}
+                onKeyDown={(event) => stepGroup(event, id)}
+              >
+                <span className="stack-tab-name">{t(`skills.groups.${id}`)}</span>
+                <span className="stack-tab-count">{items.length}</span>
+              </button>
+            ))}
+          </div>
+
+          <div
+            className="stack-panel"
+            role="tabpanel"
+            id={`stack-panel-${group}`}
+            aria-labelledby={`stack-tab-${group}`}
+            key={group}
+          >
+            <ul className="stack-marks">
+              {(TECH_GROUPS.find((entry) => entry.id === group)?.items || []).map((item) => (
+                <TechMark item={item} t={t} key={item.name} />
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </Section>
 
@@ -535,9 +573,9 @@ const About = () => {
               key={id}
               id={`shelf-${id}`}
               title={t(`cv.readingGroups.${id}`)}
-              count={books.length}
               open={openShelves.includes(id)}
               onToggle={() => toggleShelf(id)}
+              label={`${books.length} ${t('cv.foldItems')}`}
             >
               <ul className="reading-list">
                 {books.map(({ title, author, icon }) => (

@@ -314,15 +314,19 @@
     margin: 0;
 }
 
-/* The whole row is the control: a 12px chevron is a poor target, and the row
-   is the thing a reader is already pointing at. */
+/* One signal per row, at the left, where reading starts. A bordered plus is
+   the oldest disclosure control there is and the only thing on the row that
+   looks like a control — which a 16px chevron at the far right of a 1180px
+   row was not. */
 .fold-head {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 18px 4px;
+    gap: 18px;
+    padding: 14px 12px;
+    margin: 0 -12px;
     border: 0;
+    border-radius: var(--radius-md);
     background: transparent;
     color: var(--color-text-primary);
     font-family: 'Poppins', sans-serif;
@@ -331,6 +335,43 @@
     letter-spacing: -0.02em;
     text-align: left;
     cursor: pointer;
+    transition: background var(--transition-base);
+}
+
+.fold-sign {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border-secondary);
+    color: var(--color-text-secondary);
+    transition: border-color var(--transition-base), color var(--transition-base),
+        background var(--transition-base);
+}
+
+.fold-sign svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* Plus becomes minus by taking the bar away, which animates where swapping
+   two icons would blink. */
+.fold-sign-bar {
+    transform-origin: center;
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), opacity 160ms linear;
+}
+
+.fold-row.is-open .fold-sign-bar {
+    transform: scaleY(0);
+    opacity: 0;
+}
+
+.fold-row.is-open .fold-sign {
+    border-color: var(--color-text-primary);
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
 }
 
 .fold-name {
@@ -338,17 +379,10 @@
     min-width: 0;
 }
 
-/* The count is the reason the folded row still carries information. */
-.fold-count {
-    flex: 0 0 auto;
-    font-family: inherit;
-    font-size: 0.78rem;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    color: var(--color-text-secondary);
-    background: var(--color-bg-tertiary);
-    border-radius: 999px;
-    padding: 3px 10px;
+.fold-head:focus-visible {
+    background: var(--color-bg-card);
+    outline: 2px solid var(--color-border-hover);
+    outline-offset: 2px;
 }
 
 .fold-chevron {
@@ -363,7 +397,7 @@
     transform: rotate(180deg);
 }
 
-.fold-row .tech-grid {
+.fold-row .reading-list {
     padding-bottom: 22px;
 }
 
@@ -372,70 +406,268 @@
         color: var(--color-text-primary);
     }
 
-    .fold-head:hover .fold-chevron,
+    .fold-head:hover {
+        background: var(--color-bg-card);
+    }
+
+    .fold-head:hover .fold-sign {
+        border-color: var(--color-text-primary);
+        color: var(--color-text-primary);
+    }
+
     .fold-all-button:hover .fold-chevron {
         color: var(--color-text-primary);
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .fold-chevron {
+    .fold-chevron,
+    .fold-sign-bar {
         transition: none;
     }
 }
 
-.tech-grid {
-    list-style: none;
+/* ============================================================================
+   THE STACK — an index, and one group at a time
+   ----------------------------------------------------------------------------
+   315 entries do not have a good "show everything" layout; they have a good
+   "let me pick" layout. The index states how many groups there are and how big
+   each one is, the panel gives the chosen one the whole width, and the wall
+   never happens.
+   ========================================================================= */
+
+.stack {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
-    gap: 12px;
-    margin: 0;
-    padding: 0;
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    gap: 0 56px;
+    align-items: start;
 }
 
-.tech-tile {
+/* --------------------------------------------------------------- the index */
+
+.stack-index {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: calc(var(--navbar-h, 120px) + 24px);
+}
+
+.stack-tab {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    width: 100%;
+    padding: 11px 14px;
+    border: 0;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-align: left;
+    cursor: pointer;
+    transition: color var(--transition-base), background var(--transition-base);
+}
+
+.stack-tab-name {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.stack-tab-count {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-tertiary);
+    transition: color var(--transition-base);
+}
+
+.stack-tab[aria-selected='true'] {
+    background: var(--color-bg-card);
+    color: var(--color-text-primary);
+}
+
+.stack-tab[aria-selected='true'] .stack-tab-count {
+    color: var(--color-text-secondary);
+}
+
+.stack-tab:focus-visible {
+    outline: 2px solid var(--color-border-hover);
+    outline-offset: 1px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .stack-tab:hover {
+        color: var(--color-text-primary);
+    }
+}
+
+/* --------------------------------------------------------------- the panel */
+
+.stack-panel {
+    min-width: 0;
+    animation: stackIn 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Keyed on the group, so switching plays this again: the panel arriving is
+   what tells a reader the click did something. */
+@keyframes stackIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+}
+
+.stack-marks {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+    gap: 30px 20px;
+    margin: 0;
+    padding: 4px 0 0;
+}
+
+/* No card. The grid is the container, and 315 boxes were what made this a
+   wall in the first place. */
+.stack-mark {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 12px;
-    padding: 18px 8px 14px;
-    min-height: 106px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-border-primary);
-    background: var(--color-bg-card);
+    gap: 11px;
     text-align: center;
+}
+
+.stack-mark-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+}
+
+.stack-mark-art {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-primary);
     transition: border-color var(--transition-base), transform var(--transition-base),
         box-shadow var(--transition-base);
 }
 
-.tech-icon {
-    width: 34px;
-    height: 34px;
+.stack-mark .tech-icon {
+    width: 27px;
+    height: 27px;
     object-fit: contain;
-    flex: 0 0 auto;
 }
 
-/* Every mark on the wall is a silhouette, so the whole grid reverses with the
-   theme instead of a third of it staying lit. */
-:root[data-theme='dark'] .tech-icon[data-mono='true'] {
-    filter: invert(1);
+.stack-mark .tech-concept {
+    width: 27px;
+    height: 27px;
 }
 
-/* The two marks that only exist as PNGs cannot be recoloured in the file, so
-   they are flattened to a solid silhouette by filter: desaturate, crush to
-   black, and invert that in the dark theme. Alpha survives both, which is why
-   this reads as the same mark rather than as a box. */
-.tech-icon[data-flat='true'] {
-    filter: grayscale(1) brightness(0);
+.stack-mark .tech-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-base);
 }
 
-:root[data-theme='dark'] .tech-icon[data-flat='true'] {
-    filter: grayscale(1) brightness(0) invert(1);
+/* The fourteen that can prove themselves. */
+.tech-receipt {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 18px;
+    padding: 1px 5px;
+    border-radius: 999px;
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
+    font-size: 0.64rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.6;
 }
 
+.stack-mark.is-linked:focus-within .stack-mark-art {
+    border-color: var(--color-text-primary);
+}
 
-/* Stands in for a logo where none exists, so the grid has no holes in it. */
+@media (hover: hover) and (pointer: fine) {
+    .stack-mark.is-linked:hover .stack-mark-art {
+        border-color: var(--color-text-primary);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .stack-mark.is-linked:hover .tech-name {
+        color: var(--color-text-primary);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stack-panel {
+        animation: none;
+    }
+}
+
+/* On a phone the index becomes a row that scrolls sideways, which is the one
+   shape that keeps twelve options reachable without eating the screen. */
+@media (max-width: 860px) {
+    .stack {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+    }
+
+    .stack-index {
+        position: static;
+        flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        margin: 0 -24px;
+        padding-inline: 24px;
+        scrollbar-width: none;
+    }
+
+    .stack-index::-webkit-scrollbar {
+        display: none;
+    }
+
+    .stack-tab {
+        width: auto;
+        flex: 0 0 auto;
+        padding: 9px 15px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border-primary);
+        white-space: nowrap;
+    }
+
+    .stack-tab[aria-selected='true'] {
+        border-color: var(--color-text-primary);
+        background: var(--color-text-primary);
+        color: var(--color-bg-primary);
+    }
+
+    .stack-tab[aria-selected='true'] .stack-tab-count {
+        color: var(--color-bg-primary);
+        opacity: 0.7;
+    }
+
+    .stack-marks {
+        grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+        gap: 24px 14px;
+    }
+}
+
 .tech-monogram {
     display: inline-flex;
     align-items: center;
@@ -454,23 +686,11 @@
 }
 
 .tech-name {
-    font-size: 0.76rem;
+    font-size: 0.79rem;
     font-weight: 500;
     line-height: 1.35;
     color: var(--color-text-secondary);
     letter-spacing: -0.01em;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .tech-tile:hover {
-        border-color: var(--color-border-hover);
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-md);
-    }
-
-    .tech-tile:hover .tech-name {
-        color: var(--color-text-primary);
-    }
 }
 
 /* ============================================================================
@@ -857,16 +1077,6 @@
         padding: 22px 18px;
     }
 
-    .tech-grid {
-        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
-        gap: 10px;
-    }
-
-    .tech-tile {
-        min-height: 96px;
-        padding: 14px 6px 12px;
-    }
-
     .cv-proof {
         flex: 1 1 100%;
     }
@@ -895,7 +1105,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
+    width: 19px;
     height: 34px;
     flex: 0 0 auto;
     color: var(--color-text-secondary);
@@ -903,14 +1113,8 @@
 }
 
 .tech-concept svg {
-    width: 28px;
-    height: 28px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .tech-tile:hover .tech-concept {
-        color: var(--color-text-primary);
-    }
+    width: 100%;
+    height: 100%;
 }
 
 /* ============================================================================
@@ -1266,91 +1470,4 @@
 @media (hover: hover) and (pointer: fine) {
 }
 
-/* ============================================================================
-   A TILE THAT PROVES ITSELF
-   ----------------------------------------------------------------------------
-   Fourteen of the marks have projects in the catalogue behind them. Those say
-   how many and open the catalogue filtered to exactly those, which is a
-   different claim from the rest of the wall.
-   ========================================================================= */
 
-.tech-tile {
-    position: relative;
-}
-
-.tech-stretch {
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-}
-
-.tech-receipt {
-    position: absolute;
-    top: 7px;
-    right: 8px;
-    min-width: 17px;
-    padding: 1px 5px;
-    border-radius: 999px;
-    background: var(--color-bg-tertiary);
-    color: var(--color-text-secondary);
-    font-size: 0.66rem;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-    line-height: 1.5;
-}
-
-.tech-tile.is-linked {
-    border-color: var(--color-border-secondary);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .tech-tile.is-linked:hover {
-        border-color: var(--color-border-hover);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-sm);
-    }
-
-    .tech-tile.is-linked:hover .tech-receipt {
-        background: var(--color-text-primary);
-        color: var(--color-bg-primary);
-    }
-}
-
-.tech-tile.is-linked:focus-within {
-    border-color: var(--color-border-hover);
-}
-
-/* The three marks a folded group shows of itself. Fixed tracks rather than the
-   auto-fill the open grid uses: three tiles stretched across a 1180px row
-   would read as the group's entire contents.
-
-   Smaller than the open tiles, too. At full size the preview reads as the grid
-   rather than as a sample of it, and thirteen full-size rows put back most of
-   the height the fold was there to save. */
-.tech-grid.is-preview {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    max-width: 330px;
-    padding-bottom: 18px;
-}
-
-.tech-grid.is-preview .tech-tile {
-    min-height: 84px;
-    padding: 13px 6px 11px;
-    gap: 8px;
-}
-
-.tech-grid.is-preview .tech-icon,
-.tech-grid.is-preview .tech-concept {
-    width: 26px;
-    height: 26px;
-}
-
-.tech-grid.is-preview .tech-name {
-    font-size: 0.7rem;
-}
-
-.tech-grid.is-preview .tech-receipt {
-    top: 5px;
-    right: 5px;
-    font-size: 0.6rem;
-}
