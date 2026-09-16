@@ -1319,3 +1319,38 @@
 .tech-tile.is-linked:focus-within {
     border-color: var(--color-border-hover);
 }
+
+/* The three marks a folded group shows of itself. Fixed tracks rather than the
+   auto-fill the open grid uses: three tiles stretched across a 1180px row
+   would read as the group's entire contents.
+
+   Smaller than the open tiles, too. At full size the preview reads as the grid
+   rather than as a sample of it, and thirteen full-size rows put back most of
+   the height the fold was there to save. */
+.tech-grid.is-preview {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 330px;
+    padding-bottom: 18px;
+}
+
+.tech-grid.is-preview .tech-tile {
+    min-height: 84px;
+    padding: 13px 6px 11px;
+    gap: 8px;
+}
+
+.tech-grid.is-preview .tech-icon,
+.tech-grid.is-preview .tech-concept {
+    width: 26px;
+    height: 26px;
+}
+
+.tech-grid.is-preview .tech-name {
+    font-size: 0.7rem;
+}
+
+.tech-grid.is-preview .tech-receipt {
+    top: 5px;
+    right: 5px;
+    font-size: 0.6rem;
+}

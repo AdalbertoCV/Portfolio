@@ -46,6 +46,11 @@ const NOW = [
   { id: 'contract', to: '/experience' },
 ];
 
+// How many marks a folded group shows of itself. Three fits in one row on a
+// phone, which is the constraint that decides it: any more and the preview
+// wraps, and a preview that wraps is the wall again in instalments.
+const PREVIEW_TILES = 3;
+
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
 
 const CERT_KEYS = ['icp', 'langchain', 'santander', 'somece'];
@@ -66,7 +71,7 @@ const CERT_LINKS = {
  * stack that is 253 logo requests a reader who never opens a group does not
  * pay for; for the books it keeps the DOM honest.
  */
-const Fold = ({ id, title, count, open, onToggle, children }) => (
+const Fold = ({ id, title, count, open, onToggle, preview, children }) => (
   <li className="fold-row">
     <h3>
       <button
@@ -81,6 +86,10 @@ const Fold = ({ id, title, count, open, onToggle, children }) => (
         <Chevron className={`fold-chevron${open ? ' is-open' : ''}`} />
       </button>
     </h3>
+    {/* Closed, a row states its name and its size but shows nothing of what
+        is in it. The preview is the first few marks of the group: enough to
+        recognise the group by sight, not enough to be the wall again. */}
+    {!open && preview ? preview : null}
     <div id={id} hidden={!open}>
       {open && children}
     </div>
@@ -330,6 +339,13 @@ const About = () => {
               count={items.length}
               open={openGroups.includes(id)}
               onToggle={() => toggleGroup(id)}
+              preview={
+                <ul className="tech-grid is-preview">
+                  {items.slice(0, PREVIEW_TILES).map((item) => (
+                    <TechTile item={item} t={t} key={item.name} />
+                  ))}
+                </ul>
+              }
             >
               <ul className="tech-grid">
                 {items.map((item) => (
