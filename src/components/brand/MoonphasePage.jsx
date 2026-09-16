@@ -106,6 +106,7 @@ const MoonphasePage = () => {
             <span>{t('moonphase.period')}</span>
           </>
         }
+        actions={<span className="brand-soon">{t('ventures.siteSoon')}</span>}
       />
 
       <div className="brand-body">

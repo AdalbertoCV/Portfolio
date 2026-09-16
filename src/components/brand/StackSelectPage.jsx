@@ -59,6 +59,7 @@ const StackSelectPage = () => {
             <span>{t('stackselect.period')}</span>
           </>
         }
+        actions={<span className="brand-soon">{t('ventures.siteSoon')}</span>}
       />
 
       <div className="brand-body">

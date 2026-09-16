@@ -237,6 +237,18 @@ const CATALOGUE = [
   },
 ];
 
+// How many projects stand behind each technology, keyed by the exact string
+// the stack tiles use. The About page reads this to turn a tile into a link:
+// "I know this" becomes "here is where I used it", which is a different claim.
+export const PROJECT_TECH = CATALOGUE.reduce((counts, { projects }) => {
+  projects.forEach(({ language, tags }) => {
+    [language, ...(tags || [])].filter(Boolean).forEach((name) => {
+      counts[name] = (counts[name] || 0) + 1;
+    });
+  });
+  return counts;
+}, {});
+
 // Every language in the catalogue, in the order the projects appear, so the
 // filter row is built from the data rather than from a second list somebody
 // has to remember to update.

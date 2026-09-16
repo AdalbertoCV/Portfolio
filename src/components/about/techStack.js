@@ -385,6 +385,11 @@ const TECH_GROUPS = [
       { name: 'AI Agents', concept: 'agents' },
       { name: 'LLM & RAG', concept: 'rag' },
       { name: 'Machine Learning', concept: 'ml' },
+      // Not a synonym for the line above it: machine learning covers the
+      // classical methods too — the stroke classifier in the catalogue is a
+      // random forest, not a network — so the distinction carries information
+      // rather than repeating a word.
+      { name: 'Neural networks', concept: 'neuralNet' },
       { name: 'Multi-agent', concept: 'multiAgent' },
       { name: 'TensorFlow', icon: tensorflowIcon, mono: true },
       { name: 'Hugging Face', icon: huggingfaceIcon, mono: true },

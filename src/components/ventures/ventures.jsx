@@ -55,6 +55,10 @@ const Ventures = () => {
                 <span className="venture-status-dot" aria-hidden="true" />
                 {t(`${brand}.period`)}
               </span>
+              {/* Both companies exist before their websites do. Saying so is
+                  better than a card that quietly offers no way out to a
+                  reader who came looking for the company itself. */}
+              <span className="venture-soon">{t('ventures.siteSoon')}</span>
               <span className="venture-enter">
                 {t('ventures.enter')}
                 <ArrowRight />

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowUpRight, Reveal, TalkBand } from '../brand/parts';
 import ProjectCard from './ProjectCard';
@@ -8,6 +9,7 @@ import CATALOGUE, { LANGUAGES, PROJECT_COUNT } from './catalogue';
 import './projects.css';
 
 const SWIPE_THRESHOLD = 50;
+const MAX_SCROLLBAR_WIDTH = 40;
 
 // Matches a project against the search box. Name, language and tags rather
 // than the body copy: a reader typing "django" wants the Django projects, not
@@ -21,7 +23,6 @@ const matches = (project, query, language) => {
     .filter(Boolean)
     .some((field) => field.toLowerCase().includes(needle));
 };
-const MAX_SCROLLBAR_WIDTH = 40;
 
 const ChevronIcon = ({ direction }) => (
   <svg className="chevron-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -65,12 +66,26 @@ const MyProjects = () => {
   // expanded view can switch from fit-the-whole-thing to fill-the-height and
   // pan sideways.
   const [zoomed, setZoomed] = useState(false);
+  const [canZoom, setCanZoom] = useState(false);
   // The catalogue carries 46 tags and nine languages and used none of them.
   // Twenty cards is more than a reader scans, and "show me the Django ones" is
   // the question they actually arrive with.
-  const [query, setQuery] = useState('');
-  const [language, setLanguage] = useState('');
-  const [canZoom, setCanZoom] = useState(false);
+  //
+  // The filter lives in the URL rather than in local state, for two reasons: a
+  // filtered view can be sent to somebody, and a stack tile on the About page
+  // can link straight to the projects that back it.
+  const [params, setParams] = useSearchParams();
+  const query = params.get('stack') || '';
+  const language = params.get('lang') || '';
+
+  const setFilter = (next) => {
+    const merged = { stack: query, lang: language, ...next };
+    const clean = Object.fromEntries(Object.entries(merged).filter(([, value]) => value));
+    // replace: the back button should leave the page, not walk back through
+    // every keystroke typed into the search box.
+    setParams(clean, { replace: true });
+  };
+
   const touchStartX = useRef(null);
   const viewportRef = useRef(null);
 
@@ -200,6 +215,12 @@ const MyProjects = () => {
         <span className="hub-badge">{t('repos.badge')}</span>
         <h1 className="projects-title">{t('repos.title')}</h1>
         <p className="projects-lede">{t('repos.lede')}</p>
+        {/* The catalogue is the public half. Most of what he has actually
+            shipped — a manufacturing platform, a clinic's scheduling system,
+            client work under contract — is not in a repository anybody can
+            open, and a visitor counting twenty cards deserves to know that
+            rather than to infer it. */}
+        <p className="projects-note">{t('repos.privateNote')}</p>
         <p className="projects-count">
           <strong>{filtering ? `${shown} / ${PROJECT_COUNT}` : PROJECT_COUNT}</strong>{' '}
           {t('repos.countLabel')}
@@ -217,7 +238,7 @@ const MyProjects = () => {
           <input
             type="search"
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => setFilter({ stack: event.target.value })}
             placeholder={t('repos.searchPlaceholder')}
           />
         </label>
@@ -230,7 +251,7 @@ const MyProjects = () => {
             className="projects-lang"
             data-active={language === '' ? 'true' : undefined}
             aria-pressed={language === ''}
-            onClick={() => setLanguage('')}
+            onClick={() => setFilter({ lang: '' })}
           >
             {t('repos.allLanguages')}
           </button>
@@ -241,7 +262,7 @@ const MyProjects = () => {
               key={name}
               data-active={language === name ? 'true' : undefined}
               aria-pressed={language === name}
-              onClick={() => setLanguage(language === name ? '' : name)}
+              onClick={() => setFilter({ lang: language === name ? '' : name })}
             >
               {name}
             </button>
@@ -296,8 +317,7 @@ const MyProjects = () => {
             type="button"
             className="tech-toggle"
             onClick={() => {
-              setQuery('');
-              setLanguage('');
+              setParams({}, { replace: true });
             }}
           >
             {t('repos.clearFilters')}

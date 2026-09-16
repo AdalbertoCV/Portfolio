@@ -830,6 +830,22 @@ const ICONS = {
     </svg>
   ),
 
+  // Layers, and the edges between them. Drawn rather than borrowed from the
+  // machine-learning mark, because the point of the tile is the difference.
+  neuralNet: (
+    <svg {...base}>
+      <circle cx="4.4" cy="6.4" r="1.7" />
+      <circle cx="4.4" cy="17.6" r="1.7" />
+      <circle cx="12" cy="4.2" r="1.7" />
+      <circle cx="12" cy="12" r="1.7" />
+      <circle cx="12" cy="19.8" r="1.7" />
+      <circle cx="19.6" cy="9.2" r="1.7" />
+      <circle cx="19.6" cy="15.6" r="1.7" />
+      <path d="m6 5.6 4.4-1M6 7.4 10.6 11.4M6 16.8l4.4-4M6 18.4l4.4 1" />
+      <path d="m13.6 4.8 4.6 3.6M13.6 11.4l4.4-1.6M13.6 12.6l4.4 2.4M13.6 19.2l4.6-2.8" />
+    </svg>
+  ),
+
   // ------------------------------------------------------------ the shelves
   // The books take a small vocabulary rather than one mark each: a shelf where
   // six titles share the "agents" mark is telling the reader something true

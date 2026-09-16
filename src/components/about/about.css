@@ -1265,3 +1265,57 @@
 
 @media (hover: hover) and (pointer: fine) {
 }
+
+/* ============================================================================
+   A TILE THAT PROVES ITSELF
+   ----------------------------------------------------------------------------
+   Fourteen of the marks have projects in the catalogue behind them. Those say
+   how many and open the catalogue filtered to exactly those, which is a
+   different claim from the rest of the wall.
+   ========================================================================= */
+
+.tech-tile {
+    position: relative;
+}
+
+.tech-stretch {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.tech-receipt {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    min-width: 17px;
+    padding: 1px 5px;
+    border-radius: 999px;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    font-size: 0.66rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.5;
+}
+
+.tech-tile.is-linked {
+    border-color: var(--color-border-secondary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .tech-tile.is-linked:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .tech-tile.is-linked:hover .tech-receipt {
+        background: var(--color-text-primary);
+        color: var(--color-bg-primary);
+    }
+}
+
+.tech-tile.is-linked:focus-within {
+    border-color: var(--color-border-hover);
+}

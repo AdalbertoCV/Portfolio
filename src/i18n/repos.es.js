@@ -9,6 +9,8 @@ const reposEs = {
     lede: 'Sistemas entregados a instituciones, proyectos académicos, ejercicios de arquitectura y práctica de ingeniería. Los proyectos con interfaz incluyen capturas; el resto —APIs, pipelines y estructuras de datos— se identifica mediante una firma generada a partir de su nombre.',
     countLabel: 'proyectos',
     privateLabel: 'Privado',
+    privateNote:
+      'Esta es la mitad pública. La plataforma de Radii, los sistemas entregados bajo contrato y los productos de mis propias empresas viven en repositorios privados, así que lo catalogado aquí es lo que se puede abrir, no todo lo que se ha construido.',
     searchLabel: 'Buscar en el catálogo',
     searchPlaceholder: 'Django, Kafka, el nombre de un proyecto…',
     filterLabel: 'Filtrar por lenguaje',

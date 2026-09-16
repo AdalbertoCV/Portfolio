@@ -7,6 +7,8 @@ const reposEn = {
     lede: 'Systems delivered to institutions, academic projects, architecture exercises and engineering practice. Projects with an interface include screenshots; the rest — APIs, pipelines and data structures — are identified by a signature generated from their name.',
     countLabel: 'projects',
     privateLabel: 'Private',
+    privateNote:
+      'This is the public half. The platform at Radii, the systems delivered under contract and the products of my own companies live in private repositories, so what is catalogued here is what can be opened — not the whole of what has been built.',
     searchLabel: 'Search the catalogue',
     searchPlaceholder: 'Django, Kafka, a project name…',
     filterLabel: 'Filter by language',

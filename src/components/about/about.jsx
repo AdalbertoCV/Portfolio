@@ -21,6 +21,7 @@ import {
   YOUTUBE,
 } from '../../site';
 import TECH_GROUPS, { monogram } from './techStack';
+import { PROJECT_TECH } from '../projects/catalogue';
 import READING from './reading';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
@@ -99,8 +100,21 @@ const FoldAll = ({ allOpen, onToggle, openLabel, closeLabel }) => (
   </Reveal>
 );
 
-const TechTile = ({ item }) => (
-  <li className="tech-tile">
+/**
+ * A tile states that he knows something. Where the catalogue can prove it, the
+ * tile also says how many projects stand behind it and opens the catalogue
+ * filtered to exactly those — "I know this" becoming "here is where I used
+ * it", which is a different claim.
+ *
+ * The link is stretched over the tile rather than wrapped around its contents,
+ * so the markup and the grid stay exactly as they were. Tiles with nothing
+ * public behind them grow no affordance at all: most of what backs them is in
+ * private repositories, which the projects page now says out loud.
+ */
+const TechTile = ({ item, t }) => {
+  const built = PROJECT_TECH[item.name];
+  return (
+  <li className={`tech-tile${built ? ' is-linked' : ''}`}>
     {item.icon ? (
       <img
         className="tech-icon"
@@ -121,8 +135,21 @@ const TechTile = ({ item }) => (
       </span>
     )}
     <span className="tech-name">{item.name}</span>
+    {built ? (
+      <>
+        <span className="tech-receipt" aria-hidden="true">
+          {built}
+        </span>
+        <Link
+          className="tech-stretch"
+          to={`/projects?stack=${encodeURIComponent(item.name)}`}
+          aria-label={`${item.name} — ${built} ${t('cv.skillsReceipt')}`}
+        />
+      </>
+    ) : null}
   </li>
-);
+  );
+};
 
 const About = () => {
   const { t, tl } = useTranslation();
@@ -306,7 +333,7 @@ const About = () => {
             >
               <ul className="tech-grid">
                 {items.map((item) => (
-                  <TechTile item={item} key={item.name} />
+                  <TechTile item={item} t={t} key={item.name} />
                 ))}
               </ul>
             </Fold>

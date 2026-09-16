@@ -23,6 +23,7 @@ const brandsEn = {
     roleCto: 'CTO & Co-founder',
     roleCeo: 'CEO & Founder',
     enter: 'Enter',
+    siteSoon: 'Website in build — live very soon',
     statusBuilding: 'Building',
     stackselectPitch: 'Bootcamps and a technical assessment platform directed at placing developers with no prior experience into employment.',
     moonphasePitch: 'Building the future of technology: real automation and R&D on what nobody has solved, with method and a written record.',

@@ -1422,3 +1422,27 @@ ol.timeline.reveal {
         opacity: 0;
     }
 }
+
+/* Both companies exist before their websites do. The note sits where a link
+   would, quiet enough not to read as a broken button. */
+.venture-soon,
+.brand-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--brand-soft, var(--color-text-tertiary));
+}
+
+.venture-soon::before,
+.brand-soon::before {
+    content: '';
+    width: 14px;
+    height: 1px;
+    background: currentColor;
+}
+
+.venture-foot {
+    flex-wrap: wrap;
+}
