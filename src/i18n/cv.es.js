@@ -73,6 +73,7 @@ const cvEs = {
         'Decisiones técnicas y análisis de trade-offs',
         'Modelado de datos y trade-offs de consistencia',
         'Escalabilidad y planeación de capacidad',
+        'Arquitectura SaaS multi-tenant',
         'Análisis de modos de falla y riesgo',
         'Confiabilidad y tolerancia a fallos',
         'Análisis de incidentes y post-mortems',
@@ -98,6 +99,7 @@ const cvEs = {
       breadthItems: [
         'Mentalidad emprendedora',
         'Estrategia de producto y tecnología',
+        'Producto SaaS: suscripciones, medición de uso y unit economics',
         'Visión de marketing digital y estrategias de venta',
         'Conocimiento en fintech e inversiones',
         'Robótica y manufactura avanzada',

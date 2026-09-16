@@ -17,6 +17,7 @@ const PRACTICE_ICONS = {
     'tradeoff', // Technical decision-making and trade-off analysis
     'dataModel', // Data modeling and consistency trade-offs
     'scale', // Scalability and capacity planning
+    'saas', // Multi-tenant SaaS architecture
     'risk', // Failure mode and risk analysis
     'resilience', // Reliability and fault tolerance
     'postmortem', // Incident analysis and postmortems
@@ -40,6 +41,7 @@ const PRACTICE_ICONS = {
   breadth: [
     'entrepreneur', // Entrepreneurial mindset
     'strategy', // Product and tech strategy
+    'subscription', // SaaS products: subscriptions, metering and unit economics
     'marketing', // Digital marketing vision and sales strategy
     'finance', // Fintech and investments knowledge
     'robotics', // Robotics and advanced manufacturing

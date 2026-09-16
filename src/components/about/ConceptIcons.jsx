@@ -31,6 +31,29 @@ const ICONS = {
   ),
 
   // Independent services, each its own box, talking across a seam.
+  // One product, many tenants: the window in front is the one a customer
+  // sees, and the two receding corners behind it are the other tenants running
+  // on the same deployment.
+  saas: (
+    <svg {...base}>
+      <rect x="2.6" y="8.6" width="13" height="12" rx="2.2" />
+      <path d="M2.6 12.2h13" />
+      <path d="M5.2 10.4h.01" />
+      <path d="M7.4 10.4h.01" />
+      <path d="M6 6h11.4a2 2 0 0 1 2 2v9.6" strokeDasharray="2.2 1.8" />
+      <path d="M9.4 3.4h9a2.6 2.6 0 0 1 2.6 2.6v8.6" strokeDasharray="2.2 1.8" />
+    </svg>
+  ),
+  // Revenue that comes back: a card, and the cycle that charges it again.
+  subscription: (
+    <svg {...base}>
+      <rect x="2" y="3" width="13" height="9" rx="2" />
+      <path d="M2 6.2h13" />
+      <path d="M4.6 9.2h3.2" />
+      <path d="M21.4 17a4.6 4.6 0 1 1-1.5-3.4" />
+      <path d="M21.6 12.4V15.6H18.4" />
+    </svg>
+  ),
   microservices: (
     <svg {...base}>
       <rect x="2.5" y="3" width="7" height="7" rx="1.8" />

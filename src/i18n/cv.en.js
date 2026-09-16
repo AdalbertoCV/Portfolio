@@ -66,6 +66,7 @@ const cvEn = {
         'Technical decision-making and trade-off analysis',
         'Data modeling and consistency trade-offs',
         'Scalability and capacity planning',
+        'Multi-tenant SaaS architecture',
         'Failure mode and risk analysis',
         'Reliability and fault tolerance',
         'Incident analysis and postmortems',
@@ -91,6 +92,7 @@ const cvEn = {
       breadthItems: [
         'Entrepreneurial mindset',
         'Product and tech strategy',
+        'SaaS products: subscriptions, usage metering and unit economics',
         'Digital marketing vision and sales strategy',
         'Fintech and investments knowledge',
         'Robotics and advanced manufacturing',

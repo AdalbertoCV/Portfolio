@@ -413,6 +413,7 @@ const TECH_GROUPS = [
       // other monochrome marks here.
       { name: 'Gin', icon: ginIcon, mono: true },
       { name: 'Microservices', concept: 'microservices' },
+      { name: 'Multi-tenancy', concept: 'saas' },
       { name: 'Event-driven', concept: 'eventDriven' },
       { name: 'Distributed systems', concept: 'distributed' },
       { name: 'GraphQL', icon: graphqlIcon, mono: true },
