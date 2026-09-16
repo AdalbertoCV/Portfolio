@@ -17,6 +17,7 @@ const reposEn = {
     clearFilters: 'Clear the filters',
     clearTech: 'Remove the technology filter',
     viewRepo: 'View repository',
+    playIt: 'Play it here',
     viewShots: 'View screenshots',
 
     groups: {
@@ -32,6 +33,10 @@ const reposEn = {
       nocturno: {
         title: 'Nocturno 108',
         body: 'A jazz-hop track composed as code in Strudel, with a purpose-built player: an audio engine synthesised from scratch on Web Audio — no samples, no external libraries — an avatar synchronised to the beat, a real-time piano roll and a mixer.',
+      },
+      play: {
+        title: 'A laptop that jumps bugs',
+        body: 'An endless runner written for this site: one canvas, no dependencies, a delta-timed loop so a 144Hz screen does not play it four times as fast, and coyote time so a jump pressed a frame late still counts. Every obstacle is named after a bug I have actually shipped.',
       },
       etl: {
         title: 'ETL → Dgraph',

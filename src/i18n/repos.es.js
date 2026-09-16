@@ -19,6 +19,7 @@ const reposEs = {
     clearFilters: 'Limpiar los filtros',
     clearTech: 'Quitar el filtro de tecnología',
     viewRepo: 'Ver repositorio',
+    playIt: 'Jugar aquí',
     viewShots: 'Ver capturas',
 
     groups: {
@@ -34,6 +35,10 @@ const reposEs = {
       nocturno: {
         title: 'Nocturno 108',
         body: 'Pista de jazz-hop compuesta como código en Strudel, con reproductor propio: motor de audio sintetizado desde cero sobre Web Audio —sin samples ni librerías externas—, avatar sincronizado al pulso, piano-roll en tiempo real y mezcladora.',
+      },
+      play: {
+        title: 'Una laptop que salta bugs',
+        body: 'Un endless runner escrito para este sitio: un canvas, cero dependencias, un loop con delta time para que una pantalla de 144Hz no lo juegue cuatro veces más rápido, y coyote time para que un salto presionado un frame tarde siga contando. Cada obstáculo lleva el nombre de un bug que de verdad he mandado a producción.',
       },
       etl: {
         title: 'ETL → Dgraph',

@@ -76,6 +76,17 @@ const CATALOGUE = [
         tags: ['Strudel', 'Web Audio', 'JS'],
       },
       {
+        // The only card here you can open without leaving the site: the game
+        // is a real thing I wrote, so it is catalogued like everything else —
+        // it just happens to be playable from the card.
+        key: 'play',
+        copy: 'repos.items.play',
+        name: 'a-laptop-that-jumps-bugs',
+        to: '/play',
+        language: 'JavaScript',
+        tags: ['Canvas 2D', 'Game loop', 'Pixel art', 'requestAnimationFrame'],
+      },
+      {
         key: 'etl',
         copy: 'repos.items.etl',
         name: 'ETL-Equipo4',

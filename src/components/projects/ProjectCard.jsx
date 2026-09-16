@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
+import PlayGlyph from './PlayGlyph';
 import ProjectGlyph, { languageColor } from './ProjectGlyph';
 
 /* ==========================================================================
@@ -27,6 +29,14 @@ const LockIcon = () => (
   </svg>
 );
 
+const ArrowRight = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"
+       strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+    <path d="M5 12h13" />
+    <path d="M12 5l7 7-7 7" />
+  </svg>
+);
+
 const ExpandIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
        strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
@@ -39,7 +49,7 @@ const ExpandIcon = () => (
 
 const ProjectCard = ({ project, onExpand }) => {
   const { t } = useTranslation();
-  const { key, copy, name, url, language, tags, shots, isPrivate } = project;
+  const { key, copy, name, url, to, language, tags, shots, isPrivate } = project;
   // Which shot the cover is showing. Kept here (not in the lightbox) so the
   // card stays on whatever slide the reader left the expanded view on.
   const [index, setIndex] = useState(0);
@@ -48,7 +58,7 @@ const ProjectCard = ({ project, onExpand }) => {
   const hasShots = Array.isArray(shots) && shots.length > 0;
 
   return (
-    <article className={`project-card${isPrivate && !url ? ' is-private' : ''}`}>
+    <article className={`project-card${isPrivate && !url && !to ? ' is-private' : ''}`}>
       {hasShots ? (
         <button
           type="button"
@@ -64,7 +74,7 @@ const ProjectCard = ({ project, onExpand }) => {
         </button>
       ) : (
         <div className="project-cover">
-          <ProjectGlyph name={name} language={language} />
+          {to ? <PlayGlyph /> : <ProjectGlyph name={name} language={language} />}
         </div>
       )}
 
@@ -91,7 +101,14 @@ const ProjectCard = ({ project, onExpand }) => {
           {language}
         </span>
 
-        {url ? (
+        {to ? (
+          // Internal: the game is two clicks away on this same site, so it
+          // gets a router link and its own verb rather than "view repository".
+          <Link className="project-open" to={to} data-key={key}>
+            {t('repos.playIt')}
+            <ArrowRight />
+          </Link>
+        ) : url ? (
           // Stretched link: the anchor's ::after covers the whole card, so the
           // card is clickable without nesting the cover button inside a link
           // (which is invalid, and would swallow the lightbox).
