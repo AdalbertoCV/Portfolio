@@ -816,6 +816,28 @@
     }
 }
 
+/* The degree and the language school share the left track: one door into a
+   story, one flat card under it. */
+.cv-edu-column {
+    display: grid;
+    gap: 20px;
+    align-content: start;
+}
+
+.cv-edu-minor {
+    padding: 24px 26px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+}
+
+.cv-edu-minor h3 {
+    margin: 0 0 6px;
+    font-size: 1.02rem;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+}
+
 .cv-languages {
     padding: 28px 26px;
     border-radius: var(--radius-lg);
@@ -823,13 +845,24 @@
     background: var(--color-bg-card);
 }
 
+/* Two columns for the name and the level, and a third row underneath for the
+   note — which only English has, and which would squeeze the level off the
+   line if it tried to share it. */
 .cv-language {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: baseline;
-    justify-content: space-between;
-    gap: 14px;
+    gap: 4px 14px;
     padding: 12px 0;
     border-bottom: 1px solid var(--color-border-primary);
+}
+
+.cv-language-note {
+    grid-column: 1 / -1;
+    margin: 2px 0 0;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--color-text-tertiary);
 }
 
 .cv-language:last-child {

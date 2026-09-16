@@ -114,7 +114,17 @@ const cvEs = {
     languagesKicker: 'Idiomas',
     languages: {
       spanish: { name: 'Español', level: 'Nativo' },
-      english: { name: 'Inglés', level: 'C1 — Avanzado' },
+      english: {
+        name: 'Inglés',
+        level: 'C1 — Avanzado',
+        note: 'TOEFL oficial presentado en el PUDI (Programa Único de Inglés) de la UAZ, 2024.',
+      },
+    },
+
+    peul: {
+      name: 'Programa de Extensión Universitario de Lenguas',
+      meta: 'PEUL · Universidad Autónoma de Zacatecas · 2018 — 2020',
+      body: 'Formación en inglés en el centro de idiomas de la UAZ, concluida el mismo año en que empecé la ingeniería. Es la razón por la que la documentación técnica, los papers y el trabajo en inglés nunca fueron un obstáculo, sino el modo por defecto.',
     },
 
     readingKicker: 'Lectura',

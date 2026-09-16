@@ -437,6 +437,7 @@ const About = () => {
       {/* ----------------------------------------------- education + languages */}
       <Section kicker={t('cv.educationKicker')} title={t('education.heading').replace(':', '')}>
         <Reveal className="cv-split">
+          <div className="cv-edu-column">
           {/* The whole card is the link, and it carries the degree page's own
               colour world rather than sitting in the page's white. It is the
               one card here that opens a story, and it was the quietest thing
@@ -457,12 +458,27 @@ const About = () => {
             </div>
           </Link>
 
+            {/* The language school, under the degree rather than beside it:
+                same university, smaller claim, and it is the thing the C1 in
+                the panel to the right is actually standing on. */}
+            <article className="cv-edu-minor">
+              <h3>{t('cv.peul.name')}</h3>
+              <p className="cv-edu-meta">{t('cv.peul.meta')}</p>
+              <p className="cv-edu-body">{t('cv.peul.body')}</p>
+            </article>
+          </div>
+
           <aside className="cv-languages">
             <h3 className="brand-stack-title">{t('cv.languagesKicker')}</h3>
             {['spanish', 'english'].map((code) => (
               <div className="cv-language" key={code}>
                 <span className="cv-language-name">{t(`cv.languages.${code}.name`)}</span>
                 <span className="cv-language-level">{t(`cv.languages.${code}.level`)}</span>
+                {/* Only English carries one: a level is a claim, and this is
+                    the exam behind it. */}
+                {code === 'english' ? (
+                  <p className="cv-language-note">{t('cv.languages.english.note')}</p>
+                ) : null}
               </div>
             ))}
           </aside>

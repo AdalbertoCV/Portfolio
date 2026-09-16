@@ -107,7 +107,17 @@ const cvEn = {
     languagesKicker: 'Languages',
     languages: {
       spanish: { name: 'Spanish', level: 'Native' },
-      english: { name: 'English', level: 'C1 — Advanced' },
+      english: {
+        name: 'English',
+        level: 'C1 — Advanced',
+        note: 'Official TOEFL, sat at the UAZ PUDI (Programa Único de Inglés), 2024.',
+      },
+    },
+
+    peul: {
+      name: 'Programa de Extensión Universitario de Lenguas',
+      meta: 'PEUL · Autonomous University of Zacatecas · 2018 — 2020',
+      body: 'An English programme at the UAZ language centre, finished the same year I started the engineering degree. It is why technical documentation, papers and working in English were never an obstacle but the default mode.',
     },
 
     readingKicker: 'Reading',
@@ -163,8 +173,8 @@ const cvEn = {
         year: 'August 2026',
         body: 'A hackathon series presented by 500 Global and Descubre.vc, run over a single day: build something and show it in public before it is finished, which is what gives the event its name. What I took there was a full Azure-to-AWS migration — moving the infrastructure from one cloud to the other inside that one day, between configuration, refactoring and migration. The hard part was not the move itself but the vision models: working out what actually changes when they go from Azure AI Foundry to AWS Bedrock. I finished the day with three services of the architecture migrated.',
         body2: 'The same day ran a parallel one-hour challenge, no winner and purely for the fun of it: composing music as code in Strudel. Nocturno 108 came out of it — the track with its own player, a production pad and instruments, and the avatar synced to the beat.',
-        link: 'See the event',
-        projectLink: 'See it in projects',
+        link: 'View the event',
+        projectLink: 'View it in projects',
       },
       innovafest: {
         name: 'InnovaFest 2026',
