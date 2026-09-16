@@ -15,6 +15,7 @@ const reposEn = {
     allLanguages: 'All',
     noMatches: 'Nothing in the catalogue matches that.',
     clearFilters: 'Clear the filters',
+    clearTech: 'Remove the technology filter',
     viewRepo: 'View repository',
     viewShots: 'View screenshots',
 

@@ -17,6 +17,7 @@ const reposEs = {
     allLanguages: 'Todos',
     noMatches: 'Nada en el catálogo coincide con eso.',
     clearFilters: 'Limpiar los filtros',
+    clearTech: 'Quitar el filtro de tecnología',
     viewRepo: 'Ver repositorio',
     viewShots: 'Ver capturas',
 

@@ -242,7 +242,10 @@ const CATALOGUE = [
 // "I know this" becomes "here is where I used it", which is a different claim.
 export const PROJECT_TECH = CATALOGUE.reduce((counts, { projects }) => {
   projects.forEach(({ language, tags }) => {
-    [language, ...(tags || [])].filter(Boolean).forEach((name) => {
+    // A Set per project: several entries list their own language among their
+    // tags, and counting both would have Java standing behind nine projects
+    // when it stands behind five.
+    new Set([language, ...(tags || [])].filter(Boolean)).forEach((name) => {
       counts[name] = (counts[name] || 0) + 1;
     });
   });

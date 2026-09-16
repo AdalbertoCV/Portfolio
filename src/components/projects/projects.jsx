@@ -11,17 +11,26 @@ import './projects.css';
 const SWIPE_THRESHOLD = 50;
 const MAX_SCROLLBAR_WIDTH = 40;
 
-// Matches a project against the search box. Name, language and tags rather
-// than the body copy: a reader typing "django" wants the Django projects, not
-// every paragraph that mentions it.
-const matches = (project, query, language) => {
+// Three filters, and they are not the same kind of question.
+//
+// `tech` arrives from a stack tile and means one named technology, so it
+// matches exactly: "R" is the language R, not every project whose tags contain
+// the letter r — which is what a substring match made of it, and why a tile
+// promising one project opened eighteen.
+//
+// `query` is the search box, where a substring is the whole point: somebody
+// typing "post" should find PostgreSQL. It looks at names, languages and tags
+// rather than body copy, so "django" returns the Django projects and not every
+// paragraph that mentions Django.
+const matches = (project, { query, language, tech }) => {
   if (language && project.language !== language) return false;
-  if (!query) return true;
+
+  const stack = [project.language, ...(project.tags || [])].filter(Boolean);
+  if (tech && !stack.includes(tech)) return false;
+
   const needle = query.trim().toLowerCase();
   if (!needle) return true;
-  return [project.name, project.language, ...(project.tags || [])]
-    .filter(Boolean)
-    .some((field) => field.toLowerCase().includes(needle));
+  return [project.name, ...stack].some((field) => field.toLowerCase().includes(needle));
 };
 
 const ChevronIcon = ({ direction }) => (
@@ -77,9 +86,10 @@ const MyProjects = () => {
   const [params, setParams] = useSearchParams();
   const query = params.get('stack') || '';
   const language = params.get('lang') || '';
+  const tech = params.get('tech') || '';
 
   const setFilter = (next) => {
-    const merged = { stack: query, lang: language, ...next };
+    const merged = { stack: query, lang: language, tech, ...next };
     const clean = Object.fromEntries(Object.entries(merged).filter(([, value]) => value));
     // replace: the back button should leave the page, not walk back through
     // every keystroke typed into the search box.
@@ -203,11 +213,11 @@ const MyProjects = () => {
 
   const filtered = CATALOGUE.map((group) => ({
     ...group,
-    projects: group.projects.filter((project) => matches(project, query, language)),
+    projects: group.projects.filter((project) => matches(project, { query, language, tech })),
   })).filter((group) => group.projects.length > 0);
 
   const shown = filtered.reduce((total, group) => total + group.projects.length, 0);
-  const filtering = Boolean(query || language);
+  const filtering = Boolean(query || language || tech);
 
   return (
     <div className="projects-page">
@@ -242,6 +252,23 @@ const MyProjects = () => {
             placeholder={t('repos.searchPlaceholder')}
           />
         </label>
+
+        {tech ? (
+          // A tile sent the reader here. Without this the list is narrowed by
+          // something the page never mentions.
+          <button
+            type="button"
+            className="projects-tech"
+            onClick={() => setFilter({ tech: '' })}
+            aria-label={`${t('repos.clearTech')}: ${tech}`}
+          >
+            {tech}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                 strokeLinecap="round" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        ) : null}
 
         {/* Languages rather than all 46 tags: nine chips is a row, and the tags
             are reachable through the search box anyway. */}

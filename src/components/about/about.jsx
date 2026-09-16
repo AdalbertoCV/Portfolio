@@ -142,7 +142,7 @@ const TechTile = ({ item, t }) => {
         </span>
         <Link
           className="tech-stretch"
-          to={`/projects?stack=${encodeURIComponent(item.name)}`}
+          to={`/projects?tech=${encodeURIComponent(item.name)}`}
           aria-label={`${item.name} — ${built} ${t('cv.skillsReceipt')}`}
         />
       </>

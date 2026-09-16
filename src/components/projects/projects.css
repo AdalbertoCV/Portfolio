@@ -545,3 +545,32 @@
     color: var(--color-text-secondary);
     text-align: left;
 }
+
+/* The chip that says a stack tile narrowed this page, and takes it back off. */
+.projects-tech {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 34px;
+    padding: 7px 12px 7px 15px;
+    border-radius: 999px;
+    border: 1px solid var(--color-text-primary);
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity var(--transition-base);
+}
+
+.projects-tech svg {
+    width: 13px;
+    height: 13px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .projects-tech:hover {
+        opacity: 0.82;
+    }
+}
