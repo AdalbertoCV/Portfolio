@@ -506,9 +506,33 @@
         color: var(--color-bg-primary);
     }
 
+    /* Four columns instead of three, and a smaller mark in each. At the old
+       size the largest group — forty-seven cloud and DevOps marks — ran 1741px
+       on a 390px phone, two full screens of scrolling for one group, and the
+       index that gives them context had long since scrolled away. Same marks,
+       same order, nothing hidden: just a tile the size a phone deserves. */
     .stack-marks {
-        grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
-        gap: 24px 14px;
+        grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+        gap: 14px 10px;
+    }
+
+    .stack-mark {
+        gap: 7px;
+    }
+
+    .stack-mark .tech-icon,
+    .stack-mark .tech-concept {
+        width: 23px;
+        height: 23px;
+    }
+
+    .stack-mark .tech-name {
+        font-size: 0.71rem;
+        line-height: 1.3;
+    }
+
+    .stack-mark .tech-receipt {
+        transform: scale(0.85);
     }
 }
 
