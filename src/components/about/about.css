@@ -854,21 +854,34 @@
 /* The official wordmark is drawn in #e5e5e5 — near-white, and invisible on a
    light card. Rather than repaint someone else's logo, it keeps its real
    colour and gets the dark ground it was drawn for, in both themes. */
+/* A fixed plate, not a fixed width. The three wordmarks have very different
+   proportions — Release Before Ready and InnovaFest are long and low, Talent
+   Land is a near-square lockup — so sizing them all to one width made Talent
+   Land twice as tall as the others and its plate towered over them. Constrain
+   both sides instead: every plate is the same rectangle and each mark fits
+   inside it, the long ones limited by width and the square one by height. */
 .cv-event-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     flex: 0 0 auto;
+    box-sizing: border-box;
     width: 180px;
-    padding: 16px 18px;
+    height: 76px;
+    padding: 18px;
     border-radius: var(--radius-md);
     background: #101010;
 }
 
 .cv-event-mark img {
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
+    max-width: 100%;
+    /* In px, not 100%: a percentage max-height resolves against a grid area
+       that has no definite height of its own, so the tall lockup ignored it
+       and kept overflowing the plate. */
+    max-height: 40px;
+    object-fit: contain;
 }
 
 .cv-event-copy {
@@ -904,6 +917,12 @@
 @media (max-width: 600px) {
     .cv-event-mark {
         width: 150px;
+        height: 66px;
+        padding: 15px;
+    }
+
+    .cv-event-mark img {
+        max-height: 36px;
     }
 }
 
