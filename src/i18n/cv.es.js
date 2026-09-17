@@ -58,7 +58,6 @@ const cvEs = {
     skillsTitle: 'Tecnologías con las que construyo',
     skillsLede: 'Seleccionadas en función del problema y no por familiaridad. El listado avanza de uso cotidiano a áreas en exploración; elige la parte por la que viniste.',
     skillsReceipt: 'proyectos con',
-    foldItems: 'elementos — abre para verlos',
     skillsExpandAll: 'Abrir todos los grupos',
     skillsCollapseAll: 'Cerrar todos los grupos',
 
@@ -136,8 +135,6 @@ const cvEs = {
       craft: 'Oficio de ingeniería',
       leadership: 'Liderazgo y equipos',
     },
-    readingExpandAll: 'Abrir todas las estanterías',
-    readingCollapseAll: 'Cerrar todas las estanterías',
 
     certsKicker: 'Certificaciones',
     certsTitle: 'Certificaciones y logros',

@@ -13,7 +13,7 @@ import rbrMark from '../../images/releasebeforeready.svg';
 import innovafestMark from '../../images/innovafest.svg';
 import talentlandMark from '../../images/talentland.svg';
 import { useTranslation } from '../../i18n/I18nProvider';
-import { ArrowRight, ArrowUpRight, Chevron, Reveal, Section } from '../brand/parts';
+import { ArrowRight, ArrowUpRight, Reveal, Section } from '../brand/parts';
 import {
   CONTACT_EMAIL,
   CV_FILENAME,
@@ -71,60 +71,6 @@ const CERT_LINKS = {
   somece:
     'https://www.google.com.mx/books/edition/Proleg%C3%B3menos_de_la_Inteligencia_Artific/m-I2EQAAQBAJ?hl=es&gbpv=1&pg=PA111&printsec=frontcover',
 };
-
-/**
- * One folded row, used by the reading shelves.
- *
- * The stack tried this three times and none of them held: a section whose
- * value is visual disappoints the moment it is a list of headings, and no
- * amount of affordance fixes that — so the stack is open and this is not its
- * problem any more. A shelf of book titles is a different case: it is text,
- * it reads fine folded, and three rows beat thirty.
- *
- * One signal, at the left, where reading starts: a bordered plus. It is the
- * oldest disclosure control there is and the only thing on the row that looks
- * like a control.
- */
-const Fold = ({ id, title, open, onToggle, label, children }) => (
-  <li className={`fold-row${open ? ' is-open' : ''}`}>
-    <h3>
-      <button
-        type="button"
-        className="fold-head"
-        onClick={onToggle}
-        aria-expanded={open}
-        aria-controls={id}
-      >
-        <span className="fold-sign" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-               strokeLinecap="round" focusable="false">
-            <path d="M5 12h14" />
-            <path className="fold-sign-bar" d="M12 5v14" />
-          </svg>
-        </span>
-
-        <span className="fold-name">{title}</span>
-        <span className="sr-only">{` — ${label}`}</span>
-      </button>
-    </h3>
-    <div id={id} hidden={!open}>
-      {open && children}
-    </div>
-  </li>
-);
-
-/**
- * The control above a set of folds. Its label states what the click does, not
- * what the current state is, which is the one that stays true after the click.
- */
-const FoldAll = ({ allOpen, onToggle, openLabel, closeLabel }) => (
-  <Reveal className="fold-all">
-    <button type="button" className="fold-all-button" onClick={onToggle}>
-      {allOpen ? closeLabel : openLabel}
-      <Chevron className={`fold-chevron${allOpen ? ' is-open' : ''}`} />
-    </button>
-  </Reveal>
-);
 
 /**
  * One technology: its mark, its name, and — where the catalogue can prove it —
@@ -219,15 +165,6 @@ const About = () => {
     setGroup(next.id);
     document.getElementById(`stack-tab-${next.id}`)?.focus();
   };
-
-  const [openShelves, setOpenShelves] = useState([]);
-  const allShelvesOpen = openShelves.length === READING.length;
-
-  const toggleShelf = (id) =>
-    setOpenShelves((open) => (open.includes(id) ? open.filter((x) => x !== id) : [...open, id]));
-
-  const toggleAllShelves = () =>
-    setOpenShelves((open) => (open.length === READING.length ? [] : READING.map((g) => g.id)));
 
   // For whoever opens devtools on a portfolio, which is its own kind of
   // introduction. Runs once per mount, says nothing the page needs.
@@ -357,10 +294,10 @@ const About = () => {
       </Section>
 
       {/* --------------------------------------------------------------- stack */}
-      {/* Twelve groups and 285 tiles is a wall, and a wall is something a
-          reader scrolls past rather than reads. Folded, the same content is
-          twelve rows: the group name, how many marks are in it, and a way in.
-          Nothing was cut — the count on each row is the whole group. */}
+      {/* Twelve groups and nearly four hundred tiles is a wall, and a wall is
+          something a reader scrolls past rather than reads. An index down the
+          side and one group in the panel is the same content at a size a
+          reader can actually take in. Nothing was cut. */}
       <Section kicker={t('cv.skillsKicker')} title={t('cv.skillsTitle')} lede={t('cv.skillsLede')}>
         {/* An index and a panel, rather than everything at once or nothing
             at all.
@@ -584,45 +521,32 @@ const About = () => {
       </Section>
 
       {/* ------------------------------------------------------------- reading */}
-      {/* Folded like the stack, and for the same reason: twenty-five books
-          listed flat is a wall, and the shelf a reader wants is the one they
-          came looking for. */}
+      {/* Open, in the same shape as the practice list above it: the shelf name
+          held in its own column beside its books. Folding it made a reader
+          click three times to find out that the answer to "what should I read"
+          was thirty titles — and a recommendation nobody opens is not a
+          recommendation. */}
       <Section
         kicker={t('cv.readingKicker')}
         title={t('cv.readingTitle')}
         lede={t('cv.readingLede')}
       >
-        <FoldAll
-          allOpen={allShelvesOpen}
-          onToggle={toggleAllShelves}
-          openLabel={t('cv.readingExpandAll')}
-          closeLabel={t('cv.readingCollapseAll')}
-        />
-
-        <Reveal as="ul" className="fold-list">
-          {READING.map(({ id, books }) => (
-            <Fold
-              key={id}
-              id={`shelf-${id}`}
-              title={t(`cv.readingGroups.${id}`)}
-              open={openShelves.includes(id)}
-              onToggle={() => toggleShelf(id)}
-              label={`${books.length} ${t('cv.foldItems')}`}
-            >
-              <ul className="reading-list">
-                {books.map(({ title, author, icon }) => (
-                  <li key={title}>
-                    <ConceptIcon className="list-icon" name={icon} />
-                    <span className="reading-book">
-                      <span className="reading-title">{title}</span>
-                      <span className="reading-author">{author}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Fold>
-          ))}
-        </Reveal>
+        {READING.map(({ id, books }) => (
+          <Reveal className="practice-block" key={id}>
+            <h3 className="practice-title">{t(`cv.readingGroups.${id}`)}</h3>
+            <ul className="reading-list">
+              {books.map(({ title, author, icon }) => (
+                <li key={title}>
+                  <ConceptIcon className="list-icon" name={icon} />
+                  <span className="reading-book">
+                    <span className="reading-title">{title}</span>
+                    <span className="reading-author">{author}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        ))}
       </Section>
 
       {/* ----------------------------------------------------------- interests */}
