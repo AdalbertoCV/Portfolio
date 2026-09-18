@@ -1239,6 +1239,60 @@
    typography of a reference document rather than of a tag list.
    ========================================================================= */
 
+/* The opening statement of the section. It gets air above the ruled lists and
+   a heavier voice than a list row, because a claim buried among thirty-three
+   hairlines reads as the thirty-fourth. */
+.practice-lead {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 0 56px;
+    margin-bottom: 44px;
+}
+
+.practice-lead-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    padding-top: 4px;
+}
+
+.practice-principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px 44px;
+}
+
+.practice-principle h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.04rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+}
+
+/* Bigger than the icon on a list row: this one sits beside a heading, not
+   beside a line of body text. */
+.practice-principle h3 .list-icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    color: var(--color-text-primary);
+    transform: none;
+}
+
+.practice-principle p {
+    margin: 0;
+    font-size: 0.93rem;
+    line-height: 1.68;
+    color: var(--color-text-secondary);
+}
+
 .practice-block {
     display: grid;
     grid-template-columns: 240px minmax(0, 1fr);
@@ -1320,6 +1374,12 @@
 }
 
 @media (max-width: 900px) {
+    .practice-lead {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        margin-bottom: 34px;
+    }
+
     .practice-block {
         grid-template-columns: minmax(0, 1fr);
         gap: 16px;

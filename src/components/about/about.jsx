@@ -63,6 +63,12 @@ const NOW = [
 
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
 
+// The two that open the section rather than sit inside it.
+const PRINCIPLES = [
+  { id: 'aiFirst', icon: 'agents' },
+  { id: 'innovation', icon: 'radar' },
+];
+
 const CERT_KEYS = ['icp', 'langchain', 'santander', 'somece'];
 
 /* A certificate only carries a link when there is something published to point
@@ -356,6 +362,26 @@ const About = () => {
             These are claims about how he works, so they get the form claims
             get: one per line, a hairline between them, the group name held
             alongside in its own column. */}
+        {/* Two things stated before the lists, because they are not one more
+            line among thirty-three: they are the posture the other thirty-three
+            are downstream of. Both are load-bearing claims with something
+            behind them — the agents are in production and the adoption
+            criterion is written down. */}
+        <Reveal className="practice-lead">
+          <span className="practice-lead-label">{t('cv.principlesLabel')}</span>
+          <div className="practice-principles">
+            {PRINCIPLES.map(({ id, icon }) => (
+              <article className="practice-principle" key={id}>
+                <h3>
+                  <ConceptIcon className="list-icon" name={icon} />
+                  {t(`cv.principles.${id}.title`)}
+                </h3>
+                <p>{t(`cv.principles.${id}.body`)}</p>
+              </article>
+            ))}
+          </div>
+        </Reveal>
+
         {PRACTICE_GROUPS.map((group) => (
           <Reveal className="practice-block" key={group}>
             <h3 className="practice-title">{t(`cv.practice.${group}`)}</h3>

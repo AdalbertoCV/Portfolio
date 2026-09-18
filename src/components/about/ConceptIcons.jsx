@@ -54,6 +54,17 @@ const ICONS = {
       <path d="M21.6 12.4V15.6H18.4" />
     </svg>
   ),
+  // A sweep and the returns coming back: what is out there before it is
+  // everywhere, which is the point of watching at all.
+  radar: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="8.7" />
+      <circle cx="12" cy="12" r="4.4" opacity="0.55" />
+      <path d="M12 12 18.2 5.8" />
+      <circle cx="15.9" cy="15.6" r="1.5" fill="currentColor" stroke="none" />
+      <circle cx="8.1" cy="8.4" r="1" fill="currentColor" stroke="none" opacity="0.55" />
+    </svg>
+  ),
   microservices: (
     <svg {...base}>
       <rect x="2.5" y="3" width="7" height="7" rx="1.8" />

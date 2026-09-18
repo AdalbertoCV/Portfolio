@@ -64,6 +64,18 @@ const cvEs = {
     practiceKicker: 'Práctica de ingeniería',
     practiceTitle: 'Cómo trabajo, no solo con qué',
     practiceLede: 'Un stack se aprende; el criterio con el que se toman estas decisiones es lo que determina si un sistema resiste en producción.',
+    principlesLabel: 'Punto de partida',
+    principles: {
+      aiFirst: {
+        title: 'AI-first',
+        body: 'No es agregarle IA a algo donde cabe: es diseñar dando por hecho que un agente puede encargarse del trabajo, y decidir a conciencia qué parte se queda con una persona y por qué. En Radii eso no es un piloto — hoy el 80% del trabajo recurrente del equipo operativo lo hacen agentes en producción.',
+      },
+      innovation: {
+        title: 'Innovación tecnológica constante',
+        body: 'Rutina diaria de actualización, y una prueba de concepto acotada al riesgo antes de comprometer cualquier decisión. Evalúo una tecnología por su madurez real —estabilidad de la API, historial de cambios incompatibles, quién responde cuando algo falla— y no por el tamaño de su anuncio.',
+      },
+    },
+
     practice: {
       systems: 'Diseño de sistemas y arquitectura',
       systemsItems: [

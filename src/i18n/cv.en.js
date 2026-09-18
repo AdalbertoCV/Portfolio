@@ -57,6 +57,18 @@ const cvEn = {
     practiceKicker: 'Engineering practice',
     practiceTitle: 'How I work, not just what with',
     practiceLede: 'A stack can be learned; the judgement behind these decisions is what determines whether a system holds in production.',
+    principlesLabel: 'Where it starts',
+    principles: {
+      aiFirst: {
+        title: 'AI-first',
+        body: 'Not bolting AI onto something it happens to fit: designing on the assumption that an agent can take the work, and deciding deliberately which part stays with a person and why. At Radii that is not a pilot — 80% of the operations team\'s recurring work is done by agents in production today.',
+      },
+      innovation: {
+        title: 'Constant technology innovation',
+        body: 'A daily updating routine, and a proof of concept scoped to the specific risk before committing to any decision. I judge a technology by its actual maturity — API stability, its record of breaking changes, who answers when something fails — rather than by the size of its announcement.',
+      },
+    },
+
     practice: {
       systems: 'Systems design and architecture',
       systemsItems: [
