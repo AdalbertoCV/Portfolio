@@ -37,7 +37,7 @@ const cvEs = {
       radii: {
         label: 'Founding Software Engineer',
         org: 'Radii Manufacturing',
-        body: 'Plataforma de manufactura con IA. Servicios backend, workers en la nube, agentes y plataforma. Cotización de cinco días a uno; 80% de la operación automatizada.',
+        body: 'Plataforma de manufactura con IA. Servicios backend, workers en la nube, agentes y plataforma. Cotización automática; lo que va a revisión, de cinco días a uno. 80% de la operación automatizada.',
         cta: 'Ver la historia',
       },
       ventures: {

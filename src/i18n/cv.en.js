@@ -30,7 +30,7 @@ const cvEn = {
       radii: {
         label: 'Founding Software Engineer',
         org: 'Radii Manufacturing',
-        body: 'AI-powered manufacturing platform. Backend services, cloud workers, agents and platform. Quoting down from five days to one; 80% of operations automated.',
+        body: 'AI-powered manufacturing platform. Backend services, cloud workers, agents and platform. Automatic quoting; what goes to review, down from five days to one. 80% of operations automated.',
         cta: 'Read the story',
       },
       ventures: {

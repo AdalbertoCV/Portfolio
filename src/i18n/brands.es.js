@@ -152,8 +152,9 @@ const brandsEs = {
     impactLede: 'Ingeniero fundador de una plataforma en su primer año. Estas son las cifras que ha movido el trabajo, no las especificaciones de la plataforma.',
     impact: {
       quote: {
-        value: '5 días → 1',
-        label: 'Tiempo promedio que tarda un account manager en cotizar una pieza',
+        value: 'Automática',
+        label:
+          'La cotización sale sola cuando el análisis no marca nada. Lo que la IA envía a revisión manual pasó de cinco días a uno.',
       },
       ops: {
         value: '80%',
@@ -179,11 +180,11 @@ const brandsEs = {
       },
       quoting: {
         title: 'El cotizador automático',
-        body: 'Construí el motor que pone precio a una pieza: un algoritmo matemático que convierte geometría, material, acabado y volumen en un precio y un tiempo de entrega. Es la pieza que llevó el tiempo promedio de cotización de un account manager de cinco días a uno.',
+        body: 'Construí el motor que pone precio a una pieza: un algoritmo matemático que convierte geometría, material, acabado y volumen en un precio y un tiempo de entrega. Cuando el análisis no encuentra nada que revisar, el precio sale automático y no pasa por nadie. Lo que sí se marca para revisión manual llega a un account manager, y ese camino bajó de cinco días a uno.',
       },
       workers: {
         title: 'Workers en la nube',
-        body: 'Construyo y mantengo workers sobre AWS y Azure que automatizan el procesamiento de datos y reducen la carga operativa manual del equipo.',
+        body: 'Construyo y mantengo workers sobre AWS que automatizan el procesamiento de datos y reducen la carga operativa manual del equipo.',
       },
       agents: {
         title: 'Agentes de IA',
@@ -201,6 +202,31 @@ const brandsEs = {
         title: 'Producto y arquitectura',
         body: 'Participo en las discusiones de arquitectura y diseño de software, y aporto features del frontend en React cuando el producto lo pide.',
       },
+    },
+
+    // El diagrama. Cada caja es algo que esta misma página ya afirma en prosa;
+    // el dibujo sólo le da forma.
+    system: {
+      alt: 'Diagrama del sistema: un archivo CAD recorre análisis, cotización, producción y trazabilidad, sobre una capa de servicios, workers, agentes de IA y machine learning, con CI/CD y observabilidad por debajo.',
+      flowBand: 'El recorrido de una pieza',
+      platformBand: 'La plataforma que lo sostiene',
+      flow: {
+        upload: { title: 'CAD 2D / 3D', sub: 'lo sube el ingeniero' },
+        analyse: { title: 'Análisis automático', sub: 'geometría · tolerancias' },
+        quote: { title: 'Cotización', sub: 'algoritmo de precio' },
+        produce: { title: 'Producción y entrega', sub: 'red auditada · CMM' },
+      },
+      platform: {
+        services: { title: 'Servicios del núcleo', sub: 'microservicios' },
+        workers: { title: 'Workers en la nube', sub: 'AWS · Kubernetes' },
+        agents: { title: 'Agentes de IA', sub: 'LangGraph · LangChain' },
+        ml: { title: 'Machine learning', sub: 'automatización' },
+      },
+      rail: { title: 'CI/CD y observabilidad', sub: 'despliegue automatizado · monitoreo en producción' },
+      quoteBadge: 'precio automático',
+      quoteBadgeAlt: 'si va a revisión: 5 días → 1',
+      agentsBadge: '80% del trabajo recurrente',
+      caption: 'Las cajas de arriba son el producto; las de abajo son lo que construyo. La cotización es automática salvo que el análisis marque algo para revisión manual, que es el caso al que corresponde el cinco a uno.',
     },
 
     stackTitle: 'El stack',

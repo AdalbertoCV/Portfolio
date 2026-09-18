@@ -151,8 +151,9 @@ const brandsEn = {
     impactLede: 'Founding engineer on a platform in its first year. These are the figures the work has moved, not the platform’s specifications.',
     impact: {
       quote: {
-        value: '5 days → 1',
-        label: 'Average time an account manager needs to quote a part',
+        value: 'Automatic',
+        label:
+          'The quote comes out on its own when the analysis flags nothing. What the AI does send to manual review went from five days to one.',
       },
       ops: {
         value: '80%',
@@ -178,11 +179,11 @@ const brandsEn = {
       },
       quoting: {
         title: 'The automatic quoting engine',
-        body: 'I built the engine that prices a part: a mathematical algorithm that turns geometry, material, finishing and volume into a price and a lead time. It is the piece that moved an account manager’s average quoting time from five days to one.',
+        body: 'I built the engine that prices a part: a mathematical algorithm that turns geometry, material, finishing and volume into a price and a lead time. When the analysis finds nothing to review the price comes out automatically and passes through nobody. What does get flagged for manual review reaches an account manager, and that path went from five days to one.',
       },
       workers: {
         title: 'Cloud workers',
-        body: 'I build and maintain workers on AWS and Azure that automate data processing and reduce the team’s manual operational load.',
+        body: 'I build and maintain workers on AWS that automate data processing and reduce the team’s manual operational load.',
       },
       agents: {
         title: 'AI agents',
@@ -200,6 +201,31 @@ const brandsEn = {
         title: 'Product and architecture',
         body: 'I take part in software architecture and design discussions, and contribute React frontend features when the product calls for it.',
       },
+    },
+
+    // The diagram. Every box is something this page already states in prose;
+    // the drawing only gives it a shape.
+    system: {
+      alt: 'System diagram: a CAD file passes through analysis, quoting, production and traceability, over a layer of services, cloud workers, AI agents and machine learning, with CI/CD and observability underneath.',
+      flowBand: 'What happens to a part',
+      platformBand: 'The platform underneath it',
+      flow: {
+        upload: { title: '2D / 3D CAD', sub: 'from the engineer' },
+        analyse: { title: 'Automatic analysis', sub: 'geometry · tolerances' },
+        quote: { title: 'Quote', sub: 'pricing algorithm' },
+        produce: { title: 'Production and delivery', sub: 'audited network · CMM' },
+      },
+      platform: {
+        services: { title: 'Core services', sub: 'microservices' },
+        workers: { title: 'Cloud workers', sub: 'AWS · Kubernetes' },
+        agents: { title: 'AI agents', sub: 'LangGraph · LangChain' },
+        ml: { title: 'Machine learning', sub: 'automation' },
+      },
+      rail: { title: 'CI/CD and observability', sub: 'automated deployment · production monitoring' },
+      quoteBadge: 'automatic price',
+      quoteBadgeAlt: 'if flagged for review: 5 days → 1',
+      agentsBadge: '80% of recurring work',
+      caption: 'The boxes on top are the product; the ones underneath are what I build. Quoting is automatic unless the analysis flags something for manual review, which is the case the five-to-one belongs to.',
     },
 
     stackTitle: 'The stack',

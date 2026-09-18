@@ -1,4 +1,5 @@
 import { useTranslation } from '../../i18n/I18nProvider';
+import RadiiSystem from './RadiiSystem';
 import RadiiArt from '../marks/RadiiArt';
 import radiiLogo from '../../images/radii.png';
 import {
@@ -25,20 +26,24 @@ const BUILD_KEYS = ['quoting', 'backend', 'workers', 'agents', 'ml', 'platform',
 
 // Product names stay in their own language in both dictionaries, so the stack
 // lives in code rather than costing two translated copies of the same word.
+/* What the platform is actually built on — the tools, exactly, plus the
+   practices that run alongside them. It is deliberately shorter than the
+   stack on the About page: that one is everything the engineer works with,
+   this one is everything this product is made of. */
 const STACK = {
   services: [
-    'Python', 'Java', 'C#', 'Django', 'Django REST', 'Spring Boot',
-    'Microservices', 'Event-driven', 'PostgreSQL', 'Redis', 'MongoDB',
+    'Python', 'Django', 'FastAPI', 'Celery', 'PostgreSQL', 'Redis',
+    'Microservices', 'Event-driven',
   ],
   cloud: [
-    'AWS', 'Azure', 'Docker', 'Kubernetes', 'IaC', 'CI/CD',
+    'AWS', 'Docker', 'Kubernetes', 'IaC', 'CI/CD',
     'Observability', 'Cloud security', 'FinOps',
   ],
   ai: [
     'LangGraph', 'LangChain', 'AI Agents', 'LLM & RAG',
     'Machine Learning', 'Multi-agent coordination',
   ],
-  product: ['React', 'JavaScript', 'Linear', 'Figma', 'Miro'],
+  product: ['TypeScript', 'React', 'JavaScript'],
 };
 
 // One line-drawn icon per responsibility. Drawn here rather than imported as
@@ -169,8 +174,8 @@ const RadiiPage = () => {
         </Section>
 
         {/* Outcomes before responsibilities. "I design the services" is a job
-            description; five days to one is the thing a reader cannot get from
-            anybody else's page. */}
+            description; a quote that prices itself is the thing a reader cannot
+            get from anybody else's page. */}
         <Section
           kicker={t('radii.kickers.impact')}
           title={t('radii.impactTitle')}
@@ -193,6 +198,12 @@ const RadiiPage = () => {
           title={t('radii.buildTitle')}
           lede={t('radii.buildLede')}
         >
+          {/* The shape first, then the seven cards that detail it. Reading the
+              cards without this meant assembling the architecture in your head
+              before you could judge any of it. */}
+          <Reveal>
+            <RadiiSystem />
+          </Reveal>
           <CardGrid
             items={BUILD_KEYS.map((key) => ({
               key,
