@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { CONTACT_EMAIL, CV_FILENAME, CV_PATH, GITHUB, LINKEDIN, YOUTUBE } from '../../site';
+import { openTerminal } from '../terminal/Terminal';
 import './siteFooter.css';
 
 /**
@@ -99,9 +100,18 @@ const SiteFooter = () => {
           <p className="site-footer-text">{jokes[index]}</p>
           {/* The door to the game. Here rather than in the navigation: this is
               the corner of the site that is already not serious. */}
-          <Link className="site-footer-play" to="/play">
-            {t('footer.play')}
-          </Link>
+          <div className="site-footer-extras">
+            <Link className="site-footer-play" to="/play">
+              {t('footer.play')}
+            </Link>
+          {/* The other way around the site, for whoever would rather type than
+              click. Quiet: the people who will use it mostly pressed ⌘K
+              before reading this. */}
+            <button type="button" className="term-hint" onClick={openTerminal}>
+              {t('term.footer')}
+              <kbd>⌘K</kbd>
+            </button>
+          </div>
         </div>
 
         <div className="site-footer-controls">

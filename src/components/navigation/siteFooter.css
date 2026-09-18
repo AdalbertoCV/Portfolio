@@ -191,10 +191,19 @@
     }
 }
 
+/* The two ways out of the serious part of the site, on one row so they do
+   not collide the way they did when each carried its own top margin. */
+.site-footer-extras {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 22px;
+    margin-top: 12px;
+}
+
 /* The way into the game, kept as quiet as the joke it sits under. */
 .site-footer-play {
     display: inline-block;
-    margin-top: 10px;
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--color-text-tertiary);

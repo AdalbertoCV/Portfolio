@@ -47,6 +47,79 @@ const en = {
       'Written for this page: one canvas, no dependencies, and a hitbox slightly smaller than the sprite because pixel-perfect collision feels like cheating to the person holding the spacebar.',
     back: 'Back to the serious pages',
   },
+  // The shell. Terse on purpose — a command that answers in a paragraph is a
+  // command nobody types twice.
+  term: {
+    label: 'Site terminal',
+    title: 'adal@portfolio — ~',
+    placeholder: 'type a command…  (tab to complete)',
+    inputLabel: 'Command',
+    greeting: "Type 'help' if you are not sure where to start.",
+    unknown: "'{cmd}': no such command. Try 'help'.",
+    desc: {
+      help: 'what you can type here',
+      whoami: 'who I am, in three lines',
+      ls: 'the project catalogue',
+      cat: 'the CV',
+      open: 'go to any page',
+      stack: 'the technologies I build with',
+      play: 'a laptop that jumps bugs',
+      contact: 'email and profiles',
+      theme: 'switch light / dark',
+      lang: 'switch English / Spanish',
+      clear: 'clear the screen',
+      sudo: 'the only command with privileges',
+      exit: 'close the terminal',
+    },
+    help: {
+      intro: 'Available commands below. Tab completes, ↑ repeats, Esc closes.',
+      hint: 'Everything in the navbar can be reached by typing it.',
+    },
+    whoami: {
+      line1: 'adal — Founding Software Engineer at Radii Manufacturing.',
+      line2: 'Backend, cloud and AI systems. Founder of two companies.',
+      line3: 'Zacatecas, Mexico · open to collaborate',
+    },
+    ls: {
+      projects: '{n} projects catalogued. Opening the catalogue…',
+      unknown: "nothing called '{arg}'. Try 'ls projects' or 'ls pages'.",
+    },
+    cat: {
+      line: 'Full CV, two pages, current.',
+      download: 'download CV.pdf',
+      unknown: "'{arg}': no such file.",
+    },
+    open: {
+      going: 'Opening {page}…',
+      unknown: "'{arg}': no such page. The ones there are:",
+    },
+    stack: {
+      line: 'Back to About — the technology section is halfway down.',
+      hint: '395 marks in twelve groups. The ones with a number link to real projects.',
+    },
+    play: {
+      line: 'Starting the game. Space to jump.',
+    },
+    contact: {
+      line: 'Here is where to find me:',
+    },
+    theme: {
+      line: 'Theme switched.',
+    },
+    lang: {
+      line: 'Language switched.',
+    },
+    sudo: {
+      granted: 'Permission granted. Opening contact…',
+      nope: 'sudo: there is only one thing you can do with privileges here.',
+      note: 'Proposals, ideas and hard questions all welcome.',
+    },
+    exit: {
+      line: 'See you.',
+    },
+    footer: 'Open the terminal',
+  },
+
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',

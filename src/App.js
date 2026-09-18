@@ -21,6 +21,7 @@ import LabsolPage from './components/brand/LabsolPage';
 import CasePage from './components/brand/CasePage';
 import UazPage from './components/brand/UazPage';
 import ContactPage from './components/contact/ContactPage';
+import Terminal from './components/terminal/Terminal';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
 
@@ -94,6 +95,8 @@ function App() {
               </Routes>
             </main>
             <SiteFooter />
+            {/* Inside the Router: its commands navigate. */}
+            <Terminal />
           </Router>
         </div>
       </I18nProvider>

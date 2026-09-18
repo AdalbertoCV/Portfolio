@@ -48,6 +48,79 @@ const es = {
       'Escrito para esta página: un canvas, cero dependencias, y una caja de colisión un poco más chica que el sprite, porque la colisión exacta al píxel se siente tramposa para quien tiene el dedo en la barra espaciadora.',
     back: 'Volver a las páginas serias',
   },
+  // The shell. Terse on purpose — a command that answers in a paragraph is a
+  // command nobody types twice.
+  term: {
+    label: 'Terminal del sitio',
+    title: 'adal@portfolio — ~',
+    placeholder: 'escribe un comando…  (tab para completar)',
+    inputLabel: 'Comando',
+    greeting: "Escribe 'help' si no sabes por dónde empezar.",
+    unknown: "'{cmd}': no existe ese comando. Prueba 'help'.",
+    desc: {
+      help: 'qué se puede escribir aquí',
+      whoami: 'quién soy, en tres líneas',
+      ls: 'el catálogo de proyectos',
+      cat: 'el CV',
+      open: 'ir a cualquier página',
+      stack: 'las tecnologías con las que construyo',
+      play: 'una laptop que salta bugs',
+      contact: 'correo y redes',
+      theme: 'cambiar claro / oscuro',
+      lang: 'cambiar español / inglés',
+      clear: 'limpiar la pantalla',
+      sudo: 'el único comando con privilegios',
+      exit: 'cerrar la terminal',
+    },
+    help: {
+      intro: 'Comandos disponibles abajo. Tab completa, ↑ repite, Esc cierra.',
+      hint: 'Todo lo que hay en el navbar se puede llegar escribiéndolo.',
+    },
+    whoami: {
+      line1: 'adal — Founding Software Engineer en Radii Manufacturing.',
+      line2: 'Backend, nube y sistemas de IA. Fundador de dos empresas.',
+      line3: 'Zacatecas, México · abierto a colaborar',
+    },
+    ls: {
+      projects: '{n} proyectos catalogados. Abriendo el catálogo…',
+      unknown: "no hay nada llamado '{arg}'. Prueba 'ls projects' o 'ls pages'.",
+    },
+    cat: {
+      line: 'CV completo, dos páginas, actualizado.',
+      download: 'descargar CV.pdf',
+      unknown: "'{arg}': no hay tal archivo.",
+    },
+    open: {
+      going: 'Abriendo {page}…',
+      unknown: "'{arg}': no existe esa página. Las que sí:",
+    },
+    stack: {
+      line: 'Volviendo a Sobre mí — la sección de tecnologías está a media página.',
+      hint: '395 marcas en doce grupos. Las que tienen número enlazan a proyectos reales.',
+    },
+    play: {
+      line: 'Arrancando el juego. Espacio para saltar.',
+    },
+    contact: {
+      line: 'Por aquí llegas:',
+    },
+    theme: {
+      line: 'Tema cambiado.',
+    },
+    lang: {
+      line: 'Idioma cambiado.',
+    },
+    sudo: {
+      granted: 'Permiso concedido. Abriendo contacto…',
+      nope: "sudo: solo hay una cosa que puedas hacer con privilegios aquí.",
+      note: 'Se aceptan propuestas, ideas y preguntas difíciles.',
+    },
+    exit: {
+      line: 'Hasta luego.',
+    },
+    footer: 'Abrir la terminal',
+  },
+
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
