@@ -39,6 +39,10 @@ const PLATFORM = [
   { id: 'ml', x: 784, w: 176 },
 ];
 const PLAT_Y = 256;
+// The clear row the platform band label sits in, and the gap every riser
+// leaves for it. Baseline is the midpoint, so the two stay in step.
+const LABEL_GAP = [208, 238];
+const BAND_Y = 227;
 const PLAT_H = 74;
 
 const Node = ({ x, y, w, h, title, sub, strong }) => (
@@ -135,24 +139,31 @@ const RadiiSystem = () => {
         </g>
 
         {/* --------------------------------------------- the platform, beneath */}
-        <text x={40} y={226} className="rsys-band">
+        <text x={40} y={BAND_Y} className="rsys-band">
           {t('radii.system.platformBand')}
         </text>
 
         {/* Each service reaches up into the stage it serves. Dashed, because
-            these are not steps in the pipeline — they are what runs it. */}
+            these are not steps in the pipeline — they are what runs it.
+
+            Each one is two segments with a gap between them, and the gap is
+            the row the band label sits in. The leftmost wire used to run
+            straight through "la plataforma que lo sostiene" and cut the words
+            in half; breaking all four at the same height turns that collision
+            into a channel the label lives in. */}
         {[
-          [152, 152, 134],
-          [400, 400, 134],
-          [648, 648, 134],
-          [872, 834, 134],
-        ].map(([from, to, y], i) => (
-          <path
-            key={i}
-            d={`M${from} ${PLAT_Y}V${y + 16}Q${from} ${y} ${to} ${y}`}
-            className="rsys-wire rsys-wire-up"
-            style={{ animationDelay: `${i * 0.25}s` }}
-          />
+          [152, 152],
+          [400, 400],
+          [648, 648],
+          [872, 834],
+        ].map(([from, to], i) => (
+          <g key={i} className="rsys-riser" style={{ animationDelay: `${i * 0.25}s` }}>
+            <path d={`M${from} ${PLAT_Y}V${LABEL_GAP[1]}`} className="rsys-wire rsys-wire-up" />
+            <path
+              d={`M${from} ${LABEL_GAP[0]}V150Q${from} 134 ${to} 134`}
+              className="rsys-wire rsys-wire-up"
+            />
+          </g>
         ))}
 
         {PLATFORM.map(({ id, x, w }, i) => (
