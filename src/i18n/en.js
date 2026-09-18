@@ -144,6 +144,17 @@ const en = {
       freelance: 'Freelance',
     },
     items: {
+      quoter: {
+        title: 'Pricing a part with no data to train on',
+        options: [
+          'Wait for enough history to train a model, and quote by hand in the meantime',
+          'Train anyway, on the handful of examples there were',
+          'A mathematical algorithm derived from the domain: geometry, material, finishing and volume',
+        ],
+        chose: 'The mathematical algorithm.',
+        why: 'There was nothing to train on. A new company has no corpus of historical quotes, and on a handful of examples a model does not learn to price a part — it learns the habits of whoever priced those. A wrong price is also not a bad recommendation a user can ignore; it is a job lost or a job done at a loss, which means you have to be able to point at the term that produced it. But having no data was not an excuse to attempt nothing: the problem had structure — geometry, material, finishing and volume really do determine a cost — and that structure could be written down.',
+        today: 'It is still in production and it is the reason a price comes out on its own. The ML conversation reopens when the history this algorithm has been generating is enough to train against something real.',
+      },
       cloud: {
         title: 'Moving an entire platform from one cloud to another, in two weeks',
         options: [

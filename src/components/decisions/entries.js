@@ -21,6 +21,12 @@ const ENTRIES = [
     where: 'radii',
     tags: ['AWS', 'Azure', 'Bedrock', 'Vision models'],
   },
+  {
+    id: 'quoter',
+    date: '2025',
+    where: 'radii',
+    tags: ['Pricing', 'Machine Learning', 'Deterministic', 'Domain model'],
+  },
 ];
 
 export default ENTRIES;

@@ -145,6 +145,17 @@ const es = {
       freelance: 'Freelance',
     },
     items: {
+      quoter: {
+        title: 'Poner precio a una pieza sin tener datos con qué entrenar',
+        options: [
+          'Esperar a acumular historial suficiente y entrenar un modelo mientras tanto se cotiza a mano',
+          'Entrenar igual, con los pocos datos que había',
+          'Un algoritmo matemático derivado del dominio: geometría, material, acabado y volumen',
+        ],
+        chose: 'El algoritmo matemático.',
+        why: 'No había con qué entrenar. Una empresa nueva no tiene un corpus de cotizaciones históricas, y con un puñado de ejemplos un modelo no aprende a poner precio a una pieza: aprende las costumbres de quien cotizó esas. Además un precio equivocado no es una recomendación mala que el usuario ignora, es un trabajo que se pierde o que se hace perdiendo dinero, y eso obliga a poder señalar con el dedo el término que lo produjo. Pero la falta de datos no era excusa para no intentar nada: el problema tenía estructura —la geometría, el material, el acabado y el volumen sí determinan un costo— y esa estructura se podía escribir.',
+        today: 'Sigue en producción y es lo que hace que el precio salga solo. La conversación de ML se reabre cuando el historial que este algoritmo lleva generando alcance para entrenar contra algo real.',
+      },
       cloud: {
         title: 'Mover la infraestructura completa de una nube a otra, en dos semanas',
         options: [
