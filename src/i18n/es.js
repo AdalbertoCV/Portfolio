@@ -63,6 +63,7 @@ const es = {
       ls: 'el catálogo de proyectos',
       cat: 'el CV',
       open: 'ir a cualquier página',
+      decisions: 'las decisiones técnicas y por qué',
       stack: 'las tecnologías con las que construyo',
       play: 'una laptop que salta bugs',
       contact: 'correo y redes',
@@ -94,6 +95,9 @@ const es = {
       going: 'Abriendo {page}…',
       unknown: "'{arg}': no existe esa página. Las que sí:",
     },
+    decisions: {
+      line: 'Abriendo la bitácora de decisiones…',
+    },
     stack: {
       line: 'Volviendo a Sobre mí — la sección de tecnologías está a media página.',
       hint: '395 marcas en doce grupos. Las que tienen número enlazan a proyectos reales.',
@@ -119,6 +123,42 @@ const es = {
       line: 'Hasta luego.',
     },
     footer: 'Abrir la terminal',
+  },
+
+  // La bitácora. El formato es un ADR a propósito: una decisión escrita sin
+  // las opciones que descartó no es una decisión, es un anuncio.
+  decisions: {
+    badge: 'Bitácora',
+    title: 'Decisiones',
+    lede: 'El catálogo demuestra qué construí y el stack con qué. Ninguno de los dos muestra lo que un lector técnico realmente está evaluando: qué se eligió, sobre qué, y por qué.',
+    note: 'Casi todo mi trabajo vive en repositorios privados, así que el código no puede ser la evidencia. El razonamiento sí.',
+    parts: {
+      options: 'Opciones',
+      chose: 'Elegí',
+      why: 'Por qué',
+      today: 'Hoy',
+    },
+    where: {
+      radii: 'Radii Manufacturing',
+      rbr: 'Release Before Ready',
+      own: 'Proyecto propio',
+      freelance: 'Freelance',
+    },
+    items: {
+      cloud: {
+        title: 'Mover la infraestructura completa de una nube a otra, en dos semanas',
+        options: [
+          'Quedarnos en Azure y absorber el costo',
+          'Portar servicio por servicio detrás de una capa de abstracción propia',
+          'Portar directo contra los SDKs de cada proveedor, sin capa intermedia',
+        ],
+        chose: 'Portar directo, sin capa de abstracción.',
+        why: 'Una capa que ocultara las dos nubes habría costado más de mantener que los dos SDKs juntos, y habría que escribirla para una migración que ocurre una sola vez. Lo difícil nunca fue mover cómputo y almacenamiento: fueron los modelos de visión. Entender qué cambia realmente al pasarlos de Azure AI Foundry a AWS Bedrock —qué se comporta igual, qué no, y dónde la diferencia se nota en el resultado— es el trabajo que no se puede abstraer, porque la abstracción es justamente la que te esconde la diferencia que necesitas ver.',
+        today: 'Lo volvería a hacer igual. La plataforma corre hoy sobre AWS y no quedó deuda de compatibilidad con la nube que dejamos.',
+      },
+    },
+    more: 'Voy agregando entradas conforme las decisiones se decantan. Las que están aquí ya se pagaron: son decisiones que llevan tiempo corriendo, no propuestas.',
+    toProjects: 'Ver lo que salió de estas decisiones',
   },
 
   meta: {
@@ -181,6 +221,11 @@ const es = {
       description:
         'Dos años como mentor par, explicando las cinco materias que deciden quién sigue en una carrera de ingeniería.',
     },
+    decisions: {
+      title: 'Decisiones · Adal Cerrillo',
+      description:
+        'Bitácora de decisiones técnicas: las opciones que había, la que tomé, por qué, y qué costó.',
+    },
     play: {
       title: 'Una laptop que salta bugs · Adal Cerrillo',
       description:
@@ -200,6 +245,7 @@ const es = {
     cvDownload: 'Descargar CV (PDF)',
     cvOpen: 'Abrir en el navegador',
     kicker: 'Nota al pie',
+    decisions: 'Bitácora de decisiones',
     play: 'O ve a saltar unos bugs →',
     prev: 'Chiste anterior',
     next: 'Siguiente chiste',

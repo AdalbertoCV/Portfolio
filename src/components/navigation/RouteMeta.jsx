@@ -34,6 +34,7 @@ const PAGES = {
   '/labsol': 'labsol',
   '/case': 'case',
   '/uaz': 'uaz',
+  '/decisions': 'decisions',
   '/play': 'play',
 };
 

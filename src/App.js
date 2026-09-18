@@ -21,6 +21,7 @@ import LabsolPage from './components/brand/LabsolPage';
 import CasePage from './components/brand/CasePage';
 import UazPage from './components/brand/UazPage';
 import ContactPage from './components/contact/ContactPage';
+import Decisions from './components/decisions/Decisions';
 import Terminal from './components/terminal/Terminal';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
@@ -71,6 +72,10 @@ function App() {
                     education card on the CV. */}
                 <Route path="/uaz" element={<UazPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                {/* Not in the navbar: it is reached from the practice section,
+                    the footer and the terminal, which is where the readers who
+                    want it are already looking. */}
+                <Route path="/decisions" element={<Decisions />} />
 
                 {/* A laptop that jumps bugs. On its own route, and reused by
                     the catch-all below: a mistyped URL used to render nothing

@@ -395,6 +395,15 @@ const About = () => {
             </ul>
           </Reveal>
         ))}
+
+        {/* The one place on the site where the judgement this section claims is
+            shown instead of asserted. */}
+        <Reveal className="practice-out">
+          <Link className="cv-interest-link" to="/decisions">
+            {t('cv.practiceLog')}
+            <ArrowRight />
+          </Link>
+        </Reveal>
       </Section>
 
       {/* ----------------------------------------------- education + languages */}

@@ -54,6 +54,7 @@ const cvEn = {
     skillsExpandAll: 'Open every group',
     skillsCollapseAll: 'Close every group',
 
+    practiceLog: 'Read the decision log',
     practiceKicker: 'Engineering practice',
     practiceTitle: 'How I work, not just what with',
     practiceLede: 'A stack can be learned; the judgement behind these decisions is what determines whether a system holds in production.',

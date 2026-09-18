@@ -62,6 +62,7 @@ const en = {
       ls: 'the project catalogue',
       cat: 'the CV',
       open: 'go to any page',
+      decisions: 'the technical calls, and why',
       stack: 'the technologies I build with',
       play: 'a laptop that jumps bugs',
       contact: 'email and profiles',
@@ -93,6 +94,9 @@ const en = {
       going: 'Opening {page}…',
       unknown: "'{arg}': no such page. The ones there are:",
     },
+    decisions: {
+      line: 'Opening the decision log…',
+    },
     stack: {
       line: 'Back to About — the technology section is halfway down.',
       hint: '395 marks in twelve groups. The ones with a number link to real projects.',
@@ -118,6 +122,42 @@ const en = {
       line: 'See you.',
     },
     footer: 'Open the terminal',
+  },
+
+  // The log. The form is an ADR on purpose: a decision written without the
+  // options it beat is not a decision, it is an announcement.
+  decisions: {
+    badge: 'Log',
+    title: 'Decisions',
+    lede: 'The catalogue proves what I built and the stack proves what with. Neither shows the part a technical reader is actually assessing: what was chosen, over what, and why.',
+    note: 'Almost all of my work lives in private repositories, so the code cannot be the evidence. The reasoning can.',
+    parts: {
+      options: 'Options',
+      chose: 'Chose',
+      why: 'Why',
+      today: 'Today',
+    },
+    where: {
+      radii: 'Radii Manufacturing',
+      rbr: 'Release Before Ready',
+      own: 'Own project',
+      freelance: 'Freelance',
+    },
+    items: {
+      cloud: {
+        title: 'Moving an entire platform from one cloud to another, in two weeks',
+        options: [
+          'Stay on Azure and absorb the cost',
+          'Port service by service behind an abstraction layer of our own',
+          'Port straight onto each provider’s SDKs, with no layer in between',
+        ],
+        chose: 'Port straight across, with no abstraction layer.',
+        why: 'A layer that hid both clouds would have cost more to maintain than the two SDKs together, and it would have to be written for a migration that happens exactly once. The hard part was never moving compute and storage — it was the vision models. Working out what actually changes when they go from Azure AI Foundry to AWS Bedrock (what behaves the same, what does not, and where the difference shows up in the output) is the work that cannot be abstracted, because an abstraction is precisely the thing that hides the difference you need to see.',
+        today: 'I would do it the same way again. The platform runs on AWS today and carries no compatibility debt to the cloud we left.',
+      },
+    },
+    more: 'I add entries as decisions settle. The ones here have already been paid for — they are calls that have been running for a while, not proposals.',
+    toProjects: 'See what came out of these decisions',
   },
 
   meta: {
@@ -180,6 +220,11 @@ const en = {
       description:
         'Two years as a peer mentor, teaching the five subjects that decide who stays in an engineering degree.',
     },
+    decisions: {
+      title: 'Decisions · Adal Cerrillo',
+      description:
+        'A log of technical decisions: the options on the table, the one I took, why, and what it cost.',
+    },
     play: {
       title: 'A laptop that jumps bugs · Adal Cerrillo',
       description:
@@ -199,6 +244,7 @@ const en = {
     cvDownload: 'Download CV (PDF)',
     cvOpen: 'Open in the browser',
     kicker: 'Footnote',
+    decisions: 'Decision log',
     play: 'Or go jump some bugs →',
     prev: 'Previous joke',
     next: 'Next joke',

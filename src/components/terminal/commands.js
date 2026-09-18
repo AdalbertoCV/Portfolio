@@ -21,6 +21,7 @@ export const DESTINATIONS = {
   ventures: '/ventures',
   projects: '/projects',
   contact: '/contact',
+  decisions: '/decisions',
   radii: '/radii',
   moonphase: '/moonphase',
   stackselect: '/stackselect',
@@ -108,6 +109,14 @@ export const COMMANDS = [
       }
       go(path);
       return [say(t('term.open.going').replace('{page}', key))];
+    },
+  },
+  {
+    id: 'decisions',
+    aliases: ['adr'],
+    run: ({ t, go }) => {
+      go('/decisions');
+      return [say(t('term.decisions.line'))];
     },
   },
   {

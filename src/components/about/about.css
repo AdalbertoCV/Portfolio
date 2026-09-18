@@ -1239,6 +1239,12 @@
    typography of a reference document rather than of a tag list.
    ========================================================================= */
 
+.practice-out {
+    margin-top: 30px;
+    padding-top: 26px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
 /* The opening statement of the section. It gets air above the ruled lists and
    a heavier voice than a list row, because a claim buried among thirty-three
    hairlines reads as the thirty-fourth. */

@@ -61,6 +61,7 @@ const cvEs = {
     skillsExpandAll: 'Abrir todos los grupos',
     skillsCollapseAll: 'Cerrar todos los grupos',
 
+    practiceLog: 'Leer la bitácora de decisiones',
     practiceKicker: 'Práctica de ingeniería',
     practiceTitle: 'Cómo trabajo, no solo con qué',
     practiceLede: 'Un stack se aprende; el criterio con el que se toman estas decisiones es lo que determina si un sistema resiste en producción.',
