@@ -201,10 +201,15 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
     font-size: 0.9rem;
     font-weight: 650;
     color: var(--color-text-primary);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .dec-back svg {
@@ -215,7 +220,7 @@
 
 @media (hover: hover) and (pointer: fine) {
     .dec-back:hover svg {
-        transform: translateX(4px);
+        transform: translateX(-4px);
     }
 }
 

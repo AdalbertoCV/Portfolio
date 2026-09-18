@@ -138,13 +138,50 @@ const es = {
       why: 'Por qué',
       today: 'Hoy',
     },
+    dates: {
+      ongoing: 'En curso',
+    },
     where: {
       radii: 'Radii Manufacturing',
       rbr: 'Release Before Ready',
       own: 'Proyecto propio',
+      personal: 'Decisión personal',
       freelance: 'Freelance',
     },
     items: {
+      breadth: {
+        title: 'Por qué tantas herramientas y áreas en vez de especializarme',
+        options: [
+          'Especializarme en un stack y ser el mejor posible en ese',
+          'Aprender sólo lo que el trabajo pida, cuando lo pida',
+          'Amplitud deliberada: probar mucho, y profundizar donde se queda',
+        ],
+        chose: 'Amplitud.',
+        why: 'La industria va a la velocidad de la luz, y hoy aprender algo nuevo o probarlo cuesta una fracción de lo que costaba. Eso cambia el cálculo: especializarse temprano es apostar a que la cosa en la que te especializaste siga siendo la importante. Pero la razón honesta no es estratégica — es curiosidad, y cariño por esta industria. Me interesa cómo funcionan las cosas antes de saber si las voy a usar.',
+        today: 'Es la razón de que la lista de tecnologías de este sitio sea tan larga, y también la razón de que sólo catorce de ellas tengan un proyecto público detrás. La amplitud es real; la profundidad está donde estuvo el trabajo, y esas dos cosas no son la misma y no deberían leerse igual.',
+      },
+      services: {
+        title: 'Por qué microservicios, y no un monolito ni algo más complicado',
+        options: [
+          'Un monolito: un solo despliegue, cómodo al principio',
+          'Un monolito modular, con las fronteras sostenidas sólo por convención',
+          'Servicios separados, uno por responsabilidad',
+        ],
+        chose: 'Servicios separados, uno por responsabilidad.',
+        why: 'La decisión es simple y corre en las dos direcciones: un proyecto no puede ser un monolito, y tampoco puede estar sobre-complicado. Separar por responsabilidad es justamente la línea entre esas dos cosas. Cada servicio hace una cosa, y por eso se puede mantener y escalar sin arrastrar al resto con él. No hay servicios porque el patrón suene moderno: hay tantos como responsabilidades distintas existen, y ni uno más.',
+        today: 'Es lo que hizo posible mover la plataforma completa de una nube a otra en dos semanas: se migró servicio por servicio, no todo de golpe.',
+      },
+      parallel: {
+        title: 'Construir cosas propias mientras trabajo en Radii',
+        options: [
+          'Enfocarme sólo en Radii y dejar lo demás para después',
+          'Esperar a tener más tiempo o más estabilidad',
+          'Construir en paralelo',
+        ],
+        chose: 'Construir en paralelo.',
+        why: 'Radii inspira a intentar cosas locas y a resolver problemas, y eso es la razón, no el obstáculo. Tener proyectos propios corriendo al mismo tiempo es exactamente la visión y el hambre que este trabajo pide. No son una distracción de lo que hago aquí: son la misma disposición, aplicada a problemas que elegí yo.',
+        today: 'Moonphase y StackSelect siguen en construcción, en paralelo.',
+      },
       quoter: {
         title: 'Poner precio a una pieza sin tener datos con qué entrenar',
         options: [
@@ -169,7 +206,7 @@ const es = {
       },
     },
     more: 'Voy agregando entradas conforme las decisiones se decantan. Las que están aquí ya se pagaron: son decisiones que llevan tiempo corriendo, no propuestas.',
-    toProjects: 'Ver lo que salió de estas decisiones',
+    back: 'Regresar',
   },
 
   meta: {

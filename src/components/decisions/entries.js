@@ -11,7 +11,9 @@
    reader is actually judging.
 
    Entries are newest first. `where` names the room the call was made in, so
-   a reader can tell a production decision from a one-day hackathon one.
+   a reader can tell a production decision from a one-day hackathon one, and
+   `date` is either a year — which needs no translating — or a key into the
+   dictionary for the ones that are still running.
    ======================================================================== */
 
 const ENTRIES = [
@@ -26,6 +28,24 @@ const ENTRIES = [
     date: '2025',
     where: 'radii',
     tags: ['Pricing', 'Machine Learning', 'Deterministic', 'Domain model'],
+  },
+  {
+    id: 'services',
+    date: '2025',
+    where: 'radii',
+    tags: ['Microservices', 'Monolith', 'Single responsibility', 'Scalability'],
+  },
+  {
+    id: 'parallel',
+    date: '2025',
+    where: 'personal',
+    tags: ['Moonphase', 'StackSelect', 'Focus'],
+  },
+  {
+    id: 'breadth',
+    date: 'ongoing',
+    where: 'personal',
+    tags: ['Breadth', 'Specialism', 'Curiosity'],
   },
 ];
 

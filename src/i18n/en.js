@@ -137,13 +137,50 @@ const en = {
       why: 'Why',
       today: 'Today',
     },
+    dates: {
+      ongoing: 'Ongoing',
+    },
     where: {
       radii: 'Radii Manufacturing',
       rbr: 'Release Before Ready',
       own: 'Own project',
+      personal: 'Personal call',
       freelance: 'Freelance',
     },
     items: {
+      breadth: {
+        title: 'Why so many tools and areas instead of specialising',
+        options: [
+          'Specialise in one stack and be as good as possible at that',
+          'Learn only what the work asks for, when it asks',
+          'Deliberate breadth: try a lot, go deep where it sticks',
+        ],
+        chose: 'Breadth.',
+        why: 'The industry moves at the speed of light, and learning something new or trying it out now costs a fraction of what it used to. That changes the maths: specialising early is a bet that the thing you specialised in stays the thing that matters. But the honest reason is not strategic — it is curiosity, and love for this industry. I want to know how things work before I know whether I will use them.',
+        today: 'It is why the technology list on this site is so long, and also why only fourteen of those have a public project behind them. The breadth is real; the depth is where the work was, and those are not the same thing and should not read as if they were.',
+      },
+      services: {
+        title: 'Why microservices, and not a monolith or something more complicated',
+        options: [
+          'A monolith: one deployment, comfortable at the start',
+          'A modular monolith, with the boundaries held up by convention alone',
+          'Separate services, one per responsibility',
+        ],
+        chose: 'Separate services, one per responsibility.',
+        why: 'The decision is simple and it runs in both directions: a project cannot be a monolith, and it cannot be over-complicated either. Splitting by responsibility is precisely the line between those two. Each service does one thing, which is why it can be maintained and scaled without dragging the rest along with it. There are no services because the pattern sounds modern: there are as many as there are distinct responsibilities, and not one more.',
+        today: 'It is what made it possible to move the whole platform from one cloud to another in two weeks: it migrated service by service rather than all at once.',
+      },
+      parallel: {
+        title: 'Building things of my own while working at Radii',
+        options: [
+          'Focus on Radii alone and leave the rest for later',
+          'Wait for more time, or more stability',
+          'Build in parallel',
+        ],
+        chose: 'Build in parallel.',
+        why: 'Radii is a place that pushes you to attempt mad things and to solve problems, and that is the reason, not the obstacle. Having projects of my own running at the same time is exactly the vision and the hunger this work asks for. They are not a distraction from what I do here: they are the same disposition, aimed at problems I chose myself.',
+        today: 'Moonphase and StackSelect are both still being built, in parallel.',
+      },
       quoter: {
         title: 'Pricing a part with no data to train on',
         options: [
@@ -168,7 +205,7 @@ const en = {
       },
     },
     more: 'I add entries as decisions settle. The ones here have already been paid for — they are calls that have been running for a while, not proposals.',
-    toProjects: 'See what came out of these decisions',
+    back: 'Back',
   },
 
   meta: {
