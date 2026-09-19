@@ -756,50 +756,61 @@
 /* ============================================================================
    THE ORIGIN NOTE
    ----------------------------------------------------------------------------
-   A footnote to the interests, set like one: the year held out in the margin
-   at a size that makes the joke — it is ten years old and it is the only date
-   on this page that predates everything else.
+   The last line on the page and the smallest thing on it. It was a block with
+   a display-sized year and a heading, which made a footnote look like a
+   section; at this size it is what it should be — a line you only find if you
+   read to the bottom.
    ========================================================================= */
 
 .origin {
-    display: grid;
-    grid-template-columns: 240px minmax(0, 1fr);
-    gap: 0 56px;
-    align-items: start;
-    margin-top: 34px;
-    padding-top: 30px;
-    border-top: 1px solid var(--color-border-primary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 14px;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--color-text-tertiary);
+    opacity: 0.75;
+    transition: opacity var(--transition-base);
 }
 
 .origin-year {
     font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: var(--color-text-tertiary);
     font-variant-numeric: tabular-nums;
-}
-
-.origin-copy h3 {
-    margin: 0 0 10px;
-    font-size: 1.04rem;
-    letter-spacing: -0.025em;
-    color: var(--color-text-primary);
-}
-
-.origin-copy p {
-    margin: 0 0 16px;
-    max-width: 62ch;
-    font-size: 0.93rem;
-    line-height: 1.7;
     color: var(--color-text-secondary);
 }
 
-@media (max-width: 900px) {
-    .origin {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 12px;
+.origin-body {
+    margin: 0;
+    max-width: 62ch;
+}
+
+.origin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 650;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border-hover);
+}
+
+.origin-link svg {
+    width: 11px;
+    height: 11px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* It brightens when you get close to it, which is the whole reward for
+       having scrolled this far. */
+    .origin:hover {
+        opacity: 1;
+    }
+
+    .origin:hover .origin-link {
+        color: var(--color-text-primary);
     }
 }
 
