@@ -147,7 +147,7 @@ const cvEs = {
     referencesKicker: 'Referencias',
     referencesTitle: 'Gente con la que he construido',
     referencesLede:
-      'Tres personas que han trabajado conmigo. Están aquí con sus propios enlaces y no con una frase que yo les haya puesto: lo que tengan que decir de mi trabajo, que lo digan ellos.',
+      'Gente que ha trabajado conmigo. Están aquí con sus propios enlaces y no con una frase que yo les haya puesto: lo que tengan que decir de mi trabajo, que lo digan ellos.',
     referencesSite: 'Portafolio',
     references: {
       viky: 'Ingeniera de software en',
