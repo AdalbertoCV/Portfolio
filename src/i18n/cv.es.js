@@ -144,6 +144,17 @@ const cvEs = {
       body: 'Formación en inglés en el centro de idiomas de la UAZ, concluida el mismo año en que empecé la ingeniería. Es la razón por la que la documentación técnica, los papers y el trabajo en inglés nunca fueron un obstáculo, sino el modo por defecto.',
     },
 
+    referencesKicker: 'Referencias',
+    referencesTitle: 'Gente con la que he construido',
+    referencesLede:
+      'Tres personas que han trabajado conmigo. Están aquí con sus propios enlaces y no con una frase que yo les haya puesto: lo que tengan que decir de mi trabajo, que lo digan ellos.',
+    referencesSite: 'Portafolio',
+    references: {
+      viky: 'Ingeniera de software en',
+      elliot: 'Líder de sistemas en',
+      rafael: 'Gestor de proyectos en',
+    },
+
     readingKicker: 'Lectura',
     readingTitle: 'Literatura recomendada',
     readingLede:

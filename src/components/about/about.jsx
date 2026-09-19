@@ -25,6 +25,7 @@ import {
 import TECH_GROUPS, { monogram } from './techStack';
 import { PROJECT_TECH } from '../projects/catalogue';
 import READING from './reading';
+import REFERENCES, { initials } from './references';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
@@ -567,6 +568,42 @@ const About = () => {
                     </Link>
                   ) : null}
                 </div>
+              </div>
+            </article>
+          ))}
+        </Reveal>
+      </Section>
+
+      {/* ---------------------------------------------------------- references */}
+      {/* After the events, because both answer the same question — who has been
+          in the room. Nobody here is quoted: none of them was asked for a
+          sentence, so the section hands over their links instead of putting
+          words in their mouths. */}
+      <Section
+        kicker={t('cv.referencesKicker')}
+        title={t('cv.referencesTitle')}
+        lede={t('cv.referencesLede')}
+      >
+        <Reveal className="refs" stagger>
+          {REFERENCES.map(({ id, name, org, site, linkedin }) => (
+            <article className="ref-card" key={id}>
+              <span className="ref-mark" aria-hidden="true">
+                {initials(name)}
+              </span>
+              <h3 className="ref-name">{name}</h3>
+              <p className="ref-role">
+                {t(`cv.references.${id}`)}
+                <span className="ref-org">{org}</span>
+              </p>
+              <div className="ref-links">
+                <a href={linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                  <ArrowUpRight />
+                </a>
+                <a href={site} target="_blank" rel="noopener noreferrer">
+                  {t('cv.referencesSite')}
+                  <ArrowUpRight />
+                </a>
               </div>
             </article>
           ))}

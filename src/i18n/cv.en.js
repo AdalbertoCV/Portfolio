@@ -137,6 +137,17 @@ const cvEn = {
       body: 'An English programme at the UAZ language centre, finished the same year I started the engineering degree. It is why technical documentation, papers and working in English were never an obstacle but the default mode.',
     },
 
+    referencesKicker: 'References',
+    referencesTitle: 'People I have built with',
+    referencesLede:
+      'Three people who have worked with me. They are here with their own links rather than with a sentence I wrote for them: whatever they have to say about my work, they can say it themselves.',
+    referencesSite: 'Portfolio',
+    references: {
+      viky: 'Software engineer at',
+      elliot: 'Systems lead at',
+      rafael: 'Project manager at',
+    },
+
     readingKicker: 'Reading',
     readingTitle: 'Recommended reading',
     readingLede:

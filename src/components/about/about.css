@@ -754,6 +754,106 @@
 }
 
 /* ============================================================================
+   REFERENCES
+   ----------------------------------------------------------------------------
+   Three cards, and deliberately no quote in any of them. The plate carries
+   initials rather than a photograph: borrowed headshots would be the one thing
+   on this page taken without asking.
+   ========================================================================= */
+
+.refs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.ref-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px 24px 8px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.ref-mark {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 16px;
+    border-radius: 999px;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--color-text-secondary);
+}
+
+.ref-name {
+    margin: 0 0 5px;
+    font-size: 1.02rem;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+}
+
+/* Role and organisation on two lines: the role is translated and the company
+   is a proper noun, so they are never one sentence to be broken by a locale. */
+.ref-role {
+    margin: 0 0 6px;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--color-text-tertiary);
+}
+
+.ref-org {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.ref-links {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 18px;
+}
+
+/* Padding rather than a taller line: 17px of link text is half the touch
+   target a thumb needs, and these are the only thing on the card to hit. */
+.ref-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 0;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.ref-links svg {
+    width: 13px;
+    height: 13px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ref-card:hover {
+        border-color: var(--color-border-hover);
+        transform: translateY(-3px);
+    }
+
+    .ref-links a:hover svg {
+        transform: translate(2px, -2px);
+    }
+}
+
+/* ============================================================================
    CERTIFICATIONS
    ========================================================================= */
 

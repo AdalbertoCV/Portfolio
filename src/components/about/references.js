@@ -1,0 +1,44 @@
+/* ==========================================================================
+   REFERENCES
+
+   People, not quotes. Nobody here was asked for a sentence about the work, so
+   nobody here is quoted saying one — they are listed with their own links so
+   a reader can go and ask them directly.
+
+   Names and organisations are proper nouns and stay as written. Only the role
+   is translated, which is why it lives in the dictionary and not here.
+   ======================================================================== */
+
+const REFERENCES = [
+  {
+    id: 'viky',
+    name: 'Viky Gómez',
+    org: 'Radii Manufacturing',
+    site: 'https://v0-portfolio-nu-five-98.vercel.app/',
+    linkedin: 'https://www.linkedin.com/in/viktoria-g%C3%B3mez-91990428a',
+  },
+  {
+    id: 'elliot',
+    name: 'Elliot Noriega',
+    org: 'Rancho El Tirón',
+    site: 'https://portafolio-web-psi-five.vercel.app/',
+    linkedin: 'https://www.linkedin.com/in/elliot-axel-noriega-41005528a/',
+  },
+  {
+    id: 'rafael',
+    name: 'Rafael Rangel',
+    org: 'Zig Zag Zacatecas',
+    site: 'https://doublerre.com/',
+    linkedin: 'https://www.linkedin.com/in/doublerre/',
+  },
+];
+
+/** Two letters from a name, for the plate where a photo would go. */
+export const initials = (name) =>
+  name
+    .split(' ')
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('');
+
+export default REFERENCES;
