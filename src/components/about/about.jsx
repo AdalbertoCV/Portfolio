@@ -405,10 +405,10 @@ const About = () => {
             never drift apart. */}
         <Reveal className="practice-out">
           <Link className="log-door" to="/decisions">
-            <span className="log-door-label">{t('cv.log.label')}</span>
-            <span className="log-door-title">
-              {t('cv.log.title').replace('{n}', String(DECISIONS.length))}
+            <span className="log-door-label">
+              {t('cv.log.label').replace('{n}', String(DECISIONS.length))}
             </span>
+            <span className="log-door-title">{t('cv.log.title')}</span>
             <span className="log-door-body">{t('cv.log.body')}</span>
             <span className="log-door-parts" aria-hidden="true">
               {['options', 'chose', 'why', 'today'].map((part) => (

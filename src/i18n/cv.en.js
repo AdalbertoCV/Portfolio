@@ -55,8 +55,8 @@ const cvEn = {
     skillsCollapseAll: 'Close every group',
 
     log: {
-      label: 'Log',
-      title: '{n} decisions, with the options they beat',
+      label: 'Log · {n} entries',
+      title: 'Decisions that shaped the way I work',
       body: 'Everything above is a claim about judgement. This is the judgement: what was on the table, what I took, why, and what it ended up costing.',
       cta: 'Read the log',
     },
