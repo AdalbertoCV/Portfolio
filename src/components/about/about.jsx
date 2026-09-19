@@ -25,6 +25,7 @@ import {
 import TECH_GROUPS, { monogram } from './techStack';
 import { PROJECT_TECH } from '../projects/catalogue';
 import READING from './reading';
+import DECISIONS from '../decisions/entries';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
@@ -396,12 +397,28 @@ const About = () => {
           </Reveal>
         ))}
 
-        {/* The one place on the site where the judgement this section claims is
-            shown instead of asserted. */}
+        {/* The one place on the site where the judgement this section claims
+            is shown rather than asserted, so it gets a door rather than a line
+            of link text. The four labels are the log's own, printed here as a
+            preview: they teach the format before the reader arrives, and they
+            come from the same dictionary keys the entries use, so the two can
+            never drift apart. */}
         <Reveal className="practice-out">
-          <Link className="cv-interest-link" to="/decisions">
-            {t('cv.practiceLog')}
-            <ArrowRight />
+          <Link className="log-door" to="/decisions">
+            <span className="log-door-label">{t('cv.log.label')}</span>
+            <span className="log-door-title">
+              {t('cv.log.title').replace('{n}', String(DECISIONS.length))}
+            </span>
+            <span className="log-door-body">{t('cv.log.body')}</span>
+            <span className="log-door-parts" aria-hidden="true">
+              {['options', 'chose', 'why', 'today'].map((part) => (
+                <span key={part}>{t(`decisions.parts.${part}`)}</span>
+              ))}
+            </span>
+            <span className="log-door-cta">
+              {t('cv.log.cta')}
+              <ArrowRight />
+            </span>
           </Link>
         </Reveal>
       </Section>

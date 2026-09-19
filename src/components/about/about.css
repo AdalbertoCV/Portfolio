@@ -1240,9 +1240,98 @@
    ========================================================================= */
 
 .practice-out {
-    margin-top: 30px;
-    padding-top: 26px;
-    border-top: 1px solid var(--color-border-primary);
+    margin-top: 34px;
+}
+
+/* A door, not a link. The section above it is thirty-three hairline rows of
+   claims; the thing that backs them up cannot be a thirty-fourth. Inverted
+   against the page so it is the one object in the section that is not a list,
+   which is the whole reason the eye stops on it. */
+.log-door {
+    display: grid;
+    gap: 10px;
+    padding: 30px 32px 26px;
+    border-radius: var(--radius-lg);
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
+    text-decoration: none;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.log-door-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+}
+
+.log-door-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.44rem);
+    font-weight: 700;
+    letter-spacing: -0.028em;
+    line-height: 1.28;
+    max-width: 30ch;
+}
+
+.log-door-body {
+    max-width: 62ch;
+    font-size: 0.93rem;
+    line-height: 1.68;
+    opacity: 0.72;
+}
+
+/* The log's own four labels, printed as a preview of the form. */
+.log-door-parts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.log-door-parts span {
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+}
+
+.log-door-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 12px;
+    font-size: 0.94rem;
+    font-weight: 700;
+}
+
+.log-door-cta svg {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .log-door:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+    }
+
+    .log-door:hover .log-door-cta svg {
+        transform: translateX(5px);
+    }
+}
+
+@media (max-width: 600px) {
+    .log-door {
+        padding: 24px 20px 22px;
+    }
 }
 
 /* The opening statement of the section. It gets air above the ruled lists and

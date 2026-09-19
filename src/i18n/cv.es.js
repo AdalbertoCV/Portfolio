@@ -61,7 +61,12 @@ const cvEs = {
     skillsExpandAll: 'Abrir todos los grupos',
     skillsCollapseAll: 'Cerrar todos los grupos',
 
-    practiceLog: 'Leer la bitácora de decisiones',
+    log: {
+      label: 'Bitácora',
+      title: '{n} decisiones, con las opciones que descartaron',
+      body: 'Todo lo de arriba es una afirmación sobre criterio. Esto es el criterio: qué estaba sobre la mesa, qué elegí, por qué, y qué terminó costando.',
+      cta: 'Leer la bitácora',
+    },
     practiceKicker: 'Práctica de ingeniería',
     practiceTitle: 'Cómo trabajo, no solo con qué',
     practiceLede: 'Un stack se aprende; el criterio con el que se toman estas decisiones es lo que determina si un sistema resiste en producción.',
