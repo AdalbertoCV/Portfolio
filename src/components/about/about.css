@@ -754,6 +754,56 @@
 }
 
 /* ============================================================================
+   THE ORIGIN NOTE
+   ----------------------------------------------------------------------------
+   A footnote to the interests, set like one: the year held out in the margin
+   at a size that makes the joke — it is ten years old and it is the only date
+   on this page that predates everything else.
+   ========================================================================= */
+
+.origin {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 0 56px;
+    align-items: start;
+    margin-top: 34px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.origin-year {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--color-text-tertiary);
+    font-variant-numeric: tabular-nums;
+}
+
+.origin-copy h3 {
+    margin: 0 0 10px;
+    font-size: 1.04rem;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+}
+
+.origin-copy p {
+    margin: 0 0 16px;
+    max-width: 62ch;
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 900px) {
+    .origin {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+}
+
+/* ============================================================================
    REFERENCES
    ----------------------------------------------------------------------------
    Three cards, and deliberately no quote in any of them. The plate carries

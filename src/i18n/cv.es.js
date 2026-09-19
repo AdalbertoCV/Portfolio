@@ -157,6 +157,12 @@ const cvEs = {
       rafael: 'Gestor de proyectos en',
     },
 
+    origin: {
+      title: 'La prueba más vieja que tengo',
+      body: 'En 2016, a los catorce años, hice una presentación en Prezi sobre la industria del software. El diseño no envejeció bien y media cosa la decía de oídas, pero la dirección ya estaba ahí. La dejo porque es lo más antiguo que puedo enseñar de que todo esto no fue una decisión de carrera.',
+      link: 'Ver la presentación',
+    },
+
     readingKicker: 'Lectura',
     readingTitle: 'Literatura recomendada',
     readingLede:

@@ -692,6 +692,30 @@ const About = () => {
             </article>
           ))}
         </Reveal>
+
+        {/* The oldest thing on this site, and the only one that predates any of
+            it. The section above asks where the way of thinking comes from; a
+            Prezi made at fourteen answers it better than any of the cards, and
+            it is the evidence behind the decision log's claim that the breadth
+            is curiosity rather than strategy. */}
+        <Reveal className="origin">
+          <span className="origin-year" aria-hidden="true">
+            2016
+          </span>
+          <div className="origin-copy">
+            <h3>{t('cv.origin.title')}</h3>
+            <p>{t('cv.origin.body')}</p>
+            <a
+              className="cv-interest-link"
+              href="https://prezi.com/view/zBbeitm6YIWyU1MoAb33/?referral_token=2I39hklnB3FN"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('cv.origin.link')}
+              <ArrowUpRight />
+            </a>
+          </div>
+        </Reveal>
       </Section>
 
       <Reveal className="hub-teaser">
