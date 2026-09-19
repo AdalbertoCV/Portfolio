@@ -919,8 +919,21 @@
     max-width: 68ch;
 }
 
+/* Two links now, so they need a row of their own rather than sitting where a
+   single one used to. */
+.cv-cert-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 22px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+/* The row above owns the spacing now; the link used to own it when there was
+   only ever one. */
 .cv-cert-link {
-    margin: 18px 0 0;
+    margin: 0;
 }
 
 .cv-proof-row {

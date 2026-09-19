@@ -193,7 +193,10 @@ const cvEs = {
         issuer: 'SOMECE',
         year: '2024',
         body: 'Congreso internacional dedicado a la aplicación de la tecnología y la inteligencia artificial en la educación. Ahí presenté el artículo «Evaluación de aplicaciones de software para fomentar la participación parental en la educación», que forma parte de la memoria del congreso de ese año.',
-        link: 'Leer el artículo publicado',
+        links: {
+          paper: 'Leer el artículo publicado',
+          talk: 'Ver la ponencia',
+        },
       },
     },
     educationCta: 'Ver la carrera a fondo',

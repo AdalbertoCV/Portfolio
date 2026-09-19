@@ -72,11 +72,18 @@ const PRINCIPLES = [
 
 const CERT_KEYS = ['icp', 'langchain', 'santander', 'somece'];
 
-/* A certificate only carries a link when there is something published to point
-   at — the SOMECE proceedings the paper appears in. */
+/* A certificate only carries links when there is something published to point
+   at. SOMECE has two: the proceedings the paper appears in, and the recording
+   of the talk itself — which is the one thing on that channel that is evidence
+   of a claim this page already makes, rather than a video. */
 const CERT_LINKS = {
-  somece:
-    'https://www.google.com.mx/books/edition/Proleg%C3%B3menos_de_la_Inteligencia_Artific/m-I2EQAAQBAJ?hl=es&gbpv=1&pg=PA111&printsec=frontcover',
+  somece: [
+    {
+      id: 'paper',
+      href: 'https://www.google.com.mx/books/edition/Proleg%C3%B3menos_de_la_Inteligencia_Artific/m-I2EQAAQBAJ?hl=es&gbpv=1&pg=PA111&printsec=frontcover',
+    },
+    { id: 'talk', href: 'https://www.youtube.com/watch?v=WPH80wfQbXg' },
+  ],
 };
 
 /**
@@ -497,17 +504,22 @@ const About = () => {
                   {t(`cv.certs.${key}.issuer`)} · {t(`cv.certs.${key}.year`)}
                 </p>
                 {hasBody && <p className="cv-cert-body">{body}</p>}
-                {CERT_LINKS[key] && (
-                  <a
-                    className="cv-interest-link cv-cert-link"
-                    href={CERT_LINKS[key]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t(`cv.certs.${key}.link`)}
-                    <ArrowUpRight />
-                  </a>
-                )}
+                {CERT_LINKS[key] ? (
+                  <div className="cv-cert-links">
+                    {CERT_LINKS[key].map(({ id, href }) => (
+                      <a
+                        className="cv-interest-link cv-cert-link"
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={id}
+                      >
+                        {t(`cv.certs.${key}.links.${id}`)}
+                        <ArrowUpRight />
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
               </article>
             );
           })}

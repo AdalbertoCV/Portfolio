@@ -186,7 +186,10 @@ const cvEn = {
         issuer: 'SOMECE',
         year: '2024',
         body: 'An international congress on the application of technology and artificial intelligence to education. I presented the paper “Evaluación de aplicaciones de software para fomentar la participación parental en la educación” there, published as part of that year’s congress proceedings.',
-        link: 'Read the published paper',
+        links: {
+          paper: 'Read the published paper',
+          talk: 'Watch the talk',
+        },
       },
     },
     educationCta: 'See the degree in full',
