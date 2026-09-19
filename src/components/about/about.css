@@ -862,6 +862,13 @@
     margin-top: 36px;
 }
 
+/* 4px between cards read as one block cut into three. The gap is bigger than
+   the space under the heading now, so the three cards group together and each
+   one still reads as its own thing. */
+.cv-event + .cv-event {
+    margin-top: 18px;
+}
+
 .cv-event {
     display: flex;
     flex-wrap: wrap;
