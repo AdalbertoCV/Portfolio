@@ -25,7 +25,6 @@ import {
 import TECH_GROUPS, { monogram } from './techStack';
 import { PROJECT_TECH } from '../projects/catalogue';
 import READING from './reading';
-import DECISIONS from '../decisions/entries';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
@@ -402,12 +401,11 @@ const About = () => {
             of link text. The four labels are the log's own, printed here as a
             preview: they teach the format before the reader arrives, and they
             come from the same dictionary keys the entries use, so the two can
-            never drift apart. */}
+            never drift apart. No entry count — a number invites counting, and
+            there is no count that reads well. */}
         <Reveal className="practice-out">
           <Link className="log-door" to="/decisions">
-            <span className="log-door-label">
-              {t('cv.log.label').replace('{n}', String(DECISIONS.length))}
-            </span>
+            <span className="log-door-label">{t('cv.log.label')}</span>
             <span className="log-door-title">{t('cv.log.title')}</span>
             <span className="log-door-body">{t('cv.log.body')}</span>
             <span className="log-door-parts" aria-hidden="true">

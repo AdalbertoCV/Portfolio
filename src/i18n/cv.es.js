@@ -62,7 +62,7 @@ const cvEs = {
     skillsCollapseAll: 'Cerrar todos los grupos',
 
     log: {
-      label: 'Bitácora · {n} entradas',
+      label: 'Bitácora',
       title: 'Decisiones que marcaron mi manera de trabajar',
       body: 'Todo lo de arriba es una afirmación sobre criterio. Esto es el criterio: qué estaba sobre la mesa, qué elegí, por qué, y qué terminó costando.',
       cta: 'Leer la bitácora',
