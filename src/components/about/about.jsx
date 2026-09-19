@@ -274,15 +274,10 @@ const About = () => {
         </div>
       </Reveal>
 
-      {/* ------------------------------------------------------------- profile */}
-      <Section kicker={t('cv.profileKicker')} title={t('cv.profileTitle')}>
-        <Reveal>
-          <p className="brand-p brand-lead-p">{t('cv.profileBody')}</p>
-          <p className="brand-p">{t('cv.profileBody2')}</p>
-        </Reveal>
-      </Section>
-
       {/* ----------------------------------------------------------------- now */}
+      {/* First, because every reason somebody is on this page — building
+          something together, hiring the ventures, or just arguing about the
+          work — starts with what is running right now, not with a biography. */}
       <Section kicker={t('cv.nowKicker')} title={t('cv.nowTitle')}>
         <Reveal className="cv-now" stagger>
           {NOW.map(({ id, to }) => (
@@ -299,54 +294,11 @@ const About = () => {
         </Reveal>
       </Section>
 
-      {/* --------------------------------------------------------------- stack */}
-      {/* Twelve groups and nearly four hundred tiles is a wall, and a wall is
-          something a reader scrolls past rather than reads. An index down the
-          side and one group in the panel is the same content at a size a
-          reader can actually take in. Nothing was cut. */}
-      <Section kicker={t('cv.skillsKicker')} title={t('cv.skillsTitle')} lede={t('cv.skillsLede')}>
-        {/* An index and a panel, rather than everything at once or nothing
-            at all.
-
-            Four earlier attempts argued about how to fold 315 entries into a
-            page; all of them were answering the wrong question. The section
-            does not need to show every group at once — it needs to say how
-            many groups there are, let a reader pick one, and give that one
-            room to breathe. Twelve names on the left, one group's marks on
-            the right, and the wall never happens. */}
-        <Reveal className="stack">
-          <div className="stack-index" role="tablist" aria-label={t('cv.skillsTitle')}>
-            {TECH_GROUPS.map(({ id, items }) => (
-              <button
-                type="button"
-                role="tab"
-                id={`stack-tab-${id}`}
-                aria-selected={group === id}
-                aria-controls={`stack-panel-${id}`}
-                tabIndex={group === id ? 0 : -1}
-                className="stack-tab"
-                key={id}
-                onClick={() => setGroup(id)}
-                onKeyDown={(event) => stepGroup(event, id)}
-              >
-                <span className="stack-tab-name">{t(`skills.groups.${id}`)}</span>
-              </button>
-            ))}
-          </div>
-
-          <div
-            className="stack-panel"
-            role="tabpanel"
-            id={`stack-panel-${group}`}
-            aria-labelledby={`stack-tab-${group}`}
-            key={group}
-          >
-            <ul className="stack-marks">
-              {(TECH_GROUPS.find((entry) => entry.id === group)?.items || []).map((item) => (
-                <TechMark item={item} t={t} key={item.name} />
-              ))}
-            </ul>
-          </div>
+      {/* ------------------------------------------------------------- profile */}
+      <Section kicker={t('cv.profileKicker')} title={t('cv.profileTitle')}>
+        <Reveal>
+          <p className="brand-p brand-lead-p">{t('cv.profileBody')}</p>
+          <p className="brand-p">{t('cv.profileBody2')}</p>
         </Reveal>
       </Section>
 
@@ -418,6 +370,57 @@ const About = () => {
               <ArrowRight />
             </span>
           </Link>
+        </Reveal>
+      </Section>
+
+      {/* --------------------------------------------------------------- stack */}
+      {/* Twelve groups and nearly four hundred tiles is a wall, and a wall is
+          something a reader scrolls past rather than reads. An index down the
+          side and one group in the panel is the same content at a size a
+          reader can actually take in. Nothing was cut. */}
+      <Section kicker={t('cv.skillsKicker')} title={t('cv.skillsTitle')} lede={t('cv.skillsLede')}>
+        {/* An index and a panel, rather than everything at once or nothing
+            at all.
+
+            Four earlier attempts argued about how to fold 315 entries into a
+            page; all of them were answering the wrong question. The section
+            does not need to show every group at once — it needs to say how
+            many groups there are, let a reader pick one, and give that one
+            room to breathe. Twelve names on the left, one group's marks on
+            the right, and the wall never happens. */}
+        <Reveal className="stack">
+          <div className="stack-index" role="tablist" aria-label={t('cv.skillsTitle')}>
+            {TECH_GROUPS.map(({ id, items }) => (
+              <button
+                type="button"
+                role="tab"
+                id={`stack-tab-${id}`}
+                aria-selected={group === id}
+                aria-controls={`stack-panel-${id}`}
+                tabIndex={group === id ? 0 : -1}
+                className="stack-tab"
+                key={id}
+                onClick={() => setGroup(id)}
+                onKeyDown={(event) => stepGroup(event, id)}
+              >
+                <span className="stack-tab-name">{t(`skills.groups.${id}`)}</span>
+              </button>
+            ))}
+          </div>
+
+          <div
+            className="stack-panel"
+            role="tabpanel"
+            id={`stack-panel-${group}`}
+            aria-labelledby={`stack-tab-${group}`}
+            key={group}
+          >
+            <ul className="stack-marks">
+              {(TECH_GROUPS.find((entry) => entry.id === group)?.items || []).map((item) => (
+                <TechMark item={item} t={t} key={item.name} />
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </Section>
 

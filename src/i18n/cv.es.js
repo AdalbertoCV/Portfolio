@@ -8,7 +8,7 @@
 
 const cvEs = {
   cv: {
-    badge: 'Currículum',
+    badge: 'Construyendo',
     // La línea bajo el nombre. "Full-Stack Software Engineer" es el título que
     // comparten doscientas mil personas; esta es la única cosa de la página que
     // nadie más puede escribir.
@@ -23,7 +23,7 @@ const cvEs = {
     standing: 'Backend · Nube · Sistemas de IA',
     contactLabel: 'Contacto',
 
-    profileTitle: 'Perfil profesional',
+    profileTitle: 'Lo que hago',
     profileKicker: 'Quién soy',
     profileBody: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS y Azure, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad de una plataforma de microservicios. Migré la infraestructura completa de la plataforma en dos semanas y construí su cotizador automático: un algoritmo matemático de precios que llevó el tiempo promedio de cotización de un account manager de cinco días a uno.',
     profileBody2: 'Trabajo con Python, Java, JavaScript, TypeScript, C#, Go y PHP, sobre Django, Spring Boot, Laravel y React. Mis áreas de interés técnico son los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Mi enfoque profesional combina la adopción rigurosa de tecnología emergente con criterios de ingeniería, diseño y negocio, orientado a construir sistemas sostenibles en el tiempo.',
