@@ -63,6 +63,7 @@ const en = {
       cat: 'the CV',
       open: 'go to any page',
       decisions: 'the technical calls, and why',
+      study: 'ten problems, with hints and answers',
       stack: 'the technologies I build with',
       play: 'a laptop that jumps bugs',
       contact: 'email and profiles',
@@ -96,6 +97,9 @@ const en = {
     },
     decisions: {
       line: 'Opening the decision log…',
+    },
+    study: {
+      line: 'Opening the study zone. There is coffee.',
     },
     stack: {
       line: 'Back to About — the technology section is halfway down.',
@@ -208,6 +212,112 @@ const en = {
     back: 'Back',
   },
 
+  // The study zone. The tone is deliberate: it is the only page on this site
+  // written for somebody who has not built any of the rest of it yet.
+  study: {
+    badge: 'Study zone',
+    title: 'Ten problems and a coffee',
+    lede: 'The same ten I hand to anyone who asks me where to start. Each teaches a different idea and none of them is here for being hard: they are here because the day I understood them, something else became clear.',
+    note: 'The hint and the solution are folded on purpose. The minute you spend stuck is the one that works — open the answer straight away and the page has taught you nothing. And if you do get stuck, relax: being stuck is the job, not a symptom.',
+    hintLabel: 'A hint',
+    solutionLabel: 'See the solution',
+    levels: { easy: 'approachable', medium: 'intermediate', hard: 'a thinker' },
+    closing: 'If you solved one a different way, yours is probably fine too — there is rarely a single answer. And if one of them left you thinking, write to me. Those are good messages to get.',
+    back: 'Back',
+    items: {
+      fizzbuzz: {
+        title: 'FizzBuzz',
+        statement: 'Print the numbers from 1 to 100. If a number is a multiple of 3, print “Fizz”. If it is a multiple of 5, “Buzz”. If it is a multiple of both, “FizzBuzz”.',
+        hint: 'What about 15? It is a multiple of 3 and of 5 at once. If you ask about 3 first, you never reach the question that matters.',
+        solution: [
+          'The problem is not the modulo: it is the order. The most specific condition goes first, because the first one that matches wins. Ask about 3 before 15 and 15 comes out as “Fizz” — the program runs, the output is wrong, and nothing complains.',
+          'For a lot of people this is the first time the order of their ifs turns out to be logic rather than style. That lesson is worth far more than the exercise.',
+        ],
+      },
+      floats: {
+        title: 'Why is 0.1 + 0.2 not 0.3?',
+        statement: 'Open the browser console and type 0.1 + 0.2. You will not get 0.3. Why, and how do you compare two decimals without getting bitten?',
+        hint: 'Write 1/3 as a decimal. It never ends. Now remember the machine does not count in base 10 but in base 2 — which fractions never end there?',
+        solution: [
+          'In binary, 0.1 and 0.2 are repeating fractions: they do not fit exactly in a double’s 64 bits, the same way 1/3 does not fit exactly in decimal. What you stored is not 0.1, it is the nearest representable number. Add two approximations and you get a third one.',
+          'This is not a JavaScript bug: it is IEEE 754, and Python, Java and C all do the same. The practical rule is to compare within a tolerance rather than for equality — and for money, do not use floats at all: store cents as integers.',
+        ],
+      },
+      reverse: {
+        title: 'Reverse a string',
+        statement: 'Given a string, return it backwards. However you like at first; then again, without using reverse().',
+        hint: 'Think of two fingers, one at each end. Swap them and move them towards each other. When do you stop?',
+        solution: [
+          'The one-liner is fine and it is what you would write at work. The second version exists so you can see the two-pointer pattern, which you will reuse for the rest of this list.',
+          'The detail: the loop stops when i meets j, not when it reaches the end. Keep going and you swap everything back into the original string. Also note [...s] rather than s.split(\'\'): the first respects emoji and combining accents, the second cuts them in half.',
+        ],
+      },
+      palindrome: {
+        title: 'Is it a palindrome?',
+        statement: 'Decide whether a text reads the same forwards and backwards. “A man, a plan, a canal: Panama” does, despite the spaces and punctuation.',
+        hint: 'Before comparing — what is different about “A” and “a”? And the spaces? Clean first, compare after.',
+        solution: [
+          'Almost all of this problem is normalisation, not comparison. Lowercase it, strip accents with normalize(\'NFD\'), drop anything that is not a letter or a digit. Only then does the algorithm start, and it is the same two pointers as before.',
+          'It is a pattern that repeats for the rest of your career: when a text problem looks hard, it is usually because you are comparing things that are not in the same format yet.',
+        ],
+      },
+      brackets: {
+        title: 'Balanced brackets',
+        statement: 'Given a text containing (), [] and {}, decide whether they are properly closed. “([]{})” is; “([)]” is not, even though it has the same count of each.',
+        hint: 'Counting is not enough: “([)]” has two of each. What matters is the order. Which structure always gives you back the last thing you put in?',
+        solution: [
+          'A stack. Every opening symbol is pushed; every closing one has to match whatever is on top. If it does not match, or the stack was already empty, the text is wrong.',
+          'The last detail is the one people forget: when you finish, the stack has to be empty. Anything left over was opened and never closed. This is the same algorithm a compiler uses on your code, at another scale.',
+        ],
+      },
+      twosum: {
+        title: 'Two numbers that add up to N',
+        statement: 'Given an array of numbers and a target, find the positions of the two that add up to it. Do it in a single pass over the array.',
+        hint: 'If you are standing on 7 and the target is 10, you know exactly what you are looking for. Can you ask whether you have already seen it, without walking back?',
+        solution: [
+          'The obvious version is two nested loops: O(n²). The good one takes a single pass, storing what it has seen in a Map. At each number you work out what is missing and ask whether it already went by.',
+          'This is the exercise where a hash map finally makes sense: you trade memory for time. You store n numbers so you can stop walking the array n times. That trade is behind half the optimisations you will ever write.',
+        ],
+      },
+      missing: {
+        title: 'The missing number',
+        statement: 'You have the numbers 1 to n, shuffled, with exactly one missing. Find it without sorting the array and without checking one by one.',
+        hint: 'If nothing were missing, what would they all add up to? Gauss solved this at nine years old, without a computer.',
+        solution: [
+          'The sum from 1 to n is n(n+1)/2. Add up what you do have, subtract, and what is left over is the one that is gone. One pass and no extra memory.',
+          'Worth knowing that with enough numbers that sum can overflow an integer, and that there is an XOR solution that never does. But the point of the exercise comes earlier: before you write code, ask whether the problem already has a mathematical answer.',
+        ],
+      },
+      binary: {
+        title: 'Binary search',
+        statement: 'Find a number in an already sorted array. Every comparison should discard half of what is left.',
+        hint: 'Write it, then run it on an array with one element, and then on an empty one. That is where it breaks.',
+        solution: [
+          'Everybody understands the idea; the implementation breaks at the edges. Three places it fails: a while using < instead of <= never checks the last candidate, and moving low or high to mid instead of mid+1 and mid-1 leaves the loop spinning forever.',
+          'Note that mid is computed as low + (high - low) / 2 rather than (low + high) / 2. In JavaScript it makes no difference, but in languages with fixed-size integers the second form overflows on large arrays — a bug that sat in Java’s standard library for nine years.',
+        ],
+      },
+      fib: {
+        title: 'Fibonacci, from exponential to linear',
+        statement: 'Write Fibonacci recursively. Ask it for term 45 and count the seconds. Then fix it.',
+        hint: 'Draw the call tree for fib(6). How many times do you compute fib(3)? What if you wrote it down the first time?',
+        solution: [
+          'Naive recursion recomputes the same thing over and over: reaching fib(45) takes more than a billion calls. Storing each result the first time you compute it turns an exponential algorithm into a linear one, and it is three lines.',
+          'That is memoisation, and it is the doorway into dynamic programming. What changes is not the algorithm but noticing that you were solving the same subproblem many times — a pattern that shows up in a great many problems that look unrelated.',
+        ],
+      },
+      cycle: {
+        title: 'The tortoise and the hare',
+        statement: 'A linked list can contain a cycle: a node pointing backwards so the list never ends. Detect it without using extra memory.',
+        hint: 'Two runners on a track, one going twice as fast. If the track is a loop, what happens sooner or later? And if it is a straight line?',
+        solution: [
+          'Two pointers: one moves one step at a time, the other two. If there is a cycle, the fast one laps the slow one and they eventually land on the same node. If there is not, the fast one reaches the end and you are done.',
+          'It is Floyd’s algorithm. The interesting part is not that it works but that it uses constant memory: the obvious solution keeps every visited node in a Set, and this one keeps nothing. When somebody asks you to solve something “without extra memory”, they are usually asking for two pointers.',
+        ],
+      },
+    },
+  },
+
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -268,6 +378,11 @@ const en = {
       description:
         'Two years as a peer mentor, teaching the five subjects that decide who stays in an engineering degree.',
     },
+    study: {
+      title: 'Study zone · Adal Cerrillo',
+      description:
+        'Ten programming problems with a hint and a solution, for whoever is starting out.',
+    },
     decisions: {
       title: 'Decisions · Adal Cerrillo',
       description:
@@ -292,6 +407,7 @@ const en = {
     cvDownload: 'Download CV (PDF)',
     cvOpen: 'Open in the browser',
     kicker: 'Footnote',
+    study: 'Study zone',
     decisions: 'Decision log',
     play: 'Or go jump some bugs →',
     prev: 'Previous joke',

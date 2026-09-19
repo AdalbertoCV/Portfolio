@@ -22,6 +22,7 @@ export const DESTINATIONS = {
   projects: '/projects',
   contact: '/contact',
   decisions: '/decisions',
+  study: '/study',
   radii: '/radii',
   moonphase: '/moonphase',
   stackselect: '/stackselect',
@@ -117,6 +118,14 @@ export const COMMANDS = [
     run: ({ t, go }) => {
       go('/decisions');
       return [say(t('term.decisions.line'))];
+    },
+  },
+  {
+    id: 'study',
+    aliases: ['estudio'],
+    run: ({ t, go }) => {
+      go('/study');
+      return [say(t('term.study.line'))];
     },
   },
   {

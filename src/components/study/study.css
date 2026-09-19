@@ -1,0 +1,351 @@
+/* ============================================================================
+   STUDY ZONE
+   ----------------------------------------------------------------------------
+   The warm room of the site. Everywhere else is a near-neutral grey because
+   the work has to speak; here the ground is tinted amber, the corners are
+   rounder and the type is a shade larger, because the person reading this one
+   is studying and might be nervous about it.
+
+   The warmth is four tokens, redefined for the dark theme so the page is cosy
+   at midnight as well as at noon.
+   ========================================================================= */
+
+.study-page {
+    --study-warm: #fdf6ec;
+    --study-warm-2: #f7ead6;
+    --study-edge: rgba(146, 104, 52, 0.18);
+    --study-accent: #a1662f;
+
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: calc(var(--navbar-h, 120px) + 48px) 24px 96px;
+    position: relative;
+    z-index: 2;
+
+    /* The cup's own palette. */
+    --study-ink: #3f2d1c;
+    --study-cupface: #fffaf3;
+    --study-brew: #6f4321;
+    --study-steam: rgba(120, 88, 54, 0.5);
+}
+
+:root[data-theme='dark'] .study-page {
+    --study-warm: #1a1512;
+    --study-warm-2: #221b15;
+    --study-edge: rgba(226, 178, 114, 0.16);
+    --study-accent: #e0a96d;
+
+    --study-ink: #e8d7c2;
+    --study-cupface: #2a211a;
+    --study-brew: #b9763c;
+    --study-steam: rgba(224, 169, 109, 0.45);
+}
+
+/* ------------------------------------------------------------------ the top */
+
+.study-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 52px;
+    padding: 34px 34px 30px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--study-edge);
+    background: linear-gradient(150deg, var(--study-warm), var(--study-warm-2));
+}
+
+.study-head-copy {
+    max-width: 62ch;
+}
+
+.study-title {
+    font-size: clamp(2rem, 5.4vw, 3.3rem);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+    color: var(--color-text-primary);
+    margin: 0 0 16px;
+}
+
+.study-lede {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0 0 14px;
+}
+
+.study-note {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text-tertiary);
+}
+
+.study-cup {
+    flex: 0 0 auto;
+    width: 112px;
+    height: 112px;
+}
+
+/* The steam is the only thing on the page that moves, and it moves slowly. */
+@media (prefers-reduced-motion: no-preference) {
+    .study-steam g {
+        animation: study-steam 3.2s ease-in-out infinite;
+    }
+}
+
+@keyframes study-steam {
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateY(2px);
+    }
+
+    30%,
+    55% {
+        opacity: 1;
+        transform: translateY(-1px);
+    }
+
+    85% {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+}
+
+/* ------------------------------------------------------------- the problems */
+
+.study-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 18px;
+}
+
+.study-problem {
+    padding: 26px 28px 20px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+}
+
+.study-problem-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+/* The number is the only decoration: it turns ten cards into a set you are
+   working through rather than ten separate demands. */
+.study-number {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--study-accent);
+    opacity: 0.6;
+    font-variant-numeric: tabular-nums;
+}
+
+.study-problem-title {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+}
+
+.study-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 0;
+}
+
+.study-level,
+.study-tag {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+/* Difficulty is stated so nobody is ambushed, and coloured warmly so it reads
+   as a signpost rather than a grade. */
+.study-level {
+    border: 1px solid var(--study-edge);
+    background: var(--study-warm);
+    color: var(--study-accent);
+}
+
+.study-tag {
+    border: 1px solid var(--color-border-primary);
+    color: var(--color-text-tertiary);
+}
+
+.study-statement {
+    margin: 0 0 16px;
+    max-width: 72ch;
+    font-size: 0.97rem;
+    line-height: 1.72;
+    color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------------- the folds */
+
+/* Folded on purpose, and it is the one fold on this site that earns it: a page
+   that prints the answer beside the question has taught nobody anything. The
+   value is the minute spent stuck, and this is what protects it. */
+.study-fold {
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.study-fold summary {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 0;
+    font-size: 0.88rem;
+    font-weight: 650;
+    color: var(--study-accent);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.study-fold summary::-webkit-details-marker {
+    display: none;
+}
+
+/* A plus that becomes a minus — the oldest disclosure control there is. */
+.study-fold summary::before {
+    content: '+';
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    border-radius: 6px;
+    border: 1px solid var(--study-edge);
+    background: var(--study-warm);
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.86rem;
+    line-height: 1;
+}
+
+.study-fold[open] summary::before {
+    content: '–';
+}
+
+.study-fold summary:focus-visible {
+    outline: 2px solid var(--study-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.study-hint,
+.study-why {
+    margin: 0 0 14px;
+    max-width: 72ch;
+    font-size: 0.93rem;
+    line-height: 1.72;
+    color: var(--color-text-secondary);
+}
+
+.study-code {
+    margin: 0 0 16px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--study-edge);
+    background: var(--study-warm);
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.83rem;
+    line-height: 1.75;
+    color: var(--color-text-primary);
+    tab-size: 2;
+}
+
+/* ----------------------------------------------------------------- the end */
+
+.study-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px 28px;
+    margin-top: 44px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.study-closing {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 0.93rem;
+    line-height: 1.72;
+    color: var(--color-text-secondary);
+}
+
+.study-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: var(--color-text-primary);
+    cursor: pointer;
+}
+
+.study-back svg {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .study-fold summary:hover::before {
+        border-color: var(--study-accent);
+    }
+
+    .study-back:hover svg {
+        transform: translateX(-4px);
+    }
+}
+
+@media (max-width: 720px) {
+    .study-page {
+        padding: calc(var(--navbar-h, 120px) + 32px) 16px 72px;
+    }
+
+    /* The cup goes above the words rather than beside them: at this width a
+       112px square beside a paragraph leaves the paragraph nine words wide. */
+    .study-head {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 26px 20px 24px;
+    }
+
+    .study-cup {
+        width: 84px;
+        height: 84px;
+    }
+
+    .study-problem {
+        padding: 22px 18px 16px;
+    }
+
+    .study-problem-head {
+        gap: 14px;
+    }
+}

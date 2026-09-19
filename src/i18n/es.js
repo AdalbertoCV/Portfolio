@@ -64,6 +64,7 @@ const es = {
       cat: 'el CV',
       open: 'ir a cualquier página',
       decisions: 'las decisiones técnicas y por qué',
+      study: 'diez problemas con pista y solución',
       stack: 'las tecnologías con las que construyo',
       play: 'una laptop que salta bugs',
       contact: 'correo y redes',
@@ -97,6 +98,9 @@ const es = {
     },
     decisions: {
       line: 'Abriendo la bitácora de decisiones…',
+    },
+    study: {
+      line: 'Abriendo la zona de estudio. Hay café.',
     },
     stack: {
       line: 'Volviendo a Sobre mí — la sección de tecnologías está a media página.',
@@ -209,6 +213,112 @@ const es = {
     back: 'Regresar',
   },
 
+  // La zona de estudio. El tono es deliberado: es la única página del sitio
+  // escrita para alguien que todavía no ha construido nada de lo demás.
+  study: {
+    badge: 'Zona de estudio',
+    title: 'Diez problemas y un café',
+    lede: 'Los mismos diez que le paso a quien me pregunta por dónde empezar. Cada uno enseña una idea distinta y ninguno está aquí por ser difícil: están porque el día que los entendí, algo más quedó claro.',
+    note: 'La pista y la solución están dobladas a propósito. El minuto que pasas atorado es el que sirve — si abres la respuesta de inmediato, la página no te enseñó nada. Y si te atoras, tranquilo: atorarse es el trabajo, no un síntoma.',
+    hintLabel: 'Una pista',
+    solutionLabel: 'Ver la solución',
+    levels: { easy: 'accesible', medium: 'intermedio', hard: 'para pensarle' },
+    closing: 'Si resolviste alguno de otra forma, la tuya probablemente también está bien: casi nunca hay una sola respuesta. Y si alguno te dejó pensando, escríbeme — me da gusto ese tipo de mensajes.',
+    back: 'Regresar',
+    items: {
+      fizzbuzz: {
+        title: 'FizzBuzz',
+        statement: 'Imprime los números del 1 al 100. Si el número es múltiplo de 3, imprime «Fizz». Si es múltiplo de 5, «Buzz». Si es múltiplo de los dos, «FizzBuzz».',
+        hint: '¿Qué pasa con el 15? Es múltiplo de 3 y de 5 a la vez. Si preguntas primero por el 3, nunca vas a llegar a la pregunta que importa.',
+        solution: [
+          'El problema no es el módulo: es el orden. La condición más específica va primero, porque la primera que se cumple es la que gana. Si preguntas por el 3 antes que por el 15, el 15 sale como «Fizz» y el error es silencioso — el programa corre, el resultado está mal.',
+          'Es la primera vez que muchos se topan con que el orden de los ifs es lógica, no estilo. Esa lección vale mucho más que el ejercicio.',
+        ],
+      },
+      floats: {
+        title: '¿Por qué 0.1 + 0.2 no es 0.3?',
+        statement: 'Abre la consola del navegador y escribe 0.1 + 0.2. No te va a dar 0.3. ¿Por qué, y cómo comparas dos decimales sin que te muerda?',
+        hint: 'Escribe 1/3 en decimal. No terminas nunca. Ahora piensa que la computadora no cuenta en base 10, sino en base 2 — ¿qué fracciones no terminan nunca ahí?',
+        solution: [
+          'En binario, 0.1 y 0.2 son fracciones periódicas: no caben exactas en los 64 bits de un double, igual que 1/3 no cabe exacto en decimal. Lo que guardas no es 0.1, es el número representable más cercano. Suma dos aproximaciones y obtienes una tercera aproximación.',
+          'No es un bug de JavaScript: es IEEE 754 y lo hace Python, Java y C igual. La regla práctica es comparar con una tolerancia en vez de con igualdad — y para dinero, no usar flotantes: se guardan centavos como enteros.',
+        ],
+      },
+      reverse: {
+        title: 'Invertir una cadena',
+        statement: 'Dada una cadena, devuélvela al revés. Primero como quieras; después, sin usar reverse().',
+        hint: 'Piensa en dos dedos: uno al principio y otro al final. Los intercambias y los acercas. ¿Cuándo paras?',
+        solution: [
+          'La versión de una línea está bien y es la que escribirías en el trabajo. La segunda existe para que veas el patrón de dos punteros, que vas a reusar en el resto de la lista.',
+          'El detalle: el bucle para cuando i alcanza a j, no cuando llega al final. Si sigues, vuelves a intercambiar todo y regresas a la cadena original. Y ojo con [...s] en vez de s.split(\'\'): el primero respeta emojis y acentos compuestos, el segundo los parte a la mitad.',
+        ],
+      },
+      palindrome: {
+        title: '¿Es palíndromo?',
+        statement: 'Decide si un texto se lee igual al derecho y al revés. «Anita lava la tina» sí lo es, aunque tenga espacios y mayúsculas.',
+        hint: 'Antes de comparar, ¿qué tienen de diferente «Anita» y «anita»? ¿Y los espacios? Limpia primero, compara después.',
+        solution: [
+          'Casi todo el problema es la normalización, no la comparación. Bajas a minúsculas, quitas acentos con normalize(\'NFD\') y tiras lo que no sea letra o número. Sólo entonces empieza el algoritmo, que son los mismos dos punteros del problema anterior.',
+          'Es un patrón que se repite toda la carrera: cuando un problema de texto se ve difícil, casi siempre es porque estás comparando cosas que todavía no están en el mismo formato.',
+        ],
+      },
+      brackets: {
+        title: 'Paréntesis balanceados',
+        statement: 'Dado un texto con (), [] y {}, decide si están bien cerrados. «([]{})» sí; «([)]» no, aunque tenga la misma cantidad de cada uno.',
+        hint: 'Contar no alcanza: «([)]» tiene dos de cada uno. Lo que importa es el orden. ¿Qué estructura te devuelve siempre lo último que guardaste?',
+        solution: [
+          'Una pila. Cada símbolo que abre se empuja; cada uno que cierra tiene que corresponder con el que está hasta arriba. Si no corresponde, o si la pila ya estaba vacía, el texto está mal.',
+          'El último detalle es el que se olvida: al terminar, la pila tiene que quedar vacía. Si sobró algo abierto, nunca se cerró. Este es el mismo algoritmo con el que un compilador revisa tu código, a otra escala.',
+        ],
+      },
+      twosum: {
+        title: 'Dos números que suman N',
+        statement: 'Dado un arreglo de números y un objetivo, encuentra las posiciones de los dos que suman ese objetivo. Hazlo recorriendo el arreglo una sola vez.',
+        hint: 'Si vas en el número 7 y el objetivo es 10, sabes exactamente qué estás buscando. ¿Puedes preguntar si ya lo viste, sin volver a recorrer?',
+        solution: [
+          'La versión obvia son dos bucles anidados: O(n²). La buena da una sola pasada guardando en un Map lo que ya viste. En cada número calculas lo que te falta y preguntas si ya pasó por ahí.',
+          'Este es el ejercicio donde se entiende para qué sirve un hash map: cambias memoria por tiempo. Guardas n números para dejar de recorrer n veces. Ese intercambio está detrás de la mitad de las optimizaciones que vas a escribir.',
+        ],
+      },
+      missing: {
+        title: 'El número que falta',
+        statement: 'Tienes los números del 1 al n, desordenados, pero falta exactamente uno. Encuéntralo sin ordenar el arreglo y sin buscar uno por uno.',
+        hint: 'Si nada faltara, ¿cuánto sumarían todos? Gauss resolvió esto a los nueve años y sin computadora.',
+        solution: [
+          'La suma de 1 a n es n(n+1)/2. Sumas lo que sí tienes, restas, y lo que sobra es el que falta. Una pasada y nada de memoria extra.',
+          'Vale la pena saber que con muchos números esa suma puede desbordar un entero, y que hay otra solución con XOR que no desborda nunca. Pero el punto del ejercicio es anterior: antes de programar, pregúntate si el problema ya tiene una respuesta matemática.',
+        ],
+      },
+      binary: {
+        title: 'Búsqueda binaria',
+        statement: 'Busca un número en un arreglo ya ordenado. Cada comparación debe descartar la mitad de lo que queda.',
+        hint: 'Escríbela y pruébala con un arreglo de un solo elemento, y luego con uno vacío. Ahí es donde se rompe.',
+        solution: [
+          'La idea la entiende todo el mundo; la implementación se rompe en los bordes. Los tres lugares donde falla: si el while usa < en vez de <=, nunca revisas el último candidato; si mueves low o high a mid en vez de mid+1 y mid-1, el bucle se queda girando para siempre.',
+          'El mid se calcula como low + (high - low) / 2 y no como (low + high) / 2. En JavaScript da igual, pero en lenguajes con enteros de tamaño fijo la segunda forma desborda con arreglos grandes — es un bug que estuvo en la librería estándar de Java durante nueve años.',
+        ],
+      },
+      fib: {
+        title: 'Fibonacci, de exponencial a lineal',
+        statement: 'Escribe Fibonacci recursivo. Pídele el término 45 y cuenta los segundos. Después arréglalo.',
+        hint: 'Dibuja el árbol de llamadas de fib(6). ¿Cuántas veces calculas fib(3)? ¿Y si lo apuntaras la primera vez?',
+        solution: [
+          'La recursión ingenua recalcula lo mismo una y otra vez: para llegar a fib(45) hace más de mil millones de llamadas. Guardar cada resultado la primera vez que lo calculas convierte un algoritmo exponencial en uno lineal, y son tres líneas.',
+          'Eso es memoización, y es la puerta de entrada a la programación dinámica. Lo que cambia no es el algoritmo, es darse cuenta de que estabas resolviendo el mismo subproblema muchas veces — un patrón que se repite en muchísimos problemas que parecen no tener relación.',
+        ],
+      },
+      cycle: {
+        title: 'La liebre y la tortuga',
+        statement: 'Una lista enlazada puede tener un ciclo: un nodo que apunta hacia atrás y hace que nunca termine. Detéctalo sin usar memoria extra.',
+        hint: 'Dos corredores en una pista circular, uno al doble de velocidad que el otro. Si la pista es circular, ¿qué pasa tarde o temprano? ¿Y si es recta?',
+        solution: [
+          'Dos punteros: uno avanza de uno en uno, el otro de dos en dos. Si hay ciclo, el rápido le da la vuelta al lento y en algún momento caen en el mismo nodo. Si no hay ciclo, el rápido llega al final y se acabó.',
+          'Se llama algoritmo de Floyd. Lo interesante no es que funcione, sino que use memoria constante: la solución obvia es guardar todos los nodos vistos en un Set, y esta no guarda nada. Cuando alguien te pida resolver algo «sin memoria extra», casi siempre está pidiendo dos punteros.',
+        ],
+      },
+    },
+  },
+
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -269,6 +379,11 @@ const es = {
       description:
         'Dos años como mentor par, explicando las cinco materias que deciden quién sigue en una carrera de ingeniería.',
     },
+    study: {
+      title: 'Zona de estudio · Adal Cerrillo',
+      description:
+        'Diez problemas de programación con pista y solución, para quien va empezando.',
+    },
     decisions: {
       title: 'Decisiones · Adal Cerrillo',
       description:
@@ -293,6 +408,7 @@ const es = {
     cvDownload: 'Descargar CV (PDF)',
     cvOpen: 'Abrir en el navegador',
     kicker: 'Nota al pie',
+    study: 'Zona de estudio',
     decisions: 'Bitácora de decisiones',
     play: 'O ve a saltar unos bugs →',
     prev: 'Chiste anterior',

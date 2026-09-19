@@ -101,6 +101,9 @@ const SiteFooter = () => {
           {/* The door to the game. Here rather than in the navigation: this is
               the corner of the site that is already not serious. */}
           <div className="site-footer-extras">
+            <Link className="site-footer-play" to="/study">
+              {t('footer.study')}
+            </Link>
             <Link className="site-footer-play" to="/decisions">
               {t('footer.decisions')}
             </Link>

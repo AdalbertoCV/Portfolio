@@ -35,6 +35,7 @@ const PAGES = {
   '/case': 'case',
   '/uaz': 'uaz',
   '/decisions': 'decisions',
+  '/study': 'study',
   '/play': 'play',
 };
 
