@@ -1244,18 +1244,19 @@
 }
 
 /* A door, not a link. The section above it is thirty-three hairline rows of
-   claims; the thing that backs them up cannot be a thirty-fourth. Inverted
-   against the page so it is the one object in the section that is not a list,
-   which is the whole reason the eye stops on it. */
+   claims; the thing that backs them up cannot be a thirty-fourth. It is the
+   only card in the section — that is enough to stop the eye, and it keeps the
+   page's own surface instead of inverting out of it. */
 .log-door {
     display: grid;
     gap: 10px;
     padding: 30px 32px 26px;
     border-radius: var(--radius-lg);
-    background: var(--color-text-primary);
-    color: var(--color-bg-primary);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    color: var(--color-text-primary);
     text-decoration: none;
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    transition: border-color var(--transition-base), transform var(--transition-base);
 }
 
 .log-door-label {
@@ -1263,7 +1264,7 @@
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    opacity: 0.55;
+    color: var(--color-text-tertiary);
 }
 
 .log-door-title {
@@ -1273,13 +1274,14 @@
     letter-spacing: -0.028em;
     line-height: 1.28;
     max-width: 30ch;
+    color: var(--color-text-primary);
 }
 
 .log-door-body {
     max-width: 62ch;
     font-size: 0.93rem;
     line-height: 1.68;
-    opacity: 0.72;
+    color: var(--color-text-secondary);
 }
 
 /* The log's own four labels, printed as a preview of the form. */
@@ -1293,13 +1295,13 @@
 .log-door-parts span {
     padding: 5px 11px;
     border-radius: 999px;
-    border: 1px solid currentColor;
+    border: 1px solid var(--color-border-primary);
     font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    opacity: 0.55;
+    color: var(--color-text-tertiary);
 }
 
 .log-door-cta {
@@ -1309,6 +1311,7 @@
     margin-top: 12px;
     font-size: 0.94rem;
     font-weight: 700;
+    color: var(--color-text-primary);
 }
 
 .log-door-cta svg {
@@ -1319,8 +1322,8 @@
 
 @media (hover: hover) and (pointer: fine) {
     .log-door:hover {
+        border-color: var(--color-border-hover);
         transform: translateY(-3px);
-        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
     }
 
     .log-door:hover .log-door-cta svg {
