@@ -68,7 +68,7 @@ const cvEs = {
       cta: 'Leer la bitácora',
     },
     practiceKicker: 'Práctica de ingeniería',
-    practiceTitle: 'Cómo trabajo, no solo con qué',
+    practiceTitle: 'Cómo trabajo',
     practiceLede: 'Un stack se aprende; el criterio con el que se toman estas decisiones es lo que determina si un sistema resiste en producción.',
     principlesLabel: 'Punto de partida',
     principles: {

@@ -61,7 +61,7 @@ const cvEn = {
       cta: 'Read the log',
     },
     practiceKicker: 'Engineering practice',
-    practiceTitle: 'How I work, not just what with',
+    practiceTitle: 'How I work',
     practiceLede: 'A stack can be learned; the judgement behind these decisions is what determines whether a system holds in production.',
     principlesLabel: 'Where it starts',
     principles: {
