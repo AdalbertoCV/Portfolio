@@ -150,8 +150,10 @@ const cvEs = {
       'Gente que ha trabajado conmigo. Están aquí con sus propios enlaces y no con una frase que yo les haya puesto: lo que tengan que decir de mi trabajo, que lo digan ellos.',
     referencesSite: 'Portafolio',
     references: {
+      cesar: 'CTO en',
       viky: 'Ingeniera de software en',
       elliot: 'Líder de sistemas en',
+      esmeralda: 'Diseñadora UX/UI en',
       rafael: 'Gestor de proyectos en',
     },
 

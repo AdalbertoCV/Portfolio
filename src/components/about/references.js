@@ -6,10 +6,19 @@
    a reader can go and ask them directly.
 
    Names and organisations are proper nouns and stay as written. Only the role
-   is translated, which is why it lives in the dictionary and not here.
+   is translated, which is why it lives in the dictionary and not here. `site`
+   is optional — not everyone has one, and an absent link is better than a
+   dead one.
    ======================================================================== */
 
 const REFERENCES = [
+  {
+    // First: the closest of these to the work the rest of the site is about.
+    id: 'cesar',
+    name: 'César Aranda',
+    org: 'Radii Manufacturing',
+    linkedin: 'https://www.linkedin.com/in/cesararandaa/',
+  },
   {
     id: 'viky',
     name: 'Viky Gómez',
@@ -23,6 +32,14 @@ const REFERENCES = [
     org: 'Rancho El Tirón',
     site: 'https://portafolio-web-psi-five.vercel.app/',
     linkedin: 'https://www.linkedin.com/in/elliot-axel-noriega-41005528a/',
+  },
+  {
+    // No site of her own to point at, which the card handles: the portfolio
+    // link is optional, not an empty one.
+    id: 'esmeralda',
+    name: 'Esmeralda Pacheco',
+    org: 'Evodeps',
+    linkedin: 'https://www.linkedin.com/in/esmeralda-pacheco-glez/',
   },
   {
     id: 'rafael',

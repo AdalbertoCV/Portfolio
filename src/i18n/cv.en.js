@@ -143,8 +143,10 @@ const cvEn = {
       'People who have worked with me. They are here with their own links rather than with a sentence I wrote for them: whatever they have to say about my work, they can say it themselves.',
     referencesSite: 'Portfolio',
     references: {
+      cesar: 'CTO at',
       viky: 'Software engineer at',
       elliot: 'Systems lead at',
+      esmeralda: 'UX/UI designer at',
       rafael: 'Project manager at',
     },
 

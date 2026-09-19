@@ -761,9 +761,13 @@
    on this page taken without asking.
    ========================================================================= */
 
+/* Three across rather than four. With five people a four-column grid leaves
+   one card alone on the second row, which reads as a mistake; three leaves two,
+   which reads as a row. It is also the count that stays tidy as the list grows:
+   six is 3+3, seven is 3+3+1 only once. */
 .refs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 

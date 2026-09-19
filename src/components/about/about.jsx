@@ -600,10 +600,12 @@ const About = () => {
                   LinkedIn
                   <ArrowUpRight />
                 </a>
-                <a href={site} target="_blank" rel="noopener noreferrer">
-                  {t('cv.referencesSite')}
-                  <ArrowUpRight />
-                </a>
+                {site ? (
+                  <a href={site} target="_blank" rel="noopener noreferrer">
+                    {t('cv.referencesSite')}
+                    <ArrowUpRight />
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}
