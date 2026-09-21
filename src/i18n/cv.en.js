@@ -48,8 +48,8 @@ const cvEn = {
     },
 
     skillsKicker: 'Stack',
-    skillsTitle: 'What I build with',
-    skillsLede: 'Selected according to the problem rather than to familiarity. The list runs from daily use through to areas under exploration; pick the part of it you came for.',
+    skillsTitle: 'What I use, test and explore',
+    skillsLede: 'Three different things in one list: what I use daily, what I am testing this week, and what I follow from a distance because it only just shipped. The list runs in that order; pick the part of it you came for.',
     skillsReceipt: 'projects with',
     skillsExpandAll: 'Open every group',
     skillsCollapseAll: 'Close every group',

@@ -85,6 +85,47 @@ const ICONS = {
       <path d="M17.4 5.2v2.4M19.8 4.4v4M17.4 10.8v2.4M19.8 10.4v3.2M17.4 16.4v2.4M19.8 17.2v1.6" />
     </svg>
   ),
+  // Thinking for longer at answer time: a clock whose hand has swept most of
+  // the way round, and the answer getting better as it goes.
+  testTime: (
+    <svg {...base}>
+      <circle cx="12" cy="13" r="8.4" />
+      <path d="M12 8.2V13l3.4 2" />
+      <path d="M12 2.4h.01M17.6 4.2l1.4-1.4" />
+      <path d="M4.4 19.8h2M8.4 19.8h3.2M13.6 19.8h6" opacity="0.55" />
+    </svg>
+  ),
+  // Opening the model rather than the output: a magnifier over the wiring.
+  interpretability: (
+    <svg {...base}>
+      <circle cx="6" cy="6.4" r="2" />
+      <circle cx="6" cy="13.6" r="2" />
+      <circle cx="12.6" cy="10" r="2" />
+      <path d="M8 7.2l3 2M8 12.8l3-2" />
+      <circle cx="16.6" cy="15.6" r="4.2" />
+      <path d="m19.7 18.7 1.9 1.9" />
+    </svg>
+  ),
+  // The model on the device instead of in a data centre: a phone with the
+  // network cut, still thinking.
+  onDevice: (
+    <svg {...base}>
+      <rect x="6.6" y="2.8" width="10.8" height="18.4" rx="2.4" />
+      <path d="M10.6 18.6h2.8" />
+      <circle cx="12" cy="10.4" r="3" />
+      <path d="M12 7.4V5.6M12 13.4v1.8M9 10.4H7.2M15 10.4h1.8" opacity="0.6" />
+      <path d="M2.6 21.4 21.4 2.6" opacity="0.45" />
+    </svg>
+  ),
+  // What you put in the window, and in what order: a frame being packed on
+  // purpose rather than filled.
+  contextEng: (
+    <svg {...base}>
+      <rect x="2.8" y="5.6" width="18.4" height="12.8" rx="2.4" />
+      <path d="M6.2 9h5.2M6.2 12h7.6M6.2 15h3.6" />
+      <path d="M17.4 8.4v7.2M15.4 10.2l2-2 2 2" opacity="0.7" />
+    </svg>
+  ),
   microservices: (
     <svg {...base}>
       <rect x="2.5" y="3" width="7" height="7" rx="1.8" />

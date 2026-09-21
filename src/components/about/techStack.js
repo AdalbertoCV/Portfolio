@@ -96,6 +96,35 @@ import expressIcon from '../../images/tech/express.svg';
 import nextIcon from '../../images/tech/nextdotjs.svg';
 import vueIcon from '../../images/tech/vuedotjs.svg';
 import fastapiIcon from '../../images/tech/fastapi.svg';
+import fastifyIcon from '../../images/tech/fastify.svg';
+import mlflowIcon from '../../images/tech/mlflow.svg';
+import onnxIcon from '../../images/tech/onnx.svg';
+import gradioIcon from '../../images/tech/gradio.svg';
+import kimiIcon from '../../images/tech/kimi.svg';
+import minimaxIcon from '../../images/tech/minimax.svg';
+import anthropicIcon from '../../images/tech/anthropic.svg';
+import geminiIcon from '../../images/tech/googlegemini.svg';
+import flyIcon from '../../images/tech/flydotio.svg';
+import railwayIcon from '../../images/tech/railway.svg';
+import coolifyIcon from '../../images/tech/coolify.svg';
+import opensslIcon from '../../images/tech/openssl.svg';
+import autheliaIcon from '../../images/tech/authelia.svg';
+import vaultwardenIcon from '../../images/tech/vaultwarden.svg';
+import openbugbountyIcon from '../../images/tech/openbugbounty.svg';
+import polarsIcon from '../../images/tech/polars.svg';
+import tursoIcon from '../../images/tech/turso.svg';
+import neonIcon from '../../images/tech/neon.svg';
+import surrealdbIcon from '../../images/tech/surrealdb.svg';
+import radixIcon from '../../images/tech/radixui.svg';
+import tanstackIcon from '../../images/tech/tanstack.svg';
+import payloadIcon from '../../images/tech/payloadcms.svg';
+import medusaIcon from '../../images/tech/medusa.svg';
+import clerkIcon from '../../images/tech/clerk.svg';
+import posthogIcon from '../../images/tech/posthog.svg';
+import biomeIcon from '../../images/tech/biome.svg';
+import brunoIcon from '../../images/tech/bruno.svg';
+import uvIcon from '../../images/tech/astral.svg';
+import zodIcon from '../../images/tech/zod.svg';
 import flaskIcon from '../../images/tech/flask.svg';
 import rustIcon from '../../images/tech/rust.svg';
 import cIcon from '../../images/tech/c.svg';
@@ -412,6 +441,7 @@ const TECH_GROUPS = [
       // simple-icons ships one black path, so it inverts in dark like the
       // other monochrome marks here.
       { name: 'Gin', icon: ginIcon, mono: true },
+      { name: 'Fastify', icon: fastifyIcon, mono: true },
       { name: 'Microservices', concept: 'microservices' },
       { name: 'Multi-tenancy', concept: 'saas' },
       { name: 'Event-driven', concept: 'eventDriven' },
@@ -487,6 +517,9 @@ const TECH_GROUPS = [
       { name: 'NumPy', icon: numpyIcon, mono: true },
       { name: 'Jupyter', icon: jupyterIcon, mono: true },
       { name: 'OpenCV', icon: opencvIcon, mono: true },
+      { name: 'MLflow', icon: mlflowIcon, mono: true },
+      { name: 'ONNX', icon: onnxIcon, mono: true },
+      { name: 'Gradio', icon: gradioIcon, mono: true },
     ],
   },
   {
@@ -543,6 +576,10 @@ const TECH_GROUPS = [
       // simple-icons does not carry it yet, so it uses a drawn mark like the
       // concepts do.
       { name: 'Jev', concept: 'jev' },
+      { name: 'Kimi', icon: kimiIcon, mono: true },
+      { name: 'MiniMax', icon: minimaxIcon, mono: true },
+      { name: 'Anthropic', icon: anthropicIcon, mono: true },
+      { name: 'Gemini', icon: geminiIcon, mono: true },
     ],
   },
   {
@@ -598,6 +635,9 @@ const TECH_GROUPS = [
       { name: 'Sentry', icon: sentryIcon, mono: true },
       { name: 'Datadog', icon: datadogIcon, mono: true },
       { name: 'Elastic Stack', icon: elasticstackIcon, mono: true },
+      { name: 'Fly.io', icon: flyIcon, mono: true },
+      { name: 'Railway', icon: railwayIcon, mono: true },
+      { name: 'Coolify', icon: coolifyIcon, mono: true },
     ],
   },
   {
@@ -637,6 +677,10 @@ const TECH_GROUPS = [
       { name: 'OPNsense', icon: opnsenseIcon, mono: true },
       { name: 'KeePassXC', icon: keepassxcIcon, mono: true },
       { name: 'YubiKey', icon: yubicoIcon, mono: true },
+      { name: 'OpenSSL', icon: opensslIcon, mono: true },
+      { name: 'Authelia', icon: autheliaIcon, mono: true },
+      { name: 'Vaultwarden', icon: vaultwardenIcon, mono: true },
+      { name: 'Open Bug Bounty', icon: openbugbountyIcon, mono: true },
     ],
   },
   {
@@ -676,6 +720,10 @@ const TECH_GROUPS = [
       { name: 'MinIO', icon: minioIcon, mono: true },
       { name: 'Hadoop', icon: apachehadoopIcon, mono: true },
       { name: 'DBeaver', icon: dbeaverIcon, mono: true },
+      { name: 'Polars', icon: polarsIcon, mono: true },
+      { name: 'Turso', icon: tursoIcon, mono: true },
+      { name: 'Neon', icon: neonIcon, mono: true },
+      { name: 'SurrealDB', icon: surrealdbIcon, mono: true },
     ],
   },
   {
@@ -714,6 +762,8 @@ const TECH_GROUPS = [
       { name: 'Expo', icon: expoIcon, mono: true },
       { name: 'Ionic', icon: ionicIcon, mono: true },
       { name: 'Capacitor', icon: capacitorIcon, mono: true },
+      { name: 'Radix UI', icon: radixIcon, mono: true },
+      { name: 'TanStack', icon: tanstackIcon, mono: true },
     ],
   },
   {
@@ -753,6 +803,10 @@ const TECH_GROUPS = [
       { name: 'Cloudinary', icon: cloudinaryIcon, mono: true },
       { name: 'Netlify', icon: netlifyIcon, mono: true },
       { name: 'PWA', icon: pwaIcon, mono: true },
+      { name: 'Payload', icon: payloadIcon, mono: true },
+      { name: 'Medusa', icon: medusaIcon, mono: true },
+      { name: 'Clerk', icon: clerkIcon, mono: true },
+      { name: 'PostHog', icon: posthogIcon, mono: true },
     ],
   },
   {
@@ -829,6 +883,10 @@ const TECH_GROUPS = [
       // been through the whole serious list. Everybody who learned to program
       // in Spanish started here, and the logo is the real one.
       { name: 'PSeInt', labelKey: 'skills.pseint', icon: pseintIcon, flat: true },
+      { name: 'Biome', icon: biomeIcon, mono: true },
+      { name: 'Bruno', icon: brunoIcon, mono: true },
+      { name: 'uv', icon: uvIcon, mono: true },
+      { name: 'Zod', icon: zodIcon, mono: true },
     ],
   },
   {
@@ -865,6 +923,10 @@ const TECH_GROUPS = [
       { name: 'Bioinformatics', concept: 'bioinformatics' },
       { name: 'Autonomous systems', concept: 'autonomous' },
       { name: 'System One models', concept: 'systemOne' },
+      { name: 'Test-time compute', concept: 'testTime' },
+      { name: 'Mechanistic interpretability', concept: 'interpretability' },
+      { name: 'On-device AI', concept: 'onDevice' },
+      { name: 'Context engineering', concept: 'contextEng' },
     ],
   },
 ];

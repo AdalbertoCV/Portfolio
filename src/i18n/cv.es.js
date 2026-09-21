@@ -55,8 +55,8 @@ const cvEs = {
     },
 
     skillsKicker: 'Stack',
-    skillsTitle: 'Tecnologías con las que construyo',
-    skillsLede: 'Seleccionadas en función del problema y no por familiaridad. El listado avanza de uso cotidiano a áreas en exploración; elige la parte por la que viniste.',
+    skillsTitle: 'Tecnologías que uso, pruebo y exploro',
+    skillsLede: 'Tres cosas distintas en una sola lista: lo que uso a diario, lo que estoy probando esta semana y lo que sigo de lejos porque acaba de salir. El listado avanza en ese orden; elige la parte por la que viniste.',
     skillsReceipt: 'proyectos con',
     skillsExpandAll: 'Abrir todos los grupos',
     skillsCollapseAll: 'Cerrar todos los grupos',
