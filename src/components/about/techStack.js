@@ -102,8 +102,7 @@ import onnxIcon from '../../images/tech/onnx.svg';
 import gradioIcon from '../../images/tech/gradio.svg';
 import kimiIcon from '../../images/tech/kimi.svg';
 import minimaxIcon from '../../images/tech/minimax.svg';
-import anthropicIcon from '../../images/tech/anthropic.svg';
-import geminiIcon from '../../images/tech/googlegemini.svg';
+import replitIcon from '../../images/tech/replit.svg';
 import flyIcon from '../../images/tech/flydotio.svg';
 import railwayIcon from '../../images/tech/railway.svg';
 import coolifyIcon from '../../images/tech/coolify.svg';
@@ -578,8 +577,10 @@ const TECH_GROUPS = [
       { name: 'Jev', concept: 'jev' },
       { name: 'Kimi', icon: kimiIcon, mono: true },
       { name: 'MiniMax', icon: minimaxIcon, mono: true },
-      { name: 'Anthropic', icon: anthropicIcon, mono: true },
-      { name: 'Gemini', icon: geminiIcon, mono: true },
+      { name: 'Replit', icon: replitIcon, mono: true },
+      // No mark in simple-icons, so it gets a drawn one like Jev: a prompt
+      // going in and a running app coming out, which is the product.
+      { name: 'Lovable', concept: 'lovable' },
     ],
   },
   {

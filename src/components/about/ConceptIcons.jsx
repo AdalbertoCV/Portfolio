@@ -126,6 +126,17 @@ const ICONS = {
       <path d="M17.4 8.4v7.2M15.4 10.2l2-2 2 2" opacity="0.7" />
     </svg>
   ),
+  // A sentence in, a running window out — which is the entire pitch.
+  lovable: (
+    <svg {...base}>
+      <path d="M2.6 6.2h6.2M2.6 9.8h4.2" />
+      <path d="M9.6 8 12 8" opacity="0.6" />
+      <rect x="12.4" y="3.4" width="9" height="17.2" rx="2.2" />
+      <path d="M12.4 7.4h9" />
+      <path d="M15 10.8h4M15 13.6h3.2" opacity="0.7" />
+      <path d="M2.6 17.4h5.4M2.6 14h3.4" opacity="0.45" />
+    </svg>
+  ),
   microservices: (
     <svg {...base}>
       <rect x="2.5" y="3" width="7" height="7" rx="1.8" />
