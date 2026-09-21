@@ -65,6 +65,26 @@ const ICONS = {
       <circle cx="8.1" cy="8.4" r="1" fill="currentColor" stroke="none" opacity="0.55" />
     </svg>
   ),
+  // Jev has no mark in simple-icons — it is four days old — so it gets a
+  // drawn one: braces, because the output is a typed value rather than prose,
+  // and a bolt, because the whole point is that it arrives at once.
+  jev: (
+    <svg {...base}>
+      <path d="M9.4 3.6C7 3.6 6.8 5.4 6.8 7.6s-.3 3.6-2.2 4.4c1.9.8 2.2 2.2 2.2 4.4s.2 4 2.6 4" />
+      <path d="M14.6 3.6c2.4 0 2.6 1.8 2.6 4s.3 3.6 2.2 4.4c-1.9.8-2.2 2.2-2.2 4.4s-.2 4-2.6 4" />
+      <path d="M12.9 7.9 10.6 12h2.8l-2.3 4.1" />
+    </svg>
+  ),
+  // A System One model answers all at once instead of a token at a time: one
+  // node, three decisions leaving together, each with its own weight.
+  systemOne: (
+    <svg {...base}>
+      <circle cx="5.6" cy="12" r="2.6" />
+      <path d="M8.2 12h2.6" />
+      <path d="M10.8 12 15 6.4M10.8 12h4.2M10.8 12 15 17.6" />
+      <path d="M17.4 5.2v2.4M19.8 4.4v4M17.4 10.8v2.4M19.8 10.4v3.2M17.4 16.4v2.4M19.8 17.2v1.6" />
+    </svg>
+  ),
   microservices: (
     <svg {...base}>
       <rect x="2.5" y="3" width="7" height="7" rx="1.8" />

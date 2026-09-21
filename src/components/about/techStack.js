@@ -539,6 +539,10 @@ const TECH_GROUPS = [
       { name: 'v0', icon: v0Icon, mono: true },
       { name: 'Warp', icon: warpIcon, mono: true },
       { name: 'Raycast', icon: raycastIcon, mono: true },
+      // No logo to import: TypeSafe AI shipped this on 15 September 2026 and
+      // simple-icons does not carry it yet, so it uses a drawn mark like the
+      // concepts do.
+      { name: 'Jev', concept: 'jev' },
     ],
   },
   {
@@ -860,6 +864,7 @@ const TECH_GROUPS = [
       { name: 'Synthetic data', concept: 'syntheticData' },
       { name: 'Bioinformatics', concept: 'bioinformatics' },
       { name: 'Autonomous systems', concept: 'autonomous' },
+      { name: 'System One models', concept: 'systemOne' },
     ],
   },
 ];
