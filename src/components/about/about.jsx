@@ -630,16 +630,20 @@ const About = () => {
         lede={t('cv.referencesLede')}
       >
         <Reveal className="refs" stagger>
-          {REFERENCES.map(({ id, name, org, site, linkedin }) => (
+          {REFERENCES.map(({ id, name, roles, site, linkedin }) => (
             <article className="ref-card" key={id}>
               <span className="ref-mark" aria-hidden="true">
                 {initials(name)}
               </span>
               <h3 className="ref-name">{name}</h3>
-              <p className="ref-role">
-                {t(`cv.references.${id}`)}
-                <span className="ref-org">{org}</span>
-              </p>
+              <div className="ref-roles">
+                {roles.map(({ id: roleId, org }) => (
+                  <p className="ref-role" key={roleId}>
+                    {t(`cv.references.${roleId}`)}
+                    <span className="ref-org">{org}</span>
+                  </p>
+                ))}
+              </div>
               <div className="ref-links">
                 <a href={linkedin} target="_blank" rel="noopener noreferrer">
                   LinkedIn

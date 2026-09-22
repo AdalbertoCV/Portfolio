@@ -155,7 +155,8 @@ const cvEn = {
       viky: 'Software engineer at',
       elliot: 'Systems lead at',
       esmeralda: 'UX/UI designer at',
-      rafael: 'Project manager at',
+      rafaelCto: 'CTO at',
+      rafaelPm: 'Project manager at',
     },
 
     origin: {

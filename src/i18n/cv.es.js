@@ -162,7 +162,8 @@ const cvEs = {
       viky: 'Ingeniera de software en',
       elliot: 'Líder de sistemas en',
       esmeralda: 'Diseñadora UX/UI en',
-      rafael: 'Gestor de proyectos en',
+      rafaelCto: 'CTO en',
+      rafaelPm: 'Gestor de proyectos en',
     },
 
     origin: {
