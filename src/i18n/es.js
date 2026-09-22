@@ -319,6 +319,14 @@ const es = {
     },
   },
 
+  // Notas sobre el sitio, no sobre el trabajo. Por eso vive aparte.
+  changelog: {
+    badge: 'Registro',
+    title: 'Qué ha cambiado aquí',
+    lede: 'Este sitio se sigue construyendo. Aquí queda lo que se le ha ido agregando y cuándo, por si alguien se pregunta si esto sigue vivo.',
+    back: 'Regresar',
+  },
+
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -384,6 +392,10 @@ const es = {
       description:
         'Diez problemas de programación con pista y solución, para quien va empezando.',
     },
+    changelog: {
+      title: 'Cambios · Adal Cerrillo',
+      description: 'Qué se le ha ido agregando a este sitio, y cuándo.',
+    },
     decisions: {
       title: 'Decisiones · Adal Cerrillo',
       description:
@@ -407,6 +419,7 @@ const es = {
     cvLabel: 'Currículum',
     cvDownload: 'Descargar CV (PDF)',
     cvOpen: 'Abrir en el navegador',
+    changelog: 'Cambios',
     kicker: 'Nota al pie',
     study: 'Zona de estudio',
     decisions: 'Bitácora de decisiones',

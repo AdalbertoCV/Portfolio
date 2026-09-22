@@ -151,7 +151,11 @@ const SiteFooter = () => {
         </div>
       </div>
 
-      <p className="site-footer-credit">{t('footer.credit')}</p>
+      <p className="site-footer-credit">
+        {t('footer.credit')}
+        {' · '}
+        <Link to="/changelog">{t('footer.changelog')}</Link>
+      </p>
     </footer>
   );
 };

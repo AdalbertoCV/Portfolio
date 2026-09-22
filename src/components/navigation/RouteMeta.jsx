@@ -36,6 +36,7 @@ const PAGES = {
   '/uaz': 'uaz',
   '/decisions': 'decisions',
   '/study': 'study',
+  '/changelog': 'changelog',
   '/play': 'play',
 };
 

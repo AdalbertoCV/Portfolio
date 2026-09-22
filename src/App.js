@@ -23,6 +23,7 @@ import UazPage from './components/brand/UazPage';
 import ContactPage from './components/contact/ContactPage';
 import Decisions from './components/decisions/Decisions';
 import Study from './components/study/Study';
+import Changelog from './components/changelog/Changelog';
 import Terminal from './components/terminal/Terminal';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
@@ -78,6 +79,7 @@ function App() {
                     want it are already looking. */}
                 <Route path="/decisions" element={<Decisions />} />
                 <Route path="/study" element={<Study />} />
+                <Route path="/changelog" element={<Changelog />} />
 
                 {/* A laptop that jumps bugs. On its own route, and reused by
                     the catch-all below: a mistyped URL used to render nothing

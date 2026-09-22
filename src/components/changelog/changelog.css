@@ -1,0 +1,122 @@
+/* ============================================================================
+   CHANGELOG
+   ----------------------------------------------------------------------------
+   The plainest page on the site, deliberately. It is a list of dates and one
+   line each, and dressing it up would misrepresent how interesting it is.
+   ========================================================================= */
+
+.clog-page {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: calc(var(--navbar-h, 120px) + 48px) 24px 96px;
+    position: relative;
+    z-index: 2;
+}
+
+.clog-head {
+    max-width: 58ch;
+    margin: 0 0 44px;
+}
+
+.clog-title {
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: var(--color-text-primary);
+    margin: 0 0 16px;
+}
+
+.clog-lede {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.clog-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 78ch;
+}
+
+/* A ruled list, the same shape the practice and reading lists use, so the one
+   page nobody came for still looks like it belongs to this site. */
+.clog-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 28px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-border-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.clog-list time {
+    flex: 0 0 auto;
+    min-width: 108px;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    color: var(--color-text-tertiary);
+    font-variant-numeric: tabular-nums;
+}
+
+.clog-foot {
+    margin-top: 36px;
+}
+
+.clog-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: var(--color-text-primary);
+    cursor: pointer;
+}
+
+.clog-back svg {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .clog-back:hover svg {
+        transform: translateX(-4px);
+    }
+}
+
+@media (max-width: 600px) {
+    .clog-page {
+        padding: calc(var(--navbar-h, 120px) + 32px) 16px 72px;
+    }
+
+    .clog-list li {
+        gap: 2px;
+    }
+}
+
+/* ------------------------------------------------- the way in, kept small */
+
+/* One link in the credit line. A page about the page does not get more than
+   this. */
+.site-footer-credit a {
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border-primary);
+    transition: color var(--transition-base);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .site-footer-credit a:hover {
+        color: var(--color-text-secondary);
+    }
+}
