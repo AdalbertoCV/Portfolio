@@ -457,6 +457,11 @@ const en = {
     reasonsKicker: 'Who I am looking for',
     reasonsTitle: 'Why people usually write',
     reasons: {
+      radii: {
+        title: 'Buying manufactured parts',
+        body: 'Radii turns a CAD file into a part that is manufactured, traced and delivered. If you need precision manufacturing, the quote comes back on its own and the part arrives with its full paperwork.',
+        link: 'See Radii',
+      },
       moonphase: {
         title: 'A client for Moonphase',
         body: 'Automation, systems built to fit, and problems that do not have a known solution yet. If yours is in the last category, all the better.',

@@ -30,6 +30,7 @@ const ENDPOINT = 'https://api.web3forms.com/submit';
 // knowing what to say. Three of them have a page that answers the follow-up
 // question, so they link to it.
 const REASONS = [
+  { id: 'radii', to: '/radii' },
   { id: 'moonphase', to: '/moonphase' },
   { id: 'evodeps', to: '/evodeps' },
   { id: 'stackselect', to: '/stackselect' },

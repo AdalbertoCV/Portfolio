@@ -199,7 +199,7 @@
 
 .reasons {
     display: grid;
-    /* Five cards: four columns strand one on its own row, three leave two. */
+    /* Six cards across three columns: two full rows, no orphan. */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 18px;
 }

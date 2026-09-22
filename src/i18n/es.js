@@ -457,6 +457,11 @@ const es = {
     reasonsKicker: 'A quién busco',
     reasonsTitle: 'Por qué suele escribirme la gente',
     reasons: {
+      radii: {
+        title: 'Comprar piezas de manufactura',
+        body: 'Radii convierte un archivo CAD en una pieza fabricada, trazada y entregada. Si necesitas manufactura de precisión, ahí la cotización sale sola y llega con expediente completo.',
+        link: 'Ver Radii',
+      },
       moonphase: {
         title: 'Un cliente para Moonphase',
         body: 'Automatización, sistemas a la medida y problemas que todavía no tienen una solución conocida. Si el tuyo entra en la última categoría, mejor.',
