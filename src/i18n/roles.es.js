@@ -24,6 +24,15 @@ const rolesEs = {
         role: 'Mi lugar ahí',
       },
 
+      statusTitle: 'Dónde está hoy',
+      statusLede: 'Evodeps lleva entregando desde 2025 a sector público y a empresa privada. Es también la única de las tres de la que no puedo enseñar nada.',
+      status: {
+        operating: { value: '2025', label: 'Entregando proyectos desde entonces' },
+        sectors: { value: 'Público y privado', label: 'Los dos frentes en los que opera' },
+        nda: { value: 'NDA', label: 'Todo lo entregado está bajo acuerdo de confidencialidad' },
+      },
+      statusNote: 'No hay capturas, ni repositorios, ni nombres de cliente en esta página, y no los va a haber. Decirlo es más honesto que rellenar el hueco con genéricos: el trabajo existe, y la condición para hacerlo es no publicarlo.',
+
       whatTitle: 'Quiénes son',
       whatBody: 'Una empresa especializada en el desarrollo de software, equipamiento y manejo de prototipos e implementaciones tecnológicas personalizadas, dimensionadas a las necesidades y el presupuesto de cada cliente.',
       whatNote: 'El mayor diferenciador es la capacidad de adaptarse a las necesidades específicas de cada cliente: mejores precios, calidad y eficiencia en el servicio, en lugar de vender siempre la misma solución.',

@@ -19,6 +19,15 @@ const rolesEn = {
         role: 'My place in it',
       },
 
+      statusTitle: 'Where it stands today',
+      statusLede: 'Evodeps has been delivering since 2025, to the public sector and to private companies. It is also the only one of the three I can show nothing from.',
+      status: {
+        operating: { value: '2025', label: 'Delivering projects since then' },
+        sectors: { value: 'Public and private', label: 'The two fronts it works across' },
+        nda: { value: 'NDA', label: 'Everything delivered sits under a confidentiality agreement' },
+      },
+      statusNote: 'There are no screenshots, no repositories and no client names on this page, and there will not be. Saying so is more honest than filling the gap with generics: the work exists, and the condition for doing it is not publishing it.',
+
       whatTitle: 'Who they are',
       whatBody: 'A company specialising in software development, equipment, and custom technology prototypes and implementations, sized to each client’s needs and budget.',
       whatNote: 'The main differentiator is the ability to adapt to each client’s specific needs — better pricing, quality and efficiency of service — instead of selling the same solution every time.',

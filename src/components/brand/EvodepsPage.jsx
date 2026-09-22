@@ -9,6 +9,7 @@ import {
   Closing,
   Reveal,
   Section,
+  StatGrid,
   Steps,
 } from './parts';
 
@@ -98,6 +99,22 @@ const EvodepsPage = () => {
       />
 
       <div className="brand-body">
+        {/* Dates, because dates are the only proof a company that has not opened
+            yet can honestly give — and a dated commitment can be checked, which
+            "coming soon" never could. */}
+        <Section title={t('roles.evodeps.statusTitle')} lede={t('roles.evodeps.statusLede')}>
+          <StatGrid
+            items={['operating', 'sectors', 'nda'].map((key) => ({
+              key,
+              value: t(`roles.evodeps.status.${key}.value`),
+              label: t(`roles.evodeps.status.${key}.label`),
+            }))}
+          />
+          <Reveal>
+            <p className="brand-note">{t('roles.evodeps.statusNote')}</p>
+          </Reveal>
+        </Section>
+
         <Section kicker={t('roles.evodeps.kickers.what')} title={t('roles.evodeps.whatTitle')}>
           <Reveal>
             <p className="brand-p brand-lead-p">{t('roles.evodeps.whatBody')}</p>

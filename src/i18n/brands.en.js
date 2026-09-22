@@ -23,7 +23,7 @@ const brandsEn = {
     roleCto: 'CTO & Co-founder',
     roleCeo: 'CEO & Founder',
     enter: 'Enter',
-    siteSoon: 'Website in build — live very soon',
+    siteSoon: 'Website in build — January 2027',
     statusBuilding: 'Building',
     stackselectPitch: 'Bootcamps and a technical assessment platform directed at placing developers with no prior experience into employment.',
     moonphasePitch: 'Building the future of technology: real automation and R&D on what nobody has solved, with method and a written record.',
@@ -261,6 +261,15 @@ const brandsEn = {
     nameTitle: 'The name',
     nameBody: '"Stack" denotes the set of tools a developer works with. "Select" refers to selecting that talent and connecting it to companies. The combination describes the operation precisely: identify the strongest developers and place them in the job market.',
 
+    statusTitle: 'Where it stands today',
+    statusLede: 'StackSelect has been running since June, training and assessing before it formally opens. The deliverable is measured in placements, so the date that matters is when those start.',
+    status: {
+      operating: { value: 'Jun 2026', label: 'Running: training and assessment under way' },
+      official: { value: 'Jan 2027', label: 'Formal operation begins' },
+      deliverable: { value: 'Placement', label: 'The unit it is measured in, not a finished course' },
+    },
+    statusNote: 'The months before formal operation are not preparation: they are the first cohorts, and they are what decides whether the method holds before it is scaled.',
+
     problemTitle: 'The problem',
     problemBody: 'There is a documented gap between university training and the sector’s actual requirements. Technically capable developers remain unemployed for want of practical experience, with no specific preparation for a technical interview and no reference for what professional practice expects of them.',
     problemStat: 'Recent graduates with no first contact with a real job',
@@ -315,6 +324,15 @@ const brandsEn = {
       lanes: 'Where each project lands',
       values: 'Decision criteria',
     },
+
+    statusTitle: 'Where it stands today',
+    statusLede: 'Moonphase did not start from nothing in August. It started in January 2025 as an independent practice, and the company is what that practice had already shown worked.',
+    status: {
+      first: { value: 'Jan 2025', label: 'First project delivered: PuntoBienestar, before the company existed' },
+      operating: { value: 'Aug 2026', label: 'Operating as Moonphase' },
+      official: { value: 'Jan 2027', label: 'Formal operation begins' },
+    },
+    statusNote: 'The culture and the judgement the company works with were not written in a founding meeting: they came out of two years of delivering projects and finding out what holds a result up and what does not.',
 
     nameTitle: 'Where the name comes from',
     nameBody: 'The moon does not look the same from every point on Earth at the same time: in one place it is full and in another it is waning, and both observations are correct. What changes is not the moon — it is where you are measuring from.',

@@ -8,6 +8,7 @@ import {
   Closing,
   Reveal,
   Section,
+  StatGrid,
   Steps,
 } from './parts';
 
@@ -110,6 +111,22 @@ const MoonphasePage = () => {
       />
 
       <div className="brand-body">
+        {/* Dates, because dates are the only proof a company that has not opened
+            yet can honestly give — and a dated commitment can be checked, which
+            "coming soon" never could. */}
+        <Section title={t('moonphase.statusTitle')} lede={t('moonphase.statusLede')}>
+          <StatGrid
+            items={['first', 'operating', 'official'].map((key) => ({
+              key,
+              value: t(`moonphase.status.${key}.value`),
+              label: t(`moonphase.status.${key}.label`),
+            }))}
+          />
+          <Reveal>
+            <p className="brand-note">{t('moonphase.statusNote')}</p>
+          </Reveal>
+        </Section>
+
         <Section kicker={t('moonphase.kickers.name')} title={t('moonphase.nameTitle')}>
           <Reveal>
             <p className="brand-p brand-lead-p">{t('moonphase.nameBody')}</p>

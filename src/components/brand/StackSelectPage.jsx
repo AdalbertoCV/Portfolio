@@ -7,6 +7,7 @@ import {
   Closing,
   Reveal,
   Section,
+  StatGrid,
 } from './parts';
 
 const SOLUTION_KEYS = ['train', 'assess', 'place'];
@@ -63,6 +64,22 @@ const StackSelectPage = () => {
       />
 
       <div className="brand-body">
+        {/* Dates, because dates are the only proof a company that has not opened
+            yet can honestly give — and a dated commitment can be checked, which
+            "coming soon" never could. */}
+        <Section title={t('stackselect.statusTitle')} lede={t('stackselect.statusLede')}>
+          <StatGrid
+            items={['operating', 'official', 'deliverable'].map((key) => ({
+              key,
+              value: t(`stackselect.status.${key}.value`),
+              label: t(`stackselect.status.${key}.label`),
+            }))}
+          />
+          <Reveal>
+            <p className="brand-note">{t('stackselect.statusNote')}</p>
+          </Reveal>
+        </Section>
+
         <Section kicker={t('stackselect.kickers.name')} title="Stack · Select">
           <Reveal>
             <p className="brand-p">{t('stackselect.nameBody')}</p>

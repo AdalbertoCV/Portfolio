@@ -24,7 +24,7 @@ const brandsEs = {
     roleCto: 'CTO y Cofundador',
     roleCeo: 'CEO y Fundador',
     enter: 'Entrar',
-    siteSoon: 'Sitio web en construcción — disponible muy pronto',
+    siteSoon: 'Sitio web en construcción — enero 2027',
     statusBuilding: 'En construcción',
     stackselectPitch: 'Bootcamps y plataforma de evaluación técnica orientados a la colocación laboral de desarrolladores sin experiencia previa.',
     moonphasePitch: 'Construyendo el futuro de la tecnología: automatización real e I+D sobre lo que nadie ha resuelto, con método y expediente escrito.',
@@ -262,6 +262,15 @@ const brandsEs = {
     nameTitle: 'El nombre',
     nameBody: '«Stack» designa el conjunto de herramientas con las que trabaja un desarrollador. «Select» refiere a la selección y vinculación de ese talento con las empresas. La combinación describe la operación con precisión: identificar a los mejores desarrolladores y colocarlos en el mercado laboral.',
 
+    statusTitle: 'Dónde está hoy',
+    statusLede: 'StackSelect lleva operando desde junio, formando y evaluando antes de abrir formalmente. El entregable se mide en colocaciones, así que la fecha que importa es cuándo empiezan.',
+    status: {
+      operating: { value: 'Jun 2026', label: 'Operando: formación y evaluación en marcha' },
+      official: { value: 'Ene 2027', label: 'Inicio de operación formal' },
+      deliverable: { value: 'Colocación', label: 'La unidad con la que se mide, no el curso terminado' },
+    },
+    statusNote: 'Los meses previos a la operación formal no son preparación: son las primeras generaciones, y son las que definen si el método aguanta antes de escalarlo.',
+
     problemTitle: 'El problema',
     problemBody: 'Existe una brecha documentada entre la formación universitaria y los requisitos reales del sector. Desarrolladores con capacidad técnica permanecen sin empleo por ausencia de experiencia práctica, sin preparación específica para una entrevista técnica ni referencias sobre lo que se espera de ellos en el ejercicio profesional.',
     problemStat: 'Recién egresados sin un primer contacto con un empleo real',
@@ -316,6 +325,15 @@ const brandsEs = {
       lanes: 'Dónde entra cada proyecto',
       values: 'Criterios de decisión',
     },
+
+    statusTitle: 'Dónde está hoy',
+    statusLede: 'Moonphase no arrancó de cero en agosto. Arrancó en enero de 2025, como práctica independiente, y la empresa es lo que esa práctica ya había demostrado que funcionaba.',
+    status: {
+      first: { value: 'Ene 2025', label: 'Primer proyecto entregado: PuntoBienestar, antes de que la empresa existiera' },
+      operating: { value: 'Ago 2026', label: 'Operando como Moonphase' },
+      official: { value: 'Ene 2027', label: 'Inicio de operación formal' },
+    },
+    statusNote: 'La cultura y el criterio con los que trabaja la empresa no se escribieron en una junta fundacional: salieron de dos años de entregar proyectos y descubrir qué sostiene un resultado y qué no.',
 
     nameTitle: 'De dónde viene el nombre',
     nameBody: 'La luna no se ve igual desde todos los puntos de la Tierra al mismo tiempo: en un lugar es llena y en otro menguante, y las dos observaciones son correctas. Lo que cambia no es la luna — es desde dónde se mide.',
