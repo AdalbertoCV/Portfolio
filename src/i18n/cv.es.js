@@ -23,6 +23,14 @@ const cvEs = {
     standing: 'Backend · Nube · Sistemas de IA',
     contactLabel: 'Contacto',
 
+    shortcuts: {
+      label: 'Fuera del menú',
+      decisions: { name: 'Bitácora de decisiones', hint: 'qué elegí y por qué' },
+      study: { name: 'Zona de estudio', hint: 'diez problemas con solución' },
+      play: { name: 'Una laptop que salta bugs', hint: 'un minijuego' },
+      terminal: { name: 'La terminal', hint: '⌘K desde cualquier página' },
+    },
+
     profileTitle: 'Lo que hago',
     profileKicker: 'Quién soy',
     profileBody: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS y Azure, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad de una plataforma de microservicios. Migré la infraestructura completa de la plataforma en dos semanas y construí su cotizador automático: un algoritmo matemático de precios que llevó el tiempo promedio de cotización de un account manager de cinco días a uno.',

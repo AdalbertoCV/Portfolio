@@ -1346,6 +1346,95 @@
 }
 
 /* ============================================================================
+   SHORTCUTS
+   ----------------------------------------------------------------------------
+   One row, deliberately quiet. It is a signpost, not a section: the moment it
+   looks like content it competes with the page it is trying to send people
+   into. Hairlines top and bottom, tertiary type, and the names only go to full
+   strength on hover.
+   ========================================================================= */
+
+.shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 34px;
+    margin-top: 30px;
+    padding: 18px 4px;
+    border-top: 1px solid var(--color-border-primary);
+    border-bottom: 1px solid var(--color-border-primary);
+}
+
+.shortcuts-label {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+}
+
+.shortcuts ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 34px;
+    margin: 0;
+    padding: 0;
+}
+
+.shortcuts a,
+.shortcuts button {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.shortcuts-name {
+    font-size: 0.88rem;
+    font-weight: 650;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-base);
+}
+
+.shortcuts-hint {
+    font-size: 0.78rem;
+    color: var(--color-text-tertiary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .shortcuts a:hover .shortcuts-name,
+    .shortcuts button:hover .shortcuts-name {
+        color: var(--color-text-primary);
+    }
+}
+
+/* On a phone each one gets its own line: four of these side by side wrap into
+   a block that is harder to read than a list. */
+@media (max-width: 720px) {
+    .shortcuts {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .shortcuts ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .shortcuts a,
+    .shortcuts button {
+        min-height: 32px;
+    }
+}
+
+/* ============================================================================
    THE CLAIM, AND THE ACTION UNDER IT
    ----------------------------------------------------------------------------
    The sentence below the title is the specific thing he does. Under it there is

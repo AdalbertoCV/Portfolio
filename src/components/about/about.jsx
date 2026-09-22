@@ -29,6 +29,7 @@ import REFERENCES, { initials } from './references';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
+import { openTerminal } from '../terminal/Terminal';
 import './about.css';
 
 // The events, newest first. Each one is a wordmark, a line of copy and at
@@ -60,6 +61,13 @@ const NOW = [
   { id: 'radii', to: '/radii' },
   { id: 'ventures', to: '/ventures' },
   { id: 'contract', to: '/experience' },
+];
+
+// The routes the navbar does not carry, which are also the ones worth finding.
+const SHORTCUTS = [
+  { id: 'decisions', to: '/decisions' },
+  { id: 'study', to: '/study' },
+  { id: 'play', to: '/play' },
 ];
 
 const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
@@ -280,6 +288,31 @@ const About = () => {
             ))}
           </ul>
         </div>
+      </Reveal>
+
+      {/* A menu behind the menu. The home page runs nineteen screens, and the
+          four things on this site somebody is most likely to remember — the
+          log, the study zone, the game, the shell — are either deep inside it
+          or on routes the navbar does not carry. One quiet row on the first
+          screen makes them reachable without adding a fourteenth section. */}
+      <Reveal className="shortcuts">
+        <span className="shortcuts-label">{t('cv.shortcuts.label')}</span>
+        <ul>
+          {SHORTCUTS.map(({ id, to }) => (
+            <li key={id}>
+              <Link to={to}>
+                <span className="shortcuts-name">{t(`cv.shortcuts.${id}.name`)}</span>
+                <span className="shortcuts-hint">{t(`cv.shortcuts.${id}.hint`)}</span>
+              </Link>
+            </li>
+          ))}
+          <li>
+            <button type="button" onClick={openTerminal}>
+              <span className="shortcuts-name">{t('cv.shortcuts.terminal.name')}</span>
+              <span className="shortcuts-hint">{t('cv.shortcuts.terminal.hint')}</span>
+            </button>
+          </li>
+        </ul>
       </Reveal>
 
       {/* ----------------------------------------------------------------- now */}

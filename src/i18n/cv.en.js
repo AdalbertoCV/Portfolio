@@ -16,6 +16,14 @@ const cvEn = {
     standing: 'Backend · Cloud · AI systems',
     contactLabel: 'Contact',
 
+    shortcuts: {
+      label: 'Not in the menu',
+      decisions: { name: 'Decision log', hint: 'what I chose, and why' },
+      study: { name: 'Study zone', hint: 'ten problems, with answers' },
+      play: { name: 'A laptop that jumps bugs', hint: 'a small game' },
+      terminal: { name: 'The terminal', hint: '⌘K from any page' },
+    },
+
     profileTitle: 'What I do',
     profileKicker: 'Who I am',
     profileBody: 'Full-stack software engineer building backend services, cloud infrastructure and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS and Azure, develop AI agents with LangGraph and LangChain, and maintain the CI/CD pipelines and observability of a microservices platform. I migrated the platform’s entire infrastructure in two weeks and built its automatic quoting engine — a mathematical pricing algorithm that took an account manager’s average quoting time from five days to one.',
