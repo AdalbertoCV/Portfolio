@@ -187,3 +187,76 @@
         gap: 18px;
     }
 }
+
+/* ============================================================================
+   WHO THE PAGE IS FOR
+   ----------------------------------------------------------------------------
+   Four reasons above the form. A blank box asking "¿de qué se trata?" makes
+   the visitor do the work of deciding whether they belong here; naming the
+   reasons lets them recognise themselves and arrive at the field already
+   knowing what to write.
+   ========================================================================= */
+
+.reasons {
+    display: grid;
+    /* Five cards: four columns strand one on its own row, three leave two. */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+}
+
+.reason {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 24px 20px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+}
+
+.reason h3 {
+    margin: 0 0 9px;
+    font-size: 1.02rem;
+    letter-spacing: -0.025em;
+    color: var(--color-text-primary);
+}
+
+.reason p {
+    margin: 0 0 14px;
+    font-size: 0.91rem;
+    line-height: 1.68;
+    color: var(--color-text-secondary);
+}
+
+/* Pushed to the bottom so the four links sit on one line however uneven the
+   paragraphs above them are. */
+.reason-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    font-size: 0.88rem;
+    font-weight: 650;
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.reason-link svg {
+    width: 14px;
+    height: 14px;
+    transition: transform var(--transition-base);
+}
+
+.reasons-note {
+    margin: 22px 0 0;
+    max-width: 62ch;
+    font-size: 0.89rem;
+    line-height: 1.7;
+    color: var(--color-text-tertiary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .reason-link:hover svg {
+        transform: translateX(4px);
+    }
+}

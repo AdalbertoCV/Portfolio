@@ -453,7 +453,35 @@ const es = {
   contact: {
     badge: 'Contacto',
     title: 'Hablemos',
-    lede: 'Si tienes un proyecto, quieres colaborar en algo, formar parte de mi comunidad o simplemente compartir una idea, escríbeme. Respondo a todo lo que llega.',
+    lede: 'Aquí empieza cualquier cosa que terminemos haciendo juntos. Abajo está lo que normalmente busco, por si te ahorra la mitad del mensaje. Respondo todo lo que llega.',
+    reasonsKicker: 'A quién busco',
+    reasonsTitle: 'Por qué suele escribirme la gente',
+    reasons: {
+      moonphase: {
+        title: 'Un cliente para Moonphase',
+        body: 'Automatización, sistemas a la medida y problemas que todavía no tienen una solución conocida. Si el tuyo entra en la última categoría, mejor.',
+        link: 'Ver Moonphase',
+      },
+      evodeps: {
+        title: 'Un cliente para Evodeps',
+        body: 'Software, equipamiento y prototipos para operaciones que hoy corren a mano. Sector público y empresa privada desde 2025.',
+        link: 'Ver Evodeps',
+      },
+      stackselect: {
+        title: 'Entrar a StackSelect',
+        body: 'Si terminaste la carrera y sigues sin encontrar tu primer empleo, esto se construyó exactamente para eso. Empieza formalmente en enero de 2027.',
+        link: 'Ver StackSelect',
+      },
+      build: {
+        title: 'Construir algo juntos',
+        body: 'Socios, gente con quien colaborar en proyectos, o cualquiera con una idea que ninguno de los dos pueda sacar solo.',
+      },
+      ideas: {
+        title: 'Compartir ideas y hacer comunidad',
+        body: 'Discutir del oficio, enseñarme algo que estés construyendo, o armar cosas con la gente técnica de por acá. Esos mensajes me dan gusto y no necesitan pretexto.',
+      },
+    },
+    reasonsNote: 'Y si no eres ninguna de esas, escríbeme igual. La lista es para ahorrarte tiempo, no para filtrarte.',
     fields: {
       name: 'Nombre',
       email: 'Correo',

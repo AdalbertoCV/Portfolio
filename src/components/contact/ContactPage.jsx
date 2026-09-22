@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from '../../i18n/I18nProvider';
-import { ArrowUpRight, Reveal, Section } from '../brand/parts';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, Reveal, Section } from '../brand/parts';
 import { CONTACT_EMAIL } from '../../site';
 import './contact.css';
 
@@ -22,6 +23,19 @@ import './contact.css';
    ======================================================================== */
 
 const ENDPOINT = 'https://api.web3forms.com/submit';
+
+// Who the page is actually for. A form that opens with "¿de qué se trata?"
+// puts the work of figuring that out on the visitor; naming the four reasons
+// people write lets them recognise themselves and arrive at the box already
+// knowing what to say. Three of them have a page that answers the follow-up
+// question, so they link to it.
+const REASONS = [
+  { id: 'moonphase', to: '/moonphase' },
+  { id: 'evodeps', to: '/evodeps' },
+  { id: 'stackselect', to: '/stackselect' },
+  { id: 'build', to: null },
+  { id: 'ideas', to: null },
+];
 const ACCESS_KEY = '6b54da08-526a-4df8-aee1-8f8885e6a9e7';
 
 
@@ -72,6 +86,26 @@ const ContactPage = () => {
           <ArrowUpRight />
         </a>
       </Reveal>
+
+      <Section kicker={t('contact.reasonsKicker')} title={t('contact.reasonsTitle')}>
+        <Reveal className="reasons" stagger>
+          {REASONS.map(({ id, to }) => (
+            <article className="reason" key={id}>
+              <h3>{t(`contact.reasons.${id}.title`)}</h3>
+              <p>{t(`contact.reasons.${id}.body`)}</p>
+              {to ? (
+                <Link className="reason-link" to={to}>
+                  {t(`contact.reasons.${id}.link`)}
+                  <ArrowRight />
+                </Link>
+              ) : null}
+            </article>
+          ))}
+        </Reveal>
+        <Reveal>
+          <p className="reasons-note">{t('contact.reasonsNote')}</p>
+        </Reveal>
+      </Section>
 
       <Section>
         <Reveal className="contact-card">

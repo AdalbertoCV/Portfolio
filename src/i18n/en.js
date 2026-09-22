@@ -453,7 +453,35 @@ const en = {
   contact: {
     badge: 'Contact',
     title: 'Let’s talk',
-    lede: 'If you have a project, want to collaborate on something, want to be part of my community, or just want to share an idea, write to me. I answer everything that comes in.',
+    lede: 'This is where anything we end up doing together starts. What I am usually looking for is below, in case it saves you half the message. I answer everything that comes in.',
+    reasonsKicker: 'Who I am looking for',
+    reasonsTitle: 'Why people usually write',
+    reasons: {
+      moonphase: {
+        title: 'A client for Moonphase',
+        body: 'Automation, systems built to fit, and problems that do not have a known solution yet. If yours is in the last category, all the better.',
+        link: 'See Moonphase',
+      },
+      evodeps: {
+        title: 'A client for Evodeps',
+        body: 'Software, equipment and prototypes for operations that still run by hand. Public sector and private companies since 2025.',
+        link: 'See Evodeps',
+      },
+      stackselect: {
+        title: 'Joining StackSelect',
+        body: 'If you finished your degree and still have not found your first job, this was built for exactly that. It opens formally in January 2027.',
+        link: 'See StackSelect',
+      },
+      build: {
+        title: 'Building something together',
+        body: 'Partners, people to collaborate with on projects, or anybody with an idea neither of us could pull off alone.',
+      },
+      ideas: {
+        title: 'Trading ideas, and building a scene',
+        body: 'Arguing about the craft, showing me something you are building, or putting something together with the technical people around here. Those messages are the good ones and they need no excuse.',
+      },
+    },
+    reasonsNote: 'And if you are none of those, write anyway. The list is here to save you time, not to screen you out.',
     fields: {
       name: 'Name',
       email: 'Email',
