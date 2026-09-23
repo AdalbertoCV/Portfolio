@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-23',
+    es: '120 tecnologías más en el muro: la cosecha 2024-2026',
+    en: '120 more technologies on the wall: the 2024-2026 intake',
+  },
+  {
+    date: '2026-09-23',
     es: 'El bot que le enseñé a trabajar como yo tiene su propia sección',
     en: 'The bot I taught to work the way I do gets its own section',
   },

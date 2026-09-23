@@ -1094,6 +1094,131 @@ const ICONS = {
       <path d="M9 3.6c1.8-1.2 4.2-1.2 6 0" strokeDasharray="1.8 1.6" />
     </svg>
   ),
+  // ------------------------------------------------------- the 2026 intake
+
+  // A block of text resolving all at once instead of left to right: the rows
+  // are half-formed on one side and settled on the other.
+  diffusionLm: (
+    <svg {...base}>
+      <rect x="2.8" y="4.2" width="18.4" height="15.6" rx="2.2" />
+      <path d="M6 8.4h4.4" strokeDasharray="1.4 1.3" />
+      <path d="M13 8.4h5" />
+      <path d="M6 12h3" strokeDasharray="1.4 1.3" />
+      <path d="M11.4 12h6.6" />
+      <path d="M6 15.6h6" strokeDasharray="1.4 1.3" />
+      <path d="M14.6 15.6h3.4" />
+    </svg>
+  ),
+
+  // A box with walls and something running inside it: the agent gets a room,
+  // not the house.
+  sandbox: (
+    <svg {...base}>
+      <rect x="3" y="4.6" width="18" height="14.8" rx="2.4" />
+      <path d="M3 8.6h18" />
+      <rect x="8.4" y="11.4" width="7.2" height="5.2" rx="1.4" />
+      <path d="M10.8 6.6h.01M13.2 6.6h.01" />
+    </svg>
+  ),
+
+  // Two agents handing work to each other directly, with no human between
+  // them — the arrows go both ways for a reason.
+  a2a: (
+    <svg {...base}>
+      <rect x="2.4" y="8" width="7" height="8" rx="2" />
+      <rect x="14.6" y="8" width="7" height="8" rx="2" />
+      <path d="M10.2 10.6h3.6" />
+      <path d="M12.4 9.2l1.6 1.4-1.6 1.4" />
+      <path d="M13.8 13.4h-3.6" />
+      <path d="M11.6 12l-1.6 1.4 1.6 1.4" />
+    </svg>
+  ),
+
+  // A padlock with arithmetic happening inside it: the computation never sees
+  // the plaintext, which is the whole claim.
+  fhe: (
+    <svg {...base}>
+      <rect x="4" y="10" width="16" height="10.4" rx="2.4" />
+      <path d="M7.6 10V7.4a4.4 4.4 0 0 1 8.8 0V10" />
+      <path d="M10 15.2h4" />
+      <path d="M12 13.2v4" />
+    </svg>
+  ),
+
+  // One model, many bodies: a brain over an arm, a wheel and a gripper.
+  roboticsFm: (
+    <svg {...base}>
+      <rect x="7.8" y="2.6" width="8.4" height="6" rx="2" />
+      <path d="M10.2 5.6h.01M13.8 5.6h.01" />
+      <path d="M12 8.6v2.6" />
+      <path d="M5.4 11.2h13.2" />
+      <path d="M6.6 11.2v3.2l-2 2.6" />
+      <path d="M12 11.2v6.2" />
+      <path d="M17.4 11.2v3.2l2 2.6" />
+      <circle cx="12" cy="19.4" r="2" />
+    </svg>
+  ),
+
+  // The same shape as a big model, drawn small, running on one box.
+  slm: (
+    <svg {...base}>
+      <rect x="3.4" y="6.6" width="17.2" height="11.6" rx="2.4" />
+      <circle cx="9.2" cy="12.4" r="1.5" />
+      <circle cx="15.2" cy="9.8" r="1.2" />
+      <circle cx="15.2" cy="15" r="1.2" />
+      <path d="M10.6 11.6l3.4-1.4M10.6 13.2l3.4 1.4" />
+      <path d="M6.6 4.2v2.4M17.4 4.2v2.4" />
+    </svg>
+  ),
+
+  // Light through a chip instead of electrons: a beam crossing the die and
+  // splitting on the far side.
+  photonic: (
+    <svg {...base}>
+      <rect x="6.2" y="6.2" width="11.6" height="11.6" rx="2" />
+      <path d="M2.6 12h3.6" />
+      <path d="M17.8 9.6h3.6M17.8 12h3.6M17.8 14.4h3.6" />
+      <path d="M8.8 12h3.4l2.8-2.4M12.2 12l2.8 2.4" />
+      <path d="M9.6 2.6v3.6M14.4 17.8v3.6" />
+    </svg>
+  ),
+
+  // A model that keeps learning after it ships: the loop closes, and the line
+  // going into it never ends.
+  continual: (
+    <svg {...base}>
+      <path d="M20.4 12a8.4 8.4 0 1 1-2.6-6.1" />
+      <path d="M18.2 2.6v3.6h-3.6" />
+      <path d="M8.6 12.6l2.2 2.2 4.4-4.8" />
+      <path d="M2.6 18.4h3.4" strokeDasharray="1.4 1.3" />
+    </svg>
+  ),
+
+  // A scene reconstructed rather than modelled: a frustum looking at a cloud
+  // of points that resolves into a surface.
+  neuralRendering: (
+    <svg {...base}>
+      <path d="M2.8 8.4l5.2-3v13.2l-5.2-3z" />
+      <circle cx="12.6" cy="8.6" r="1.1" />
+      <circle cx="16.8" cy="11.4" r="1.1" />
+      <circle cx="12" cy="14.6" r="1.1" />
+      <circle cx="17.6" cy="16.4" r="1.1" />
+      <path d="M11.4 9.6l-1.6 3.6M13.7 9.2l2.2 1.6M13 14.2l3-2M13.1 15.2l3.6 1" strokeDasharray="1.2 1.2" />
+    </svg>
+  ),
+
+  // Retrieval that does not only read: a page, an image and a waveform going
+  // into the same index.
+  multimodalRag: (
+    <svg {...base}>
+      <path d="M3 5.4h5.2v5.2H3z" />
+      <path d="M3 13.4h5.2v5.2H3z" />
+      <path d="M4.2 15.6l1.2 1.2M4.2 7.2h2.8M4.2 8.8h2" />
+      <path d="M8.2 8v3.4h3.6M8.2 16v-3.4h3.6" />
+      <circle cx="16.6" cy="12" r="4.4" />
+      <path d="M19.9 15l1.5 1.6" />
+    </svg>
+  ),
 };
 
 const ConceptIcon = ({ name, className }) => {

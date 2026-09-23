@@ -7,8 +7,10 @@
 // not, so those stay as text tiles rather than borrowing a logo that would
 // assert a tool that was never listed.
 //
-// Every entry without a vendor logo carries a `concept` instead, drawn by
-// ConceptIcons.jsx. No tile falls back to initials.
+// Every entry without a vendor logo carries a `concept` drawn by
+// ConceptIcons.jsx, or — for the newest arrivals, which are younger than the
+// icon sets that would have to carry them — the monogram tile. Leaving a tool
+// off this wall to protect a rule about pictures would be the wrong trade.
 //
 // Every mark on the wall is a silhouette. A grid that was two-thirds
 // monochrome and one-third full colour read as an accident rather than as a
@@ -385,6 +387,84 @@ import letsencryptIcon from '../../images/tech/letsencrypt.svg';
 import bitwardenIcon from '../../images/tech/bitwarden.svg';
 import gnuprivacyguardIcon from '../../images/tech/gnuprivacyguard.svg';
 
+// The 2024-2026 intake. Kept together rather than filed alphabetically
+// among the rest, because the point of these is that they are new.
+import sigleamIcon from '../../images/tech/gleam.svg';
+import sinushellIcon from '../../images/tech/nushell.svg';
+import siluauIcon from '../../images/tech/luau.svg';
+import sinimIcon from '../../images/tech/nim.svg';
+import sicrystalIcon from '../../images/tech/crystal.svg';
+import siodinIcon from '../../images/tech/odin.svg';
+import sivIcon from '../../images/tech/v.svg';
+import sirescriptIcon from '../../images/tech/rescript.svg';
+import sipurescriptIcon from '../../images/tech/purescript.svg';
+import sidrizzleIcon from '../../images/tech/drizzle.svg';
+import sinatsdotioIcon from '../../images/tech/natsdotio.svg';
+import siactixIcon from '../../images/tech/actix.svg';
+import sirocketIcon from '../../images/tech/rocket.svg';
+import sisanicIcon from '../../images/tech/sanic.svg';
+import sibentomlIcon from '../../images/tech/bentoml.svg';
+import sistreamlitIcon from '../../images/tech/streamlit.svg';
+import sioptunaIcon from '../../images/tech/optuna.svg';
+import sispacyIcon from '../../images/tech/spacy.svg';
+import sidvcIcon from '../../images/tech/dvc.svg';
+import sicoderabbitIcon from '../../images/tech/coderabbit.svg';
+import sigooglejulesIcon from '../../images/tech/googlejules.svg';
+import sizapierIcon from '../../images/tech/zapier.svg';
+import simakeIcon from '../../images/tech/make.svg';
+import siopentofuIcon from '../../images/tech/opentofu.svg';
+import sisstIcon from '../../images/tech/sst.svg';
+import sitalosIcon from '../../images/tech/talos.svg';
+import siinfracostIcon from '../../images/tech/infracost.svg';
+import siknativeIcon from '../../images/tech/knative.svg';
+import sitektonIcon from '../../images/tech/tekton.svg';
+import sijaegerIcon from '../../images/tech/jaeger.svg';
+import sifluxIcon from '../../images/tech/flux.svg';
+import siopenbaoIcon from '../../images/tech/openbao.svg';
+import sifalcoIcon from '../../images/tech/falco.svg';
+import sitailscaleIcon from '../../images/tech/tailscale.svg';
+import siauthentikIcon from '../../images/tech/authentik.svg';
+import sioryIcon from '../../images/tech/ory.svg';
+import sigraylogIcon from '../../images/tech/graylog.svg';
+import siprefectIcon from '../../images/tech/prefect.svg';
+import sicockroachlabsIcon from '../../images/tech/cockroachlabs.svg';
+import simeilisearchIcon from '../../images/tech/meilisearch.svg';
+import sidaskIcon from '../../images/tech/dask.svg';
+import siapachearrowIcon from '../../images/tech/apachearrow.svg';
+import simetabaseIcon from '../../images/tech/metabase.svg';
+import sirolldownIcon from '../../images/tech/rolldown.svg';
+import sibaseuiIcon from '../../images/tech/baseui.svg';
+import silitIcon from '../../images/tech/lit.svg';
+import siunocssIcon from '../../images/tech/unocss.svg';
+import simantineIcon from '../../images/tech/mantine.svg';
+import siswcIcon from '../../images/tech/swc.svg';
+import siesbuildIcon from '../../images/tech/esbuild.svg';
+import sipreactIcon from '../../images/tech/preact.svg';
+import siwebgpuIcon from '../../images/tech/webgpu.svg';
+import siwebassemblyIcon from '../../images/tech/webassembly.svg';
+import siwasmerIcon from '../../images/tech/wasmer.svg';
+import sihtmxIcon from '../../images/tech/htmx.svg';
+import siumamiIcon from '../../images/tech/umami.svg';
+import sidirectusIcon from '../../images/tech/directus.svg';
+import siresendIcon from '../../images/tech/resend.svg';
+import sibetterauthIcon from '../../images/tech/betterauth.svg';
+import silemonsqueezyIcon from '../../images/tech/lemonsqueezy.svg';
+import simatomoIcon from '../../images/tech/matomo.svg';
+import silivekitIcon from '../../images/tech/livekit.svg';
+import sibabylondotjsIcon from '../../images/tech/babylondotjs.svg';
+import siplaycanvasIcon from '../../images/tech/playcanvas.svg';
+import simediapipeIcon from '../../images/tech/mediapipe.svg';
+import sideepgramIcon from '../../images/tech/deepgram.svg';
+import sicocosIcon from '../../images/tech/cocos.svg';
+import siruffIcon from '../../images/tech/ruff.svg';
+import sioxcIcon from '../../images/tech/oxc.svg';
+import sighosttyIcon from '../../images/tech/ghostty.svg';
+import sitypstIcon from '../../images/tech/typst.svg';
+import sineovimIcon from '../../images/tech/neovim.svg';
+import sijustIcon from '../../images/tech/just.svg';
+import sitaskIcon from '../../images/tech/task.svg';
+import sik6Icon from '../../images/tech/k6.svg';
+
 const TECH_GROUPS = [
   {
     id: 'languages',
@@ -422,6 +502,17 @@ const TECH_GROUPS = [
       { name: 'F#', icon: fsharpIcon, mono: true },
       { name: 'Groovy', icon: apachegroovyIcon, mono: true },
       { name: 'AssemblyScript', icon: assemblyscriptIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'Gleam', icon: sigleamIcon, mono: true },
+      { name: 'Nushell', icon: sinushellIcon, mono: true },
+      { name: 'Luau', icon: siluauIcon, mono: true },
+      { name: 'Nim', icon: sinimIcon, mono: true },
+      { name: 'Crystal', icon: sicrystalIcon, mono: true },
+      { name: 'Mojo' },
+      { name: 'Odin', icon: siodinIcon, mono: true },
+      { name: 'V', icon: sivIcon, mono: true },
+      { name: 'ReScript', icon: sirescriptIcon, mono: true },
+      { name: 'PureScript', icon: sipurescriptIcon, mono: true },
     ],
   },
   {
@@ -470,6 +561,17 @@ const TECH_GROUPS = [
       { name: 'Prisma', icon: prismaIcon, mono: true },
       { name: 'Sequelize', icon: sequelizeIcon, mono: true },
       { name: 'Hibernate', icon: hibernateIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'Drizzle', icon: sidrizzleIcon, mono: true },
+      { name: 'Axum' },
+      { name: 'NATS.io', icon: sinatsdotioIcon, mono: true },
+      { name: 'Elysia' },
+      { name: 'Actix', icon: siactixIcon, mono: true },
+      { name: 'Litestar' },
+      { name: 'Rocket', icon: sirocketIcon, mono: true },
+      { name: 'Inngest' },
+      { name: 'Sanic', icon: sisanicIcon, mono: true },
+      { name: 'Encore' },
     ],
   },
   {
@@ -519,6 +621,17 @@ const TECH_GROUPS = [
       { name: 'MLflow', icon: mlflowIcon, mono: true },
       { name: 'ONNX', icon: onnxIcon, mono: true },
       { name: 'Gradio', icon: gradioIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'BentoML', icon: sibentomlIcon, mono: true },
+      { name: 'LlamaIndex' },
+      { name: 'Streamlit', icon: sistreamlitIcon, mono: true },
+      { name: 'DSPy' },
+      { name: 'Optuna', icon: sioptunaIcon, mono: true },
+      { name: 'Langfuse' },
+      { name: 'spaCy', icon: sispacyIcon, mono: true },
+      { name: 'SGLang' },
+      { name: 'DVC', icon: sidvcIcon, mono: true },
+      { name: 'Unsloth' },
     ],
   },
   {
@@ -581,6 +694,17 @@ const TECH_GROUPS = [
       // No mark in simple-icons, so it gets a drawn one like Jev: a prompt
       // going in and a running app coming out, which is the product.
       { name: 'Lovable', concept: 'lovable' },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'CodeRabbit', icon: sicoderabbitIcon, mono: true },
+      { name: 'Antigravity' },
+      { name: 'Kiro' },
+      { name: 'Google Jules', icon: sigooglejulesIcon, mono: true },
+      { name: 'Devin' },
+      { name: 'Zapier', icon: sizapierIcon, mono: true },
+      { name: 'Amp' },
+      { name: 'Make', icon: simakeIcon, mono: true },
+      { name: 'Bolt.new' },
+      { name: 'Roo Code' },
     ],
   },
   {
@@ -639,6 +763,17 @@ const TECH_GROUPS = [
       { name: 'Fly.io', icon: flyIcon, mono: true },
       { name: 'Railway', icon: railwayIcon, mono: true },
       { name: 'Coolify', icon: coolifyIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'OpenTofu', icon: siopentofuIcon, mono: true },
+      { name: 'SST', icon: sisstIcon, mono: true },
+      { name: 'Talos Linux', icon: sitalosIcon, mono: true },
+      { name: 'Crossplane' },
+      { name: 'Infracost', icon: siinfracostIcon, mono: true },
+      { name: 'Knative', icon: siknativeIcon, mono: true },
+      { name: 'Tekton', icon: sitektonIcon, mono: true },
+      { name: 'Karpenter' },
+      { name: 'Jaeger', icon: sijaegerIcon, mono: true },
+      { name: 'Flux CD', icon: sifluxIcon, mono: true },
     ],
   },
   {
@@ -682,6 +817,17 @@ const TECH_GROUPS = [
       { name: 'Authelia', icon: autheliaIcon, mono: true },
       { name: 'Vaultwarden', icon: vaultwardenIcon, mono: true },
       { name: 'Open Bug Bounty', icon: openbugbountyIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'OpenBao', icon: siopenbaoIcon, mono: true },
+      { name: 'Semgrep' },
+      { name: 'Falco', icon: sifalcoIcon, mono: true },
+      { name: 'Tailscale', icon: sitailscaleIcon, mono: true },
+      { name: 'Sigstore' },
+      { name: 'Authentik', icon: siauthentikIcon, mono: true },
+      { name: 'Kyverno' },
+      { name: 'Ory', icon: sioryIcon, mono: true },
+      { name: 'Graylog', icon: sigraylogIcon, mono: true },
+      { name: 'Infisical' },
     ],
   },
   {
@@ -725,6 +871,17 @@ const TECH_GROUPS = [
       { name: 'Turso', icon: tursoIcon, mono: true },
       { name: 'Neon', icon: neonIcon, mono: true },
       { name: 'SurrealDB', icon: surrealdbIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'Prefect', icon: siprefectIcon, mono: true },
+      { name: 'Iceberg' },
+      { name: 'CockroachDB', icon: sicockroachlabsIcon, mono: true },
+      { name: 'Meilisearch', icon: simeilisearchIcon, mono: true },
+      { name: 'Dagster' },
+      { name: 'Dask', icon: sidaskIcon, mono: true },
+      { name: 'pgvector' },
+      { name: 'Apache Arrow', icon: siapachearrowIcon, mono: true },
+      { name: 'Metabase', icon: simetabaseIcon, mono: true },
+      { name: 'Valkey' },
     ],
   },
   {
@@ -765,6 +922,17 @@ const TECH_GROUPS = [
       { name: 'Capacitor', icon: capacitorIcon, mono: true },
       { name: 'Radix UI', icon: radixIcon, mono: true },
       { name: 'TanStack', icon: tanstackIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'Rolldown', icon: sirolldownIcon, mono: true },
+      { name: 'Base UI', icon: sibaseuiIcon, mono: true },
+      { name: 'Lit', icon: silitIcon, mono: true },
+      { name: 'Zustand' },
+      { name: 'UnoCSS', icon: siunocssIcon, mono: true },
+      { name: 'Mantine', icon: simantineIcon, mono: true },
+      { name: 'SWC', icon: siswcIcon, mono: true },
+      { name: 'Panda CSS' },
+      { name: 'esbuild', icon: siesbuildIcon, mono: true },
+      { name: 'Preact', icon: sipreactIcon, mono: true },
     ],
   },
   {
@@ -808,6 +976,17 @@ const TECH_GROUPS = [
       { name: 'Medusa', icon: medusaIcon, mono: true },
       { name: 'Clerk', icon: clerkIcon, mono: true },
       { name: 'PostHog', icon: posthogIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'WebGPU', icon: siwebgpuIcon, mono: true },
+      { name: 'WebAssembly', icon: siwebassemblyIcon, mono: true },
+      { name: 'Wasmer', icon: siwasmerIcon, mono: true },
+      { name: 'htmx', icon: sihtmxIcon, mono: true },
+      { name: 'Umami', icon: siumamiIcon, mono: true },
+      { name: 'Directus', icon: sidirectusIcon, mono: true },
+      { name: 'Resend', icon: siresendIcon, mono: true },
+      { name: 'Better Auth', icon: sibetterauthIcon, mono: true },
+      { name: 'Lemon Squeezy', icon: silemonsqueezyIcon, mono: true },
+      { name: 'Matomo', icon: simatomoIcon, mono: true },
     ],
   },
   {
@@ -845,6 +1024,17 @@ const TECH_GROUPS = [
       { name: 'Excalidraw', icon: excalidrawIcon, mono: true },
       { name: 'tldraw', icon: tldrawIcon, mono: true },
       { name: 'Sketch', icon: sketchIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'LiveKit', icon: silivekitIcon, mono: true },
+      { name: 'ComfyUI' },
+      { name: 'Babylon.js', icon: sibabylondotjsIcon, mono: true },
+      { name: 'PlayCanvas', icon: siplaycanvasIcon, mono: true },
+      { name: 'Remotion' },
+      { name: 'MediaPipe', icon: simediapipeIcon, mono: true },
+      { name: 'FLUX.1' },
+      { name: 'Deepgram', icon: sideepgramIcon, mono: true },
+      { name: 'Cocos', icon: sicocosIcon, mono: true },
+      { name: 'Pipecat' },
     ],
   },
   {
@@ -888,6 +1078,17 @@ const TECH_GROUPS = [
       { name: 'Bruno', icon: brunoIcon, mono: true },
       { name: 'uv', icon: uvIcon, mono: true },
       { name: 'Zod', icon: zodIcon, mono: true },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'Ruff', icon: siruffIcon, mono: true },
+      { name: 'Oxc', icon: sioxcIcon, mono: true },
+      { name: 'Ghostty', icon: sighosttyIcon, mono: true },
+      { name: 'Playwright' },
+      { name: 'Typst', icon: sitypstIcon, mono: true },
+      { name: 'Neovim', icon: sineovimIcon, mono: true },
+      { name: 'Just', icon: sijustIcon, mono: true },
+      { name: 'Jujutsu' },
+      { name: 'Task', icon: sitaskIcon, mono: true },
+      { name: 'k6', icon: sik6Icon, mono: true },
     ],
   },
   {
@@ -928,6 +1129,17 @@ const TECH_GROUPS = [
       { name: 'Mechanistic interpretability', concept: 'interpretability' },
       { name: 'On-device AI', concept: 'onDevice' },
       { name: 'Context engineering', concept: 'contextEng' },
+      // 2026 intake: things worth trying, not things already shipped.
+      { name: 'Diffusion LLMs', concept: 'diffusionLm' },
+      { name: 'Agent sandboxes', concept: 'sandbox' },
+      { name: 'Agent-to-agent protocols', concept: 'a2a' },
+      { name: 'Homomorphic encryption', concept: 'fhe' },
+      { name: 'Robotics foundation models', concept: 'roboticsFm' },
+      { name: 'Small language models', concept: 'slm' },
+      { name: 'Photonic computing', concept: 'photonic' },
+      { name: 'Continual learning', concept: 'continual' },
+      { name: 'Neural rendering', concept: 'neuralRendering' },
+      { name: 'Multimodal RAG', concept: 'multimodalRag' },
     ],
   },
 ];
