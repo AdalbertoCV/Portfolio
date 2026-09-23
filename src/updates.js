@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-22',
+    es: 'El fondo respira: tres lavados que se mueven muy despacio detrás de todo',
+    en: 'The background breathes: three washes drifting slowly behind everything',
+  },
+  {
+    date: '2026-09-22',
     es: 'Cada referencia tiene su propia figura y su propio color',
     en: 'Every reference gets their own figure and their own colour',
   },

@@ -51,6 +51,13 @@
     --wash-3: rgba(30, 30, 30, 0.4);
     --particle-bright: rgba(255, 255, 255, 0.15);
     --particle-dim: rgba(255, 255, 255, 0.1);
+
+    /* The three drifting washes behind the page. Two are ink and the third
+       carries the terminal's green at an alpha that does not read as a
+       colour, only as one side of the page being warmer than the other. */
+    --drift-a: rgba(140, 152, 172, 0.34);
+    --drift-b: rgba(104, 114, 134, 0.3);
+    --drift-c: rgba(125, 211, 160, 0.14);
     --grain-opacity: 0.5;
     --particle-opacity-min: 0.3;
     --particle-opacity-max: 0.5;
@@ -126,6 +133,12 @@
     --wash-3: rgba(238, 238, 242, 0.5);
     --particle-bright: rgba(0, 0, 0, 0.06);
     --particle-dim: rgba(0, 0, 0, 0.04);
+
+    /* Lighter and cooler on a light page: the same alphas would read as dirt
+       on #f4f4f5 rather than as depth. */
+    --drift-a: rgba(120, 138, 174, 0.26);
+    --drift-b: rgba(152, 140, 180, 0.22);
+    --drift-c: rgba(109, 193, 146, 0.18);
     --grain-opacity: 0.22;
     --particle-opacity-min: 0.18;
     --particle-opacity-max: 0.3;
@@ -172,38 +185,10 @@ body::before {
     opacity: var(--grain-opacity);
 }
 
-/* Animated background particles */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(2px 2px at 20% 30%, var(--particle-bright), transparent),
-        radial-gradient(2px 2px at 60% 70%, var(--particle-dim), transparent),
-        radial-gradient(1px 1px at 50% 50%, var(--particle-dim), transparent),
-        radial-gradient(1px 1px at 80% 10%, var(--particle-bright), transparent),
-        radial-gradient(2px 2px at 90% 60%, var(--particle-dim), transparent),
-        radial-gradient(1px 1px at 33% 80%, var(--particle-dim), transparent);
-    background-size: 200% 200%;
-    background-position: 0% 0%;
-    pointer-events: none;
-    z-index: 1;
-    animation: floatingParticles 20s ease-in-out infinite;
-}
-
-@keyframes floatingParticles {
-    0%, 100% {
-        background-position: 0% 0%;
-        opacity: var(--particle-opacity-min);
-    }
-    50% {
-        background-position: 100% 100%;
-        opacity: var(--particle-opacity-max);
-    }
-}
+/* The drifting dust that used to live on body::after is in
+   components/brand/backdrop.css now: same pattern, moved onto a real element
+   so it drifts by transform instead of by background-position, which is the
+   difference between a compositor job and a viewport repaint every frame. */
 
 @keyframes wiggle {
     0%, 100% { transform: scale(1.1) translateY(-2px) rotate(5deg); }

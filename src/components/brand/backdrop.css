@@ -1,0 +1,172 @@
+/* ============================================================================
+   THE PAGE, BREATHING
+   ----------------------------------------------------------------------------
+   Read the note in Backdrop.jsx first. The short version: everything that
+   moves here moves by transform, because transform is the only property the
+   compositor can animate without repainting, and a background that costs the
+   page a repaint per frame is not worth having.
+
+   Behind the content on a negative z-index rather than in front of it at a low
+   opacity. `.App` creates no stacking context, so this paints above the
+   canvas background and below everything else without a single other rule
+   having to declare a z-index it did not need before.
+   ========================================================================= */
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    /* Not in the accessibility tree, not in a print, not in a text selection. */
+    user-select: none;
+}
+
+/* Each wash is one soft circle. A radial-gradient rather than a solid circle
+   under `filter: blur()`: the gradient is already soft, and it costs the
+   rasteriser nothing to produce. */
+.bd-wash {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    will-change: transform;
+}
+
+.bd-wash-a {
+    top: -22vmax;
+    left: -18vmax;
+    width: 72vmax;
+    height: 72vmax;
+    background: radial-gradient(circle, var(--drift-a) 0%, transparent 62%);
+}
+
+.bd-wash-b {
+    right: -26vmax;
+    bottom: -24vmax;
+    width: 84vmax;
+    height: 84vmax;
+    background: radial-gradient(circle, var(--drift-b) 0%, transparent 60%);
+}
+
+/* The one with colour in it, and the only colour on the page that is not ink.
+   Barely there on purpose: at the alpha below it does not read as green, it
+   reads as the page being slightly alive on one side. */
+.bd-wash-c {
+    top: 18vmax;
+    right: 4vmax;
+    width: 54vmax;
+    height: 54vmax;
+    background: radial-gradient(circle, var(--drift-c) 0%, transparent 64%);
+}
+
+/* The dust. Sized at twice the viewport and offset by a quarter, so it can be
+   pushed a full viewport in any direction without an edge ever arriving. */
+.bd-dust {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    opacity: var(--particle-opacity-min);
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, var(--particle-bright), transparent),
+        radial-gradient(2px 2px at 60% 70%, var(--particle-dim), transparent),
+        radial-gradient(1px 1px at 50% 50%, var(--particle-dim), transparent),
+        radial-gradient(1px 1px at 80% 10%, var(--particle-bright), transparent),
+        radial-gradient(2px 2px at 90% 60%, var(--particle-dim), transparent),
+        radial-gradient(1px 1px at 33% 80%, var(--particle-dim), transparent);
+    background-size: 50% 50%;
+    will-change: transform, opacity;
+}
+
+/* ------------------------------------------------------------------ motion */
+
+/* Three periods with no common factor worth the name — 53, 67 and 41 seconds
+   — so the three washes take the better part of an hour to return to the
+   arrangement they started in. A reader will never see the loop. */
+@media (prefers-reduced-motion: no-preference) {
+    .bd-wash-a {
+        animation: driftA 53s ease-in-out infinite;
+    }
+
+    .bd-wash-b {
+        animation: driftB 67s ease-in-out infinite;
+    }
+
+    .bd-wash-c {
+        animation: driftC 41s ease-in-out infinite;
+    }
+
+    .bd-dust {
+        animation: driftDust 96s linear infinite, dustBreath 24s ease-in-out infinite;
+    }
+}
+
+@keyframes driftA {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate3d(9vmax, 5vmax, 0) scale(1.08);
+    }
+
+    66% {
+        transform: translate3d(3vmax, 11vmax, 0) scale(0.96);
+    }
+}
+
+@keyframes driftB {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    40% {
+        transform: translate3d(-11vmax, -6vmax, 0) scale(1.05);
+    }
+
+    75% {
+        transform: translate3d(-4vmax, -13vmax, 0) scale(0.94);
+    }
+}
+
+@keyframes driftC {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(-8vmax, 9vmax, 0) scale(1.12);
+    }
+}
+
+/* One full tile of the dust pattern, so the end of the loop is pixel-identical
+   to its start and the jump back is invisible. */
+@keyframes driftDust {
+    to {
+        transform: translate3d(-50%, -50%, 0);
+    }
+}
+
+@keyframes dustBreath {
+    0%,
+    100% {
+        opacity: var(--particle-opacity-min);
+    }
+
+    50% {
+        opacity: var(--particle-opacity-max);
+    }
+}
+
+/* A phone paints the same number of pixels with a fraction of the budget, and
+   a wash the size of the screen is the cheapest thing to give up. The dust
+   stays: it is one element and it never changes size. */
+@media (max-width: 640px) {
+    .bd-wash-c {
+        display: none;
+    }
+}

@@ -25,6 +25,7 @@ import Decisions from './components/decisions/Decisions';
 import Study from './components/study/Study';
 import Changelog from './components/changelog/Changelog';
 import Terminal from './components/terminal/Terminal';
+import Backdrop from './components/brand/Backdrop';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
 
@@ -50,6 +51,10 @@ function App() {
     <ThemeProvider>
       <I18nProvider>
         <div className="App">
+          {/* Behind everything, on every route. It is a div and a stylesheet —
+              nothing in it reacts to anything, so it costs the app nothing to
+              have it mounted for the whole session. */}
+          <Backdrop />
           <Router>
             <ScrollToTop />
             <RouteMeta />

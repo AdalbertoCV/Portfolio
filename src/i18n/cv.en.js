@@ -26,7 +26,7 @@ const cvEn = {
 
     profileTitle: 'What I do',
     profileKicker: 'Who I am',
-    profileBody: 'Full-stack software engineer building backend services, cloud infrastructure and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS and Azure, develop AI agents with LangGraph and LangChain, and maintain the CI/CD pipelines and observability of a microservices platform. I migrated the platform’s entire infrastructure in two weeks and built its automatic quoting engine — a mathematical pricing algorithm that took an account manager’s average quoting time from five days to one.',
+    profileBody: 'Full-stack software engineer building backend services, cloud infrastructure and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS, develop AI agents with LangGraph and LangChain, and maintain the CI/CD pipelines and observability of a microservices platform. I migrated the platform’s entire infrastructure in two weeks and built its automatic quoting engine — a mathematical pricing algorithm that took an account manager’s average quoting time from five days to one.',
     profileBody2: 'I work across Python, Java, JavaScript, TypeScript, C#, Go and PHP, with Django, Spring Boot, Laravel and React. My technical focus areas are distributed systems, event-driven architecture, LLM systems and RAG, and platform engineering. My professional approach combines the rigorous adoption of emerging technology with engineering, design and business criteria, directed at systems that remain sustainable over time.',
 
     nowKicker: 'Right now',
