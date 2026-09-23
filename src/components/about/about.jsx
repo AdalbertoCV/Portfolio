@@ -220,43 +220,46 @@ const About = () => {
   return (
     <div className="cv-page">
       {/* ------------------------------------------------------------ identity */}
-      <Reveal className="cv-hero">
-        <div className="cv-hero-portrait">
-          <img src={image} alt={t('about.photoAlt')} />
-        </div>
-        <div className="cv-hero-copy">
-          <span className="hub-badge">{t('cv.badge')}</span>
-          <h1 className="cv-name">{t('about.name')}</h1>
-          <p className="cv-role">{t('cv.role')}</p>
+      {/* No card. The type sits straight on the page so the drifting washes
+          are visible in the one place a visitor is guaranteed to look, and the
+          name gets the scale a name is supposed to get. Every fact the card
+          carried is still here; the pill and the icon list became one line of
+          terminal output, because this site already has a terminal and a
+          readout is how it says where something stands. */}
+      <header className="hero">
+        <div className="hero-copy">
+          <p className="hero-status">
+            <b>{t('cv.badge')}</b>
+            <span className="hero-sep" aria-hidden="true">/</span>
+            <span className="hero-live" aria-hidden="true" />
+            {t('cv.availability')}
+          </p>
+
+          {/* Split on the first space so each part can rise out of its own
+              line. A one-word name simply renders one line. */}
+          <h1 className="hero-name">
+            {(() => {
+              const [first, ...rest] = t('about.name').split(' ');
+              return [first, rest.join(' ')].filter(Boolean).map((line) => (
+                <span key={line}>
+                  <b>{line}</b>
+                </span>
+              ));
+            })()}
+          </h1>
+
+          <p className="hero-role">{t('cv.role')}</p>
+
           {/* The specific claim, in the first viewport. The five seconds a
               visitor spends here used to buy them a job title; now they buy
               the one sentence nobody else on the internet can write. */}
-          <p className="cv-claim">{t('cv.claim')}</p>
-          <ul className="cv-facts">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"
-                   strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z" />
-                <circle cx="12" cy="10" r="2.8" />
-              </svg>
-              {t('cv.location')}
-            </li>
-            <li>
-              <span className="cv-dot" aria-hidden="true" />
-              {t('cv.availability')}
-            </li>
-            <li>
-              {/* Stacked planes, not a clock: the fact this line carries is
-                  three roles held at the same time, not elapsed time. */}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"
-                   strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M12 3.2 21 7.6 12 12 3 7.6z" />
-                <path d="m3 12 9 4.4 9-4.4" />
-                <path d="m3 16.4 9 4.4 9-4.4" />
-              </svg>
-              {t('cv.standing')}
-            </li>
-          </ul>
+          <p className="hero-claim">{t('cv.claim')}</p>
+
+          <p className="hero-meta">
+            {t('cv.location')}
+            <span className="hero-sep" aria-hidden="true">/</span>
+            {t('cv.standing')}
+          </p>
 
           {/* One action, not two. The navbar already carries every route this
               hero could point at, so a button that duplicated one of them was
@@ -290,7 +293,11 @@ const About = () => {
             ))}
           </ul>
         </div>
-      </Reveal>
+
+        <div className="hero-portrait">
+          <img src={image} alt={t('about.photoAlt')} />
+        </div>
+      </header>
 
       {/* A menu behind the menu. The home page runs nineteen screens, and the
           four things on this site somebody is most likely to remember — the

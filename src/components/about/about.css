@@ -32,45 +32,179 @@
    IDENTITY HEADER
    ========================================================================= */
 
-.cv-hero {
+/* ============================================================================
+   THE OPENING
+   ----------------------------------------------------------------------------
+   It used to be a card: a white slab with a round portrait, a pill badge and
+   a name at three rem. Everything true, nothing wrong, and it read as a CV
+   header — which is exactly what this site stopped being.
+
+   No card now. The type sits straight on the page, so the washes drifting
+   behind it are visible in the one place a visitor is guaranteed to look, and
+   the name gets the scale a name is supposed to get. The facts did not change;
+   only what carries them did. The pill and the icon list became one line of
+   terminal output, because this site already has a terminal and a readout is
+   what it uses to say where something stands.
+   ========================================================================= */
+
+.hero {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 44px;
+    grid-template-columns: minmax(0, 1fr) clamp(230px, 24vw, 310px);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: end;
+    padding: clamp(18px, 4vh, 44px) 0 clamp(30px, 6vh, 58px);
+}
+
+/* ------------------------------------------------------------- the readout */
+
+.hero-status {
+    display: flex;
     align-items: center;
-    padding: 40px 44px;
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-border-primary);
-    background: var(--color-bg-card);
-    box-shadow: var(--shadow-lg);
-    margin-bottom: 16px;
-    position: relative;
-    overflow: hidden;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 0 0 20px;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
 }
 
-/* A single soft wash behind the portrait, so the card has a light source
-   instead of being a flat slab. */
-.cv-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(46% 90% at 12% 20%, var(--color-sheen), transparent 70%);
-    pointer-events: none;
+.hero-status b {
+    font-weight: 500;
+    color: var(--color-text-secondary);
 }
 
-.cv-hero > * {
-    position: relative;
+.hero-status .hero-sep {
+    opacity: 0.4;
 }
 
-.cv-hero-portrait {
-    width: 100%;
-    aspect-ratio: 1;
+/* The same green the terminal and the two pixel figures use. It is the only
+   colour in the first viewport, and it is on the one word that is an
+   invitation rather than a fact. */
+.hero-live {
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
+    background: #4f9d75;
+    box-shadow: 0 0 0 0 rgba(79, 157, 117, 0.5);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero-live {
+        animation: heroLive 2.6s ease-out infinite;
+    }
+}
+
+@keyframes heroLive {
+    0% {
+        box-shadow: 0 0 0 0 rgba(79, 157, 117, 0.5);
+    }
+
+    70%,
+    100% {
+        box-shadow: 0 0 0 7px rgba(79, 157, 117, 0);
+    }
+}
+
+/* ---------------------------------------------------------------- the name */
+
+.hero-name {
+    margin: 0 0 16px;
+    font-size: clamp(3rem, 8.6vw, 6.2rem);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+/* Two elements per line: the first clips, the second moves. That is the whole
+   trick behind type that rises into place instead of fading in — the letters
+   come up out of their own line rather than out of nowhere. */
+.hero-name span {
+    display: block;
     overflow: hidden;
+    /* Descenders would be clipped by an overflow-hidden box sized to the line,
+       so the box is opened downwards and pulled back up. */
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+}
+
+.hero-name b {
+    display: block;
+    font-weight: inherit;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero-name b {
+        animation: heroRise 900ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    }
+
+    .hero-name span:nth-child(2) b {
+        animation-delay: 90ms;
+    }
+}
+
+@keyframes heroRise {
+    from {
+        transform: translateY(102%);
+    }
+}
+
+/* ---------------------------------------------------------------- the words */
+
+.hero-role {
+    margin: 0 0 18px;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(1rem, 1.9vw, 1.22rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text-secondary);
+}
+
+.hero-claim {
+    max-width: 58ch;
+    margin: 0 0 20px;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+/* Where he is and what he does, under the claim rather than beside the name:
+   the same weight of information as the readout above, so it gets the same
+   voice. */
+.hero-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 0 0 26px;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.02em;
+    color: var(--color-text-tertiary);
+}
+
+.hero-meta .hero-sep {
+    opacity: 0.4;
+}
+
+/* ------------------------------------------------------------- the portrait */
+
+/* Round, and staying round: the crop is baked into the photograph and it is
+   the right one. The circle also clips the black corners the file carries,
+   which a rectangular frame would have put on show. */
+.hero-portrait {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
     border: 3px solid var(--color-border-secondary);
+    background: var(--color-bg-tertiary);
     box-shadow: var(--shadow-xl);
 }
 
-.cv-hero-portrait img {
+.hero-portrait img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -80,59 +214,47 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .cv-hero:hover .cv-hero-portrait img {
+    .hero:hover .hero-portrait img {
         filter: grayscale(0);
         transform: scale(1.04);
     }
 }
 
-.cv-name {
-    font-size: clamp(1.9rem, 4.4vw, 3rem);
-    line-height: 1.04;
-    letter-spacing: -0.035em;
-    color: var(--color-text-primary);
-    margin: 14px 0 8px;
+@media (prefers-reduced-motion: no-preference) {
+    .hero-portrait {
+        animation: heroFrame 1s cubic-bezier(0.16, 1, 0.3, 1) 160ms backwards;
+    }
 }
 
-.cv-role {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-size: clamp(1rem, 1.9vw, 1.2rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--color-text-secondary);
-    margin: 0 0 18px;
+@keyframes heroFrame {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
 }
 
-.cv-facts {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 22px;
-    margin: 0 0 24px;
-    padding: 0;
-}
+/* --------------------------------------------------------------- responsive */
 
-.cv-facts li {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-}
+@media (max-width: 860px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+        padding-top: 8px;
+    }
 
-.cv-facts svg {
-    width: 16px;
-    height: 16px;
-    flex: 0 0 auto;
-}
+    /* The name goes first. On a phone the portrait above it would push the one
+       thing worth reading below the fold. */
+    /* Smaller and to the side on a phone: at full width a circle is a
+       hundred-and-fifty pixels of nothing in each corner. */
+    .hero-portrait {
+        order: 2;
+        width: 180px;
+        justify-self: start;
+    }
 
-.cv-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #22c55e;
-    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+    .hero-claim {
+        font-size: 0.98rem;
+    }
 }
 
 .cv-actions {
@@ -1273,19 +1395,7 @@
    ========================================================================= */
 
 @media (max-width: 900px) {
-    .cv-hero {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        justify-items: center;
-        text-align: center;
-        padding: 34px 24px;
-    }
 
-    .cv-hero-portrait {
-        width: 190px;
-    }
-
-    .cv-facts,
     .cv-actions,
     .cv-socials {
         justify-content: center;
@@ -1299,10 +1409,6 @@
 @media (max-width: 768px) {
     .cv-page {
         padding: calc(var(--navbar-h, 140px) + 28px) 16px 72px;
-    }
-
-    .cv-hero {
-        padding: 28px 18px;
     }
 
     .cv-edu {
