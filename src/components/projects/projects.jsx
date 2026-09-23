@@ -297,7 +297,7 @@ const MyProjects = () => {
         </div>
       </Reveal>
 
-      {filtered.map(({ id, projects, wide, compact }) => (
+      {filtered.map(({ id, projects, wide, lead, compact }) => (
         <Reveal className="project-group" key={id}>
           <h2 className="brand-stack-title">{t(`repos.groups.${id}`)}</h2>
           {compact ? (
@@ -328,7 +328,7 @@ const MyProjects = () => {
               ))}
             </ul>
           ) : (
-            <div className={`project-grid${wide ? ' is-wide' : ''}`}>
+            <div className={`project-grid${wide ? ' is-wide' : ''}${lead ? ' is-lead' : ''}`}>
               {projects.map((project) => (
                 <ProjectCard project={project} onExpand={setLightbox} key={project.key} />
               ))}

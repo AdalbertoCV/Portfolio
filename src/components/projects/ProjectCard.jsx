@@ -49,7 +49,7 @@ const ExpandIcon = () => (
 
 const ProjectCard = ({ project, onExpand }) => {
   const { t } = useTranslation();
-  const { key, copy, name, url, to, language, tags, shots, isPrivate } = project;
+  const { key, copy, name, url, to, linkLabel, language, tags, shots, isPrivate } = project;
   // Which shot the cover is showing. Kept here (not in the lightbox) so the
   // card stays on whatever slide the reader left the expanded view on.
   const [index, setIndex] = useState(0);
@@ -125,7 +125,7 @@ const ProjectCard = ({ project, onExpand }) => {
             rel="noopener noreferrer"
             data-key={key}
           >
-            {t('repos.viewRepo')}
+            {t(linkLabel || 'repos.viewRepo')}
             <ArrowUpRight />
           </a>
         ) : (

@@ -19,10 +19,12 @@ const reposEs = {
     clearFilters: 'Limpiar los filtros',
     clearTech: 'Quitar el filtro de tecnología',
     viewRepo: 'Ver repositorio',
+    viewProduct: 'Ver el producto',
     playIt: 'Jugar aquí',
     viewShots: 'Ver capturas',
 
     groups: {
+      product: 'En producción, hoy',
       clients: 'Clientes e instituciones',
       creative: 'Creativo y experimental',
       systems: 'Sistemas y arquitectura',
@@ -32,6 +34,10 @@ const reposEs = {
     },
 
     items: {
+      radii: {
+        title: 'Radii',
+        body: 'La plataforma donde trabajo todos los días: subes un CAD y regresa cotizado, con material, post-procesamiento, certificaciones y fecha de entrega. Mi parte es el backend —servicios en Django y FastAPI, workers de Celery, agentes sobre LangGraph que leen la geometría, y el motor que arma el precio— corriendo en AWS sobre Kubernetes. El código es privado; lo que se abre aquí es el producto.',
+      },
       nocturno: {
         title: 'Nocturno 108',
         body: 'Pista de jazz-hop compuesta como código en Strudel, con reproductor propio: motor de audio sintetizado desde cero sobre Web Audio —sin samples ni librerías externas—, avatar sincronizado al pulso, piano-roll en tiempo real y mezcladora.',

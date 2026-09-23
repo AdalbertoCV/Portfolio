@@ -26,6 +26,9 @@ import nocturno3 from '../../images/Projects/nocturno3.png';
 import tcc1 from '../../images/Projects/tcc1.png';
 import tcc2 from '../../images/Projects/tcc2.png';
 import tcc3 from '../../images/Projects/tcc3.png';
+import radii1 from '../../images/Projects/radii1.jpeg';
+import radii2 from '../../images/Projects/radii2.jpeg';
+import radii3 from '../../images/Projects/radii3.jpeg';
 import pbienestar1 from '../../images/Projects/PuntoBienestar1.jpeg';
 import pbienestar2 from '../../images/Projects/PuntoBienestar2.jpeg';
 import pbienestar3 from '../../images/Projects/PuntoBienestar3.jpeg';
@@ -35,6 +38,24 @@ const OWNER = 'https://github.com/AdalbertoCV';
 // `copy` is the dictionary path for title + body. The five screenshot projects
 // keep their existing `projects.*` entries; the rest live under `repos.items.*`.
 const CATALOGUE = [
+  {
+    id: 'product',
+    lead: true,
+    projects: [
+      {
+        key: 'radii',
+        copy: 'repos.items.radii',
+        name: 'radii.com.mx',
+        url: 'https://www.radii.com.mx/es',
+        // Not "view repository": the code is private, and what the link opens
+        // is the product, not its source.
+        linkLabel: 'repos.viewProduct',
+        language: 'Python',
+        tags: ['Django', 'FastAPI', 'AWS', 'Kubernetes', 'LangGraph'],
+        shots: [radii1, radii2, radii3],
+      },
+    ],
+  },
   {
     id: 'clients',
     // Wider cards: these are the ones with real interface screenshots, and a

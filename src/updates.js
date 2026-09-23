@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-22',
+    es: 'Radii abre el catálogo de proyectos, con capturas de la plataforma',
+    en: 'Radii opens the project catalogue, with shots of the platform',
+  },
+  {
+    date: '2026-09-22',
     es: 'Las tres empresas dicen dónde están hoy, con fechas',
     en: 'All three ventures say where they stand, with dates',
   },
