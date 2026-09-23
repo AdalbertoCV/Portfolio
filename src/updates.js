@@ -17,6 +17,11 @@
 
 const UPDATES = [
   {
+    date: '2026-09-23',
+    es: 'El bot que le enseñé a trabajar como yo tiene su propia sección',
+    en: 'The bot I taught to work the way I do gets its own section',
+  },
+  {
     date: '2026-09-22',
     es: 'El fondo respira: tres lavados que se mueven muy despacio detrás de todo',
     en: 'The background breathes: three washes drifting slowly behind everything',

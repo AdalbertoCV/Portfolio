@@ -1924,4 +1924,408 @@
 @media (hover: hover) and (pointer: fine) {
 }
 
+/* ============================================================================
+   THE BOT I TAUGHT
+   ----------------------------------------------------------------------------
+   A stage across the top, then the two lists under it.
 
+   The first version stood the figure in a sticky column beside the lists. It
+   solved the wrong problem: a drawing that creeps down the page as you read
+   past it is not "always visible", it is always moving, and the eye goes to
+   the moving thing instead of the sentence. Here the figure is seen once, all
+   of it, at the width of the section, and then it is done — it stays where it
+   was put, the way a photograph at the top of an article does.
+
+   Same plate and same green as the ⌘K terminal and the contact page's
+   watcher: all three are the same machine wearing different hats.
+   ========================================================================= */
+
+.bot {
+    --hk-glow: #7dd3a0;
+
+    display: grid;
+    gap: 26px;
+}
+
+/* ---------------------------------------------------------------- the stage */
+
+.bot-stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 36px;
+    align-items: center;
+    padding: 30px 36px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(125, 211, 160, 0.22);
+    /* The light comes from the floor under the figure rather than from the
+       middle of the plate, so the figure looks stood on something. */
+    background:
+        radial-gradient(85% 130% at 13% 100%, rgba(125, 211, 160, 0.2), transparent 64%),
+        #0d0f12;
+}
+
+.bot-stage::after {
+    content: '';
+    position: absolute;
+    inset: -100% 0;
+    z-index: 2;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(125, 211, 160, 0.07) 0 1px,
+        transparent 1px 4px
+    );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .bot-stage::after {
+        animation: watcherScan 7s linear infinite;
+    }
+}
+
+.workbot {
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+.wb-art {
+    display: block;
+    width: 116px;
+    height: auto;
+}
+
+/* Light type, because the plate is dark in both themes. The claim is the only
+   sentence on the page that gets to sit on the terminal's own ground. */
+.bot-claim {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    font-size: 1.04rem;
+    line-height: 1.72;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+/* One line of terminal output under the claim, the same shape the contact
+   page uses. It names the three places the work actually lives. */
+.bot-line {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.bot-line span:first-child {
+    color: var(--hk-glow);
+}
+
+.bot-caret {
+    width: 6px;
+    height: 12px;
+    background: var(--hk-glow);
+    opacity: 0.75;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .bot-caret {
+        animation: watcherCaret 1.1s step-end infinite;
+    }
+}
+
+/* --------------------------------------------------------------- the figure */
+
+.wb-shell {
+    fill: #2f3843;
+}
+
+.wb-inset {
+    fill: #04060a;
+}
+
+.wb-rim {
+    fill: var(--hk-glow);
+    opacity: 0.5;
+}
+
+.wb-eye,
+.wb-ping,
+.wb-runner,
+.wb-lamp {
+    fill: var(--hk-glow);
+}
+
+.wb-eye {
+    filter: drop-shadow(0 0 1.2px var(--hk-glow));
+}
+
+.wb-track {
+    fill: var(--hk-glow);
+    opacity: 0.16;
+}
+
+.wb-shadow {
+    fill: #000;
+    opacity: 0.45;
+}
+
+.wb-eye .hk-shut {
+    display: none;
+}
+
+.workbot[data-blink] .hk-shut {
+    display: block;
+}
+
+.workbot[data-blink='one'] .hk-open {
+    animation: watcherBlinkOpen 170ms step-end;
+}
+
+.workbot[data-blink='one'] .hk-shut {
+    animation: watcherBlinkShut 170ms step-end;
+}
+
+.workbot[data-blink='two'] .hk-open {
+    animation: watcherBlinkOpenTwice 560ms step-end;
+}
+
+.workbot[data-blink='two'] .hk-shut {
+    animation: watcherBlinkShutTwice 560ms step-end;
+}
+
+/* --------------------------------------------------------------- the motion */
+
+/* Every period is a different length and none divides another, so the four
+   never come back into phase and the figure never looks like a metronome. */
+@media (prefers-reduced-motion: no-preference) {
+    .wb-body {
+        animation: wbBob 3.7s step-end infinite;
+    }
+
+    .wb-shadow {
+        animation: wbShadow 3.7s step-end infinite;
+    }
+
+    .wb-ping {
+        animation: wbPing 2.3s step-end infinite;
+    }
+
+    .wb-runner {
+        animation: wbRun 1.9s steps(6, end) infinite;
+    }
+
+    .wb-lamp {
+        animation: wbLamp 1.9s step-end infinite;
+    }
+}
+
+/* One pixel. At this size that is a breath; two would be a hop. */
+@keyframes wbBob {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    45% {
+        transform: translateY(-1px);
+    }
+}
+
+/* Dimmer while the body is up, so the lift has something to read against. */
+@keyframes wbShadow {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    45% {
+        opacity: 0.28;
+    }
+}
+
+@keyframes wbPing {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    6%,
+    13% {
+        opacity: 1;
+    }
+}
+
+/* Six steps across six pixels of track, so the block lands on a pixel every
+   time rather than smearing across two. */
+@keyframes wbRun {
+    to {
+        transform: translateX(6px);
+    }
+}
+
+@keyframes wbLamp {
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    20%,
+    70% {
+        opacity: 1;
+    }
+}
+
+/* ---------------------------------------------------------------- the words */
+
+/* Two columns, side by side: what it was taught and how a day runs are the
+   same size of idea, and stacking them would make the first look like the
+   subject and the second like a footnote. */
+.bot-cols {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.bot-group h3 {
+    margin: 0 0 14px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+}
+
+/* A ruled list, the shape the practice section above uses for claims about
+   how the work is done — which is what these are. */
+.bot-taught {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bot-taught li {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 12px;
+    align-items: baseline;
+    padding: 11px 0;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.bot-taught li:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.bot-taught li::before {
+    content: '→';
+    color: #4f9d75;
+    font-size: 0.9rem;
+}
+
+/* Numbered, because the order is the whole point: an agent that asks for
+   review before it ships is a different thing from one that does not. */
+.bot-day {
+    display: grid;
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: botstep;
+}
+
+.bot-day li {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    padding: 11px 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-primary);
+    background: var(--color-bg-card);
+    font-size: 0.91rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    counter-increment: botstep;
+}
+
+.bot-day li::before {
+    content: counter(botstep);
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(125, 211, 160, 0.14);
+    color: #4f9d75;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+/* The last two steps are the human ones, and the colour says so before the
+   sentence gets there. */
+.bot-day li:nth-last-child(-n + 2) {
+    border-color: var(--color-border-secondary);
+}
+
+.bot-day li:nth-last-child(-n + 2)::before {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+}
+
+.bot-close {
+    margin: 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--color-border-primary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-tertiary);
+}
+
+.bot-close b {
+    color: var(--color-text-secondary);
+    font-weight: 650;
+}
+
+@media (max-width: 860px) {
+    .bot-cols {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+    }
+}
+
+@media (max-width: 640px) {
+    /* The figure goes above the claim rather than beside it: at this width a
+       116px column next to a paragraph leaves the paragraph four words wide. */
+    .bot-stage {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 20px;
+        padding: 26px 20px;
+        text-align: center;
+        background:
+            radial-gradient(90% 60% at 50% 22%, rgba(125, 211, 160, 0.2), transparent 66%),
+            #0d0f12;
+    }
+
+    .wb-art {
+        width: 96px;
+    }
+
+    .bot-line {
+        justify-content: center;
+    }
+}

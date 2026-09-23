@@ -27,6 +27,7 @@ import { PROJECT_TECH } from '../projects/catalogue';
 import READING from './reading';
 import REFERENCES from './references';
 import RefHacker from './RefHacker';
+import WorkBot from './WorkBot';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
@@ -405,6 +406,57 @@ const About = () => {
               <ArrowRight />
             </span>
           </Link>
+        </Reveal>
+      </Section>
+
+      {/* --------------------------------------------------------------- bot */}
+      {/* Straight after the practice section, because "AI first" is stated up
+          there as a principle and this is the only place on the site where
+          there is something behind it. A principle with a working example
+          underneath it is an argument; on its own it is a word everybody has
+          on their profile. */}
+      <Section kicker={t('cv.bot.kicker')} title={t('cv.bot.title')}>
+        <Reveal className="bot">
+          {/* The figure is seen once, whole, across the width of the section,
+              and then it stays where it was put. It used to ride down the page
+              in a sticky column beside the lists, which is not "always
+              visible" — it is always moving, and the eye goes to the moving
+              thing instead of the sentence. */}
+          <div className="bot-stage">
+            <WorkBot />
+            <div>
+              <p className="bot-claim">{t('cv.bot.lede')}</p>
+              <p className="bot-line">
+                <span>&gt;</span>
+                {t('cv.bot.line')}
+                <span className="bot-caret" />
+              </p>
+            </div>
+          </div>
+
+          <div className="bot-cols">
+            <div className="bot-group">
+              <h3>{t('cv.bot.taughtLabel')}</h3>
+              <ul className="bot-taught">
+                {tl('cv.bot.taught').map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bot-group">
+              <h3>{t('cv.bot.dayLabel')}</h3>
+              <ol className="bot-day">
+                {tl('cv.bot.day').map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
+          <p className="bot-close">
+            <b>{t('cv.bot.closeLead')}</b> {t('cv.bot.close')}
+          </p>
         </Reveal>
       </Section>
 

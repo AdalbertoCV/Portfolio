@@ -68,6 +68,35 @@ const cvEn = {
       body: 'Everything above is a claim about judgement. This is the judgement: what was on the table, what I took, why, and what it ended up costing.',
       cta: 'Read the log',
     },
+    // See the note in the Spanish file. Same text, same single number.
+    bot: {
+      kicker: 'Agentic AI',
+      title: 'I taught a bot to work the way I do',
+      lede:
+        'Over months, using what I know about agentic workflows, I built an agent on my own decisions and my own methodology. It now gets through 10× what I used to get through alone at Radii. It was not magic and it was not a clever prompt: it was sitting down and teaching it.',
+      line: 'linear · repos · human review before anything ships',
+      taughtLabel: 'What I taught it',
+      taught: [
+        'My context: the business, the repositories, how it all connects.',
+        'My methodology, written out step by step.',
+        'The tricks and the instructions I learned the hard way.',
+        'To spend context carefully, so it does not get lost in what does not matter.',
+        'The decisions I would make as an engineer, documented.',
+        'Exactly which things to double check.',
+      ],
+      dayLabel: 'How a day runs',
+      day: [
+        'I tag it in Linear, only on work where I know it is reliable.',
+        'It goes through its queue on its own.',
+        'It executes.',
+        'It asks me for human review.',
+        'I test it quickly and ship.',
+      ],
+      closeLead: 'The final judgement is still mine.',
+      close:
+        'What changed is not how much I work but where the time goes: no longer on executing the repeatable, but on deciding, reviewing and solving what actually needs an engineer. AI on its own makes nobody more productive; what works is sitting down and teaching it how you work.',
+    },
+
     practiceKicker: 'Engineering practice',
     practiceTitle: 'How I work',
     practiceLede: 'A stack can be learned; the judgement behind these decisions is what determines whether a system holds in production.',

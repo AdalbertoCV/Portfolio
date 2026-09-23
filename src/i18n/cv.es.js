@@ -75,6 +75,38 @@ const cvEs = {
       body: 'Todo lo de arriba es una afirmación sobre criterio. Esto es el criterio: qué estaba sobre la mesa, qué elegí, por qué, y qué terminó costando.',
       cta: 'Leer la bitácora',
     },
+    // El bot. Viene de un texto que Adal escribió para LinkedIn; aquí va sin
+    // hashtags, sin llamada a comentar y sin la pregunta al final, porque esta
+    // página no es un feed. El 10x es suyo y se queda: es el argumento, no un
+    // adorno, y es el único número de la sección.
+    bot: {
+      kicker: 'IA agéntica',
+      title: 'Le enseñé a un bot a trabajar como yo',
+      lede:
+        'Durante meses, con lo que sé de flujos agénticos, construí un agente sobre mis propias decisiones y mi metodología de trabajo. Hoy hace 10× lo que yo solo sacaba en Radii. No fue magia ni un prompt ingenioso: fue sentarme a enseñarle.',
+      line: 'linear · repos · revisión humana antes de shippear',
+      taughtLabel: 'Lo que le enseñé',
+      taught: [
+        'Mi contexto: el negocio, los repos, cómo se conecta todo.',
+        'Mi metodología, escrita paso a paso.',
+        'Los trucos y las instrucciones que aprendí a la mala.',
+        'A ahorrar contexto, para que no se pierda en lo que no importa.',
+        'Las decisiones que yo tomaría como ingeniero, documentadas.',
+        'Exactamente a qué cosas darles doble check.',
+      ],
+      dayLabel: 'Cómo corre un día',
+      day: [
+        'Lo taggeo en Linear, solo en tareas donde sé que su desempeño es confiable.',
+        'Revisa sus pendientes por su cuenta.',
+        'Los ejecuta.',
+        'Me pide revisión humana.',
+        'Pruebo rápido y shippeo.',
+      ],
+      closeLead: 'El criterio final sigue siendo mío.',
+      close:
+        'Lo que cambió no es cuánto trabajo, sino dónde pongo el tiempo: ya no en ejecutar lo repetible, sino en decidir, revisar y resolver lo que de verdad necesita a un ingeniero. La IA sola no vuelve a nadie más productivo; lo que funciona es sentarse a enseñarle cómo trabajas tú.',
+    },
+
     practiceKicker: 'Práctica de ingeniería',
     practiceTitle: 'Cómo trabajo',
     practiceLede: 'Un stack se aprende; el criterio con el que se toman estas decisiones es lo que determina si un sistema resiste en producción.',
