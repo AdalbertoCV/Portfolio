@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-22',
+    es: 'Alguien vigila el formulario de contacto y sigue tu cursor',
+    en: 'Somebody watches the contact form, and follows your caret',
+  },
+  {
+    date: '2026-09-22',
     es: 'Radii abre el catálogo de proyectos, con capturas de la plataforma',
     en: 'Radii opens the project catalogue, with shots of the platform',
   },

@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Reveal, Section } from '../brand/parts';
 import { CONTACT_EMAIL } from '../../site';
+import Hacker from './Hacker';
 import './contact.css';
 
 /* ==========================================================================
@@ -50,6 +51,10 @@ const ContactPage = () => {
   const { t } = useTranslation();
   // 'idle' | 'sending' | 'sent' | 'error'
   const [status, setStatus] = useState('idle');
+  // He only follows a caret inside this form. Without the scope he would
+  // also track the terminal's input when it is open over the page, which is a
+  // small thing that would look like a bug.
+  const formRef = useRef(null);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -110,11 +115,16 @@ const ContactPage = () => {
 
       <Section>
         <Reveal className="contact-card">
+          {/* Decoration, and it earns its place: it is the only thing on the
+              page that reacts to the reader before they have sent anything. */}
+          <Hacker formRef={formRef} status={status} />
+
           {/* A "did not send" sitting next to a form the visitor has already
               started rewriting is stale advice, so the outcome clears on the
               first keystroke after it. */}
           <form
             className="contact-form"
+            ref={formRef}
             onSubmit={onSubmit}
             onInput={() => setStatus((s) => (s === 'sent' || s === 'error' ? 'idle' : s))}
           >

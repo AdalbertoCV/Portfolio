@@ -487,6 +487,16 @@ const es = {
       },
     },
     reasonsNote: 'Y si no eres ninguna de esas, escríbeme igual. La lista es para ahorrarte tiempo, no para filtrarte.',
+    // Lo que dice el de la capucha, abajo del dibujo. Una linea de terminal:
+    // por eso va en minusculas y sin punto final.
+    watcher: {
+      idle: 'esperando entrada',
+      reading: 'leyendo:',
+      sending: 'transmitiendo',
+      sent: 'mensaje recibido',
+      failed: 'no salio, intenta de nuevo',
+    },
+
     fields: {
       name: 'Nombre',
       email: 'Correo',

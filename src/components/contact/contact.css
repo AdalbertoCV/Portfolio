@@ -260,3 +260,273 @@
         transform: translateX(4px);
     }
 }
+
+/* ============================================================================
+   THE ONE WATCHING
+   ----------------------------------------------------------------------------
+   A hooded figure in pixels over the form, on the terminal's plate and in the
+   terminal's green. Those two colours are fixed rather than themed: a terminal
+   is dark in a light room too, and a palette that flipped with the page would
+   make the one piece of screen furniture on this site the one thing that does
+   not look like screen furniture.
+   ========================================================================= */
+
+.watcher {
+    --hk-plate: #0d0f12;
+    --hk-hood: #262d36;
+    --hk-void: #04060a;
+    --hk-glow: #7dd3a0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 32px;
+}
+
+.watcher-plate {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 208px;
+    padding: 16px 0 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(125, 211, 160, 0.22);
+    background:
+        radial-gradient(120% 90% at 50% 100%, rgba(125, 211, 160, 0.16), transparent 70%),
+        var(--hk-plate);
+}
+
+.watcher-art {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 152px;
+    height: auto;
+}
+
+/* Scanlines, drifting slowly downwards: a CRT never holds perfectly still.
+   Inset past the top and bottom so the drift never exposes an edge. */
+.watcher-plate::after {
+    content: '';
+    position: absolute;
+    inset: -100% 0;
+    z-index: 2;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(125, 211, 160, 0.07) 0 1px,
+        transparent 1px 4px
+    );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .watcher-plate::after {
+        animation: watcherScan 7s linear infinite;
+    }
+}
+
+@keyframes watcherScan {
+    to {
+        transform: translateY(4px);
+    }
+}
+
+/* ------------------------------------------------------------- the figure */
+
+.hk-hood {
+    fill: var(--hk-hood);
+}
+
+.hk-void {
+    fill: var(--hk-void);
+}
+
+/* A light down the left silhouette, at a fraction of the eyes' strength: it
+   has to separate him from the plate without competing with the one thing on
+   this drawing that is meant to be looked at. */
+.hk-rim {
+    fill: var(--hk-glow);
+    opacity: 0.55;
+}
+
+/* The eye is moved by an inline transform on every caret move, in whole pixels
+   of the drawing's own grid. No transition: the snap is the point. */
+.hk-eye {
+    fill: var(--hk-glow);
+    /* Two shadows: a tight one that makes the pixel look lit from inside, and
+       a wide faint one that throws a little of it onto the hood. */
+    filter: drop-shadow(0 0 1.2px var(--hk-glow)) drop-shadow(0 0 4px rgba(125, 211, 160, 0.5));
+}
+
+.hk-shut,
+.hk-glad {
+    display: none;
+}
+
+/* Shut and open again in one keyframe rather than a class held for a tenth of
+   a second by a timer: see the note in Hacker.jsx. step-end throughout, so an
+   eye never fades — it is on or it is off, like every other pixel here. */
+@keyframes watcherBlinkOpen {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    38%,
+    52% {
+        opacity: 0;
+    }
+}
+
+@keyframes watcherBlinkShut {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    38%,
+    52% {
+        opacity: 1;
+    }
+}
+
+@keyframes watcherBlinkOpenTwice {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    12%,
+    19% {
+        opacity: 0;
+    }
+
+    32% {
+        opacity: 1;
+    }
+
+    47%,
+    54% {
+        opacity: 0;
+    }
+}
+
+@keyframes watcherBlinkShutTwice {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    12%,
+    19% {
+        opacity: 1;
+    }
+
+    32% {
+        opacity: 0;
+    }
+
+    47%,
+    54% {
+        opacity: 1;
+    }
+}
+
+.watcher[data-blink] .hk-shut {
+    display: block;
+}
+
+.watcher[data-blink='one'] .hk-open {
+    animation: watcherBlinkOpen 170ms step-end;
+}
+
+.watcher[data-blink='one'] .hk-shut {
+    animation: watcherBlinkShut 170ms step-end;
+}
+
+.watcher[data-blink='two'] .hk-open {
+    animation: watcherBlinkOpenTwice 560ms step-end;
+}
+
+.watcher[data-blink='two'] .hk-shut {
+    animation: watcherBlinkShutTwice 560ms step-end;
+}
+
+/* The message went. The eyes close into two chevrons and stay that way, which
+   is the only acknowledgement on this page that is not a sentence. */
+.watcher[data-happy='true'] .hk-open {
+    display: none;
+}
+
+.watcher[data-happy='true'] .hk-glad {
+    display: block;
+}
+
+/* ---------------------------------------------------------------- readout */
+
+.watcher-line {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.01em;
+    color: var(--color-text-tertiary);
+}
+
+/* Darker than the eyes: the same green at full strength on a light card is a
+   highlighter, and this line is a caption, not the subject. */
+.watcher-prompt {
+    color: #4f9d75;
+}
+
+/* A block cursor, the shape the ⌘K terminal uses. */
+.watcher-caret {
+    width: 6px;
+    height: 12px;
+    background: #4f9d75;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .watcher-caret {
+        animation: watcherCaret 1.1s step-end infinite;
+    }
+}
+
+@keyframes watcherCaret {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .watcher {
+        margin-bottom: 24px;
+    }
+
+    .watcher-plate {
+        width: 176px;
+    }
+
+    .watcher-art {
+        width: 128px;
+    }
+
+    .watcher-line {
+        font-size: 0.7rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .watcher[data-blink] .hk-open,
+    .watcher[data-blink] .hk-shut {
+        animation: none;
+    }
+
+    .watcher[data-blink] .hk-shut {
+        display: none;
+    }
+}

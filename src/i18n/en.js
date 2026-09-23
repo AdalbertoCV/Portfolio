@@ -487,6 +487,16 @@ const en = {
       },
     },
     reasonsNote: 'And if you are none of those, write anyway. The list is here to save you time, not to screen you out.',
+    // What the hooded one says under the drawing. A terminal line, which is
+    // why it is lowercase and has no full stop.
+    watcher: {
+      idle: 'waiting for input',
+      reading: 'reading:',
+      sending: 'transmitting',
+      sent: 'message received',
+      failed: 'did not send, try again',
+    },
+
     fields: {
       name: 'Name',
       email: 'Email',
