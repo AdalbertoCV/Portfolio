@@ -49,9 +49,16 @@
 
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(230px, 24vw, 310px);
+    /* A third of the width, not a quarter. At 310px the photograph read as an
+       avatar parked in the corner and left 273px of nothing above it; at this
+       size it is the second thing in the composition rather than a footnote
+       to the first. */
+    grid-template-columns: minmax(0, 1fr) clamp(250px, 33vw, 420px);
     gap: clamp(32px, 5vw, 64px);
-    align-items: end;
+    /* Centred, so whatever height the copy has over the circle is split above
+       and below it. Bottom-aligned, all of it piled up as one hole in the top
+       right corner. */
+    align-items: center;
     padding: clamp(18px, 4vh, 44px) 0 clamp(30px, 6vh, 58px);
 }
 
@@ -245,10 +252,13 @@
     /* The name goes first. On a phone the portrait above it would push the one
        thing worth reading below the fold. */
     /* Smaller and to the side on a phone: at full width a circle is a
-       hundred-and-fifty pixels of nothing in each corner. */
+       hundred-and-fifty pixels of nothing in each corner. Not tiny either —
+       it is half the column, which is the same weight it has on a desktop. */
     .hero-portrait {
         order: 2;
-        width: 180px;
+        width: 56%;
+        min-width: 180px;
+        max-width: 260px;
         justify-self: start;
     }
 
