@@ -12,18 +12,26 @@
    everybody uses. `site`
    is optional — not everyone has one, and an absent link is better than a
    dead one.
+
+   `figure` and `glow` draw the little hooded avatar on the card. The colour
+   belongs to the person and is used nowhere else on the page, so a reader who
+   has scrolled past once can find them again by it.
    ======================================================================== */
 
 const REFERENCES = [
   {
     // First: the closest of these to the work the rest of the site is about.
     id: 'cesar',
+    figure: 'm',
+    glow: '#7dd3a0',
     name: 'César Aranda',
     roles: [{ id: 'cesar', org: 'Radii Manufacturing' }],
     linkedin: 'https://www.linkedin.com/in/cesararandaa/',
   },
   {
     id: 'viky',
+    figure: 'f',
+    glow: '#b191f2',
     name: 'Viky Gómez',
     roles: [{ id: 'viky', org: 'Radii Manufacturing' }],
     site: 'https://v0-portfolio-nu-five-98.vercel.app/',
@@ -31,6 +39,8 @@ const REFERENCES = [
   },
   {
     id: 'elliot',
+    figure: 'm',
+    glow: '#e8b464',
     name: 'Elliot Noriega',
     roles: [{ id: 'elliot', org: 'Rancho El Tirón' }],
     site: 'https://portafolio-web-psi-five.vercel.app/',
@@ -40,12 +50,16 @@ const REFERENCES = [
     // No site of her own to point at, which the card handles: the portfolio
     // link is optional, not an empty one.
     id: 'esmeralda',
+    figure: 'f',
+    glow: '#6ec8e8',
     name: 'Esmeralda Pacheco',
     roles: [{ id: 'esmeralda', org: 'Evodeps' }],
     linkedin: 'https://www.linkedin.com/in/esmeralda-pacheco-glez/',
   },
   {
     id: 'rafael',
+    figure: 'm',
+    glow: '#ec8fa8',
     name: 'Rafael Rangel',
     // Two of them, newest first.
     roles: [
@@ -56,13 +70,5 @@ const REFERENCES = [
     linkedin: 'https://www.linkedin.com/in/doublerre/',
   },
 ];
-
-/** Two letters from a name, for the plate where a photo would go. */
-export const initials = (name) =>
-  name
-    .split(' ')
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join('');
 
 export default REFERENCES;

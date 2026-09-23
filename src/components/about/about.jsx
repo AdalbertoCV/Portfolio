@@ -25,7 +25,8 @@ import {
 import TECH_GROUPS, { monogram } from './techStack';
 import { PROJECT_TECH } from '../projects/catalogue';
 import READING from './reading';
-import REFERENCES, { initials } from './references';
+import REFERENCES from './references';
+import RefHacker from './RefHacker';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
@@ -623,11 +624,9 @@ const About = () => {
         lede={t('cv.referencesLede')}
       >
         <Reveal className="refs" stagger>
-          {REFERENCES.map(({ id, name, roles, site, linkedin }) => (
+          {REFERENCES.map(({ id, name, figure, glow, roles, site, linkedin }) => (
             <article className="ref-card" key={id}>
-              <span className="ref-mark" aria-hidden="true">
-                {initials(name)}
-              </span>
+              <RefHacker name={name} figure={figure} glow={glow} />
               <h3 className="ref-name">{name}</h3>
               <div className="ref-roles">
                 {roles.map(({ id: roleId, org }) => (

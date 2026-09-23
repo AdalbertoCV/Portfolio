@@ -817,9 +817,9 @@
 /* ============================================================================
    REFERENCES
    ----------------------------------------------------------------------------
-   Three cards, and deliberately no quote in any of them. The plate carries
-   initials rather than a photograph: borrowed headshots would be the one thing
-   on this page taken without asking.
+   Three cards, and deliberately no quote in any of them. The plate carries a
+   drawn figure rather than a photograph: borrowed headshots would be the one
+   thing on this page taken without asking.
    ========================================================================= */
 
 /* Three across rather than four. With five people a four-column grid leaves
@@ -843,20 +843,145 @@
     transition: border-color var(--transition-base), transform var(--transition-base);
 }
 
+/* The plate the figure stands on. Dark in both themes and rounded rather
+   than circular, because it is a little screen — the same one the form's
+   watcher stands on, at a fifth of the size. Each card sets --hk-glow
+   inline; every colour below is derived from it. */
 .ref-mark {
-    display: grid;
-    place-items: center;
-    width: 46px;
-    height: 46px;
+    --hk-hood: #262d36;
+    --hk-void: #04060a;
+
+    position: relative;
+    display: block;
+    width: 62px;
+    height: 56px;
     margin-bottom: 16px;
-    border-radius: 999px;
-    background: var(--color-bg-tertiary);
-    border: 1px solid var(--color-border-primary);
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: var(--color-text-secondary);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        radial-gradient(120% 90% at 50% 100%, color-mix(in srgb, var(--hk-glow) 18%, transparent), transparent 70%),
+        #0d0f12;
+}
+
+/* Bottom-aligned, so the shoulders sit on the plate's edge and the head has
+   the air above it rather than below. */
+.ref-mark-art {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Scanlines, as on the big one. No drift here: five of them creeping at once
+   would be the busiest thing on a page about people. */
+.ref-mark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--hk-glow) 8%, transparent) 0 1px,
+        transparent 1px 4px
+    );
+}
+
+.ref-mark .hk-hood {
+    fill: var(--hk-hood);
+}
+
+.ref-mark .hk-void {
+    fill: var(--hk-void);
+}
+
+/* Hair, on the figures that have it. Lighter than the hood so it reads as
+   falling in front of the fabric rather than as part of it. */
+.ref-mark .hk-hair {
+    fill: #4a5666;
+}
+
+.ref-mark .hk-rim {
+    fill: var(--hk-glow);
+    opacity: 0.55;
+}
+
+.ref-mark .hk-eye {
+    fill: var(--hk-glow);
+    filter: drop-shadow(0 0 1.2px var(--hk-glow));
+}
+
+.ref-mark .hk-shut {
+    display: none;
+}
+
+.ref-mark[data-blink] .hk-shut {
+    display: block;
+}
+
+.ref-mark[data-blink='one'] .hk-open {
+    animation: watcherBlinkOpen 170ms step-end;
+}
+
+.ref-mark[data-blink='one'] .hk-shut {
+    animation: watcherBlinkShut 170ms step-end;
+}
+
+.ref-mark[data-blink='two'] .hk-open {
+    animation: watcherBlinkOpenTwice 560ms step-end;
+}
+
+.ref-mark[data-blink='two'] .hk-shut {
+    animation: watcherBlinkShutTwice 560ms step-end;
+}
+
+.ref-mark .hk-heart {
+    fill: var(--hk-glow);
+    opacity: 0.5;
+}
+
+/* Two beats and a rest, rather than one even throb: a heart that pulses on a
+   metronome is a warning light. */
+@media (prefers-reduced-motion: no-preference) {
+    .ref-mark .hk-heart {
+        animation: refHeart 2.4s ease-in-out infinite;
+    }
+}
+
+@keyframes refHeart {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    17% {
+        opacity: 0.6;
+    }
+
+    26% {
+        opacity: 1;
+    }
+
+    38% {
+        opacity: 0.45;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ref-mark[data-blink] .hk-open,
+    .ref-mark[data-blink] .hk-shut {
+        animation: none;
+    }
+
+    .ref-mark[data-blink] .hk-shut {
+        display: none;
+    }
 }
 
 .ref-name {

@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from '../../i18n/I18nProvider';
+import {
+  EYES, EYE_Y, H, HOOD, Px, REACH, RIM, SHOULDERS, SHOULDER_RIM, VOID, W,
+} from '../brand/hackerArt';
 
 /* ==========================================================================
    The one watching the form.
@@ -31,86 +34,13 @@ import { useTranslation } from '../../i18n/I18nProvider';
    a line of text that changes when you focus a field is not motion.
    ======================================================================== */
 
-// The drawing's grid. Every coordinate below is one pixel of it.
-const W = 48;
-const H = 34;
+// The drawing itself lives in brand/hackerArt: the reference cards use the
+// same figure, and two copies of it would drift apart.
 
-// Where each eye's top-left pixel sits, and how far it may travel. Two in each
-// direction: the face opening runs x 16–32 and y 10–20, and a 4x3 eye at 18,13
-// has exactly that much room before it touches the hood.
-const EYES = [18, 26];
-const EYE_Y = 13;
-const REACH = 2;
-
-// A target this far away or further gets the full deflection; anything closer
-// gets proportionally less, so he does not slam to the stops the instant a
-// field is focused.
+// A target this far away or further gets the full deflection; anything
+// closer gets proportionally less, so he does not slam to the stops the
+// instant a field is focused.
 const FULL_LOOK = 150;
-
-/* ------------------------------------------------------------ the drawing */
-
-// x, y, w, h. Listed as rows the way the shape was drawn, rather than folded
-// into paths, so a pixel can be moved by changing one number.
-const HOOD = [
-  [21, 2, 6, 1],
-  [19, 3, 10, 1],
-  [17, 4, 14, 1],
-  [16, 5, 16, 1],
-  [15, 6, 18, 1],
-  [14, 7, 20, 1],
-  [13, 8, 22, 1],
-  [12, 9, 24, 13],
-  [11, 22, 26, 1],
-  [10, 23, 28, 1],
-];
-
-// The opening, cut out of the hood. Darker than the fabric, which is what
-// makes the fabric read as fabric.
-const VOID = [
-  [20, 7, 8, 1],
-  [18, 8, 12, 1],
-  [17, 9, 14, 1],
-  [16, 10, 16, 11],
-  [17, 21, 14, 1],
-  [19, 22, 10, 1],
-];
-
-// A light down the left silhouette. One column of green at low opacity, and
-// the whole figure stops being a black blob.
-const RIM = [
-  [21, 2, 3, 1],
-  [19, 3, 2, 1],
-  [17, 4, 2, 1],
-  [16, 5, 1, 1],
-  [15, 6, 1, 1],
-  [14, 7, 1, 1],
-  [13, 8, 1, 1],
-  [12, 9, 1, 13],
-  [11, 22, 1, 1],
-  [10, 23, 1, 1],
-];
-
-const SHOULDERS = [
-  [8, 24, 32, 1],
-  [6, 25, 36, 1],
-  [4, 26, 40, 1],
-  [3, 27, 42, 1],
-  [2, 28, 44, 6],
-];
-
-// The same light, carried along the top of the near shoulder, so the figure
-// has one continuous edge instead of a lit head on an unlit body.
-const SHOULDER_RIM = [
-  [8, 24, 2, 1],
-  [6, 25, 2, 1],
-  [4, 26, 2, 1],
-  [3, 27, 1, 1],
-  [2, 28, 1, 6],
-];
-
-const Px = ({ r: [x, y, w, h], className }) => (
-  <rect className={className} x={x} y={y} width={w} height={h} />
-);
 
 /* -------------------------------------------------------------- the caret */
 

@@ -1,0 +1,81 @@
+/* ============================================================================
+   THE FIGURE'S BLINK
+   ----------------------------------------------------------------------------
+   Two users of the drawing — the watcher over the contact form and the small
+   avatars on the reference cards — and they blink the same way, so the
+   keyframes live with the drawing rather than in either stylesheet. The
+   contact page is its own bundle; a copy of these in about.css would be a
+   copy that eventually disagrees.
+
+   Shutting is an animation rather than a class held for a tenth of a second by
+   a timer: a browser throttles timers in a background tab but pauses
+   animations outright, so the timer version came back from a backgrounded tab
+   with the eyes still shut. step-end throughout, so an eye never fades — it is
+   on or it is off, like every other pixel in the drawing.
+   ========================================================================= */
+
+@keyframes watcherBlinkOpen {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    38%,
+    52% {
+        opacity: 0;
+    }
+}
+
+@keyframes watcherBlinkShut {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    38%,
+    52% {
+        opacity: 1;
+    }
+}
+
+@keyframes watcherBlinkOpenTwice {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    12%,
+    19% {
+        opacity: 0;
+    }
+
+    32% {
+        opacity: 1;
+    }
+
+    47%,
+    54% {
+        opacity: 0;
+    }
+}
+
+@keyframes watcherBlinkShutTwice {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    12%,
+    19% {
+        opacity: 1;
+    }
+
+    32% {
+        opacity: 0;
+    }
+
+    47%,
+    54% {
+        opacity: 1;
+    }
+}

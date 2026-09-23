@@ -365,75 +365,8 @@
     display: none;
 }
 
-/* Shut and open again in one keyframe rather than a class held for a tenth of
-   a second by a timer: see the note in Hacker.jsx. step-end throughout, so an
-   eye never fades — it is on or it is off, like every other pixel here. */
-@keyframes watcherBlinkOpen {
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    38%,
-    52% {
-        opacity: 0;
-    }
-}
-
-@keyframes watcherBlinkShut {
-    0%,
-    100% {
-        opacity: 0;
-    }
-
-    38%,
-    52% {
-        opacity: 1;
-    }
-}
-
-@keyframes watcherBlinkOpenTwice {
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    12%,
-    19% {
-        opacity: 0;
-    }
-
-    32% {
-        opacity: 1;
-    }
-
-    47%,
-    54% {
-        opacity: 0;
-    }
-}
-
-@keyframes watcherBlinkShutTwice {
-    0%,
-    100% {
-        opacity: 0;
-    }
-
-    12%,
-    19% {
-        opacity: 1;
-    }
-
-    32% {
-        opacity: 0;
-    }
-
-    47%,
-    54% {
-        opacity: 1;
-    }
-}
-
+/* The blink keyframes are in brand/hacker.css, next to the drawing: the
+   reference cards blink the same way and live in another bundle. */
 .watcher[data-blink] .hk-shut {
     display: block;
 }
