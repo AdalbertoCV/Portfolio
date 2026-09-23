@@ -243,27 +243,94 @@
 /* --------------------------------------------------------------- responsive */
 
 @media (max-width: 860px) {
+    /* A different composition, not the desktop one stacked.
+
+       The portrait and the name share the top row, and everything under them
+       is centred. Getting there means the portrait has to be a sibling of the
+       name rather than of the whole block of copy, which is what
+       `display: contents` on .hero-copy does: the wrapper stops generating a
+       box and its children become items of this grid directly, so each one can
+       be placed. Every row is stated rather than left to auto-placement,
+       because the two items sharing row 1 arrive in the wrong source order. */
     .hero {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 26px;
-        padding-top: 8px;
+        grid-template-columns: auto minmax(0, 1fr);
+        column-gap: 18px;
+        row-gap: 0;
+        align-items: center;
+        text-align: center;
+        padding: 6px 0 34px;
     }
 
-    /* The name goes first. On a phone the portrait above it would push the one
-       thing worth reading below the fold. */
-    /* Smaller and to the side on a phone: at full width a circle is a
-       hundred-and-fifty pixels of nothing in each corner. Not tiny either —
-       it is half the column, which is the same weight it has on a desktop. */
+    .hero-copy {
+        display: contents;
+    }
+
     .hero-portrait {
-        order: 2;
-        width: 56%;
-        min-width: 180px;
-        max-width: 260px;
-        justify-self: start;
+        grid-column: 1;
+        grid-row: 1;
+        width: clamp(112px, 33vw, 142px);
+        border-width: 2px;
+    }
+
+    /* Left against the photograph rather than centred with the rest: a name
+       beside a face wants to start where the face ends. */
+    .hero-name {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: left;
+        font-size: clamp(2rem, 10.2vw, 2.8rem);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+        margin: 0;
+    }
+
+    .hero-status {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: center;
+        margin: 26px 0 0;
+        font-size: 0.68rem;
+    }
+
+    .hero-role {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        margin: 14px 0 0;
+        font-size: 1.02rem;
     }
 
     .hero-claim {
-        font-size: 0.98rem;
+        grid-column: 1 / -1;
+        grid-row: 4;
+        margin: 14px auto 0;
+        max-width: 46ch;
+        font-size: 0.96rem;
+        line-height: 1.66;
+    }
+
+    /* One long string with no good break, so it shrinks rather than wrapping
+       into a one-word orphan. */
+    .hero-meta {
+        grid-column: 1 / -1;
+        grid-row: 5;
+        justify-content: center;
+        gap: 7px;
+        margin: 16px 0 0;
+        font-size: 0.68rem;
+    }
+
+    .hero .cv-actions {
+        grid-column: 1 / -1;
+        grid-row: 6;
+        justify-content: center;
+        margin: 22px 0 0;
+    }
+
+    .hero .cv-socials {
+        grid-column: 1 / -1;
+        grid-row: 7;
+        justify-content: center;
+        margin: 20px 0 0;
     }
 }
 
@@ -1405,11 +1472,10 @@
    ========================================================================= */
 
 @media (max-width: 900px) {
-
-    .cv-actions,
-    .cv-socials {
-        justify-content: center;
-    }
+    /* The centring these two used to get belonged to the hero card, which
+       centred everything on a phone. Nothing on the page does that any more,
+       so a centred button row under left-aligned type was the only thing out
+       of alignment on the whole screen. */
 
     .cv-split {
         grid-template-columns: 1fr;
