@@ -8,10 +8,8 @@
 // assert a tool that was never listed.
 //
 // Every entry without a vendor logo carries a `concept` drawn by
-// ConceptIcons.jsx. Three tiles fall back to a monogram, and only because the
-// projects themselves publish nothing square: Encore and Black Forest Labs
-// have a wordmark five times wider than it is tall, which is a smear at 34px,
-// and pgvector is a Postgres extension that has never had a mark at all.
+// ConceptIcons.jsx. No tile is initials: the monogram tile the component
+// still has is a fallback that nothing currently reaches.
 //
 // The 2026 intake's marks did not come from one icon set, because most of
 // these are younger than the icon sets. They come from whoever publishes a
@@ -508,6 +506,8 @@ import sidspyIcon from '../../images/tech/dspy.png';
 import siicebergIcon from '../../images/tech/iceberg.png';
 import sisglangIcon from '../../images/tech/sglang.png';
 import siunslothIcon from '../../images/tech/unsloth.png';
+import siencoreIcon from '../../images/tech/encore.png';
+import siflux1Icon from '../../images/tech/flux1.png';
 
 const TECH_GROUPS = [
   {
@@ -615,7 +615,7 @@ const TECH_GROUPS = [
       { name: 'Rocket', icon: sirocketIcon, mono: true },
       { name: 'Inngest', icon: siinngestIcon, mono: true },
       { name: 'Sanic', icon: sisanicIcon, mono: true },
-      { name: 'Encore' },
+      { name: 'Encore', icon: siencoreIcon, flat: true },
     ],
   },
   {
@@ -922,7 +922,7 @@ const TECH_GROUPS = [
       { name: 'Meilisearch', icon: simeilisearchIcon, mono: true },
       { name: 'Dagster', icon: sidagsterIcon, mono: true },
       { name: 'Dask', icon: sidaskIcon, mono: true },
-      { name: 'pgvector' },
+      { name: 'pgvector', concept: 'pgvector' },
       { name: 'Apache Arrow', icon: siapachearrowIcon, mono: true },
       { name: 'Metabase', icon: simetabaseIcon, mono: true },
       { name: 'Valkey', icon: sivalkeyIcon, mono: true },
@@ -1075,7 +1075,7 @@ const TECH_GROUPS = [
       { name: 'PlayCanvas', icon: siplaycanvasIcon, mono: true },
       { name: 'Remotion', icon: siremotionIcon, mono: true },
       { name: 'MediaPipe', icon: simediapipeIcon, mono: true },
-      { name: 'FLUX.1' },
+      { name: 'FLUX.1', icon: siflux1Icon, flat: true },
       { name: 'Deepgram', icon: sideepgramIcon, mono: true },
       { name: 'Cocos', icon: sicocosIcon, mono: true },
       { name: 'Pipecat', icon: sipipecatIcon, mono: true },

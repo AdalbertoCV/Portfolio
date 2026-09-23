@@ -1219,6 +1219,18 @@ const ICONS = {
       <path d="M19.9 15l1.5 1.6" />
     </svg>
   ),
+  // An arrow with a heading and a length — a vector — sitting inside the
+  // stack of platters every database has been drawn as since the tape reel.
+  // pgvector has no logo of its own and borrowing Postgres's elephant would
+  // claim it is Postgres, which it is not: it is a thing that lives in one.
+  pgvector: (
+    <svg {...base}>
+      <ellipse cx="12" cy="5.4" rx="7.6" ry="2.8" />
+      <path d="M4.4 5.4v13.2c0 1.55 3.4 2.8 7.6 2.8s7.6-1.25 7.6-2.8V5.4" />
+      <path d="M8 15.4l7.4-5.6" />
+      <path d="M11.6 9.2h3.9v3.9" />
+    </svg>
+  ),
 };
 
 const ConceptIcon = ({ name, className }) => {
