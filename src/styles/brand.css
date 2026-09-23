@@ -341,7 +341,7 @@
 }
 
 .brand-tagline {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: clamp(0.95rem, 1.7vw, 1.15rem);
     font-weight: 600;
     color: var(--brand-core);
@@ -425,7 +425,7 @@
 
 .brand-kicker {
     display: block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -505,7 +505,7 @@
 }
 
 .brand-stat-value {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: clamp(1.5rem, 3vw, 2.1rem);
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -548,9 +548,9 @@
 .brand-step-num {
     counter-increment: brandstep;
     display: block;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 2.6rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1;
     letter-spacing: -0.05em;
     margin-bottom: 14px;
@@ -725,7 +725,7 @@
 }
 
 .brand-principle-line {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: clamp(1.25rem, 3.1vw, 2rem);
     font-weight: 700;
     line-height: 1.28;
@@ -838,7 +838,7 @@
 }
 
 .brand-value-index {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--brand-text);
@@ -848,7 +848,7 @@
 }
 
 .brand-value-name {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: clamp(1.05rem, 2.3vw, 1.4rem);
     font-weight: 700;
     letter-spacing: -0.025em;
@@ -1156,7 +1156,7 @@
 }
 
 .case-subject-index {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.14em;

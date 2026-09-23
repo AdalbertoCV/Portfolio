@@ -95,7 +95,7 @@
 }
 
 .cv-role {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: clamp(1rem, 1.9vw, 1.2rem);
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -212,7 +212,7 @@
 }
 
 .cv-now-label {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.13em;
@@ -306,7 +306,7 @@
     border-radius: var(--radius-md);
     background: transparent;
     color: var(--color-text-secondary);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 0.88rem;
     font-weight: 600;
     letter-spacing: -0.015em;
@@ -546,7 +546,7 @@
     border-radius: 10px;
     border: 1px solid var(--color-border-secondary);
     background: var(--color-bg-tertiary);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.02em;
@@ -739,7 +739,7 @@
 }
 
 .cv-language-name {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 0.98rem;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -1675,7 +1675,7 @@
 }
 
 .log-door-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: clamp(1.1rem, 2.2vw, 1.44rem);
     font-weight: 700;
     letter-spacing: -0.028em;
@@ -1754,7 +1754,7 @@
     align-items: center;
     gap: 12px;
     margin: 0 0 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 1.04rem;
     font-weight: 700;
     letter-spacing: -0.025em;
@@ -1796,7 +1796,7 @@
 .practice-title {
     align-self: start;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: 0.98rem;
     font-weight: 700;
     letter-spacing: -0.02em;

@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-23',
+    es: 'Tipografía nueva: Space Grotesk en los títulos, y el mono por fin carga',
+    en: 'New type: Space Grotesk on the headings, and the mono finally loads',
+  },
+  {
+    date: '2026-09-23',
     es: 'Las tecnologías nuevas ya traen su logo, no sus iniciales',
     en: 'The new technologies carry their own mark now, not their initials',
   },
