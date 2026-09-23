@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-23',
+    es: 'Las páginas se cruzan en vez de cortarse, y una barra marca el avance',
+    en: 'Pages cross instead of cutting, and a rail marks how far down you are',
+  },
+  {
+    date: '2026-09-23',
     es: 'La portada ya no es una tarjeta de CV: el nombre a escala completa',
     en: 'The opening is no longer a CV card: the name at full scale',
   },

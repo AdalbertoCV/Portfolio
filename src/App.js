@@ -9,7 +9,7 @@ import Navbar from './components/navigation/navbar';
 import SiteFooter from './components/navigation/SiteFooter';
 import RouteMeta from './components/navigation/RouteMeta';
 import SkipLink from './components/navigation/SkipLink';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MyProjects from './components/projects/projects';
 import Ventures from './components/ventures/ventures';
 import RadiiPage from './components/brand/RadiiPage';
@@ -26,6 +26,7 @@ import Study from './components/study/Study';
 import Changelog from './components/changelog/Changelog';
 import Terminal from './components/terminal/Terminal';
 import Backdrop from './components/brand/Backdrop';
+import { ScrollRail, useShownLocation } from './components/navigation/Transitions';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider } from './i18n/I18nProvider';
 
@@ -33,17 +34,73 @@ import { I18nProvider } from './i18n/I18nProvider';
 // to read about the work, and most of them will never open this route.
 const Play = lazy(() => import('./components/play/Play'));
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
+/* Every route renders from one location, and it is not the router's. It is the
+   one the browser is currently showing, which lags the router's by exactly one
+   view transition — see components/navigation/Transitions.jsx. Pulling the
+   routes into their own component is what gives that location somewhere to
+   live inside the Router. */
+const Pages = () => {
+  const shown = useShownLocation();
 
   // React Router keeps the scroll position across route changes, so moving from
   // a long page to a short one leaves the reader clamped partway down the new
-  // one — it reads as the page yanking itself upward.
+  // one — it reads as the page yanking itself upward. Keyed on what is on
+  // screen rather than on where the router has gone: scrolling while the
+  // outgoing page is still being photographed would animate the jump.
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [shown.pathname]);
 
-  return null;
+  return (
+    <main id="main">
+      <Routes location={shown}>
+        <Route path="/" element={<About />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/projects" element={<MyProjects />} />
+        <Route path="/ventures" element={<Ventures />} />
+        {/* Brand stories. Reached from the timeline and the ventures hub,
+            but each is a real URL so it can be linked to on its own. */}
+        <Route path="/radii" element={<RadiiPage />} />
+        <Route path="/stackselect" element={<StackSelectPage />} />
+        <Route path="/moonphase" element={<MoonphasePage />} />
+        <Route path="/evodeps" element={<EvodepsPage />} />
+        <Route path="/freelance" element={<FreelancePage />} />
+        <Route path="/labsol" element={<LabsolPage />} />
+        <Route path="/case" element={<CasePage />} />
+        {/* Education, told the same way as the roles. Reached from the
+            education card on the CV. */}
+        <Route path="/uaz" element={<UazPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        {/* Not in the navbar: it is reached from the practice section,
+            the footer and the terminal, which is where the readers who
+            want it are already looking. */}
+        <Route path="/decisions" element={<Decisions />} />
+        <Route path="/study" element={<Study />} />
+        <Route path="/changelog" element={<Changelog />} />
+
+        {/* A laptop that jumps bugs. On its own route, and reused by
+            the catch-all below: a mistyped URL used to render nothing
+            at all, and now it renders the one thing here that exists
+            purely for fun. */}
+        <Route
+          path="/play"
+          element={
+            <Suspense fallback={null}>
+              <Play />
+            </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={null}>
+              <Play notFound />
+            </Suspense>
+          }
+        />
+      </Routes>
+    </main>
+  );
 };
 
 function App() {
@@ -56,58 +113,13 @@ function App() {
               have it mounted for the whole session. */}
           <Backdrop />
           <Router>
-            <ScrollToTop />
+            {/* Outside <Pages>: it belongs to the window rather than to any one
+                route, which is also why it does not cross with them. */}
+            <ScrollRail />
             <RouteMeta />
             <Navbar></Navbar>
             <SkipLink />
-            <main id="main">
-              <Routes>
-                <Route path="/" element={<About />} />
-                <Route path="/experience" element={<Experience />} />
-                <Route path="/projects" element={<MyProjects/>} />
-                <Route path="/ventures" element={<Ventures />} />
-                {/* Brand stories. Reached from the timeline and the ventures hub,
-                    but each is a real URL so it can be linked to on its own. */}
-                <Route path="/radii" element={<RadiiPage />} />
-                <Route path="/stackselect" element={<StackSelectPage />} />
-                <Route path="/moonphase" element={<MoonphasePage />} />
-                <Route path="/evodeps" element={<EvodepsPage />} />
-                <Route path="/freelance" element={<FreelancePage />} />
-                <Route path="/labsol" element={<LabsolPage />} />
-                <Route path="/case" element={<CasePage />} />
-                {/* Education, told the same way as the roles. Reached from the
-                    education card on the CV. */}
-                <Route path="/uaz" element={<UazPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                {/* Not in the navbar: it is reached from the practice section,
-                    the footer and the terminal, which is where the readers who
-                    want it are already looking. */}
-                <Route path="/decisions" element={<Decisions />} />
-                <Route path="/study" element={<Study />} />
-                <Route path="/changelog" element={<Changelog />} />
-
-                {/* A laptop that jumps bugs. On its own route, and reused by
-                    the catch-all below: a mistyped URL used to render nothing
-                    at all, and now it renders the one thing here that exists
-                    purely for fun. */}
-                <Route
-                  path="/play"
-                  element={
-                    <Suspense fallback={null}>
-                      <Play />
-                    </Suspense>
-                  }
-                />
-                <Route
-                  path="*"
-                  element={
-                    <Suspense fallback={null}>
-                      <Play notFound />
-                    </Suspense>
-                  }
-                />
-              </Routes>
-            </main>
+            <Pages />
             <SiteFooter />
             {/* Inside the Router: its commands navigate. */}
             <Terminal />

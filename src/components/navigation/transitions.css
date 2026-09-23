@@ -1,0 +1,138 @@
+/* ============================================================================
+   MOVING BETWEEN PAGES, AND KNOWING WHERE YOU ARE
+   ----------------------------------------------------------------------------
+   Read the note in Transitions.jsx first. Everything here is native: the
+   View Transitions API for the route change, `animation-timeline: scroll()`
+   for the rail. No library, no scroll listener, no frame loop.
+   ========================================================================= */
+
+/* ------------------------------------------------------------ the crossing */
+
+/* Short on purpose. A page transition is furniture: long enough that the
+   change reads as one movement rather than a cut, short enough that somebody
+   clicking three things in a row never waits for it. 240ms is about where
+   that line sits. */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 240ms;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+::view-transition-old(root) {
+    animation-name: pageOut;
+}
+
+::view-transition-new(root) {
+    animation-name: pageIn;
+}
+
+@keyframes pageOut {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+}
+
+/* The navbar and the backdrop do not belong to either page: they are the
+   frame the pages move inside. Naming them takes them out of the root
+   snapshot, so they stay put while the content crosses instead of fading out
+   and back in along with it. */
+.navbar,
+.backdrop {
+    view-transition-name: var(--vt-name, none);
+}
+
+.navbar {
+    --vt-name: chrome-top;
+}
+
+.backdrop {
+    --vt-name: chrome-back;
+}
+
+::view-transition-group(chrome-top),
+::view-transition-group(chrome-back) {
+    animation: none;
+}
+
+/* ----------------------------------------------------------------- the rail */
+
+.scroll-rail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 1100;
+    pointer-events: none;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, #4f9d75, #7dd3a0);
+    /* It belongs to the window, not to a page, so it does not cross either. */
+    view-transition-name: chrome-rail;
+}
+
+::view-transition-group(chrome-rail) {
+    animation: none;
+}
+
+/* Only where the scroll timeline exists. Without it the rail would sit at
+   scaleX(0) forever, which is a two-pixel line of nothing — invisible, and
+   that is the right fallback. */
+@supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+        /* Longhands, never the shorthand. CRA's minifier sorts declarations
+           alphabetically, which puts the `animation` shorthand after
+           `animation-timeline` — and the shorthand resets the timeline back to
+           auto. The rail sat at scaleX(0) forever and the cause was nowhere in
+           the source, only in the build output. */
+        .scroll-rail {
+            animation-name: railFill;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+            animation-timeline: scroll(root block);
+        }
+    }
+}
+
+@keyframes railFill {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* ------------------------------------------------------------- the handover */
+
+/* The opening gives way as the reader leaves it: by the time the hero is
+   halfway off the top it is most of the way out of the conversation. It is a
+   depth cue, not an effect — the page below should feel like it is arriving
+   in front, not scrolling past.
+
+   Tied to the element's own position in the viewport with `view()`, so it is
+   exact at any scroll speed and costs nothing: opacity and transform are the
+   two properties the compositor owns outright. */
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        .hero-copy {
+            animation-name: heroHandover;
+            animation-timing-function: linear;
+            animation-fill-mode: both;
+            animation-timeline: view();
+            animation-range: exit 5% exit 75%;
+        }
+    }
+}
+
+@keyframes heroHandover {
+    to {
+        opacity: 0.3;
+        transform: translateY(-18px);
+    }
+}
