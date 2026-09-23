@@ -391,21 +391,14 @@ const About = () => {
 
         {/* The one place on the site where the judgement this section claims
             is shown rather than asserted, so it gets a door rather than a line
-            of link text. The four labels are the log's own, printed here as a
-            preview: they teach the format before the reader arrives, and they
-            come from the same dictionary keys the entries use, so the two can
-            never drift apart. No entry count — a number invites counting, and
-            there is no count that reads well. */}
+            of link text. No entry count and no preview of the format: a number
+            invites counting, and four chips explaining a link are three more
+            things than the link needed. */}
         <Reveal className="practice-out">
           <Link className="log-door" to="/decisions">
             <span className="log-door-label">{t('cv.log.label')}</span>
             <span className="log-door-title">{t('cv.log.title')}</span>
             <span className="log-door-body">{t('cv.log.body')}</span>
-            <span className="log-door-parts" aria-hidden="true">
-              {['options', 'chose', 'why', 'today'].map((part) => (
-                <span key={part}>{t(`decisions.parts.${part}`)}</span>
-              ))}
-            </span>
             <span className="log-door-cta">
               {t('cv.log.cta')}
               <ArrowRight />

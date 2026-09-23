@@ -1566,26 +1566,6 @@
     color: var(--color-text-secondary);
 }
 
-/* The log's own four labels, printed as a preview of the form. */
-.log-door-parts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 6px;
-}
-
-.log-door-parts span {
-    padding: 5px 11px;
-    border-radius: 999px;
-    border: 1px solid var(--color-border-primary);
-    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-tertiary);
-}
-
 .log-door-cta {
     display: inline-flex;
     align-items: center;
