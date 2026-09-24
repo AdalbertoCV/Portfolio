@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
-import image from '../../images/AboutMe.jpg';
+import image from '../../images/AboutMe.webp';
 import linkedinLogo from '../../images/linkedin.png';
 import mailLogo from '../../images/Mail.jpg';
 import GitHubLogo from '../../images/GitHub.png';
 import YoutubeLogo from '../../images/Youtube.png';
-import UAZLogo from '../../images/UAZ.jpg';
-import someceImage from '../../images/Achievements/constancia1.png';
-import ICPImage from '../../images/Achievements/constancia2.png';
+import UAZLogo from '../../images/UAZ.webp';
+import someceImage from '../../images/Achievements/constancia1.webp';
+import ICPImage from '../../images/Achievements/constancia2.webp';
 import rbrMark from '../../images/releasebeforeready.svg';
 import innovafestMark from '../../images/innovafest.svg';
 import talentlandMark from '../../images/talentland.svg';

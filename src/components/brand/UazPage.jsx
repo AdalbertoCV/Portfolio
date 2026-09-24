@@ -1,6 +1,6 @@
 import { useTranslation } from '../../i18n/I18nProvider';
 import { UazArt } from '../marks/RoleArt';
-import uazShield from '../../images/UAZ.jpg';
+import uazShield from '../../images/UAZ.webp';
 import {
   ArrowUpRight,
   BrandFooterNav,

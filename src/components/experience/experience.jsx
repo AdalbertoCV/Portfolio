@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import labsolLogo from '../../images/Labsol.png';
-import radii from '../../images/radii.png';
+import radii from '../../images/radii.webp';
 import evodeps from '../../images/evodeps.png';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowRight, ArrowUpRight, Reveal } from '../brand/parts';

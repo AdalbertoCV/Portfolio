@@ -1,7 +1,7 @@
 import { useTranslation } from '../../i18n/I18nProvider';
 import RadiiSystem from './RadiiSystem';
 import RadiiArt from '../marks/RadiiArt';
-import radiiLogo from '../../images/radii.png';
+import radiiLogo from '../../images/radii.webp';
 import {
   ArrowUpRight,
   BrandFooterNav,

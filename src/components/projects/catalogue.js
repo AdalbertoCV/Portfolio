@@ -7,31 +7,31 @@
 // Both kinds are the same card, which is the point: a repository with no
 // screenshot is not a lesser project, it is a project you cannot photograph.
 
-import BSImage1 from '../../images/Projects/bazar_sol_1.png';
-import BSImage2 from '../../images/Projects/bazar_sol_2.png';
-import BSImage3 from '../../images/Projects/bazar_sol_3.png';
-import RZImage1 from '../../images/Projects/rentazac1.png';
-import RZImage2 from '../../images/Projects/rentazac2.png';
-import RZImage3 from '../../images/Projects/rentazac3.png';
-import cargasI1 from '../../images/Projects/cargas1.png';
-import cargasI2 from '../../images/Projects/cargas2.png';
-import cargasI3 from '../../images/Projects/cargas3.png';
-import cosiap1 from '../../images/Projects/COSIAP1.png';
-import cosiap2 from '../../images/Projects/COSIAP2.png';
-import cosiap3 from '../../images/Projects/COSIAP3.png';
-import cosiap4 from '../../images/Projects/COSIAP4.png';
-import nocturno1 from '../../images/Projects/nocturno1.png';
-import nocturno2 from '../../images/Projects/nocturno2.png';
-import nocturno3 from '../../images/Projects/nocturno3.png';
-import tcc1 from '../../images/Projects/tcc1.png';
-import tcc2 from '../../images/Projects/tcc2.png';
-import tcc3 from '../../images/Projects/tcc3.png';
-import radii1 from '../../images/Projects/radii1.jpeg';
-import radii2 from '../../images/Projects/radii2.jpeg';
-import radii3 from '../../images/Projects/radii3.jpeg';
-import pbienestar1 from '../../images/Projects/PuntoBienestar1.jpeg';
-import pbienestar2 from '../../images/Projects/PuntoBienestar2.jpeg';
-import pbienestar3 from '../../images/Projects/PuntoBienestar3.jpeg';
+import BSImage1 from '../../images/Projects/bazar_sol_1.webp';
+import BSImage2 from '../../images/Projects/bazar_sol_2.webp';
+import BSImage3 from '../../images/Projects/bazar_sol_3.webp';
+import RZImage1 from '../../images/Projects/rentazac1.webp';
+import RZImage2 from '../../images/Projects/rentazac2.webp';
+import RZImage3 from '../../images/Projects/rentazac3.webp';
+import cargasI1 from '../../images/Projects/cargas1.webp';
+import cargasI2 from '../../images/Projects/cargas2.webp';
+import cargasI3 from '../../images/Projects/cargas3.webp';
+import cosiap1 from '../../images/Projects/COSIAP1.webp';
+import cosiap2 from '../../images/Projects/COSIAP2.webp';
+import cosiap3 from '../../images/Projects/COSIAP3.webp';
+import cosiap4 from '../../images/Projects/COSIAP4.webp';
+import nocturno1 from '../../images/Projects/nocturno1.webp';
+import nocturno2 from '../../images/Projects/nocturno2.webp';
+import nocturno3 from '../../images/Projects/nocturno3.webp';
+import tcc1 from '../../images/Projects/tcc1.webp';
+import tcc2 from '../../images/Projects/tcc2.webp';
+import tcc3 from '../../images/Projects/tcc3.webp';
+import radii1 from '../../images/Projects/radii1.webp';
+import radii2 from '../../images/Projects/radii2.webp';
+import radii3 from '../../images/Projects/radii3.webp';
+import pbienestar1 from '../../images/Projects/PuntoBienestar1.webp';
+import pbienestar2 from '../../images/Projects/PuntoBienestar2.webp';
+import pbienestar3 from '../../images/Projects/PuntoBienestar3.webp';
 
 const OWNER = 'https://github.com/AdalbertoCV';
 
