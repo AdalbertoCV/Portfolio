@@ -528,6 +528,11 @@ import sicapyIcon from '../../images/tech/capy.svg';
 import sicomposioIcon from '../../images/tech/composio.svg';
 import silettaIcon from '../../images/tech/letta.png';
 import simem0Icon from '../../images/tech/mem0.png';
+import silayaIcon from '../../images/tech/laya.svg';
+import sigroqIcon from '../../images/tech/groq.svg';
+import sicerebrasIcon from '../../images/tech/cerebras.svg';
+import sibasetenIcon from '../../images/tech/baseten.svg';
+import sitogetherIcon from '../../images/tech/together.svg';
 
 const TECH_GROUPS = [
   {
@@ -794,6 +799,14 @@ const TECH_GROUPS = [
       { name: 'Activepieces', icon: siactivepiecesIcon, mono: true },
       { name: 'Windmill', icon: siwindmillIcon, mono: true },
       { name: 'Skywork', icon: siskyworkIcon, mono: true },
+      // Decisions, and how fast they can be. Laya is the open-weights answer
+      // to Jev a few tiles up; the rest is what you reach for once the
+      // decision itself has stopped being the slow part.
+      { name: 'Laya', icon: silayaIcon, mono: true },
+      { name: 'Groq', icon: sigroqIcon, mono: true },
+      { name: 'Cerebras', icon: sicerebrasIcon, mono: true },
+      { name: 'Baseten', icon: sibasetenIcon, mono: true },
+      { name: 'Together AI', icon: sitogetherIcon, mono: true },
     ],
   },
   {

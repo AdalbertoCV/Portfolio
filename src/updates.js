@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-24',
+    es: 'Laya en el muro, y lo que hace falta cuando decidir ya no es lo lento',
+    en: 'Laya on the wall, and what you need once deciding stopped being the slow part',
+  },
+  {
+    date: '2026-09-24',
     es: 'El idioma vive en la URL: /en abre en inglés para quien reciba el link',
     en: 'The language lives in the URL: /en opens in English for whoever gets the link',
   },
