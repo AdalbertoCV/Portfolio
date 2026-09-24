@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-23',
+    es: 'Diez agentes más en el muro, entre ellos ARTEMIS y Accio',
+    en: 'Ten more agents on the wall, ARTEMIS and Accio among them',
+  },
+  {
+    date: '2026-09-23',
     es: 'El sitio pesa 3.6 MB en vez de 16: las imágenes ya no son PNG gigantes',
     en: 'The site weighs 3.6 MB instead of 16: no more giant PNGs',
   },

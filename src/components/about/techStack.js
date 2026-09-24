@@ -508,6 +508,16 @@ import sisglangIcon from '../../images/tech/sglang.png';
 import siunslothIcon from '../../images/tech/unsloth.png';
 import siencoreIcon from '../../images/tech/encore.png';
 import siflux1Icon from '../../images/tech/flux1.png';
+import siartemisIcon from '../../images/tech/artemis.svg';
+import siopenhandsIcon from '../../images/tech/openhands.svg';
+import sigooseIcon from '../../images/tech/goose.svg';
+import sitraeIcon from '../../images/tech/trae.svg';
+import siqodoIcon from '../../images/tech/qodo.svg';
+import siaccioIcon from '../../images/tech/accio.svg';
+import simanusIcon from '../../images/tech/manus.svg';
+import siactivepiecesIcon from '../../images/tech/activepieces.svg';
+import siwindmillIcon from '../../images/tech/windmill.svg';
+import siskyworkIcon from '../../images/tech/skywork.svg';
 
 const TECH_GROUPS = [
   {
@@ -749,6 +759,22 @@ const TECH_GROUPS = [
       { name: 'Make', icon: simakeIcon, mono: true },
       { name: 'Bolt.new', icon: siboltnewIcon, mono: true },
       { name: 'Roo Code', icon: siroocodeIcon, mono: true },
+      // Agents, late 2026. ARTEMIS drives an Android device rather than a
+      // repository, which makes it the odd one here and the reason it is worth
+      // knowing about.
+      { name: 'ARTEMIS', icon: siartemisIcon, mono: true },
+      { name: 'OpenHands', icon: siopenhandsIcon, mono: true },
+      { name: 'Goose', icon: sigooseIcon, mono: true },
+      { name: 'Trae', icon: sitraeIcon, mono: true },
+      { name: 'Qodo', icon: siqodoIcon, mono: true },
+      // Agents that do business rather than code. Accio is Alibaba's sourcing
+      // agent — it finds suppliers, compares offers and keeps a negotiation
+      // moving, which is the closest thing on this wall to what Radii does.
+      { name: 'Accio', icon: siaccioIcon, mono: true },
+      { name: 'Manus', icon: simanusIcon, mono: true },
+      { name: 'Activepieces', icon: siactivepiecesIcon, mono: true },
+      { name: 'Windmill', icon: siwindmillIcon, mono: true },
+      { name: 'Skywork', icon: siskyworkIcon, mono: true },
     ],
   },
   {
