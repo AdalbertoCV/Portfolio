@@ -159,7 +159,7 @@ const cvEs = {
         'Visión de marketing digital y estrategias de venta',
         'Conocimiento en fintech e inversiones',
         'Robótica y manufactura avanzada',
-        'Fundamentos de redes y hardware',
+        'Computación y redes: arquitectura, sistemas operativos y protocolos',
         'Ciencias exactas: matemáticas, física, química, estadística',
         'Investigación científica y literaria',
         'Ciberseguridad y hacking ético',

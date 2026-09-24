@@ -149,7 +149,7 @@ const cvEn = {
         'Digital marketing vision and sales strategy',
         'Fintech and investments knowledge',
         'Robotics and advanced manufacturing',
-        'Networking and hardware fundamentals',
+        'Computing and networks: architecture, operating systems and protocols',
         'Exact sciences: mathematics, physics, chemistry, statistics',
         'Scientific and literary research',
         'Cybersecurity and ethical hacking',

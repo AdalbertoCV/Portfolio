@@ -518,6 +518,11 @@ import simanusIcon from '../../images/tech/manus.svg';
 import siactivepiecesIcon from '../../images/tech/activepieces.svg';
 import siwindmillIcon from '../../images/tech/windmill.svg';
 import siskyworkIcon from '../../images/tech/skywork.svg';
+import siandroidstudioIcon from '../../images/tech/androidstudio.svg';
+import siandroidIcon from '../../images/tech/android.svg';
+import sigradleIcon from '../../images/tech/gradle.svg';
+import sijetpackcomposeIcon from '../../images/tech/jetpackcompose.svg';
+import sifirebaseIcon from '../../images/tech/firebase.svg';
 
 const TECH_GROUPS = [
   {
@@ -1003,6 +1008,13 @@ const TECH_GROUPS = [
       { name: 'Panda CSS', icon: sipandacssIcon, mono: true },
       { name: 'esbuild', icon: siesbuildIcon, mono: true },
       { name: 'Preact', icon: sipreactIcon, mono: true },
+      // The Android bench. Flutter, Expo, Ionic and Capacitor were all here
+      // and the toolchain they are alternatives to was not.
+      { name: 'Android Studio', icon: siandroidstudioIcon, mono: true },
+      { name: 'Android', icon: siandroidIcon, mono: true },
+      { name: 'Gradle', icon: sigradleIcon, mono: true },
+      { name: 'Jetpack Compose', icon: sijetpackcomposeIcon, mono: true },
+      { name: 'Firebase', icon: sifirebaseIcon, mono: true },
     ],
   },
   {
