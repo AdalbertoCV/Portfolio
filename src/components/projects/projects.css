@@ -278,6 +278,53 @@
     }
 }
 
+/* acompanar. The playhead crosses once every 4.4 seconds and each bar of the
+   arrangement is written as it passes — delays are the bar's own position on
+   the timeline, which is why the two read as one movement rather than as two
+   animations that happen to be running at the same time. */
+@keyframes cov-write {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    6%,
+    88% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cov-head {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    4%,
+    94% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(352px);
+        opacity: 0;
+    }
+}
+
+.cov-write {
+    animation: cov-write 4.4s linear infinite;
+}
+
+.cov-head {
+    animation: cov-head 4.4s linear infinite;
+}
+
 @keyframes cov-flow {
     to {
         stroke-dashoffset: -24;

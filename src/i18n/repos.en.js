@@ -44,6 +44,10 @@ const reposEn = {
         title: 'A laptop that jumps bugs',
         body: 'An endless runner written for this site: one canvas, no dependencies, a delta-timed loop so a 144Hz screen does not play it four times as fast, and coyote time so a jump pressed a frame late still counts. Every obstacle is named after a bug I have actually shipped.',
       },
+      acompanar: {
+        title: 'acompanar',
+        body: 'Puts an accompaniment — piano, vibraphone, guitar arpeggios, bass and percussion — onto a home recording of voice and guitar without replaying it. AI music generators remake the whole song, vocal included; this does the opposite: it separates the take with Demucs, finds the pulse with Beat This!, reads the chords and tunes every added note to the guitar\'s actual tuning, then writes the instruments over the recording that already exists. The final mix ducks the accompaniment under the vocal and normalises to −14 LUFS.',
+      },
       etl: {
         title: 'ETL → Dgraph',
         body: 'A pipeline consolidating four heterogeneous formats — CSV, XML, HTM and TXT — into one Dgraph graph database, orchestrated with Luigi and served through an analytics dashboard in Dash.',

@@ -617,8 +617,104 @@ const PlayCover = () => (
 
 /* ------------------------------------------------------------- the lookup */
 
+/* acompanar — the whole argument of the project in one picture.
+
+   Every other tool in this space regenerates the song, voice and all. This one
+   does the opposite: the recording stays exactly as it was played, and the
+   instruments are written over it. So the waveform along the bottom never
+   moves — it is the one thing on this cover that is not animated, and that is
+   the point. Everything above it appears in time as the playhead crosses,
+   because that is the order the pipeline works in: pulse, then chords, then
+   arrangement.
+
+   The chord names are the ones a home recording actually tends to be in. */
+
+// Bar heights for the recording, hand-written rather than generated: a real
+// take is loud in the chorus and quiet where somebody breathes, and a random
+// walk gives neither.
+const TAKE = [
+  4, 7, 5, 9, 14, 11, 17, 13, 20, 16, 23, 18, 12, 9, 6, 11, 19, 15, 24, 20,
+  27, 22, 29, 24, 18, 13, 8, 12, 21, 17, 26, 21, 28, 23, 19, 14, 9, 13, 8, 5,
+  9, 6, 4, 3,
+];
+
+const CHORDS = ['Am', 'F', 'C', 'G'];
+
+const AcompanarCover = () => (
+  <Cover id="cov-acompanar" from="#4c0519" to="#e11d48">
+    {/* The grid the pulse detector found. Everything above is written to it. */}
+    {Array.from({ length: 17 }, (_, i) => (
+      <path
+        key={i}
+        d={`M${24 + i * 22} 26V104`}
+        stroke={i % 4 === 0 ? 'rgba(255,255,255,0.26)' : 'rgba(255,255,255,0.1)'}
+      />
+    ))}
+
+    {/* The chords, laid down one bar at a time. */}
+    {CHORDS.map((name, i) => (
+      <g key={name} className="cov-write" style={{ animationDelay: `${i * 1.1}s` }}>
+        <rect
+          x={26 + i * 88}
+          y={30}
+          width={84}
+          height={22}
+          rx="6"
+          fill="rgba(255,255,255,0.16)"
+          stroke="rgba(255,255,255,0.55)"
+        />
+        <text
+          x={68 + i * 88}
+          y={45}
+          textAnchor="middle"
+          fill="#ffffff"
+          stroke="none"
+          fontSize="11"
+          fontWeight="600"
+          fontFamily="'IBM Plex Mono', ui-monospace, monospace"
+        >
+          {name}
+        </text>
+      </g>
+    ))}
+
+    {/* The arpeggio under them — four notes to the bar, each one tuned to the
+        guitar rather than to concert pitch, which is the fourth step of the
+        pipeline and the reason this sounds like the same instrument. */}
+    {Array.from({ length: 16 }, (_, i) => (
+      <rect
+        key={i}
+        className="cov-write"
+        style={{ animationDelay: `${Math.floor(i / 4) * 1.1 + (i % 4) * 0.12}s` }}
+        x={30 + i * 22}
+        y={64 + ((i * 7) % 4) * 6}
+        width={12}
+        height={5}
+        rx="2.5"
+        fill="rgba(255,255,255,0.7)"
+        stroke="none"
+      />
+    ))}
+
+    {/* The take. Untouched, and never animated. */}
+    <path d="M20 118h360" stroke="rgba(255,255,255,0.22)" />
+    <g stroke="rgba(255,255,255,0.5)" strokeWidth="2.6" strokeLinecap="round">
+      {TAKE.map((h, i) => (
+        <path key={i} d={`M${26 + i * 8} ${118 - h}V${118 + h}`} />
+      ))}
+    </g>
+
+    {/* The playhead. Everything above appears as it passes. */}
+    <g className="cov-head">
+      <path d="M24 22V132" stroke="rgba(255,255,255,0.9)" strokeWidth="2" />
+      <circle cx="24" cy="22" r="3" fill="#ffffff" stroke="none" />
+    </g>
+  </Cover>
+);
+
 const COVERS = {
   play: PlayCover,
+  acompanar: AcompanarCover,
   etl: EtlCover,
   pubsub: PubSubCover,
   sockets: SocketsCover,

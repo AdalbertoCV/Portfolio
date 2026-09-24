@@ -46,6 +46,10 @@ const reposEs = {
         title: 'Una laptop que salta bugs',
         body: 'Un endless runner escrito para este sitio: un canvas, cero dependencias, un loop con delta time para que una pantalla de 144Hz no lo juegue cuatro veces más rápido, y coyote time para que un salto presionado un frame tarde siga contando. Cada obstáculo lleva el nombre de un bug que de verdad he mandado a producción.',
       },
+      acompanar: {
+        title: 'acompanar',
+        body: 'Le pone acompañamiento —piano, vibráfono, arpegios de guitarra, bajo y percusión— a una grabación casera de voz y guitarra sin volver a tocarla. Los generadores de música con IA rehacen la canción entera, voz incluida; este hace lo contrario: separa la pista con Demucs, encuentra el pulso con Beat This!, saca los acordes y afina cada nota a la afinación real de la guitarra, y escribe los instrumentos encima de la grabación que ya existe. La mezcla final agacha el acompañamiento bajo la voz y normaliza a −14 LUFS.',
+      },
       etl: {
         title: 'ETL → Dgraph',
         body: 'Pipeline que consolida cuatro formatos heterogéneos —CSV, XML, HTM y TXT— en una sola base de grafos Dgraph, orquestado con Luigi y servido a través de un dashboard analítico en Dash.',

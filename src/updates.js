@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-23',
+    es: 'acompanar entra al catálogo, con su portada animada',
+    en: 'acompanar joins the catalogue, with a cover of its own',
+  },
+  {
+    date: '2026-09-23',
     es: 'Diez agentes más en el muro, entre ellos ARTEMIS y Accio',
     en: 'Ten more agents on the wall, ARTEMIS and Accio among them',
   },

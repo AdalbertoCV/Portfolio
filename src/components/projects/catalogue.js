@@ -115,6 +115,14 @@ const CATALOGUE = [
         tags: ['Canvas 2D', 'Game loop', 'Pixel art', 'requestAnimationFrame'],
       },
       {
+        key: 'acompanar',
+        copy: 'repos.items.acompanar',
+        name: 'acompanar',
+        url: `${OWNER}/acompanar`,
+        language: 'Python',
+        tags: ['Demucs', 'PyTorch', 'librosa', 'Audio DSP'],
+      },
+      {
         key: 'etl',
         copy: 'repos.items.etl',
         name: 'ETL-Equipo4',
