@@ -523,6 +523,11 @@ import siandroidIcon from '../../images/tech/android.svg';
 import sigradleIcon from '../../images/tech/gradle.svg';
 import sijetpackcomposeIcon from '../../images/tech/jetpackcompose.svg';
 import sifirebaseIcon from '../../images/tech/firebase.svg';
+import sihermesIcon from '../../images/tech/hermes.svg';
+import sicapyIcon from '../../images/tech/capy.svg';
+import sicomposioIcon from '../../images/tech/composio.svg';
+import silettaIcon from '../../images/tech/letta.png';
+import simem0Icon from '../../images/tech/mem0.png';
 
 const TECH_GROUPS = [
   {
@@ -691,6 +696,15 @@ const TECH_GROUPS = [
       { name: 'SGLang', icon: sisglangIcon, flat: true },
       { name: 'DVC', icon: sidvcIcon, mono: true },
       { name: 'Unsloth', icon: siunslothIcon, flat: true },
+      // Agents, and what makes one persistent: Hermes runs on your own box
+      // and keeps what it learns, Letta and Mem0 are the memory under that
+      // idea, and Composio is the tools it reaches for. Capy runs a lot of
+      // them at once, which is the other way to make an agent useful.
+      { name: 'Hermes', icon: sihermesIcon, mono: true },
+      { name: 'Capy', icon: sicapyIcon, mono: true },
+      { name: 'Composio', icon: sicomposioIcon, mono: true },
+      { name: 'Letta', icon: silettaIcon, flat: true },
+      { name: 'Mem0', icon: simem0Icon, flat: true },
     ],
   },
   {

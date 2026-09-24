@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-24',
+    es: 'Hermes, Capy y la capa de memoria que hace útil a un agente',
+    en: 'Hermes, Capy and the memory layer that makes an agent useful',
+  },
+  {
+    date: '2026-09-24',
     es: 'Android Studio y su cadena de herramientas entran al muro',
     en: 'Android Studio and its toolchain join the wall',
   },
