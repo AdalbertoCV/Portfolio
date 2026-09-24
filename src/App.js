@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from 'react';
+import { Suspense, lazy, useEffect, useRef } from 'react';
 import './App.css';
 import './styles/brand.css';
 import './styles/marks.css';
@@ -28,7 +28,7 @@ import Terminal from './components/terminal/Terminal';
 import Backdrop from './components/brand/Backdrop';
 import { ScrollRail, useShownLocation } from './components/navigation/Transitions';
 import { ThemeProvider } from './theme/ThemeProvider';
-import { I18nProvider } from './i18n/I18nProvider';
+import { I18nProvider, useTranslation } from './i18n/I18nProvider';
 
 // Lazy: a canvas game is dead weight in the bundle for every visitor who came
 // to read about the work, and most of them will never open this route.
@@ -47,7 +47,16 @@ const Pages = () => {
   // one — it reads as the page yanking itself upward. Keyed on what is on
   // screen rather than on where the router has gone: scrolling while the
   // outgoing page is still being photographed would animate the jump.
+  //
+  // Not on the first run, though. Switching language remounts this whole tree
+  // (see below), and a reader who switches halfway down a page should stay
+  // halfway down it rather than be thrown back to the top.
+  const settled = useRef(false);
   useEffect(() => {
+    if (!settled.current) {
+      settled.current = true;
+      return;
+    }
     window.scrollTo(0, 0);
   }, [shown.pathname]);
 
@@ -103,28 +112,45 @@ const Pages = () => {
   );
 };
 
+/* The Router lives here rather than in App because it needs the language, and
+   the language comes from a provider App renders.
+
+   `basename` is what puts the language in the URL: with it set to /en, every
+   <Link to="/projects"> in the app writes /en/projects and nothing else has to
+   know the feature exists. It cannot change on a live Router, so `key` remounts
+   it when the language does — by which point setLang has already rewritten the
+   address, so the new Router finds the URL it expects. */
+const Site = () => {
+  const { lang } = useTranslation();
+
+  return (
+    <div className="App">
+      {/* Behind everything, on every route, and outside the Router so a
+          language change does not restart its drift. It is a div and a
+          stylesheet — nothing in it reacts to anything, so it costs the app
+          nothing to have it mounted for the whole session. */}
+      <Backdrop />
+      <Router basename={lang === 'en' ? '/en' : undefined} key={lang}>
+        {/* Outside <Pages>: it belongs to the window rather than to any one
+            route, which is also why it does not cross with them. */}
+        <ScrollRail />
+        <RouteMeta />
+        <Navbar></Navbar>
+        <SkipLink />
+        <Pages />
+        <SiteFooter />
+        {/* Inside the Router: its commands navigate. */}
+        <Terminal />
+      </Router>
+    </div>
+  );
+};
+
 function App() {
   return (
     <ThemeProvider>
       <I18nProvider>
-        <div className="App">
-          {/* Behind everything, on every route. It is a div and a stylesheet —
-              nothing in it reacts to anything, so it costs the app nothing to
-              have it mounted for the whole session. */}
-          <Backdrop />
-          <Router>
-            {/* Outside <Pages>: it belongs to the window rather than to any one
-                route, which is also why it does not cross with them. */}
-            <ScrollRail />
-            <RouteMeta />
-            <Navbar></Navbar>
-            <SkipLink />
-            <Pages />
-            <SiteFooter />
-            {/* Inside the Router: its commands navigate. */}
-            <Terminal />
-          </Router>
-        </div>
+        <Site />
       </I18nProvider>
     </ThemeProvider>
   );

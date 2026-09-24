@@ -1,6 +1,22 @@
 export const LANG_STORAGE_KEY = 'portfolio-lang';
 export const LANGUAGES = ['en', 'es'];
 
+/* Spanish is the unprefixed language and English lives under /en. Two small
+   pure functions rather than a regex written out four times, because the
+   difference between /engineering and /en/gineering is one character. */
+
+/** The language a URL asks for, or null when it does not ask. */
+export function languageFromPath(pathname) {
+  return /^\/en(\/|$)/.test(pathname) ? 'en' : null;
+}
+
+/** The same page, addressed in the other language. */
+export function pathWithLanguage(lang, pathname) {
+  const bare = pathname.replace(/^\/en(?=\/|$)/, '') || '/';
+  if (lang !== 'en') return bare;
+  return bare === '/' ? '/en' : `/en${bare}`;
+}
+
 export function detectLanguage(stored, navigatorLanguages) {
   if (LANGUAGES.includes(stored)) return stored;
   const tags = Array.isArray(navigatorLanguages) ? navigatorLanguages : [];

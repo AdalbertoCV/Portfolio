@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-24',
+    es: 'El idioma vive en la URL: /en abre en inglés para quien reciba el link',
+    en: 'The language lives in the URL: /en opens in English for whoever gets the link',
+  },
+  {
+    date: '2026-09-24',
     es: 'Hermes, Capy y la capa de memoria que hace útil a un agente',
     en: 'Hermes, Capy and the memory layer that makes an agent useful',
   },
