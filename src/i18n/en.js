@@ -103,7 +103,7 @@ const en = {
     },
     stack: {
       line: 'Back to About — the technology section is halfway down.',
-      hint: '395 marks in twelve groups. The ones with a number link to real projects.',
+      hint: '1005 tiles in eighteen groups. The ones with a number link to real projects.',
     },
     play: {
       line: 'Starting the game. Space to jump.',

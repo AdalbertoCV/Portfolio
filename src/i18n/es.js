@@ -104,7 +104,7 @@ const es = {
     },
     stack: {
       line: 'Volviendo a Sobre mí — la sección de tecnologías está a media página.',
-      hint: '395 marcas en doce grupos. Las que tienen número enlazan a proyectos reales.',
+      hint: '1005 fichas en dieciocho grupos. Las que tienen número enlazan a proyectos reales.',
     },
     play: {
       line: 'Arrancando el juego. Espacio para saltar.',
