@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- Pixel-art icon: the .ico carries a 16px drawing of its own for the
+         tab, so it is listed rather than the SVG, which is the 32px drawing
+         and would be halved into mush at tab size. -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="16x16 32x32 64x64" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0a0a0a" />
 
@@ -57,7 +60,7 @@
     />
     <meta name="twitter:image" content="https://portfolio-phi-ten-37.vercel.app/og-image.png" />
 
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
