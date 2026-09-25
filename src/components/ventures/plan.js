@@ -3,13 +3,10 @@
 // and how far along it is — so advancing the plan is editing a state here, not
 // touching the page.
 //
-// The rule the page states out loud: a stage is left when its exit criteria
-// are met, not when its date arrives. The dates are targets; the criteria are
-// the gate.
+// The rule the section states out loud: a stage is left when its exit
+// criteria are met, not when its date arrives.
 
 export const STATES = ['done', 'active', 'pending'];
-
-export const DIMENSIONS = ['focus', 'model', 'clients', 'funding'];
 
 export const STAGES = [
   // Only the current stage carries focus actions: they are the reminder of
@@ -22,12 +19,33 @@ export const STAGES = [
 
 export const CURRENT_STAGE = 'incubate';
 
-// Freelance is not a third company: it is Moonphase's incubator, so it rides
-// the Moonphase row and names itself only in the stage where it exists.
+// Freelance is Moonphase's incubator, not a third company: it rides the
+// Moonphase row and names itself only in the stage where it exists.
+// R&D is featured because it is Moonphase's largest ambition: it leads every
+// stage and renders full width.
 export const VENTURES = [
-  { id: 'moonphase', brand: 'moonphase' },
-  { id: 'stackselect', brand: 'stackselect' },
+  { id: 'moonphase', brand: 'moonphase', featured: 'rd' },
+  { id: 'stackselect', brand: 'stackselect', featured: null },
 ];
+
+const MOONPHASE_ALL = ['rd', 'operation', 'commercial', 'financeLegal', 'team', 'brand'];
+const STACKSELECT_ALL = ['program', 'platform', 'employers', 'talent', 'financeLegal', 'team', 'brand'];
+
+// Which workstreams have their own actions in each stage.
+export const FRONTS = {
+  moonphase: {
+    incubate: MOONPHASE_ALL,
+    stabilize: MOONPHASE_ALL,
+    scale: MOONPHASE_ALL,
+    exploit: ['rd', 'commercial', 'financeLegal', 'team'],
+  },
+  stackselect: {
+    incubate: STACKSELECT_ALL,
+    stabilize: STACKSELECT_ALL,
+    scale: ['program', 'platform', 'employers', 'talent', 'financeLegal', 'team'],
+    exploit: ['program', 'platform', 'employers', 'financeLegal'],
+  },
+};
 
 export const CRITERIA = {
   moonphase: {
@@ -65,24 +83,34 @@ export const CRITERIA = {
   },
 };
 
-// Every dictionary key the page reads, so a test can prove none of them is
-// missing in either language.
+// Every dictionary key the section reads, so a test can prove none is missing
+// in either language: plain strings, lists of strings, and lists of risks.
 export const planKeys = () => {
-  const keys = [
-    'plan.badge', 'plan.title', 'plan.lede', 'plan.here', 'plan.tabsLabel',
-    'plan.focusTitle', 'plan.exitTitle', 'plan.exitOpen', 'plan.back',
-    'plan.chipLabel', 'plan.chipCta', 'plan.hubCta',
+  const strings = [
+    'plan.title', 'plan.lede', 'plan.here', 'plan.stageTabs', 'plan.ventureTabs',
+    'plan.focusTitle', 'plan.objectiveTitle', 'plan.modelTitle', 'plan.metricsTitle',
+    'plan.frontsTitle', 'plan.risksTitle', 'plan.mitigationLabel', 'plan.exitTitle',
+    'plan.exitOpen', 'plan.chipLabel', 'plan.chipCta',
     'plan.names.freelanceMoonphase', 'plan.names.moonphase', 'plan.names.stackselect',
     ...STATES.map((state) => `plan.states.${state}`),
-    ...DIMENSIONS.map((dimension) => `plan.dims.${dimension}`),
   ];
+  const lists = [];
+  const risks = [];
+  const frontNames = new Set();
   STAGES.forEach((stage) => {
-    keys.push(`plan.stages.${stage.id}.name`, `plan.stages.${stage.id}.window`, `plan.stages.${stage.id}.tagline`);
-    stage.focusNow.forEach((action) => keys.push(`plan.stages.${stage.id}.now.${action}`));
+    strings.push(`plan.stages.${stage.id}.name`, `plan.stages.${stage.id}.window`, `plan.stages.${stage.id}.tagline`);
+    stage.focusNow.forEach((action) => strings.push(`plan.stages.${stage.id}.now.${action}`));
     VENTURES.forEach(({ id }) => {
-      DIMENSIONS.forEach((dimension) => keys.push(`plan.${id}.${stage.id}.${dimension}`));
-      CRITERIA[id][stage.id].forEach((criterion) => keys.push(`plan.${id}.${stage.id}.exit.${criterion.key}`));
+      const base = `plan.${id}.${stage.id}`;
+      strings.push(`${base}.objective`, `${base}.model`);
+      lists.push(`${base}.metrics`);
+      risks.push(`${base}.risks`);
+      FRONTS[id][stage.id].forEach((front) => {
+        lists.push(`${base}.fronts.${front}`);
+        frontNames.add(`plan.frontNames.${id}.${front}`);
+      });
+      CRITERIA[id][stage.id].forEach((criterion) => strings.push(`${base}.exit.${criterion.key}`));
     });
   });
-  return keys;
+  return { strings: [...strings, ...frontNames], lists, risks };
 };

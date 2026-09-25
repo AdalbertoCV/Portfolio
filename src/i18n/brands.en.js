@@ -33,34 +33,51 @@ const brandsEn = {
   },
 
   // ------------------------------------------------------ Operating plan
-  // Public on purpose, and narrative on purpose: stages, focus and exit
-  // criteria, but no amounts and no client names beyond what the site
-  // already tells. The structure (order, current stage, states) is in
-  // components/ventures/plan.js.
+  // Public on purpose, and narrative on purpose: stages, workstreams and exit
+  // criteria, but no amounts, prices, pipeline or client names beyond what the
+  // site already tells. The structure (order, current stage, which workstreams
+  // appear, criteria states) is in components/ventures/plan.js.
   plan: {
-    badge: 'Ventures · Operating plan',
     title: 'From promise to plan',
-    lede: 'January 2027 is when both companies start formal operations. This page is how we get there and what comes after, in four stages. Each stage has a target date, but we leave it when we meet its criteria, not when the date arrives.',
+    lede: 'January 2027 is when both companies start formal operations. Here is how we get there and what comes after, in four stages. Each stage has a target date, but we leave it when we meet its criteria, not when the date arrives. At Moonphase, research and our own technology lead every stage; at StackSelect, the placement is the measure of everything.',
     here: 'We are here',
-    tabsLabel: 'Plan stages',
+    stageTabs: 'Plan stages',
+    ventureTabs: 'Company',
     focusTitle: 'Where our focus goes now',
+    objectiveTitle: 'Stage objective',
+    modelTitle: 'Business model',
+    metricsTitle: 'Metrics we watch',
+    frontsTitle: 'Workstreams',
+    risksTitle: 'Risks',
+    mitigationLabel: 'How we mitigate it',
     exitTitle: 'Exit criteria',
     exitOpen: 'No exit criterion: this stage is the horizon.',
-    back: 'Back to Ventures',
     chipLabel: 'Current stage',
     chipCta: 'See the plan',
-    hubCta: 'See the operating plan',
     states: { done: 'Done', active: 'In progress', pending: 'Pending' },
-    dims: {
-      focus: 'Focus',
-      model: 'Business model',
-      clients: 'Client base',
-      funding: 'Funding',
-    },
     names: {
       freelanceMoonphase: 'Freelance → Moonphase',
       moonphase: 'Moonphase',
       stackselect: 'StackSelect',
+    },
+    frontNames: {
+      moonphase: {
+        rd: 'Research and development',
+        operation: 'Operations and method',
+        commercial: 'Sales and client base',
+        financeLegal: 'Finance and legal',
+        team: 'Team and culture',
+        brand: 'Brand and evidence',
+      },
+      stackselect: {
+        program: 'Training program',
+        platform: 'Assessment platform',
+        employers: 'Hiring companies',
+        talent: 'Talent intake',
+        financeLegal: 'Finance and legal',
+        team: 'Team and culture',
+        brand: 'Brand and evidence',
+      },
     },
     stages: {
       incubate: {
@@ -73,28 +90,56 @@ const brandsEn = {
           placements: 'Close StackSelect’s first placements and, with them, its pricing model.',
         },
       },
-      stabilize: {
-        name: 'Stabilize',
-        window: '2027',
-        tagline: 'Formal operations that pay for themselves.',
-      },
-      scale: {
-        name: 'Scale',
-        window: '2028 — 2029',
-        tagline: 'Grow without being the bottleneck.',
-      },
-      exploit: {
-        name: 'Exploit',
-        window: '2030 onwards',
-        tagline: 'Turn what was built into assets.',
-      },
+      stabilize: { name: 'Stabilize', window: '2027', tagline: 'Formal operations that pay for themselves.' },
+      scale: { name: 'Scale', window: '2028 — 2029', tagline: 'Grow without being the bottleneck.' },
+      exploit: { name: 'Exploit', window: '2030 onwards', tagline: 'Turn what was built into assets.' },
     },
     moonphase: {
       incubate: {
-        focus: 'Deliver automation projects with the Moonphase method —feasibility, scope, build, record— to show it holds outside theory.',
-        model: 'Fixed-scope, fixed-price projects, quoted against a measurable deliverable.',
-        clients: 'The client base the independent practice already built, starting with PuntoBienestar. Won by referral and by delivery, not by advertising.',
-        funding: 'Self-funded from the projects’ own revenue.',
+        objective: 'Prove two things with delivered projects: that our methodology makes a company genuinely adopt frontier technology, and that we can create our own technology instead of only integrating what already exists. It is the first evidence of the vision: things that exist because we do.',
+        model: 'An adoption assessment as the way in, then fixed-scope, fixed-price projects quoted against a measurable deliverable.',
+        metrics: [
+          'Open problems logged and under attack',
+          'Projects delivered with a record',
+          'Systems still in operation after delivery',
+          'Clients who return or refer',
+        ],
+        fronts: {
+          rd: [
+            'Open a log of open problems: the ideas that arrive and are not executable yet.',
+            'Choose the first R&D problem and break it into executable pieces.',
+            'In every project, at least one piece we created —a model, an agent, a tool— rather than only integrating what already exists.',
+            'Publish the first research record, even if its result is negative.',
+          ],
+          operation: [
+            'Formalize the adoption methodology: assessment, feasibility, build, adoption and record.',
+            'Measure adoption, not only delivery: that the system is used in the client’s operations.',
+            'Apply it to every new project, without exception.',
+            'Rewrite PuntoBienestar and the freelance projects as records.',
+          ],
+          commercial: [
+            'Offer every client in the freelance base to continue with Moonphase.',
+            'A written offer per type of adoption —platforms, agentic workflows, LLMs, ML and frontier technology, including what we develop— sellable to a company in any industry.',
+            'Every offer with scope, deliverable and fixed price.',
+          ],
+          financeLegal: [
+            'Incorporate the company and register it to invoice.',
+            'Separate company finances from personal ones and build an operating reserve.',
+            'A standard contract in which the client accepts that a negative result is also delivered documented, with intellectual property defined per project.',
+          ],
+          team: [
+            'The seven values as the criterion for accepting projects.',
+            'A network of collaborators per project before hiring anyone.',
+          ],
+          brand: [
+            'Our own site in January 2027, with the cases published.',
+            'Every record treated as public evidence, the negative ones included.',
+          ],
+        },
+        risks: [
+          { risk: 'Everything depending on one founder’s time.', mitigation: 'Closed scope and a realistic delivery calendar.' },
+          { risk: 'Taking projects outside the method for the revenue.', mitigation: 'A written acceptance criterion, applied before quoting.' },
+        ],
         exit: {
           legal: 'Moonphase legally incorporated.',
           records: 'Delivered projects rewritten as Moonphase records: what was built, what was measured, what failed.',
@@ -102,38 +147,171 @@ const brandsEn = {
         },
       },
       stabilize: {
-        focus: 'Lane 1, applied automation, covers operations, and the first lane 2 records, R&D, are opened.',
+        objective: 'Lane 1 pays for operations and lane 2 produces Moonphase’s first technology of its own: we stop depending on one project at a time, and on technology others create.',
         model: 'Fixed-scope projects plus maintenance and support contracts on what was delivered, which make part of the revenue recurring.',
-        clients: 'From referral to channel: published cases, the company’s own site from January 2027, and specific niches where the method has already proven itself.',
-        funding: 'Lane 1 funds lane 2. Public science, technology and innovation funds for the first R&D projects.',
+        metrics: [
+          'Share of revenue that is recurring',
+          'Margin per project against the quote',
+          'Lane 2 records opened and closed',
+          'Our own technology in use',
+        ],
+        fronts: {
+          rd: [
+            'A fixed share of revenue and time set aside for lane 2, protected from the day to day.',
+            'Moonphase’s first technology of its own —a model, a framework or a tool— in use inside client projects.',
+            'Close the first R&D record with its map of conditions.',
+            'Submit the first R&D project to a public innovation call.',
+            'A yearly research agenda: which open problems we attack, why, and by what measure of progress.',
+          ],
+          operation: [
+            'Maintenance and support contracts offered at the close of every delivery.',
+            'An internal project board: scope, progress and deviation from the quote.',
+            'A catalogue of what we have built and repeat: our own agents, models and platforms.',
+          ],
+          commercial: [
+            'From referral to channel: cases published by type of technology, and direct sales to companies in any industry.',
+            'Partnerships with firms, consultancies and integrators that already serve companies needing to adopt technology.',
+          ],
+          financeLegal: [
+            'Formal accounting, and prices reviewed against the real margin.',
+            'Trademark registration and an intellectual property policy for what is built in lane 2.',
+          ],
+          team: [
+            'The first recurring engineering collaborator, with the method as onboarding.',
+            'Every closed project reviewed against the seven values.',
+          ],
+          brand: [
+            'A record published every quarter, positive or negative.',
+            'Presence in the region’s technical and automation communities.',
+          ],
+        },
+        risks: [
+          { risk: 'Lane 1 eating all the time and lane 2 never starting.', mitigation: 'Lane 2 time and budget allocated in advance, not from what is left over.' },
+          { risk: 'Revenue concentrated in a few clients.', mitigation: 'No client above a bounded share of revenue, and clients across several industries.' },
+        ],
         exit: {
           recurring: 'Recurring revenue covers operations.',
           firstRd: 'The first lane 2 record closed, with a positive or negative result.',
         },
       },
       scale: {
-        focus: 'First technical hires, and the method written down so another engineer runs it the same way.',
-        model: 'Projects plus a support portfolio, and the first reusable lane 1 components sold as product.',
-        clients: 'Industries and niches with more than one solved case, where the next client looks like the last one.',
-        funding: 'Angel or pre-seed round, raised once there are metrics to back it.',
+        objective: 'Moonphase delivers without the founder being the bottleneck, and a growing share of what we deliver is technology we created, not only integrated.',
+        model: 'Projects plus a support portfolio, and our own technology sold as product.',
+        metrics: [
+          'Projects delivered without the founder directly involved',
+          'Share of what we deliver that is our own technology',
+          'R&D records closed per year',
+          'Product revenue against project revenue',
+        ],
+        fronts: {
+          rd: [
+            'A portfolio of open problems, prioritised by impact, with continuous research rather than seasonal pushes.',
+            'A team dedicated to R&D, separate from lane 1 operations.',
+            'Collaboration with universities and research centres on lane 2 records.',
+            'Technical publications, open source or patents on what we create.',
+          ],
+          operation: [
+            'The method written as a manual, so any engineer runs it the same way.',
+            'Project leads who answer for the result end to end.',
+            'Our own technology packaged as product, alongside the project.',
+          ],
+          commercial: [
+            'Anchor industries where the methodology has already been proven several times, without closing ourselves to any.',
+            'The adoption methodology taught to, or licensed by, companies’ internal teams.',
+            'Selling product as well as projects.',
+          ],
+          financeLegal: [
+            'An angel or pre-seed round, raised on real metrics.',
+            'Basic corporate governance: an advisory board and regular reports to investors.',
+          ],
+          team: [
+            'The first full-time technical hires.',
+            'The culture written down: how we decide when the decision is not obvious.',
+          ],
+          brand: [
+            'Known as a reference in technology adoption for the records, not for the advertising.',
+          ],
+        },
+        risks: [
+          { risk: 'Growing the team faster than the method.', mitigation: 'Nobody leads a project without having run the whole method first.' },
+          { risk: 'Raising capital before having metrics.', mitigation: 'The round opens only once the Stabilize criteria are met.' },
+        ],
         exit: {
           handsOff: 'A project delivered end to end without the founder directly involved.',
           round: 'A round raised on real metrics, not on the promise.',
         },
       },
       exploit: {
-        focus: 'The R&D records that worked become products or spin-offs.',
+        objective: 'Be a source of frontier technology, not only its users: what we create in lane 2 becomes a product, spin-off or licence that others adopt. The measure of the vision is how many things exist because we do.',
         model: 'Product and licensing on our own research, alongside the services business.',
-        clients: 'Product customers, not only project clients.',
-        funding: 'Seed or Series A depending on traction, or growth on our own capital.',
+        metrics: [
+          'Products or spin-offs born from lane 2',
+          'Licensing revenue',
+          'Negative records reopened because conditions changed',
+        ],
+        fronts: {
+          rd: [
+            'A process to turn a successful record into a product or a company.',
+            'Reopen negative records when the state of the art moves.',
+            'A lab of our own, attacking the problems the industry gave up on.',
+          ],
+          commercial: ['Product customers in more than one industry.'],
+          financeLegal: [
+            'Seed or Series A depending on traction, or growth on our own capital.',
+            'A structure for spin-offs: equity, licences and intellectual property.',
+          ],
+          team: ['Teams per product, with the method as the common language.'],
+        },
+        risks: [
+          { risk: 'Losing the method as we grow.', mitigation: 'The record stays mandatory in every team, product teams included.' },
+        ],
       },
     },
     stackselect: {
       incubate: {
-        focus: 'Run the first training and assessment cohorts, under way since June 2026, and check that the method produces candidates who get hired.',
+        objective: 'Prove that the method places people: that a developer with no experience leaves a cohort employed, and that a company pays for it. It is the first evidence of the purpose: young talent inside the industry.',
         model: 'Validate who pays and why: the candidate, the hiring company, or both. The working hypothesis is that the company pays, per placement.',
-        clients: 'The first companies willing to interview candidates from the early cohorts.',
-        funding: 'Self-funded.',
+        metrics: [
+          'Candidates placed per cohort',
+          'Time from intake to placement',
+          'Companies that interview our candidates',
+        ],
+        fronts: {
+          program: [
+            'Close the curriculum for the first cohorts, validated by working professionals.',
+            'Assess every candidate on the way in and on the way out, by the same criteria the company will use.',
+            'Document each placement: where the candidate started, what was reinforced, and where they were hired.',
+          ],
+          platform: [
+            'The first version of the technical assessment, even if it is run by hand.',
+            'Define the criteria for certifying a candidate.',
+          ],
+          employers: [
+            'A short list of companies willing to interview the first cohorts.',
+            'Pricing conversations with those companies: a fee per placement and a replacement guarantee.',
+          ],
+          talent: [
+            'Intake in Zacatecas universities and communities, starting with the UAZ network.',
+            'Admission criteria that measure willingness and foundations, not prior experience.',
+          ],
+          financeLegal: [
+            'Incorporate the company and register it to invoice.',
+            'A contract with the company defining fee, guarantee and term.',
+            'An agreement with the candidate making clear that the deliverable is the placement, not the course.',
+          ],
+          team: [
+            'Working mentors and instructors as collaborators per cohort.',
+            'Commitment, empathy and solidarity as the criteria for choosing them.',
+          ],
+          brand: [
+            'Our own site in January 2027.',
+            'The first placement stories published, with the candidate’s permission.',
+          ],
+        },
+        risks: [
+          { risk: 'Training candidates no company hires.', mitigation: 'A curriculum validated by companies before each cohort, not after.' },
+          { risk: 'The candidate bearing the cost.', mitigation: 'The pricing hypothesis points at the company from the start.' },
+        ],
         exit: {
           legal: 'StackSelect legally incorporated.',
           placements: 'First real placements, documented end to end.',
@@ -141,30 +319,103 @@ const brandsEn = {
         },
       },
       stabilize: {
-        focus: 'Formal operations: regular cohorts, with the placement as the unit that is measured.',
+        objective: 'Placement becomes repeatable: regular cohorts, a sustained placement rate and companies that come back. The purpose stops depending on a single cohort.',
         model: 'The hiring company pays a fee per placement. The cost to the candidate stays minimal or zero, because they are the people who do not yet have an income.',
-        clients: 'Partner companies that hire repeatedly, not once.',
-        funding: 'Placement revenue, and public youth-employment and industry-linkage funds.',
+        metrics: [
+          'Placement rate per cohort',
+          'Companies that hire again',
+          'How long placed candidates stay in the job',
+        ],
+        fronts: {
+          program: [
+            'A fixed cohort calendar.',
+            'Tracks by profile: backend, frontend and data.',
+            'Follow-up with each placed candidate in their first months on the job.',
+          ],
+          platform: [
+            'The assessment as a system of our own, with reports a company understands.',
+            'A versioned bank of exercises and rubrics.',
+          ],
+          employers: [
+            'Agreements with partner companies that hire per cohort.',
+            'Presence at job fairs and on the sector’s job boards.',
+          ],
+          talent: [
+            'Formal partnerships with the region’s universities.',
+            'Scholarships or deferred cost for those who cannot pay.',
+          ],
+          financeLegal: [
+            'Public youth-employment and industry-linkage funds.',
+            'Formal accounting, and the price reviewed against the real cost per placement.',
+          ],
+          team: [
+            'The first cohort coordinator.',
+            'Assessors trained in the certification criteria.',
+          ],
+          brand: [
+            'The placement rate published, always calculated the same way.',
+            'Testimonials from companies and from placed candidates.',
+          ],
+        },
+        risks: [
+          { risk: 'Lowering the assessment bar to place more people.', mitigation: 'Certification does not bend to volume pressure, and the real rate is what gets reported.' },
+          { risk: 'Depending on a few hiring companies.', mitigation: 'A portfolio of partner companies in more than one industry.' },
+        ],
         exit: {
           rate: 'A placement rate documented and sustained across several cohorts.',
           repeat: 'Companies that hire again.',
         },
       },
       scale: {
-        focus: 'Our own instructors and assessors, and the assessment platform as a standalone product.',
+        objective: 'Place more young people than the founding team could train alone, and turn the assessment into a product companies use on their own.',
         model: 'Assessment as a service is added: companies pay to assess their own candidates with StackSelect’s criteria.',
-        clients: 'Companies that use the platform even when they do not hire by placement.',
-        funding: 'Angel or pre-seed round on placement traction.',
+        metrics: [
+          'Cohorts that run without the founders',
+          'Companies that use the platform without hiring by placement',
+          'Cost per placement',
+        ],
+        fronts: {
+          program: [
+            'Our own instructors and assessors, with the method as the standard.',
+            'New tracks based on what partner companies ask for.',
+          ],
+          platform: [
+            'The assessment platform as a standalone product.',
+            'Integration with companies’ recruiting processes.',
+          ],
+          employers: ['The assessment sold as a service to companies that recruit on their own.'],
+          talent: ['Intake in more states, online and in person.'],
+          financeLegal: [
+            'An angel or pre-seed round on placement traction.',
+            'The platform and the assessment criteria protected as intellectual property.',
+          ],
+          team: [
+            'A product team for the platform.',
+            'Operations leadership separate from technical leadership.',
+          ],
+        },
+        risks: [
+          { risk: 'The platform distracting from the deliverable, which is the placement.', mitigation: 'The platform is also measured by the placements it helps produce.' },
+          { risk: 'Losing quality as cohorts grow.', mitigation: 'Cohort size is capped by certified assessors, not by demand.' },
+        ],
         exit: {
           handsOff: 'Cohorts that run without the founders teaching or assessing.',
           platform: 'The platform with its own customers.',
         },
       },
       exploit: {
-        focus: 'Regional expansion and new talent verticals.',
+        objective: 'Measurably reduce unemployment among recent tech graduates, in more regions and across more talent profiles.',
         model: 'Placement and platform in more markets.',
-        clients: 'Companies outside the home region.',
-        funding: 'Seed or Series A depending on traction.',
+        metrics: ['Total candidates placed', 'Active regions and verticals', 'Platform revenue'],
+        fronts: {
+          program: ['New talent verticals beyond software development.'],
+          platform: ['The platform in more markets, with StackSelect’s criteria as the industry’s reference.'],
+          employers: ['Companies outside the home region.'],
+          financeLegal: ['Seed or Series A depending on traction.'],
+        },
+        risks: [
+          { risk: 'Losing the bond with the candidate on becoming a platform.', mitigation: 'The placement stays the company’s main metric.' },
+        ],
       },
     },
   },

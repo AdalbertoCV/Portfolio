@@ -34,34 +34,51 @@ const brandsEs = {
   },
 
   // ------------------------------------------------ Plan de operaciones
-  // Public on purpose, and narrative on purpose: stages, focus and exit
-  // criteria, but no amounts and no client names beyond what the site
-  // already tells. The structure (order, current stage, states) is in
-  // components/ventures/plan.js.
+  // Public on purpose, and narrative on purpose: stages, workstreams and exit
+  // criteria, but no amounts, prices, pipeline or client names beyond what the
+  // site already tells. The structure (order, current stage, which workstreams
+  // appear, criteria states) is in components/ventures/plan.js.
   plan: {
-    badge: 'Ventures · Plan de operaciones',
     title: 'De la promesa al plan',
-    lede: 'Enero de 2027 es la fecha de operación formal de las dos empresas. Esta página es cómo llegamos a ella y qué viene después, en cuatro etapas. Cada etapa tiene una fecha objetivo, pero salimos de ella cuando cumplimos sus criterios, no cuando llega la fecha.',
+    lede: 'Enero de 2027 es la fecha de operación formal de las dos empresas. Aquí está cómo llegamos a ella y qué viene después, en cuatro etapas. Cada etapa tiene una fecha objetivo, pero salimos de ella cuando cumplimos sus criterios, no cuando llega la fecha. En Moonphase, la investigación y la tecnología propia van al frente de cada etapa; en StackSelect, la colocación es la medida de todo.',
     here: 'Estamos aquí',
-    tabsLabel: 'Etapas del plan',
+    stageTabs: 'Etapas del plan',
+    ventureTabs: 'Empresa',
     focusTitle: 'En qué ponemos el foco ahora',
+    objectiveTitle: 'Objetivo de la etapa',
+    modelTitle: 'Modelo de negocio',
+    metricsTitle: 'Métricas que miramos',
+    frontsTitle: 'Frentes de trabajo',
+    risksTitle: 'Riesgos',
+    mitigationLabel: 'Cómo lo mitigamos',
     exitTitle: 'Criterios de salida',
     exitOpen: 'Sin criterio de salida: esta etapa es el horizonte.',
-    back: 'Volver a Ventures',
     chipLabel: 'Etapa actual',
     chipCta: 'Ver el plan',
-    hubCta: 'Ver el plan de operaciones',
     states: { done: 'Cumplido', active: 'En curso', pending: 'Pendiente' },
-    dims: {
-      focus: 'Foco',
-      model: 'Modelo de negocio',
-      clients: 'Cartera de clientes',
-      funding: 'Fondeo',
-    },
     names: {
       freelanceMoonphase: 'Freelance → Moonphase',
       moonphase: 'Moonphase',
       stackselect: 'StackSelect',
+    },
+    frontNames: {
+      moonphase: {
+        rd: 'Investigación y desarrollo',
+        operation: 'Operación y método',
+        commercial: 'Comercial y cartera',
+        financeLegal: 'Finanzas y legal',
+        team: 'Equipo y cultura',
+        brand: 'Marca y evidencia',
+      },
+      stackselect: {
+        program: 'Programa de formación',
+        platform: 'Plataforma de evaluación',
+        employers: 'Empresas contratantes',
+        talent: 'Captación de talento',
+        financeLegal: 'Finanzas y legal',
+        team: 'Equipo y cultura',
+        brand: 'Marca y evidencia',
+      },
     },
     stages: {
       incubate: {
@@ -74,28 +91,56 @@ const brandsEs = {
           placements: 'Cerrar las primeras colocaciones de StackSelect y, con ellas, el modelo de cobro.',
         },
       },
-      stabilize: {
-        name: 'Estabilizar',
-        window: '2027',
-        tagline: 'Operación formal que se sostiene sola.',
-      },
-      scale: {
-        name: 'Escalar',
-        window: '2028 — 2029',
-        tagline: 'Crecer sin ser el cuello de botella.',
-      },
-      exploit: {
-        name: 'Explotar',
-        window: '2030 en adelante',
-        tagline: 'Convertir lo construido en activos.',
-      },
+      stabilize: { name: 'Estabilizar', window: '2027', tagline: 'Operación formal que se sostiene sola.' },
+      scale: { name: 'Escalar', window: '2028 — 2029', tagline: 'Crecer sin ser el cuello de botella.' },
+      exploit: { name: 'Explotar', window: '2030 en adelante', tagline: 'Convertir lo construido en activos.' },
     },
     moonphase: {
       incubate: {
-        focus: 'Entregar proyectos de automatización con el método de Moonphase —factibilidad, alcance, construcción, expediente— para demostrar que se sostiene fuera de la teoría.',
-        model: 'Proyecto de alcance cerrado y precio fijo, cotizado contra un entregable medible.',
-        clients: 'La cartera que ya construyó la práctica independiente, empezando por PuntoBienestar. Se gana por referencia y por entrega, no por publicidad.',
-        funding: 'Autofinanciado con el ingreso de los propios proyectos.',
+        objective: 'Demostrar dos cosas con proyectos entregados: que nuestra metodología hace que una empresa de verdad adopte tecnología de vanguardia, y que somos capaces de crear tecnología propia en lugar de solo integrar la que ya existe. Es la primera evidencia de la visión: cosas que existen porque existimos.',
+        model: 'Diagnóstico de adopción como puerta de entrada, y proyecto de alcance cerrado y precio fijo, cotizado contra un entregable medible.',
+        metrics: [
+          'Problemas abiertos en la bitácora y en ataque',
+          'Proyectos entregados con expediente',
+          'Sistemas que siguen en operación después de la entrega',
+          'Clientes que repiten o refieren',
+        ],
+        fronts: {
+          rd: [
+            'Abrir una bitácora de problemas abiertos: las ideas que llegan y todavía no son ejecutables.',
+            'Elegir el primer problema de I+D y partirlo en pedazos ejecutables.',
+            'En cada proyecto, al menos una pieza creada por nosotros —un modelo, un agente, una herramienta— y no solo integración de lo que ya existe.',
+            'Publicar el primer expediente de investigación, aunque su resultado sea negativo.',
+          ],
+          operation: [
+            'Formalizar la metodología de adopción: diagnóstico, factibilidad, construcción, adopción y expediente.',
+            'Medir la adopción, no solo la entrega: que el sistema se use en la operación del cliente.',
+            'Aplicarla a cada proyecto nuevo, sin excepción.',
+            'Reescribir PuntoBienestar y los proyectos freelance como expedientes.',
+          ],
+          commercial: [
+            'Proponer a cada cliente de la cartera freelance continuar con Moonphase.',
+            'Una oferta escrita por tipo de adopción —plataformas, flujos agénticos, LLM, ML y tecnología de vanguardia, incluida la que desarrollamos— vendible a una empresa de cualquier industria.',
+            'Cada oferta con alcance, entregable y precio fijo.',
+          ],
+          financeLegal: [
+            'Constituir la sociedad y darla de alta para facturar.',
+            'Separar las finanzas de la empresa de las personales y formar una reserva operativa.',
+            'Un contrato tipo donde el cliente acepta que el resultado negativo también se entrega documentado, con la propiedad intelectual definida por proyecto.',
+          ],
+          team: [
+            'Los siete valores como criterio de admisión de proyectos.',
+            'Una red de colaboradores por proyecto antes de contratar a nadie.',
+          ],
+          brand: [
+            'Sitio propio en enero de 2027, con los casos publicados.',
+            'Cada expediente tratado como evidencia pública, incluido el negativo.',
+          ],
+        },
+        risks: [
+          { risk: 'Que todo dependa del tiempo de un solo fundador.', mitigation: 'Alcance cerrado y un calendario de entregas realista.' },
+          { risk: 'Aceptar proyectos fuera del método para tener ingreso.', mitigation: 'Un criterio de admisión escrito, aplicado antes de cotizar.' },
+        ],
         exit: {
           legal: 'Moonphase constituida legalmente.',
           records: 'Los proyectos entregados, reescritos como expedientes de Moonphase: qué se construyó, qué se midió, qué falló.',
@@ -103,38 +148,171 @@ const brandsEs = {
         },
       },
       stabilize: {
-        focus: 'Que el carril 1, automatización aplicada, cubra la operación, y abrir los primeros expedientes del carril 2, I+D.',
+        objective: 'Que el carril 1 pague la operación y el carril 2 produzca la primera tecnología propia de Moonphase: dejamos de depender de un proyecto a la vez y de la tecnología que otros crean.',
         model: 'Proyectos cerrados más contratos de mantenimiento y soporte sobre lo entregado, que vuelven recurrente parte del ingreso.',
-        clients: 'De la referencia al canal: casos publicados, sitio propio desde enero de 2027 y nichos concretos donde el método ya probó resultado.',
-        funding: 'El carril 1 financia el carril 2. Fondos públicos de ciencia, tecnología e innovación para los primeros proyectos de I+D.',
+        metrics: [
+          'Proporción del ingreso que es recurrente',
+          'Margen por proyecto contra lo cotizado',
+          'Expedientes del carril 2 abiertos y cerrados',
+          'Tecnología propia en uso',
+        ],
+        fronts: {
+          rd: [
+            'Una parte fija del ingreso y del tiempo destinada al carril 2, protegida del día a día.',
+            'La primera tecnología propia de Moonphase —un modelo, un framework o una herramienta— en uso dentro de proyectos de clientes.',
+            'Cerrar el primer expediente de I+D con su mapa de condiciones.',
+            'Someter el primer proyecto de I+D a una convocatoria pública de innovación.',
+            'Una agenda de investigación anual: qué problemas abiertos atacamos, por qué y con qué criterio de avance.',
+          ],
+          operation: [
+            'Contratos de mantenimiento y soporte ofrecidos al cierre de cada entrega.',
+            'Un tablero interno de proyectos: alcance, avance y desviación contra lo cotizado.',
+            'Un catálogo de lo que ya construimos y se repite: agentes, modelos y plataformas propios.',
+          ],
+          commercial: [
+            'De la referencia al canal: casos publicados por tipo de tecnología y venta directa a empresas de cualquier industria.',
+            'Alianzas con despachos, consultoras e integradores que ya atienden a empresas que necesitan adoptar tecnología.',
+          ],
+          financeLegal: [
+            'Contabilidad formal y precios revisados contra el margen real.',
+            'Registro de marca y una política de propiedad intelectual sobre lo que se construye en el carril 2.',
+          ],
+          team: [
+            'El primer colaborador recurrente en ingeniería, con el método como inducción.',
+            'Cada proyecto cerrado, revisado contra los siete valores.',
+          ],
+          brand: [
+            'Un expediente publicado cada trimestre, positivo o negativo.',
+            'Presencia en comunidades técnicas y de automatización de la región.',
+          ],
+        },
+        risks: [
+          { risk: 'Que el carril 1 se coma todo el tiempo y el carril 2 nunca arranque.', mitigation: 'Tiempo y presupuesto del carril 2 asignados de antemano, no con lo que sobre.' },
+          { risk: 'Ingreso concentrado en pocos clientes.', mitigation: 'Ningún cliente por encima de una parte acotada del ingreso, y clientes en varias industrias.' },
+        ],
         exit: {
           recurring: 'El ingreso recurrente cubre la operación.',
           firstRd: 'El primer expediente del carril 2 cerrado, con resultado positivo o negativo.',
         },
       },
       scale: {
-        focus: 'Primeras contrataciones técnicas, y el método escrito de modo que otro ingeniero lo ejecute igual.',
-        model: 'Proyectos más una cartera de soporte, y los primeros componentes reutilizables del carril 1 vendidos como producto.',
-        clients: 'Industrias y nichos con más de un caso resuelto, donde el siguiente cliente se parece al anterior.',
-        funding: 'Ronda ángel o pre-semilla, levantada cuando existan métricas que la sostengan.',
+        objective: 'Que Moonphase entregue sin que el fundador sea el cuello de botella, y que una parte creciente de lo que entregamos sea tecnología creada por nosotros, no solo integrada.',
+        model: 'Proyectos más una cartera de soporte, y la tecnología propia vendida como producto.',
+        metrics: [
+          'Proyectos entregados sin intervención directa del fundador',
+          'Proporción de lo entregado que es tecnología propia',
+          'Expedientes de I+D cerrados por año',
+          'Ingreso por producto contra ingreso por proyecto',
+        ],
+        fronts: {
+          rd: [
+            'Un portafolio de problemas abiertos, priorizado por impacto, con investigación continua y no por temporadas.',
+            'Un equipo dedicado a I+D, separado de la operación del carril 1.',
+            'Colaboración con universidades y centros de investigación en los expedientes del carril 2.',
+            'Publicaciones técnicas, código abierto o patentes sobre lo que creamos.',
+          ],
+          operation: [
+            'El método escrito como manual, de modo que cualquier ingeniero lo ejecute igual.',
+            'Líderes de proyecto que responden por el resultado de principio a fin.',
+            'La tecnología propia empaquetada como producto, además del proyecto.',
+          ],
+          commercial: [
+            'Industrias ancla donde la metodología ya se probó varias veces, sin cerrarnos a ninguna.',
+            'La metodología de adopción enseñada o licenciada a los equipos internos de las empresas.',
+            'Venta de producto además de proyecto.',
+          ],
+          financeLegal: [
+            'Ronda ángel o pre-semilla, levantada sobre métricas reales.',
+            'Gobierno corporativo básico: consejo asesor y reportes periódicos a inversionistas.',
+          ],
+          team: [
+            'Primeras contrataciones técnicas de tiempo completo.',
+            'La cultura escrita: cómo decidimos cuando la decisión no es obvia.',
+          ],
+          brand: [
+            'Reconocidos como referencia en adopción de tecnología por los expedientes, no por la publicidad.',
+          ],
+        },
+        risks: [
+          { risk: 'Crecer el equipo más rápido que el método.', mitigation: 'Nadie lidera un proyecto sin haber ejecutado antes el método completo.' },
+          { risk: 'Levantar capital antes de tener métricas.', mitigation: 'La ronda se abre solo con los criterios de Estabilizar cumplidos.' },
+        ],
         exit: {
           handsOff: 'Un proyecto entregado de principio a fin sin intervención directa del fundador.',
           round: 'Ronda levantada sobre métricas reales, no sobre la promesa.',
         },
       },
       exploit: {
-        focus: 'Los expedientes de I+D que funcionaron se vuelven productos o spin-offs.',
+        objective: 'Ser fuente de tecnología de vanguardia, no solo usuarios de ella: lo que creamos en el carril 2 se vuelve producto, spin-off o licencia que otros adoptan. La medida de la visión es cuántas cosas existen porque existimos.',
         model: 'Producto y licenciamiento sobre la investigación propia, además de la operación de servicios.',
-        clients: 'Clientes de producto, no solo de proyecto.',
-        funding: 'Ronda semilla o serie A según tracción, o crecimiento con capital propio.',
+        metrics: [
+          'Productos o spin-offs nacidos del carril 2',
+          'Ingreso por licenciamiento',
+          'Expedientes negativos reabiertos porque cambiaron las condiciones',
+        ],
+        fronts: {
+          rd: [
+            'Un proceso para convertir un expediente exitoso en producto o en empresa.',
+            'Reabrir los expedientes negativos cuando cambia el estado del arte.',
+            'Un laboratorio propio atacando los problemas que la industria dio por cerrados.',
+          ],
+          commercial: ['Clientes de producto en más de una industria.'],
+          financeLegal: [
+            'Ronda semilla o serie A según tracción, o crecimiento con capital propio.',
+            'Una estructura para spin-offs: participación, licencias y propiedad intelectual.',
+          ],
+          team: ['Equipos por producto, con el método como lenguaje común.'],
+        },
+        risks: [
+          { risk: 'Perder el método al crecer.', mitigation: 'El expediente sigue siendo obligatorio en todos los equipos, incluidos los de producto.' },
+        ],
       },
     },
     stackselect: {
       incubate: {
-        focus: 'Correr las primeras generaciones de formación y evaluación, en marcha desde junio de 2026, y comprobar que el método produce candidatos que se incorporan.',
+        objective: 'Demostrar que el método coloca: que un desarrollador sin experiencia sale de una generación con empleo, y que una empresa paga por ello. Es la primera evidencia del propósito: talento joven dentro de la industria.',
         model: 'Validar quién paga y por qué: el candidato, la empresa contratante o ambos. La hipótesis de trabajo es que paga la empresa, por colocación.',
-        clients: 'Las primeras empresas dispuestas a entrevistar a los candidatos de las generaciones iniciales.',
-        funding: 'Autofinanciado.',
+        metrics: [
+          'Candidatos colocados por generación',
+          'Tiempo desde el ingreso hasta la colocación',
+          'Empresas que entrevistan a nuestros candidatos',
+        ],
+        fronts: {
+          program: [
+            'Cerrar el temario de las primeras generaciones con la validación de profesionales en ejercicio.',
+            'Evaluar a cada candidato al entrar y al salir, con el mismo criterio que usará la empresa.',
+            'Documentar el caso de cada colocado: de dónde partió, qué se reforzó y dónde entró.',
+          ],
+          platform: [
+            'La primera versión de la evaluación técnica, aunque se opere a mano.',
+            'Definir los criterios de certificación de un candidato.',
+          ],
+          employers: [
+            'Una lista corta de empresas dispuestas a entrevistar a las primeras generaciones.',
+            'Conversaciones de precio con esas empresas: cuota por colocación y garantía de reemplazo.',
+          ],
+          talent: [
+            'Captación en universidades y comunidades de Zacatecas, empezando por la red de la UAZ.',
+            'Criterios de admisión que midan disposición y base, no experiencia previa.',
+          ],
+          financeLegal: [
+            'Constituir la sociedad y darla de alta para facturar.',
+            'Un contrato con la empresa que defina cuota, garantía y plazo.',
+            'Un acuerdo con el candidato que deje claro que el entregable es la colocación, no el curso.',
+          ],
+          team: [
+            'Mentores e instructores en ejercicio como colaboradores por generación.',
+            'Compromiso, empatía y solidaridad como criterio para elegirlos.',
+          ],
+          brand: [
+            'Sitio propio en enero de 2027.',
+            'Las primeras historias de colocación publicadas, con permiso del candidato.',
+          ],
+        },
+        risks: [
+          { risk: 'Formar candidatos que ninguna empresa contrata.', mitigation: 'Temario validado por empresas antes de cada generación, no después.' },
+          { risk: 'Que el candidato cargue con el costo.', mitigation: 'La hipótesis de cobro apunta a la empresa desde el inicio.' },
+        ],
         exit: {
           legal: 'StackSelect constituida legalmente.',
           placements: 'Primeras colocaciones reales, documentadas de principio a fin.',
@@ -142,30 +320,103 @@ const brandsEs = {
         },
       },
       stabilize: {
-        focus: 'Operación formal: generaciones regulares y la colocación como la unidad que se mide.',
+        objective: 'Que la colocación sea repetible: generaciones regulares, una tasa de colocación sostenida y empresas que vuelven. El propósito deja de depender de una sola generación.',
         model: 'La empresa contratante paga una cuota por colocación. El costo para el candidato se mantiene mínimo o nulo, porque es la población que todavía no tiene ingreso.',
-        clients: 'Empresas aliadas que contratan de forma recurrente, no una sola vez.',
-        funding: 'Ingreso por colocación, y fondos públicos de empleo juvenil y vinculación.',
+        metrics: [
+          'Tasa de colocación por generación',
+          'Empresas que vuelven a contratar',
+          'Permanencia del colocado en su empleo',
+        ],
+        fronts: {
+          program: [
+            'Un calendario fijo de generaciones.',
+            'Rutas por perfil: backend, frontend y datos.',
+            'Seguimiento del colocado en sus primeros meses de empleo.',
+          ],
+          platform: [
+            'La evaluación como sistema propio, con reportes que la empresa entiende.',
+            'Un banco de ejercicios y rúbricas versionado.',
+          ],
+          employers: [
+            'Convenios con empresas aliadas que contratan por generación.',
+            'Presencia en ferias de empleo y bolsas de trabajo del sector.',
+          ],
+          talent: [
+            'Alianzas formales con universidades de la región.',
+            'Becas o costo diferido para quien no puede pagar.',
+          ],
+          financeLegal: [
+            'Fondos públicos de empleo juvenil y vinculación.',
+            'Contabilidad formal y precio revisado contra el costo real por colocación.',
+          ],
+          team: [
+            'El primer coordinador de generaciones.',
+            'Evaluadores capacitados en el criterio de certificación.',
+          ],
+          brand: [
+            'La tasa de colocación publicada, calculada siempre de la misma forma.',
+            'Testimonios de empresas y de colocados.',
+          ],
+        },
+        risks: [
+          { risk: 'Bajar el estándar de evaluación para colocar más.', mitigation: 'La certificación no cambia por presión de volumen, y se reporta la tasa real.' },
+          { risk: 'Depender de pocas empresas contratantes.', mitigation: 'Una cartera de empresas aliadas en más de una industria.' },
+        ],
         exit: {
           rate: 'Tasa de colocación documentada y sostenida por varias generaciones.',
           repeat: 'Empresas que vuelven a contratar.',
         },
       },
       scale: {
-        focus: 'Instructores y evaluadores propios, y la plataforma de evaluación como producto independiente.',
+        objective: 'Colocar a más jóvenes de los que el equipo fundador podría formar solo, y convertir la evaluación en un producto que las empresas usan por su cuenta.',
         model: 'Se suma la evaluación como servicio: la empresa paga por evaluar a sus propios candidatos con el criterio de StackSelect.',
-        clients: 'Empresas que usan la plataforma aunque no contraten por colocación.',
-        funding: 'Ronda ángel o pre-semilla sobre la tracción de colocación.',
+        metrics: [
+          'Generaciones que corren sin los fundadores',
+          'Empresas que usan la plataforma sin contratar por colocación',
+          'Costo por colocación',
+        ],
+        fronts: {
+          program: [
+            'Instructores y evaluadores propios, con el método como estándar.',
+            'Nuevas rutas según lo que piden las empresas aliadas.',
+          ],
+          platform: [
+            'La plataforma de evaluación como producto independiente.',
+            'Integración con los procesos de reclutamiento de las empresas.',
+          ],
+          employers: ['La evaluación vendida como servicio a empresas que reclutan por su cuenta.'],
+          talent: ['Captación en más estados, en línea y presencial.'],
+          financeLegal: [
+            'Ronda ángel o pre-semilla sobre la tracción de colocación.',
+            'La plataforma y los criterios de evaluación protegidos como propiedad intelectual.',
+          ],
+          team: [
+            'Un equipo de producto para la plataforma.',
+            'Liderazgo de operación separado del liderazgo técnico.',
+          ],
+        },
+        risks: [
+          { risk: 'Que la plataforma distraiga del entregable, que es la colocación.', mitigation: 'La plataforma también se mide por las colocaciones que ayuda a producir.' },
+          { risk: 'Perder calidad al crecer las generaciones.', mitigation: 'El tamaño de cada generación lo limitan los evaluadores certificados, no la demanda.' },
+        ],
         exit: {
           handsOff: 'Generaciones que corren sin que los fundadores impartan ni evalúen.',
           platform: 'La plataforma con clientes propios.',
         },
       },
       exploit: {
-        focus: 'Expansión regional y por vertical de talento.',
+        objective: 'Reducir de forma medible el desempleo de recién egresados en tecnología, en más regiones y en más perfiles de talento.',
         model: 'Colocación y plataforma en más mercados.',
-        clients: 'Empresas fuera de la región de origen.',
-        funding: 'Ronda semilla o serie A según tracción.',
+        metrics: ['Colocados acumulados', 'Regiones y verticales activas', 'Ingreso de la plataforma'],
+        fronts: {
+          program: ['Nuevas verticales de talento más allá del desarrollo de software.'],
+          platform: ['La plataforma en más mercados, con el criterio de StackSelect como referencia de la industria.'],
+          employers: ['Empresas fuera de la región de origen.'],
+          financeLegal: ['Ronda semilla o serie A según tracción.'],
+        },
+        risks: [
+          { risk: 'Perder el vínculo con el candidato al convertirse en plataforma.', mitigation: 'La colocación sigue siendo la métrica principal de la empresa.' },
+        ],
       },
     },
   },
