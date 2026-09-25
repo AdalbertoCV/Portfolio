@@ -1446,3 +1446,237 @@ ol.timeline.reveal {
 .venture-foot {
     flex-wrap: wrap;
 }
+
+/* ------------------------------------------------------ operating plan
+   The rail is a tablist that reads as a road: a line through four nodes,
+   filled up to the current stage. Cards reuse the brand colour scopes so each
+   company arrives in its own colours, as it does on the hub. */
+
+.plan-rail {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(9rem, 1fr));
+    gap: 0.5rem;
+    margin: 2.5rem 0 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.plan-rail::before {
+    content: '';
+    position: absolute;
+    top: 1.05rem;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: color-mix(in srgb, var(--brand-core) 22%, transparent);
+}
+
+.plan-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 0.4rem 0.75rem 0.9rem;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: none;
+    color: var(--brand-soft);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.plan-stage:hover {
+    background: color-mix(in srgb, var(--brand-core) 6%, transparent);
+}
+
+.plan-stage:focus-visible {
+    outline: 2px solid var(--brand-core);
+    outline-offset: 2px;
+}
+
+.plan-stage.is-selected {
+    border-color: color-mix(in srgb, var(--brand-core) 34%, transparent);
+    background: color-mix(in srgb, var(--brand-core) 10%, transparent);
+    color: var(--brand-text);
+}
+
+.plan-node {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    margin: 0.4rem 0 0.35rem;
+    border: 2px solid color-mix(in srgb, var(--brand-core) 45%, transparent);
+    border-radius: 50%;
+    background: var(--color-bg-primary);
+}
+
+.plan-stage-past .plan-node,
+.plan-stage-current .plan-node {
+    border-color: var(--brand-core);
+    background: var(--brand-core);
+}
+
+.plan-stage-current .plan-node {
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--brand-core) 18%, transparent);
+}
+
+.plan-stage-name {
+    font-weight: 600;
+    color: var(--brand-text);
+}
+
+.plan-stage-window {
+    font-size: 0.82rem;
+}
+
+.plan-here {
+    margin-top: 0.2rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--brand-core) 14%, transparent);
+    color: var(--brand-core);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.plan-tagline {
+    margin: 0 0 1.5rem;
+    font-size: 1.15rem;
+    color: var(--brand-text);
+}
+
+.plan-focus {
+    margin-bottom: 2rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--brand-core);
+    border-radius: 0 12px 12px 0;
+    background: color-mix(in srgb, var(--brand-core) 6%, transparent);
+}
+
+.plan-focus .brand-h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
+}
+
+.plan-focus-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--brand-text);
+}
+
+.plan-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.plan-card {
+    padding: 1.5rem;
+    border-radius: 18px;
+    background: radial-gradient(120% 110% at 20% 0%, var(--brand-ink-2), var(--brand-ink) 65%);
+    border: 1px solid color-mix(in srgb, var(--brand-core) 24%, transparent);
+    color: var(--brand-on-ink);
+}
+
+.plan-card-title {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    color: var(--brand-core);
+}
+
+.plan-dims {
+    margin: 0 0 1.25rem;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.plan-dim dt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--brand-core);
+}
+
+.plan-dim dd {
+    margin: 0.2rem 0 0;
+    line-height: 1.55;
+}
+
+.plan-exit-title {
+    margin: 0 0 0.6rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--brand-soft);
+}
+
+.plan-exit {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+}
+
+.plan-exit-item {
+    display: grid;
+    grid-template-columns: 1.25rem 1fr auto;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+.plan-exit-mark {
+    color: var(--brand-core);
+}
+
+.plan-exit-state {
+    font-size: 0.72rem;
+    color: var(--brand-soft);
+    white-space: nowrap;
+}
+
+.plan-exit-item.is-done .plan-exit-text {
+    color: var(--brand-soft);
+}
+
+.plan-exit-open {
+    margin: 0;
+    color: var(--brand-soft);
+    font-style: italic;
+}
+
+.plan-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+}
+
+@media (max-width: 720px) {
+    .plan-rail {
+        grid-template-columns: repeat(4, 10.5rem);
+        margin-inline: -16px;
+        padding-inline: 16px;
+    }
+
+    .plan-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-exit-item {
+        grid-template-columns: 1.25rem 1fr;
+    }
+
+    .plan-exit-state {
+        grid-column: 2;
+    }
+}

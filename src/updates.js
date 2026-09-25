@@ -17,6 +17,11 @@
 
 const UPDATES = [
   {
+    date: '2026-09-25',
+    es: 'El plan de operaciones de Moonphase y StackSelect, por etapas',
+    en: 'The operating plan for Moonphase and StackSelect, stage by stage',
+  },
+  {
     date: '2026-09-24',
     es: 'Agent skills en el muro: Archify, Ponytail y las que todos instalan',
     en: 'Agent skills on the wall: Archify, Ponytail and the ones everybody installs',

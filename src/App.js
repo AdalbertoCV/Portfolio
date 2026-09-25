@@ -12,6 +12,7 @@ import SkipLink from './components/navigation/SkipLink';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MyProjects from './components/projects/projects';
 import Ventures from './components/ventures/ventures';
+import VenturesPlan from './components/ventures/VenturesPlan';
 import RadiiPage from './components/brand/RadiiPage';
 import StackSelectPage from './components/brand/StackSelectPage';
 import MoonphasePage from './components/brand/MoonphasePage';
@@ -67,6 +68,7 @@ const Pages = () => {
         <Route path="/experience" element={<Experience />} />
         <Route path="/projects" element={<MyProjects />} />
         <Route path="/ventures" element={<Ventures />} />
+        <Route path="/ventures/plan" element={<VenturesPlan />} />
         {/* Brand stories. Reached from the timeline and the ventures hub,
             but each is a real URL so it can be linked to on its own. */}
         <Route path="/radii" element={<RadiiPage />} />

@@ -24,6 +24,7 @@ const PAGES = {
   '/': 'home',
   '/experience': 'experience',
   '/ventures': 'ventures',
+  '/ventures/plan': 'plan',
   '/projects': 'projects',
   '/contact': 'contact',
   '/radii': 'radii',
