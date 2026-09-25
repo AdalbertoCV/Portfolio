@@ -1017,19 +1017,65 @@ import simlxIcon from '../../images/tech/mlx.png';
 import simetagptIcon from '../../images/tech/metagpt.svg';
 import siautogptIcon from '../../images/tech/autogpt.png';
 import siaiderIcon from '../../images/tech/aider.png';
+import sifortranIcon from '../../images/tech/fortran.svg';
+import sicommonlispIcon from '../../images/tech/commonlisp.svg';
+import sidIcon from '../../images/tech/d.svg';
+import siprologIcon from '../../images/tech/prolog.svg';
+import sivalaIcon from '../../images/tech/vala.svg';
+import sigunicornIcon from '../../images/tech/gunicorn.svg';
+import sisailsjsIcon from '../../images/tech/sailsjs.svg';
+import sifeathersIcon from '../../images/tech/feathers.svg';
+import sikoaIcon from '../../images/tech/koa.svg';
+import sirenderIcon from '../../images/tech/render.svg';
+import silinodeIcon from '../../images/tech/linode.svg';
+import sivultrIcon from '../../images/tech/vultr.svg';
+import sinumbaIcon from '../../images/tech/numba.svg';
+import sianacondaIcon from '../../images/tech/anaconda.svg';
+import sialpinejsIcon from '../../images/tech/alpinejs.svg';
+import sigatsbyIcon from '../../images/tech/gatsby.svg';
+import siscylladbIcon from '../../images/tech/scylladb.svg';
+import sicouchdbIcon from '../../images/tech/couchdb.svg';
+import sipixijsIcon from '../../images/tech/pixijs.svg';
+import sishopwareIcon from '../../images/tech/shopware.svg';
+import sitmuxIcon from '../../images/tech/tmux.svg';
 
 const TECH_GROUPS = [
   {
-    id: 'languages',
+    // The Stars: every technology with a public project behind it, moved up
+    // from its own group (which got a new tile in its place) and ordered by
+    // how many projects it carries. Everything else on the wall is used under
+    // NDA, in personal work, or kept on the radar — the lede says so.
+    id: 'stars',
     items: [
       { name: 'Python', icon: python, mono: true },
+      { name: 'Django', icon: django, mono: true },
       { name: 'Java', icon: java, mono: true },
       { name: 'JavaScript', icon: javascript, mono: true },
-      { name: 'TypeScript', icon: typescriptIcon, mono: true },
+      { name: 'Docker', icon: docker, mono: true },
       { name: 'C#', icon: csharp, mono: true },
+      { name: 'R', icon: rIcon, mono: true },
+      { name: 'Spring Boot', icon: spring, mono: true },
+      { name: 'FastAPI', icon: fastapiIcon, mono: true },
+      { name: 'JWT', icon: jwt, flat: true },
+      { name: 'LangGraph', icon: langgraphIcon, mono: true },
+      { name: 'PyTorch', icon: pytorchIcon, mono: true },
+      { name: 'AWS', icon: aws, mono: true },
+      { name: 'Kubernetes', icon: kubernetes, mono: true },
+      { name: 'PostgreSQL', icon: postgresql, mono: true },
+      { name: 'Oracle', icon: oracle, mono: true },
+      { name: 'React', icon: react, mono: true },
+      { name: 'Gradle', icon: sigradleIcon, mono: true },
+      { name: 'E-commerce', concept: 'ecommerce' },
+      { name: 'Strudel', icon: sistrudelIcon, flat: true },
+      { name: 'Selenium', icon: selenium, mono: true },
+    ],
+  },
+  {
+    id: 'languages',
+    items: [
+      { name: 'TypeScript', icon: typescriptIcon, mono: true },
       { name: 'Go', icon: goIcon, mono: true },
       { name: 'PHP', icon: phpIcon, mono: true },
-      { name: 'R', icon: rIcon, mono: true },
       // The systems end: C and C++ where the code has to answer to the
       // hardware, Rust where that has to happen without the footguns, Kotlin
       // on the JVM side next to Java.
@@ -1080,18 +1126,21 @@ const TECH_GROUPS = [
       // Motoko has no mark of its own; it is DFINITY's language and wears
       // DFINITY's, the way Axum wears Tokio's further up.
       { name: 'Motoko', icon: simotokoIcon, flat: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Fortran', icon: sifortranIcon, mono: true },
+      { name: 'Common Lisp', icon: sicommonlispIcon, mono: true },
+      { name: 'D', icon: sidIcon, mono: true },
+      { name: 'Prolog', icon: siprologIcon, mono: true },
+      { name: 'Vala', icon: sivalaIcon, mono: true },
     ],
   },
   {
     id: 'backend',
     items: [
-      { name: 'Django', icon: django, mono: true },
       { name: 'Django REST', icon: djangorest, mono: true },
-      { name: 'Spring Boot', icon: spring, mono: true },
       { name: 'Node.js', icon: nodeIcon, mono: true },
       { name: 'AdonisJS', icon: adonisIcon, mono: true },
       { name: 'Express', icon: expressIcon, mono: true },
-      { name: 'FastAPI', icon: fastapiIcon, mono: true },
       { name: 'Flask', icon: flaskIcon, mono: true },
       { name: 'Vaadin', icon: vaadinIcon, mono: true },
       { name: 'Laravel', icon: laravelIcon, mono: true },
@@ -1107,7 +1156,6 @@ const TECH_GROUPS = [
       // The two brokers behind the event-driven and streaming claims above.
       { name: 'RabbitMQ', icon: rabbitmqIcon, mono: true },
       { name: 'Apache Kafka', icon: kafkaIcon, mono: true },
-      { name: 'JWT', icon: jwt, flat: true },
       { name: 'OAuth', concept: 'oauth' },
       { name: 'Async task flows', concept: 'async' },
       { name: 'NestJS', icon: nestjsIcon, mono: true },
@@ -1164,6 +1212,11 @@ const TECH_GROUPS = [
       { name: 'Centrifugo', icon: sicentrifugoIcon, flat: true },
       { name: 'PgDog', icon: sipgdogIcon, flat: true },
       { name: 'Litestream', icon: silitestreamIcon, flat: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Gunicorn', icon: sigunicornIcon, mono: true },
+      { name: 'Sails.js', icon: sisailsjsIcon, mono: true },
+      { name: 'Feathers', icon: sifeathersIcon, mono: true },
+      { name: 'Koa', icon: sikoaIcon, mono: true },
     ],
   },
   {
@@ -1175,7 +1228,6 @@ const TECH_GROUPS = [
     id: 'ai',
     items: [
       { name: 'LangChain', icon: langchain, mono: true },
-      { name: 'LangGraph', icon: langgraphIcon, mono: true },
       { name: 'AI Agents', concept: 'agents' },
       { name: 'LLM & RAG', concept: 'rag' },
       { name: 'Machine Learning', concept: 'ml' },
@@ -1204,7 +1256,6 @@ const TECH_GROUPS = [
       { name: 'Ray', icon: rayIcon, mono: true },
       { name: 'vLLM', icon: vllmIcon, mono: true },
       { name: 'Weights & Biases', icon: weightsandbiasesIcon, mono: true },
-      { name: 'PyTorch', icon: pytorchIcon, mono: true },
       { name: 'scikit-learn', icon: scikitlearnIcon, mono: true },
       { name: 'Keras', icon: kerasIcon, mono: true },
       { name: 'NumPy', icon: numpyIcon, mono: true },
@@ -1245,6 +1296,9 @@ const TECH_GROUPS = [
       { name: 'SHAP', icon: sishapIcon, flat: true },
       // Tech week, the top-up.
       { name: 'Pinecone', icon: sipineconeIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Numba', icon: sinumbaIcon, mono: true },
+      { name: 'Anaconda', icon: sianacondaIcon, mono: true },
     ],
   },
   {
@@ -1431,10 +1485,7 @@ const TECH_GROUPS = [
   {
     id: 'cloud',
     items: [
-      { name: 'AWS', icon: aws, mono: true },
       { name: 'Azure', icon: azure, mono: true },
-      { name: 'Docker', icon: docker, mono: true },
-      { name: 'Kubernetes', icon: kubernetes, mono: true },
       { name: 'Linux', icon: linux, mono: true },
       // Where things actually get deployed, from a push-to-deploy PaaS down to
       // a bare VPS that has to be provisioned by hand. All four marks are
@@ -1526,6 +1577,10 @@ const TECH_GROUPS = [
       { name: 'Rancher Desktop', icon: sirancherdesktopIcon, mono: true },
       { name: 'Headlamp', icon: siheadlampIcon, mono: true },
       { name: 'Kubeflow', icon: sikubeflowIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Render', icon: sirenderIcon, mono: true },
+      { name: 'Linode', icon: silinodeIcon, mono: true },
+      { name: 'Vultr', icon: sivultrIcon, mono: true },
     ],
   },
   {
@@ -1662,13 +1717,11 @@ const TECH_GROUPS = [
   {
     id: 'data',
     items: [
-      { name: 'PostgreSQL', icon: postgresql, mono: true },
       { name: 'MySQL', icon: mysql, mono: true },
       { name: 'MongoDB', icon: mongodb, mono: true },
       { name: 'Redis', icon: redis, mono: true },
       { name: 'SQLite', icon: sqlite, mono: true },
       { name: 'Supabase', icon: supabaseIcon, mono: true },
-      { name: 'Oracle', icon: oracle, mono: true },
       // The pipeline, in the order it runs: orchestration, processing,
       // transformation, warehouse. All four are simple-icons monochrome, so
       // the dark-mode inversion covers them.
@@ -1734,12 +1787,14 @@ const TECH_GROUPS = [
       { name: 'Apache Doris', icon: siapachedorisIcon, mono: true },
       { name: 'Redpanda', icon: siredpandaIcon, flat: true },
       { name: 'Redash', icon: siredashIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'ScyllaDB', icon: siscylladbIcon, mono: true },
+      { name: 'CouchDB', icon: sicouchdbIcon, mono: true },
     ],
   },
   {
     id: 'frontend',
     items: [
-      { name: 'React', icon: react, mono: true },
       { name: 'Next.js', icon: nextIcon, mono: true },
       { name: 'Vue', icon: vueIcon, mono: true },
       { name: 'Angular', icon: angularIcon, mono: true },
@@ -1789,7 +1844,6 @@ const TECH_GROUPS = [
       // and the toolchain they are alternatives to was not.
       { name: 'Android Studio', icon: siandroidstudioIcon, mono: true },
       { name: 'Android', icon: siandroidIcon, mono: true },
-      { name: 'Gradle', icon: sigradleIcon, mono: true },
       { name: 'Jetpack Compose', icon: sijetpackcomposeIcon, mono: true },
       { name: 'Firebase', icon: sifirebaseIcon, mono: true },
       // The tech-week intake.
@@ -1829,6 +1883,9 @@ const TECH_GROUPS = [
       { name: 'Zag.js', icon: sizagjsIcon, mono: true },
       { name: 'moon', icon: simoonIcon, mono: true },
       { name: 'WebContainers', icon: siwebcontainersIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Alpine.js', icon: sialpinejsIcon, mono: true },
+      { name: 'Gatsby', icon: sigatsbyIcon, mono: true },
     ],
   },
   {
@@ -1840,7 +1897,6 @@ const TECH_GROUPS = [
       { name: 'WordPress', icon: wordpressIcon, mono: true },
       { name: 'WooCommerce', icon: woocommerceIcon, mono: true },
       { name: 'Elementor', icon: elementorIcon, mono: true },
-      { name: 'E-commerce', concept: 'ecommerce' },
       { name: 'Payments & checkout', concept: 'payments' },
       { name: 'SEO & analytics', concept: 'seo' },
       { name: 'Shopify', icon: shopifyIcon, mono: true },
@@ -1898,6 +1954,8 @@ const TECH_GROUPS = [
       { name: 'unDraw', icon: siundrawIcon, mono: true },
       // Third intake.
       { name: 'Odoo', icon: siodooIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Shopware', icon: sishopwareIcon, mono: true },
     ],
   },
   {
@@ -1975,8 +2033,9 @@ const TECH_GROUPS = [
       { name: 'Ren\'Py', icon: sirenpyIcon, mono: true },
       { name: 'Cascadeur', icon: sicascadeurIcon, flat: true },
       { name: 'LDtk', icon: sildtkIcon, flat: true },
-      { name: 'Strudel', icon: sistrudelIcon, flat: true },
       { name: 'Marvelous Designer', icon: simarvelousdesignerIcon, flat: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'PixiJS', icon: sipixijsIcon, mono: true },
     ],
   },
   {
@@ -2076,7 +2135,6 @@ const TECH_GROUPS = [
       { name: 'Git', icon: git, mono: true },
       { name: 'GitHub', icon: github, mono: true },
       { name: 'Postman', icon: postman, mono: true },
-      { name: 'Selenium', icon: selenium, mono: true },
       { name: 'Figma', icon: figma, mono: true },
       { name: 'Miro', icon: miro, mono: true },
       { name: 'Linear', icon: linear, mono: true },
@@ -2152,6 +2210,8 @@ const TECH_GROUPS = [
       { name: 'MVT', icon: simvtIcon, flat: true },
       { name: 'worktrunk', icon: siworktrunkIcon, flat: true },
       { name: 'Files.md', icon: sifilesmdIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'tmux', icon: sitmuxIcon, mono: true },
     ],
   },
   {

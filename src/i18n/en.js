@@ -551,6 +551,7 @@ const en = {
     heading: 'Skills',
     subheading: 'Technologies & Tools I Work With',
     groups: {
+      stars: 'The Stars',
       languages: 'Languages',
       backend: 'Backend & architecture',
       ai: 'AI systems I build',

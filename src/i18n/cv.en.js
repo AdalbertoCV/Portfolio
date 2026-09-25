@@ -57,7 +57,7 @@ const cvEn = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'What I use, test and explore',
-    skillsLede: 'Three different things in one list: what I use daily, what I am testing this week, and what I follow from a distance because it only just shipped. The list runs in that order; pick the part of it you came for.',
+    skillsLede: 'First, the stars: the technologies with public projects behind them, each linked to that work. The rest we use on projects under NDA or personal ones, or keep on the radar because it only just shipped.',
     skillsReceipt: 'projects with',
     skillsExpandAll: 'Open every group',
     skillsCollapseAll: 'Close every group',

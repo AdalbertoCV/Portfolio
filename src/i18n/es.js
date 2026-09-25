@@ -551,6 +551,7 @@ const es = {
     heading: 'Habilidades',
     subheading: 'Tecnologías y Herramientas que Utilizo',
     groups: {
+      stars: 'The Stars',
       languages: 'Lenguajes',
       backend: 'Backend y arquitectura',
       ai: 'Sistemas de IA que construyo',
