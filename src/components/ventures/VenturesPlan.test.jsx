@@ -18,7 +18,7 @@ test('opens on the current stage, marked as where you are', () => {
   renderPlan();
   const selected = tabs().find((tab) => tab.getAttribute('aria-selected') === 'true');
   expect(selected).toHaveTextContent('Incubate');
-  expect(selected).toHaveTextContent('You are here');
+  expect(selected).toHaveTextContent('We are here');
 });
 
 test('arrow keys move the selection and wrap at both ends', () => {
@@ -45,9 +45,9 @@ test('the Moonphase card names Freelance only while incubating', () => {
 
 test('focus actions show only for the current stage', () => {
   renderPlan();
-  expect(screen.getByRole('heading', { name: 'Where my focus goes now' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Where our focus goes now' })).toBeInTheDocument();
   fireEvent.click(tabs()[2]);
-  expect(screen.queryByRole('heading', { name: 'Where my focus goes now' })).toBeNull();
+  expect(screen.queryByRole('heading', { name: 'Where our focus goes now' })).toBeNull();
 });
 
 test('the horizon stage says it has no exit criterion instead of an empty list', () => {

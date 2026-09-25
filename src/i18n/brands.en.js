@@ -40,10 +40,10 @@ const brandsEn = {
   plan: {
     badge: 'Ventures · Operating plan',
     title: 'From promise to plan',
-    lede: 'January 2027 is when both companies start formal operations. This page is how they get there and what comes after, in four stages. Each stage has a target date, but it is left when its criteria are met, not when the date arrives.',
-    here: 'You are here',
+    lede: 'January 2027 is when both companies start formal operations. This page is how we get there and what comes after, in four stages. Each stage has a target date, but we leave it when we meet its criteria, not when the date arrives.',
+    here: 'We are here',
     tabsLabel: 'Plan stages',
-    focusTitle: 'Where my focus goes now',
+    focusTitle: 'Where our focus goes now',
     exitTitle: 'Exit criteria',
     exitOpen: 'No exit criterion: this stage is the horizon.',
     back: 'Back to Ventures',
@@ -117,7 +117,7 @@ const brandsEn = {
         clients: 'Industries and niches with more than one solved case, where the next client looks like the last one.',
         funding: 'Angel or pre-seed round, raised once there are metrics to back it.',
         exit: {
-          handsOff: 'A project delivered end to end without my direct involvement.',
+          handsOff: 'A project delivered end to end without the founder directly involved.',
           round: 'A round raised on real metrics, not on the promise.',
         },
       },
@@ -156,7 +156,7 @@ const brandsEn = {
         clients: 'Companies that use the platform even when they do not hire by placement.',
         funding: 'Angel or pre-seed round on placement traction.',
         exit: {
-          handsOff: 'Cohorts that run without me teaching or assessing.',
+          handsOff: 'Cohorts that run without the founders teaching or assessing.',
           platform: 'The platform with its own customers.',
         },
       },

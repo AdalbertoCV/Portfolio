@@ -41,10 +41,10 @@ const brandsEs = {
   plan: {
     badge: 'Ventures · Plan de operaciones',
     title: 'De la promesa al plan',
-    lede: 'Enero de 2027 es la fecha de operación formal de las dos empresas. Esta página es cómo se llega a ella y qué viene después, en cuatro etapas. Cada etapa tiene una fecha objetivo, pero se sale de ella cuando se cumplen sus criterios, no cuando llega la fecha.',
-    here: 'Estás aquí',
+    lede: 'Enero de 2027 es la fecha de operación formal de las dos empresas. Esta página es cómo llegamos a ella y qué viene después, en cuatro etapas. Cada etapa tiene una fecha objetivo, pero salimos de ella cuando cumplimos sus criterios, no cuando llega la fecha.',
+    here: 'Estamos aquí',
     tabsLabel: 'Etapas del plan',
-    focusTitle: 'En qué pongo el foco ahora',
+    focusTitle: 'En qué ponemos el foco ahora',
     exitTitle: 'Criterios de salida',
     exitOpen: 'Sin criterio de salida: esta etapa es el horizonte.',
     back: 'Volver a Ventures',
@@ -118,7 +118,7 @@ const brandsEs = {
         clients: 'Industrias y nichos con más de un caso resuelto, donde el siguiente cliente se parece al anterior.',
         funding: 'Ronda ángel o pre-semilla, levantada cuando existan métricas que la sostengan.',
         exit: {
-          handsOff: 'Un proyecto entregado de principio a fin sin mi intervención directa.',
+          handsOff: 'Un proyecto entregado de principio a fin sin intervención directa del fundador.',
           round: 'Ronda levantada sobre métricas reales, no sobre la promesa.',
         },
       },
@@ -157,7 +157,7 @@ const brandsEs = {
         clients: 'Empresas que usan la plataforma aunque no contraten por colocación.',
         funding: 'Ronda ángel o pre-semilla sobre la tracción de colocación.',
         exit: {
-          handsOff: 'Generaciones que corren sin que yo imparta ni evalúe.',
+          handsOff: 'Generaciones que corren sin que los fundadores impartan ni evalúen.',
           platform: 'La plataforma con clientes propios.',
         },
       },
