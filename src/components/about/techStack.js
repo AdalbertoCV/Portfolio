@@ -533,6 +533,7 @@ import sigroqIcon from '../../images/tech/groq.svg';
 import sicerebrasIcon from '../../images/tech/cerebras.svg';
 import sibasetenIcon from '../../images/tech/baseten.svg';
 import sitogetherIcon from '../../images/tech/together.svg';
+import sisticklightIcon from '../../images/tech/sticklight.svg';
 import siarchifyIcon from '../../images/tech/archify.svg';
 import siponytailIcon from '../../images/tech/ponytail.svg';
 import sisuperpowersIcon from '../../images/tech/superpowers.svg';
@@ -581,6 +582,38 @@ import sidevenvIcon from '../../images/tech/devenv.png';
 import siopencostIcon from '../../images/tech/opencost.png';
 import siskypilotIcon from '../../images/tech/skypilot.png';
 import siorbstackIcon from '../../images/tech/orbstack.png';
+import sisupermemoryIcon from '../../images/tech/supermemory.png';
+import sifastmcpIcon from '../../images/tech/fastmcp.png';
+import sibrowseruseIcon from '../../images/tech/browseruse.png';
+import sifirecrawlIcon from '../../images/tech/firecrawl.svg';
+import siragflowIcon from '../../images/tech/ragflow.png';
+import siunstructuredIcon from '../../images/tech/unstructured.svg';
+import sinomicIcon from '../../images/tech/nomic.png';
+import siopikIcon from '../../images/tech/opik.png';
+import siheliconeIcon from '../../images/tech/helicone.png';
+import sipromptfooIcon from '../../images/tech/promptfoo.png';
+import sioutlinesIcon from '../../images/tech/outlines.png';
+import sibamlIcon from '../../images/tech/baml.png';
+import sizepIcon from '../../images/tech/zep.png';
+import sistagehandIcon from '../../images/tech/stagehand.png';
+import sibraintrustIcon from '../../images/tech/braintrust.svg';
+import sidbosIcon from '../../images/tech/dbos.png';
+import sibrowserbaseIcon from '../../images/tech/browserbase.svg';
+import sireductoIcon from '../../images/tech/reducto.png';
+import sistrandsagentsIcon from '../../images/tech/strandsagents.svg';
+import siturbopufferIcon from '../../images/tech/turbopuffer.png';
+import siaxolotlIcon from '../../images/tech/axolotl.png';
+import sibitsandbytesIcon from '../../images/tech/bitsandbytes.png';
+import sizenmlIcon from '../../images/tech/zenml.png';
+import siflyteIcon from '../../images/tech/flyte.png';
+import silabelstudioIcon from '../../images/tech/labelstudio.svg';
+import silightgbmIcon from '../../images/tech/lightgbm.png';
+import sijaxIcon from '../../images/tech/jax.svg';
+import siscipyIcon from '../../images/tech/scipy.svg';
+import sishapIcon from '../../images/tech/shap.png';
+import sigemmaIcon from '../../images/tech/gemma.svg';
+import siglmIcon from '../../images/tech/glm.svg';
+import siplaneIcon from '../../images/tech/plane.png';
 
 const TECH_GROUPS = [
   {
@@ -781,6 +814,42 @@ const TECH_GROUPS = [
       { name: 'Composio', icon: sicomposioIcon, mono: true },
       { name: 'Letta', icon: silettaIcon, flat: true },
       { name: 'Mem0', icon: simem0Icon, flat: true },
+      // The agent bench, 2026.
+      { name: 'Axolotl', icon: siaxolotlIcon, flat: true },
+      { name: 'bitsandbytes', icon: sibitsandbytesIcon, flat: true },
+      { name: 'ZenML', icon: sizenmlIcon, flat: true },
+      { name: 'Flyte', icon: siflyteIcon, flat: true },
+      { name: 'Label Studio', icon: silabelstudioIcon, mono: true },
+      { name: 'LightGBM', icon: silightgbmIcon, flat: true },
+      { name: 'JAX', icon: sijaxIcon, mono: true },
+      { name: 'SciPy', icon: siscipyIcon, mono: true },
+      { name: 'SHAP', icon: sishapIcon, flat: true },
+    ],
+  },
+  {
+    id: 'agents',
+    items: [
+      // The agent-engineering bench: frameworks, memory, tools, evals.
+      // The agent bench, 2026.
+      { name: 'Supermemory', icon: sisupermemoryIcon, flat: true },
+      { name: 'FastMCP', icon: sifastmcpIcon, flat: true },
+      { name: 'Browser Use', icon: sibrowseruseIcon, flat: true },
+      { name: 'Firecrawl', icon: sifirecrawlIcon, mono: true },
+      { name: 'RAGFlow', icon: siragflowIcon, flat: true },
+      { name: 'Unstructured', icon: siunstructuredIcon, mono: true },
+      { name: 'Nomic', icon: sinomicIcon, flat: true },
+      { name: 'Opik', icon: siopikIcon, flat: true },
+      { name: 'Helicone', icon: siheliconeIcon, flat: true },
+      { name: 'Promptfoo', icon: sipromptfooIcon, flat: true },
+      { name: 'Outlines', icon: sioutlinesIcon, flat: true },
+      { name: 'BAML', icon: sibamlIcon, flat: true },
+      { name: 'Zep', icon: sizepIcon, flat: true },
+      { name: 'Stagehand', icon: sistagehandIcon, flat: true },
+      { name: 'Braintrust', icon: sibraintrustIcon, mono: true },
+      { name: 'DBOS', icon: sidbosIcon, flat: true },
+      { name: 'Browserbase', icon: sibrowserbaseIcon, mono: true },
+      { name: 'Reducto', icon: sireductoIcon, flat: true },
+      { name: 'Strands Agents', icon: sistrandsagentsIcon, mono: true },
     ],
   },
   {
@@ -878,6 +947,10 @@ const TECH_GROUPS = [
       { name: 'Cerebras', icon: sicerebrasIcon, mono: true },
       { name: 'Baseten', icon: sibasetenIcon, mono: true },
       { name: 'Together AI', icon: sitogetherIcon, mono: true },
+      { name: 'Sticklight', icon: sisticklightIcon, mono: true },
+      // The agent bench, 2026.
+      { name: 'Gemma', icon: sigemmaIcon, mono: true },
+      { name: 'GLM', icon: siglmIcon, mono: true },
     ],
   },
   {
@@ -959,6 +1032,12 @@ const TECH_GROUPS = [
       { name: 'OpenCost', icon: siopencostIcon, flat: true },
       { name: 'SkyPilot', icon: siskypilotIcon, flat: true },
       { name: 'OrbStack', icon: siorbstackIcon, flat: true },
+    ],
+  },
+  {
+    id: 'netlab',
+    items: [
+      // The network bench and the homelab it runs on.
     ],
   },
   {
@@ -1079,6 +1158,8 @@ const TECH_GROUPS = [
       { name: 'Daft', icon: sidaftIcon, flat: true },
       { name: 'ParadeDB', icon: siparadedbIcon, flat: true },
       { name: 'SQLMesh', icon: sisqlmeshIcon, flat: true },
+      // The agent bench, 2026.
+      { name: 'turbopuffer', icon: siturbopufferIcon, flat: true },
     ],
   },
   {
@@ -1242,6 +1323,12 @@ const TECH_GROUPS = [
     ],
   },
   {
+    id: 'hardware',
+    items: [
+      // Where the software meets something that moves or gets made.
+    ],
+  },
+  {
     id: 'tools',
     items: [
       { name: 'Git', icon: git, mono: true },
@@ -1302,6 +1389,25 @@ const TECH_GROUPS = [
       { name: 'Superpowers', icon: sisuperpowersIcon, mono: true },
       { name: 'Mintlify', icon: simintlifyIcon, mono: true },
       { name: 'Context7', icon: sicontext7Icon, flat: true },
+    ],
+  },
+  {
+    id: 'diagrams',
+    items: [
+      // Drawing the system, then writing it down.
+    ],
+  },
+  {
+    id: 'learning',
+    items: [
+      // Where the knowledge actually comes from.
+    ],
+  },
+  {
+    id: 'collab',
+    items: [
+      // How the work gets done with other people.
+      { name: 'Plane', icon: siplaneIcon, flat: true },
     ],
   },
   {
