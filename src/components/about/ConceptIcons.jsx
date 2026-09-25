@@ -1465,6 +1465,19 @@ const ICONS = {
     </svg>
   ),
 
+  // Behave has no mark of its own — its avatar is a word cloud — so it gets
+  // what it is: a scenario in three steps, given, when, then, the last one
+  // passing.
+  bdd: (
+    <svg {...base}>
+      <path d="M5 3.5h10.5L19 7v13.5H5z" />
+      <path d="M15.5 3.5V7H19" />
+      <path d="M8 10.5h2M8 14h2M8 17.5h2" />
+      <path d="M12 10.5h4M12 14h4" />
+      <path d="M12 17.4l1.3 1.3 2.8-2.9" />
+    </svg>
+  ),
+
   // An arrow with a heading and a length — a vector — sitting inside the
   // stack of platters every database has been drawn as since the tape reel.
   // pgvector has no logo of its own and borrowing Postgres's elephant would

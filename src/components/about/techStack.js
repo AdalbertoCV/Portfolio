@@ -1039,6 +1039,8 @@ import sipixijsIcon from '../../images/tech/pixijs.svg';
 import sishopwareIcon from '../../images/tech/shopware.svg';
 import sitmuxIcon from '../../images/tech/tmux.svg';
 import sipreziIcon from '../../images/tech/prezi.svg';
+import sigreptileIcon from '../../images/tech/greptile.svg';
+import sidropboxIcon from '../../images/tech/dropbox.svg';
 
 const TECH_GROUPS = [
   {
@@ -1069,6 +1071,7 @@ const TECH_GROUPS = [
       { name: 'E-commerce', concept: 'ecommerce' },
       { name: 'Strudel', icon: sistrudelIcon, flat: true },
       { name: 'Selenium', icon: selenium, mono: true },
+      { name: 'Behave', concept: 'bdd' },
     ],
   },
   {
@@ -1481,6 +1484,7 @@ const TECH_GROUPS = [
       { name: 'Photopea', icon: siphotopeaIcon, mono: true },
       // Third intake.
       { name: 'Aider', icon: siaiderIcon, flat: true },
+      { name: 'Greptile', icon: sigreptileIcon, mono: true },
     ],
   },
   {
@@ -2313,6 +2317,7 @@ const TECH_GROUPS = [
       { name: 'Zoom', icon: sizoomIcon, mono: true },
       { name: 'Twilio', icon: sitwilioIcon, mono: true },
       { name: 'Prezi', icon: sipreziIcon, mono: true },
+      { name: 'Dropbox', icon: sidropboxIcon, mono: true },
     ],
   },
   {
