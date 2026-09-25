@@ -1680,3 +1680,63 @@ ol.timeline.reveal {
         grid-column: 2;
     }
 }
+
+/* The chip on each brand page that points at the plan. */
+.stage-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid color-mix(in srgb, var(--brand-core) 34%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--brand-core) 8%, transparent);
+    color: var(--brand-text);
+    font-size: 0.88rem;
+    text-decoration: none;
+}
+
+.stage-chip:hover {
+    border-color: color-mix(in srgb, var(--brand-core) 60%, transparent);
+}
+
+.stage-chip:focus-visible {
+    outline: 2px solid var(--brand-core);
+    outline-offset: 2px;
+}
+
+.stage-chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--brand-core);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-core) 18%, transparent);
+}
+
+.stage-chip-label {
+    color: var(--brand-soft);
+}
+
+.stage-chip-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--brand-core);
+}
+
+.stage-chip-cta svg {
+    width: 14px;
+    height: 14px;
+}
+
+.plan-hub-link {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    margin: 1.5rem 0 0;
+}
+
+.plan-hub-link .stage-chip {
+    margin-top: 0;
+}

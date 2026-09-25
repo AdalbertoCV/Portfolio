@@ -1,4 +1,5 @@
 import { useTranslation } from '../../i18n/I18nProvider';
+import StageChip from '../ventures/StageChip';
 import { StackSelectArt, StackSelectMark } from '../marks/StackSelectMark';
 import {
   BrandFooterNav,
@@ -77,6 +78,7 @@ const StackSelectPage = () => {
           />
           <Reveal>
             <p className="brand-note">{t('stackselect.statusNote')}</p>
+            <StageChip />
           </Reveal>
         </Section>
 

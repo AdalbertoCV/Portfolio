@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from '../../i18n/I18nProvider';
+import StageChip from '../ventures/StageChip';
 import { MoonphaseArt, MoonphaseMark } from '../marks/MoonphaseMark';
 import {
   BrandFooterNav,
@@ -124,6 +125,7 @@ const MoonphasePage = () => {
           />
           <Reveal>
             <p className="brand-note">{t('moonphase.statusNote')}</p>
+            <StageChip />
           </Reveal>
         </Section>
 

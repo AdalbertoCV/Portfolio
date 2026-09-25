@@ -4,6 +4,7 @@ import { StackSelectMark } from '../marks/StackSelectMark';
 import { MoonphaseMark } from '../marks/MoonphaseMark';
 import { ArrowRight, Reveal } from '../brand/parts';
 import ProjectsMosaic from '../projects/ProjectsMosaic';
+import StageChip from './StageChip';
 
 // The two companies Adalberto founded, as opposed to the roles on /experience
 // where someone else hired him. The split is the whole point of this page
@@ -69,6 +70,15 @@ const Ventures = () => {
             <span className="sr-only">{` — ${t(roleKey)}`}</span>
           </Link>
         ))}
+      </Reveal>
+
+      {/* The plan both companies are working to, one tap from their cards. */}
+      <Reveal className="plan-hub-link">
+        <Link className="brand-link-out" to="/ventures/plan">
+          {t('plan.hubCta')}
+          <ArrowRight />
+        </Link>
+        <StageChip />
       </Reveal>
 
       {/* The same hand-off the timeline makes to Ventures: a page ends by

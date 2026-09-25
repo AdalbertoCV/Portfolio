@@ -1,4 +1,5 @@
 import { useTranslation } from '../../i18n/I18nProvider';
+import StageChip from '../ventures/StageChip';
 import { FreelanceArt, FreelanceMark } from '../marks/RoleArt';
 import {
   BrandFooterNav,
@@ -74,6 +75,12 @@ const FreelancePage = () => {
       />
 
       <div className="brand-body">
+        {/* Freelance is Moonphase's incubator, so its story points at the
+            plan it is stage zero of. */}
+        <Reveal>
+          <StageChip />
+        </Reveal>
+
         <Section kicker={t('roles.freelance.kickers.why')} title={t('roles.freelance.whyTitle')}>
           <Reveal>
             <p className="brand-p brand-lead-p">{t('roles.freelance.whyBody')}</p>
