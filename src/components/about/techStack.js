@@ -780,7 +780,7 @@ import siabletonliveIcon from '../../images/tech/abletonlive.svg';
 import sihandbrakeIcon from '../../images/tech/handbrake.png';
 import sipremiereproIcon from '../../images/tech/premierepro.svg';
 import siaftereffectsIcon from '../../images/tech/aftereffects.svg';
-import simuxIcon from '../../images/tech/mux.png';
+import simuxIcon from '../../images/tech/mux.svg';
 import sistreamyardIcon from '../../images/tech/streamyard.svg';
 import siflstudioIcon from '../../images/tech/flstudio.png';
 import sidefoldIcon from '../../images/tech/defold.png';
@@ -963,6 +963,60 @@ import sirancherdesktopIcon from '../../images/tech/rancherdesktop.svg';
 import siheadlampIcon from '../../images/tech/headlamp.svg';
 import sikubeflowIcon from '../../images/tech/kubeflow.svg';
 import siudacityIcon from '../../images/tech/udacity.svg';
+import siunifiIcon from '../../images/tech/unifi.svg';
+import singrokIcon from '../../images/tech/ngrok.png';
+import sizoomIcon from '../../images/tech/zoom.svg';
+import sitwilioIcon from '../../images/tech/twilio.svg';
+import siodooIcon from '../../images/tech/odoo.svg';
+import sisolidworksIcon from '../../images/tech/solidworks.svg';
+import sisolidedgeIcon from '../../images/tech/solidedge.svg';
+import sionshapeIcon from '../../images/tech/onshape.png';
+import siautocadIcon from '../../images/tech/autocad.svg';
+import sirhinoIcon from '../../images/tech/rhino.svg';
+import sisketchupIcon from '../../images/tech/sketchup.svg';
+import sitinkercadIcon from '../../images/tech/tinkercad.svg';
+import sicadqueryIcon from '../../images/tech/cadquery.png';
+import simatlabIcon from '../../images/tech/matlab.svg';
+import sisimulinkIcon from '../../images/tech/simulink.png';
+import siltspiceIcon from '../../images/tech/ltspice.svg';
+import siproteusIcon from '../../images/tech/proteus.svg';
+import sieagleIcon from '../../images/tech/eagle.svg';
+import sieasyedaIcon from '../../images/tech/easyeda.svg';
+import sipx4Icon from '../../images/tech/px4.png';
+import siardupilotIcon from '../../images/tech/ardupilot.png';
+import simavlinkIcon from '../../images/tech/mavlink.png';
+import sinav2Icon from '../../images/tech/nav2.svg';
+import siintelrealsenseIcon from '../../images/tech/intelrealsense.png';
+import siopenmvIcon from '../../images/tech/openmv.png';
+import siuniversalrobotsIcon from '../../images/tech/universalrobots.svg';
+import siabbIcon from '../../images/tech/abb.svg';
+import sidjiIcon from '../../images/tech/dji.svg';
+import sistm32Icon from '../../images/tech/stm32.svg';
+import sibeagleboardIcon from '../../images/tech/beagleboard.png';
+import siadafruitIcon from '../../images/tech/adafruit.svg';
+import sisparkfunIcon from '../../images/tech/sparkfun.svg';
+import siklipperIcon from '../../images/tech/klipper.svg';
+import simarlinIcon from '../../images/tech/marlin.png';
+import sioctoprintIcon from '../../images/tech/octoprint.svg';
+import silitellmIcon from '../../images/tech/litellm.svg';
+import siguidanceIcon from '../../images/tech/guidance.png';
+import simirascopeIcon from '../../images/tech/mirascope.png';
+import siragasIcon from '../../images/tech/ragas.svg';
+import siagentaIcon from '../../images/tech/agenta.png';
+import sihumanloopIcon from '../../images/tech/humanloop.svg';
+import sipromptlayerIcon from '../../images/tech/promptlayer.png';
+import sijinaaiIcon from '../../images/tech/jinaai.svg';
+import sitavilyIcon from '../../images/tech/tavily.svg';
+import sicrawl4aiIcon from '../../images/tech/crawl4ai.svg';
+import sidoclingIcon from '../../images/tech/docling.svg';
+import sie2bIcon from '../../images/tech/e2b.png';
+import sismitheryIcon from '../../images/tech/smithery.svg';
+import sichainlitIcon from '../../images/tech/chainlit.png';
+import siopenwebuiIcon from '../../images/tech/openwebui.svg';
+import simlxIcon from '../../images/tech/mlx.png';
+import simetagptIcon from '../../images/tech/metagpt.svg';
+import siautogptIcon from '../../images/tech/autogpt.png';
+import siaiderIcon from '../../images/tech/aider.png';
 
 const TECH_GROUPS = [
   {
@@ -1225,6 +1279,25 @@ const TECH_GROUPS = [
       { name: 'Screenpipe', icon: siscreenpipeIcon, flat: true },
       { name: 'Klavis', icon: siklavisIcon, flat: true },
       { name: 'CAMEL', icon: sicamelIcon, flat: true },
+      // Third intake.
+      { name: 'LiteLLM', icon: silitellmIcon, mono: true },
+      { name: 'Guidance', icon: siguidanceIcon, flat: true },
+      { name: 'Mirascope', icon: simirascopeIcon, flat: true },
+      { name: 'Ragas', icon: siragasIcon, mono: true },
+      { name: 'Agenta', icon: siagentaIcon, flat: true },
+      { name: 'Humanloop', icon: sihumanloopIcon, mono: true },
+      { name: 'PromptLayer', icon: sipromptlayerIcon, flat: true },
+      { name: 'Jina AI', icon: sijinaaiIcon, mono: true },
+      { name: 'Tavily', icon: sitavilyIcon, mono: true },
+      { name: 'Crawl4AI', icon: sicrawl4aiIcon, mono: true },
+      { name: 'Docling', icon: sidoclingIcon, mono: true },
+      { name: 'E2B', icon: sie2bIcon, flat: true },
+      { name: 'Smithery', icon: sismitheryIcon, mono: true },
+      { name: 'Chainlit', icon: sichainlitIcon, flat: true },
+      { name: 'Open WebUI', icon: siopenwebuiIcon, mono: true },
+      { name: 'MLX', icon: simlxIcon, flat: true },
+      { name: 'MetaGPT', icon: simetagptIcon, mono: true },
+      { name: 'AutoGPT', icon: siautogptIcon, flat: true },
     ],
   },
   {
@@ -1351,6 +1424,8 @@ const TECH_GROUPS = [
       { name: 'Univer', icon: siuniverIcon, flat: true },
       { name: 'Coder', icon: sicoderIcon, mono: true },
       { name: 'Photopea', icon: siphotopeaIcon, mono: true },
+      // Third intake.
+      { name: 'Aider', icon: siaiderIcon, flat: true },
     ],
   },
   {
@@ -1492,6 +1567,9 @@ const TECH_GROUPS = [
       { name: 'Kasm Workspaces', icon: sikasmworkspacesIcon, mono: true },
       { name: 'Snapdrop', icon: sisnapdropIcon, mono: true },
       { name: 'Twake Drive', icon: sitwakedriveIcon, mono: true },
+      // Third intake.
+      { name: 'UniFi', icon: siunifiIcon, mono: true },
+      { name: 'ngrok', icon: singrokIcon, flat: true },
     ],
   },
   {
@@ -1818,6 +1896,8 @@ const TECH_GROUPS = [
       { name: 'Zeplin', icon: sizeplinIcon, mono: true },
       { name: 'FigJam', icon: sifigjamIcon, mono: true },
       { name: 'unDraw', icon: siundrawIcon, mono: true },
+      // Third intake.
+      { name: 'Odoo', icon: siodooIcon, mono: true },
     ],
   },
   {
@@ -1872,7 +1952,7 @@ const TECH_GROUPS = [
       { name: 'HandBrake', icon: sihandbrakeIcon, flat: true },
       { name: 'Premiere Pro', icon: sipremiereproIcon, mono: true },
       { name: 'After Effects', icon: siaftereffectsIcon, mono: true },
-      { name: 'Mux', icon: simuxIcon, flat: true },
+      { name: 'Mux', icon: simuxIcon, mono: true },
       { name: 'StreamYard', icon: sistreamyardIcon, mono: true },
       { name: 'FL Studio', icon: siflstudioIcon, flat: true },
       { name: 'Defold', icon: sidefoldIcon, flat: true },
@@ -1954,6 +2034,39 @@ const TECH_GROUPS = [
       { name: 'HiveMQ', icon: sihivemqIcon, mono: true },
       { name: 'Mosquitto', icon: simosquittoIcon, mono: true },
       { name: 'Ubidots', icon: siubidotsIcon, mono: true },
+      // Third intake. SolidWorks has no mark of its own beyond a wordmark:
+      // its desktop icon is Dassault's 3DS compass, the same one CATIA
+      // carries, so the two share it on purpose.
+      { name: 'SolidWorks', icon: sisolidworksIcon, mono: true },
+      { name: 'Solid Edge', icon: sisolidedgeIcon, mono: true },
+      { name: 'Onshape', icon: sionshapeIcon, flat: true },
+      { name: 'AutoCAD', icon: siautocadIcon, mono: true },
+      { name: 'Rhino', icon: sirhinoIcon, mono: true },
+      { name: 'SketchUp', icon: sisketchupIcon, mono: true },
+      { name: 'Tinkercad', icon: sitinkercadIcon, mono: true },
+      { name: 'CadQuery', icon: sicadqueryIcon, flat: true },
+      { name: 'MATLAB', icon: simatlabIcon, mono: true },
+      { name: 'Simulink', icon: sisimulinkIcon, flat: true },
+      { name: 'LTspice', icon: siltspiceIcon, mono: true },
+      { name: 'Proteus', icon: siproteusIcon, mono: true },
+      { name: 'EAGLE', icon: sieagleIcon, mono: true },
+      { name: 'EasyEDA', icon: sieasyedaIcon, mono: true },
+      { name: 'PX4', icon: sipx4Icon, flat: true },
+      { name: 'ArduPilot', icon: siardupilotIcon, flat: true },
+      { name: 'MAVLink', icon: simavlinkIcon, flat: true },
+      { name: 'Nav2', icon: sinav2Icon, mono: true },
+      { name: 'Intel RealSense', icon: siintelrealsenseIcon, flat: true },
+      { name: 'OpenMV', icon: siopenmvIcon, flat: true },
+      { name: 'Universal Robots', icon: siuniversalrobotsIcon, mono: true },
+      { name: 'ABB', icon: siabbIcon, mono: true },
+      { name: 'DJI', icon: sidjiIcon, mono: true },
+      { name: 'STM32', icon: sistm32Icon, mono: true },
+      { name: 'BeagleBoard', icon: sibeagleboardIcon, flat: true },
+      { name: 'Adafruit', icon: siadafruitIcon, mono: true },
+      { name: 'SparkFun', icon: sisparkfunIcon, mono: true },
+      { name: 'Klipper', icon: siklipperIcon, mono: true },
+      { name: 'Marlin', icon: simarlinIcon, flat: true },
+      { name: 'OctoPrint', icon: sioctoprintIcon, mono: true },
     ],
   },
   {
@@ -2134,6 +2247,9 @@ const TECH_GROUPS = [
       // Tech week, the top-up.
       { name: 'Basecamp', icon: sibasecampIcon, mono: true },
       { name: 'Twist', icon: sitwistIcon, mono: true },
+      // Third intake.
+      { name: 'Zoom', icon: sizoomIcon, mono: true },
+      { name: 'Twilio', icon: sitwilioIcon, mono: true },
     ],
   },
   {
@@ -2185,6 +2301,29 @@ const TECH_GROUPS = [
       { name: 'Continual learning', concept: 'continual' },
       { name: 'Neural rendering', concept: 'neuralRendering' },
       { name: 'Multimodal RAG', concept: 'multimodalRag' },
+      // Third pass: the bench side — robots, the factory floor, the lab —
+      // and the architectures that are not a plain transformer.
+      { name: 'Humanoid robots', concept: 'humanoid' },
+      { name: 'Sim-to-real transfer', concept: 'simToReal' },
+      { name: 'Soft robotics', concept: 'softRobotics' },
+      { name: 'Exoskeletons', concept: 'exoskeleton' },
+      { name: 'Collaborative robots', concept: 'cobot' },
+      { name: 'Tactile sensing', concept: 'tactile' },
+      { name: 'Generative design', concept: 'generativeDesign' },
+      { name: 'Lights-out manufacturing', concept: 'lightsOut' },
+      { name: 'Self-driving labs', concept: 'selfDrivingLab' },
+      { name: 'AI materials discovery', concept: 'materials' },
+      { name: 'Protein design', concept: 'protein' },
+      { name: 'State space models', concept: 'ssm' },
+      { name: 'Mixture of experts', concept: 'moe' },
+      { name: 'Liquid neural networks', concept: 'liquidNn' },
+      { name: 'Kolmogorov-Arnold networks', concept: 'kan' },
+      { name: 'Model merging', concept: 'modelMerge' },
+      { name: 'AI alignment', concept: 'alignment' },
+      { name: 'Analog in-memory computing', concept: 'analogCompute' },
+      { name: 'Chiplets', concept: 'chiplet' },
+      { name: 'Orbital data centers', concept: 'spaceCompute' },
+      { name: '6G & satellite networks', concept: 'sixG' },
     ],
   },
 ];

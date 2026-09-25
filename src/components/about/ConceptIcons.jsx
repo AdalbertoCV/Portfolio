@@ -1219,6 +1219,252 @@ const ICONS = {
       <path d="M19.9 15l1.5 1.6" />
     </svg>
   ),
+  // The frontier, third pass: the bench side of the wall — robots, the
+  // factory, the lab — and the model architectures past the transformer.
+
+  // A body with a head, two arms and a chest panel: a robot shaped like the
+  // spaces people already built.
+  humanoid: (
+    <svg {...base}>
+      <circle cx="12" cy="4.4" r="2" />
+      <path d="M8.6 8.4h6.8l-.8 6.4H9.4z" />
+      <path d="M8.6 8.8l-2.4 4.8M15.4 8.8l2.4 4.8" />
+      <path d="M10.2 14.8l-.8 6.4M13.8 14.8l.8 6.4" />
+      <path d="M10.8 11.2h2.4" />
+    </svg>
+  ),
+
+  // The dashed cube is the simulation, the solid one the world; the arrow is
+  // the gap the policy has to cross.
+  simToReal: (
+    <svg {...base}>
+      <path d="M2.4 9.2l3.4-2 3.4 2v4.4l-3.4 2-3.4-2z" strokeDasharray="1.3 1.2" />
+      <path d="M14.8 9.2l3.4-2 3.4 2v4.4l-3.4 2-3.4-2zM14.8 9.2l3.4 2 3.4-2M18.2 11.2v4.4" />
+      <path d="M10.4 11.4h3.2M12.4 10l1.4 1.4-1.4 1.4" />
+    </svg>
+  ),
+
+  // A pneumatic finger curling around nothing: segmented, compliant, no joint.
+  softRobotics: (
+    <svg {...base}>
+      <path d="M4 20.4c0-6.4 3-11 8.8-12.6 3-.8 6 .4 7.2 3" />
+      <path d="M8 20.4c0-4.4 2-7.8 5.8-8.8 1.8-.5 3.4.2 4.2 1.6" />
+      <path d="M4 20.4h4M20 10.8l-2 2.4" />
+      <path d="M6.2 14l3.4 1.2M9.4 9.6l2.4 2.8M14.4 7.4l.4 3.8" />
+    </svg>
+  ),
+
+  // Two rails, a powered knee and the straps that hold it to a leg.
+  exoskeleton: (
+    <svg {...base}>
+      <path d="M8.4 3.2l1.6 7.2M14.4 3.2l-1.8 7.2" />
+      <circle cx="11.3" cy="11.9" r="1.6" />
+      <path d="M10 13.4l-1.2 7.4M12.6 13.4l1.2 7.4M8.8 20.8h6.4" />
+      <path d="M8.8 5.6h5.1M9.3 17.6h4.2" />
+    </svg>
+  ),
+
+  // A bracket grown between two holes rather than drawn: the struts sit
+  // where the load goes and nowhere else.
+  generativeDesign: (
+    <svg {...base}>
+      <circle cx="5" cy="19" r="1.8" />
+      <circle cx="19" cy="5" r="1.8" />
+      <path d="M6.2 17.6c2-1.2 3-3.2 3.4-5.6.4-2.4 2.2-4.2 4.6-4.6 1.4-.2 2.6-.8 3.6-1.8" />
+      <path d="M6.8 18.8c3 .2 5.8-1 7.4-3.4 1.4-2 2.4-4.4 3.6-8.6" />
+      <path d="M9.6 12.4l4.6 3M14.2 7.4l2.8 1.8" />
+    </svg>
+  ),
+
+  // A flask with the loop beside it: the lab that runs its own next
+  // experiment.
+  selfDrivingLab: (
+    <svg {...base}>
+      <path d="M6.8 3h5.2M8 3v5.6l-4.6 8.4A1.8 1.8 0 0 0 5 19.8h9a1.8 1.8 0 0 0 1.6-2.8L11 8.6V3" />
+      <path d="M5.4 15h8.2" />
+      <path d="M21.2 6.4a2.6 2.6 0 1 1-1-2.05" />
+      <path d="M20.6 2.6l-.4 1.8 1.8.4" />
+    </svg>
+  ),
+
+  // A unit cell: the lattice a new material is searched for in.
+  materials: (
+    <svg {...base}>
+      <path d="M5 8l7-4 7 4v8l-7 4-7-4z" />
+      <path d="M5 8l7 4 7-4M12 12v8" />
+      <g fill="currentColor" stroke="none">
+        <circle cx="12" cy="4" r="1.4" />
+        <circle cx="5" cy="8" r="1.4" />
+        <circle cx="19" cy="8" r="1.4" />
+        <circle cx="12" cy="12" r="1.4" />
+        <circle cx="5" cy="16" r="1.4" />
+        <circle cx="19" cy="16" r="1.4" />
+        <circle cx="12" cy="20" r="1.4" />
+      </g>
+    </svg>
+  ),
+
+  // A chain folded back on itself, ends marked: a sequence that has found its
+  // shape.
+  protein: (
+    <svg {...base}>
+      <path d="M5 19c-1.6-3 .4-6 3-6s3.8-3 2.4-5.6S12 3 15 4.4s4.6 4.2 2.8 6.6-4.2 2.2-3.8 5 3 3.4 5 2.4" />
+      <circle cx="5" cy="19" r="1.4" />
+      <circle cx="19" cy="18.4" r="1.4" />
+    </svg>
+  ),
+
+  // A state that carries itself forward: input in, output out, and the loop
+  // on top that is the whole idea.
+  ssm: (
+    <svg {...base}>
+      <rect x="8" y="8" width="8" height="8" rx="1.6" />
+      <path d="M2.6 12H8M16 12h5.4M19.6 10.2l1.8 1.8-1.8 1.8" />
+      <path d="M10 8V6a2 2 0 0 1 4 0v2" />
+      <path d="M10.6 12h2.8" />
+    </svg>
+  ),
+
+  // One router, four experts, two awake: the dashed ones are the parameters
+  // this token never touches.
+  moe: (
+    <svg {...base}>
+      <circle cx="4.4" cy="12" r="1.8" />
+      <path d="M6.2 11.4l8.2-6.1M6.2 12.4l8.2 2.2" />
+      <path d="M6.2 11.8l8.2-2.1M6.2 12.8l8.2 6.4" strokeDasharray="1.2 1.4" />
+      <rect x="14.4" y="3.6" width="6.4" height="3.4" rx="1" />
+      <rect x="14.4" y="8" width="6.4" height="3.4" rx="1" strokeDasharray="1.2 1.4" />
+      <rect x="14.4" y="12.8" width="6.4" height="3.4" rx="1" />
+      <rect x="14.4" y="17.6" width="6.4" height="3.4" rx="1" strokeDasharray="1.2 1.4" />
+    </svg>
+  ),
+
+  // A drop with a few neurons in it: a small network whose weights keep
+  // moving with the input.
+  liquidNn: (
+    <svg {...base}>
+      <path d="M12 2.8c3.6 4.4 6.6 8 6.6 11.6a6.6 6.6 0 0 1-13.2 0C5.4 10.8 8.4 7.2 12 2.8z" />
+      <circle cx="9.4" cy="14" r="1.2" />
+      <circle cx="14.6" cy="12.4" r="1.2" />
+      <circle cx="12.4" cy="17.8" r="1.2" />
+      <path d="M10.6 13.6l2.8-.8M10.2 15l1.4 1.8M14.2 13.6l-1.2 3" />
+    </svg>
+  ),
+
+  // Nodes below and above, and every edge between them a curve: in a KAN the
+  // learnable part is the function on the edge, not the weight.
+  kan: (
+    <svg {...base}>
+      <circle cx="5" cy="19.2" r="1.4" />
+      <circle cx="12" cy="19.2" r="1.4" />
+      <circle cx="19" cy="19.2" r="1.4" />
+      <circle cx="8.5" cy="4.8" r="1.4" />
+      <circle cx="15.5" cy="4.8" r="1.4" />
+      <path d="M5 17.8C5 12 8.5 11.4 8.5 6.2M12 17.8c0-5-3.5-6-3.5-11.6M12 17.8c0-5 3.5-6 3.5-11.6M19 17.8c0-5.8-3.5-6.8-3.5-11.6" />
+    </svg>
+  ),
+
+  // A crossbar: the weights live at the crossings and the multiply happens
+  // where the memory already is.
+  analogCompute: (
+    <svg {...base}>
+      <path d="M3.4 6.4h17.2M3.4 12h17.2M3.4 17.6h17.2M6.8 3v18M12 3v18M17.2 3v18" />
+      <g fill="currentColor" stroke="none">
+        <circle cx="6.8" cy="6.4" r="1.3" />
+        <circle cx="12" cy="12" r="1.3" />
+        <circle cx="17.2" cy="17.6" r="1.3" />
+        <circle cx="17.2" cy="6.4" r="1.3" />
+      </g>
+    </svg>
+  ),
+
+  // One package, several dies, and the short bridges between them.
+  chiplet: (
+    <svg {...base}>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <rect x="5.6" y="5.6" width="5.6" height="5.6" rx=".8" />
+      <rect x="12.8" y="5.6" width="5.6" height="5.6" rx=".8" />
+      <rect x="5.6" y="12.8" width="12.8" height="5.6" rx=".8" />
+      <path d="M11.2 8.4h1.6M8.4 11.2v1.6M15.6 11.2v1.6" />
+    </svg>
+  ),
+
+  // A satellite with a rack for a body: compute that sits where the power
+  // and the cold are free.
+  spaceCompute: (
+    <svg {...base}>
+      <rect x="9.4" y="9.4" width="5.2" height="5.2" rx=".8" />
+      <path d="M2.4 9.8h5v4.4h-5zM16.6 9.8h5v4.4h-5z" />
+      <path d="M4.9 9.8v4.4M19.1 9.8v4.4M7.4 12h2M14.6 12h2" />
+      <path d="M12 9.4V7.2M9.6 5.6a3.2 3.2 0 0 0 4.8 0" />
+      <path d="M10.8 12h2.4" />
+    </svg>
+  ),
+
+  // A mast radiating in two rings: the network that reaches past the last
+  // tower.
+  sixG: (
+    <svg {...base}>
+      <circle cx="12" cy="9" r="1.4" />
+      <path d="M12 10.6L8.4 21M12 10.6l3.6 10.4M9.4 18h5.2" />
+      <path d="M8.6 5.6a4.8 4.8 0 0 0 0 6.8M15.4 5.6a4.8 4.8 0 0 1 0 6.8" />
+      <path d="M5.8 2.8a8.8 8.8 0 0 0 0 12.4M18.2 2.8a8.8 8.8 0 0 1 0 12.4" />
+    </svg>
+  ),
+
+  // A fingertip on a sensing skin, and the ripple of pressure it leaves.
+  tactile: (
+    <svg {...base}>
+      <path d="M9 3v8.6a3 3 0 0 0 6 0V3" />
+      <path d="M5.6 15.8c1.8 1 4 1.4 6.4 1.4s4.6-.4 6.4-1.4" />
+      <path d="M3 19.6h18" />
+      <path d="M5 21.6h.01M8.5 21.6h.01M12 21.6h.01M15.5 21.6h.01M19 21.6h.01" />
+    </svg>
+  ),
+
+  // An arm working next to a person rather than behind a fence.
+  cobot: (
+    <svg {...base}>
+      <path d="M3 21h7" />
+      <circle cx="6.5" cy="17" r="1.3" />
+      <circle cx="10" cy="11" r="1.3" />
+      <path d="M6.5 21v-2.7M7.2 15.9l2.2-3.8M11.2 11.6l3.6 1.4" />
+      <path d="M14.8 13l1.6-1.4M14.8 13l1.2 1.8" />
+      <circle cx="18.4" cy="4.4" r="1.8" />
+      <path d="M15 10.6c.4-2.2 1.6-3.4 3.4-3.4s3 1.2 3.4 3.4" />
+    </svg>
+  ),
+
+  // A spirit level with the bubble between the marks: the model doing what
+  // was meant, not only what was said.
+  alignment: (
+    <svg {...base}>
+      <rect x="2.6" y="8.6" width="18.8" height="6.8" rx="3.4" />
+      <path d="M9.6 8.6v6.8M14.4 8.6v6.8" />
+      <circle cx="12" cy="12" r="1.3" />
+      <path d="M12 3.6v2.6M12 17.8v2.6" />
+    </svg>
+  ),
+
+  // Two trained models flowing into one, with nothing retrained.
+  modelMerge: (
+    <svg {...base}>
+      <circle cx="5" cy="5" r="1.8" />
+      <circle cx="5" cy="19" r="1.8" />
+      <circle cx="18.8" cy="12" r="2.4" />
+      <path d="M6.6 5.8c4 1.2 5.4 5.2 9.8 5.9M6.6 18.2c4-1.2 5.4-5.2 9.8-5.9" />
+    </svg>
+  ),
+
+  // A factory under a moon: the plant that runs with nobody on the floor.
+  lightsOut: (
+    <svg {...base}>
+      <path d="M3 20.6v-8.2l4.6 2.8v-2.8l4.6 2.8v-2.8l4.6 2.8v5.4" />
+      <path d="M16.8 20.6V7.8h2.8v12.8M2 20.6h20" />
+      <path d="M8.2 3a3.4 3.4 0 1 0 3.6 4.6A2.8 2.8 0 0 1 8.2 3z" />
+    </svg>
+  ),
+
   // An arrow with a heading and a length — a vector — sitting inside the
   // stack of platters every database has been drawn as since the tape reel.
   // pgvector has no logo of its own and borrowing Postgres's elephant would

@@ -6,11 +6,8 @@
    id="Karpenter">
   <style
      id="style2">
-    path { fill:#000000; }
-    @media (prefers-color-scheme: dark) {
-        path { fill:#000000; }
-    }
-    </style>
+path { fill:#000000; }
+</style>
   <g
      id="Page-1"
      transform="translate(2.1186441,37.661017)"
