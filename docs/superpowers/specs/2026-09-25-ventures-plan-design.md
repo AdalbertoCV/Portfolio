@@ -17,7 +17,7 @@ clientes e inversionistas.
 
 | Decisión | Elección |
 |---|---|
-| Visibilidad | Pública y narrativa. Sin montos, precios, márgenes, pipeline, nombres de clientes (salvo PuntoBienestar, ya público), aliados sin cerrar ni rúbricas de evaluación. Los nichos se describen por tipo. |
+| Visibilidad | Pública y narrativa. Sin montos, precios, márgenes, pipeline, nombres de clientes (salvo PuntoBienestar, ya público), aliados sin cerrar ni rúbricas de evaluación. |
 | Voz | Primera persona del plural: "Estamos aquí", "En qué ponemos el foco". |
 | Freelance | Incubadora de Moonphase: etapa 0. Su cartera pasa a Moonphase en enero de 2027. |
 | Ritmo | Fechas objetivo más criterios de salida; se avanza por criterio cumplido. |
@@ -81,29 +81,32 @@ En qué ponemos el foco ahora (Incubar):
 
 ### Moonphase · Incubar
 
-**Objetivo:** Demostrar con proyectos entregados que el método convierte ideas
-en sistemas que se adoptan. Es la primera evidencia de la visión: cosas que
+**Objetivo:** Demostrar con proyectos entregados que nuestra metodología de
+adopción convierte ideas y tecnología de vanguardia en sistemas que una empresa
+de verdad adopta. Es la primera evidencia de la visión: cosas que
 existen porque existimos.
 
-**Modelo:** Proyecto de alcance cerrado y precio fijo, cotizado contra un
-entregable medible.
+**Modelo:** Diagnóstico de adopción como puerta de entrada, y proyecto de
+alcance cerrado y precio fijo, cotizado contra un entregable medible.
 
 **Métricas:** Proyectos entregados con expediente · Sistemas que siguen en
 operación después de la entrega · Clientes que repiten o refieren.
 
 **Operación y método**
-- Formalizar el método en una plantilla de factibilidad y un formato de expediente.
+- Formalizar la metodología de adopción: diagnóstico, factibilidad, construcción, adopción y expediente.
+- Medir la adopción, no solo la entrega: que el sistema se use en la operación del cliente.
 - Aplicarlo a cada proyecto nuevo, sin excepción.
 - Reescribir PuntoBienestar y los proyectos freelance como expedientes.
 
 **Tecnología e I+D**
 - Abrir una bitácora de problemas abiertos: las ideas que llegan y todavía no son ejecutables.
 - Elegir el primer problema de I+D y partirlo en pedazos ejecutables.
+- Un stack de referencia para plataformas, flujos agénticos, LLM y ML, reutilizable entre clientes.
 
 **Comercial y cartera**
 - Proponer a cada cliente de la cartera freelance continuar con Moonphase.
-- Elegir dos o tres nichos del carril 1 donde ya hay un caso resuelto: agenda clínica, trámites institucionales, inventario.
-- Una oferta escrita con alcance, entregable y precio fijo.
+- Una oferta escrita por tipo de adopción —plataformas, flujos agénticos, LLM, ML y tecnología de vanguardia— vendible a una empresa de cualquier industria.
+- Cada oferta con alcance, entregable y precio fijo.
 
 **Finanzas y legal**
 - Constituir la sociedad y darla de alta para facturar.
@@ -140,7 +143,7 @@ contra lo cotizado · Expedientes del carril 2 abiertos y cerrados.
 **Operación y método**
 - Contratos de mantenimiento y soporte ofrecidos al cierre de cada entrega.
 - Un tablero interno de proyectos: alcance, avance y desviación contra lo cotizado.
-- Un catálogo de las soluciones del carril 1 que ya se repitieron.
+- Un catálogo de soluciones del carril 1 que ya se repitieron: agentes, integraciones con LLM, modelos de ML y plataformas.
 
 **Tecnología e I+D**
 - Una parte fija del ingreso y del tiempo destinada al carril 2, protegida del día a día.
@@ -148,8 +151,8 @@ contra lo cotizado · Expedientes del carril 2 abiertos y cerrados.
 - Someter el primer proyecto de I+D a una convocatoria pública de innovación.
 
 **Comercial y cartera**
-- De la referencia al canal: casos publicados por nicho y contacto directo con empresas de ese nicho.
-- Alianzas con despachos, consultoras e integradores que ya atienden a esos nichos.
+- De la referencia al canal: casos publicados por tipo de tecnología y venta directa a empresas de cualquier industria.
+- Alianzas con despachos, consultoras e integradores que ya atienden a empresas que necesitan adoptar tecnología.
 
 **Finanzas y legal**
 - Contabilidad formal y precios revisados contra el margen real.
@@ -165,7 +168,7 @@ contra lo cotizado · Expedientes del carril 2 abiertos y cerrados.
 
 **Riesgos**
 - Que el carril 1 se coma todo el tiempo y el carril 2 nunca arranque. → Tiempo y presupuesto del carril 2 asignados de antemano, no con lo que sobre.
-- Ingreso concentrado en pocos clientes. → Ningún cliente por encima de una parte acotada del ingreso, y varios nichos abiertos.
+- Ingreso concentrado en pocos clientes. → Ningún cliente por encima de una parte acotada del ingreso, y clientes en varias industrias.
 
 **Criterios de salida:** ○ El ingreso recurrente cubre la operación · ○ El
 primer expediente del carril 2 cerrado, con resultado positivo o negativo.
@@ -193,7 +196,8 @@ el primer entregable.
 - Colaboración con universidades y centros de investigación en los expedientes del carril 2.
 
 **Comercial y cartera**
-- Una industria ancla, con varios clientes que se parecen entre sí.
+- Industrias ancla donde la metodología ya se probó varias veces, sin cerrarnos a ninguna.
+- La metodología de adopción enseñada o licenciada a los equipos internos de las empresas.
 - Venta de producto además de proyecto.
 
 **Finanzas y legal**
@@ -205,7 +209,7 @@ el primer entregable.
 - La cultura escrita: cómo decidimos cuando la decisión no es obvia.
 
 **Marca y evidencia**
-- Reconocidos en el nicho por los expedientes, no por la publicidad.
+- Reconocidos como referencia en adopción de tecnología por los expedientes, no por la publicidad.
 
 **Riesgos**
 - Crecer el equipo más rápido que el método. → Nadie lidera un proyecto sin haber ejecutado antes el método completo.
