@@ -533,6 +533,54 @@ import sigroqIcon from '../../images/tech/groq.svg';
 import sicerebrasIcon from '../../images/tech/cerebras.svg';
 import sibasetenIcon from '../../images/tech/baseten.svg';
 import sitogetherIcon from '../../images/tech/together.svg';
+import siarchifyIcon from '../../images/tech/archify.svg';
+import siponytailIcon from '../../images/tech/ponytail.svg';
+import sisuperpowersIcon from '../../images/tech/superpowers.svg';
+import simintlifyIcon from '../../images/tech/mintlify.svg';
+import sicontext7Icon from '../../images/tech/context7.png';
+import siunisonIcon from '../../images/tech/unison.png';
+import siuiuaIcon from '../../images/tech/uiua.png';
+import sichapelIcon from '../../images/tech/chapel.png';
+import sifutharkIcon from '../../images/tech/futhark.png';
+import sielmIcon from '../../images/tech/elm.svg';
+import siracketIcon from '../../images/tech/racket.svg';
+import sihaxeIcon from '../../images/tech/haxe.svg';
+import siballerinaIcon from '../../images/tech/ballerina.svg';
+import sigrpcIcon from '../../images/tech/grpc.svg';
+import sikrakendIcon from '../../images/tech/krakend.svg';
+import sipocketbaseIcon from '../../images/tech/pocketbase.svg';
+import siappwriteIcon from '../../images/tech/appwrite.svg';
+import sidaprIcon from '../../images/tech/dapr.svg';
+import sieffectIcon from '../../images/tech/effect.svg';
+import sirisingwaveIcon from '../../images/tech/risingwave.svg';
+import sidltIcon from '../../images/tech/dlt.svg';
+import sikestraIcon from '../../images/tech/kestra.svg';
+import sievidenceIcon from '../../images/tech/evidence.svg';
+import sichromaIcon from '../../images/tech/chroma.svg';
+import sitypesenseIcon from '../../images/tech/typesense.svg';
+import sidragonflyIcon from '../../images/tech/dragonfly.svg';
+import sibackstageIcon from '../../images/tech/backstage.svg';
+import sik3sIcon from '../../images/tech/k3s.svg';
+import sisignozIcon from '../../images/tech/signoz.svg';
+import sivictoriametricsIcon from '../../images/tech/victoriametrics.svg';
+import siteleportIcon from '../../images/tech/teleport.svg';
+import sicueIcon from '../../images/tech/cue.png';
+import sijanetIcon from '../../images/tech/janet.svg';
+import sibufIcon from '../../images/tech/buf.png';
+import sirobynIcon from '../../images/tech/robyn.png';
+import sitaskiqIcon from '../../images/tech/taskiq.png';
+import sibullmqIcon from '../../images/tech/bullmq.png';
+import sisqlmodelIcon from '../../images/tech/sqlmodel.png';
+import silancedbIcon from '../../images/tech/lancedb.png';
+import sidaftIcon from '../../images/tech/daft.png';
+import siparadedbIcon from '../../images/tech/paradedb.png';
+import sisqlmeshIcon from '../../images/tech/sqlmesh.png';
+import sikroIcon from '../../images/tech/kro.png';
+import sidaggerIcon from '../../images/tech/dagger.png';
+import sidevenvIcon from '../../images/tech/devenv.png';
+import siopencostIcon from '../../images/tech/opencost.png';
+import siskypilotIcon from '../../images/tech/skypilot.png';
+import siorbstackIcon from '../../images/tech/orbstack.png';
 
 const TECH_GROUPS = [
   {
@@ -582,6 +630,17 @@ const TECH_GROUPS = [
       { name: 'V', icon: sivIcon, mono: true },
       { name: 'ReScript', icon: sirescriptIcon, mono: true },
       { name: 'PureScript', icon: sipurescriptIcon, mono: true },
+      // The 2026 intake, second pass.
+      { name: 'Unison', icon: siunisonIcon, flat: true },
+      { name: 'Uiua', icon: siuiuaIcon, flat: true },
+      { name: 'Chapel', icon: sichapelIcon, flat: true },
+      { name: 'Futhark', icon: sifutharkIcon, flat: true },
+      { name: 'Elm', icon: sielmIcon, mono: true },
+      { name: 'Racket', icon: siracketIcon, mono: true },
+      { name: 'Haxe', icon: sihaxeIcon, mono: true },
+      { name: 'Ballerina', icon: siballerinaIcon, mono: true },
+      { name: 'CUE', icon: sicueIcon, flat: true },
+      { name: 'Janet', icon: sijanetIcon, mono: true },
     ],
   },
   {
@@ -641,6 +700,18 @@ const TECH_GROUPS = [
       { name: 'Inngest', icon: siinngestIcon, mono: true },
       { name: 'Sanic', icon: sisanicIcon, mono: true },
       { name: 'Encore', icon: siencoreIcon, flat: true },
+      // The 2026 intake, second pass.
+      { name: 'gRPC', icon: sigrpcIcon, mono: true },
+      { name: 'KrakenD', icon: sikrakendIcon, mono: true },
+      { name: 'PocketBase', icon: sipocketbaseIcon, mono: true },
+      { name: 'Appwrite', icon: siappwriteIcon, mono: true },
+      { name: 'Dapr', icon: sidaprIcon, mono: true },
+      { name: 'Effect', icon: sieffectIcon, mono: true },
+      { name: 'Buf', icon: sibufIcon, flat: true },
+      { name: 'Robyn', icon: sirobynIcon, flat: true },
+      { name: 'Taskiq', icon: sitaskiqIcon, flat: true },
+      { name: 'BullMQ', icon: sibullmqIcon, flat: true },
+      { name: 'SQLModel', icon: sisqlmodelIcon, flat: true },
     ],
   },
   {
@@ -876,6 +947,18 @@ const TECH_GROUPS = [
       { name: 'Karpenter', icon: sikarpenterIcon, mono: true },
       { name: 'Jaeger', icon: sijaegerIcon, mono: true },
       { name: 'Flux CD', icon: sifluxIcon, mono: true },
+      // The 2026 intake, second pass.
+      { name: 'Backstage', icon: sibackstageIcon, mono: true },
+      { name: 'k3s', icon: sik3sIcon, mono: true },
+      { name: 'SigNoz', icon: sisignozIcon, mono: true },
+      { name: 'VictoriaMetrics', icon: sivictoriametricsIcon, mono: true },
+      { name: 'Teleport', icon: siteleportIcon, mono: true },
+      { name: 'kro', icon: sikroIcon, flat: true },
+      { name: 'Dagger', icon: sidaggerIcon, flat: true },
+      { name: 'devenv', icon: sidevenvIcon, flat: true },
+      { name: 'OpenCost', icon: siopencostIcon, flat: true },
+      { name: 'SkyPilot', icon: siskypilotIcon, flat: true },
+      { name: 'OrbStack', icon: siorbstackIcon, flat: true },
     ],
   },
   {
@@ -984,6 +1067,18 @@ const TECH_GROUPS = [
       { name: 'Apache Arrow', icon: siapachearrowIcon, mono: true },
       { name: 'Metabase', icon: simetabaseIcon, mono: true },
       { name: 'Valkey', icon: sivalkeyIcon, mono: true },
+      // The 2026 intake, second pass.
+      { name: 'RisingWave', icon: sirisingwaveIcon, mono: true },
+      { name: 'dlt', icon: sidltIcon, mono: true },
+      { name: 'Kestra', icon: sikestraIcon, mono: true },
+      { name: 'Evidence', icon: sievidenceIcon, mono: true },
+      { name: 'Chroma', icon: sichromaIcon, mono: true },
+      { name: 'Typesense', icon: sitypesenseIcon, mono: true },
+      { name: 'Dragonfly', icon: sidragonflyIcon, mono: true },
+      { name: 'LanceDB', icon: silancedbIcon, flat: true },
+      { name: 'Daft', icon: sidaftIcon, flat: true },
+      { name: 'ParadeDB', icon: siparadedbIcon, flat: true },
+      { name: 'SQLMesh', icon: sisqlmeshIcon, flat: true },
     ],
   },
   {
@@ -1198,6 +1293,15 @@ const TECH_GROUPS = [
       { name: 'Jujutsu', icon: sijujutsuIcon, mono: true },
       { name: 'Task', icon: sitaskIcon, mono: true },
       { name: 'k6', icon: sik6Icon, mono: true },
+      // Agent skills: files you drop next to a coding agent that change how it
+      // works. Archify draws the architecture, Ponytail argues the code should
+      // not be written, Superpowers is a whole workflow and Context7 keeps a
+      // library's real docs in the context. Mintlify is where it all lands.
+      { name: 'Archify', icon: siarchifyIcon, mono: true },
+      { name: 'Ponytail', icon: siponytailIcon, mono: true },
+      { name: 'Superpowers', icon: sisuperpowersIcon, mono: true },
+      { name: 'Mintlify', icon: simintlifyIcon, mono: true },
+      { name: 'Context7', icon: sicontext7Icon, flat: true },
     ],
   },
   {

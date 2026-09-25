@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-09-24',
+    es: 'Agent skills en el muro: Archify, Ponytail y las que todos instalan',
+    en: 'Agent skills on the wall: Archify, Ponytail and the ones everybody installs',
+  },
+  {
+    date: '2026-09-24',
     es: 'Laya en el muro, y lo que hace falta cuando decidir ya no es lo lento',
     en: 'Laya on the wall, and what you need once deciding stopped being the slow part',
   },
