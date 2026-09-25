@@ -712,7 +712,7 @@ import sicatiaIcon from '../../images/tech/catia.png';
 import sisiemensnxIcon from '../../images/tech/siemensnx.svg';
 import sintopIcon from '../../images/tech/ntop.svg';
 import siultimakercuraIcon from '../../images/tech/ultimakercura.png';
-import siprotolabsIcon from '../../images/tech/protolabs.svg';
+import simastercamIcon from '../../images/tech/mastercam.svg';
 import siphysicsxIcon from '../../images/tech/physicsx.png';
 import siarduinoIcon from '../../images/tech/arduino.svg';
 import siraspberrypiIcon from '../../images/tech/raspberrypi.svg';
@@ -2005,7 +2005,8 @@ const TECH_GROUPS = [
       { name: 'Siemens NX', icon: sisiemensnxIcon, mono: true },
       { name: 'nTop', icon: sintopIcon, mono: true },
       { name: 'UltiMaker Cura', icon: siultimakercuraIcon, flat: true },
-      { name: 'Protolabs', icon: siprotolabsIcon, mono: true },
+      // CAM for the machines, not a parts marketplace.
+      { name: 'Mastercam', icon: simastercamIcon, mono: true },
       { name: 'PhysicsX', icon: siphysicsxIcon, flat: true },
       { name: 'Arduino', icon: siarduinoIcon, mono: true },
       { name: 'Raspberry Pi', icon: siraspberrypiIcon, mono: true },
