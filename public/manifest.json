@@ -6,12 +6,12 @@
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
-  "theme_color": "#0b0d10",
-  "background_color": "#0b0d10",
+  "theme_color": "#0a0b18",
+  "background_color": "#0a0b18",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 16x16",
+      "sizes": "64x64 48x48 32x32 16x16",
       "type": "image/x-icon"
     },
     {
