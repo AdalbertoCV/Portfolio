@@ -18,8 +18,8 @@
 const UPDATES = [
   {
     date: '2026-09-25',
-    es: 'El plan de operaciones de Moonphase y StackSelect, por etapas',
-    en: 'The operating plan for Moonphase and StackSelect, stage by stage',
+    es: 'El plan de operaciones de Moonphase y StackSelect, por etapas, en Ventures',
+    en: 'The operating plan for Moonphase and StackSelect, stage by stage, in Ventures',
   },
   {
     date: '2026-09-24',

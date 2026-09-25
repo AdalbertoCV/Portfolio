@@ -12,7 +12,7 @@ test('names the current stage and links to the plan', () => {
     </I18nProvider>
   );
   const link = screen.getByRole('link');
-  expect(link).toHaveAttribute('href', '/ventures/plan');
+  expect(link).toHaveAttribute('href', '/ventures#plan');
   expect(link).toHaveTextContent('Current stage');
   expect(link).toHaveTextContent('Incubate');
   expect(link).toHaveTextContent('See the plan');

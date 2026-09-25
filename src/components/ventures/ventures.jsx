@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { StackSelectMark } from '../marks/StackSelectMark';
 import { MoonphaseMark } from '../marks/MoonphaseMark';
 import { ArrowRight, Reveal } from '../brand/parts';
 import ProjectsMosaic from '../projects/ProjectsMosaic';
-import StageChip from './StageChip';
+import VenturesPlan from './VenturesPlan';
 
 // The two companies Adalberto founded, as opposed to the roles on /experience
 // where someone else hired him. The split is the whole point of this page
@@ -30,6 +31,16 @@ const VENTURES = [
 
 const Ventures = () => {
   const { t } = useTranslation();
+  const { hash } = useLocation();
+
+  // The chips on each company's page land here. App resets the scroll to the
+  // top on every route change and its effect runs after this one, so the jump
+  // waits a tick to land after that reset rather than be undone by it.
+  useEffect(() => {
+    if (hash !== '#plan') return undefined;
+    const timer = window.setTimeout(() => document.getElementById('plan')?.scrollIntoView({ block: 'start' }), 0);
+    return () => window.clearTimeout(timer);
+  }, [hash]);
 
   return (
     <div className="hub-page">
@@ -72,14 +83,8 @@ const Ventures = () => {
         ))}
       </Reveal>
 
-      {/* The plan both companies are working to, one tap from their cards. */}
-      <Reveal className="plan-hub-link">
-        <Link className="brand-link-out" to="/ventures/plan">
-          {t('plan.hubCta')}
-          <ArrowRight />
-        </Link>
-        <StageChip />
-      </Reveal>
+      {/* The plan both companies are working to, right under their cards. */}
+      <VenturesPlan />
 
       {/* The same hand-off the timeline makes to Ventures: a page ends by
           pointing at the next one rather than at nothing. */}
