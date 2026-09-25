@@ -67,7 +67,7 @@ const cvEs = {
     skillsLede: 'Primero, las estrellas: las tecnologías con proyectos públicos detrás, cada una enlazada a ese trabajo. El resto lo uso en proyectos bajo NDA o personales, o son herramientas que tengo en el radar y que estoy probando.',
     skillsReceipt: 'proyectos con',
     skillsSearchLabel: 'Buscar tecnologías',
-    skillsSearchPlaceholder: 'Buscar entre {count} tecnologías…',
+    skillsSearchPlaceholder: 'Buscar tecnologías…',
     skillsSearchResults: 'Resultados de la búsqueda',
     skillsSearchCount: '{count} coincidencias',
     skillsSearchEmpty: 'Nada llamado “{query}” en el stack. Prueba con otro nombre o revisa cómo se escribe.',

@@ -9,8 +9,6 @@ import { searchStack } from './stackSearch';
 // question most visitors arrive with, and no index answers it faster than
 // typing the name.
 
-const TOTAL = TECH_GROUPS.reduce((sum, group) => sum + group.items.length, 0);
-
 const SearchIcon = () => (
   <svg className="stack-search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
@@ -88,7 +86,7 @@ const StackExplorer = () => {
           type="search"
           autoComplete="off"
           spellCheck="false"
-          placeholder={t('cv.skillsSearchPlaceholder').replace('{count}', TOTAL)}
+          placeholder={t('cv.skillsSearchPlaceholder')}
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           onKeyDown={(event) => {
