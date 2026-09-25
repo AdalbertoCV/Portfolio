@@ -81,10 +81,11 @@ En qué ponemos el foco ahora (Incubar):
 
 ### Moonphase · Incubar
 
-**Objetivo:** Demostrar con proyectos entregados que nuestra metodología de
-adopción convierte ideas y tecnología de vanguardia en sistemas que una empresa
-de verdad adopta. Es la primera evidencia de la visión: cosas que
-existen porque existimos.
+**Objetivo:** Demostrar dos cosas con proyectos entregados: que nuestra
+metodología hace que una empresa de verdad adopte tecnología de vanguardia, y
+que somos capaces de crear tecnología propia en lugar de solo integrar la que
+ya existe. Es la primera evidencia de la visión: cosas que existen porque
+existimos.
 
 **Modelo:** Diagnóstico de adopción como puerta de entrada, y proyecto de
 alcance cerrado y precio fijo, cotizado contra un entregable medible.
@@ -101,11 +102,11 @@ operación después de la entrega · Clientes que repiten o refieren.
 **Tecnología e I+D**
 - Abrir una bitácora de problemas abiertos: las ideas que llegan y todavía no son ejecutables.
 - Elegir el primer problema de I+D y partirlo en pedazos ejecutables.
-- Un stack de referencia para plataformas, flujos agénticos, LLM y ML, reutilizable entre clientes.
+- En cada proyecto, al menos una pieza creada por nosotros —un modelo, un agente, una herramienta— y no solo integración de lo que ya existe.
 
 **Comercial y cartera**
 - Proponer a cada cliente de la cartera freelance continuar con Moonphase.
-- Una oferta escrita por tipo de adopción —plataformas, flujos agénticos, LLM, ML y tecnología de vanguardia— vendible a una empresa de cualquier industria.
+- Una oferta escrita por tipo de adopción —plataformas, flujos agénticos, LLM, ML y tecnología de vanguardia, incluida la que desarrollamos— vendible a una empresa de cualquier industria.
 - Cada oferta con alcance, entregable y precio fijo.
 
 **Finanzas y legal**
@@ -131,22 +132,24 @@ Moonphase como su cartera inicial.
 
 ### Moonphase · Estabilizar
 
-**Objetivo:** Que el carril 1 pague la operación y el carril 2 empiece a
-producir conocimiento: la visión deja de depender de un proyecto a la vez.
+**Objetivo:** Que el carril 1 pague la operación y el carril 2 produzca la
+primera tecnología propia de Moonphase: dejamos de depender de un proyecto a la
+vez y de la tecnología que otros crean.
 
 **Modelo:** Proyectos cerrados más contratos de mantenimiento y soporte sobre
 lo entregado, que vuelven recurrente parte del ingreso.
 
 **Métricas:** Proporción del ingreso que es recurrente · Margen por proyecto
-contra lo cotizado · Expedientes del carril 2 abiertos y cerrados.
+contra lo cotizado · Expedientes del carril 2 abiertos y cerrados · Tecnología propia en uso.
 
 **Operación y método**
 - Contratos de mantenimiento y soporte ofrecidos al cierre de cada entrega.
 - Un tablero interno de proyectos: alcance, avance y desviación contra lo cotizado.
-- Un catálogo de soluciones del carril 1 que ya se repitieron: agentes, integraciones con LLM, modelos de ML y plataformas.
+- Un catálogo de lo que ya construimos y se repite: agentes, modelos y plataformas propios.
 
 **Tecnología e I+D**
 - Una parte fija del ingreso y del tiempo destinada al carril 2, protegida del día a día.
+- La primera tecnología propia de Moonphase —un modelo, un framework o una herramienta— en uso dentro de proyectos de clientes.
 - Cerrar el primer expediente de I+D con su mapa de condiciones.
 - Someter el primer proyecto de I+D a una convocatoria pública de innovación.
 
@@ -176,23 +179,23 @@ primer expediente del carril 2 cerrado, con resultado positivo o negativo.
 ### Moonphase · Escalar
 
 **Objetivo:** Que Moonphase entregue sin que el fundador sea el cuello de
-botella, para que las ideas convertidas en realidad crezcan más rápido que el
-equipo.
+botella, y que una parte creciente de lo que entregamos sea tecnología creada
+por nosotros, no solo integrada.
 
 **Modelo:** Proyectos más una cartera de soporte, y los primeros componentes
 reutilizables del carril 1 vendidos como producto.
 
 **Métricas:** Proyectos entregados sin intervención directa del fundador ·
-Ingreso por producto contra ingreso por proyecto · Tiempo desde la idea hasta
-el primer entregable.
+Proporción de lo entregado que es tecnología propia · Ingreso por producto
+contra ingreso por proyecto.
 
 **Operación y método**
 - El método escrito como manual, de modo que cualquier ingeniero lo ejecute igual.
 - Líderes de proyecto que responden por el resultado de principio a fin.
-- Componentes reutilizables del carril 1 empaquetados como producto.
+- La tecnología propia empaquetada como producto, además del proyecto.
 
 **Tecnología e I+D**
-- Un portafolio de problemas abiertos, priorizado por impacto.
+- Un portafolio de problemas abiertos, priorizado por impacto, con investigación continua y no por temporadas.
 - Colaboración con universidades y centros de investigación en los expedientes del carril 2.
 
 **Comercial y cartera**
@@ -221,9 +224,9 @@ sobre la promesa.
 
 ### Moonphase · Explotar
 
-**Objetivo:** Convertir los expedientes de I+D que funcionaron en productos,
-spin-offs y licencias. La medida de la visión es cuántas cosas existen porque
-existimos.
+**Objetivo:** Ser fuente de tecnología de vanguardia, no solo usuarios de ella:
+lo que creamos en el carril 2 se vuelve producto, spin-off o licencia que otros
+adoptan. La medida de la visión es cuántas cosas existen porque existimos.
 
 **Modelo:** Producto y licenciamiento sobre la investigación propia, además de
 la operación de servicios.
