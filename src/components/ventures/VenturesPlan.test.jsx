@@ -42,6 +42,38 @@ test.each([
   expect(first).toHaveAttribute('aria-selected', 'true');
 });
 
+test('up and down move the stage selection too, for the vertical rail', () => {
+  renderPlan();
+  const [first, second] = stageTabs();
+  fireEvent.keyDown(first, { key: 'ArrowDown' });
+  expect(second).toHaveAttribute('aria-selected', 'true');
+  fireEvent.keyDown(second, { key: 'ArrowUp' });
+  expect(first).toHaveAttribute('aria-selected', 'true');
+});
+
+describe('on a narrow screen', () => {
+  const realMatchMedia = window.matchMedia;
+  beforeEach(() => {
+    window.matchMedia = (query) => ({
+      matches: query === '(max-width: 720px)',
+      addEventListener: () => {},
+      removeEventListener: () => {},
+    });
+  });
+  afterEach(() => {
+    window.matchMedia = realMatchMedia;
+  });
+
+  test('the rail turns vertical and only the featured workstream starts open', () => {
+    renderPlan();
+    expect(screen.getByRole('tablist', { name: 'Plan stages' })).toHaveAttribute('aria-orientation', 'vertical');
+    const fronts = within(screen.getByRole('tabpanel')).getAllByRole('article');
+    const open = fronts.map((front) => front.querySelector('details').open);
+    expect(open[0]).toBe(true);
+    expect(open.slice(1).every((isOpen) => !isOpen)).toBe(true);
+  });
+});
+
 test('the two selections are independent', () => {
   renderPlan();
   fireEvent.click(ventureTabs()[1]);

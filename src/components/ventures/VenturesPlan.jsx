@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { Reveal } from '../brand/parts';
 import { CRITERIA, CURRENT_STAGE, FRONTS, STAGES, VENTURES } from './plan';
@@ -8,16 +8,54 @@ import { CRITERIA, CURRENT_STAGE, FRONTS, STAGES, VENTURES } from './plan';
 // the current stage's actions sit above everything and the section opens on
 // the current stage.
 
-const STATE_MARK = { done: '✓', active: '◐', pending: '○' };
 const currentIndex = STAGES.findIndex((stage) => stage.id === CURRENT_STAGE);
 const current = STAGES[currentIndex];
 
-// The standard tablist keys, with wrap-around: both rails are short enough
-// that stopping dead at either end would only feel broken.
-const moveFor = (key, index, count) =>
-  ({ ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: count - 1 })[key];
+// Narrow screens get a different composition, not a smaller one: the rail
+// turns vertical and the workstreams fold into disclosures, so the page does
+// not become seven long boxes in a row.
+const NARROW = '(max-width: 720px)';
+const useNarrow = () => {
+  const query = () => (typeof window !== 'undefined' && window.matchMedia ? window.matchMedia(NARROW).matches : false);
+  const [narrow, setNarrow] = useState(query);
+  useEffect(() => {
+    if (!window.matchMedia) return undefined;
+    const media = window.matchMedia(NARROW);
+    const onChange = () => setNarrow(media.matches);
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
+  }, []);
+  return narrow;
+};
 
-const Tabs = ({ label, items, selected, onSelect, idPrefix, render, className }) => {
+// The standard tablist keys, with wrap-around. Up and Down work too, because
+// the stage rail is vertical on a phone.
+const moveFor = (key, index, count) =>
+  ({ ArrowRight: index + 1, ArrowDown: index + 1, ArrowLeft: index - 1, ArrowUp: index - 1, Home: 0, End: count - 1 })[
+    key
+  ];
+
+// Drawn, not typed: a check for done, a half disc for in progress, a ring for
+// pending, in the same stroke as the rest of the section.
+const StateIcon = ({ state }) => (
+  <svg className={`plan-state-icon is-${state}`} viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+    {state === 'done' ? (
+      <>
+        <circle cx="8" cy="8" r="7" fill="currentColor" />
+        <path d="M4.8 8.2l2.1 2.1 4.3-4.6" fill="none" stroke="var(--brand-ink)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </>
+    ) : null}
+    {state === 'active' ? (
+      <>
+        <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor" />
+      </>
+    ) : null}
+    {state === 'pending' ? <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" strokeWidth="1.6" /> : null}
+  </svg>
+);
+
+const Tabs = ({ label, items, selected, onSelect, idPrefix, render, className, orientation = 'horizontal' }) => {
   const refs = useRef([]);
   const select = (index) => {
     const wrapped = (index + items.length) % items.length;
@@ -25,7 +63,7 @@ const Tabs = ({ label, items, selected, onSelect, idPrefix, render, className })
     refs.current[wrapped]?.focus();
   };
   return (
-    <div className={className} role="tablist" aria-label={label}>
+    <div className={className} role="tablist" aria-label={label} aria-orientation={orientation}>
       {items.map((item, index) => (
         <button
           key={item}
@@ -54,14 +92,25 @@ const Tabs = ({ label, items, selected, onSelect, idPrefix, render, className })
 
 const VenturesPlan = () => {
   const { t, tl } = useTranslation();
+  const narrow = useNarrow();
   const [stage, setStage] = useState(CURRENT_STAGE);
   const [ventureId, setVentureId] = useState(VENTURES[0].id);
+  const panelRef = useRef(null);
   const venture = VENTURES.find((item) => item.id === ventureId);
   const base = `plan.${ventureId}.${stage}`;
   const criteria = CRITERIA[ventureId][stage];
 
   const ventureName = (id) =>
     id === 'moonphase' && stage === 'incubate' ? t('plan.names.freelanceMoonphase') : t(`plan.names.${id}`);
+
+  // On a phone the company switch stays pinned while the panel scrolls under
+  // it; switching from far down would otherwise leave the reader in the
+  // middle of the other company's card.
+  const pickVenture = (id) => {
+    setVentureId(id);
+    const panel = panelRef.current;
+    if (narrow && panel && panel.getBoundingClientRect().top < 0) panel.scrollIntoView({ block: 'start' });
+  };
 
   return (
     <section className="plan-section" id="plan" aria-labelledby="plan-title">
@@ -73,10 +122,14 @@ const VenturesPlan = () => {
       </Reveal>
 
       <section className="plan-focus" aria-labelledby="plan-focus-title">
-        <h3 className="plan-focus-title" id="plan-focus-title">
-          {t('plan.focusTitle')}
-        </h3>
-        <p className="plan-focus-stage">{t(`plan.stages.${current.id}.name`)}</p>
+        <div className="plan-focus-head">
+          <h3 className="plan-focus-title" id="plan-focus-title">
+            {t('plan.focusTitle')}
+          </h3>
+          <p className="plan-focus-stage">
+            {t(`plan.stages.${current.id}.name`)} · {t(`plan.stages.${current.id}.window`)}
+          </p>
+        </div>
         <ol className="plan-focus-list">
           {current.focusNow.map((action) => (
             <li key={action}>{t(`plan.stages.${current.id}.now.${action}`)}</li>
@@ -87,6 +140,7 @@ const VenturesPlan = () => {
       <Tabs
         className="plan-rail"
         label={t('plan.stageTabs')}
+        orientation={narrow ? 'vertical' : 'horizontal'}
         items={STAGES.map((item) => item.id)}
         selected={stage}
         onSelect={setStage}
@@ -94,13 +148,18 @@ const VenturesPlan = () => {
         render={(id, index) => {
           const phase = index < currentIndex ? 'past' : index === currentIndex ? 'current' : 'future';
           return {
-            className: `plan-stage plan-stage-${phase}${id === stage ? ' is-selected' : ''}`,
+            className: `plan-stage is-${phase}${id === stage ? ' is-selected' : ''}`,
             children: (
               <>
-                <span className="plan-node" aria-hidden="true" />
-                <span className="plan-stage-name">{t(`plan.stages.${id}.name`)}</span>
-                <span className="plan-stage-window">{t(`plan.stages.${id}.window`)}</span>
-                {phase === 'current' ? <span className="plan-here">{t('plan.here')}</span> : null}
+                <span className="plan-node" aria-hidden="true">
+                  {phase === 'past' ? <StateIcon state="done" /> : null}
+                </span>
+                <span className="plan-stage-text">
+                  <span className="plan-stage-name">{t(`plan.stages.${id}.name`)}</span>
+                  <span className="plan-stage-window">{t(`plan.stages.${id}.window`)}</span>
+                  {phase === 'current' ? <span className="plan-here">{t('plan.here')}</span> : null}
+                  {id === stage ? <span className="plan-stage-tagline">{t(`plan.stages.${id}.tagline`)}</span> : null}
+                </span>
               </>
             ),
           };
@@ -114,7 +173,7 @@ const VenturesPlan = () => {
         label={t('plan.ventureTabs')}
         items={VENTURES.map((item) => item.id)}
         selected={ventureId}
-        onSelect={setVentureId}
+        onSelect={pickVenture}
         idPrefix="plan-venture"
         render={(id) => ({
           className: `plan-venture-tab${id === ventureId ? ' is-selected' : ''}`,
@@ -127,23 +186,29 @@ const VenturesPlan = () => {
         className="plan-panel"
         role="tabpanel"
         id="plan-panel"
+        ref={panelRef}
         aria-labelledby={`plan-venture-${ventureId}`}
         tabIndex={0}
         data-brand={venture.brand}
       >
-        <h3 className="plan-venture-title">{ventureName(ventureId)}</h3>
+        <header className="plan-panel-head">
+          <h3 className="plan-venture-title">{ventureName(ventureId)}</h3>
+          <p className="plan-panel-stage">
+            {t(`plan.stages.${stage}.name`)} · {t(`plan.stages.${stage}.window`)}
+          </p>
+        </header>
 
         <div className="plan-objective">
-          <span className="plan-label">{t('plan.objectiveTitle')}</span>
+          <h4 className="plan-label">{t('plan.objectiveTitle')}</h4>
           <p>{t(`${base}.objective`)}</p>
         </div>
 
         <div className="plan-summary">
-          <div>
+          <div className="plan-summary-cell">
             <h4 className="plan-label">{t('plan.modelTitle')}</h4>
             <p>{t(`${base}.model`)}</p>
           </div>
-          <div>
+          <div className="plan-summary-cell">
             <h4 className="plan-label">{t('plan.metricsTitle')}</h4>
             <ul className="plan-metrics">
               {tl(`${base}.metrics`).map((metric) => (
@@ -153,21 +218,34 @@ const VenturesPlan = () => {
           </div>
         </div>
 
-        <h4 className="plan-label">{t('plan.frontsTitle')}</h4>
+        <h4 className="plan-label plan-block-label">{t('plan.frontsTitle')}</h4>
         <div className="plan-fronts">
-          {FRONTS[ventureId][stage].map((front) => (
-            <article className={`plan-front${front === venture.featured ? ' is-featured' : ''}`} key={front}>
-              <h5 className="plan-front-title">{t(`plan.frontNames.${ventureId}.${front}`)}</h5>
-              <ul>
-                {tl(`${base}.fronts.${front}`).map((action) => (
-                  <li key={action}>{action}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+          {FRONTS[ventureId][stage].map((front) => {
+            const featured = front === venture.featured;
+            const actions = tl(`${base}.fronts.${front}`);
+            return (
+              <article className={`plan-front${featured ? ' is-featured' : ''}`} key={`${ventureId}-${stage}-${front}`}>
+                {/* On a phone each workstream folds, with the featured one
+                    open; on wider screens they are all simply open. */}
+                <details className="plan-front-details" open={!narrow || featured}>
+                  <summary className="plan-front-title">
+                    <span>{t(`plan.frontNames.${ventureId}.${front}`)}</span>
+                    <span className="plan-front-count" aria-hidden="true">
+                      {actions.length}
+                    </span>
+                  </summary>
+                  <ul>
+                    {actions.map((action) => (
+                      <li key={action}>{action}</li>
+                    ))}
+                  </ul>
+                </details>
+              </article>
+            );
+          })}
         </div>
 
-        <h4 className="plan-label">{t('plan.risksTitle')}</h4>
+        <h4 className="plan-label plan-block-label">{t('plan.risksTitle')}</h4>
         <ul className="plan-risks">
           {tl(`${base}.risks`).map(({ risk, mitigation }) => (
             <li key={risk}>
@@ -180,14 +258,12 @@ const VenturesPlan = () => {
           ))}
         </ul>
 
-        <h4 className="plan-label">{t('plan.exitTitle')}</h4>
+        <h4 className="plan-label plan-block-label">{t('plan.exitTitle')}</h4>
         {criteria.length ? (
           <ul className="plan-exit">
             {criteria.map((criterion) => (
               <li className={`plan-exit-item is-${criterion.state}`} key={criterion.key}>
-                <span className="plan-exit-mark" aria-hidden="true">
-                  {STATE_MARK[criterion.state]}
-                </span>
+                <StateIcon state={criterion.state} />
                 <span className="plan-exit-text">{t(`${base}.exit.${criterion.key}`)}</span>
                 <span className="plan-exit-state">{t(`plan.states.${criterion.state}`)}</span>
               </li>
