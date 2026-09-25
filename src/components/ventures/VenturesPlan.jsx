@@ -223,23 +223,36 @@ const VenturesPlan = () => {
           {FRONTS[ventureId][stage].map((front) => {
             const featured = front === venture.featured;
             const actions = tl(`${base}.fronts.${front}`);
+            const name = t(`plan.frontNames.${ventureId}.${front}`);
+            const list = (
+              <ul>
+                {actions.map((action) => (
+                  <li key={action}>{action}</li>
+                ))}
+              </ul>
+            );
             return (
               <article className={`plan-front${featured ? ' is-featured' : ''}`} key={`${ventureId}-${stage}-${front}`}>
-                {/* On a phone each workstream folds, with the featured one
-                    open; on wider screens they are all simply open. */}
-                <details className="plan-front-details" open={!narrow || featured}>
-                  <summary className="plan-front-title">
-                    <span>{t(`plan.frontNames.${ventureId}.${front}`)}</span>
-                    <span className="plan-front-count" aria-hidden="true">
-                      {actions.length}
-                    </span>
-                  </summary>
-                  <ul>
-                    {actions.map((action) => (
-                      <li key={action}>{action}</li>
-                    ))}
-                  </ul>
-                </details>
+                {/* Only a phone folds the workstreams, with the featured one
+                    open. A wide screen shows them all, so it renders a plain
+                    heading: a <summary> there would be a tab stop that can
+                    hide a list with nothing to say it was collapsible. */}
+                {narrow ? (
+                  <details className="plan-front-details" open={featured}>
+                    <summary className="plan-front-title">
+                      <span>{name}</span>
+                      <span className="plan-front-count" aria-hidden="true">
+                        {actions.length}
+                      </span>
+                    </summary>
+                    {list}
+                  </details>
+                ) : (
+                  <>
+                    <h5 className="plan-front-title">{name}</h5>
+                    {list}
+                  </>
+                )}
               </article>
             );
           })}

@@ -74,6 +74,15 @@ describe('on a narrow screen', () => {
   });
 });
 
+// On a wide screen nothing folds, so nothing should pretend to: a <summary>
+// there is a tab stop that can hide a list with no sign it was collapsible.
+test('on a wide screen the workstreams are headed lists, not disclosures', () => {
+  renderPlan();
+  const panel = screen.getByRole('tabpanel');
+  expect(panel.querySelector('details, summary')).toBeNull();
+  expect(within(panel).getByRole('heading', { name: 'Research and development' })).toBeInTheDocument();
+});
+
 test('the two selections are independent', () => {
   renderPlan();
   fireEvent.click(ventureTabs()[1]);

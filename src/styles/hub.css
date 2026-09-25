@@ -1884,8 +1884,6 @@ ol.timeline.reveal {
     font-size: 1.02rem;
     font-weight: 700;
     color: var(--brand-core);
-    cursor: default;
-    pointer-events: none;
 }
 
 .plan-front.is-featured .plan-front-title {
@@ -2142,10 +2140,9 @@ ol.timeline.reveal {
         padding: 0 1rem;
     }
 
-    .plan-front-title {
+    .plan-front-details .plan-front-title {
         min-height: 52px;
         margin: 0;
-        pointer-events: auto;
         cursor: pointer;
     }
 
