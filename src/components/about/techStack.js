@@ -639,7 +639,6 @@ import sizoteroIcon from '../../images/tech/zotero.svg';
 import siroadmapshIcon from '../../images/tech/roadmapsh.png';
 import sifrontendmastersIcon from '../../images/tech/frontendmasters.png';
 import sieggheadioIcon from '../../images/tech/eggheadio.png';
-import simicrosoftlearnIcon from '../../images/tech/microsoftlearn.png';
 import sidevdocsIcon from '../../images/tech/devdocs.svg';
 import sigooglemeetIcon from '../../images/tech/googlemeet.svg';
 import siloomIcon from '../../images/tech/loom.svg';
@@ -963,6 +962,7 @@ import sigrafanalokiIcon from '../../images/tech/grafanaloki.svg';
 import sirancherdesktopIcon from '../../images/tech/rancherdesktop.svg';
 import siheadlampIcon from '../../images/tech/headlamp.svg';
 import sikubeflowIcon from '../../images/tech/kubeflow.svg';
+import siudacityIcon from '../../images/tech/udacity.svg';
 
 const TECH_GROUPS = [
   {
@@ -2094,7 +2094,6 @@ const TECH_GROUPS = [
       { name: 'roadmap.sh', icon: siroadmapshIcon, flat: true },
       { name: 'Frontend Masters', icon: sifrontendmastersIcon, flat: true },
       { name: 'egghead.io', icon: sieggheadioIcon, flat: true },
-      { name: 'Microsoft Learn', icon: simicrosoftlearnIcon, flat: true },
       { name: 'DevDocs', icon: sidevdocsIcon, mono: true },
       // Tech week, the top-up.
       { name: 'CodeCrafters', icon: sicodecraftersIcon, mono: true },
@@ -2105,6 +2104,7 @@ const TECH_GROUPS = [
       { name: 'Heptabase', icon: siheptabaseIcon, mono: true },
       { name: 'Anytype', icon: sianytypeIcon, mono: true },
       { name: 'Capacities', icon: sicapacitiesIcon, flat: true },
+      { name: 'Udacity', icon: siudacityIcon, mono: true },
     ],
   },
   {
