@@ -54,13 +54,16 @@ celular, panel enfocable (`tabIndex=0`) y textos de estado de al menos 0.8rem.
 
 ## Frentes por empresa
 
-- Moonphase: Operación y método · Tecnología e I+D · Comercial y cartera ·
-  Finanzas y legal · Equipo y cultura · Marca y evidencia.
+- Moonphase: **Investigación y desarrollo** (primero y destacado: es la visión más
+  grande de la empresa) · Operación y método · Comercial y cartera · Finanzas y
+  legal · Equipo y cultura · Marca y evidencia.
 - StackSelect: Programa de formación · Plataforma de evaluación · Empresas
   contratantes · Captación de talento · Finanzas y legal · Equipo y cultura ·
   Marca y evidencia.
 
-Una etapa puede omitir un frente cuando no tiene acción propia en ella.
+Una etapa puede omitir un frente cuando no tiene acción propia en ella, salvo
+Investigación y desarrollo en Moonphase, que aparece en todas. En el panel, el
+primer frente de Moonphase se muestra a todo lo ancho y resaltado.
 
 ## Contenido
 
@@ -90,19 +93,21 @@ existimos.
 **Modelo:** Diagnóstico de adopción como puerta de entrada, y proyecto de
 alcance cerrado y precio fijo, cotizado contra un entregable medible.
 
-**Métricas:** Proyectos entregados con expediente · Sistemas que siguen en
-operación después de la entrega · Clientes que repiten o refieren.
+**Métricas:** Problemas abiertos en la bitácora y en ataque · Proyectos
+entregados con expediente · Sistemas que siguen en operación después de la
+entrega · Clientes que repiten o refieren.
+
+**Investigación y desarrollo**
+- Abrir una bitácora de problemas abiertos: las ideas que llegan y todavía no son ejecutables.
+- Elegir el primer problema de I+D y partirlo en pedazos ejecutables.
+- En cada proyecto, al menos una pieza creada por nosotros —un modelo, un agente, una herramienta— y no solo integración de lo que ya existe.
+- Publicar el primer expediente de investigación, aunque su resultado sea negativo.
 
 **Operación y método**
 - Formalizar la metodología de adopción: diagnóstico, factibilidad, construcción, adopción y expediente.
 - Medir la adopción, no solo la entrega: que el sistema se use en la operación del cliente.
 - Aplicarlo a cada proyecto nuevo, sin excepción.
 - Reescribir PuntoBienestar y los proyectos freelance como expedientes.
-
-**Tecnología e I+D**
-- Abrir una bitácora de problemas abiertos: las ideas que llegan y todavía no son ejecutables.
-- Elegir el primer problema de I+D y partirlo en pedazos ejecutables.
-- En cada proyecto, al menos una pieza creada por nosotros —un modelo, un agente, una herramienta— y no solo integración de lo que ya existe.
 
 **Comercial y cartera**
 - Proponer a cada cliente de la cartera freelance continuar con Moonphase.
@@ -142,16 +147,17 @@ lo entregado, que vuelven recurrente parte del ingreso.
 **Métricas:** Proporción del ingreso que es recurrente · Margen por proyecto
 contra lo cotizado · Expedientes del carril 2 abiertos y cerrados · Tecnología propia en uso.
 
-**Operación y método**
-- Contratos de mantenimiento y soporte ofrecidos al cierre de cada entrega.
-- Un tablero interno de proyectos: alcance, avance y desviación contra lo cotizado.
-- Un catálogo de lo que ya construimos y se repite: agentes, modelos y plataformas propios.
-
-**Tecnología e I+D**
+**Investigación y desarrollo**
 - Una parte fija del ingreso y del tiempo destinada al carril 2, protegida del día a día.
 - La primera tecnología propia de Moonphase —un modelo, un framework o una herramienta— en uso dentro de proyectos de clientes.
 - Cerrar el primer expediente de I+D con su mapa de condiciones.
 - Someter el primer proyecto de I+D a una convocatoria pública de innovación.
+- Una agenda de investigación anual: qué problemas abiertos atacamos, por qué y con qué criterio de avance.
+
+**Operación y método**
+- Contratos de mantenimiento y soporte ofrecidos al cierre de cada entrega.
+- Un tablero interno de proyectos: alcance, avance y desviación contra lo cotizado.
+- Un catálogo de lo que ya construimos y se repite: agentes, modelos y plataformas propios.
 
 **Comercial y cartera**
 - De la referencia al canal: casos publicados por tipo de tecnología y venta directa a empresas de cualquier industria.
@@ -186,17 +192,19 @@ por nosotros, no solo integrada.
 reutilizables del carril 1 vendidos como producto.
 
 **Métricas:** Proyectos entregados sin intervención directa del fundador ·
-Proporción de lo entregado que es tecnología propia · Ingreso por producto
-contra ingreso por proyecto.
+Proporción de lo entregado que es tecnología propia · Expedientes de I+D
+cerrados por año · Ingreso por producto contra ingreso por proyecto.
+
+**Investigación y desarrollo**
+- Un portafolio de problemas abiertos, priorizado por impacto, con investigación continua y no por temporadas.
+- Un equipo dedicado a I+D, separado de la operación del carril 1.
+- Colaboración con universidades y centros de investigación en los expedientes del carril 2.
+- Publicaciones técnicas, código abierto o patentes sobre lo que creamos.
 
 **Operación y método**
 - El método escrito como manual, de modo que cualquier ingeniero lo ejecute igual.
 - Líderes de proyecto que responden por el resultado de principio a fin.
 - La tecnología propia empaquetada como producto, además del proyecto.
-
-**Tecnología e I+D**
-- Un portafolio de problemas abiertos, priorizado por impacto, con investigación continua y no por temporadas.
-- Colaboración con universidades y centros de investigación en los expedientes del carril 2.
 
 **Comercial y cartera**
 - Industrias ancla donde la metodología ya se probó varias veces, sin cerrarnos a ninguna.
@@ -235,9 +243,10 @@ la operación de servicios.
 licenciamiento · Expedientes negativos reabiertos porque cambiaron las
 condiciones.
 
-**Tecnología e I+D**
+**Investigación y desarrollo**
 - Un proceso para convertir un expediente exitoso en producto o en empresa.
 - Reabrir los expedientes negativos cuando cambia el estado del arte.
+- Un laboratorio propio atacando los problemas que la industria dio por cerrados.
 
 **Comercial y cartera**
 - Clientes de producto en más de una industria.
