@@ -57,7 +57,7 @@ const cvEn = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'What I use, test and explore',
-    skillsLede: 'First, the stars: the technologies with public projects behind them, each linked to that work. The rest we use on projects under NDA or personal ones, or keep on the radar because it only just shipped.',
+    skillsLede: 'First, the stars: the technologies with public projects behind them, each linked to that work. The rest I use on projects under NDA or personal ones, or they are tools I have on my radar and am trying out.',
     skillsReceipt: 'projects with',
     skillsExpandAll: 'Open every group',
     skillsCollapseAll: 'Close every group',

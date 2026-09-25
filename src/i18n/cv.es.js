@@ -64,7 +64,7 @@ const cvEs = {
 
     skillsKicker: 'Stack',
     skillsTitle: 'Tecnologías que uso, pruebo y exploro',
-    skillsLede: 'Primero, las estrellas: las tecnologías con proyectos públicos detrás, cada una enlazada a ese trabajo. El resto lo usamos en proyectos bajo NDA o personales, o lo tenemos en el radar porque acaba de salir.',
+    skillsLede: 'Primero, las estrellas: las tecnologías con proyectos públicos detrás, cada una enlazada a ese trabajo. El resto lo uso en proyectos bajo NDA o personales, o son herramientas que tengo en el radar y que estoy probando.',
     skillsReceipt: 'proyectos con',
     skillsExpandAll: 'Abrir todos los grupos',
     skillsCollapseAll: 'Cerrar todos los grupos',
