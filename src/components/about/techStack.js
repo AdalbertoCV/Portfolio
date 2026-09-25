@@ -614,6 +614,251 @@ import sishapIcon from '../../images/tech/shap.png';
 import sigemmaIcon from '../../images/tech/gemma.svg';
 import siglmIcon from '../../images/tech/glm.svg';
 import siplaneIcon from '../../images/tech/plane.png';
+import siplatziIcon from '../../images/tech/platzi.svg';
+import siudemyIcon from '../../images/tech/udemy.svg';
+import siw3schoolsIcon from '../../images/tech/w3schools.svg';
+import sistackoverflowIcon from '../../images/tech/stackoverflow.svg';
+import sifreecodecampIcon from '../../images/tech/freecodecamp.svg';
+import sicourseraIcon from '../../images/tech/coursera.svg';
+import siedxIcon from '../../images/tech/edx.svg';
+import sikhanacademyIcon from '../../images/tech/khanacademy.svg';
+import simdnwebdocsIcon from '../../images/tech/mdnwebdocs.svg';
+import siexercismIcon from '../../images/tech/exercism.svg';
+import sileetcodeIcon from '../../images/tech/leetcode.svg';
+import sihackerrankIcon from '../../images/tech/hackerrank.svg';
+import sicodecademyIcon from '../../images/tech/codecademy.svg';
+import sipluralsightIcon from '../../images/tech/pluralsight.svg';
+import siankiIcon from '../../images/tech/anki.svg';
+import siscrimbaIcon from '../../images/tech/scrimba.svg';
+import siadventofcodeIcon from '../../images/tech/adventofcode.svg';
+import siarxivIcon from '../../images/tech/arxiv.svg';
+import sisemanticscholarIcon from '../../images/tech/semanticscholar.svg';
+import sigoogleclassroomIcon from '../../images/tech/googleclassroom.svg';
+import sicodewarsIcon from '../../images/tech/codewars.svg';
+import sizoteroIcon from '../../images/tech/zotero.svg';
+import siroadmapshIcon from '../../images/tech/roadmapsh.png';
+import sifrontendmastersIcon from '../../images/tech/frontendmasters.png';
+import sieggheadioIcon from '../../images/tech/eggheadio.png';
+import simicrosoftlearnIcon from '../../images/tech/microsoftlearn.png';
+import sidevdocsIcon from '../../images/tech/devdocs.svg';
+import sigooglemeetIcon from '../../images/tech/googlemeet.svg';
+import siloomIcon from '../../images/tech/loom.svg';
+import simicrosoftteamsIcon from '../../images/tech/microsoftteams.svg';
+import sidiscordIcon from '../../images/tech/discord.svg';
+import sitelegramIcon from '../../images/tech/telegram.svg';
+import siwhatsappIcon from '../../images/tech/whatsapp.svg';
+import siconfluenceIcon from '../../images/tech/confluence.svg';
+import siasanaIcon from '../../images/tech/asana.svg';
+import siclickupIcon from '../../images/tech/clickup.svg';
+import sicalendlyIcon from '../../images/tech/calendly.svg';
+import sigranolaIcon from '../../images/tech/granola.svg';
+import sifrontIcon from '../../images/tech/front.svg';
+import sizulipIcon from '../../images/tech/zulip.svg';
+import simattermostIcon from '../../images/tech/mattermost.svg';
+import sirocketchatIcon from '../../images/tech/rocketchat.png';
+import sielementIcon from '../../images/tech/element.svg';
+import siotteraiIcon from '../../images/tech/otterai.png';
+import siplantumlIcon from '../../images/tech/plantuml.png';
+import simermaidIcon from '../../images/tech/mermaid.svg';
+import sid2Icon from '../../images/tech/d2.svg';
+import sikrokiIcon from '../../images/tech/kroki.png';
+import sieraserIcon from '../../images/tech/eraser.svg';
+import sivisualparadigmIcon from '../../images/tech/visualparadigm.svg';
+import sidocusaurusIcon from '../../images/tech/docusaurus.svg';
+import simkdocsIcon from '../../images/tech/mkdocs.svg';
+import sisphinxIcon from '../../images/tech/sphinx.svg';
+import sireadthedocsIcon from '../../images/tech/readthedocs.svg';
+import sigitbookIcon from '../../images/tech/gitbook.svg';
+import sivitepressIcon from '../../images/tech/vitepress.svg';
+import sistarlightIcon from '../../images/tech/starlight.png';
+import similanoteIcon from '../../images/tech/milanote.svg';
+import silucidchartIcon from '../../images/tech/lucidchart.png';
+import siyedIcon from '../../images/tech/yed.svg';
+import sigliffyIcon from '../../images/tech/gliffy.png';
+import signs3Icon from '../../images/tech/gns3.svg';
+import siputtyIcon from '../../images/tech/putty.svg';
+import sinetdataIcon from '../../images/tech/netdata.svg';
+import sizabbixIcon from '../../images/tech/zabbix.svg';
+import siuptimekumaIcon from '../../images/tech/uptimekuma.svg';
+import siproxmoxIcon from '../../images/tech/proxmox.svg';
+import sitruenasIcon from '../../images/tech/truenas.svg';
+import siopenwrtIcon from '../../images/tech/openwrt.svg';
+import simikrotikIcon from '../../images/tech/mikrotik.svg';
+import sihomeassistantIcon from '../../images/tech/homeassistant.svg';
+import sipiholeIcon from '../../images/tech/pihole.svg';
+import sinextcloudIcon from '../../images/tech/nextcloud.svg';
+import sijellyfinIcon from '../../images/tech/jellyfin.svg';
+import sivagrantIcon from '../../images/tech/vagrant.svg';
+import sinetboxIcon from '../../images/tech/netbox.svg';
+import sivirtualboxIcon from '../../images/tech/virtualbox.svg';
+import siqemuIcon from '../../images/tech/qemu.svg';
+import sirosIcon from '../../images/tech/ros.svg';
+import sigazeboIcon from '../../images/tech/gazebo.svg';
+import simoveitIcon from '../../images/tech/moveit.png';
+import siplotjugglerIcon from '../../images/tech/plotjuggler.png';
+import simujocoIcon from '../../images/tech/mujoco.png';
+import siwebotsIcon from '../../images/tech/webots.png';
+import sigymnasiumIcon from '../../images/tech/gymnasium.png';
+import sidrakeIcon from '../../images/tech/drake.svg';
+import siviamIcon from '../../images/tech/viam.png';
+import siduckietownIcon from '../../images/tech/duckietown.png';
+import siunitreeIcon from '../../images/tech/unitree.svg';
+import sifreecadIcon from '../../images/tech/freecad.svg';
+import siopenscadIcon from '../../images/tech/openscad.svg';
+import sikicadIcon from '../../images/tech/kicad.svg';
+import sibambustudioIcon from '../../images/tech/bambustudio.png';
+import siautodeskfusionIcon from '../../images/tech/autodeskfusion.svg';
+import sialtiumdesignerIcon from '../../images/tech/altiumdesigner.png';
+import sicatiaIcon from '../../images/tech/catia.png';
+import sisiemensnxIcon from '../../images/tech/siemensnx.svg';
+import sintopIcon from '../../images/tech/ntop.svg';
+import siultimakercuraIcon from '../../images/tech/ultimakercura.png';
+import siprotolabsIcon from '../../images/tech/protolabs.svg';
+import siphysicsxIcon from '../../images/tech/physicsx.png';
+import siarduinoIcon from '../../images/tech/arduino.svg';
+import siraspberrypiIcon from '../../images/tech/raspberrypi.svg';
+import siespressifIcon from '../../images/tech/espressif.svg';
+import siplatformioIcon from '../../images/tech/platformio.svg';
+import sizephyrIcon from '../../images/tech/zephyr.svg';
+import sifreertosIcon from '../../images/tech/freertos.png';
+import simicropythonIcon from '../../images/tech/micropython.svg';
+import sicircuitpythonIcon from '../../images/tech/circuitpython.svg';
+import sinordicsemiconductorIcon from '../../images/tech/nordicsemiconductor.svg';
+import siyoctoprojectIcon from '../../images/tech/yoctoproject.png';
+import sibalenaIcon from '../../images/tech/balena.svg';
+import sigoliothIcon from '../../images/tech/golioth.png';
+import sibluesIcon from '../../images/tech/blues.png';
+import siparticleIcon from '../../images/tech/particle.svg';
+import sitoitIcon from '../../images/tech/toit.png';
+import siembassyIcon from '../../images/tech/embassy.png';
+import siriotIcon from '../../images/tech/riot.svg';
+import sitinygoIcon from '../../images/tech/tinygo.svg';
+import siedgeimpulseIcon from '../../images/tech/edgeimpulse.svg';
+import silitertIcon from '../../images/tech/litert.png';
+import sinoderedIcon from '../../images/tech/nodered.svg';
+import siignitionIcon from '../../images/tech/ignition.png';
+import sithingsboardIcon from '../../images/tech/thingsboard.svg';
+import siemqxIcon from '../../images/tech/emqx.svg';
+import sihivemqIcon from '../../images/tech/hivemq.svg';
+import simosquittoIcon from '../../images/tech/mosquitto.svg';
+import siubidotsIcon from '../../images/tech/ubidots.svg';
+import sireacthookformIcon from '../../images/tech/reacthookform.svg';
+import siformikIcon from '../../images/tech/formik.svg';
+import sireactariaIcon from '../../images/tech/reactaria.svg';
+import siarkuiIcon from '../../images/tech/arkui.svg';
+import siheadlessuiIcon from '../../images/tech/headlessui.svg';
+import sifloatinguiIcon from '../../images/tech/floatingui.png';
+import siaggridIcon from '../../images/tech/aggrid.png';
+import sivikeIcon from '../../images/tech/vike.svg';
+import sigsapIcon from '../../images/tech/gsap.svg';
+import sireactspringIcon from '../../images/tech/reactspring.svg';
+import sirspackIcon from '../../images/tech/rspack.svg';
+import silernaIcon from '../../images/tech/lerna.svg';
+import sivanillaextractIcon from '../../images/tech/vanillaextract.svg';
+import sipostcssIcon from '../../images/tech/postcss.svg';
+import sistyledictionaryIcon from '../../images/tech/styledictionary.png';
+import silightningcssIcon from '../../images/tech/lightningcss.svg';
+import silucideIcon from '../../images/tech/lucide.svg';
+import siphosphoriconsIcon from '../../images/tech/phosphoricons.svg';
+import sifontawesomeIcon from '../../images/tech/fontawesome.svg';
+import siiconifyIcon from '../../images/tech/iconify.svg';
+import sibevyIcon from '../../images/tech/bevy.svg';
+import sitresjsIcon from '../../images/tech/tresjs.svg';
+import sistoryblokIcon from '../../images/tech/storyblok.svg';
+import sicraftcmsIcon from '../../images/tech/craftcms.svg';
+import simagentoIcon from '../../images/tech/magento.svg';
+import sihygraphIcon from '../../images/tech/hygraph.png';
+import sitallyIcon from '../../images/tech/tally.svg';
+import siloopsIcon from '../../images/tech/loops.svg';
+import siplausibleIcon from '../../images/tech/plausible.svg';
+import sisimpleanalyticsIcon from '../../images/tech/simpleanalytics.svg';
+import sicanvaIcon from '../../images/tech/canva.svg';
+import sizeplinIcon from '../../images/tech/zeplin.svg';
+import sifigjamIcon from '../../images/tech/figjam.svg';
+import siundrawIcon from '../../images/tech/undraw.svg';
+import sicapcutIcon from '../../images/tech/capcut.svg';
+import siabletonliveIcon from '../../images/tech/abletonlive.svg';
+import sihandbrakeIcon from '../../images/tech/handbrake.png';
+import sipremiereproIcon from '../../images/tech/premierepro.svg';
+import siaftereffectsIcon from '../../images/tech/aftereffects.svg';
+import simuxIcon from '../../images/tech/mux.png';
+import sistreamyardIcon from '../../images/tech/streamyard.svg';
+import siflstudioIcon from '../../images/tech/flstudio.png';
+import sidefoldIcon from '../../images/tech/defold.png';
+import sigdevelopIcon from '../../images/tech/gdevelop.svg';
+import sihoudiniIcon from '../../images/tech/houdini.svg';
+import sizbrushIcon from '../../images/tech/zbrush.png';
+import simidjourneyIcon from '../../images/tech/midjourney.svg';
+import sirunwayIcon from '../../images/tech/runway.svg';
+import sipikaIcon from '../../images/tech/pika.svg';
+import siudioIcon from '../../images/tech/udio.svg';
+import siideogramIcon from '../../images/tech/ideogram.svg';
+import sikreaIcon from '../../images/tech/krea.svg';
+import siklingaiIcon from '../../images/tech/klingai.png';
+import siadobefireflyIcon from '../../images/tech/adobefirefly.svg';
+import sihiggsfieldIcon from '../../images/tech/higgsfield.png';
+import sirecraftIcon from '../../images/tech/recraft.svg';
+import sichainguardIcon from '../../images/tech/chainguard.svg';
+import sianchoreIcon from '../../images/tech/anchore.png';
+import sidependencytrackIcon from '../../images/tech/dependencytrack.png';
+import sitetragonIcon from '../../images/tech/tetragon.png';
+import sikubescapeIcon from '../../images/tech/kubescape.png';
+import siwazuhIcon from '../../images/tech/wazuh.svg';
+import sivelociraptorIcon from '../../images/tech/velociraptor.png';
+import sicaidoIcon from '../../images/tech/caido.png';
+import sighidraIcon from '../../images/tech/ghidra.svg';
+import sibloodhoundIcon from '../../images/tech/bloodhound.png';
+import sicalderaIcon from '../../images/tech/caldera.png';
+import siatomicredteamIcon from '../../images/tech/atomicredteam.png';
+import sicyberchefIcon from '../../images/tech/cyberchef.svg';
+import sishodanIcon from '../../images/tech/shodan.svg';
+import sihaveibeenpwnedIcon from '../../images/tech/haveibeenpwned.svg';
+import sidopplerIcon from '../../images/tech/doppler.svg';
+import si1passwordIcon from '../../images/tech/1password.svg';
+import silimacharlieIcon from '../../images/tech/limacharlie.png';
+import sinucleiIcon from '../../images/tech/nuclei.svg';
+import sibinaryninjaIcon from '../../images/tech/binaryninja.svg';
+import sigreynoiseIcon from '../../images/tech/greynoise.png';
+import siakeylessIcon from '../../images/tech/akeyless.png';
+import sihiddenlayerIcon from '../../images/tech/hiddenlayer.png';
+import sistarshipIcon from '../../images/tech/starship.svg';
+import sinixIcon from '../../images/tech/nix.png';
+import sibazelIcon from '../../images/tech/bazel.svg';
+import sibuck2Icon from '../../images/tech/buck2.svg';
+import sigitbutlerIcon from '../../images/tech/gitbutler.png';
+import sisourcegraphIcon from '../../images/tech/sourcegraph.svg';
+import sibatIcon from '../../images/tech/bat.svg';
+import sihoppscotchIcon from '../../images/tech/hoppscotch.svg';
+import sitableplusIcon from '../../images/tech/tableplus.png';
+import sibeekeeperstudioIcon from '../../images/tech/beekeeperstudio.svg';
+import sichangesetsIcon from '../../images/tech/changesets.png';
+import siknipIcon from '../../images/tech/knip.svg';
+import sibencherIcon from '../../images/tech/bencher.png';
+import sicodeiumIcon from '../../images/tech/codeium.png';
+import simiseIcon from '../../images/tech/mise.svg';
+import siunderstandanythingIcon from '../../images/tech/understandanything.png';
+import sidiaIcon from '../../images/tech/dia.png';
+import sijanIcon from '../../images/tech/jan.png';
+import sianythingllmIcon from '../../images/tech/anythingllm.svg';
+import sisanaIcon from '../../images/tech/sana.svg';
+import sipoeIcon from '../../images/tech/poe.svg';
+import sinotionmailIcon from '../../images/tech/notionmail.svg';
+import sicuaIcon from '../../images/tech/cua.svg';
+import sidaytonaIcon from '../../images/tech/daytona.png';
+import simorphIcon from '../../images/tech/morph.svg';
+import sigensparkIcon from '../../images/tech/genspark.png';
+import sifirefliesaiIcon from '../../images/tech/firefliesai.png';
+import siconsensusIcon from '../../images/tech/consensus.svg';
+import silegoraIcon from '../../images/tech/legora.png';
+import sirogoIcon from '../../images/tech/rogo.png';
+import sihebbiaIcon from '../../images/tech/hebbia.svg';
+import siplaudIcon from '../../images/tech/plaud.png';
+import siclayIcon from '../../images/tech/clay.png';
+import sielicitIcon from '../../images/tech/elicit.svg';
+import sinapkinaiIcon from '../../images/tech/napkinai.png';
+import sicognitionIcon from '../../images/tech/cognition.svg';
+import simotokoIcon from '../../images/tech/motoko.png';
+import sizipdevIcon from '../../images/tech/zipdev.png';
 
 const TECH_GROUPS = [
   {
@@ -674,6 +919,9 @@ const TECH_GROUPS = [
       { name: 'Ballerina', icon: siballerinaIcon, mono: true },
       { name: 'CUE', icon: sicueIcon, flat: true },
       { name: 'Janet', icon: sijanetIcon, mono: true },
+      // Motoko has no mark of its own; it is DFINITY's language and wears
+      // DFINITY's, the way Axum wears Tokio's further up.
+      { name: 'Motoko', icon: simotokoIcon, flat: true },
     ],
   },
   {
@@ -951,6 +1199,27 @@ const TECH_GROUPS = [
       // The agent bench, 2026.
       { name: 'Gemma', icon: sigemmaIcon, mono: true },
       { name: 'GLM', icon: siglmIcon, mono: true },
+      // The tech-week intake.
+      { name: 'Dia', icon: sidiaIcon, flat: true },
+      { name: 'Jan', icon: sijanIcon, flat: true },
+      { name: 'AnythingLLM', icon: sianythingllmIcon, mono: true },
+      { name: 'Sana', icon: sisanaIcon, mono: true },
+      { name: 'Poe', icon: sipoeIcon, mono: true },
+      { name: 'Notion Mail', icon: sinotionmailIcon, mono: true },
+      { name: 'Cua', icon: sicuaIcon, mono: true },
+      { name: 'Daytona', icon: sidaytonaIcon, flat: true },
+      { name: 'Morph', icon: simorphIcon, mono: true },
+      { name: 'Genspark', icon: sigensparkIcon, flat: true },
+      { name: 'Fireflies.ai', icon: sifirefliesaiIcon, flat: true },
+      { name: 'Consensus', icon: siconsensusIcon, mono: true },
+      { name: 'Legora', icon: silegoraIcon, flat: true },
+      { name: 'Rogo', icon: sirogoIcon, flat: true },
+      { name: 'Hebbia', icon: sihebbiaIcon, mono: true },
+      { name: 'Plaud', icon: siplaudIcon, flat: true },
+      { name: 'Clay', icon: siclayIcon, flat: true },
+      { name: 'Elicit', icon: sielicitIcon, mono: true },
+      { name: 'Napkin AI', icon: sinapkinaiIcon, flat: true },
+      { name: 'Cognition', icon: sicognitionIcon, mono: true },
     ],
   },
   {
@@ -1038,6 +1307,24 @@ const TECH_GROUPS = [
     id: 'netlab',
     items: [
       // The network bench and the homelab it runs on.
+      // The tech-week intake.
+      { name: 'GNS3', icon: signs3Icon, mono: true },
+      { name: 'PuTTY', icon: siputtyIcon, mono: true },
+      { name: 'Netdata', icon: sinetdataIcon, mono: true },
+      { name: 'Zabbix', icon: sizabbixIcon, mono: true },
+      { name: 'Uptime Kuma', icon: siuptimekumaIcon, mono: true },
+      { name: 'Proxmox', icon: siproxmoxIcon, mono: true },
+      { name: 'TrueNAS', icon: sitruenasIcon, mono: true },
+      { name: 'OpenWrt', icon: siopenwrtIcon, mono: true },
+      { name: 'MikroTik', icon: simikrotikIcon, mono: true },
+      { name: 'Home Assistant', icon: sihomeassistantIcon, mono: true },
+      { name: 'Pi-hole', icon: sipiholeIcon, mono: true },
+      { name: 'Nextcloud', icon: sinextcloudIcon, mono: true },
+      { name: 'Jellyfin', icon: sijellyfinIcon, mono: true },
+      { name: 'Vagrant', icon: sivagrantIcon, mono: true },
+      { name: 'NetBox', icon: sinetboxIcon, mono: true },
+      { name: 'VirtualBox', icon: sivirtualboxIcon, mono: true },
+      { name: 'QEMU', icon: siqemuIcon, mono: true },
     ],
   },
   {
@@ -1092,6 +1379,30 @@ const TECH_GROUPS = [
       { name: 'Ory', icon: sioryIcon, mono: true },
       { name: 'Graylog', icon: sigraylogIcon, mono: true },
       { name: 'Infisical', icon: siinfisicalIcon, mono: true },
+      // The tech-week intake.
+      { name: 'Chainguard', icon: sichainguardIcon, mono: true },
+      { name: 'Anchore', icon: sianchoreIcon, flat: true },
+      { name: 'Dependency-Track', icon: sidependencytrackIcon, flat: true },
+      { name: 'Tetragon', icon: sitetragonIcon, flat: true },
+      { name: 'Kubescape', icon: sikubescapeIcon, flat: true },
+      { name: 'Wazuh', icon: siwazuhIcon, mono: true },
+      { name: 'Velociraptor', icon: sivelociraptorIcon, flat: true },
+      { name: 'Caido', icon: sicaidoIcon, flat: true },
+      { name: 'Ghidra', icon: sighidraIcon, mono: true },
+      { name: 'BloodHound', icon: sibloodhoundIcon, flat: true },
+      { name: 'Caldera', icon: sicalderaIcon, flat: true },
+      { name: 'Atomic Red Team', icon: siatomicredteamIcon, flat: true },
+      { name: 'CyberChef', icon: sicyberchefIcon, mono: true },
+      { name: 'Shodan', icon: sishodanIcon, mono: true },
+      { name: 'Have I Been Pwned', icon: sihaveibeenpwnedIcon, mono: true },
+      { name: 'Doppler', icon: sidopplerIcon, mono: true },
+      { name: '1Password', icon: si1passwordIcon, mono: true },
+      { name: 'LimaCharlie', icon: silimacharlieIcon, flat: true },
+      { name: 'Nuclei', icon: sinucleiIcon, mono: true },
+      { name: 'Binary Ninja', icon: sibinaryninjaIcon, mono: true },
+      { name: 'GreyNoise', icon: sigreynoiseIcon, flat: true },
+      { name: 'Akeyless', icon: siakeylessIcon, flat: true },
+      { name: 'HiddenLayer', icon: sihiddenlayerIcon, flat: true },
     ],
   },
   {
@@ -1218,6 +1529,29 @@ const TECH_GROUPS = [
       { name: 'Gradle', icon: sigradleIcon, mono: true },
       { name: 'Jetpack Compose', icon: sijetpackcomposeIcon, mono: true },
       { name: 'Firebase', icon: sifirebaseIcon, mono: true },
+      // The tech-week intake.
+      { name: 'React Hook Form', icon: sireacthookformIcon, mono: true },
+      { name: 'Formik', icon: siformikIcon, mono: true },
+      { name: 'React Aria', icon: sireactariaIcon, mono: true },
+      { name: 'Ark UI', icon: siarkuiIcon, mono: true },
+      { name: 'Headless UI', icon: siheadlessuiIcon, mono: true },
+      { name: 'Floating UI', icon: sifloatinguiIcon, flat: true },
+      { name: 'AG Grid', icon: siaggridIcon, flat: true },
+      { name: 'Vike', icon: sivikeIcon, mono: true },
+      { name: 'GSAP', icon: sigsapIcon, mono: true },
+      { name: 'React Spring', icon: sireactspringIcon, mono: true },
+      { name: 'Rspack', icon: sirspackIcon, mono: true },
+      { name: 'Lerna', icon: silernaIcon, mono: true },
+      { name: 'vanilla-extract', icon: sivanillaextractIcon, mono: true },
+      { name: 'PostCSS', icon: sipostcssIcon, mono: true },
+      { name: 'Style Dictionary', icon: sistyledictionaryIcon, flat: true },
+      { name: 'Lightning CSS', icon: silightningcssIcon, mono: true },
+      { name: 'Lucide', icon: silucideIcon, mono: true },
+      { name: 'Phosphor Icons', icon: siphosphoriconsIcon, mono: true },
+      { name: 'Font Awesome', icon: sifontawesomeIcon, mono: true },
+      { name: 'Iconify', icon: siiconifyIcon, mono: true },
+      { name: 'Bevy', icon: sibevyIcon, mono: true },
+      { name: 'TresJS', icon: sitresjsIcon, mono: true },
     ],
   },
   {
@@ -1272,6 +1606,19 @@ const TECH_GROUPS = [
       { name: 'Better Auth', icon: sibetterauthIcon, mono: true },
       { name: 'Lemon Squeezy', icon: silemonsqueezyIcon, mono: true },
       { name: 'Matomo', icon: simatomoIcon, mono: true },
+      // The tech-week intake.
+      { name: 'Storyblok', icon: sistoryblokIcon, mono: true },
+      { name: 'Craft CMS', icon: sicraftcmsIcon, mono: true },
+      { name: 'Magento', icon: simagentoIcon, mono: true },
+      { name: 'Hygraph', icon: sihygraphIcon, flat: true },
+      { name: 'Tally', icon: sitallyIcon, mono: true },
+      { name: 'Loops', icon: siloopsIcon, mono: true },
+      { name: 'Plausible', icon: siplausibleIcon, mono: true },
+      { name: 'Simple Analytics', icon: sisimpleanalyticsIcon, mono: true },
+      { name: 'Canva', icon: sicanvaIcon, mono: true },
+      { name: 'Zeplin', icon: sizeplinIcon, mono: true },
+      { name: 'FigJam', icon: sifigjamIcon, mono: true },
+      { name: 'unDraw', icon: siundrawIcon, mono: true },
     ],
   },
   {
@@ -1320,12 +1667,86 @@ const TECH_GROUPS = [
       { name: 'Deepgram', icon: sideepgramIcon, mono: true },
       { name: 'Cocos', icon: sicocosIcon, mono: true },
       { name: 'Pipecat', icon: sipipecatIcon, mono: true },
+      // The tech-week intake.
+      { name: 'CapCut', icon: sicapcutIcon, mono: true },
+      { name: 'Ableton Live', icon: siabletonliveIcon, mono: true },
+      { name: 'HandBrake', icon: sihandbrakeIcon, flat: true },
+      { name: 'Premiere Pro', icon: sipremiereproIcon, mono: true },
+      { name: 'After Effects', icon: siaftereffectsIcon, mono: true },
+      { name: 'Mux', icon: simuxIcon, flat: true },
+      { name: 'StreamYard', icon: sistreamyardIcon, mono: true },
+      { name: 'FL Studio', icon: siflstudioIcon, flat: true },
+      { name: 'Defold', icon: sidefoldIcon, flat: true },
+      { name: 'GDevelop', icon: sigdevelopIcon, mono: true },
+      { name: 'Houdini', icon: sihoudiniIcon, mono: true },
+      { name: 'ZBrush', icon: sizbrushIcon, flat: true },
+      { name: 'Midjourney', icon: simidjourneyIcon, mono: true },
+      { name: 'Runway', icon: sirunwayIcon, mono: true },
+      { name: 'Pika', icon: sipikaIcon, mono: true },
+      { name: 'Udio', icon: siudioIcon, mono: true },
+      { name: 'Ideogram', icon: siideogramIcon, mono: true },
+      { name: 'Krea', icon: sikreaIcon, mono: true },
+      { name: 'Kling AI', icon: siklingaiIcon, flat: true },
+      { name: 'Adobe Firefly', icon: siadobefireflyIcon, mono: true },
+      { name: 'Higgsfield', icon: sihiggsfieldIcon, flat: true },
+      { name: 'Recraft', icon: sirecraftIcon, mono: true },
     ],
   },
   {
     id: 'hardware',
     items: [
       // Where the software meets something that moves or gets made.
+      // The tech-week intake.
+      { name: 'ROS', icon: sirosIcon, mono: true },
+      { name: 'Gazebo', icon: sigazeboIcon, mono: true },
+      { name: 'MoveIt', icon: simoveitIcon, flat: true },
+      { name: 'PlotJuggler', icon: siplotjugglerIcon, flat: true },
+      { name: 'MuJoCo', icon: simujocoIcon, flat: true },
+      { name: 'Webots', icon: siwebotsIcon, flat: true },
+      { name: 'Gymnasium', icon: sigymnasiumIcon, flat: true },
+      { name: 'Drake', icon: sidrakeIcon, mono: true },
+      { name: 'Viam', icon: siviamIcon, flat: true },
+      { name: 'Duckietown', icon: siduckietownIcon, flat: true },
+      { name: 'Unitree', icon: siunitreeIcon, mono: true },
+      { name: 'FreeCAD', icon: sifreecadIcon, mono: true },
+      { name: 'OpenSCAD', icon: siopenscadIcon, mono: true },
+      { name: 'KiCad', icon: sikicadIcon, mono: true },
+      { name: 'Bambu Studio', icon: sibambustudioIcon, flat: true },
+      { name: 'Autodesk Fusion', icon: siautodeskfusionIcon, mono: true },
+      { name: 'Altium Designer', icon: sialtiumdesignerIcon, flat: true },
+      { name: 'CATIA', icon: sicatiaIcon, flat: true },
+      { name: 'Siemens NX', icon: sisiemensnxIcon, mono: true },
+      { name: 'nTop', icon: sintopIcon, mono: true },
+      { name: 'UltiMaker Cura', icon: siultimakercuraIcon, flat: true },
+      { name: 'Protolabs', icon: siprotolabsIcon, mono: true },
+      { name: 'PhysicsX', icon: siphysicsxIcon, flat: true },
+      { name: 'Arduino', icon: siarduinoIcon, mono: true },
+      { name: 'Raspberry Pi', icon: siraspberrypiIcon, mono: true },
+      { name: 'Espressif', icon: siespressifIcon, mono: true },
+      { name: 'PlatformIO', icon: siplatformioIcon, mono: true },
+      { name: 'Zephyr', icon: sizephyrIcon, mono: true },
+      { name: 'FreeRTOS', icon: sifreertosIcon, flat: true },
+      { name: 'MicroPython', icon: simicropythonIcon, mono: true },
+      { name: 'CircuitPython', icon: sicircuitpythonIcon, mono: true },
+      { name: 'Nordic Semiconductor', icon: sinordicsemiconductorIcon, mono: true },
+      { name: 'Yocto Project', icon: siyoctoprojectIcon, flat: true },
+      { name: 'balena', icon: sibalenaIcon, mono: true },
+      { name: 'Golioth', icon: sigoliothIcon, flat: true },
+      { name: 'Blues', icon: sibluesIcon, flat: true },
+      { name: 'Particle', icon: siparticleIcon, mono: true },
+      { name: 'Toit', icon: sitoitIcon, flat: true },
+      { name: 'Embassy', icon: siembassyIcon, flat: true },
+      { name: 'RIOT', icon: siriotIcon, mono: true },
+      { name: 'TinyGo', icon: sitinygoIcon, mono: true },
+      { name: 'Edge Impulse', icon: siedgeimpulseIcon, mono: true },
+      { name: 'LiteRT', icon: silitertIcon, flat: true },
+      { name: 'Node-RED', icon: sinoderedIcon, mono: true },
+      { name: 'Ignition', icon: siignitionIcon, flat: true },
+      { name: 'ThingsBoard', icon: sithingsboardIcon, mono: true },
+      { name: 'EMQX', icon: siemqxIcon, mono: true },
+      { name: 'HiveMQ', icon: sihivemqIcon, mono: true },
+      { name: 'Mosquitto', icon: simosquittoIcon, mono: true },
+      { name: 'Ubidots', icon: siubidotsIcon, mono: true },
     ],
   },
   {
@@ -1389,18 +1810,81 @@ const TECH_GROUPS = [
       { name: 'Superpowers', icon: sisuperpowersIcon, mono: true },
       { name: 'Mintlify', icon: simintlifyIcon, mono: true },
       { name: 'Context7', icon: sicontext7Icon, flat: true },
+      // The tech-week intake.
+      { name: 'Starship', icon: sistarshipIcon, mono: true },
+      { name: 'Nix', icon: sinixIcon, flat: true },
+      { name: 'Bazel', icon: sibazelIcon, mono: true },
+      { name: 'Buck2', icon: sibuck2Icon, mono: true },
+      { name: 'GitButler', icon: sigitbutlerIcon, flat: true },
+      { name: 'Sourcegraph', icon: sisourcegraphIcon, mono: true },
+      { name: 'bat', icon: sibatIcon, mono: true },
+      { name: 'Hoppscotch', icon: sihoppscotchIcon, mono: true },
+      { name: 'TablePlus', icon: sitableplusIcon, flat: true },
+      { name: 'Beekeeper Studio', icon: sibeekeeperstudioIcon, mono: true },
+      { name: 'Changesets', icon: sichangesetsIcon, flat: true },
+      { name: 'Knip', icon: siknipIcon, mono: true },
+      { name: 'Bencher', icon: sibencherIcon, flat: true },
+      { name: 'Codeium', icon: sicodeiumIcon, flat: true },
+      { name: 'mise', icon: simiseIcon, mono: true },
+      { name: 'Understand-Anything', icon: siunderstandanythingIcon, flat: true },
     ],
   },
   {
     id: 'diagrams',
     items: [
       // Drawing the system, then writing it down.
+      // The tech-week intake.
+      { name: 'PlantUML', icon: siplantumlIcon, flat: true },
+      { name: 'Mermaid', icon: simermaidIcon, mono: true },
+      { name: 'D2', icon: sid2Icon, mono: true },
+      { name: 'Kroki', icon: sikrokiIcon, flat: true },
+      { name: 'Eraser', icon: sieraserIcon, mono: true },
+      { name: 'Visual Paradigm', icon: sivisualparadigmIcon, mono: true },
+      { name: 'Docusaurus', icon: sidocusaurusIcon, mono: true },
+      { name: 'MkDocs', icon: simkdocsIcon, mono: true },
+      { name: 'Sphinx', icon: sisphinxIcon, mono: true },
+      { name: 'Read the Docs', icon: sireadthedocsIcon, mono: true },
+      { name: 'GitBook', icon: sigitbookIcon, mono: true },
+      { name: 'VitePress', icon: sivitepressIcon, mono: true },
+      { name: 'Starlight', icon: sistarlightIcon, flat: true },
+      { name: 'Milanote', icon: similanoteIcon, mono: true },
+      { name: 'Lucidchart', icon: silucidchartIcon, flat: true },
+      { name: 'yEd', icon: siyedIcon, mono: true },
+      { name: 'Gliffy', icon: sigliffyIcon, flat: true },
     ],
   },
   {
     id: 'learning',
     items: [
       // Where the knowledge actually comes from.
+      // The tech-week intake.
+      { name: 'Platzi', icon: siplatziIcon, mono: true },
+      { name: 'Udemy', icon: siudemyIcon, mono: true },
+      { name: 'W3Schools', icon: siw3schoolsIcon, mono: true },
+      { name: 'Stack Overflow', icon: sistackoverflowIcon, mono: true },
+      { name: 'freeCodeCamp', icon: sifreecodecampIcon, mono: true },
+      { name: 'Coursera', icon: sicourseraIcon, mono: true },
+      { name: 'edX', icon: siedxIcon, mono: true },
+      { name: 'Khan Academy', icon: sikhanacademyIcon, mono: true },
+      { name: 'MDN Web Docs', icon: simdnwebdocsIcon, mono: true },
+      { name: 'Exercism', icon: siexercismIcon, mono: true },
+      { name: 'LeetCode', icon: sileetcodeIcon, mono: true },
+      { name: 'HackerRank', icon: sihackerrankIcon, mono: true },
+      { name: 'Codecademy', icon: sicodecademyIcon, mono: true },
+      { name: 'Pluralsight', icon: sipluralsightIcon, mono: true },
+      { name: 'Anki', icon: siankiIcon, mono: true },
+      { name: 'Scrimba', icon: siscrimbaIcon, mono: true },
+      { name: 'Advent of Code', icon: siadventofcodeIcon, mono: true },
+      { name: 'arXiv', icon: siarxivIcon, mono: true },
+      { name: 'Semantic Scholar', icon: sisemanticscholarIcon, mono: true },
+      { name: 'Google Classroom', icon: sigoogleclassroomIcon, mono: true },
+      { name: 'Codewars', icon: sicodewarsIcon, mono: true },
+      { name: 'Zotero', icon: sizoteroIcon, mono: true },
+      { name: 'roadmap.sh', icon: siroadmapshIcon, flat: true },
+      { name: 'Frontend Masters', icon: sifrontendmastersIcon, flat: true },
+      { name: 'egghead.io', icon: sieggheadioIcon, flat: true },
+      { name: 'Microsoft Learn', icon: simicrosoftlearnIcon, flat: true },
+      { name: 'DevDocs', icon: sidevdocsIcon, mono: true },
     ],
   },
   {
@@ -1408,6 +1892,25 @@ const TECH_GROUPS = [
     items: [
       // How the work gets done with other people.
       { name: 'Plane', icon: siplaneIcon, flat: true },
+      // The tech-week intake.
+      { name: 'Google Meet', icon: sigooglemeetIcon, mono: true },
+      { name: 'Loom', icon: siloomIcon, mono: true },
+      { name: 'Microsoft Teams', icon: simicrosoftteamsIcon, mono: true },
+      { name: 'Discord', icon: sidiscordIcon, mono: true },
+      { name: 'Telegram', icon: sitelegramIcon, mono: true },
+      { name: 'WhatsApp', icon: siwhatsappIcon, mono: true },
+      { name: 'Confluence', icon: siconfluenceIcon, mono: true },
+      { name: 'Asana', icon: siasanaIcon, mono: true },
+      { name: 'ClickUp', icon: siclickupIcon, mono: true },
+      { name: 'Calendly', icon: sicalendlyIcon, mono: true },
+      { name: 'Granola', icon: sigranolaIcon, mono: true },
+      { name: 'Front', icon: sifrontIcon, mono: true },
+      { name: 'Zulip', icon: sizulipIcon, mono: true },
+      { name: 'Mattermost', icon: simattermostIcon, mono: true },
+      { name: 'Rocket.Chat', icon: sirocketchatIcon, flat: true },
+      { name: 'Element', icon: sielementIcon, mono: true },
+      { name: 'Otter.ai', icon: siotteraiIcon, flat: true },
+      { name: 'Zipdev', icon: sizipdevIcon, flat: true },
     ],
   },
   {
