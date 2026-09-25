@@ -33,6 +33,143 @@ const brandsEs = {
     projectsCta: 'Explorar proyectos',
   },
 
+  // ------------------------------------------------ Plan de operaciones
+  // Public on purpose, and narrative on purpose: stages, focus and exit
+  // criteria, but no amounts and no client names beyond what the site
+  // already tells. The structure (order, current stage, states) is in
+  // components/ventures/plan.js.
+  plan: {
+    badge: 'Ventures · Plan de operaciones',
+    title: 'De la promesa al plan',
+    lede: 'Enero de 2027 es la fecha de operación formal de las dos empresas. Esta página es cómo se llega a ella y qué viene después, en cuatro etapas. Cada etapa tiene una fecha objetivo, pero se sale de ella cuando se cumplen sus criterios, no cuando llega la fecha.',
+    here: 'Estás aquí',
+    tabsLabel: 'Etapas del plan',
+    focusTitle: 'En qué pongo el foco ahora',
+    exitTitle: 'Criterios de salida',
+    exitOpen: 'Sin criterio de salida: esta etapa es el horizonte.',
+    back: 'Volver a Ventures',
+    chipLabel: 'Etapa actual',
+    chipCta: 'Ver el plan',
+    hubCta: 'Ver el plan de operaciones',
+    states: { done: 'Cumplido', active: 'En curso', pending: 'Pendiente' },
+    dims: {
+      focus: 'Foco',
+      model: 'Modelo de negocio',
+      clients: 'Cartera de clientes',
+      funding: 'Fondeo',
+    },
+    names: {
+      freelanceMoonphase: 'Freelance → Moonphase',
+      moonphase: 'Moonphase',
+      stackselect: 'StackSelect',
+    },
+    stages: {
+      incubate: {
+        name: 'Incubar',
+        window: 'Ene 2025 — Dic 2026',
+        tagline: 'Probar que el método aguanta antes de pedirle a alguien que apueste por él.',
+        now: {
+          constitute: 'Constituir las dos empresas antes de enero de 2027.',
+          records: 'Convertir cada proyecto entregado en un expediente de Moonphase.',
+          placements: 'Cerrar las primeras colocaciones de StackSelect y, con ellas, el modelo de cobro.',
+        },
+      },
+      stabilize: {
+        name: 'Estabilizar',
+        window: '2027',
+        tagline: 'Operación formal que se sostiene sola.',
+      },
+      scale: {
+        name: 'Escalar',
+        window: '2028 — 2029',
+        tagline: 'Crecer sin ser el cuello de botella.',
+      },
+      exploit: {
+        name: 'Explotar',
+        window: '2030 en adelante',
+        tagline: 'Convertir lo construido en activos.',
+      },
+    },
+    moonphase: {
+      incubate: {
+        focus: 'Entregar proyectos de automatización con el método de Moonphase —factibilidad, alcance, construcción, expediente— para demostrar que se sostiene fuera de la teoría.',
+        model: 'Proyecto de alcance cerrado y precio fijo, cotizado contra un entregable medible.',
+        clients: 'La cartera que ya construyó la práctica independiente, empezando por PuntoBienestar. Se gana por referencia y por entrega, no por publicidad.',
+        funding: 'Autofinanciado con el ingreso de los propios proyectos.',
+        exit: {
+          legal: 'Moonphase constituida legalmente.',
+          records: 'Los proyectos entregados, reescritos como expedientes de Moonphase: qué se construyó, qué se midió, qué falló.',
+          portfolio: 'La cartera freelance transferida a Moonphase como su cartera inicial.',
+        },
+      },
+      stabilize: {
+        focus: 'Que el carril 1, automatización aplicada, cubra la operación, y abrir los primeros expedientes del carril 2, I+D.',
+        model: 'Proyectos cerrados más contratos de mantenimiento y soporte sobre lo entregado, que vuelven recurrente parte del ingreso.',
+        clients: 'De la referencia al canal: casos publicados, sitio propio desde enero de 2027 y nichos concretos donde el método ya probó resultado.',
+        funding: 'El carril 1 financia el carril 2. Fondos públicos de ciencia, tecnología e innovación para los primeros proyectos de I+D.',
+        exit: {
+          recurring: 'El ingreso recurrente cubre la operación.',
+          firstRd: 'El primer expediente del carril 2 cerrado, con resultado positivo o negativo.',
+        },
+      },
+      scale: {
+        focus: 'Primeras contrataciones técnicas, y el método escrito de modo que otro ingeniero lo ejecute igual.',
+        model: 'Proyectos más una cartera de soporte, y los primeros componentes reutilizables del carril 1 vendidos como producto.',
+        clients: 'Industrias y nichos con más de un caso resuelto, donde el siguiente cliente se parece al anterior.',
+        funding: 'Ronda ángel o pre-semilla, levantada cuando existan métricas que la sostengan.',
+        exit: {
+          handsOff: 'Un proyecto entregado de principio a fin sin mi intervención directa.',
+          round: 'Ronda levantada sobre métricas reales, no sobre la promesa.',
+        },
+      },
+      exploit: {
+        focus: 'Los expedientes de I+D que funcionaron se vuelven productos o spin-offs.',
+        model: 'Producto y licenciamiento sobre la investigación propia, además de la operación de servicios.',
+        clients: 'Clientes de producto, no solo de proyecto.',
+        funding: 'Ronda semilla o serie A según tracción, o crecimiento con capital propio.',
+      },
+    },
+    stackselect: {
+      incubate: {
+        focus: 'Correr las primeras generaciones de formación y evaluación, en marcha desde junio de 2026, y comprobar que el método produce candidatos que se incorporan.',
+        model: 'Validar quién paga y por qué: el candidato, la empresa contratante o ambos. La hipótesis de trabajo es que paga la empresa, por colocación.',
+        clients: 'Las primeras empresas dispuestas a entrevistar a los candidatos de las generaciones iniciales.',
+        funding: 'Autofinanciado.',
+        exit: {
+          legal: 'StackSelect constituida legalmente.',
+          placements: 'Primeras colocaciones reales, documentadas de principio a fin.',
+          pricing: 'Modelo de cobro validado con al menos una empresa que pague.',
+        },
+      },
+      stabilize: {
+        focus: 'Operación formal: generaciones regulares y la colocación como la unidad que se mide.',
+        model: 'La empresa contratante paga una cuota por colocación. El costo para el candidato se mantiene mínimo o nulo, porque es la población que todavía no tiene ingreso.',
+        clients: 'Empresas aliadas que contratan de forma recurrente, no una sola vez.',
+        funding: 'Ingreso por colocación, y fondos públicos de empleo juvenil y vinculación.',
+        exit: {
+          rate: 'Tasa de colocación documentada y sostenida por varias generaciones.',
+          repeat: 'Empresas que vuelven a contratar.',
+        },
+      },
+      scale: {
+        focus: 'Instructores y evaluadores propios, y la plataforma de evaluación como producto independiente.',
+        model: 'Se suma la evaluación como servicio: la empresa paga por evaluar a sus propios candidatos con el criterio de StackSelect.',
+        clients: 'Empresas que usan la plataforma aunque no contraten por colocación.',
+        funding: 'Ronda ángel o pre-semilla sobre la tracción de colocación.',
+        exit: {
+          handsOff: 'Generaciones que corren sin que yo imparta ni evalúe.',
+          platform: 'La plataforma con clientes propios.',
+        },
+      },
+      exploit: {
+        focus: 'Expansión regional y por vertical de talento.',
+        model: 'Colocación y plataforma en más mercados.',
+        clients: 'Empresas fuera de la región de origen.',
+        funding: 'Ronda semilla o serie A según tracción.',
+      },
+    },
+  },
+
   // ------------------------------------------------------------------ UAZ
   uaz: {
     badge: 'Formación',

@@ -343,6 +343,11 @@ const en = {
       description:
         'Moonphase and StackSelect: the two companies I founded, what each one is for, and where each one stands today.',
     },
+    plan: {
+      title: 'Operating plan · Adal Cerrillo',
+      description:
+        'How Moonphase and StackSelect go from promise to plan: four stages, what gets done in each, and what has to be true to move to the next.',
+    },
     projects: {
       title: 'Projects · Adal Cerrillo',
       description:

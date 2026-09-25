@@ -32,6 +32,143 @@ const brandsEn = {
     projectsCta: 'Explore projects',
   },
 
+  // ------------------------------------------------------ Operating plan
+  // Public on purpose, and narrative on purpose: stages, focus and exit
+  // criteria, but no amounts and no client names beyond what the site
+  // already tells. The structure (order, current stage, states) is in
+  // components/ventures/plan.js.
+  plan: {
+    badge: 'Ventures · Operating plan',
+    title: 'From promise to plan',
+    lede: 'January 2027 is when both companies start formal operations. This page is how they get there and what comes after, in four stages. Each stage has a target date, but it is left when its criteria are met, not when the date arrives.',
+    here: 'You are here',
+    tabsLabel: 'Plan stages',
+    focusTitle: 'Where my focus goes now',
+    exitTitle: 'Exit criteria',
+    exitOpen: 'No exit criterion: this stage is the horizon.',
+    back: 'Back to Ventures',
+    chipLabel: 'Current stage',
+    chipCta: 'See the plan',
+    hubCta: 'See the operating plan',
+    states: { done: 'Done', active: 'In progress', pending: 'Pending' },
+    dims: {
+      focus: 'Focus',
+      model: 'Business model',
+      clients: 'Client base',
+      funding: 'Funding',
+    },
+    names: {
+      freelanceMoonphase: 'Freelance → Moonphase',
+      moonphase: 'Moonphase',
+      stackselect: 'StackSelect',
+    },
+    stages: {
+      incubate: {
+        name: 'Incubate',
+        window: 'Jan 2025 — Dec 2026',
+        tagline: 'Prove the method holds before asking anyone to bet on it.',
+        now: {
+          constitute: 'Incorporate both companies before January 2027.',
+          records: 'Turn every delivered project into a Moonphase record.',
+          placements: 'Close StackSelect’s first placements and, with them, its pricing model.',
+        },
+      },
+      stabilize: {
+        name: 'Stabilize',
+        window: '2027',
+        tagline: 'Formal operations that pay for themselves.',
+      },
+      scale: {
+        name: 'Scale',
+        window: '2028 — 2029',
+        tagline: 'Grow without being the bottleneck.',
+      },
+      exploit: {
+        name: 'Exploit',
+        window: '2030 onwards',
+        tagline: 'Turn what was built into assets.',
+      },
+    },
+    moonphase: {
+      incubate: {
+        focus: 'Deliver automation projects with the Moonphase method —feasibility, scope, build, record— to show it holds outside theory.',
+        model: 'Fixed-scope, fixed-price projects, quoted against a measurable deliverable.',
+        clients: 'The client base the independent practice already built, starting with PuntoBienestar. Won by referral and by delivery, not by advertising.',
+        funding: 'Self-funded from the projects’ own revenue.',
+        exit: {
+          legal: 'Moonphase legally incorporated.',
+          records: 'Delivered projects rewritten as Moonphase records: what was built, what was measured, what failed.',
+          portfolio: 'The freelance client base moved to Moonphase as its starting portfolio.',
+        },
+      },
+      stabilize: {
+        focus: 'Lane 1, applied automation, covers operations, and the first lane 2 records, R&D, are opened.',
+        model: 'Fixed-scope projects plus maintenance and support contracts on what was delivered, which make part of the revenue recurring.',
+        clients: 'From referral to channel: published cases, the company’s own site from January 2027, and specific niches where the method has already proven itself.',
+        funding: 'Lane 1 funds lane 2. Public science, technology and innovation funds for the first R&D projects.',
+        exit: {
+          recurring: 'Recurring revenue covers operations.',
+          firstRd: 'The first lane 2 record closed, with a positive or negative result.',
+        },
+      },
+      scale: {
+        focus: 'First technical hires, and the method written down so another engineer runs it the same way.',
+        model: 'Projects plus a support portfolio, and the first reusable lane 1 components sold as product.',
+        clients: 'Industries and niches with more than one solved case, where the next client looks like the last one.',
+        funding: 'Angel or pre-seed round, raised once there are metrics to back it.',
+        exit: {
+          handsOff: 'A project delivered end to end without my direct involvement.',
+          round: 'A round raised on real metrics, not on the promise.',
+        },
+      },
+      exploit: {
+        focus: 'The R&D records that worked become products or spin-offs.',
+        model: 'Product and licensing on our own research, alongside the services business.',
+        clients: 'Product customers, not only project clients.',
+        funding: 'Seed or Series A depending on traction, or growth on our own capital.',
+      },
+    },
+    stackselect: {
+      incubate: {
+        focus: 'Run the first training and assessment cohorts, under way since June 2026, and check that the method produces candidates who get hired.',
+        model: 'Validate who pays and why: the candidate, the hiring company, or both. The working hypothesis is that the company pays, per placement.',
+        clients: 'The first companies willing to interview candidates from the early cohorts.',
+        funding: 'Self-funded.',
+        exit: {
+          legal: 'StackSelect legally incorporated.',
+          placements: 'First real placements, documented end to end.',
+          pricing: 'Pricing validated with at least one paying company.',
+        },
+      },
+      stabilize: {
+        focus: 'Formal operations: regular cohorts, with the placement as the unit that is measured.',
+        model: 'The hiring company pays a fee per placement. The cost to the candidate stays minimal or zero, because they are the people who do not yet have an income.',
+        clients: 'Partner companies that hire repeatedly, not once.',
+        funding: 'Placement revenue, and public youth-employment and industry-linkage funds.',
+        exit: {
+          rate: 'A placement rate documented and sustained across several cohorts.',
+          repeat: 'Companies that hire again.',
+        },
+      },
+      scale: {
+        focus: 'Our own instructors and assessors, and the assessment platform as a standalone product.',
+        model: 'Assessment as a service is added: companies pay to assess their own candidates with StackSelect’s criteria.',
+        clients: 'Companies that use the platform even when they do not hire by placement.',
+        funding: 'Angel or pre-seed round on placement traction.',
+        exit: {
+          handsOff: 'Cohorts that run without me teaching or assessing.',
+          platform: 'The platform with its own customers.',
+        },
+      },
+      exploit: {
+        focus: 'Regional expansion and new talent verticals.',
+        model: 'Placement and platform in more markets.',
+        clients: 'Companies outside the home region.',
+        funding: 'Seed or Series A depending on traction.',
+      },
+    },
+  },
+
   // ------------------------------------------------------------------ UAZ
   uaz: {
     badge: 'Education',
