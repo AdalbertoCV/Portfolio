@@ -22,8 +22,7 @@ import {
   LINKEDIN,
   YOUTUBE,
 } from '../../site';
-import TECH_GROUPS, { monogram } from './techStack';
-import { PROJECT_TECH } from '../projects/catalogue';
+import StackExplorer from './StackExplorer';
 import READING from './reading';
 import REFERENCES from './references';
 import RefHacker from './RefHacker';
@@ -96,99 +95,9 @@ const CERT_LINKS = {
   ],
 };
 
-/**
- * One technology: its mark, its name, and — where the catalogue can prove it —
- * how many projects stand behind it, linking to exactly those.
- *
- * No card around it. Cards were what made 315 of these into a wall; with one
- * group on screen the grid itself is the container, and the marks can have the
- * room they were never given.
- */
-const TechMark = ({ item, t }) => {
-  const built = PROJECT_TECH[item.name];
-  // One tile needs its label translated rather than taken from its own name:
-  // the parenthesis is the joke, and the joke is in Spanish.
-  const label = item.labelKey ? t(item.labelKey) : item.name;
-
-  const face = (
-    <>
-      <span className="stack-mark-art">
-        {item.icon ? (
-          <img
-            className="tech-icon"
-            src={item.icon}
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            data-mono={item.mono ? 'true' : undefined}
-            data-flat={item.flat ? 'true' : undefined}
-          />
-        ) : item.concept ? (
-          <ConceptIcon className="tech-concept" name={item.concept} />
-        ) : (
-          // Last resort only — every current entry has either a logo or a
-          // concept icon, so this should never render.
-          <span className="tech-monogram" aria-hidden="true">
-            {monogram(item.name)}
-          </span>
-        )}
-        {built ? (
-          <span className="tech-receipt" aria-hidden="true">
-            {built}
-          </span>
-        ) : null}
-      </span>
-      <span className="tech-name">{label}</span>
-    </>
-  );
-
-  return (
-    <li className={`stack-mark${built ? ' is-linked' : ''}`}>
-      {built ? (
-        <Link
-          className="stack-mark-link"
-          to={`/projects?tech=${encodeURIComponent(item.name)}`}
-          aria-label={`${item.name} — ${built} ${t('cv.skillsReceipt')}`}
-        >
-          {face}
-        </Link>
-      ) : (
-        face
-      )}
-    </li>
-  );
-};
-
 const About = () => {
   const { t, tl } = useTranslation();
   const [activeImage, setActiveImage] = useState(null);
-  // Which group the stack is showing. The first one, so the section is never
-  // an empty frame waiting to be clicked.
-  const [group, setGroup] = useState(TECH_GROUPS[0].id);
-
-  // On a phone the index is a row that scrolls sideways, so the group being
-  // shown can end up off-screen after an arrow key. Only the rail moves:
-  // scrollIntoView would take the page with it, which on a section this far
-  // down reads as the page throwing the reader somewhere.
-  useEffect(() => {
-    const tab = document.getElementById(`stack-tab-${group}`);
-    const rail = tab?.parentElement;
-    if (!rail || rail.scrollWidth <= rail.clientWidth) return;
-    rail.scrollTo({ left: Math.max(0, tab.offsetLeft - 24), behavior: 'smooth' });
-  }, [group]);
-
-  // Arrow keys walk the index, which is what a tablist is expected to do and
-  // what makes it usable without a mouse.
-  const stepGroup = (event, id) => {
-    const keys = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
-    const step = keys[event.key];
-    if (!step) return;
-    event.preventDefault();
-    const index = TECH_GROUPS.findIndex((entry) => entry.id === id);
-    const next = TECH_GROUPS[(index + step + TECH_GROUPS.length) % TECH_GROUPS.length];
-    setGroup(next.id);
-    document.getElementById(`stack-tab-${next.id}`)?.focus();
-  };
 
   // For whoever opens devtools on a portfolio, which is its own kind of
   // introduction. Runs once per mount, says nothing the page needs.
@@ -482,39 +391,8 @@ const About = () => {
             many groups there are, let a reader pick one, and give that one
             room to breathe. Twelve names on the left, one group's marks on
             the right, and the wall never happens. */}
-        <Reveal className="stack">
-          <div className="stack-index" role="tablist" aria-label={t('cv.skillsTitle')}>
-            {TECH_GROUPS.map(({ id, items }) => (
-              <button
-                type="button"
-                role="tab"
-                id={`stack-tab-${id}`}
-                aria-selected={group === id}
-                aria-controls={`stack-panel-${id}`}
-                tabIndex={group === id ? 0 : -1}
-                className="stack-tab"
-                key={id}
-                onClick={() => setGroup(id)}
-                onKeyDown={(event) => stepGroup(event, id)}
-              >
-                <span className="stack-tab-name">{t(`skills.groups.${id}`)}</span>
-              </button>
-            ))}
-          </div>
-
-          <div
-            className="stack-panel"
-            role="tabpanel"
-            id={`stack-panel-${group}`}
-            aria-labelledby={`stack-tab-${group}`}
-            key={group}
-          >
-            <ul className="stack-marks">
-              {(TECH_GROUPS.find((entry) => entry.id === group)?.items || []).map((item) => (
-                <TechMark item={item} t={t} key={item.name} />
-              ))}
-            </ul>
-          </div>
+        <Reveal>
+          <StackExplorer />
         </Reveal>
       </Section>
 

@@ -59,6 +59,12 @@ const cvEn = {
     skillsTitle: 'What I use, test and explore',
     skillsLede: 'First, the stars: the technologies with public projects behind them, each linked to that work. The rest I use on projects under NDA or personal ones, or they are tools I have on my radar and am trying out.',
     skillsReceipt: 'projects with',
+    skillsSearchLabel: 'Search technologies',
+    skillsSearchPlaceholder: 'Search {count} technologies…',
+    skillsSearchResults: 'Search results',
+    skillsSearchCount: '{count} matches',
+    skillsSearchEmpty: 'Nothing called “{query}” on the stack. Try another name or check the spelling.',
+    skillsSearchClear: 'Clear search',
     skillsExpandAll: 'Open every group',
     skillsCollapseAll: 'Close every group',
 
