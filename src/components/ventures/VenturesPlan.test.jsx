@@ -12,18 +12,25 @@ const renderPlan = () =>
     </I18nProvider>
   );
 
-const tabs = () => screen.getAllByRole('tab');
+const stageTabs = () => within(screen.getByRole('tablist', { name: 'Plan stages' })).getAllByRole('tab');
+const ventureTabs = () => within(screen.getByRole('tablist', { name: 'Company' })).getAllByRole('tab');
+const selected = (tabs) => tabs.find((tab) => tab.getAttribute('aria-selected') === 'true');
 
-test('opens on the current stage, marked as where you are', () => {
+test('opens on the current stage and on Moonphase', () => {
   renderPlan();
-  const selected = tabs().find((tab) => tab.getAttribute('aria-selected') === 'true');
-  expect(selected).toHaveTextContent('Incubate');
-  expect(selected).toHaveTextContent('We are here');
+  expect(selected(stageTabs())).toHaveTextContent('Incubate');
+  expect(selected(stageTabs())).toHaveTextContent('We are here');
+  expect(selected(ventureTabs())).toHaveTextContent('Freelance → Moonphase');
 });
 
-test('arrow keys move the selection and wrap at both ends', () => {
+test.each([
+  ['stage', stageTabs],
+  ['venture', ventureTabs],
+])('the %s tabs wrap with arrows and jump with Home and End', (_name, tabs) => {
   renderPlan();
-  const [first, , , last] = tabs();
+  const list = tabs();
+  const first = list[0];
+  const last = list[list.length - 1];
   fireEvent.keyDown(first, { key: 'ArrowLeft' });
   expect(last).toHaveAttribute('aria-selected', 'true');
   expect(last).toHaveFocus();
@@ -35,31 +42,47 @@ test('arrow keys move the selection and wrap at both ends', () => {
   expect(first).toHaveAttribute('aria-selected', 'true');
 });
 
-test('the Moonphase card names Freelance only while incubating', () => {
+test('the two selections are independent', () => {
   renderPlan();
-  expect(screen.getByRole('heading', { name: 'Freelance → Moonphase' })).toBeInTheDocument();
-  fireEvent.click(tabs()[1]);
-  expect(screen.queryByRole('heading', { name: 'Freelance → Moonphase' })).toBeNull();
-  expect(screen.getByRole('heading', { name: 'Moonphase' })).toBeInTheDocument();
+  fireEvent.click(ventureTabs()[1]);
+  fireEvent.click(stageTabs()[2]);
+  expect(selected(ventureTabs())).toHaveTextContent('StackSelect');
+  fireEvent.click(ventureTabs()[0]);
+  expect(selected(stageTabs())).toHaveTextContent('Scale');
 });
 
-test('focus actions show only for the current stage', () => {
+test('Moonphase is titled with Freelance only while incubating', () => {
   renderPlan();
-  expect(screen.getByRole('heading', { name: 'Where our focus goes now' })).toBeInTheDocument();
-  fireEvent.click(tabs()[2]);
-  expect(screen.queryByRole('heading', { name: 'Where our focus goes now' })).toBeNull();
+  const panel = () => screen.getByRole('tabpanel');
+  expect(within(panel()).getByRole('heading', { name: 'Freelance → Moonphase' })).toBeInTheDocument();
+  fireEvent.click(stageTabs()[1]);
+  expect(within(panel()).getByRole('heading', { name: 'Moonphase' })).toBeInTheDocument();
 });
 
-test('the horizon stage says it has no exit criterion instead of an empty list', () => {
+test('research and development leads Moonphase, featured', () => {
   renderPlan();
-  fireEvent.click(tabs()[3]);
+  const fronts = within(screen.getByRole('tabpanel')).getAllByRole('article');
+  expect(fronts[0]).toHaveTextContent('Research and development');
+  expect(fronts[0]).toHaveClass('is-featured');
+});
+
+test('the focus block always shows the current stage', () => {
+  renderPlan();
+  fireEvent.click(stageTabs()[3]);
+  const focus = screen.getByRole('region', { name: 'Where our focus goes now' });
+  expect(within(focus).getByText('Incorporate both companies before January 2027.')).toBeInTheDocument();
+});
+
+test('the horizon stage has no exit criterion', () => {
+  renderPlan();
+  fireEvent.click(stageTabs()[3]);
+  expect(within(screen.getByRole('tabpanel')).getByText('No exit criterion: this stage is the horizon.')).toBeInTheDocument();
+});
+
+test('risks come with their mitigation and criteria announce their state', () => {
+  renderPlan();
   const panel = screen.getByRole('tabpanel');
-  expect(within(panel).getAllByText('No exit criterion: this stage is the horizon.')).toHaveLength(2);
-});
-
-test('each criterion announces its state in words', () => {
-  renderPlan();
-  const panel = screen.getByRole('tabpanel');
+  expect(within(panel).getAllByText('How we mitigate it').length).toBeGreaterThan(0);
   expect(within(panel).getAllByText('In progress').length).toBeGreaterThan(0);
-  expect(within(panel).getAllByText('Pending').length).toBeGreaterThan(0);
+  expect(panel).toHaveAttribute('tabindex', '0');
 });

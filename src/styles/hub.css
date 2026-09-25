@@ -1448,28 +1448,57 @@ ol.timeline.reveal {
 }
 
 /* ------------------------------------------------------ operating plan
-   The rail is a tablist that reads as a road: a line through four nodes,
-   filled up to the current stage. Cards reuse the brand colour scopes so each
-   company arrives in its own colours, as it does on the hub. */
+   A section of /ventures. Two tablists pick a stage and a company; the panel
+   below is that company's card for that stage, in its own brand colours. */
 
-.plan-rail {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(9rem, 1fr));
-    gap: 0.5rem;
-    margin: 2.5rem 0 1.5rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+.plan-section {
+    margin: 4rem 0 1rem;
+    scroll-margin-top: 90px;
 }
 
-.plan-rail::before {
-    content: '';
-    position: absolute;
-    top: 1.05rem;
-    left: 1rem;
-    right: 1rem;
-    height: 2px;
-    background: color-mix(in srgb, var(--brand-core) 22%, transparent);
+.plan-head {
+    max-width: 46rem;
+}
+
+.plan-focus {
+    margin: 1.75rem 0 2rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--brand-core);
+    border-radius: 0 12px 12px 0;
+    background: color-mix(in srgb, var(--brand-core) 6%, transparent);
+}
+
+.plan-focus-title {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--brand-text);
+}
+
+.plan-focus-stage {
+    margin: 0.2rem 0 0.8rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+.plan-focus-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--brand-text);
+}
+
+/* The rail scrolls on narrow screens, so it carries its own padding: an
+   overflow container clips what sits outside its box, focus rings included.
+   The road is drawn per stage rather than once across the rail, so it
+   scrolls with the stages instead of staying behind at the first ones. */
+.plan-rail {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(9rem, 1fr));
+    padding: 6px;
+    margin: 0 -6px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 
 .plan-stage {
@@ -1482,30 +1511,50 @@ ol.timeline.reveal {
     border: 1px solid transparent;
     border-radius: 12px;
     background: none;
-    color: var(--brand-soft);
+    color: var(--color-text-secondary);
     font: inherit;
     text-align: left;
     cursor: pointer;
     scroll-snap-align: start;
 }
 
-.plan-stage:hover {
-    background: color-mix(in srgb, var(--brand-core) 6%, transparent);
+.plan-stage::before {
+    content: '';
+    position: absolute;
+    top: calc(0.8rem + 6px);
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: color-mix(in srgb, var(--brand-core) 22%, transparent);
 }
 
-.plan-stage:focus-visible {
-    outline: 2px solid var(--brand-core);
-    outline-offset: 2px;
+.plan-stage:first-child::before {
+    left: calc(0.75rem + 7px);
+}
+
+.plan-stage:last-child::before {
+    right: calc(100% - 0.75rem - 7px);
+}
+
+.plan-stage:hover {
+    background: color-mix(in srgb, var(--brand-core) 6%, transparent);
 }
 
 .plan-stage.is-selected {
     border-color: color-mix(in srgb, var(--brand-core) 34%, transparent);
     background: color-mix(in srgb, var(--brand-core) 10%, transparent);
-    color: var(--brand-text);
+}
+
+.plan-stage:focus-visible,
+.plan-venture-tab:focus-visible,
+.plan-panel:focus-visible {
+    outline: 2px solid var(--brand-core);
+    outline-offset: 2px;
 }
 
 .plan-node {
     position: relative;
+    z-index: 1;
     width: 14px;
     height: 14px;
     margin: 0.4rem 0 0.35rem;
@@ -1530,93 +1579,168 @@ ol.timeline.reveal {
 }
 
 .plan-stage-window {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
 }
 
 .plan-here {
     margin-top: 0.2rem;
-    padding: 0.1rem 0.5rem;
+    padding: 0.1rem 0.55rem;
     border-radius: 999px;
     background: color-mix(in srgb, var(--brand-core) 14%, transparent);
-    color: var(--brand-core);
-    font-size: 0.72rem;
+    color: var(--brand-text);
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
 }
 
 .plan-tagline {
-    margin: 0 0 1.5rem;
+    margin: 1.25rem 0 1.25rem;
     font-size: 1.15rem;
     color: var(--brand-text);
 }
 
-.plan-focus {
-    margin-bottom: 2rem;
-    padding: 1.25rem 1.5rem;
-    border-left: 3px solid var(--brand-core);
-    border-radius: 0 12px 12px 0;
-    background: color-mix(in srgb, var(--brand-core) 6%, transparent);
+/* The company switch: a segmented control whose selected half arrives in
+   that company's colours. */
+.plan-ventures {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+    border: 1px solid color-mix(in srgb, var(--brand-core) 22%, transparent);
+    border-radius: 999px;
 }
 
-.plan-focus .brand-h2 {
-    margin: 0 0 0.75rem;
-    font-size: 1.2rem;
+.plan-venture-tab {
+    padding: 0.45rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: none;
+    color: var(--color-text-secondary);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.plan-focus-list {
-    margin: 0;
-    padding-left: 1.25rem;
-    display: grid;
-    gap: 0.5rem;
+.plan-venture-tab:hover {
     color: var(--brand-text);
 }
 
-.plan-cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
+.plan-venture-tab.is-selected {
+    background: radial-gradient(120% 140% at 20% 0%, var(--brand-ink-2), var(--brand-ink) 70%);
+    border-color: color-mix(in srgb, var(--brand-core) 40%, transparent);
+    color: var(--brand-core);
 }
 
-.plan-card {
-    padding: 1.5rem;
-    border-radius: 18px;
+.plan-panel {
+    padding: 1.75rem;
+    border-radius: 20px;
     background: radial-gradient(120% 110% at 20% 0%, var(--brand-ink-2), var(--brand-ink) 65%);
     border: 1px solid color-mix(in srgb, var(--brand-core) 24%, transparent);
     color: var(--brand-on-ink);
 }
 
-.plan-card-title {
-    margin: 0 0 1rem;
-    font-size: 1.25rem;
+.plan-venture-title {
+    margin: 0 0 1.25rem;
+    font-size: 1.5rem;
     color: var(--brand-core);
 }
 
-.plan-dims {
-    margin: 0 0 1.25rem;
-    display: grid;
-    gap: 0.85rem;
-}
-
-.plan-dim dt {
-    font-size: 0.75rem;
+.plan-label {
+    display: block;
+    margin: 1.75rem 0 0.6rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--brand-core);
 }
 
-.plan-dim dd {
-    margin: 0.2rem 0 0;
+.plan-objective .plan-label {
+    margin-top: 0;
+}
+
+.plan-objective p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.plan-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 2rem;
+}
+
+.plan-summary p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.plan-metrics,
+.plan-front ul,
+.plan-risks {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.4rem;
     line-height: 1.55;
 }
 
-.plan-exit-title {
+.plan-fronts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1rem;
+}
+
+.plan-front {
+    padding: 1.1rem 1.25rem;
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--brand-core) 18%, transparent);
+    background: color-mix(in srgb, var(--brand-core) 5%, transparent);
+}
+
+/* R&D is Moonphase's largest ambition, so it gets the whole row. */
+.plan-front.is-featured {
+    grid-column: 1 / -1;
+    border-color: color-mix(in srgb, var(--brand-core) 45%, transparent);
+    background: color-mix(in srgb, var(--brand-core) 12%, transparent);
+}
+
+.plan-front-title {
     margin: 0 0 0.6rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--brand-core);
+}
+
+.plan-front.is-featured .plan-front-title {
+    font-size: 1.15rem;
+}
+
+.plan-risks {
+    list-style: none;
+    padding: 0;
+    gap: 0.9rem;
+}
+
+.plan-risk {
+    margin: 0;
+    font-weight: 600;
+}
+
+.plan-mitigation {
+    margin: 0.2rem 0 0;
     color: var(--brand-soft);
+}
+
+.plan-mitigation-label {
+    margin-right: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--brand-core);
+}
+
+.plan-mitigation-label::after {
+    content: ':';
 }
 
 .plan-exit {
@@ -1639,7 +1763,7 @@ ol.timeline.reveal {
 }
 
 .plan-exit-state {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     color: var(--brand-soft);
     white-space: nowrap;
 }
@@ -1654,21 +1778,16 @@ ol.timeline.reveal {
     font-style: italic;
 }
 
-.plan-footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem 1.5rem;
-}
-
 @media (max-width: 720px) {
     .plan-rail {
         grid-template-columns: repeat(4, 10.5rem);
-        margin-inline: -16px;
-        padding-inline: 16px;
     }
 
-    .plan-cards {
+    .plan-panel {
+        padding: 1.25rem;
+    }
+
+    .plan-summary {
         grid-template-columns: 1fr;
     }
 
@@ -1681,7 +1800,9 @@ ol.timeline.reveal {
     }
 }
 
-/* The chip on each brand page that points at the plan. */
+/* The chip on each brand page that points at the plan. Its text uses the
+   page's text colours rather than the brand's ink-surface ones, which do not
+   hold contrast on a light page. */
 .stage-chip {
     display: inline-flex;
     align-items: center;
@@ -1714,29 +1835,18 @@ ol.timeline.reveal {
 }
 
 .stage-chip-label {
-    color: var(--brand-soft);
+    color: var(--color-text-secondary);
 }
 
 .stage-chip-cta {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    color: var(--brand-core);
+    color: var(--brand-text);
+    font-weight: 600;
 }
 
 .stage-chip-cta svg {
     width: 14px;
     height: 14px;
-}
-
-.plan-hub-link {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem 1.5rem;
-    margin: 1.5rem 0 0;
-}
-
-.plan-hub-link .stage-chip {
-    margin-top: 0;
 }
