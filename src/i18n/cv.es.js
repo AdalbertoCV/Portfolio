@@ -198,11 +198,6 @@ const cvEs = {
       rafaelPm: 'Gestor de proyectos en',
     },
 
-    origin: {
-      body: 'A los catorce hice una presentación en Prezi sobre la industria del software. No envejeció bien, pero la dirección ya estaba ahí.',
-      link: 'Verla',
-    },
-
     readingKicker: 'Lectura',
     readingTitle: 'Literatura recomendada',
     readingLede:

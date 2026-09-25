@@ -188,11 +188,6 @@ const cvEn = {
       rafaelPm: 'Project manager at',
     },
 
-    origin: {
-      body: 'At fourteen I made a Prezi about the software industry. It has not aged well, but the direction was already there.',
-      link: 'See it',
-    },
-
     readingKicker: 'Reading',
     readingTitle: 'Recommended reading',
     readingLede:

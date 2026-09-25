@@ -35,7 +35,12 @@ test('no technology appears twice on the wall', () => {
 });
 
 // Every star that left a group was replaced by one of the same kind, so the
-// groups kept their sizes and The Stars came on top: 1080 before, plus 21.
+// groups kept their sizes and The Stars came on top: 1080 before, plus 21,
+// plus Prezi.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1080 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1081 + TECH_GROUPS[0].items.length);
+});
+
+test('Prezi is on the wall as a tool', () => {
+  expect(TECH_GROUPS.flatMap(names)).toContain('Prezi');
 });

@@ -1038,6 +1038,7 @@ import sicouchdbIcon from '../../images/tech/couchdb.svg';
 import sipixijsIcon from '../../images/tech/pixijs.svg';
 import sishopwareIcon from '../../images/tech/shopware.svg';
 import sitmuxIcon from '../../images/tech/tmux.svg';
+import sipreziIcon from '../../images/tech/prezi.svg';
 
 const TECH_GROUPS = [
   {
@@ -2311,6 +2312,7 @@ const TECH_GROUPS = [
       // Third intake.
       { name: 'Zoom', icon: sizoomIcon, mono: true },
       { name: 'Twilio', icon: sitwilioIcon, mono: true },
+      { name: 'Prezi', icon: sipreziIcon, mono: true },
     ],
   },
   {
