@@ -202,6 +202,7 @@ const cvEs = {
       esmeralda: 'Diseñadora UX/UI en',
       rafaelCto: 'CTO en',
       rafaelPm: 'Gestor de proyectos en',
+      nestor: 'Software Engineer',
     },
 
     readingKicker: 'Lectura',

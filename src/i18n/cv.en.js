@@ -192,6 +192,7 @@ const cvEn = {
       esmeralda: 'UX/UI designer at',
       rafaelCto: 'CTO at',
       rafaelPm: 'Project manager at',
+      nestor: 'Software Engineer',
     },
 
     readingKicker: 'Reading',

@@ -569,7 +569,9 @@ const About = () => {
                 {roles.map(({ id: roleId, org }) => (
                   <p className="ref-role" key={roleId}>
                     {t(`cv.references.${roleId}`)}
-                    <span className="ref-org">{org}</span>
+                    {/* A role can stand without a company, when the company is
+                        not known. */}
+                    {org ? <span className="ref-org">{org}</span> : null}
                   </p>
                 ))}
               </div>

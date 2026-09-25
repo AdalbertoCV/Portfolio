@@ -69,6 +69,17 @@ const REFERENCES = [
     site: 'https://doublerre.com/',
     linkedin: 'https://www.linkedin.com/in/doublerre/',
   },
+  {
+    // Where he works now is not something this page knows, so the role stands
+    // alone rather than naming a company that may no longer be right.
+    id: 'nestor',
+    figure: 'm',
+    glow: '#b8e05a',
+    name: 'Nestor García',
+    roles: [{ id: 'nestor' }],
+    site: 'https://nestorportf.vercel.app/',
+    linkedin: 'https://www.linkedin.com/in/ngarcia12/',
+  },
 ];
 
 export default REFERENCES;
