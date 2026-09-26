@@ -1046,6 +1046,8 @@ import sidropboxIcon from '../../images/tech/dropbox.svg';
 import siwindowsautopilotIcon from '../../images/tech/windowsautopilot.svg';
 // Fabrix.ai: the mark cut from the company's own logo, without the wordmark.
 import sifabrixaiIcon from '../../images/tech/fabrixai.png';
+// Gentle AI: the neon rose from Gentleman Programming's own brand assets.
+import sigentleaiIcon from '../../images/tech/gentleai.png';
 
 const TECH_GROUPS = [
   {
@@ -1491,6 +1493,7 @@ const TECH_GROUPS = [
       { name: 'Aider', icon: siaiderIcon, flat: true },
       { name: 'Greptile', icon: sigreptileIcon, mono: true },
       { name: 'Fabrix.ai', icon: sifabrixaiIcon, flat: true },
+      { name: 'Gentle AI', icon: sigentleaiIcon, flat: true },
     ],
   },
   {
