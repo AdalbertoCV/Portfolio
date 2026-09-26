@@ -1635,18 +1635,6 @@
         box-shadow var(--transition-base);
 }
 
-.cv-interest-icon {
-    width: 30px;
-    height: 30px;
-    color: var(--color-text-tertiary);
-    margin-bottom: 18px;
-    transition: color var(--transition-base);
-}
-
-.cv-interest-icon svg {
-    width: 100%;
-    height: 100%;
-}
 
 .cv-interest h3 {
     font-size: 1.12rem;
@@ -1667,6 +1655,312 @@
    turns the leftover space into a shared baseline instead of dead air. */
 .cv-interest .brand-chips {
     margin-top: auto;
+}
+
+/* ----------------------------------------------------------------------------
+   INTEREST CARDS — tone and scene
+   Each card carries one tone (--tone, set inline from INTEREST_TONES). It
+   tints the corner light, the border, the chips and the small scene at the
+   top. --tone-ink is the same hue made legible: as-is on dark, deepened on
+   light, where a yellow stroke on white would disappear.
+   ------------------------------------------------------------------------- */
+
+.cv-interest {
+    --tone-ink: var(--tone);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-color: color-mix(in srgb, var(--tone) 22%, var(--color-border-primary));
+    background:
+        radial-gradient(120% 80% at 100% 0%, color-mix(in srgb, var(--tone) 14%, transparent), transparent 60%),
+        var(--color-bg-card);
+}
+
+:root[data-theme='light'] .cv-interest {
+    --tone-ink: color-mix(in srgb, var(--tone) 70%, #1a1a1a);
+}
+
+/* The scene: a tinted plate the width of the card, the drawing in the tone. */
+.interest-art {
+    height: 104px;
+    margin: -6px -4px 22px;
+    border-radius: var(--radius-md);
+    background:
+        radial-gradient(60% 90% at 50% 100%, color-mix(in srgb, var(--tone) 16%, transparent), transparent 70%),
+        color-mix(in srgb, var(--tone) 7%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tone) 16%, transparent);
+    color: var(--tone-ink);
+    display: grid;
+    place-items: center;
+}
+
+.interest-art svg {
+    height: 84px;
+    width: auto;
+    overflow: visible;
+}
+
+.cv-interest h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* A dot in the tone before the title ties the heading to the scene above it. */
+.cv-interest h3::before {
+    content: "";
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--tone);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--tone) 18%, transparent);
+}
+
+.cv-interest .brand-chip {
+    border-color: color-mix(in srgb, var(--tone) 28%, var(--color-border-primary));
+    background: color-mix(in srgb, var(--tone) 8%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-interests .cv-interest:hover {
+        border-color: color-mix(in srgb, var(--tone) 50%, var(--color-border-primary));
+        box-shadow:
+            var(--shadow-md),
+            0 18px 40px -24px color-mix(in srgb, var(--tone) 60%, transparent);
+    }
+}
+
+/* --------------------------------------------------------------- the scenes */
+
+/* Paused by default, running only while the grid is on screen. */
+.interest-art * {
+    animation-play-state: paused;
+}
+
+.cv-interests-live.is-live .interest-art * {
+    animation-play-state: running;
+}
+
+/* innovation: the filament catches, the glass fills, the rays pulse out. */
+.ia-glow {
+    opacity: 0.08;
+    animation: iaGlow 3.2s ease-in-out infinite;
+}
+
+.ia-filament {
+    animation: iaFilament 3.2s ease-in-out infinite;
+}
+
+.ia-ray {
+    transform-box: view-box;
+    transform-origin: 60px 25px;
+    animation: iaRay 3.2s ease-in-out infinite;
+}
+
+@keyframes iaGlow {
+    0%, 20% { opacity: 0.06; }
+    35%, 70% { opacity: 0.32; }
+    100% { opacity: 0.06; }
+}
+
+@keyframes iaFilament {
+    0%, 18% { opacity: 0.35; filter: none; }
+    22% { opacity: 1; }
+    25% { opacity: 0.5; }
+    30%, 72% { opacity: 1; filter: drop-shadow(0 0 3px currentColor); }
+    100% { opacity: 0.35; filter: none; }
+}
+
+@keyframes iaRay {
+    0%, 28% { opacity: 0; transform: scale(0.7); }
+    40%, 70% { opacity: 1; transform: scale(1); }
+    85%, 100% { opacity: 0; transform: scale(1.18); }
+}
+
+/* business: the quarters grow in turn, the trend draws over them. */
+.ia-bar {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: iaBar 4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.ia-trend {
+    stroke-dasharray: 90;
+    stroke-dashoffset: 90;
+    animation: iaTrend 4s ease-out infinite;
+}
+
+.ia-trend-head {
+    opacity: 0;
+    animation: iaHead 4s ease-out infinite;
+}
+
+@keyframes iaBar {
+    0% { transform: scaleY(0.15); }
+    25%, 80% { transform: scaleY(1); }
+    100% { transform: scaleY(0.15); }
+}
+
+@keyframes iaTrend {
+    0%, 25% { stroke-dashoffset: 90; opacity: 1; }
+    55%, 85% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes iaHead {
+    0%, 52% { opacity: 0; }
+    58%, 85% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* science: an electron on each orbit, out of step with the others. */
+.ia-electron {
+    offset-rotate: 0deg;
+    animation: iaOrbit 3.3s linear infinite;
+    filter: drop-shadow(0 0 3px currentColor);
+}
+
+@keyframes iaOrbit {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
+}
+
+/* security: the scan crosses the shield, the keyhole and the pings answer. */
+.ia-scan {
+    opacity: 0.75;
+    animation: iaScan 2.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px currentColor);
+}
+
+.ia-keyhole {
+    animation: iaKey 2.8s ease-in-out infinite;
+}
+
+.ia-ping {
+    opacity: 0;
+    animation: iaPing 2.8s ease-out infinite;
+}
+
+.ia-ping-left {
+    animation-delay: 0.1s;
+}
+
+@keyframes iaScan {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(48px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes iaKey {
+    0%, 40% { opacity: 0.55; filter: none; }
+    50% { opacity: 1; filter: drop-shadow(0 0 4px currentColor); }
+    65%, 100% { opacity: 0.55; filter: none; }
+}
+
+@keyframes iaPing {
+    0%, 45% { opacity: 0; }
+    55% { opacity: 0.9; }
+    85%, 100% { opacity: 0; }
+}
+
+/* learning: the route is built a leg at a time and a spark travels it. */
+.ia-route {
+    stroke-dasharray: 110;
+    stroke-dashoffset: 110;
+    animation: iaRoute 4.4s ease-in-out infinite;
+}
+
+.ia-node {
+    animation: iaNode 4.4s ease-out infinite;
+}
+
+.ia-spark {
+    opacity: 0;
+    animation: iaSpark 4.4s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px currentColor);
+}
+
+@keyframes iaRoute {
+    0% { stroke-dashoffset: 110; opacity: 1; }
+    50%, 85% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0.2; }
+}
+
+@keyframes iaNode {
+    0% { fill-opacity: 0.2; }
+    12% { fill-opacity: 1; }
+    30%, 100% { fill-opacity: 0.35; }
+}
+
+@keyframes iaSpark {
+    0%, 50% { opacity: 0; offset-distance: 0%; }
+    55% { opacity: 1; }
+    90% { opacity: 1; offset-distance: 100%; }
+    100% { opacity: 0; offset-distance: 100%; }
+}
+
+/* arts: an equaliser, nine bars on their own tempo. */
+.ia-eq {
+    transform-box: fill-box;
+    transform-origin: center;
+    fill-opacity: 0.85;
+    animation: iaEq 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes iaEq {
+    0% { transform: scaleY(0.18); }
+    50% { transform: scaleY(0.65); }
+    100% { transform: scaleY(1); }
+}
+
+/* sports: the beat runs across a faint trace. */
+.ia-beat {
+    stroke-dasharray: 46 200;
+    stroke-dashoffset: 46;
+    animation: iaBeat 2.2s linear infinite;
+    filter: drop-shadow(0 0 3px currentColor);
+}
+
+@keyframes iaBeat {
+    from { stroke-dashoffset: 46; }
+    to { stroke-dashoffset: -200; }
+}
+
+/* culture: two meridians closing and opening, half a turn apart. */
+.ia-meridian {
+    transform-box: view-box;
+    transform-origin: 60px 32px;
+    animation: iaSpin 4s linear infinite;
+}
+
+.ia-meridian-late {
+    animation-delay: -2s;
+    stroke-opacity: 0.55;
+}
+
+@keyframes iaSpin {
+    0% { transform: scaleX(1); }
+    50% { transform: scaleX(0.02); }
+    100% { transform: scaleX(-1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Each scene stands at its most legible frame. */
+    .interest-art * {
+        animation: none !important;
+    }
+
+    .ia-glow { opacity: 0.25; }
+    .ia-ray,
+    .ia-trend-head,
+    .ia-ping { opacity: 1; }
+    .ia-trend,
+    .ia-route { stroke-dashoffset: 0; }
+    .ia-spark { display: none; }
+    .ia-electron { offset-distance: 30%; }
+    .ia-beat { stroke-dasharray: none; }
+    .ia-meridian-late { transform: scaleX(0.4); }
 }
 
 /* The one outbound link a card may carry. It sits between the prose and the
@@ -1713,13 +2007,7 @@
 
 @media (hover: hover) and (pointer: fine) {
     .cv-interest:hover {
-        border-color: var(--color-border-hover);
         transform: translateY(-3px);
-        box-shadow: var(--shadow-md);
-    }
-
-    .cv-interest:hover .cv-interest-icon {
-        color: var(--color-text-primary);
     }
 }
 
