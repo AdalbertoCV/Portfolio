@@ -28,6 +28,7 @@ import BOOK_COVERS from './bookCovers';
 import REFERENCES from './references';
 import RefHacker from './RefHacker';
 import WorkBot from './WorkBot';
+import TimelineStrip from './TimelineStrip';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
@@ -683,9 +684,10 @@ const About = () => {
           <h2 className="brand-h2">{t('timeline.title')}</h2>
           <p className="brand-p">{t('timeline.lede')}</p>
         </div>
+        <TimelineStrip />
         <Link className="brand-link-out hub-teaser-cta" to="/experience">
           {t('nav.experience')}
-          <ArrowUpRight />
+          <ArrowRight />
         </Link>
       </Reveal>
 
