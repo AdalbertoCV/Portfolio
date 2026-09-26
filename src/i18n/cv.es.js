@@ -345,8 +345,8 @@ const cvEs = {
       },
       security: {
         title: 'Ciberseguridad y seguridad ofensiva',
-        body: 'Estudio los sistemas también desde el lado del atacante, porque es la única forma de saber qué tan bien construido está lo que uno defiende. Trabajo en laboratorios controlados sobre las etapas que componen una prueba de intrusión: reconocimiento y escaneo de red, análisis de tráfico, revisión de aplicaciones web contra las clases de falla conocidas, y verificación de qué tan resistente es realmente una credencial.',
-        body2: 'Lo que me interesa no es la herramienta sino el criterio que deja: una arquitectura se evalúa distinto cuando uno ya vio por dónde se rompe. Superficie de ataque, manejo de secretos, límites de confianza entre servicios y qué queda expuesto cuando un componente cede son decisiones de diseño, no una capa que se agrega al final.',
+        body: 'Estudio los sistemas también desde el lado del atacante, porque es la única forma de saber qué tan bien construido está lo que uno defiende. Trabajo en laboratorios controlados sobre las etapas que componen una prueba de intrusión: reconocimiento y escaneo de red, análisis de tráfico, revisión de aplicaciones web contra las clases de falla conocidas, y verificación de qué tan resistente es realmente una credencial. Del otro lado del tablero sigo la defensa con el mismo rigor: qué registra un sistema, cómo se detecta que algo cambió, cómo se responde a un incidente y cómo se reconstruye lo que pasó a partir de lo que quedó escrito.',
+        body2: 'Lo que me interesa no es la herramienta sino el criterio que deja: una arquitectura se evalúa distinto cuando uno ya vio por dónde se rompe. Superficie de ataque, manejo de secretos, límites de confianza entre servicios y qué queda expuesto cuando un componente cede son decisiones de diseño, no una capa que se agrega al final. Ese criterio pesa más en lo que construyo hoy: un agente de IA que lee contenido ajeno, llama herramientas y actúa con permisos reales abre una superficie nueva —inyección de instrucciones, fuga de datos a través del contexto, dependencias y modelos que llegan por la cadena de suministro—, y la respuesta es la de siempre: mínimo privilegio, aislamiento de lo que se ejecuta y ninguna confianza implícita en lo que entra. Por la misma razón sigo de cerca la criptografía post-cuántica y las pruebas de conocimiento cero, que van a cambiar qué se puede proteger y a qué costo.',
         tags: [
           'Pentesting',
           'Seguridad ofensiva',
@@ -356,6 +356,12 @@ const cvEs = {
           'Hardening',
           'Criptografía aplicada',
           'Modelado de amenazas',
+          'Detección y respuesta a incidentes',
+          'Seguridad de agentes de IA',
+          'Inyección de instrucciones',
+          'Cadena de suministro de software',
+          'Zero trust',
+          'Criptografía post-cuántica',
         ],
       },
       science: {

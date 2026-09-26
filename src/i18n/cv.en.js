@@ -335,8 +335,8 @@ const cvEn = {
       },
       security: {
         title: 'Cybersecurity and offensive security',
-        body: 'I study systems from the attacking side as well, because it is the only way to know how well built the thing you are defending actually is. I work in controlled labs through the stages that make up an intrusion test: reconnaissance and network scanning, traffic analysis, reviewing web applications against the known classes of failure, and checking how much a credential is really worth.',
-        body2: 'What interests me is not the tool but the judgement it leaves behind: an architecture reads differently once you have seen where it breaks. Attack surface, secret handling, trust boundaries between services, and what stays exposed when one component gives way are design decisions, not a layer added at the end.',
+        body: 'I study systems from the attacking side as well, because it is the only way to know how well built the thing you are defending actually is. I work in controlled labs through the stages that make up an intrusion test: reconnaissance and network scanning, traffic analysis, reviewing web applications against the known classes of failure, and checking how much a credential is really worth. On the other side of the board I follow defence with the same rigour: what a system records, how you notice that something changed, how an incident is answered, and how what happened is rebuilt from what was left written down.',
+        body2: 'What interests me is not the tool but the judgement it leaves behind: an architecture reads differently once you have seen where it breaks. Attack surface, secret handling, trust boundaries between services, and what stays exposed when one component gives way are design decisions, not a layer added at the end. That judgement weighs more in what I build now: an AI agent that reads other people’s content, calls tools and acts with real permissions opens a new surface — instruction injection, data leaking through the context, dependencies and models arriving through the supply chain — and the answer is the old one: least privilege, isolation for whatever runs, and no implicit trust in whatever comes in. For the same reason I follow post-quantum cryptography and zero-knowledge proofs closely, because they will change what can be protected and at what cost.',
         tags: [
           'Pentesting',
           'Offensive security',
@@ -346,6 +346,12 @@ const cvEn = {
           'Hardening',
           'Applied cryptography',
           'Threat modelling',
+          'Detection and incident response',
+          'AI agent security',
+          'Instruction injection',
+          'Software supply chain',
+          'Zero trust',
+          'Post-quantum cryptography',
         ],
       },
       science: {
