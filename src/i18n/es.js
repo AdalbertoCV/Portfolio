@@ -327,6 +327,12 @@ const es = {
     back: 'Regresar',
   },
 
+  stackPage: {
+    libraryTitle: 'La biblioteca',
+    libraryLede: 'Diez estantes de veinte libros, de la IA a la historia del chip, y los intereses de los que salieron.',
+    libraryCta: 'Abrir la biblioteca',
+  },
+
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -391,6 +397,11 @@ const es = {
       title: 'Zona de estudio · Adal Cerrillo',
       description:
         'Diez problemas de programación con pista y solución, para quien va empezando.',
+    },
+    stack: {
+      title: 'Stack · Adal Cerrillo',
+      description:
+        'Las tecnologías con las que construyo, agrupadas y con búsqueda, y las fronteras que estoy explorando.',
     },
     changelog: {
       title: 'Cambios · Adal Cerrillo',

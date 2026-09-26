@@ -25,6 +25,7 @@ const PAGES = {
   '/experience': 'experience',
   '/ventures': 'ventures',
   '/projects': 'projects',
+  '/stack': 'stack',
   '/contact': 'contact',
   '/radii': 'radii',
   '/stackselect': 'stackselect',

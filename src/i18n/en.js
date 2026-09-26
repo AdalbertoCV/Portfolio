@@ -327,6 +327,12 @@ const en = {
     back: 'Back',
   },
 
+  stackPage: {
+    libraryTitle: 'The library',
+    libraryLede: 'Ten shelves of twenty books, from AI to the history of the chip, and the interests they grew out of.',
+    libraryCta: 'Open the library',
+  },
+
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -391,6 +397,11 @@ const en = {
       title: 'Study zone · Adal Cerrillo',
       description:
         'Ten programming problems with a hint and a solution, for whoever is starting out.',
+    },
+    stack: {
+      title: 'Stack · Adal Cerrillo',
+      description:
+        'The technologies I build with, grouped and searchable, and the frontiers I am exploring next.',
     },
     changelog: {
       title: 'Changes · Adal Cerrillo',
