@@ -2156,6 +2156,22 @@
     border-bottom: 1px solid var(--color-border-primary);
 }
 
+/* A thumbnail, not a display: small enough that the title still leads, with
+   a hairline so a white cover does not dissolve into a light page. */
+.reading-cover {
+    flex: none;
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--color-border-primary);
+    box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.45);
+}
+
+.reading-list li:has(.reading-cover) {
+    align-items: center;
+}
+
 .reading-book {
     min-width: 0;
 }

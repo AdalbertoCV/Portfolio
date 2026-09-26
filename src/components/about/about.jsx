@@ -24,6 +24,7 @@ import {
 } from '../../site';
 import StackExplorer from './StackExplorer';
 import READING from './reading';
+import BOOK_COVERS from './bookCovers';
 import REFERENCES from './references';
 import RefHacker from './RefHacker';
 import WorkBot from './WorkBot';
@@ -609,7 +610,13 @@ const About = () => {
             <ul className="reading-list">
               {books.map(({ title, author, icon }) => (
                 <li key={title}>
-                  <ConceptIcon className="list-icon" name={icon} />
+                  {/* The cover is how a book is recognised on a shelf; the drawn
+                      icon stays only as a fallback for one without a cover. */}
+                  {BOOK_COVERS[title] ? (
+                    <img className="reading-cover" src={BOOK_COVERS[title]} alt="" loading="lazy" width="40" height="60" />
+                  ) : (
+                    <ConceptIcon className="list-icon" name={icon} />
+                  )}
                   <span className="reading-book">
                     <span className="reading-title">{title}</span>
                     <span className="reading-author">{author}</span>
