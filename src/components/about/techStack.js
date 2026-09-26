@@ -1044,6 +1044,8 @@ import sidropboxIcon from '../../images/tech/dropbox.svg';
 // Windows Autopilot has no logo of its own; this is Microsoft's own Fluent
 // UI glyph for autopilot, rather than the Windows mark it ships under.
 import siwindowsautopilotIcon from '../../images/tech/windowsautopilot.svg';
+// Fabrix.ai: the mark cut from the company's own logo, without the wordmark.
+import sifabrixaiIcon from '../../images/tech/fabrixai.png';
 
 const TECH_GROUPS = [
   {
@@ -1488,6 +1490,7 @@ const TECH_GROUPS = [
       // Third intake.
       { name: 'Aider', icon: siaiderIcon, flat: true },
       { name: 'Greptile', icon: sigreptileIcon, mono: true },
+      { name: 'Fabrix.ai', icon: sifabrixaiIcon, flat: true },
     ],
   },
   {
