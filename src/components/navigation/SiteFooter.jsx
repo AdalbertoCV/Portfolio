@@ -25,6 +25,8 @@ const EXPLORE = [
   { to: '/experience', key: 'nav.experience' },
   { to: '/ventures', key: 'nav.ventures' },
   { to: '/projects', key: 'nav.projects' },
+  { to: '/stack', key: 'nav.stack' },
+  { to: '/library', key: 'nav.library' },
   { to: '/contact', key: 'nav.contact' },
 ];
 

@@ -15,9 +15,10 @@ const es = {
   // ejecutan JavaScript, así que public/index.html lleva la versión que ve una
   // vista previa de enlace; estas existen para la pestaña, el marcador, el
   // historial y los rastreadores que sí renderizan la página.
-  // La banda de cierre bajo el catálogo de proyectos. Al resto de las rutas se
-  // llega a Contacto por el navbar y el pie, así que esta es la única página
-  // que gana una banda propia: es donde termina quien recorrió todo el trabajo.
+  // La banda de cierre bajo la Biblioteca, el final del recorrido. Al resto de
+  // las rutas se llega a Contacto por el navbar y el pie, así que esta es la
+  // única página que gana una banda propia: es donde termina quien siguió
+  // todas las cards.
   talk: {
     title: '¿Quieres trabajar conmigo o compartir ideas?',
     lede:

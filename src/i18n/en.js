@@ -12,10 +12,10 @@ const en = {
   // run JavaScript, so public/index.html carries the version a link preview
   // shows; these exist for the browser tab, the bookmark, the history entry,
   // and the crawlers that do render the page.
-  // The closing band under the project catalogue. Every other route reaches
-  // Contact through the navbar and the footer, so this is the one page that
-  // earns a band of its own: it is where a reader who has gone through the
-  // whole body of work ends up.
+  // The closing band under the Library, the end of the tour. Every other route
+  // reaches Contact through the navbar and the footer, so this is the one page
+  // that earns a band of its own: it is where a reader who has followed every
+  // card ends up.
   talk: {
     title: 'Want to work together, or just share ideas?',
     lede:

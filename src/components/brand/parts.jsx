@@ -217,12 +217,12 @@ export const Closing = ({ title, children }) => (
 );
 
 /**
- * The closing band at the foot of the project catalogue.
+ * The closing band at the foot of the Library, the last page before Contact.
  *
  * Only there: Contact is one tap away in the navbar and in every footer, so a
  * band on each of the story pages would be the third invitation on the same
- * screen. The catalogue is the exception because it is where a reader who has
- * gone through the whole body of work runs out of pages.
+ * screen. The Library is the exception because it is the end of the tour: the
+ * page where a reader who has followed every card runs out of pages.
  */
 export const TalkBand = () => {
   const { t } = useTranslation();

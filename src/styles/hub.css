@@ -968,8 +968,7 @@ img.brand-hero-mark {
 }
 
 @media (max-width: 900px) {
-    .ventures-roadmap,
-    .projects-mosaic {
+    .ventures-roadmap {
         order: 3;
         max-width: none;
         width: 100%;
@@ -2514,5 +2513,19 @@ ol.timeline.reveal {
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
+    }
+}
+
+/* The strips defined after the roadmap follow it under 900px: below the
+   button, across the whole card. Kept here, after their own rules, because a
+   narrow rule earlier in the file loses the cascade to their max-width. */
+@media (max-width: 900px) {
+    .projects-mosaic,
+    .timeline-strip,
+    .stack-tiles,
+    .shelf-strip {
+        order: 3;
+        max-width: none;
+        width: 100%;
     }
 }

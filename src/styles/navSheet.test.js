@@ -27,3 +27,18 @@ test('timeline milestones rest at the opacity their light cycle starts from', ()
   const rule = source.slice(start, source.indexOf('}', start));
   expect(rule).toMatch(/fill-opacity:\s*0\.6/);
 });
+
+// Under 900px every hand-off strip drops below the button at full width, so
+// the chain of cards reads the same on every page. The narrow rule has to come
+// after the strip's own rule, or the strip's max-width wins the cascade.
+test('every hand-off strip spans the card under 900px', () => {
+  const source = fs.readFileSync(path.join(__dirname, 'hub.css'), 'utf8').replace(/\r\n/g, '\n');
+  ['.timeline-strip', '.ventures-roadmap', '.projects-mosaic', '.stack-tiles', '.shelf-strip'].forEach((strip) => {
+    const base = source.indexOf(`\n${strip} {`);
+    const narrow = source.indexOf('@media (max-width: 900px)', base);
+    expect(narrow).toBeGreaterThan(base);
+    const block = source.slice(narrow, source.indexOf('\n}\n', narrow));
+    expect(block).toContain(strip);
+    expect(block).toContain('max-width: none');
+  });
+});
