@@ -2343,3 +2343,80 @@ ol.timeline.reveal {
         display: none;
     }
 }
+
+/* ============================================================================
+   PROJECTS TEASER — the stack tiles
+   ----------------------------------------------------------------------------
+   Tiles drop into the grid once on reveal; then the four with projects behind
+   them light in turn, each with its count.
+   ========================================================================= */
+
+.stack-tiles {
+    position: relative;
+    flex: 1 1 260px;
+    max-width: 340px;
+    min-width: 210px;
+    aspect-ratio: 3 / 1;
+    color: var(--color-text-tertiary);
+}
+
+.st-track {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.st-tile {
+    opacity: 0;
+}
+
+.hub-teaser.is-visible .st-tile {
+    animation: stDrop 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.st-star {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.hub-teaser.is-visible .st-star {
+    animation: stLit 4.8s ease-in-out infinite;
+}
+
+/* The count sits on a filled disc of the strip's own colour, so it takes the
+   page background to stay legible in both themes. */
+.st-count {
+    fill: var(--color-bg-primary, #fff);
+}
+
+@keyframes stDrop {
+    from { opacity: 0; transform: translateY(-18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stLit {
+    0% { opacity: 0; transform: scale(0.9); }
+    6% { opacity: 1; transform: scale(1.08); filter: drop-shadow(0 0 6px currentColor); }
+    18% { opacity: 1; transform: scale(1); filter: none; }
+    25% { opacity: 0; transform: scale(1); }
+    100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .st-tile {
+        opacity: 1 !important;
+        animation: none !important;
+    }
+
+    /* One star stays lit, so the still picture still says "some of these
+       have projects behind them". */
+    .st-star {
+        animation: none !important;
+        opacity: 0 !important;
+    }
+
+    .st-star:first-of-type {
+        opacity: 1 !important;
+    }
+}
