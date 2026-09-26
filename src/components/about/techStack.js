@@ -2409,6 +2409,7 @@ const TECH_GROUPS = [
       { name: 'Gravitational-wave astronomy', concept: 'gravWaves' },
       { name: 'Exoplanets', concept: 'exoplanets' },
       { name: 'Dark matter & dark energy', concept: 'darkMatter' },
+      { name: 'Fractal omniverse', concept: 'fractalOmniverse' },
       { name: 'Space telescopes', concept: 'spaceTelescopes' },
       { name: 'Particle physics', concept: 'particlePhysics' },
       { name: 'Quantum sensing', concept: 'quantumSensing' },
@@ -2419,6 +2420,13 @@ const TECH_GROUPS = [
       { name: 'Connectomics', concept: 'connectomics' },
       { name: 'Climate modeling', concept: 'climateModel' },
       { name: 'Automated theorem proving', concept: 'theoremProving' },
+      // And the mathematics under all of it.
+      { name: 'Complex analysis', concept: 'complexAnalysis' },
+      { name: 'Topology', concept: 'topology' },
+      { name: 'Category theory', concept: 'categoryTheory' },
+      { name: 'Number theory', concept: 'numberTheory' },
+      { name: 'Dynamical systems & chaos', concept: 'dynamicalSystems' },
+      { name: 'Information theory', concept: 'informationTheory' },
     ],
   },
 ];

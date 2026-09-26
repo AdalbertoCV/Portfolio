@@ -1557,6 +1557,22 @@ const ICONS = {
     </svg>
   ),
 
+  // Universes inside universes, each holding smaller copies of itself: the
+  // fractal omniverse, the same shape at every scale.
+  fractalOmniverse: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="7.4" r="3.2" />
+      <circle cx="8" cy="14.3" r="3.2" />
+      <circle cx="16" cy="14.3" r="3.2" />
+      <g fill="currentColor" stroke="none">
+        <circle cx="12" cy="7.4" r="1" />
+        <circle cx="8" cy="14.3" r="1" />
+        <circle cx="16" cy="14.3" r="1" />
+      </g>
+    </svg>
+  ),
+
   // A gauge whose needle is moved by a quantum state: measurement at the
   // limit physics allows.
   quantumSensing: (
@@ -1661,6 +1677,72 @@ const ICONS = {
       <path d="M12 12c3-1.4 5.4-4 6-7.6" />
       <path d="M12 12c.6 3.4 3 6 6.8 6.8" />
       <path d="M12 12c-2.6 2-4 4.6-4 8.4" />
+    </svg>
+  ),
+
+  // Mathematics, the ground under half the frontier: the fields where the
+  // tools the others borrow are still being made.
+
+  // The complex plane: a number with a length and an angle, drawn as a point.
+  complexAnalysis: (
+    <svg {...base}>
+      <path d="M3 15h18M8 3.6V21" />
+      <path d="M8 15l9.4-8.4" />
+      <circle cx="17.4" cy="6.6" r="1.5" fill="currentColor" stroke="none" />
+      <path d="M12 15a4 4 0 0 0-1.1-2.8" />
+    </svg>
+  ),
+
+  // A torus, the shape topology cannot tell from a coffee cup.
+  topology: (
+    <svg {...base}>
+      <ellipse cx="12" cy="12" rx="9" ry="5.6" />
+      <path d="M7.8 11.4c2.2 1.8 6.2 1.8 8.4 0" />
+      <path d="M9 12.4c1.8-1.1 4.2-1.1 6 0" />
+    </svg>
+  ),
+
+  // A commuting square: two paths between the same objects that agree.
+  categoryTheory: (
+    <svg {...base}>
+      <path d="M7.4 5h9.2M5 7.4v9.2M19 7.4v9.2M7.4 19h9.2M6.8 6.8l10.4 10.4" />
+      <g fill="currentColor" stroke="none">
+        <circle cx="5" cy="5" r="1.6" />
+        <circle cx="19" cy="5" r="1.6" />
+        <circle cx="5" cy="19" r="1.6" />
+        <circle cx="19" cy="19" r="1.6" />
+      </g>
+    </svg>
+  ),
+
+  // The Ulam spiral: the integers wound outward, and the primes that line up
+  // on it for no reason anyone has proved.
+  numberTheory: (
+    <svg {...base}>
+      <path d="M12 12h2.4v2.4H9.6V9.6h7.2v7.2H7.2V7.2h12v12H4.8V4.8" />
+      <g fill="currentColor" stroke="none">
+        <circle cx="14.4" cy="12" r="1.1" />
+        <circle cx="9.6" cy="14.4" r="1.1" />
+        <circle cx="16.8" cy="9.6" r="1.1" />
+        <circle cx="7.2" cy="16.8" r="1.1" />
+      </g>
+    </svg>
+  ),
+
+  // The Lorenz attractor: a trajectory that never repeats and never leaves
+  // its two lobes.
+  dynamicalSystems: (
+    <svg {...base}>
+      <path d="M12 12c-2.4-4.4-9-4.6-9 0s6.6 4.4 9 0 9-4.6 9 0-6.6 4.4-9 0" />
+      <path d="M12 12c-1.4-2.4-5-2.4-5 0s3.6 2.2 5 0" />
+    </svg>
+  ),
+
+  // A clean signal going into a noisy channel: how much of it can survive.
+  informationTheory: (
+    <svg {...base}>
+      <path d="M2.6 15.4h2.2V8.6h3v6.8h3" />
+      <path d="M11.6 12h1.2l1-2.8 1.4 5.2 1.2-4 1 2.8 1-1.8 1 1.6h1" />
     </svg>
   ),
 };
