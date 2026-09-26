@@ -606,7 +606,13 @@ const About = () => {
       >
         {READING.map(({ id, books }) => (
           <Reveal className="practice-block" key={id}>
-            <h3 className="practice-title">{t(`cv.readingGroups.${id}`)}</h3>
+            {/* What the shelf is for and why it is worth the time, so the
+                column beside the books says something instead of holding a
+                single line over empty space. */}
+            <div className="reading-shelf-head">
+              <h3 className="practice-title">{t(`cv.readingGroups.${id}`)}</h3>
+              <p className="reading-shelf-note">{t(`cv.readingNotes.${id}`)}</p>
+            </div>
             <ul className="reading-list">
               {books.map(({ title, author, icon }) => (
                 <li key={title}>

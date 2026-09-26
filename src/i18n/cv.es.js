@@ -215,8 +215,27 @@ const cvEs = {
       systems: 'Arquitectura y sistemas',
       leadership: 'Liderazgo y equipos',
       product: 'Producto, estrategia y negocio',
+      design: 'Diseño y UX',
       thinking: 'Pensamiento y decisiones',
       science: 'Ciencia',
+    },
+    readingNotes: {
+      ai:
+        'Cómo funcionan de verdad los modelos, y cómo construir sobre ellos productos que aguanten producción. Vale la pena porque el campo cambia cada semana y solo los fundamentos te dejan distinguir un avance real de una demo.',
+      craft:
+        'Escribir código que otros puedan leer y cambiar, y en el que puedan confiar. Vale la pena porque casi todo el costo del software llega después de la primera versión, y estos libros tratan de pagar menos de él.',
+      systems:
+        'Cómo se dividen, conectan, despliegan y mantienen vivos los sistemas cuando una parte falla. Vale la pena porque a escala los problemas difíciles dejan de estar dentro de una función y pasan a estar entre servicios.',
+      leadership:
+        'Dirigir equipos, hacer crecer a las personas y tomar decisiones que otros tienen que ejecutar. Vale la pena porque a partir de cierto punto tu resultado es el resultado del equipo que construyes.',
+      product:
+        'Decidir qué construir, para quién, y cómo se convierte en negocio. Vale la pena porque un software bien hecho que nadie necesita sigue siendo un fracaso, solo que más caro.',
+      design:
+        'Interfaces, tipografía, color y la investigación detrás de ellos. Vale la pena porque el usuario nunca ve la arquitectura: ve la pantalla, y la pantalla decide si todo lo demás se usa.',
+      thinking:
+        'El juicio bajo incertidumbre, los sesgos de la propia mente, y cómo aprender y concentrarse a propósito. Vale la pena porque todos los demás estantes terminan en una decisión, y este trata de tomarla bien.',
+      science:
+        'Matemáticas, física, astronomía, química y biología, contadas por quienes trabajaron en ellas. Vale la pena porque de ahí toma la ingeniería sus límites, y porque el universo es más interesante que cualquier producto.',
     },
 
     certsKicker: 'Certificaciones',

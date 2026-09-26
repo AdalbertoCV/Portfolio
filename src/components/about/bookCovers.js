@@ -136,6 +136,25 @@ import coverNapoleonsButtons from '../../images/books/napoleons-buttons.jpg';
 import coverWhatIsLife from '../../images/books/what-is-life.jpg';
 import coverTheSelfishGene from '../../images/books/the-selfish-gene.jpg';
 import coverTheGeneAnIntimateHistory from '../../images/books/the-gene-an-intimate-history.jpg';
+import coverRefactoringUi from '../../images/books/refactoring-ui.jpg';
+import coverTheNonDesignersDesignBook from '../../images/books/the-non-designers-design-book.jpg';
+import coverAboutFaceTheEssentialsOfInteractionDesign from '../../images/books/about-face-the-essentials-of-interaction-design.jpg';
+import coverTheElementsOfUserExperience from '../../images/books/the-elements-of-user-experience.jpg';
+import coverLawsOfUx from '../../images/books/laws-of-ux.jpg';
+import coverN100ThingsEveryDesignerNeedsToKnowAboutPeople from '../../images/books/100-things-every-designer-needs-to-know-about-people.jpg';
+import coverDesigningInterfaces from '../../images/books/designing-interfaces.jpg';
+import coverUniversalPrinciplesOfDesign from '../../images/books/universal-principles-of-design.jpg';
+import coverThinkingWithType from '../../images/books/thinking-with-type.jpg';
+import coverGridSystemsInGraphicDesign from '../../images/books/grid-systems-in-graphic-design.jpg';
+import coverInteractionOfColor from '../../images/books/interaction-of-color.jpg';
+import coverAtomicDesign from '../../images/books/atomic-design.jpg';
+import coverMicrointeractions from '../../images/books/microinteractions.jpg';
+import coverInclusiveDesignPatterns from '../../images/books/inclusive-design-patterns.jpg';
+import coverJustEnoughResearch from '../../images/books/just-enough-research.jpg';
+import coverLeanUx from '../../images/books/lean-ux.jpg';
+import coverSprint from '../../images/books/sprint.jpg';
+import coverTheArtOfReadableCode from '../../images/books/the-art-of-readable-code.jpg';
+import coverObviouslyAwesome from '../../images/books/obviously-awesome.jpg';
 
 const BOOK_COVERS = {
   'AI Engineering': coverAiEngineering,
@@ -271,6 +290,25 @@ const BOOK_COVERS = {
   'What Is Life?': coverWhatIsLife,
   'The Selfish Gene': coverTheSelfishGene,
   'The Gene: An Intimate History': coverTheGeneAnIntimateHistory,
+  'Refactoring UI': coverRefactoringUi,
+  'The Non-Designer’s Design Book': coverTheNonDesignersDesignBook,
+  'About Face: The Essentials of Interaction Design': coverAboutFaceTheEssentialsOfInteractionDesign,
+  'The Elements of User Experience': coverTheElementsOfUserExperience,
+  'Laws of UX': coverLawsOfUx,
+  '100 Things Every Designer Needs to Know About People': coverN100ThingsEveryDesignerNeedsToKnowAboutPeople,
+  'Designing Interfaces': coverDesigningInterfaces,
+  'Universal Principles of Design': coverUniversalPrinciplesOfDesign,
+  'Thinking with Type': coverThinkingWithType,
+  'Grid Systems in Graphic Design': coverGridSystemsInGraphicDesign,
+  'Interaction of Color': coverInteractionOfColor,
+  'Atomic Design': coverAtomicDesign,
+  'Microinteractions': coverMicrointeractions,
+  'Inclusive Design Patterns': coverInclusiveDesignPatterns,
+  'Just Enough Research': coverJustEnoughResearch,
+  'Lean UX': coverLeanUx,
+  'Sprint': coverSprint,
+  'The Art of Readable Code': coverTheArtOfReadableCode,
+  'Obviously Awesome': coverObviouslyAwesome,
 };
 
 export default BOOK_COVERS;

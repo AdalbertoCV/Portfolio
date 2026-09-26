@@ -205,8 +205,27 @@ const cvEn = {
       systems: 'Architecture and systems',
       leadership: 'Leadership and teams',
       product: 'Product, strategy and business',
+      design: 'Design and UX',
       thinking: 'Thinking and decisions',
       science: 'Science',
+    },
+    readingNotes: {
+      ai:
+        'How the models actually work, and how to build products on them that survive production. Read it because the field moves weekly, and only the fundamentals let you tell a real advance from a demo.',
+      craft:
+        'Writing code other people can read, change and trust. Read it because most of the cost of software comes after the first version ships, and these books are about paying less of it.',
+      systems:
+        'How systems are split, connected, deployed and kept running when parts of them fail. Read it because at scale the hard problems stop living inside a function and start living between services.',
+      leadership:
+        'Running teams, growing people and making decisions other people have to carry out. Read it because past a certain point your output is the output of the team you build.',
+      product:
+        'Deciding what to build, for whom, and how it becomes a business. Read it because well-built software nobody needs is still a failure, only a more expensive one.',
+      design:
+        'Interfaces, typography, colour and the research behind them. Read it because the user never sees the architecture: they see the screen, and the screen decides whether all the rest gets used.',
+      thinking:
+        'Judgement under uncertainty, the mind’s own biases, and how to learn and focus on purpose. Read it because every other shelf ends in a decision, and this one is about making it well.',
+      science:
+        'Mathematics, physics, astronomy, chemistry and biology, told by the people who worked on them. Read it because it is where engineering takes its limits from, and because the universe is more interesting than any product.',
     },
 
     certsKicker: 'Certifications',

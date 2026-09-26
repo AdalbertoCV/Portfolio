@@ -2168,6 +2168,17 @@
     box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.45);
 }
 
+.reading-shelf-head {
+    align-self: start;
+}
+
+.reading-shelf-note {
+    margin: 10px 0 0;
+    font-size: 0.88rem;
+    line-height: 1.62;
+    color: var(--color-text-secondary);
+}
+
 .reading-list li:has(.reading-cover) {
     align-items: center;
 }

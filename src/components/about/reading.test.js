@@ -1,9 +1,9 @@
 import BOOK_COVERS from './bookCovers';
 import READING from './reading';
 
-test("Don't Make Me Think sits on the engineering-craft shelf", () => {
-  const craft = READING.find((shelf) => shelf.id === 'craft');
-  expect(craft.books).toContainEqual({ title: 'Don’t Make Me Think', author: 'Steve Krug', icon: 'usability' });
+test("Don't Make Me Think sits on the design shelf", () => {
+  const design = READING.find((shelf) => shelf.id === 'design');
+  expect(design.books).toContainEqual({ title: 'Don’t Make Me Think', author: 'Steve Krug', icon: 'usability' });
 });
 
 // A shelf of covers with one icon in the middle reads as a broken image.
@@ -28,4 +28,15 @@ test('there is a shelf for the sciences', () => {
   expect(science.books.map((book) => book.title)).toEqual(
     expect.arrayContaining(['Cosmos', 'The Feynman Lectures on Physics', 'The Disappearing Spoon']),
   );
+});
+
+test('every shelf says what it is for, in both languages', async () => {
+  const { default: en } = await import('../../i18n/cv.en');
+  const { default: es } = await import('../../i18n/cv.es');
+  READING.forEach(({ id }) => {
+    [en, es].forEach((dict) => {
+      expect(dict.cv.readingGroups[id]).toBeTruthy();
+      expect(dict.cv.readingNotes[id]).toBeTruthy();
+    });
+  });
 });
