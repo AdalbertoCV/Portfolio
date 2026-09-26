@@ -4,6 +4,11 @@
 // line draws itself, the roles stand up off it, and a pulse runs the line on a
 // loop lighting each milestone as it passes. The delays come from where each
 // milestone sits along the run, so the lighting is caused by the pulse.
+//
+// Each milestone is in the colour of the role it stands for, oldest first, and
+// the line runs through those colours on its way to the present.
+
+import { BRAND_CORE } from '../brand/teaserPalette';
 
 const START = 24;
 const END = 396;
@@ -20,27 +25,36 @@ const LIT_PEAK = 0.06;
 
 // Alternating up and down, like roles on the page they point at.
 const MILESTONES = [
-  { x: 64, up: true },
-  { x: 138, up: false },
-  { x: 212, up: true },
-  { x: 286, up: false },
-  { x: 360, up: true },
+  { x: 64, up: true, brand: 'labsol' },
+  { x: 138, up: false, brand: 'case' },
+  { x: 212, up: true, brand: 'freelance' },
+  { x: 286, up: false, brand: 'evodeps' },
+  { x: 360, up: true, brand: 'radii' },
 ];
 
 const TimelineStrip = () => (
   <div className="timeline-strip" aria-hidden="true">
     <svg className="ts-track" viewBox="0 0 420 140" preserveAspectRatio="xMidYMid meet" focusable="false">
-      <path className="ts-line" d={`M${START} ${Y} H${END}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <defs>
+        <linearGradient id="tsLine" gradientUnits="userSpaceOnUse" x1={START} y1="0" x2={END} y2="0">
+          {MILESTONES.map(({ x, brand }) => (
+            <stop key={brand} offset={(x - START) / RUN} stopColor={BRAND_CORE[brand]} />
+          ))}
+        </linearGradient>
+      </defs>
 
-      {MILESTONES.map(({ x, up }, index) => {
+      <path className="ts-line" d={`M${START} ${Y} H${END}`} fill="none" stroke="url(#tsLine)" strokeWidth="3" strokeLinecap="round" />
+
+      {MILESTONES.map(({ x, up, brand }, index) => {
         const stemEnd = up ? Y - 26 : Y + 26;
         const cardY = up ? stemEnd - 16 : stemEnd;
         const reach = (x - START) / RUN;
         return (
-          <g key={x}>
+          <g key={x} data-brand={brand}>
             <g className="ts-role" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
-              <path d={`M${x} ${Y} V${stemEnd}`} stroke="currentColor" strokeOpacity="0.45" strokeWidth="1.5" />
-              <rect x={x - 22} y={cardY} width="44" height="16" rx="4" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeOpacity="0.45" strokeWidth="1.5" />
+              <path d={`M${x} ${Y} V${stemEnd}`} stroke="currentColor" strokeOpacity="0.7" strokeWidth="1.5" />
+              <rect x={x - 22} y={cardY} width="44" height="16" rx="4" fill="currentColor" fillOpacity="0.32" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.5" />
+              <path d={`M${x - 15} ${cardY + 8} H${x + 9}`} stroke="currentColor" strokeOpacity="0.9" strokeWidth="2" strokeLinecap="round" />
             </g>
             <circle
               className="ts-milestone"

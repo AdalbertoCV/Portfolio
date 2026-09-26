@@ -60,6 +60,15 @@ const REPOS = [
 // than something that reshuffles on reload — the covers behave the same way.
 const random = makeRandom(hashOf('adalberto-cerrillo/projects'));
 
+// Each tile is drawn in the colour of the repository nearest to it, so the
+// mosaic reads as the catalogue's languages spreading out from its projects
+// rather than as grey lines with six dots in them.
+const nearestLanguage = (col, row) =>
+  REPOS.reduce((best, repo) => {
+    const distance = Math.abs(repo.col - col) + Math.abs(repo.row - row) * 1.5;
+    return distance < best.distance ? { distance, language: repo.language } : best;
+  }, { distance: Infinity, language: REPOS[0].language }).language;
+
 const TILES = [];
 for (let row = 0; row < ROWS; row += 1) {
   for (let col = 0; col < COLS; col += 1) {
@@ -84,7 +93,8 @@ for (let row = 0; row < ROWS; row += 1) {
     TILES.push({
       key: `${row}-${col}`,
       d,
-      opacity: roll < 0.66 ? opacity : opacity * 0.7,
+      colour: languageColor(nearestLanguage(col, row)),
+      opacity: Math.min(0.9, (roll < 0.66 ? opacity : opacity * 0.7) * 1.7),
       // Diagonal, so the mosaic arrives as one sweep of light across the strip
       // instead of a column marching left to right.
       delay: (col + row) * 0.045,
@@ -105,7 +115,7 @@ const ProjectsMosaic = () => (
         </linearGradient>
       </defs>
 
-      {TILES.map(({ key, d, opacity, delay }) => (
+      {TILES.map(({ key, d, colour, opacity, delay }) => (
         <path
           key={key}
           className="pm-tile"
@@ -115,7 +125,7 @@ const ProjectsMosaic = () => (
           strokeOpacity={opacity}
           strokeWidth="2"
           strokeLinecap="round"
-          style={{ animationDelay: `${delay}s` }}
+          style={{ color: colour, animationDelay: `${delay}s` }}
         />
       ))}
 

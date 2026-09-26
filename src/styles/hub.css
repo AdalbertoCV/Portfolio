@@ -798,6 +798,11 @@ img.brand-hero-mark {
     overflow: visible;
 }
 
+/* The branches take their company's colour from the brand scope on them. */
+.vr-track [data-brand] {
+    color: var(--brand-core);
+}
+
 /* The road cuts itself in. 640 comfortably exceeds the path length, so the
    offset starts fully hidden whatever the exact measurement. */
 .vr-path {
@@ -2261,6 +2266,16 @@ ol.timeline.reveal {
     overflow: visible;
 }
 
+/* Each milestone takes its role's brand colour from the scope around it. */
+.timeline-strip [data-brand] {
+    color: var(--brand-core);
+}
+
+.ts-pulse {
+    fill: var(--color-text-primary);
+    filter: drop-shadow(0 0 5px var(--color-text-primary));
+}
+
 .ts-line {
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
@@ -2384,10 +2399,10 @@ ol.timeline.reveal {
     animation: stLit 4.8s ease-in-out infinite;
 }
 
-/* The count sits on a filled disc of the strip's own colour, so it takes the
-   page background to stay legible in both themes. */
+/* The count sits on a disc of the star's own saturated colour, so white
+   reads on it in both themes. */
 .st-count {
-    fill: var(--color-bg-primary, #fff);
+    fill: #fff;
 }
 
 @keyframes stDrop {
@@ -2444,6 +2459,7 @@ ol.timeline.reveal {
 }
 
 .ss-shelf {
+    color: var(--color-text-secondary);
     stroke-dasharray: 440;
     stroke-dashoffset: 440;
 }
@@ -2481,7 +2497,7 @@ ol.timeline.reveal {
    animation never undoes the first. */
 @keyframes ssLean {
     0%, 50% { opacity: 1; transform: rotate(0deg); }
-    62%, 82% { opacity: 1; transform: rotate(-13deg) translateY(-4px); }
+    62%, 82% { opacity: 1; transform: rotate(-13deg) translateY(-4px); filter: drop-shadow(0 0 6px currentColor); }
     94%, 100% { opacity: 1; transform: rotate(0deg); }
 }
 

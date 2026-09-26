@@ -1,5 +1,6 @@
 import { MoonphaseMark } from '../marks/MoonphaseMark';
 import { StackSelectMark } from '../marks/StackSelectMark';
+import { BRAND_CORE } from '../brand/teaserPalette';
 
 // The teaser that sends a reader from the timeline to Ventures. A road that
 // climbs through milestones and forks into the two companies, each branch
@@ -32,13 +33,23 @@ const MILESTONES = [
 const VenturesRoadmap = () => (
   <div className="ventures-roadmap" aria-hidden="true">
     <svg className="vr-track" viewBox="0 0 420 140" preserveAspectRatio="xMidYMid meet" focusable="false">
+      {/* The road so far is Freelance's amber, the incubator both companies
+          came out of, warming towards the fork. Each branch then takes the
+          colour of the company it leads to. */}
+      <defs>
+        <linearGradient id="vrRoad" gradientUnits="userSpaceOnUse" x1="18" y1="0" x2="238" y2="0">
+          <stop offset="0" stopColor={BRAND_CORE.freelance} />
+          <stop offset="1" stopColor={BRAND_CORE.case} />
+        </linearGradient>
+      </defs>
+
       {/* The road so far, climbing left to right. */}
       <path
         className="vr-path vr-path-main"
         d={ROAD}
         fill="none"
-        stroke="currentColor"
-        strokeOpacity="0.5"
+        stroke="url(#vrRoad)"
+        strokeOpacity="0.95"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
@@ -46,20 +57,22 @@ const VenturesRoadmap = () => (
       {/* The fork: two companies out of one trajectory. */}
       <path
         className="vr-path vr-path-up"
+        data-brand="moonphase"
         d="M238 48 C 282 38, 312 32, 352 30"
         fill="none"
         stroke="currentColor"
-        strokeOpacity="0.4"
+        strokeOpacity="0.9"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeDasharray="6 8"
       />
       <path
         className="vr-path vr-path-down"
+        data-brand="stackselect"
         d="M238 48 C 282 58, 312 78, 352 104"
         fill="none"
         stroke="currentColor"
-        strokeOpacity="0.4"
+        strokeOpacity="0.9"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeDasharray="6 8"
@@ -77,8 +90,9 @@ const VenturesRoadmap = () => (
             cy={cy}
             r="4"
             fill="currentColor"
-            fillOpacity="0.45"
+            fillOpacity="0.85"
             style={{
+              color: BRAND_CORE.freelance,
               // Two animations: the one-off pop as the road draws, then the
               // repeating flash as each spark passes.
               animationDelay: `${0.25 + index * 0.12}s, ${DRAW_DELAY + progress * RUN_DURATION}s`,
@@ -94,13 +108,13 @@ const VenturesRoadmap = () => (
         cy="48"
         r="6.5"
         fill="currentColor"
-        style={{ animationDelay: `0.95s, ${DRAW_DELAY + RUN_DURATION * 0.97}s` }}
+        style={{ color: BRAND_CORE.case, animationDelay: `0.95s, ${DRAW_DELAY + RUN_DURATION * 0.97}s` }}
       />
 
       {/* The sparks. `cx`/`cy` stay at the origin because `offset-path` places
           them; any offset here would be added on top of the path position. */}
       {[0, 1].map((index) => (
-        <g key={index}>
+        <g key={index} style={{ color: BRAND_CORE.freelance }}>
           <circle
             className="vr-spark vr-spark-glow"
             cx="0"

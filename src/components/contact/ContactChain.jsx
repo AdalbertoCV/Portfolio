@@ -16,6 +16,13 @@
 // it through `offset-path`. Two copies of these strings would drift apart.
 // Deliberately not each other's mirror: a perfectly symmetric pair of arcs
 // draws an eye, and the two ends of a conversation are not the same shape.
+import { BRAND_CORE } from '../brand/teaserPalette';
+
+// Me in cyan, you in pink; the message warms through violet on the way out and
+// the reply through amber on the way back, so each direction reads as its own.
+const ME_COLOUR = BRAND_CORE.radii;
+const YOU_COLOUR = BRAND_CORE.case;
+
 const OUT = 'M78 70 C 134 12, 268 18, 342 64';
 const BACK = 'M342 64 C 286 124, 148 122, 78 70';
 
@@ -37,7 +44,7 @@ const TRAIL = [
   { r: 1.8, opacity: 0.22, lag: 0.14 },
 ];
 
-const Signal = ({ path, delay }) => {
+const Signal = ({ path, delay, colour }) => {
   // `cx`/`cy` stay at the origin because `offset-path` places the circle; any
   // offset here would be added on top of the path position.
   const ride = (extra = 0) => ({
@@ -46,7 +53,7 @@ const Signal = ({ path, delay }) => {
   });
 
   return (
-    <>
+    <g style={{ color: colour }}>
       <circle className="cc-signal cc-signal-glow" cx="0" cy="0" r="11" fill="currentColor" style={ride()} />
       {TRAIL.map(({ r, opacity, lag }) => (
         <circle
@@ -60,12 +67,12 @@ const Signal = ({ path, delay }) => {
         />
       ))}
       <circle className="cc-signal" cx="0" cy="0" r="3.5" fill="currentColor" style={ride()} />
-    </>
+    </g>
   );
 };
 
-const Node = ({ at, popDelay, bloomDelay }) => (
-  <>
+const Node = ({ at, popDelay, bloomDelay, colour }) => (
+  <g style={{ color: colour }}>
     {/* The ring the arriving signal opens up into. Drawn under the node so the
         node stays the solid thing and the bloom reads as its echo. */}
     <circle
@@ -97,20 +104,33 @@ const Node = ({ at, popDelay, bloomDelay }) => (
       fill="currentColor"
       style={{ animationDelay: `${popDelay}s, ${bloomDelay}s` }}
     />
-  </>
+  </g>
 );
 
 const ContactChain = () => (
   <div className="contact-chain" aria-hidden="true">
     <svg className="cc-track" viewBox="0 0 420 140" preserveAspectRatio="xMidYMid meet" focusable="false">
+      <defs>
+        <linearGradient id="ccOut" gradientUnits="userSpaceOnUse" x1={ME[0]} y1="0" x2={YOU[0]} y2="0">
+          <stop offset="0" stopColor={ME_COLOUR} />
+          <stop offset="0.5" stopColor={BRAND_CORE.moonphase} />
+          <stop offset="1" stopColor={YOU_COLOUR} />
+        </linearGradient>
+        <linearGradient id="ccBack" gradientUnits="userSpaceOnUse" x1={YOU[0]} y1="0" x2={ME[0]} y2="0">
+          <stop offset="0" stopColor={YOU_COLOUR} />
+          <stop offset="0.5" stopColor={BRAND_CORE.freelance} />
+          <stop offset="1" stopColor={ME_COLOUR} />
+        </linearGradient>
+      </defs>
+
       {[OUT, BACK].map((d, index) => (
         <path
           key={d}
           className="cc-path"
           d={d}
           fill="none"
-          stroke="currentColor"
-          strokeOpacity={index === 0 ? 0.5 : 0.28}
+          stroke={index === 0 ? 'url(#ccOut)' : 'url(#ccBack)'}
+          strokeOpacity={index === 0 ? 0.9 : 0.6}
           strokeWidth="2.5"
           strokeLinecap="round"
           style={{ animationDelay: `${0.1 + index * 0.22}s` }}
@@ -119,11 +139,11 @@ const ContactChain = () => (
 
       {/* Each node lights when the other one's signal reaches it: the reply
           lands back home half a cycle after the message lands away. */}
-      <Node at={ME} popDelay={0.35} bloomDelay={DRAW_DELAY + HALF} />
-      <Node at={YOU} popDelay={0.55} bloomDelay={DRAW_DELAY} />
+      <Node at={ME} popDelay={0.35} bloomDelay={DRAW_DELAY + HALF} colour={ME_COLOUR} />
+      <Node at={YOU} popDelay={0.55} bloomDelay={DRAW_DELAY} colour={YOU_COLOUR} />
 
-      <Signal path={OUT} delay={DRAW_DELAY} />
-      <Signal path={BACK} delay={DRAW_DELAY + HALF} />
+      <Signal path={OUT} delay={DRAW_DELAY} colour={BRAND_CORE.moonphase} />
+      <Signal path={BACK} delay={DRAW_DELAY + HALF} colour={BRAND_CORE.freelance} />
     </svg>
   </div>
 );

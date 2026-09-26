@@ -2,7 +2,10 @@
 // strip as its siblings. The stack is a wall of tiles, so the strip is one:
 // the tiles drop into the grid a column at a time, then, on a loop, the four
 // that carry projects light up in turn with their count — the way The Stars
-// sit at the top of the real wall.
+// sit at the top of the real wall. Every tile is in the colour of a real
+// mark from the wall, so the strip reads as the wall rather than a grid.
+
+import { TECH_COLOURS } from '../brand/teaserPalette';
 
 const COLS = 10;
 const ROWS = 3;
@@ -15,11 +18,12 @@ const TOP = (140 - (ROWS * STEP - GAP)) / 2;
 // Seconds. Each star holds the light for a quarter of the loop.
 const LOOP = 4.8;
 
+// The four stars, each in its own mark's colour: React, Python, Docker, Django.
 const STARS = [
-  { col: 1, row: 1, count: 3 },
-  { col: 4, row: 0, count: 5 },
-  { col: 6, row: 2, count: 2 },
-  { col: 8, row: 1, count: 4 },
+  { col: 1, row: 1, count: 3, colour: '#61dafb' },
+  { col: 4, row: 0, count: 5, colour: '#3776ab' },
+  { col: 6, row: 2, count: 2, colour: '#2496ed' },
+  { col: 8, row: 1, count: 4, colour: '#44b78b' },
 ];
 
 const TILES = [];
@@ -29,6 +33,9 @@ for (let row = 0; row < ROWS; row += 1) {
       key: `${row}-${col}`,
       x: LEFT + col * STEP,
       y: TOP + row * STEP,
+      // A stride that is coprime with the palette, so no two neighbours in a
+      // row or a column share a colour.
+      colour: TECH_COLOURS[(col * 3 + row * 5) % TECH_COLOURS.length],
       // Bottom row lands first, so the wall is built up rather than hung down.
       delay: col * 0.05 + (ROWS - 1 - row) * 0.12,
     });
@@ -38,7 +45,7 @@ for (let row = 0; row < ROWS; row += 1) {
 const StackTiles = () => (
   <div className="stack-tiles" aria-hidden="true">
     <svg className="st-track" viewBox="0 0 420 140" preserveAspectRatio="xMidYMid meet" focusable="false">
-      {TILES.map(({ key, x, y, delay }) => (
+      {TILES.map(({ key, x, y, colour, delay }) => (
         <rect
           key={key}
           className="st-tile"
@@ -48,24 +55,24 @@ const StackTiles = () => (
           height={SIZE}
           rx="7"
           fill="currentColor"
-          fillOpacity="0.08"
+          fillOpacity="0.3"
           stroke="currentColor"
-          strokeOpacity="0.4"
+          strokeOpacity="0.95"
           strokeWidth="1.5"
-          style={{ animationDelay: `${delay}s` }}
+          style={{ color: colour, animationDelay: `${delay}s` }}
         />
       ))}
 
-      {STARS.map(({ col, row, count }, index) => {
+      {STARS.map(({ col, row, count, colour }, index) => {
         const x = LEFT + col * STEP;
         const y = TOP + row * STEP;
         return (
           <g
             key={`${col}-${row}`}
             className="st-star"
-            style={{ animationDelay: `${1.2 + index * (LOOP / STARS.length)}s` }}
+            style={{ color: colour, animationDelay: `${1.2 + index * (LOOP / STARS.length)}s` }}
           >
-            <rect x={x} y={y} width={SIZE} height={SIZE} rx="7" fill="currentColor" fillOpacity="0.28" stroke="currentColor" strokeWidth="2" />
+            <rect x={x} y={y} width={SIZE} height={SIZE} rx="7" fill="currentColor" fillOpacity="0.55" stroke="currentColor" strokeWidth="2" />
             <circle cx={x + SIZE} cy={y} r="7.5" fill="currentColor" />
             <text className="st-count" x={x + SIZE} y={y + 3.4} textAnchor="middle" fontSize="9.5" fontWeight="700">
               {count}
