@@ -2403,6 +2403,22 @@ const TECH_GROUPS = [
       { name: 'Chiplets', concept: 'chiplet' },
       { name: 'Orbital data centers', concept: 'spaceCompute' },
       { name: '6G & satellite networks', concept: 'sixG' },
+      // Fourth pass: the sciences — the sky, the physics, the chemistry and
+      // the biology that decide what engineering gets to build next.
+      { name: 'Nuclear fusion', concept: 'fusion' },
+      { name: 'Gravitational-wave astronomy', concept: 'gravWaves' },
+      { name: 'Exoplanets', concept: 'exoplanets' },
+      { name: 'Dark matter & dark energy', concept: 'darkMatter' },
+      { name: 'Space telescopes', concept: 'spaceTelescopes' },
+      { name: 'Particle physics', concept: 'particlePhysics' },
+      { name: 'Quantum sensing', concept: 'quantumSensing' },
+      { name: 'Superconductors', concept: 'superconductors' },
+      { name: 'Molecular simulation', concept: 'molecularSim' },
+      { name: 'Gene editing (CRISPR)', concept: 'geneEditing' },
+      { name: 'Synthetic biology', concept: 'syntheticBio' },
+      { name: 'Connectomics', concept: 'connectomics' },
+      { name: 'Climate modeling', concept: 'climateModel' },
+      { name: 'Automated theorem proving', concept: 'theoremProving' },
     ],
   },
 ];

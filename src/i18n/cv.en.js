@@ -202,7 +202,11 @@ const cvEn = {
     readingGroups: {
       ai: 'AI and LLMs',
       craft: 'Engineering craft',
+      systems: 'Architecture and systems',
       leadership: 'Leadership and teams',
+      product: 'Product, strategy and business',
+      thinking: 'Thinking and decisions',
+      science: 'Science',
     },
 
     certsKicker: 'Certifications',

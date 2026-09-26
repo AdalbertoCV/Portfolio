@@ -212,7 +212,11 @@ const cvEs = {
     readingGroups: {
       ai: 'IA y LLMs',
       craft: 'Oficio de ingeniería',
+      systems: 'Arquitectura y sistemas',
       leadership: 'Liderazgo y equipos',
+      product: 'Producto, estrategia y negocio',
+      thinking: 'Pensamiento y decisiones',
+      science: 'Ciencia',
     },
 
     certsKicker: 'Certificaciones',

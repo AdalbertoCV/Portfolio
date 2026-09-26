@@ -1510,6 +1510,159 @@ const ICONS = {
       <path d="M11.6 9.2h3.9v3.9" />
     </svg>
   ),
+
+  // The frontier, fourth pass: the sciences — the physics, the sky, the
+  // chemistry and the biology that decide what engineering can build next.
+
+  // A tokamak from above: the torus, the coils that hold it, and the plasma
+  // ring that must not touch the wall.
+  fusion: (
+    <svg {...base}>
+      <ellipse cx="12" cy="12" rx="9" ry="5.2" />
+      <ellipse cx="12" cy="12" rx="4" ry="1.8" />
+      <path d="M6 7.8v8.4M18 7.8v8.4M12 5.2v1.6M12 17.2v1.6" />
+    </svg>
+  ),
+
+  // Two masses in a tight orbit and the ripples they send outward through
+  // spacetime.
+  gravWaves: (
+    <svg {...base}>
+      <g fill="currentColor" stroke="none">
+        <circle cx="10.4" cy="12" r="1.5" />
+        <circle cx="13.6" cy="12" r="1.5" />
+      </g>
+      <path d="M7.2 8.4a5 5 0 0 0 0 7.2M16.8 8.4a5 5 0 0 1 0 7.2" />
+      <path d="M4.4 5.6a9 9 0 0 0 0 12.8M19.6 5.6a9 9 0 0 1 0 12.8" />
+    </svg>
+  ),
+
+  // A planet crossing its star, and the dip it leaves in the light curve —
+  // how most exoplanets are found.
+  exoplanets: (
+    <svg {...base}>
+      <circle cx="12" cy="8.4" r="5.4" />
+      <circle cx="14.6" cy="9.6" r="1.4" fill="currentColor" stroke="none" />
+      <path d="M3 18.4h6.2l1.2 1.8h3.2l1.2-1.8H21" />
+    </svg>
+  ),
+
+  // A spiral galaxy inside the dashed halo that holds it together and that
+  // nobody has seen.
+  darkMatter: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="9" strokeDasharray="1.6 2.6" />
+      <path d="M12 12c1.6-.8 1.2-3-.6-3.2-2.6-.4-4.2 2.6-3 4.8 1.2 2.6 5 3 7 1" />
+      <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+
+  // A gauge whose needle is moved by a quantum state: measurement at the
+  // limit physics allows.
+  quantumSensing: (
+    <svg {...base}>
+      <path d="M4 15a8 8 0 0 1 16 0" />
+      <path d="M12 15l3.6-4.4" />
+      <circle cx="12" cy="15" r="1.2" fill="currentColor" stroke="none" />
+      <path d="M4.4 20c1.25-1.2 2.5-1.2 3.8 0s2.5 1.2 3.8 0 2.5-1.2 3.8 0 2.5 1.2 3.8 0" />
+    </svg>
+  ),
+
+  // A magnet floating over a cooled disc: zero resistance, and the field
+  // pushed out of the material.
+  superconductors: (
+    <svg {...base}>
+      <rect x="8.2" y="3.6" width="7.6" height="5" rx="1" />
+      <path d="M8.4 12v1.8M12 11.4v2.4M15.6 12v1.8" />
+      <ellipse cx="12" cy="17.6" rx="8" ry="2.8" />
+    </svg>
+  ),
+
+  // The double helix with a cut across it: the sequence rewritten where it
+  // stands.
+  geneEditing: (
+    <svg {...base}>
+      <path d="M7 3c0 4.5 10 4.5 10 9s-10 4.5-10 9" />
+      <path d="M17 3c0 4.5-10 4.5-10 9s10 4.5 10 9" />
+      <path d="M8.8 5.6h6.4M8.8 18.4h6.4" />
+      <path d="M3 12h3M18 12h3" />
+    </svg>
+  ),
+
+  // A cell with a circuit in it: biology programmed the way a board is.
+  syntheticBio: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="8.8" />
+      <circle cx="12" cy="12" r="2.6" />
+      <path d="M12 9.4V6M14.6 12H18M12 14.6V18" />
+      <g fill="currentColor" stroke="none">
+        <circle cx="12" cy="6" r="1" />
+        <circle cx="18" cy="12" r="1" />
+        <circle cx="12" cy="18" r="1" />
+      </g>
+    </svg>
+  ),
+
+  // Atoms and their bonds, with the motion a simulation integrates step by
+  // step.
+  molecularSim: (
+    <svg {...base}>
+      <circle cx="6.6" cy="8" r="2.4" />
+      <circle cx="17.4" cy="8" r="2.4" />
+      <circle cx="12" cy="17" r="2.4" />
+      <path d="M9 8h6M7.8 10.1l3 4.8M16.2 10.1l-3 4.8" />
+      <path d="M3.2 4.4a4.4 4.4 0 0 1 3-1.6M20.8 4.4a4.4 4.4 0 0 0-3-1.6" />
+    </svg>
+  ),
+
+  // A sum sign and a check mark: mathematics a machine can search, and a proof
+  // it can confirm.
+  theoremProving: (
+    <svg {...base}>
+      <path d="M13 4.6H5l4.6 7.4L5 19.4h8" />
+      <path d="M14.6 14l2.2 2.2 4-4.4" />
+    </svg>
+  ),
+
+  // Neurons and the wiring between them: the brain mapped as a graph.
+  connectomics: (
+    <svg {...base}>
+      <circle cx="6" cy="6" r="2" />
+      <circle cx="18" cy="8" r="2" />
+      <circle cx="8" cy="18" r="2" />
+      <circle cx="17" cy="17.4" r="2" />
+      <path d="M8 6.4l8 1.2M7.4 7.6l.4 8.4M9.9 17.8l5.1-.3M16.2 9.9l.6 5.5M7.4 16.4l9.1-6.8" />
+    </svg>
+  ),
+
+  // The globe cut into the grid a climate model computes on, with the curve
+  // it is trying to forecast.
+  climateModel: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="8.8" />
+      <path d="M3.6 9h16.8M3.6 15h16.8" />
+      <ellipse cx="12" cy="12" rx="3.8" ry="8.8" />
+    </svg>
+  ),
+
+  // A segmented hexagonal mirror, folded open far from the Earth.
+  spaceTelescopes: (
+    <svg {...base}>
+      <path d="M12 3l7.8 4.5v9L12 21l-7.8-4.5v-9z" />
+      <path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9" />
+    </svg>
+  ),
+
+  // A collision, and the tracks the new particles curl away along.
+  particlePhysics: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none" />
+      <path d="M12 12c-2-3-5-4-8.4-3.4" />
+      <path d="M12 12c3-1.4 5.4-4 6-7.6" />
+      <path d="M12 12c.6 3.4 3 6 6.8 6.8" />
+      <path d="M12 12c-2.6 2-4 4.6-4 8.4" />
+    </svg>
+  ),
 };
 
 const ConceptIcon = ({ name, className }) => {
