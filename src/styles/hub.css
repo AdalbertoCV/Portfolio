@@ -2290,6 +2290,9 @@ ol.timeline.reveal {
     opacity: 0;
     transform-box: fill-box;
     transform-origin: center;
+    /* The resting level tsLit starts and ends at, so a milestone does not
+       snap down to it when its first light cycle begins. */
+    fill-opacity: 0.6;
 }
 
 .hub-teaser.is-visible .ts-role {

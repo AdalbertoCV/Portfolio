@@ -416,7 +416,7 @@ const en = {
     library: {
       title: 'Library · Adal Cerrillo',
       description:
-        'Where the way I think comes from: the interests behind the work and two hundred books on ten shelves, each with a note on why it is worth reading.',
+        'Where the way I think comes from: the interests behind the work, and two hundred books on ten shelves with a note on why each shelf is worth the time.',
     },
     changelog: {
       title: 'Changes · Adal Cerrillo',

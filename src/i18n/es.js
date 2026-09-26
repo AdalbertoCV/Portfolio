@@ -416,7 +416,7 @@ const es = {
     library: {
       title: 'Biblioteca · Adal Cerrillo',
       description:
-        'De dónde sale la forma en que pienso: los intereses detrás del trabajo y doscientos libros en diez estantes, cada uno con por qué vale la pena leerlo.',
+        'De dónde sale la forma en que pienso: los intereses detrás del trabajo, y doscientos libros en diez estantes con por qué vale la pena cada estante.',
     },
     changelog: {
       title: 'Cambios · Adal Cerrillo',

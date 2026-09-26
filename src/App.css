@@ -892,6 +892,11 @@ html {
         left: 0;
         right: 0;
         padding: 10px 16px 16px;
+        /* Seven entries are taller than a landscape phone, and a sheet hanging
+           off a fixed bar cannot be scrolled to: it scrolls inside itself. */
+        max-height: calc(100dvh - var(--navbar-h, 72px));
+        overflow-y: auto;
+        overscroll-behavior: contain;
         /* Opaque, unlike the bar above it. The bar is a thin strip where a
            translucent blur reads as depth; the sheet is a 220px panel, and at
            that size the page showing through it just makes the labels hard to

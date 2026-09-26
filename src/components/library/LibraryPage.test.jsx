@@ -46,3 +46,11 @@ test('reads in Spanish too, with no raw keys', () => {
   expect(screen.queryByText(/^(library|cv)\.[a-zA-Z.]+$/)).toBeNull();
   act(() => setLanguage('en'));
 });
+
+// The notes are per shelf, not per book, and the description must not say otherwise.
+test('the page description promises a note per shelf, not per book', () => {
+  expect(en.meta.library.description).toMatch(/each shelf/);
+  expect(en.meta.library.description).not.toMatch(/reading it|each with a note on why it/);
+  expect(es.meta.library.description).toMatch(/cada estante/);
+  expect(es.meta.library.description).not.toMatch(/leerlo/);
+});
