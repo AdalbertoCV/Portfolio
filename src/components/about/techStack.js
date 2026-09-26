@@ -1041,6 +1041,9 @@ import sitmuxIcon from '../../images/tech/tmux.svg';
 import sipreziIcon from '../../images/tech/prezi.svg';
 import sigreptileIcon from '../../images/tech/greptile.svg';
 import sidropboxIcon from '../../images/tech/dropbox.svg';
+// Windows Autopilot has no logo of its own; this is Microsoft's own Fluent
+// UI glyph for autopilot, rather than the Windows mark it ships under.
+import siwindowsautopilotIcon from '../../images/tech/windowsautopilot.svg';
 
 const TECH_GROUPS = [
   {
@@ -1586,6 +1589,7 @@ const TECH_GROUPS = [
       { name: 'Render', icon: sirenderIcon, mono: true },
       { name: 'Linode', icon: silinodeIcon, mono: true },
       { name: 'Vultr', icon: sivultrIcon, mono: true },
+      { name: 'Windows Autopilot', icon: siwindowsautopilotIcon, mono: true },
     ],
   },
   {
@@ -1795,6 +1799,7 @@ const TECH_GROUPS = [
       // In for the star this group sent up to The Stars.
       { name: 'ScyllaDB', icon: siscylladbIcon, mono: true },
       { name: 'CouchDB', icon: sicouchdbIcon, mono: true },
+      { name: 'Beautiful Soup', concept: 'soup' },
     ],
   },
   {

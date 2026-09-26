@@ -1465,6 +1465,16 @@ const ICONS = {
     </svg>
   ),
 
+  // Beautiful Soup has no mark, only its name: a bowl with a tag rising off
+  // it like steam — the soup that HTML is, and what gets pulled out of it.
+  soup: (
+    <svg {...base}>
+      <path d="M3.5 12.5h17a8.5 7 0 0 1-17 0z" />
+      <path d="M8 20.5h8" />
+      <path d="M9.5 8.8L7.6 7l1.9-1.8M14.5 8.8L16.4 7l-1.9-1.8M12.8 4.6l-1.6 4.6" />
+    </svg>
+  ),
+
   // A screen with one obvious thing to press, and the cursor already on it:
   // usability is the reader never having to wonder where to go.
   usability: (
