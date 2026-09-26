@@ -16,7 +16,6 @@ const LINKS = [
     { to: '/ventures', labelKey: 'nav.ventures' },
     { to: '/projects', labelKey: 'nav.projects' },
     { to: '/stack', labelKey: 'nav.stack' },
-    { to: '/library', labelKey: 'nav.library' },
     { to: '/contact', labelKey: 'nav.contact' },
 ];
 

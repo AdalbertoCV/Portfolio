@@ -26,7 +26,6 @@ const PAGES = {
   '/ventures': 'ventures',
   '/projects': 'projects',
   '/stack': 'stack',
-  '/library': 'library',
   '/contact': 'contact',
   '/radii': 'radii',
   '/stackselect': 'stackselect',

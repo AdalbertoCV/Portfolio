@@ -9,10 +9,9 @@ import Navbar from './components/navigation/navbar';
 import SiteFooter from './components/navigation/SiteFooter';
 import RouteMeta from './components/navigation/RouteMeta';
 import SkipLink from './components/navigation/SkipLink';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import MyProjects from './components/projects/projects';
 import StackPage from './components/stack/StackPage';
-import LibraryPage from './components/library/LibraryPage';
 import Ventures from './components/ventures/ventures';
 import RadiiPage from './components/brand/RadiiPage';
 import StackSelectPage from './components/brand/StackSelectPage';
@@ -69,7 +68,8 @@ const Pages = () => {
         <Route path="/experience" element={<Experience />} />
         <Route path="/projects" element={<MyProjects />} />
         <Route path="/stack" element={<StackPage />} />
-        <Route path="/library" element={<LibraryPage />} />
+        {/* Library merged into the stack page; the old address lands on its shelves. */}
+        <Route path="/library" element={<Navigate to="/stack#library" replace />} />
         <Route path="/ventures" element={<Ventures />} />
         {/* Brand stories. Reached from the timeline and the ventures hub,
             but each is a real URL so it can be linked to on its own. */}

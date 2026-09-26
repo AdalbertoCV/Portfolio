@@ -2168,6 +2168,11 @@
     box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.45);
 }
 
+/* Where /library and the terminal land: clear of the fixed bar, not under it. */
+#library {
+    scroll-margin-top: calc(var(--navbar-h, 96px) + 16px);
+}
+
 .reading-shelf-head {
     align-self: start;
 }

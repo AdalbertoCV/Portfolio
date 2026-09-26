@@ -331,18 +331,6 @@ const en = {
     back: 'Back',
   },
 
-  stackPage: {
-    libraryTitle: 'The library',
-    libraryLede: 'Ten shelves of twenty books, from AI to the history of the chip, and the interests they grew out of.',
-    libraryCta: 'Open the library',
-  },
-
-  library: {
-    badge: 'Library',
-    title: 'Interests and reading',
-    lede: 'What I follow outside the job description, and the books I hand to whoever asks where to start.',
-  },
-
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -409,14 +397,9 @@ const en = {
         'Ten programming problems with a hint and a solution, for whoever is starting out.',
     },
     stack: {
-      title: 'Stack · Adal Cerrillo',
+      title: 'Stack & Library · Adal Cerrillo',
       description:
-        'The technologies I build with, grouped and searchable, and the frontiers I am exploring next.',
-    },
-    library: {
-      title: 'Library · Adal Cerrillo',
-      description:
-        'Where the way I think comes from: the interests behind the work, and two hundred books on ten shelves with a note on why each shelf is worth the time.',
+        'The technologies I build with and the frontiers I am exploring, then the interests behind the work and two hundred books on ten shelves, with a note on why each shelf is worth the time.',
     },
     changelog: {
       title: 'Changes · Adal Cerrillo',
@@ -472,8 +455,7 @@ const en = {
     projects: 'Projects',
     experience: 'Experience',
     ventures: 'Ventures',
-    stack: 'Stack',
-    library: 'Library',
+    stack: 'Stack & Library',
     contact: 'Contact',
     menu: 'Menu',
     closeMenu: 'Close menu',

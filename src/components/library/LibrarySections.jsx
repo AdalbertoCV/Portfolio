@@ -1,26 +1,18 @@
 import { useTranslation } from '../../i18n/I18nProvider';
-import { ArrowUpRight, Reveal, Section, TalkBand } from '../brand/parts';
+import { ArrowUpRight, Reveal, Section } from '../brand/parts';
 import READING from '../about/reading';
 import BOOK_COVERS from '../about/bookCovers';
 import ConceptIcon from '../about/ConceptIcons';
 import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from '../about/interestsData';
-import '../about/about.css';
 
-// Where the way I think comes from, and what to read about it. Both used to
-// close About; together they were a third of its length and neither was about
-// the person the page is named for. Interests come first because the shelves
-// are the reading those interests grew into.
-const LibraryPage = () => {
+// The second half of the Stack & Library page: where the way I think comes
+// from, and what to read about it. `id="library"` is where the old /library
+// address and the terminal's `library` command land.
+const LibrarySections = () => {
   const { t, tl } = useTranslation();
 
   return (
-    <div className="hub-page">
-      <Reveal className="hub-header">
-        <span className="hub-badge">{t('library.badge')}</span>
-        <h1 className="hub-title">{t('library.title')}</h1>
-        <p className="hub-lede">{t('library.lede')}</p>
-      </Reveal>
-
+    <div id="library">
       {/* ----------------------------------------------------------- interests */}
       <Section
         kicker={t('cv.interestsKicker')}
@@ -100,11 +92,8 @@ const LibraryPage = () => {
             taste is not something to recommend. */}
         <p className="reading-aside">{t('cv.readingAside')}</p>
       </Section>
-
-      {/* The end of the tour: the next page in the bar is Contact. */}
-      <TalkBand />
     </div>
   );
 };
 
-export default LibraryPage;
+export default LibrarySections;

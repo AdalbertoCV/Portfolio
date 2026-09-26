@@ -32,10 +32,3 @@ export const TECH_COLOURS = [
   '#4169e1', // PostgreSQL
   '#e535ab', // GraphQL
 ];
-
-// Spines in the colours real covers use: deep and saturated, never pastel, so
-// they hold up on the white card and the dark one.
-export const SPINE_COLOURS = [
-  '#e4572e', '#2e86ab', '#f3a712', '#6a4c93', '#29bf12', '#d7263d', '#1b998b',
-  '#f46036', '#3a86ff', '#c5283d', '#ffbe0b', '#8338ec', '#06a77d', '#fb5607',
-];

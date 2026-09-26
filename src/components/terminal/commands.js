@@ -21,7 +21,7 @@ export const DESTINATIONS = {
   ventures: '/ventures',
   projects: '/projects',
   stack: '/stack',
-  library: '/library',
+  library: '/stack#library',
   contact: '/contact',
   decisions: '/decisions',
   study: '/study',
@@ -144,7 +144,7 @@ export const COMMANDS = [
     id: 'library',
     aliases: ['biblioteca', 'lectura'],
     run: ({ t, go }) => {
-      go('/library');
+      go('/stack#library');
       return [say(t('term.library.line'))];
     },
   },

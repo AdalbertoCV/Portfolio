@@ -332,18 +332,6 @@ const es = {
     back: 'Regresar',
   },
 
-  stackPage: {
-    libraryTitle: 'La biblioteca',
-    libraryLede: 'Diez estantes de veinte libros, de la IA a la historia del chip, y los intereses de los que salieron.',
-    libraryCta: 'Abrir la biblioteca',
-  },
-
-  library: {
-    badge: 'Biblioteca',
-    title: 'Intereses y lectura',
-    lede: 'Lo que sigo fuera de la descripción del puesto, y los libros que le paso a quien pregunta por dónde empezar.',
-  },
-
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -410,14 +398,9 @@ const es = {
         'Diez problemas de programación con pista y solución, para quien va empezando.',
     },
     stack: {
-      title: 'Stack · Adal Cerrillo',
+      title: 'Stack y Biblioteca · Adal Cerrillo',
       description:
-        'Las tecnologías con las que construyo, agrupadas y con búsqueda, y las fronteras que estoy explorando.',
-    },
-    library: {
-      title: 'Biblioteca · Adal Cerrillo',
-      description:
-        'De dónde sale la forma en que pienso: los intereses detrás del trabajo, y doscientos libros en diez estantes con por qué vale la pena cada estante.',
+        'Las tecnologías con las que construyo y las fronteras que exploro; después, los intereses detrás del trabajo y doscientos libros en diez estantes, con por qué vale la pena cada estante.',
     },
     changelog: {
       title: 'Cambios · Adal Cerrillo',
@@ -473,8 +456,7 @@ const es = {
     projects: 'Proyectos',
     experience: 'Experiencia',
     ventures: 'Ventures',
-    stack: 'Stack',
-    library: 'Biblioteca',
+    stack: 'Stack y Biblioteca',
     contact: 'Contacto',
     menu: 'Menú',
     closeMenu: 'Cerrar menú',

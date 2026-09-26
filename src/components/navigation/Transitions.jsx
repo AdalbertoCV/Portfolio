@@ -39,9 +39,13 @@ export const useShownLocation = () => {
       return;
     }
 
-    document.startViewTransition(() => {
+    const transition = document.startViewTransition(() => {
       flushSync(() => setShown(location));
     });
+    // A navigation that lands while this one is still running (a redirect,
+    // a double click) skips it, and the browser rejects `ready` with an
+    // AbortError. Skipping is the right outcome, so it is not an error.
+    transition?.ready?.catch(() => {});
   }, [location, shown]);
 
   return shown;

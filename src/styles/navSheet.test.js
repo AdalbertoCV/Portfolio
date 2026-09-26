@@ -33,7 +33,7 @@ test('timeline milestones rest at the opacity their light cycle starts from', ()
 // after the strip's own rule, or the strip's max-width wins the cascade.
 test('every hand-off strip spans the card under 900px', () => {
   const source = fs.readFileSync(path.join(__dirname, 'hub.css'), 'utf8').replace(/\r\n/g, '\n');
-  ['.timeline-strip', '.ventures-roadmap', '.projects-mosaic', '.stack-tiles', '.shelf-strip'].forEach((strip) => {
+  ['.timeline-strip', '.ventures-roadmap', '.projects-mosaic', '.stack-tiles'].forEach((strip) => {
     const base = source.indexOf(`\n${strip} {`);
     const narrow = source.indexOf('@media (max-width: 900px)', base);
     expect(narrow).toBeGreaterThan(base);

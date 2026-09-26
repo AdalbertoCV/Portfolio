@@ -9,15 +9,15 @@ test('stack opens the stack page, not About', () => {
   expect(go).toHaveBeenCalledWith('/stack');
 });
 
-test('library and its Spanish names open the library', () => {
+test('library and its Spanish names open the shelves on the stack page', () => {
   ['library', 'biblioteca', 'lectura'].forEach((name) => {
     const go = jest.fn();
     find(name).run(ctx(go));
-    expect(go).toHaveBeenCalledWith('/library');
+    expect(go).toHaveBeenCalledWith('/stack#library');
   });
 });
 
 test('open knows both new pages', () => {
   expect(DESTINATIONS.stack).toBe('/stack');
-  expect(DESTINATIONS.library).toBe('/library');
+  expect(DESTINATIONS.library).toBe('/stack#library');
 });

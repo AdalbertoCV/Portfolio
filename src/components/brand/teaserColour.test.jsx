@@ -3,7 +3,6 @@ import TimelineStrip from '../about/TimelineStrip';
 import VenturesRoadmap from '../ventures/VenturesRoadmap';
 import ProjectsMosaic from '../projects/ProjectsMosaic';
 import StackTiles from '../stack/StackTiles';
-import ShelfStrip from '../library/ShelfStrip';
 import ContactChain from '../contact/ContactChain';
 
 // Every colour a strip paints with: inline colours, gradient stops, and the
@@ -25,7 +24,6 @@ test.each([
   ['VenturesRoadmap', VenturesRoadmap],
   ['ProjectsMosaic', ProjectsMosaic],
   ['StackTiles', StackTiles],
-  ['ShelfStrip', ShelfStrip],
   ['ContactChain', ContactChain],
 ])('%s is drawn in colour, not in grey', (_name, Strip) => {
   const { container } = render(<Strip />);
@@ -47,7 +45,6 @@ test.each([
   ['VenturesRoadmap', VenturesRoadmap],
   ['ProjectsMosaic', ProjectsMosaic],
   ['StackTiles', StackTiles],
-  ['ShelfStrip', ShelfStrip],
   ['ContactChain', ContactChain],
 ])('most of %s is in colour, not only an accent', (_name, Strip) => {
   const { container } = render(<Strip />);

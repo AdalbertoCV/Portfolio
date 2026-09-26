@@ -5,7 +5,7 @@ import { ThemeProvider } from '../../theme/ThemeProvider';
 import Navbar from './navbar';
 
 // The bar's entries are buttons that navigate, so the order is pinned by label.
-test('the bar carries the seven pages in order', () => {
+test('the bar carries the six pages in order', () => {
   const { container } = render(
     <ThemeProvider>
       <I18nProvider>
@@ -17,5 +17,5 @@ test('the bar carries the seven pages in order', () => {
   );
   const row = container.querySelector('.nav-links-inline');
   const labels = within(row).getAllByRole('button').map((button) => button.textContent);
-  expect(labels).toEqual(['About Me', 'Experience', 'Ventures', 'Projects', 'Stack', 'Library', 'Contact']);
+  expect(labels).toEqual(['About Me', 'Experience', 'Ventures', 'Projects', 'Stack & Library', 'Contact']);
 });
