@@ -51,3 +51,16 @@ test('the list closes at ten shelves of twenty', () => {
   expect(READING).toHaveLength(10);
   READING.forEach((shelf) => expect(shelf.books).toHaveLength(20));
 });
+
+// A shelf's note sits in its own column beside twenty books; two lines there
+// read as a caption. Each says what the shelf covers, which books carry it,
+// and what it teaches, in both languages.
+test.each([
+  ['en', require('../../i18n/cv.en').default],
+  ['es', require('../../i18n/cv.es').default],
+])('every shelf note explains the shelf, not just labels it, in %s', (_lang, dictionary) => {
+  READING.forEach(({ id }) => {
+    const note = dictionary.cv.readingNotes[id];
+    expect(note.split(/\s+/).length).toBeGreaterThanOrEqual(55);
+  });
+});
