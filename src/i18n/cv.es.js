@@ -219,6 +219,7 @@ const cvEs = {
       security: 'Ciberseguridad y hacking',
       thinking: 'Pensamiento y decisiones',
       science: 'Ciencia',
+      history: 'Historia de la tecnología',
     },
     readingNotes: {
       ai:
@@ -239,6 +240,8 @@ const cvEs = {
         'El juicio bajo incertidumbre, los sesgos de la propia mente, y cómo aprender y concentrarse a propósito. Vale la pena porque todos los demás estantes terminan en una decisión, y este trata de tomarla bien.',
       science:
         'Matemáticas, física, astronomía, química y biología, contadas por quienes trabajaron en ellas. Vale la pena porque de ahí toma la ingeniería sus límites, y porque el universo es más interesante que cualquier producto.',
+      history:
+        'Cómo se inventaron de verdad la computación, internet, el chip y la industria del software, y quiénes lo hicieron. Vale la pena porque cada herramienta sobre la mesa es el resultado de una decisión que alguien tomó, y saber por qué se tomó te dice cuándo es seguro tomar otra.',
     },
     readingAside:
       'También leemos novela, historia, filosofía y mucho más. Pero eso ya va de gustos, así que no lo dejamos aquí: nadie necesita una recomendación para la novela que va a disfrutar.',

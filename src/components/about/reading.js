@@ -44,6 +44,11 @@ const READING = [
         author: 'Brian Christian',
         icon: 'ethics',
       },
+      {
+        title: 'Artificial Intelligence: A Modern Approach',
+        author: 'Stuart Russell & Peter Norvig',
+        icon: 'neuralNet',
+      },
     ],
   },
   {
@@ -84,6 +89,7 @@ const READING = [
       { title: 'The Art of Readable Code', author: 'Dustin Boswell & Trevor Foucher', icon: 'craft' },
       { title: 'Software Engineering at Google', author: 'Titus Winters, Tom Manshreck & Hyrum Wright', icon: 'scale' },
       { title: 'Modern Software Engineering', author: 'David Farley', icon: 'experiment' },
+      { title: 'The Practice of Programming', author: 'Brian W. Kernighan & Rob Pike', icon: 'craft' },
     ],
   },
   {
@@ -120,6 +126,7 @@ const READING = [
       { title: 'Accelerate', author: 'Nicole Forsgren, Jez Humble & Gene Kim', icon: 'scale' },
       { title: 'The Phoenix Project', author: 'Gene Kim, Kevin Behr & George Spafford', icon: 'postmortem' },
       { title: 'Thinking in Systems', author: 'Donella H. Meadows', icon: 'causal' },
+      { title: 'Infrastructure as Code', author: 'Kief Morris', icon: 'iac' },
     ],
   },
   {
@@ -152,6 +159,7 @@ const READING = [
       { title: 'The Effective Executive', author: 'Peter F. Drucker', icon: 'projectPlan' },
       { title: 'Leaders Eat Last', author: 'Simon Sinek', icon: 'team' },
       { title: 'Good to Great', author: 'Jim Collins', icon: 'scale' },
+      { title: 'The Coaching Habit', author: 'Michael Bungay Stanier', icon: 'mentoring' },
     ],
   },
   {
@@ -176,6 +184,7 @@ const READING = [
       { title: 'The Cold Start Problem', author: 'Andrew Chen', icon: 'scale' },
       { title: 'Rework', author: 'Jason Fried & David Heinemeier Hansson', icon: 'entrepreneur' },
       { title: 'Obviously Awesome', author: 'April Dunford', icon: 'marketing' },
+      { title: 'Lean Analytics', author: 'Alistair Croll & Benjamin Yoskovitz', icon: 'experiment' },
     ],
   },
   {
@@ -208,6 +217,7 @@ const READING = [
       { title: 'Just Enough Research', author: 'Erika Hall', icon: 'research' },
       { title: 'Lean UX', author: 'Jeff Gothelf & Josh Seiden', icon: 'experiment' },
       { title: 'Sprint', author: 'Jake Knapp, John Zeratsky & Braden Kowitz', icon: 'prototype' },
+      { title: 'Emotional Design', author: 'Don Norman', icon: 'usability' },
     ],
   },
   {
@@ -236,6 +246,11 @@ const READING = [
       { title: 'The Cuckoo’s Egg', author: 'Clifford Stoll', icon: 'networking' },
       { title: 'Countdown to Zero Day', author: 'Kim Zetter', icon: 'control' },
       { title: 'Sandworm', author: 'Andy Greenberg', icon: 'cloudSecurity' },
+      {
+        title: 'Metasploit: The Penetration Tester’s Guide',
+        author: 'David Kennedy, Jim O’Gorman, Devon Kearns & Mati Aharoni',
+        icon: 'ethicalHacking',
+      },
     ],
   },
   {
@@ -260,6 +275,7 @@ const READING = [
       { title: 'The Art of Doing Science and Engineering', author: 'Richard W. Hamming', icon: 'exactSciences' },
       { title: 'Surely You’re Joking, Mr. Feynman!', author: 'Richard P. Feynman', icon: 'exactSciences' },
       { title: 'Gödel, Escher, Bach', author: 'Douglas R. Hofstadter', icon: 'neuralNet' },
+      { title: 'Principles', author: 'Ray Dalio', icon: 'strategy' },
     ],
   },
   {
@@ -292,6 +308,32 @@ const READING = [
       { title: 'What Is Life?', author: 'Erwin Schrödinger', icon: 'protein' },
       { title: 'The Selfish Gene', author: 'Richard Dawkins', icon: 'bioinformatics' },
       { title: 'The Gene: An Intimate History', author: 'Siddhartha Mukherjee', icon: 'bioinformatics' },
+      { title: 'The Structure of Scientific Revolutions', author: 'Thomas S. Kuhn', icon: 'research' },
+    ],
+  },
+  {
+    id: 'history',
+    books: [
+      { title: 'The Innovators', author: 'Walter Isaacson', icon: 'research' },
+      { title: 'Hackers: Heroes of the Computer Revolution', author: 'Steven Levy', icon: 'ethicalHacking' },
+      { title: 'The Soul of a New Machine', author: 'Tracy Kidder', icon: 'team' },
+      { title: 'Where Wizards Stay Up Late', author: 'Katie Hafner & Matthew Lyon', icon: 'networking' },
+      { title: 'The Idea Factory', author: 'Jon Gertner', icon: 'research' },
+      { title: 'Dealers of Lightning', author: 'Michael A. Hiltzik', icon: 'prototype' },
+      { title: 'The Dream Machine', author: 'M. Mitchell Waldrop', icon: 'neuralNet' },
+      { title: 'Chip War', author: 'Chris Miller', icon: 'chiplet' },
+      { title: 'Alan Turing: The Enigma', author: 'Andrew Hodges', icon: 'exactSciences' },
+      { title: 'Turing’s Cathedral', author: 'George Dyson', icon: 'exactSciences' },
+      { title: 'The Man from the Future', author: 'Ananyo Bhattacharya', icon: 'exactSciences' },
+      { title: 'The Information', author: 'James Gleick', icon: 'docs' },
+      { title: 'The Codebreakers', author: 'David Kahn', icon: 'passwordCrack' },
+      { title: 'Steve Jobs', author: 'Walter Isaacson', icon: 'entrepreneur' },
+      { title: 'Revolution in The Valley', author: 'Andy Hertzfeld', icon: 'usability' },
+      { title: 'Just for Fun', author: 'Linus Torvalds & David Diamond', icon: 'craft' },
+      { title: 'Show Stopper!', author: 'G. Pascal Zachary', icon: 'debt' },
+      { title: 'Masters of Doom', author: 'David Kushner', icon: 'entrepreneur' },
+      { title: 'The Everything Store', author: 'Brad Stone', icon: 'ecommerce' },
+      { title: 'Coders', author: 'Clive Thompson', icon: 'craft' },
     ],
   },
 ];

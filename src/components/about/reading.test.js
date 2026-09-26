@@ -45,3 +45,9 @@ test('there is a shelf for cybersecurity and hacking', () => {
   const security = READING.find((shelf) => shelf.id === 'security');
   expect(security.books.map((book) => book.title)).toContain('The Web Application Hacker’s Handbook');
 });
+
+// Ten shelves of twenty: a list that reads as ordered, not as a pile.
+test('the list closes at ten shelves of twenty', () => {
+  expect(READING).toHaveLength(10);
+  READING.forEach((shelf) => expect(shelf.books).toHaveLength(20));
+});

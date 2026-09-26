@@ -209,6 +209,7 @@ const cvEn = {
       security: 'Cybersecurity and hacking',
       thinking: 'Thinking and decisions',
       science: 'Science',
+      history: 'History of technology',
     },
     readingNotes: {
       ai:
@@ -229,6 +230,8 @@ const cvEn = {
         'Judgement under uncertainty, the mind’s own biases, and how to learn and focus on purpose. Read it because every other shelf ends in a decision, and this one is about making it well.',
       science:
         'Mathematics, physics, astronomy, chemistry and biology, told by the people who worked on them. Read it because it is where engineering takes its limits from, and because the universe is more interesting than any product.',
+      history:
+        'How computing, the internet, the chip and the software industry were actually invented, and by whom. Read it because every tool on the desk is the result of a decision somebody made, and knowing why it was made tells you when it is safe to make a different one.',
     },
     readingAside:
       'We also read fiction, history, philosophy and plenty else. That is a matter of taste, though, so it stays off the list: nobody needs a recommendation for the novel they will enjoy.',

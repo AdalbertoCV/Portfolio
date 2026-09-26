@@ -174,6 +174,35 @@ import coverGhostInTheWires from '../../images/books/ghost-in-the-wires.jpg';
 import coverTheCuckoosEgg from '../../images/books/the-cuckoos-egg.jpg';
 import coverCountdownToZeroDay from '../../images/books/countdown-to-zero-day.jpg';
 import coverSandworm from '../../images/books/sandworm.jpg';
+import coverArtificialIntelligenceAModernApproach from '../../images/books/artificial-intelligence-a-modern-approach.jpg';
+import coverThePracticeOfProgramming from '../../images/books/the-practice-of-programming.jpg';
+import coverInfrastructureAsCode from '../../images/books/infrastructure-as-code.jpg';
+import coverTheCoachingHabit from '../../images/books/the-coaching-habit.jpg';
+import coverLeanAnalytics from '../../images/books/lean-analytics.jpg';
+import coverEmotionalDesign from '../../images/books/emotional-design.jpg';
+import coverMetasploitThePenetrationTestersGuide from '../../images/books/metasploit-the-penetration-testers-guide.jpg';
+import coverPrinciples from '../../images/books/principles.jpg';
+import coverTheStructureOfScientificRevolutions from '../../images/books/the-structure-of-scientific-revolutions.jpg';
+import coverTheInnovators from '../../images/books/the-innovators.jpg';
+import coverHackersHeroesOfTheComputerRevolution from '../../images/books/hackers-heroes-of-the-computer-revolution.jpg';
+import coverTheSoulOfANewMachine from '../../images/books/the-soul-of-a-new-machine.jpg';
+import coverWhereWizardsStayUpLate from '../../images/books/where-wizards-stay-up-late.jpg';
+import coverTheIdeaFactory from '../../images/books/the-idea-factory.jpg';
+import coverDealersOfLightning from '../../images/books/dealers-of-lightning.jpg';
+import coverTheDreamMachine from '../../images/books/the-dream-machine.jpg';
+import coverChipWar from '../../images/books/chip-war.jpg';
+import coverAlanTuringTheEnigma from '../../images/books/alan-turing-the-enigma.jpg';
+import coverTuringsCathedral from '../../images/books/turings-cathedral.jpg';
+import coverTheManFromTheFuture from '../../images/books/the-man-from-the-future.jpg';
+import coverTheInformation from '../../images/books/the-information.jpg';
+import coverTheCodebreakers from '../../images/books/the-codebreakers.jpg';
+import coverSteveJobs from '../../images/books/steve-jobs.jpg';
+import coverRevolutionInTheValley from '../../images/books/revolution-in-the-valley.jpg';
+import coverJustForFun from '../../images/books/just-for-fun.jpg';
+import coverShowStopper from '../../images/books/show-stopper.jpg';
+import coverMastersOfDoom from '../../images/books/masters-of-doom.jpg';
+import coverTheEverythingStore from '../../images/books/the-everything-store.jpg';
+import coverCoders from '../../images/books/coders.jpg';
 
 const BOOK_COVERS = {
   'AI Engineering': coverAiEngineering,
@@ -347,6 +376,35 @@ const BOOK_COVERS = {
   'The Cuckoo’s Egg': coverTheCuckoosEgg,
   'Countdown to Zero Day': coverCountdownToZeroDay,
   'Sandworm': coverSandworm,
+  'Artificial Intelligence: A Modern Approach': coverArtificialIntelligenceAModernApproach,
+  'The Practice of Programming': coverThePracticeOfProgramming,
+  'Infrastructure as Code': coverInfrastructureAsCode,
+  'The Coaching Habit': coverTheCoachingHabit,
+  'Lean Analytics': coverLeanAnalytics,
+  'Emotional Design': coverEmotionalDesign,
+  'Metasploit: The Penetration Tester’s Guide': coverMetasploitThePenetrationTestersGuide,
+  'Principles': coverPrinciples,
+  'The Structure of Scientific Revolutions': coverTheStructureOfScientificRevolutions,
+  'The Innovators': coverTheInnovators,
+  'Hackers: Heroes of the Computer Revolution': coverHackersHeroesOfTheComputerRevolution,
+  'The Soul of a New Machine': coverTheSoulOfANewMachine,
+  'Where Wizards Stay Up Late': coverWhereWizardsStayUpLate,
+  'The Idea Factory': coverTheIdeaFactory,
+  'Dealers of Lightning': coverDealersOfLightning,
+  'The Dream Machine': coverTheDreamMachine,
+  'Chip War': coverChipWar,
+  'Alan Turing: The Enigma': coverAlanTuringTheEnigma,
+  'Turing’s Cathedral': coverTuringsCathedral,
+  'The Man from the Future': coverTheManFromTheFuture,
+  'The Information': coverTheInformation,
+  'The Codebreakers': coverTheCodebreakers,
+  'Steve Jobs': coverSteveJobs,
+  'Revolution in The Valley': coverRevolutionInTheValley,
+  'Just for Fun': coverJustForFun,
+  'Show Stopper!': coverShowStopper,
+  'Masters of Doom': coverMastersOfDoom,
+  'The Everything Store': coverTheEverythingStore,
+  'Coders': coverCoders,
 };
 
 export default BOOK_COVERS;
