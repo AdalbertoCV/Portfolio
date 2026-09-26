@@ -54,6 +54,7 @@ const READING = [
       { title: 'Refactoring', author: 'Martin Fowler', icon: 'refactor' },
       { title: 'Designing Data-Intensive Applications', author: 'Martin Kleppmann', icon: 'distributed' },
       { title: 'The Mythical Man-Month', author: 'Frederick P. Brooks Jr.', icon: 'projectPlan' },
+      { title: 'Don’t Make Me Think', author: 'Steve Krug', icon: 'usability' },
     ],
   },
   {

@@ -1465,6 +1465,16 @@ const ICONS = {
     </svg>
   ),
 
+  // A screen with one obvious thing to press, and the cursor already on it:
+  // usability is the reader never having to wonder where to go.
+  usability: (
+    <svg {...base}>
+      <rect x="3" y="4" width="18" height="13" rx="2" />
+      <rect x="6.5" y="8.8" width="8.5" height="3.8" rx="1.9" />
+      <path d="M13.8 11.6l5.4 5.6-2.4.3-1.4 2.5z" />
+    </svg>
+  ),
+
   // Behave has no mark of its own — its avatar is a word cloud — so it gets
   // what it is: a scenario in three steps, given, when, then, the last one
   // passing.
