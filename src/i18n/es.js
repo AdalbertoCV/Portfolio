@@ -66,6 +66,7 @@ const es = {
       decisions: 'las decisiones técnicas y por qué',
       study: 'diez problemas con pista y solución',
       stack: 'las tecnologías con las que construyo',
+      library: 'los libros que vale la pena leer, y por qué',
       play: 'una laptop que salta bugs',
       contact: 'correo y redes',
       theme: 'cambiar claro / oscuro',
@@ -103,8 +104,11 @@ const es = {
       line: 'Abriendo la zona de estudio. Hay café.',
     },
     stack: {
-      line: 'Volviendo a Sobre mí — la sección de tecnologías está a media página.',
+      line: 'Abriendo el stack.',
       hint: '1005 fichas en dieciocho grupos. Las que tienen número enlazan a proyectos reales.',
+    },
+    library: {
+      line: 'Abriendo la biblioteca. Doscientos libros, diez estantes.',
     },
     play: {
       line: 'Arrancando el juego. Espacio para saltar.',
@@ -468,6 +472,8 @@ const es = {
     projects: 'Proyectos',
     experience: 'Experiencia',
     ventures: 'Ventures',
+    stack: 'Stack',
+    library: 'Biblioteca',
     contact: 'Contacto',
     menu: 'Menú',
     closeMenu: 'Cerrar menú',

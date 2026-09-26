@@ -65,6 +65,7 @@ const en = {
       decisions: 'the technical calls, and why',
       study: 'ten problems, with hints and answers',
       stack: 'the technologies I build with',
+      library: 'the books worth reading, and why',
       play: 'a laptop that jumps bugs',
       contact: 'email and profiles',
       theme: 'switch light / dark',
@@ -102,8 +103,11 @@ const en = {
       line: 'Opening the study zone. There is coffee.',
     },
     stack: {
-      line: 'Back to About — the technology section is halfway down.',
+      line: 'Opening the stack.',
       hint: '1005 tiles in eighteen groups. The ones with a number link to real projects.',
+    },
+    library: {
+      line: 'Opening the library. Two hundred books, ten shelves.',
     },
     play: {
       line: 'Starting the game. Space to jump.',
@@ -468,6 +472,8 @@ const en = {
     projects: 'Projects',
     experience: 'Experience',
     ventures: 'Ventures',
+    stack: 'Stack',
+    library: 'Library',
     contact: 'Contact',
     menu: 'Menu',
     closeMenu: 'Close menu',

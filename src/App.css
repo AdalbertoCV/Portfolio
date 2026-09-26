@@ -834,6 +834,41 @@ html {
         padding: 7px 14px;
     }
 
+    /* Fixed-size (no grow, no shrink) so the control group's touch targets are
+       never squeezed - the logo gives up space instead. */
+    .navbar-controls {
+        width: auto;
+        justify-content: flex-end;
+        margin-top: 0;
+        flex: 0 0 auto;
+        gap: 6px;
+    }
+}
+
+/* Seven links need more room than five did. Between the full layout and the
+   collapse, the inline row tightens first: less padding and a point less type
+   keep it on one line across the common laptop widths. The full layout needs
+   1400px in Spanish. */
+@media (max-width: 1399px) {
+    .nav-links-inline {
+        gap: 2px;
+    }
+
+    .nav-links-inline li {
+        font-size: 15px;
+    }
+
+    .nav-links-inline .nav-link-button,
+    .navbar .nav-links-inline li.active .nav-link-button {
+        padding: 10px 12px;
+    }
+}
+
+/* The bar collapses to the menu at its own width, not the phone breakpoint:
+   a row that runs under the controls, or wraps inside a fixed bar, is the bug
+   the sheet exists to prevent. 1200 is where the compact row still clears
+   the controls in Spanish, the longer of the two languages. */
+@media (max-width: 1199px) {
     /* The inline row is replaced by the sheet below the bar. This is the fix
        for the phone bug: the row used to wrap onto a second line inside the
        bar, which made the bar's own height a function of its contents. Every
@@ -901,16 +936,6 @@ html {
 
     .navbar li.active .nav-link-button {
         padding: 14px 16px;
-    }
-
-    /* Fixed-size (no grow, no shrink) so the control group's touch targets are
-       never squeezed - the logo gives up space instead. */
-    .navbar-controls {
-        width: auto;
-        justify-content: flex-end;
-        margin-top: 0;
-        flex: 0 0 auto;
-        gap: 6px;
     }
 }
 
