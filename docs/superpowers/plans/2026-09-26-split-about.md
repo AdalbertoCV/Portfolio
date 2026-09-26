@@ -41,7 +41,7 @@
 - Create `src/components/stack/StackPage.jsx`: the `/stack` page.
 - Create `src/components/library/LibraryPage.jsx`: the `/library` page.
 - Create tests: `src/components/about/TimelineStrip.test.jsx`, `src/components/stack/StackTiles.test.jsx`, `src/components/library/ShelfStrip.test.jsx`, `src/components/stack/StackPage.test.jsx`, `src/components/library/LibraryPage.test.jsx`, `src/components/about/about.test.jsx`, `src/components/navigation/navbar.test.jsx`, `src/components/terminal/commands.test.js`.
-- Modify `src/styles/hub.css` (strip CSS), `src/components/about/about.jsx` (remove three sections, animate card), `src/components/projects/projects.jsx` (card to Stack instead of TalkBand), `src/App.js` (two routes), `src/components/navigation/navbar.jsx` (links), `src/App.css` (collapse breakpoint), `src/components/navigation/RouteMeta.jsx` (pages), `src/components/terminal/commands.js` (stack, library, destinations), `src/i18n/en.js`, `src/i18n/es.js`.
+- Modify `src/styles/hub.css` (strip CSS), `src/components/about/about.jsx` (remove three sections, animate card), `src/components/projects/projects.jsx` (card to Stack instead of TalkBand), `src/App.js` (two routes), `src/components/navigation/navbar.jsx` (links), `src/App.css` (collapse breakpoint), `src/components/navigation/RouteMeta.jsx` (pages), `src/components/terminal/commands.js` (stack, library, destinations), `src/i18n/en.js`, `src/i18n/es.js`, `src/i18n/repos.en.js`, `src/i18n/repos.es.js`.
 
 ---
 
@@ -1090,7 +1090,7 @@ git commit -m "Interests and reading get their own page" -m "Co-Authored-By: Cla
 **Files:**
 - Modify: `src/components/about/about.jsx`
 - Modify: `src/components/projects/projects.jsx`
-- Modify: `src/i18n/en.js`, `src/i18n/es.js` (`repos.stack*`)
+- Modify: `src/i18n/repos.en.js`, `src/i18n/repos.es.js` (`repos.stack*`)
 - Create: `src/components/about/about.test.jsx`
 - Create: `src/components/projects/projectsHandoff.test.jsx`
 
@@ -1170,7 +1170,7 @@ In `src/components/about/about.jsx`:
 
 - [ ] **Step 4: Add the Projects hand-off strings**
 
-In the `repos` block of `src/i18n/en.js` (find it with `grep -n "^  repos: {" src/i18n/en.js`), add:
+In the `repos` block of `src/i18n/repos.en.js` (the `repos` strings live in their own files, merged into the dictionaries), add:
 
 ```js
     stackTitle: 'The stack behind them',
@@ -1178,7 +1178,7 @@ In the `repos` block of `src/i18n/en.js` (find it with `grep -n "^  repos: {" sr
     stackCta: 'See the stack',
 ```
 
-and in `src/i18n/es.js`:
+and in `src/i18n/repos.es.js`:
 
 ```js
     stackTitle: 'El stack detrás de ellos',
@@ -1217,7 +1217,7 @@ Expected: all tests pass, and eslint prints nothing.
 - [ ] **Step 7: Commit**
 
 ```bash
-git add src/components/about src/components/projects src/i18n/en.js src/i18n/es.js
+git add src/components/about src/components/projects src/i18n/repos.en.js src/i18n/repos.es.js
 git commit -m "About keeps what is about the person; Projects hands off to the stack" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ```
 
