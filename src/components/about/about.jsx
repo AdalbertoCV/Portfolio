@@ -22,16 +22,12 @@ import {
   LINKEDIN,
   YOUTUBE,
 } from '../../site';
-import StackExplorer from './StackExplorer';
-import READING from './reading';
-import BOOK_COVERS from './bookCovers';
 import REFERENCES from './references';
 import RefHacker from './RefHacker';
 import WorkBot from './WorkBot';
 import TimelineStrip from './TimelineStrip';
 import PRACTICE_ICONS from './practiceIcons';
 import ConceptIcon from './ConceptIcons';
-import { INTEREST_ICONS, INTEREST_KEYS, INTEREST_LINKS } from './interestsData';
 import { openTerminal } from '../terminal/Terminal';
 import './about.css';
 
@@ -378,26 +374,6 @@ const About = () => {
         </Reveal>
       </Section>
 
-      {/* --------------------------------------------------------------- stack */}
-      {/* Twelve groups and nearly four hundred tiles is a wall, and a wall is
-          something a reader scrolls past rather than reads. An index down the
-          side and one group in the panel is the same content at a size a
-          reader can actually take in. Nothing was cut. */}
-      <Section kicker={t('cv.skillsKicker')} title={t('cv.skillsTitle')} lede={t('cv.skillsLede')}>
-        {/* An index and a panel, rather than everything at once or nothing
-            at all.
-
-            Four earlier attempts argued about how to fold 315 entries into a
-            page; all of them were answering the wrong question. The section
-            does not need to show every group at once — it needs to say how
-            many groups there are, let a reader pick one, and give that one
-            room to breathe. Twelve names on the left, one group's marks on
-            the right, and the wall never happens. */}
-        <Reveal>
-          <StackExplorer />
-        </Reveal>
-      </Section>
-
       {/* ----------------------------------------------- education + languages */}
       <Section kicker={t('cv.educationKicker')} title={t('education.heading').replace(':', '')}>
         <Reveal className="cv-split">
@@ -588,91 +564,6 @@ const About = () => {
                     <ArrowUpRight />
                   </a>
                 ) : null}
-              </div>
-            </article>
-          ))}
-        </Reveal>
-      </Section>
-
-      {/* ------------------------------------------------------------- reading */}
-      {/* Open, in the same shape as the practice list above it: the shelf name
-          held in its own column beside its books. Folding it made a reader
-          click three times to find out that the answer to "what should I read"
-          was thirty titles — and a recommendation nobody opens is not a
-          recommendation. */}
-      <Section
-        kicker={t('cv.readingKicker')}
-        title={t('cv.readingTitle')}
-        lede={t('cv.readingLede')}
-      >
-        {READING.map(({ id, books }) => (
-          <Reveal className="practice-block" key={id}>
-            {/* What the shelf is for and why it is worth the time, so the
-                column beside the books says something instead of holding a
-                single line over empty space. */}
-            <div className="reading-shelf-head">
-              <h3 className="practice-title">{t(`cv.readingGroups.${id}`)}</h3>
-              <p className="reading-shelf-note">{t(`cv.readingNotes.${id}`)}</p>
-            </div>
-            <ul className="reading-list">
-              {books.map(({ title, author, icon }) => (
-                <li key={title}>
-                  {/* The cover is how a book is recognised on a shelf; the drawn
-                      icon stays only as a fallback for one without a cover. */}
-                  {BOOK_COVERS[title] ? (
-                    <img className="reading-cover" src={BOOK_COVERS[title]} alt="" loading="lazy" width="40" height="60" />
-                  ) : (
-                    <ConceptIcon className="list-icon" name={icon} />
-                  )}
-                  <span className="reading-book">
-                    <span className="reading-title">{title}</span>
-                    <span className="reading-author">{author}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        ))}
-        {/* The shelves are the reading that has a use; the rest is taste, and
-            taste is not something to recommend. */}
-        <p className="reading-aside">{t('cv.readingAside')}</p>
-      </Section>
-
-      {/* ----------------------------------------------------------- interests */}
-      <Section
-        kicker={t('cv.interestsKicker')}
-        title={t('cv.interestsTitle')}
-        lede={t('cv.interestsLede')}
-      >
-        <Reveal className="cv-interests" stagger>
-          {INTEREST_KEYS.map((key) => (
-            <article className="cv-interest" key={key}>
-              <div className="cv-interest-icon">{INTEREST_ICONS[key]}</div>
-              <h3>{t(`cv.interests.${key}.title`)}</h3>
-              <p>{t(`cv.interests.${key}.body`)}</p>
-              {/* Optional second paragraph: translate() hands back the key
-                  itself on a miss, so a card without one renders nothing. */}
-              {t(`cv.interests.${key}.body2`) !== `cv.interests.${key}.body2` && (
-                <p>{t(`cv.interests.${key}.body2`)}</p>
-              )}
-              {INTEREST_LINKS[key] && (
-                <a
-                  className="cv-interest-link"
-                  href={INTEREST_LINKS[key].href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={INTEREST_LINKS[key].mark} alt="" aria-hidden="true" />
-                  {t(`cv.interests.${key}.link`)}
-                  <ArrowUpRight />
-                </a>
-              )}
-              <div className="brand-chips">
-                {tl(`cv.interests.${key}.tags`).map((tag) => (
-                  <span className="brand-chip" key={tag}>
-                    {tag}
-                  </span>
-                ))}
               </div>
             </article>
           ))}

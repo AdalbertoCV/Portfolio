@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
-import { ArrowUpRight, Reveal, TalkBand } from '../brand/parts';
+import { ArrowRight, ArrowUpRight, Reveal } from '../brand/parts';
+import StackTiles from '../stack/StackTiles';
 import ProjectCard from './ProjectCard';
 import { languageColor } from './ProjectGlyph';
 import CATALOGUE, { LANGUAGES, PROJECT_COUNT } from './catalogue';
@@ -352,7 +353,19 @@ const MyProjects = () => {
         </Reveal>
       )}
 
-      <TalkBand />
+      {/* The hand-off every page makes: to the next one in the bar. The
+          closing band that used to end here moved to the end of the tour. */}
+      <Reveal className="hub-teaser">
+        <div className="hub-teaser-copy">
+          <h2 className="brand-h2">{t('repos.stackTitle')}</h2>
+          <p className="brand-p">{t('repos.stackLede')}</p>
+        </div>
+        <StackTiles />
+        <Link className="brand-link-out hub-teaser-cta" to="/stack">
+          {t('repos.stackCta')}
+          <ArrowRight />
+        </Link>
+      </Reveal>
 
       {/* Portalled to <body>: the page is a stacking context, so a nested
           overlay would render underneath the navbar. */}
