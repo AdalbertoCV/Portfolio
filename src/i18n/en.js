@@ -333,6 +333,12 @@ const en = {
     libraryCta: 'Open the library',
   },
 
+  library: {
+    badge: 'Library',
+    title: 'Interests and reading',
+    lede: 'What I follow outside the job description, and the books I hand to whoever asks where to start.',
+  },
+
   meta: {
     home: {
       title: 'Adal Cerrillo — Founding Software Engineer',
@@ -402,6 +408,11 @@ const en = {
       title: 'Stack · Adal Cerrillo',
       description:
         'The technologies I build with, grouped and searchable, and the frontiers I am exploring next.',
+    },
+    library: {
+      title: 'Library · Adal Cerrillo',
+      description:
+        'Where the way I think comes from: the interests behind the work and two hundred books on ten shelves, each with a note on why it is worth reading.',
     },
     changelog: {
       title: 'Changes · Adal Cerrillo',
