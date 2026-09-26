@@ -155,6 +155,25 @@ import coverLeanUx from '../../images/books/lean-ux.jpg';
 import coverSprint from '../../images/books/sprint.jpg';
 import coverTheArtOfReadableCode from '../../images/books/the-art-of-readable-code.jpg';
 import coverObviouslyAwesome from '../../images/books/obviously-awesome.jpg';
+import coverTheWebApplicationHackersHandbook from '../../images/books/the-web-application-hackers-handbook.jpg';
+import coverHackingTheArtOfExploitation from '../../images/books/hacking-the-art-of-exploitation.jpg';
+import coverPenetrationTesting from '../../images/books/penetration-testing.jpg';
+import coverTheHackerPlaybook3 from '../../images/books/the-hacker-playbook-3.jpg';
+import coverBlackHatPython from '../../images/books/black-hat-python.jpg';
+import coverLinuxBasicsForHackers from '../../images/books/linux-basics-for-hackers.jpg';
+import coverRealWorldBugHunting from '../../images/books/real-world-bug-hunting.jpg';
+import coverHackingApis from '../../images/books/hacking-apis.jpg';
+import coverTheTangledWeb from '../../images/books/the-tangled-web.jpg';
+import coverPracticalMalwareAnalysis from '../../images/books/practical-malware-analysis.jpg';
+import coverSecurityEngineering from '../../images/books/security-engineering.jpg';
+import coverThreatModelingDesigningForSecurity from '../../images/books/threat-modeling-designing-for-security.jpg';
+import coverSeriousCryptography from '../../images/books/serious-cryptography.jpg';
+import coverAppliedCryptography from '../../images/books/applied-cryptography.jpg';
+import coverTheArtOfDeception from '../../images/books/the-art-of-deception.jpg';
+import coverGhostInTheWires from '../../images/books/ghost-in-the-wires.jpg';
+import coverTheCuckoosEgg from '../../images/books/the-cuckoos-egg.jpg';
+import coverCountdownToZeroDay from '../../images/books/countdown-to-zero-day.jpg';
+import coverSandworm from '../../images/books/sandworm.jpg';
 
 const BOOK_COVERS = {
   'AI Engineering': coverAiEngineering,
@@ -309,6 +328,25 @@ const BOOK_COVERS = {
   'Sprint': coverSprint,
   'The Art of Readable Code': coverTheArtOfReadableCode,
   'Obviously Awesome': coverObviouslyAwesome,
+  'The Web Application Hacker’s Handbook': coverTheWebApplicationHackersHandbook,
+  'Hacking: The Art of Exploitation': coverHackingTheArtOfExploitation,
+  'Penetration Testing': coverPenetrationTesting,
+  'The Hacker Playbook 3': coverTheHackerPlaybook3,
+  'Black Hat Python': coverBlackHatPython,
+  'Linux Basics for Hackers': coverLinuxBasicsForHackers,
+  'Real-World Bug Hunting': coverRealWorldBugHunting,
+  'Hacking APIs': coverHackingApis,
+  'The Tangled Web': coverTheTangledWeb,
+  'Practical Malware Analysis': coverPracticalMalwareAnalysis,
+  'Security Engineering': coverSecurityEngineering,
+  'Threat Modeling: Designing for Security': coverThreatModelingDesigningForSecurity,
+  'Serious Cryptography': coverSeriousCryptography,
+  'Applied Cryptography': coverAppliedCryptography,
+  'The Art of Deception': coverTheArtOfDeception,
+  'Ghost in the Wires': coverGhostInTheWires,
+  'The Cuckoo’s Egg': coverTheCuckoosEgg,
+  'Countdown to Zero Day': coverCountdownToZeroDay,
+  'Sandworm': coverSandworm,
 };
 
 export default BOOK_COVERS;

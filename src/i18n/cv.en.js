@@ -206,6 +206,7 @@ const cvEn = {
       leadership: 'Leadership and teams',
       product: 'Product, strategy and business',
       design: 'Design and UX',
+      security: 'Cybersecurity and hacking',
       thinking: 'Thinking and decisions',
       science: 'Science',
     },
@@ -222,11 +223,15 @@ const cvEn = {
         'Deciding what to build, for whom, and how it becomes a business. Read it because well-built software nobody needs is still a failure, only a more expensive one.',
       design:
         'Interfaces, typography, colour and the research behind them. Read it because the user never sees the architecture: they see the screen, and the screen decides whether all the rest gets used.',
+      security:
+        'How systems are broken into, and how to build them so they are harder to break. Read it because you cannot defend what you do not know how to attack, and every system you ship is someone else’s target.',
       thinking:
         'Judgement under uncertainty, the mind’s own biases, and how to learn and focus on purpose. Read it because every other shelf ends in a decision, and this one is about making it well.',
       science:
         'Mathematics, physics, astronomy, chemistry and biology, told by the people who worked on them. Read it because it is where engineering takes its limits from, and because the universe is more interesting than any product.',
     },
+    readingAside:
+      'We also read fiction, history, philosophy and plenty else. That is a matter of taste, though, so it stays off the list: nobody needs a recommendation for the novel they will enjoy.',
 
     certsKicker: 'Certifications',
     certsTitle: 'Certifications and achievements',

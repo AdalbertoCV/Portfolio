@@ -632,6 +632,9 @@ const About = () => {
             </ul>
           </Reveal>
         ))}
+        {/* The shelves are the reading that has a use; the rest is taste, and
+            taste is not something to recommend. */}
+        <p className="reading-aside">{t('cv.readingAside')}</p>
       </Section>
 
       {/* ----------------------------------------------------------- interests */}

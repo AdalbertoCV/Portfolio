@@ -216,6 +216,7 @@ const cvEs = {
       leadership: 'Liderazgo y equipos',
       product: 'Producto, estrategia y negocio',
       design: 'Diseño y UX',
+      security: 'Ciberseguridad y hacking',
       thinking: 'Pensamiento y decisiones',
       science: 'Ciencia',
     },
@@ -232,11 +233,15 @@ const cvEs = {
         'Decidir qué construir, para quién, y cómo se convierte en negocio. Vale la pena porque un software bien hecho que nadie necesita sigue siendo un fracaso, solo que más caro.',
       design:
         'Interfaces, tipografía, color y la investigación detrás de ellos. Vale la pena porque el usuario nunca ve la arquitectura: ve la pantalla, y la pantalla decide si todo lo demás se usa.',
+      security:
+        'Cómo se vulneran los sistemas, y cómo construirlos para que cueste más hacerlo. Vale la pena porque no puedes defender lo que no sabes atacar, y todo sistema que publicas es el objetivo de alguien.',
       thinking:
         'El juicio bajo incertidumbre, los sesgos de la propia mente, y cómo aprender y concentrarse a propósito. Vale la pena porque todos los demás estantes terminan en una decisión, y este trata de tomarla bien.',
       science:
         'Matemáticas, física, astronomía, química y biología, contadas por quienes trabajaron en ellas. Vale la pena porque de ahí toma la ingeniería sus límites, y porque el universo es más interesante que cualquier producto.',
     },
+    readingAside:
+      'También leemos novela, historia, filosofía y mucho más. Pero eso ya va de gustos, así que no lo dejamos aquí: nadie necesita una recomendación para la novela que va a disfrutar.',
 
     certsKicker: 'Certificaciones',
     certsTitle: 'Certificaciones y logros',

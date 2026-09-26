@@ -2179,6 +2179,15 @@
     color: var(--color-text-secondary);
 }
 
+.reading-aside {
+    margin: 44px 0 0;
+    max-width: 62ch;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    font-style: italic;
+    color: var(--color-text-tertiary);
+}
+
 .reading-list li:has(.reading-cover) {
     align-items: center;
 }

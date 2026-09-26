@@ -40,3 +40,8 @@ test('every shelf says what it is for, in both languages', async () => {
     });
   });
 });
+
+test('there is a shelf for cybersecurity and hacking', () => {
+  const security = READING.find((shelf) => shelf.id === 'security');
+  expect(security.books.map((book) => book.title)).toContain('The Web Application Hacker’s Handbook');
+});
