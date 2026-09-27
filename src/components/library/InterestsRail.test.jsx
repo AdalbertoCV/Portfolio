@@ -116,13 +116,13 @@ test('the card the reader picked is scrolled to inside the rail', () => {
   const { container } = renderRail();
   const rail = layOutRail(container);
   fireEvent.click(dot(INTEREST_KEYS[4]));
-  expect(rail.scrollTo).toHaveBeenCalledWith({ left: 4 * (CARD + GAP), top: 0, behavior: 'smooth' });
+  expect(rail.scrollTo).toHaveBeenCalledWith({ left: 4 * (CARD + GAP), top: 0, behavior: 'auto' });
   // The last card stops at the end of the rail rather than scrolling past it.
   fireEvent.click(dot(INTEREST_KEYS[INTEREST_KEYS.length - 1]));
   const last = (INTEREST_KEYS.length - 1) * (CARD + GAP);
   expect(rail.scrollTo).toHaveBeenLastCalledWith({
     left: Math.min(last, rail.scrollWidth - RAIL),
     top: 0,
-    behavior: 'smooth',
+    behavior: 'auto',
   });
 });

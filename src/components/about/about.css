@@ -1624,6 +1624,11 @@
    is a scroll box, so it behaves the way a phone already expects.
    ========================================================================= */
 
+/* No rise on the way in: the cards appear where they stay. */
+.cv-interest-rail.reveal {
+    transform: none;
+}
+
 .cv-interest-rail {
     display: grid;
     gap: 18px;
@@ -1745,7 +1750,11 @@
        in it, and the height below is set in script to the card in view. */
     align-items: flex-start;
     gap: 20px;
-    overflow-x: auto;
+    /* Hidden, at every width: the cards hold still. Only the dots and the
+       arrows turn the page, through scrollTo, which a hidden overflow allows;
+       a swipe or a trackpad no longer drags a card half out of view. */
+    overflow-x: hidden;
+    touch-action: pan-y;
     /* Never a vertical scroller. The rail is cut to the card in view, but the
        tallest of the eight is still inside it, and an overflow-x of auto makes
        the other axis scroll too: a thumb going down the page slid the card up
@@ -1759,16 +1768,6 @@
        side padding, so a card at 100% lines up with the heading above it. */
     padding: 4px 0 18px;
     scrollbar-width: none;
-    /* The height is measured in script to the card in view, and slides rather
-       than jumps, so the shelves below do not leap when a short subject gives
-       way to a long one. */
-    transition: height 0.24s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .cv-interests {
-        transition: none;
-    }
 }
 
 .cv-interests::-webkit-scrollbar {
@@ -1787,8 +1786,7 @@
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
     background: var(--color-bg-card);
-    transition: border-color var(--transition-base), transform var(--transition-base),
-        box-shadow var(--transition-base);
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .cv-interest h3 {
@@ -2178,23 +2176,8 @@
     }
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .cv-interest:hover {
-        transform: translateY(-3px);
-    }
-}
 
 @media (max-width: 768px) {
-    /* On a phone the card holds still. A thumb scrolling down the page is never
-       perfectly vertical, and a rail that answered to it slid the subject away
-       mid-sentence and changed the card under the reader. So here the rail only
-       takes the vertical pan, and the dots and arrows are what turn the page:
-       the script still moves it with scrollTo, which overflow: hidden allows. */
-    .cv-interests {
-        overflow-x: hidden;
-        touch-action: pan-y;
-    }
-
     .cv-interest {
         padding: 24px 18px;
     }
