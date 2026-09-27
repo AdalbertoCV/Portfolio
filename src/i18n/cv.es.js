@@ -33,8 +33,8 @@ const cvEs = {
 
     profileTitle: 'Lo que hago',
     profileKicker: 'Quién soy',
-    profileBody: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS, creo agentes de IA con LangGraph y LangChain, y mantengo los pipelines de CI/CD y la observabilidad de una plataforma de microservicios. Migré la infraestructura completa de la plataforma en dos semanas y construí su cotizador automático: un algoritmo matemático de precios que llevó el tiempo promedio de cotización de un account manager de cinco días a uno.',
-    profileBody2: 'Trabajo con Python, Java, JavaScript, TypeScript, C#, Go y PHP, sobre Django, Spring Boot, Laravel y React. Mis áreas de interés técnico son los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Mi enfoque profesional combina la adopción rigurosa de tecnología emergente con criterios de ingeniería, diseño y negocio, orientado a construir sistemas sostenibles en el tiempo.',
+    profileBody: 'Ingeniero de software full-stack que construye servicios backend, infraestructura en la nube y sistemas de IA. En Radii Manufacturing diseño los servicios que sostienen los flujos centrales de manufactura, desarrollo workers en la nube sobre AWS, creo agentes de IA con LangGraph, y mantengo los pipelines de CI/CD y la observabilidad de una plataforma de microservicios. Migré la infraestructura completa de la plataforma en dos semanas y construí su cotizador automático: un algoritmo matemático de precios que llevó el tiempo promedio de cotización de un account manager de cinco días a uno.',
+    profileBody2: 'Trabajo con Python, Java, JavaScript y C#, sobre Django, Spring Boot y React, y en producción con Docker, Kubernetes y PostgreSQL sobre AWS. Mis áreas de interés técnico son los sistemas distribuidos, la arquitectura orientada a eventos, los sistemas LLM y RAG, y la ingeniería de plataforma. Todo eso con un mismo criterio: ingeniería, diseño y negocio en la misma decisión, para que la solución se sostenga en el tiempo.',
 
     nowKicker: 'Ahora mismo',
     // Sin número en el título: decía "cuatro", la retícula renderiza tres
@@ -81,12 +81,14 @@ const cvEs = {
       body: 'Todo lo de arriba es una afirmación sobre criterio. Esto es el criterio: qué estaba sobre la mesa, qué elegí, por qué, y qué terminó costando.',
       cta: 'Leer la bitácora',
     },
-    // El bot. Viene de un texto que Adal escribió para LinkedIn; aquí va sin
+    // El bot. Va dentro de "Cómo trabajo", justo debajo del principio de AI-first
+    // y etiquetado como ejemplo, porque es lo que es: la prueba de ese
+    // principio. Viene de un texto que Adal escribió para LinkedIn; aquí va sin
     // hashtags, sin llamada a comentar y sin la pregunta al final, porque esta
     // página no es un feed. El 10x es suyo y se queda: es el argumento, no un
-    // adorno, y es el único número de la sección.
+    // adorno.
     bot: {
-      kicker: 'IA agéntica',
+      exampleLabel: 'Ejemplo',
       title: 'Le enseñé a un bot a trabajar como yo',
       lede:
         'Durante meses, con lo que sé de flujos agénticos, construí un agente sobre mis propias decisiones y mi metodología de trabajo. Hoy hace 10× lo que yo solo sacaba en Radii. No fue magia ni un prompt ingenioso: fue sentarme a enseñarle.',
@@ -120,13 +122,16 @@ const cvEs = {
     principles: {
       aiFirst: {
         title: 'AI-first',
-        body: 'No es agregarle IA a algo donde cabe: es diseñar dando por hecho que un agente puede encargarse del trabajo, y decidir a conciencia qué parte se queda con una persona y por qué. En Radii eso no es un piloto — hoy el 80% del trabajo recurrente del equipo operativo lo hacen agentes en producción.',
+        body: 'Ante cualquier solución, lo primero que busco es cómo se automatiza: qué parte del proceso se repite, qué parte puede encargarse un agente y cuál se queda con una persona. Automatizo el trabajo manual para que el tiempo que queda libre se vaya al criterio — decidir, revisar y resolver lo que de verdad necesita a un ingeniero. En Radii eso ya no es un piloto: hoy el 80% del trabajo recurrente del equipo operativo lo hacen agentes en producción.',
       },
       innovation: {
         title: 'Innovación tecnológica constante',
-        body: 'Rutina diaria de actualización, y una prueba de concepto acotada al riesgo antes de comprometer cualquier decisión. Evalúo una tecnología por su madurez real —estabilidad de la API, historial de cambios incompatibles, quién responde cuando algo falla— y no por el tamaño de su anuncio.',
+        body: 'Todo tiene potencial de probarse, y casi siempre lo pruebo: primero en mi propio trabajo, donde se nota rápido si algo sirve o no. De todo lo que voy probando me quedo con lo mejor —lo que de verdad aguanta en producción— y descarto el resto. Tomo ideas de donde salen, las desarrollo hasta convertirlas en tecnología y proyectos propios, y me subo a la ola en lugar de esperarla.',
       },
     },
+    listsLabel: 'Habilidades blandas y áreas del día a día',
+    listsLede:
+      'No es una lista de cursos: es lo que ya está en uso. Esto es lo que traigo a una conversación de arquitectura, a una revisión de código, a una weekly y a una entrega.',
 
     practice: {
       systems: 'Diseño de sistemas y arquitectura',

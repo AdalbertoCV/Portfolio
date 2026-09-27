@@ -2321,6 +2321,70 @@
     color: var(--color-text-secondary);
 }
 
+/* The example sits between the principles and the lists, and it is the only
+   thing in the section with a plate of its own. The hairline above it is the
+   same one that separates the lists, so the section reads as four ruled bands
+   rather than as a story that wandered in from the next page. */
+.practice-example {
+    padding-top: 30px;
+    margin-bottom: 44px;
+    border-top: 1px solid var(--color-border-primary);
+}
+
+.practice-example-head {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 0 56px;
+    align-items: baseline;
+    margin-bottom: 22px;
+}
+
+.practice-example-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+}
+
+.practice-example-title {
+    margin: 0;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 1.24rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+}
+
+/* The name the lists get before the first row appears. Thirty-three hairlines
+   with no heading above them read as keywords, and keywords are the one thing
+   these are not. */
+.practice-lists {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 0 56px;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.practice-lists-label {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+}
+
+.practice-lists-lede {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 0.93rem;
+    line-height: 1.68;
+    color: var(--color-text-secondary);
+}
+
 .practice-block {
     display: grid;
     grid-template-columns: 240px minmax(0, 1fr);
@@ -2406,6 +2470,21 @@
         grid-template-columns: minmax(0, 1fr);
         gap: 14px;
         margin-bottom: 34px;
+    }
+
+    .practice-example {
+        padding-top: 24px;
+        margin-bottom: 34px;
+    }
+
+    .practice-example-head,
+    .practice-lists {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .practice-example-head {
+        margin-bottom: 18px;
     }
 
     .practice-block {

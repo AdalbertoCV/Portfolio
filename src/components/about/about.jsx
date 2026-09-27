@@ -265,17 +265,17 @@ const About = () => {
         title={t('cv.practiceTitle')}
         lede={t('cv.practiceLede')}
       >
-        {/* A ruled list rather than a pill cloud. Thirty-one chips of wildly
+        {/* A ruled list rather than a pill cloud. Thirty-three chips of wildly
             different lengths wrap into ragged rows that read as a tag cloud —
             the shape used for keywords nobody is expected to read one by one.
             These are claims about how he works, so they get the form claims
             get: one per line, a hairline between them, the group name held
             alongside in its own column. */}
-        {/* Two things stated before the lists, because they are not one more
-            line among thirty-three: they are the posture the other thirty-three
-            are downstream of. Both are load-bearing claims with something
-            behind them — the agents are in production and the adoption
-            criterion is written down. */}
+        {/* Two things stated before everything else, because they are not one
+            more line among thirty-three: they are the posture the other
+            thirty-three are downstream of. The first one has the bot standing
+            right underneath it, which is what keeps it from being a word
+            everybody has on their profile. */}
         <Reveal className="practice-lead">
           <span className="practice-lead-label">{t('cv.principlesLabel')}</span>
           <div className="practice-principles">
@@ -289,6 +289,66 @@ const About = () => {
               </article>
             ))}
           </div>
+        </Reveal>
+
+        {/* The bot, straight under the two principles and inside this section,
+            because that is what it is: the AI-first claim with something built
+            behind it. As a section of its own it read as an interruption — a
+            story about a bot that happened to be nearby. */}
+        {/* The figure is seen once, whole, across the width of the section,
+            and then it stays where it was put. It used to ride down the page
+            in a sticky column beside the lists, which is not "always
+            visible" — it is always moving, and the eye goes to the moving
+            thing instead of the sentence. */}
+        <Reveal className="practice-example">
+          <div className="practice-example-head">
+            <span className="practice-example-label">{t('cv.bot.exampleLabel')}</span>
+            <h3 className="practice-example-title">{t('cv.bot.title')}</h3>
+          </div>
+          <div className="bot">
+            <div className="bot-stage">
+              <WorkBot />
+              <div>
+                <p className="bot-claim">{t('cv.bot.lede')}</p>
+                <p className="bot-line">
+                  <span>&gt;</span>
+                  {t('cv.bot.line')}
+                  <span className="bot-caret" />
+                </p>
+              </div>
+            </div>
+
+            <div className="bot-cols">
+              <div className="bot-group">
+                <h3>{t('cv.bot.taughtLabel')}</h3>
+                <ul className="bot-taught">
+                  {tl('cv.bot.taught').map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bot-group">
+                <h3>{t('cv.bot.dayLabel')}</h3>
+                <ol className="bot-day">
+                  {tl('cv.bot.day').map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+
+            <p className="bot-close">
+              <b>{t('cv.bot.closeLead')}</b> {t('cv.bot.close')}
+            </p>
+          </div>
+        </Reveal>
+
+        {/* Thirty-three hairlines need a name, or they read as keywords. This
+            says what they are before the first one appears. */}
+        <Reveal className="practice-lists">
+          <span className="practice-lists-label">{t('cv.listsLabel')}</span>
+          <p className="practice-lists-lede">{t('cv.listsLede')}</p>
         </Reveal>
 
         {PRACTICE_GROUPS.map((group) => (
@@ -320,57 +380,6 @@ const About = () => {
               <ArrowRight />
             </span>
           </Link>
-        </Reveal>
-      </Section>
-
-      {/* --------------------------------------------------------------- bot */}
-      {/* Straight after the practice section, because "AI first" is stated up
-          there as a principle and this is the only place on the site where
-          there is something behind it. A principle with a working example
-          underneath it is an argument; on its own it is a word everybody has
-          on their profile. */}
-      <Section kicker={t('cv.bot.kicker')} title={t('cv.bot.title')}>
-        <Reveal className="bot">
-          {/* The figure is seen once, whole, across the width of the section,
-              and then it stays where it was put. It used to ride down the page
-              in a sticky column beside the lists, which is not "always
-              visible" — it is always moving, and the eye goes to the moving
-              thing instead of the sentence. */}
-          <div className="bot-stage">
-            <WorkBot />
-            <div>
-              <p className="bot-claim">{t('cv.bot.lede')}</p>
-              <p className="bot-line">
-                <span>&gt;</span>
-                {t('cv.bot.line')}
-                <span className="bot-caret" />
-              </p>
-            </div>
-          </div>
-
-          <div className="bot-cols">
-            <div className="bot-group">
-              <h3>{t('cv.bot.taughtLabel')}</h3>
-              <ul className="bot-taught">
-                {tl('cv.bot.taught').map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bot-group">
-              <h3>{t('cv.bot.dayLabel')}</h3>
-              <ol className="bot-day">
-                {tl('cv.bot.day').map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ol>
-            </div>
-          </div>
-
-          <p className="bot-close">
-            <b>{t('cv.bot.closeLead')}</b> {t('cv.bot.close')}
-          </p>
         </Reveal>
       </Section>
 

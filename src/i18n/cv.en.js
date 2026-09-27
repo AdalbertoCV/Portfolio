@@ -26,8 +26,8 @@ const cvEn = {
 
     profileTitle: 'What I do',
     profileKicker: 'Who I am',
-    profileBody: 'Full-stack software engineer building backend services, cloud infrastructure and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS, develop AI agents with LangGraph and LangChain, and maintain the CI/CD pipelines and observability of a microservices platform. I migrated the platform’s entire infrastructure in two weeks and built its automatic quoting engine — a mathematical pricing algorithm that took an account manager’s average quoting time from five days to one.',
-    profileBody2: 'I work across Python, Java, JavaScript, TypeScript, C#, Go and PHP, with Django, Spring Boot, Laravel and React. My technical focus areas are distributed systems, event-driven architecture, LLM systems and RAG, and platform engineering. My professional approach combines the rigorous adoption of emerging technology with engineering, design and business criteria, directed at systems that remain sustainable over time.',
+    profileBody: 'Full-stack software engineer building backend services, cloud infrastructure and AI systems. At Radii Manufacturing I design the services behind core manufacturing workflows, build cloud workers on AWS, develop AI agents with LangGraph, and maintain the CI/CD pipelines and observability of a microservices platform. I migrated the platform’s entire infrastructure in two weeks and built its automatic quoting engine — a mathematical pricing algorithm that took an account manager’s average quoting time from five days to one.',
+    profileBody2: 'I work across Python, Java, JavaScript and C#, with Django, Spring Boot and React, and in production with Docker, Kubernetes and PostgreSQL on AWS. My technical focus areas are distributed systems, event-driven architecture, LLM systems and RAG, and platform engineering. All of it under one criterion: engineering, design and business in the same decision, so the solution holds up over time.',
 
     nowKicker: 'Right now',
     // No count in the heading: it used to say "four", the grid renders three
@@ -76,7 +76,7 @@ const cvEn = {
     },
     // See the note in the Spanish file. Same text, same single number.
     bot: {
-      kicker: 'Agentic AI',
+      exampleLabel: 'Example',
       title: 'I taught a bot to work the way I do',
       lede:
         'Over months, using what I know about agentic workflows, I built an agent on my own decisions and my own methodology. It now gets through 10× what I used to get through alone at Radii. It was not magic and it was not a clever prompt: it was sitting down and teaching it.',
@@ -110,13 +110,16 @@ const cvEn = {
     principles: {
       aiFirst: {
         title: 'AI-first',
-        body: 'Not bolting AI onto something it happens to fit: designing on the assumption that an agent can take the work, and deciding deliberately which part stays with a person and why. At Radii that is not a pilot — 80% of the operations team\'s recurring work is done by agents in production today.',
+        body: 'For any solution, the first thing I look for is how it gets automated: which part of the process repeats, which part an agent can take, and which part stays with a person. I automate the manual work so the time that is left goes to judgement — deciding, reviewing and resolving what genuinely needs an engineer. At Radii that is no longer a pilot: 80% of the operations team\'s recurring work is done by agents in production today.',
       },
       innovation: {
         title: 'Constant technology innovation',
-        body: 'A daily updating routine, and a proof of concept scoped to the specific risk before committing to any decision. I judge a technology by its actual maturity — API stability, its record of breaking changes, who answers when something fails — rather than by the size of its announcement.',
+        body: 'Everything has the potential to be tried, and I usually try it — first in my own work, where it becomes obvious quickly whether something holds up or not. Out of everything I try, I keep the best — what actually survives in production — and drop the rest. I take ideas from wherever they come from, develop them until they are technology and projects of my own, and ride the wave instead of waiting for it.',
       },
     },
+    listsLabel: 'Soft skills and the areas I work in daily',
+    listsLede:
+      'Not a list of courses: this is what is already in use. What follows is what I bring to an architecture conversation, a code review, a weekly and a delivery.',
 
     practice: {
       systems: 'Systems design and architecture',
