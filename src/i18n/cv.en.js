@@ -360,6 +360,7 @@ const cvEn = {
     interestsLede: 'Each develops a capability that carries over into the technical work, and several of them bear directly on what I build and on what basis.',
     interestsPrev: 'Previous subject',
     interestsNext: 'Next subject',
+    mindRate: 'impulses/s',
     interests: {
       innovation: {
         title: 'Constant innovation and foresight',

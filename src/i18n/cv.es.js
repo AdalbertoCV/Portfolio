@@ -377,6 +377,7 @@ const cvEs = {
     interestsLede: 'Cada uno desarrolla una capacidad que se traslada al trabajo técnico, y varios de ellos influyen directamente en qué construyo y con qué criterio.',
     interestsPrev: 'Tema anterior',
     interestsNext: 'Tema siguiente',
+    mindRate: 'impulsos/s',
     interests: {
       innovation: {
         title: 'Innovación constante y prospectiva',

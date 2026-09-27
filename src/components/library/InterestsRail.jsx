@@ -3,6 +3,7 @@ import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Reveal } from '../brand/parts';
 import { INTEREST_KEYS, INTEREST_LINKS, INTEREST_TONES } from '../about/interestsData';
 import InterestArt from '../about/InterestArt';
+import NeuralMind from './NeuralMind';
 
 // The eight cards that say where the thinking comes from used to open all at
 // once: four rows of tall cards, each with a paragraph, most with two, and a row
@@ -137,6 +138,9 @@ const InterestsRail = () => {
     // The live flag sits on a wrapper, not on the Reveal: Reveal adds its own
     // class by hand, and a re-render of its className would drop it.
     <div ref={liveRef} className={`cv-interests-live${live ? ' is-live' : ''}`}>
+      {/* The brain beside the rail, wired to it: the subject in view is the
+          region that fires. Beside the card on a desktop, over it on a phone. */}
+      <NeuralMind index={index} live={live} />
       <Reveal className="cv-interest-rail">
         <div className="cv-interest-nav">
           {/* One dot per subject, in the tone of the card it opens. Eight dots

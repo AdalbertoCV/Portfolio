@@ -3199,3 +3199,188 @@
         justify-content: center;
     }
 }
+
+/* ----------------------------------------------------------------------------
+   THE MIND — the brain beside the subjects (NeuralMind.jsx)
+   A dark instrument panel in both themes: it is a screen showing activity, and
+   a screen is dark whatever the room is. The subject's tone reaches its border
+   and its label, the rest of the colour is drawn in the canvas.
+
+   On a desktop it is the column the rail left empty, held in view while the
+   card is read; on a tablet and a phone it is a strip over the dots, wide and
+   short, with the network running out to its sides so it is never a small
+   brain in a big box.
+   ------------------------------------------------------------------------- */
+
+.cv-interests-live {
+    display: grid;
+    gap: 22px;
+}
+
+.cv-mind {
+    --mind-mode: dark;
+    position: relative;
+    width: 100%;
+    max-width: 660px;
+    height: 250px;
+    margin-inline: auto;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: var(--radius-lg);
+    border: 1px solid color-mix(in srgb, var(--tone) 26%, rgba(148, 163, 184, 0.16));
+    background:
+        radial-gradient(70% 90% at 50% 50%, color-mix(in srgb, var(--tone) 9%, transparent), transparent 70%),
+        linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px) 0 0 / 22px 22px,
+        linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px) 0 0 / 22px 22px,
+        #07090d;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.55), 0 18px 40px -24px rgba(0, 0, 0, 0.6);
+    transition: border-color 0.5s ease;
+}
+
+/* The corners of a viewfinder, in the subject's tone. */
+.cv-mind::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    z-index: 1;
+    pointer-events: none;
+    --c: color-mix(in srgb, var(--tone) 70%, transparent);
+    background:
+        linear-gradient(var(--c), var(--c)) top left / 14px 1px,
+        linear-gradient(var(--c), var(--c)) top left / 1px 14px,
+        linear-gradient(var(--c), var(--c)) top right / 14px 1px,
+        linear-gradient(var(--c), var(--c)) top right / 1px 14px,
+        linear-gradient(var(--c), var(--c)) bottom left / 14px 1px,
+        linear-gradient(var(--c), var(--c)) bottom left / 1px 14px,
+        linear-gradient(var(--c), var(--c)) bottom right / 14px 1px,
+        linear-gradient(var(--c), var(--c)) bottom right / 1px 14px;
+    background-repeat: no-repeat;
+}
+
+/* Scan lines over the whole panel, faint enough to be texture. */
+.cv-mind::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px);
+    mix-blend-mode: multiply;
+}
+
+.cv-mind-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: pan-y;
+}
+
+/* Readouts: the subject in view and the impulses per second. Measurements, so
+   the mono face. */
+.cv-mind-tag {
+    position: absolute;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: calc(100% - 56px);
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(226, 232, 240, 0.72);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+.cv-mind-tag--subject {
+    top: 22px;
+    left: 26px;
+    color: color-mix(in srgb, var(--tone) 55%, #e2e8f0);
+}
+
+.cv-mind-tag--subject i {
+    flex: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tone);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--tone) 22%, transparent);
+}
+
+.cv-mind-tag--rate {
+    right: 26px;
+    bottom: 20px;
+}
+
+.cv-mind-tag--rate b {
+    font-weight: 500;
+    color: #e2e8f0;
+    font-variant-numeric: tabular-nums;
+    min-width: 2ch;
+    text-align: right;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .cv-mind-tag--subject i {
+        animation: cv-mind-beat 1.6s ease-in-out infinite;
+    }
+}
+
+@keyframes cv-mind-beat {
+    50% {
+        box-shadow: 0 0 0 6px color-mix(in srgb, var(--tone) 6%, transparent);
+    }
+}
+
+/* A desktop: two columns, the brain in the space the rail's measure left, held
+   in view below the navbar while the card beside it is read. */
+@media (min-width: 1080px) {
+    .cv-interests-live {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 660px);
+        align-items: start;
+        gap: 40px;
+    }
+
+    .cv-interests-live .cv-interest-rail {
+        margin-inline: 0;
+        width: 100%;
+    }
+
+    .cv-mind {
+        position: sticky;
+        top: calc(var(--navbar-h, 96px) + 24px);
+        max-width: none;
+        height: min(560px, calc(100vh - var(--navbar-h, 96px) - 64px));
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 560px) {
+    .cv-mind {
+        height: 210px;
+        border-radius: var(--radius-md);
+    }
+
+    .cv-mind::before {
+        inset: 9px;
+    }
+
+    .cv-mind-tag {
+        font-size: 0.62rem;
+    }
+
+    .cv-mind-tag--subject {
+        top: 17px;
+        left: 20px;
+    }
+
+    .cv-mind-tag--rate {
+        right: 20px;
+        bottom: 15px;
+    }
+}
