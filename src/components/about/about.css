@@ -2713,6 +2713,15 @@
     padding-top: 108px;
 }
 
+/* A phone is a different measurement: the cards there are taller, so the rail
+   already leaves more room under a short subject, and 108px on top of it is an
+   ocean between two things that are one scroll apart. */
+@media (max-width: 768px) {
+    #library .brand-section + .brand-section {
+        padding-top: 76px;
+    }
+}
+
 /* What the shelf is for, and why it is worth the time. It used to sit in the
    narrow column beside the books, where a paragraph this long needed four lines
    to say nothing; above them it is the lede of the panel, so it is read once
