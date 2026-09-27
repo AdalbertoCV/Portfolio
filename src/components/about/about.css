@@ -1791,17 +1791,17 @@
     text-align: left;
 }
 
-/* A fixed gap, not a pinned bottom and not a band. The cards are all the height
-   of the tallest one, so sending the tags to the bottom turned the difference
-   between the longest and the shortest of eight texts into a hole above them
-   that changed size on every subject. */
+/* A break, but a small one. A fixed gap, not a pinned bottom: the cards were
+   all the height of the tallest one, so sending the tags to the bottom turned
+   the difference between the longest and the shortest of eight texts into a
+   hole above them that changed size on every subject. */
 .cv-interest .brand-chips {
-    margin-top: 0;
+    margin-top: 14px;
 }
 
-/* The last block before the tags gives up its bottom margin, which is the only
-   way to close the gap without closing the one between a paragraph and the link
-   that follows it. :has() is what knows which block is the last one. */
+/* The last block before the tags gives up its bottom margin, so the break above
+   them is the one number above and not the sum of two. :has() is what knows
+   which block is the last one. */
 .cv-interest p:has(+ .brand-chips),
 .cv-interest .cv-interest-link:has(+ .brand-chips) {
     margin-bottom: 0;
@@ -2703,6 +2703,14 @@
 /* Where /library and the terminal land: clear of the fixed bar, not under it. */
 #library {
     scroll-margin-top: calc(var(--navbar-h, 96px) + 16px);
+}
+
+/* Air between the two halves of this page. The interests and the shelves used
+   to be separated by the empty bottom of a card stretched to the tallest of the
+   eight; the card is now the size of its own content, so the space between the
+   subjects and the SoundCloud shelves is this rule's job. */
+#library .brand-section + .brand-section {
+    padding-top: 108px;
 }
 
 /* What the shelf is for, and why it is worth the time. It used to sit in the
