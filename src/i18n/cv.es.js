@@ -133,48 +133,103 @@ const cvEs = {
     listsLede:
       'No es una lista de cursos: es lo que ya está en uso. Esto es lo que traigo a una conversación de arquitectura, a una revisión de código, a una weekly y a una entrega.',
 
+    /* Seis categorías en vez de tres. Lo que había estaba mezclado: seguridad
+       junto a escalabilidad, ciberseguridad junto a redes, y todo el trabajo con
+       IA —que es el principio que encabeza esta sección— sin categoría propia.
+       Reagrupado sin perder un solo ítem: los que cambiaron de grupo aparecen
+       ahora en el que les corresponde. */
     practice: {
       systems: 'Diseño de sistemas y arquitectura',
+      systemsLede:
+        'La parte que decide dónde viven los datos, qué falla primero y qué cuesta dentro de un año.',
       systemsItems: [
         'Diseño de sistemas y pensamiento arquitectónico',
         'Decisiones técnicas y análisis de trade-offs',
         'Modelado de datos y trade-offs de consistencia',
         'Escalabilidad y planeación de capacidad',
         'Arquitectura SaaS multi-tenant',
+        'Diseño de servicios y contratos de API',
+        'Mensajería asíncrona, colas y backpressure',
         'Análisis de modos de falla y riesgo',
         'Confiabilidad y tolerancia a fallos',
         'Análisis de incidentes y post-mortems',
         'Gestión de deuda técnica',
         'Observabilidad y monitoreo en producción',
-        'Seguridad por diseño',
         'Ingeniería guiada por métricas y experimentación',
         'Análisis y optimización de rendimiento',
         'Diseño de solución de punta a punta',
       ],
-      delivery: 'Entrega y equipo',
+      ai: 'IA aplicada y agentes',
+      aiLede:
+        'AI-first en la práctica: qué parte del trabajo se la lleva un modelo, qué parte un agente y qué se queda con una persona.',
+      aiItems: [
+        'Ingeniería de aplicaciones con LLM',
+        'RAG y recuperación de conocimiento',
+        'Orquestación de agentes y herramientas',
+        'Sistemas multi-agente y coordinación',
+        'Ingeniería de prompts',
+        'Contexto, memoria y herramientas',
+        'Evaluación de modelos y respuestas',
+        'Coste, latencia y observabilidad de IA',
+        'Selección y orquestación de modelos',
+        'Adaptación y fine-tuning de modelos',
+        'Guardrails y seguridad en IA',
+        'Agentes en producción: despliegue y supervisión',
+      ],
+      security: 'Seguridad y riesgo',
+      securityLede:
+        'La seguridad como propiedad del diseño, no como una revisión que alguien pide al final.',
+      securityItems: [
+        'Seguridad por diseño',
+        'Seguridad de infraestructura y nube',
+        'Autenticación y autorización',
+        'Gestión de secretos y credenciales',
+        'Seguridad de dependencias y paquetes',
+        'Pentesting y hacking ético',
+        'Privacidad y protección de datos',
+        'Análisis de superficies de ataque',
+        'Criptografía aplicada',
+      ],
+      delivery: 'Entrega, equipo y liderazgo',
+      deliveryLede:
+        'La otra mitad de una arquitectura: cómo llega a producción, quién lo sostiene y cómo se mantiene.',
       deliveryItems: [
         'Trabajo en equipo',
         'Metodología SCRUM',
+        'Kanban y gestión de flujo de trabajo',
         'Gestión de proyectos',
+        'CI/CD y automatización de entregas',
         'Documentación de software',
         'Equipos interdisciplinarios',
         'Prototipado rápido y PoC',
         'Mentoría y capacitación',
         'Mentalidad de ownership',
       ],
-      breadth: 'Fondo multidisciplinario',
-      breadthItems: [
+      product: 'Producto, negocio y mercado',
+      productLede:
+        'Del primer usuario al primer ingreso: descubrimiento, precio, crecimiento y los números que los cuentan.',
+      productItems: [
         'Mentalidad emprendedora',
         'Estrategia de producto y tecnología',
         'Producto SaaS: suscripciones, medición de uso y unit economics',
-        'Visión de marketing digital y estrategias de venta',
-        'Conocimiento en fintech e inversiones',
+        'Modelos de precio y monetización',
+        'Marketing digital y estrategias de venta',
+        'Investigación de usuario y de mercado',
+        'Métricas de producto y cohortas',
+        'Fintech y pagos',
+        'Finanzas e inversión',
+      ],
+      breadth: 'Fondo multidisciplinario',
+      breadthLede:
+        'Lo que estudié antes que ingeniería y a lo que todavía recurro cuando el problema no es de software.',
+      breadthItems: [
         'Robótica y manufactura avanzada',
         'Computación y redes: arquitectura, sistemas operativos y protocolos',
+        'Electrónica, hardware e IoT',
         'Ciencias exactas: matemáticas, física, química, estadística',
         'Investigación científica y literaria',
-        'Ciberseguridad y hacking ético',
         'Mecánica básica e integraciones de software',
+        'Ética aplicada a la tecnología',
       ],
     },
 

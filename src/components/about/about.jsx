@@ -26,7 +26,7 @@ import REFERENCES from './references';
 import RefHacker from './RefHacker';
 import WorkBot from './WorkBot';
 import TimelineStrip from './TimelineStrip';
-import PRACTICE_ICONS from './practiceIcons';
+import PracticeExplorer from './PracticeExplorer';
 import ConceptIcon from './ConceptIcons';
 import { openTerminal } from '../terminal/Terminal';
 import './about.css';
@@ -69,8 +69,6 @@ const SHORTCUTS = [
   { id: 'play', to: '/play' },
 ];
 
-const PRACTICE_GROUPS = ['systems', 'delivery', 'breadth'];
-
 // The two that open the section rather than sit inside it.
 const PRINCIPLES = [
   { id: 'aiFirst', icon: 'agents' },
@@ -108,16 +106,6 @@ const About = () => {
       'font-weight:400'
     );
   }, []);
-
-  if (process.env.NODE_ENV === 'development') {
-    PRACTICE_GROUPS.forEach((group) => {
-      const items = tl(`cv.practice.${group}Items`).length;
-      const icons = PRACTICE_ICONS[group]?.length || 0;
-      if (items !== icons) {
-        console.warn(`[practice] ${group}: ${items} items but ${icons} icons`);
-      }
-    });
-  }
 
   const certificates = [
     { key: 'icp', src: ICPImage, label: t('cv.certs.icp.name') },
@@ -272,10 +260,10 @@ const About = () => {
             get: one per line, a hairline between them, the group name held
             alongside in its own column. */}
         {/* Two things stated before everything else, because they are not one
-            more line among thirty-three: they are the posture the other
-            thirty-three are downstream of. The first one has the bot standing
-            right underneath it, which is what keeps it from being a word
-            everybody has on their profile. */}
+            more line among sixty-two: they are the posture the other sixty-two
+            are downstream of. The first one has the bot standing right
+            underneath it, which is what keeps it from being a word everybody
+            has on their profile. */}
         <Reveal className="practice-lead">
           <span className="practice-lead-label">{t('cv.principlesLabel')}</span>
           <div className="practice-principles">
@@ -344,26 +332,17 @@ const About = () => {
           </div>
         </Reveal>
 
-        {/* Thirty-three hairlines need a name, or they read as keywords. This
-            says what they are before the first one appears. */}
+        {/* Sixty-two hairlines in three columns is a wall, and a wall cannot
+            answer "which of these is the one that matters to you". The index
+            says what the six areas are; the panel shows the one you picked. */}
         <Reveal className="practice-lists">
           <span className="practice-lists-label">{t('cv.listsLabel')}</span>
           <p className="practice-lists-lede">{t('cv.listsLede')}</p>
         </Reveal>
 
-        {PRACTICE_GROUPS.map((group) => (
-          <Reveal className="practice-block" key={group}>
-            <h3 className="practice-title">{t(`cv.practice.${group}`)}</h3>
-            <ul className="practice-list">
-              {tl(`cv.practice.${group}Items`).map((item, index) => (
-                <li key={item}>
-                  <ConceptIcon className="list-icon" name={PRACTICE_ICONS[group][index]} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        ))}
+        <Reveal>
+          <PracticeExplorer />
+        </Reveal>
 
         {/* The one place on the site where the judgement this section claims
             is shown rather than asserted, so it gets a door rather than a line

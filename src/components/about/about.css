@@ -2193,10 +2193,10 @@
     margin-top: 34px;
 }
 
-/* A door, not a link. The section above it is thirty-three hairline rows of
-   claims; the thing that backs them up cannot be a thirty-fourth. It is the
-   only card in the section — that is enough to stop the eye, and it keeps the
-   page's own surface instead of inverting out of it. */
+/* A door, not a link. The section above it is a panel of hairline rows of
+   claims; the thing that backs them up cannot be one more. It is the only card
+   in the section — that is enough to stop the eye, and it keeps the page's own
+   surface instead of inverting out of it. */
 .log-door {
     display: grid;
     gap: 10px;
@@ -2268,8 +2268,8 @@
 }
 
 /* The opening statement of the section. It gets air above the ruled lists and
-   a heavier voice than a list row, because a claim buried among thirty-three
-   hairlines reads as the thirty-fourth. */
+   a heavier voice than a list row, because a claim buried among sixty-two
+   hairlines reads as the sixty-third. */
 .practice-lead {
     display: grid;
     grid-template-columns: 240px minmax(0, 1fr);
@@ -2357,7 +2357,7 @@
     color: var(--color-text-primary);
 }
 
-/* The name the lists get before the first row appears. Thirty-three hairlines
+/* The name the lists get before the first row appears. Sixty-two hairlines
    with no heading above them read as keywords, and keywords are the one thing
    these are not. */
 .practice-lists {
@@ -2365,7 +2365,7 @@
     grid-template-columns: 240px minmax(0, 1fr);
     gap: 0 56px;
     align-items: baseline;
-    margin-bottom: 10px;
+    margin-bottom: 34px;
 }
 
 .practice-lists-label {
@@ -2385,30 +2385,15 @@
     color: var(--color-text-secondary);
 }
 
-.practice-block {
-    display: grid;
-    grid-template-columns: 240px minmax(0, 1fr);
-    gap: 0 56px;
-    padding-top: 30px;
-    border-top: 1px solid var(--color-border-primary);
-}
-
-.practice-block + .practice-block {
-    margin-top: 30px;
-}
-
-/* The group name sits at the top of its own rows and stays there. It was
-   sticky, which meant it detached and rode down the page while the list
-   scrolled past — a heading that moves is a heading you keep re-reading. */
-.practice-title {
-    align-self: start;
-    margin: 0;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-size: 0.98rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.4;
-    color: var(--color-text-primary);
+/* What the area you picked is for. The group name is already in the index, so
+   the panel opens with the reason rather than repeating the heading — the same
+   arrangement as a shelf note above the books. */
+.practice-note {
+    margin: 0 0 30px;
+    max-width: 74ch;
+    font-size: 0.92rem;
+    line-height: 1.62;
+    color: var(--color-text-secondary);
 }
 
 .practice-list {
@@ -2485,16 +2470,6 @@
 
     .practice-example-head {
         margin-bottom: 18px;
-    }
-
-    .practice-block {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 16px;
-        padding-top: 24px;
-    }
-
-    .practice-title {
-        position: static;
     }
 }
 
