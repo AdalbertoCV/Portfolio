@@ -1746,6 +1746,12 @@
     align-items: flex-start;
     gap: 20px;
     overflow-x: auto;
+    /* Never a vertical scroller. The rail is cut to the card in view, but the
+       tallest of the eight is still inside it, and an overflow-x of auto makes
+       the other axis scroll too: a thumb going down the page slid the card up
+       inside its own rail and left an empty rail the height of the difference
+       under it. */
+    overflow-y: hidden;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     /* Vertical padding only: the top four pixels keep the hover lift from being
@@ -2179,6 +2185,16 @@
 }
 
 @media (max-width: 768px) {
+    /* On a phone the card holds still. A thumb scrolling down the page is never
+       perfectly vertical, and a rail that answered to it slid the subject away
+       mid-sentence and changed the card under the reader. So here the rail only
+       takes the vertical pan, and the dots and arrows are what turn the page:
+       the script still moves it with scrollTo, which overflow: hidden allows. */
+    .cv-interests {
+        overflow-x: hidden;
+        touch-action: pan-y;
+    }
+
     .cv-interest {
         padding: 24px 18px;
     }

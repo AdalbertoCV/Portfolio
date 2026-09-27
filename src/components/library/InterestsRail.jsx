@@ -52,7 +52,10 @@ const InterestsRail = () => {
     if (!rail || !card) return;
     const max = Math.max(0, rail.scrollWidth - rail.clientWidth);
     if (!max) return;
-    rail.scrollTo({ left: Math.min(card.offsetLeft, max), behavior: 'smooth' });
+    // Top as well: a hidden overflow can still be scrolled by the browser (a
+    // focus, a find-in-page), and a card left halfway up its rail is a card
+    // with a hole under it.
+    rail.scrollTo({ left: Math.min(card.offsetLeft, max), top: 0, behavior: 'smooth' });
   }, [index]);
 
   // A row of eight cards is as tall as the tallest of the eight, so a subject

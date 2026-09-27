@@ -1048,6 +1048,12 @@ import siwindowsautopilotIcon from '../../images/tech/windowsautopilot.svg';
 import sifabrixaiIcon from '../../images/tech/fabrixai.png';
 // Gentle AI: the neon rose from Gentleman Programming's own brand assets.
 import sigentleaiIcon from '../../images/tech/gentleai.png';
+// Kilo Code: the mark from LobeHub's icon set, already single-tone.
+import sikilocodeIcon from '../../images/tech/kilocode.svg';
+// OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
+import siomnirouteIcon from '../../images/tech/omniroute.svg';
+// MetaMask: the fox, flattened to black from its full-colour mark.
+import simetamaskIcon from '../../images/tech/metamask.svg';
 
 const TECH_GROUPS = [
   {
@@ -1494,6 +1500,8 @@ const TECH_GROUPS = [
       { name: 'Greptile', icon: sigreptileIcon, mono: true },
       { name: 'Fabrix.ai', icon: sifabrixaiIcon, flat: true },
       { name: 'Gentle AI', icon: sigentleaiIcon, flat: true },
+      { name: 'Kilo Code', icon: sikilocodeIcon, mono: true },
+      { name: 'OmniRoute', icon: siomnirouteIcon, mono: true },
     ],
   },
   {
@@ -2228,6 +2236,7 @@ const TECH_GROUPS = [
       { name: 'Files.md', icon: sifilesmdIcon, mono: true },
       // In for the star this group sent up to The Stars.
       { name: 'tmux', icon: sitmuxIcon, mono: true },
+      { name: 'MetaMask', icon: simetamaskIcon, mono: true },
     ],
   },
   {
