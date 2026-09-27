@@ -3320,12 +3320,14 @@
     }
 }
 
-/* A desktop: two columns, the brain in the space the rail's measure left, held
-   in view below the navbar while the card beside it is read. */
+/* A desktop: two columns, the brain in the space the rail's measure left. Not
+   sticky: both columns sit still side by side and scroll with the page as one
+   block. The panel runs from the dots to the foot of the card, so the two
+   columns start and end on the same lines. */
 @media (min-width: 1080px) {
     .cv-interests-live {
         grid-template-columns: minmax(0, 1fr) minmax(0, 660px);
-        align-items: start;
+        align-items: stretch;
         gap: 40px;
     }
 
@@ -3335,11 +3337,12 @@
     }
 
     .cv-mind {
-        position: sticky;
-        top: calc(var(--navbar-h, 96px) + 24px);
         max-width: none;
-        height: min(560px, calc(100vh - var(--navbar-h, 96px) - 64px));
+        height: auto;
         min-height: 420px;
+        /* The rail keeps 18px of air under the card; the panel stops where the
+           card does. */
+        margin-bottom: 18px;
     }
 }
 
