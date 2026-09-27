@@ -1615,9 +1615,10 @@
    ----------------------------------------------------------------------------
    Eight cards, one at a time. A grid of them was four rows of tall cards: the
    longest stretch on the page, and by the time the reader reached the shelves
-   the eight subjects had blurred into one block. A rail of cards the width of
-   two keeps a subject readable and says how many there are, and a dot per
-   subject in its own tone says which one is open.
+   the eight subjects had blurred into one block. A rail of cards, one filling
+   the view, keeps a subject readable; a dot per subject in its own tone says
+   which one is open, and the arrows move between them on a mouse and on a
+   thumb alike.
 
    Cards rather than slides: nothing is hidden from the document, and the rail
    is a scroll box, so it behaves the way a phone already expects.
@@ -1629,12 +1630,16 @@
 }
 
 /* The dots on the left, the arrows on the right: position on one side, movement
-   on the other, and the row between them stays empty on purpose. */
+   on the other, and the row between them stays empty on purpose. A phone has
+   no room for both in one line, so there the dots take the whole row and the
+   arrows drop under them (see the 768px block). */
 .cv-interest-nav {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    row-gap: 10px;
 }
 
 .cv-interest-dots,
@@ -1730,11 +1735,10 @@
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
-    /* The padding gives the focus ring and the snap edge somewhere to go; the
-       negative margin takes it back so the first card lines up with the
-       heading above it. */
-    padding: 4px 4px 18px;
-    margin: 0 -4px;
+    /* Vertical padding only: the top four pixels keep the hover lift from being
+       clipped by the scroller, and the bottom is the air under the card. No
+       side padding, so a card at 100% lines up with the heading above it. */
+    padding: 4px 0 18px;
     scrollbar-width: none;
 }
 
@@ -1745,19 +1749,19 @@
 .cv-interest {
     display: flex;
     flex-direction: column;
-    /* The width of two on a desktop, so a subject and the edge of the next one
-       are both on screen: a rail that shows exactly one card gives no hint that
-       there is anything to swipe to. */
-    flex: 0 0 min(100%, 520px);
+    /* One card fills the view, at every width: the reader turns one page at a
+       time and a card beside a card means choosing between two thirds of a
+       sentence. The padding grows a little with the card so the plate does not
+       read as a stretched row. */
+    flex: 0 0 100%;
     scroll-snap-align: start;
-    padding: 30px 28px;
+    padding: 30px clamp(28px, 5%, 64px);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
     background: var(--color-bg-card);
     transition: border-color var(--transition-base), transform var(--transition-base),
         box-shadow var(--transition-base);
 }
-
 
 .cv-interest h3 {
     font-size: 1.12rem;
@@ -1771,15 +1775,20 @@
     line-height: 1.7;
     color: var(--color-text-secondary);
     margin: 0 0 20px;
+    /* A card as wide as the section is 1180px of 15px text, which is a hundred
+       and forty characters a line. The words stop where the eye can follow
+       them, the same measure the practice section uses further down. */
+    max-width: 68ch;
     text-align: left;
 }
 
-/* Cards in a row stretch to the tallest. Sending the chips to the bottom
-   turns the leftover space into a shared baseline instead of dead air. Cards
-   are one at a time now, so this only decides what a card looks like beside a
-   shorter one in the same view. */
+/* A fixed gap, not a pinned bottom. The cards are all the height of the tallest
+   one, so sending the tags to the bottom turned the difference between the
+   longest and the shortest of eight texts into a hole above the tags that
+   changed size on every subject. Ten pixels over the paragraph's own twenty
+   gives the tags their own band and is the same distance on all eight. */
 .cv-interest .brand-chips {
-    margin-top: auto;
+    margin-top: 10px;
 }
 
 /* ----------------------------------------------------------------------------
@@ -1805,9 +1814,14 @@
     --tone-ink: color-mix(in srgb, var(--tone) 70%, #1a1a1a);
 }
 
-/* The scene: a tinted plate the width of the card, the drawing in the tone. */
+/* The scene: a tinted plate the width of the card, the drawing in the tone.
+   The plate takes its height from the width of the card rather than from a
+   fixed number: a 104px strip across a card that fills a 1180px section is a
+   letterbox, and one ratio for every width keeps the drawing the same size
+   relative to the card. The floor keeps a phone from getting a slit. */
 .interest-art {
-    height: 104px;
+    aspect-ratio: 4.5 / 1;
+    min-height: 104px;
     margin: -6px -4px 22px;
     border-radius: var(--radius-md);
     background:
@@ -1820,23 +1834,11 @@
 }
 
 .interest-art svg {
-    height: 84px;
+    /* The drawings are 120x64 with no width or height of their own, so a height
+       in points is what tells the browser how wide to draw them. */
+    height: 70%;
     width: auto;
     overflow: visible;
-}
-
-/* A card of the width of two is a wide plate for a drawing 84px tall, and the
-   drawing ends up a stamp in the middle of it. The art is the reason the card
-   exists, so the plate grows with the card. A media query adds no specificity,
-   so this has to come after the 84px it is overriding. */
-@media (min-width: 1100px) {
-    .interest-art {
-        height: 168px;
-    }
-
-    .interest-art svg {
-        height: 132px;
-    }
 }
 
 .cv-interest h3 {
@@ -2152,8 +2154,6 @@
 
 @media (max-width: 768px) {
     .cv-interest {
-        /* One card, and enough of the next one to show there is a next one. */
-        flex: 0 0 84%;
         padding: 24px 18px;
     }
 
@@ -2161,14 +2161,23 @@
         width: 28px;
         height: 28px;
     }
-}
 
-/* On a touch screen the rail is a swipe and the dots are the position: eight
-   dots and two arrows do not fit across a phone without the arrows wrapping
-   onto a line of their own or shrinking below a thumb. */
-@media (hover: none) {
+    /* Eight dots and two arrows do not fit on one line of a phone, and an arrow
+       squeezed down to 32px is a miss with a thumb. So the dots take the whole
+       row and the arrows drop under them, still on the right, where "next"
+       already is on a desktop. */
+    .cv-interest-dots {
+        flex: 1 0 100%;
+    }
+
     .cv-interest-steps {
-        display: none;
+        margin-left: auto;
+    }
+
+    /* A thumb, not a cursor. */
+    .cv-interest-step {
+        width: 44px;
+        height: 44px;
     }
 }
 
