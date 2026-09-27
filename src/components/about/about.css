@@ -3340,8 +3340,10 @@
         max-width: none;
         height: auto;
         min-height: 420px;
-        /* The rail keeps 18px of air under the card; the panel stops where the
-           card does. */
+        /* Top and bottom on the card's own lines: below the row of dots and
+           arrows (40px buttons, the rail's 18px gap, its 4px of top padding),
+           and above the 18px of air the rail keeps under the card. */
+        margin-top: calc(40px + 18px + 4px);
         margin-bottom: 18px;
     }
 }
