@@ -1627,6 +1627,11 @@
 .cv-interest-rail {
     display: grid;
     gap: 18px;
+    /* The rail, not the card, is what gets a measure: a card wider than the
+       measure of its own text is a line of a hundred and forty characters
+       above a drawing, and the rail has to be the width of the card or the next
+       card would sit beside it. */
+    max-width: 660px;
 }
 
 /* The dots on the left, the arrows on the right: position on one side, movement
@@ -1751,11 +1756,10 @@
     flex-direction: column;
     /* One card fills the view, at every width: the reader turns one page at a
        time and a card beside a card means choosing between two thirds of a
-       sentence. The padding grows a little with the card so the plate does not
-       read as a stretched row. */
+       sentence. The width of that one card is the rail's, above. */
     flex: 0 0 100%;
     scroll-snap-align: start;
-    padding: 30px clamp(28px, 5%, 64px);
+    padding: 30px 28px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
     background: var(--color-bg-card);
@@ -1775,10 +1779,6 @@
     line-height: 1.7;
     color: var(--color-text-secondary);
     margin: 0 0 20px;
-    /* A card as wide as the section is 1180px of 15px text, which is a hundred
-       and forty characters a line. The words stop where the eye can follow
-       them, the same measure the practice section uses further down. */
-    max-width: 68ch;
     text-align: left;
 }
 
@@ -1821,15 +1821,15 @@
     --tone-ink: color-mix(in srgb, var(--tone) 70%, #1a1a1a);
 }
 
-/* The scene: a tinted plate above the title, the drawing in the tone. It is
-   capped to the measure of the words under it, so the drawing sits centred
-   over the text it belongs to instead of floating in the middle of a card that
-   fills the section, and the ratio gives it its height instead of a fixed
-   number of pixels that is a letterbox at one width and a wall at another. */
+/* The header of the card: a tinted plate with the scene in it, the width of the
+   card and a height of its own. Two fixed numbers, not a ratio of the width and
+   not a percentage for the drawing: the scenes animate outward on purpose (the
+   rays scale past the edge of their own viewBox), so the plate is what clips
+   them, and a plate whose height came from its width was a different size on
+   every screen. */
 .interest-art {
-    max-width: 68ch;
-    aspect-ratio: 4 / 1;
-    min-height: 104px;
+    height: 132px;
+    overflow: hidden;
     margin: -6px -4px 22px;
     border-radius: var(--radius-md);
     background:
@@ -1844,7 +1844,7 @@
 .interest-art svg {
     /* The drawings are 120x64 with no width or height of their own, so a height
        in points is what tells the browser how wide to draw them. */
-    height: 80%;
+    height: 96px;
     width: auto;
     overflow: visible;
 }
@@ -2163,6 +2163,14 @@
 @media (max-width: 768px) {
     .cv-interest {
         padding: 24px 18px;
+    }
+
+    .interest-art {
+        height: 104px;
+    }
+
+    .interest-art svg {
+        height: 76px;
     }
 
     .cv-interest-dot {
