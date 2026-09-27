@@ -122,6 +122,8 @@ const cvEn = {
       'Not a list of courses: this is what is already in use. What follows is what I bring to an architecture conversation, a code review, a weekly and a delivery.',
 
     practice: {
+      prevArea: 'Previous area',
+      nextArea: 'Next area',
       systems: 'Systems design and architecture',
       systemsLede:
         'The part that decides where the data lives, what fails first and what it costs a year from now.',
@@ -204,7 +206,7 @@ const cvEn = {
       ],
       breadth: 'Multidisciplinary background',
       breadthLede:
-        'What I studied before engineering, and what I still reach for when the problem is not a software one.',
+        'What I studied before engineering, and what I can pick up in any other field: the domain changes, the method does not.',
       breadthItems: [
         'Robotics and advanced manufacturing',
         'Computing and networks: architecture, operating systems and protocols',
@@ -213,6 +215,9 @@ const cvEn = {
         'Scientific and literary research',
         'Basic mechanics and software integrations',
         'Ethics applied to technology',
+        'Adaptation to any field of knowledge',
+        'Technology in medicine and healthcare',
+        'Training in any industry to work with technology',
       ],
     },
 

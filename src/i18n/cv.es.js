@@ -139,6 +139,8 @@ const cvEs = {
        Reagrupado sin perder un solo ítem: los que cambiaron de grupo aparecen
        ahora en el que les corresponde. */
     practice: {
+      prevArea: 'Área anterior',
+      nextArea: 'Área siguiente',
       systems: 'Diseño de sistemas y arquitectura',
       systemsLede:
         'La parte que decide dónde viven los datos, qué falla primero y qué cuesta dentro de un año.',
@@ -221,7 +223,7 @@ const cvEs = {
       ],
       breadth: 'Fondo multidisciplinario',
       breadthLede:
-        'Lo que estudié antes que ingeniería y a lo que todavía recurro cuando el problema no es de software.',
+        'Lo que estudié antes que ingeniería y lo que puedo aprender en cualquier rubro: cambia el dominio, el método es el mismo.',
       breadthItems: [
         'Robótica y manufactura avanzada',
         'Computación y redes: arquitectura, sistemas operativos y protocolos',
@@ -230,6 +232,9 @@ const cvEs = {
         'Investigación científica y literaria',
         'Mecánica básica e integraciones de software',
         'Ética aplicada a la tecnología',
+        'Adaptación a cualquier área de conocimiento',
+        'Tecnología en medicina y salud',
+        'Formación en cualquier rubro para trabajar con tecnología',
       ],
     },
 

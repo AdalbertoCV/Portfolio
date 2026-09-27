@@ -86,6 +86,9 @@ const PRACTICE_ICONS = {
     'research', // Scientific and literary research
     'integration', // Basic mechanics and software integrations
     'ethics', // Ethics applied to technology
+    'simToReal', // Adaptation to any field of knowledge
+    'bioinformatics', // Technology in medicine and healthcare
+    'continual', // Training in any industry to work with technology
   ],
 };
 

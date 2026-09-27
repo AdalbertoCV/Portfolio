@@ -253,17 +253,16 @@ const About = () => {
         title={t('cv.practiceTitle')}
         lede={t('cv.practiceLede')}
       >
-        {/* A ruled list rather than a pill cloud. Thirty-three chips of wildly
+        {/* A ruled list rather than a pill cloud. Eleven chips of wildly
             different lengths wrap into ragged rows that read as a tag cloud —
             the shape used for keywords nobody is expected to read one by one.
             These are claims about how he works, so they get the form claims
-            get: one per line, a hairline between them, the group name held
-            alongside in its own column. */}
+            get: one per line and a hairline between them. */}
         {/* Two things stated before everything else, because they are not one
-            more line among sixty-two: they are the posture the other sixty-two
-            are downstream of. The first one has the bot standing right
-            underneath it, which is what keeps it from being a word everybody
-            has on their profile. */}
+            more line among sixty-five: they are the posture the other
+            sixty-five are downstream of. The first one has the bot standing
+            right underneath it, which is what keeps it from being a word
+            everybody has on their profile. */}
         <Reveal className="practice-lead">
           <span className="practice-lead-label">{t('cv.principlesLabel')}</span>
           <div className="practice-principles">
@@ -332,8 +331,8 @@ const About = () => {
           </div>
         </Reveal>
 
-        {/* Sixty-two hairlines in three columns is a wall, and a wall cannot
-            answer "which of these is the one that matters to you". The index
+        {/* Seventy-six hairlines in three columns is a wall, and a wall cannot
+            answer "which of these is the one that matters to you". The rail
             says what the six areas are; the panel shows the one you picked. */}
         <Reveal className="practice-lists">
           <span className="practice-lists-label">{t('cv.listsLabel')}</span>
