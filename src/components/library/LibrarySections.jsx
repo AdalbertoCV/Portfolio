@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowUpRight, Reveal, Section } from '../brand/parts';
-import READING from '../about/reading';
-import BOOK_COVERS from '../about/bookCovers';
-import ConceptIcon from '../about/ConceptIcons';
+import ReadingExplorer from './ReadingExplorer';
 import { INTEREST_KEYS, INTEREST_LINKS, INTEREST_TONES } from '../about/interestsData';
 import InterestArt from '../about/InterestArt';
 
@@ -84,34 +82,9 @@ const LibrarySections = () => {
         title={t('cv.readingTitle')}
         lede={t('cv.readingLede')}
       >
-        {READING.map(({ id, books }) => (
-          <Reveal className="practice-block" key={id}>
-            {/* What the shelf is for and why it is worth the time, so the
-                column beside the books says something instead of holding a
-                single line over empty space. */}
-            <div className="reading-shelf-head">
-              <h3 className="practice-title">{t(`cv.readingGroups.${id}`)}</h3>
-              <p className="reading-shelf-note">{t(`cv.readingNotes.${id}`)}</p>
-            </div>
-            <ul className="reading-list">
-              {books.map(({ title, author, icon }) => (
-                <li key={title}>
-                  {/* The cover is how a book is recognised on a shelf; the drawn
-                      icon stays only as a fallback for one without a cover. */}
-                  {BOOK_COVERS[title] ? (
-                    <img className="reading-cover" src={BOOK_COVERS[title]} alt="" loading="lazy" width="40" height="60" />
-                  ) : (
-                    <ConceptIcon className="list-icon" name={icon} />
-                  )}
-                  <span className="reading-book">
-                    <span className="reading-title">{title}</span>
-                    <span className="reading-author">{author}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        ))}
+        <Reveal>
+          <ReadingExplorer />
+        </Reveal>
         {/* The shelves are the reading that has a use; the rest is taste, and
             taste is not something to recommend. */}
         <p className="reading-aside">{t('cv.readingAside')}</p>

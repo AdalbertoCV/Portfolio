@@ -28,13 +28,17 @@ test('opens on the wall under its own heading', () => {
   expect(screen.getByRole('searchbox', { name: 'Search technologies' })).toBeInTheDocument();
 });
 
-test('then the interests and every shelf, on the same page', () => {
+test('then the interests and the shelves, one shelf open at a time', () => {
   const { container } = renderPage();
   expect(screen.getByRole('heading', { name: en.cv.interestsTitle })).toBeInTheDocument();
+  // Every shelf is in the index, and only the shelf you pick is on the page.
   READING.forEach(({ id }) => {
-    expect(screen.getByRole('heading', { name: en.cv.readingGroups[id] })).toBeInTheDocument();
+    expect(screen.getByRole('tab', { name: en.cv.readingGroups[id] })).toBeInTheDocument();
   });
-  expect(screen.getByText('Cosmos')).toBeInTheDocument();
+  // The stack's panel, and the one open shelf. Not ten.
+  expect(screen.getAllByRole('tabpanel')).toHaveLength(2);
+  expect(screen.getByText('AI Engineering')).toBeInTheDocument();
+  expect(screen.queryByText('Cosmos')).toBeNull();
   expect(screen.getByText(en.cv.readingAside)).toBeInTheDocument();
   // The anchor /library and the terminal land on.
   expect(container.querySelector('#library')).not.toBeNull();
@@ -50,7 +54,7 @@ test('reads in Spanish too, with no raw keys', () => {
   renderPage();
   act(() => setLanguage('es'));
   expect(screen.getByRole('heading', { level: 1, name: es.cv.skillsTitle })).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: es.cv.readingGroups.science })).toBeInTheDocument();
+  expect(screen.getByRole('tab', { name: es.cv.readingGroups.science })).toBeInTheDocument();
   expect(screen.queryByText(/^(library|cv|stackPage)\.[a-zA-Z.]+$/)).toBeNull();
   act(() => setLanguage('en'));
 });
