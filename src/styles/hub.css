@@ -2150,17 +2150,14 @@ ol.timeline.reveal {
         display: none;
     }
 
-    /* Pinned under the navbar while the panel scrolls beneath it. */
+    /* In the flow, above the panel. Pinned under the navbar it covered the top
+       of the plan on a phone the whole way down. */
     .plan-ventures {
-        position: sticky;
-        top: 76px;
-        z-index: 5;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         width: 100%;
         margin-bottom: 1rem;
         border-radius: 16px;
-        box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.6);
     }
 
     .plan-venture-tab {
