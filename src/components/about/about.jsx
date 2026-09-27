@@ -257,7 +257,8 @@ const About = () => {
             different lengths wrap into ragged rows that read as a tag cloud —
             the shape used for keywords nobody is expected to read one by one.
             These are claims about how he works, so they get the form claims
-            get: one per line and a hairline between them. */}
+            get: one per line, a hairline between them, the group name held
+            alongside in its own column. */}
         {/* Two things stated before everything else, because they are not one
             more line among sixty-five: they are the posture the other
             sixty-five are downstream of. The first one has the bot standing
@@ -331,8 +332,8 @@ const About = () => {
           </div>
         </Reveal>
 
-        {/* Seventy-six hairlines in three columns is a wall, and a wall cannot
-            answer "which of these is the one that matters to you". The rail
+        {/* Sixty-five hairlines in three columns is a wall, and a wall cannot
+            answer "which of these is the one that matters to you". The index
             says what the six areas are; the panel shows the one you picked. */}
         <Reveal className="practice-lists">
           <span className="practice-lists-label">{t('cv.listsLabel')}</span>

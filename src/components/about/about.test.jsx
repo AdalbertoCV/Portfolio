@@ -32,17 +32,16 @@ test('About still ends on the card to Experience', () => {
   expect(teaser.querySelector('.timeline-strip')).not.toBeNull();
 });
 
-test('How I work lists the areas in a rail, and opens one at a time', () => {
+test('How I work lists the areas in an index, and opens one at a time', () => {
   const { container } = renderAbout();
-  const rail = container.querySelector('.practice-rail[aria-label="' + en.cv.listsLabel + '"]');
-  expect(rail).not.toBeNull();
-  expect(rail.getAttribute('aria-orientation')).toBe('horizontal');
-  expect(rail.querySelectorAll('[role="tab"]')).toHaveLength(6);
+  const index = container.querySelector('.stack-index[aria-label="' + en.cv.listsLabel + '"]');
+  expect(index).not.toBeNull();
+  expect(index.querySelectorAll('[role="tab"]')).toHaveLength(6);
   // One area open, not the whole list rendered six times over.
   const practice = container.querySelector('.stack-panel');
   expect(practice.getAttribute('aria-labelledby')).toBe('practice-tab-systems');
   expect(practice.querySelectorAll('li')).toHaveLength(en.cv.practice.systemsItems.length);
-  // The two mindsets still open the section; they are not part of the rail.
+  // The two mindsets still open the section; they are not part of the index.
   expect(screen.getByText(en.cv.principles.aiFirst.title)).toBeInTheDocument();
   expect(screen.getByText(en.cv.principles.innovation.title)).toBeInTheDocument();
 });

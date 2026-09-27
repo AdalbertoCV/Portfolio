@@ -32,14 +32,14 @@ test('every card carries its tone and a small animated scene for its subject', (
   });
 });
 
-// The loops are decoration, so they only run while the section is on screen.
-// Without IntersectionObserver (jsdom, old browsers) the grid simply runs.
-test('the scenes run only while the grid is live', () => {
+// The loops are decoration, so they only run while the rail is on screen.
+// Without IntersectionObserver (jsdom, old browsers) the cards simply run.
+test('the scenes run only while the rail is live', () => {
   const { container } = renderSections();
   expect(container.querySelector('.cv-interests-live.is-live')).not.toBeNull();
 });
 
-// Security sits beside Science in the grid: close to its length, so it does
+// Security sits next to Science in the rail: close to its length, so it does
 // not read as an afterthought, but no longer than it, and with a short list
 // of tags rather than a wall of them.
 test.each([

@@ -1613,20 +1613,143 @@
 /* ============================================================================
    INTERESTS
    ----------------------------------------------------------------------------
-   Wide cards rather than the narrow grid used elsewhere on this page: each
-   carries a paragraph plus its own chip row, and at 250px that combination
-   turns into a column of single-word lines.
+   Eight cards, one at a time. A grid of them was four rows of tall cards: the
+   longest stretch on the page, and by the time the reader reached the shelves
+   the eight subjects had blurred into one block. A rail of cards the width of
+   two keeps a subject readable and says how many there are, and a dot per
+   subject in its own tone says which one is open.
+
+   Cards rather than slides: nothing is hidden from the document, and the rail
+   is a scroll box, so it behaves the way a phone already expects.
    ========================================================================= */
 
-.cv-interests {
+.cv-interest-rail {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 18px;
+}
+
+/* The dots on the left, the arrows on the right: position on one side, movement
+   on the other, and the row between them stays empty on purpose. */
+.cv-interest-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
+}
+
+.cv-interest-dots,
+.cv-interest-steps {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cv-interest-steps {
+    gap: 10px;
+}
+
+/* The dot is 9px and the target is 22px: a finger aims at the gap between two
+   dots as often as at one of them, and a 9px button is a miss. */
+.cv-interest-dot {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cv-interest-dot::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--tone) 55%, transparent);
+    transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.cv-interest-dot[aria-current='true']::before {
+    background: var(--tone);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--tone) 18%, transparent);
+}
+
+.cv-interest-dot:focus-visible {
+    outline: 2px solid var(--color-border-hover);
+    outline-offset: 1px;
+}
+
+.cv-interest-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-border-primary);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-base), border-color var(--transition-base),
+        opacity var(--transition-base);
+}
+
+.cv-interest-step svg {
+    width: 17px;
+    height: 17px;
+}
+
+.cv-interest-step:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.cv-interest-step:focus-visible {
+    outline: 2px solid var(--color-border-hover);
+    outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cv-interest-step:hover:not(:disabled) {
+        color: var(--color-text-primary);
+        border-color: var(--color-border-hover);
+    }
+}
+
+/* The rail. `contain` on the x axis keeps a swipe that starts inside it from
+   being read as the browser's back gesture, and the scrollbar is hidden
+   because eight cards are the scrollbar. `relative` is not decoration: the
+   swipe spy reads each card's offsetLeft, and that number is only a position
+   inside this rail while the rail is the offset parent. */
+.cv-interests {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    /* The padding gives the focus ring and the snap edge somewhere to go; the
+       negative margin takes it back so the first card lines up with the
+       heading above it. */
+    padding: 4px 4px 18px;
+    margin: 0 -4px;
+    scrollbar-width: none;
+}
+
+.cv-interests::-webkit-scrollbar {
+    display: none;
 }
 
 .cv-interest {
     display: flex;
     flex-direction: column;
+    /* The width of two on a desktop, so a subject and the edge of the next one
+       are both on screen: a rail that shows exactly one card gives no hint that
+       there is anything to swipe to. */
+    flex: 0 0 min(100%, 520px);
+    scroll-snap-align: start;
     padding: 30px 28px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
@@ -1652,7 +1775,9 @@
 }
 
 /* Cards in a row stretch to the tallest. Sending the chips to the bottom
-   turns the leftover space into a shared baseline instead of dead air. */
+   turns the leftover space into a shared baseline instead of dead air. Cards
+   are one at a time now, so this only decides what a card looks like beside a
+   shorter one in the same view. */
 .cv-interest .brand-chips {
     margin-top: auto;
 }
@@ -1698,6 +1823,20 @@
     height: 84px;
     width: auto;
     overflow: visible;
+}
+
+/* A card of the width of two is a wide plate for a drawing 84px tall, and the
+   drawing ends up a stamp in the middle of it. The art is the reason the card
+   exists, so the plate grows with the card. A media query adds no specificity,
+   so this has to come after the 84px it is overriding. */
+@media (min-width: 1100px) {
+    .interest-art {
+        height: 168px;
+    }
+
+    .interest-art svg {
+        height: 132px;
+    }
 }
 
 .cv-interest h3 {
@@ -2012,12 +2151,24 @@
 }
 
 @media (max-width: 768px) {
-    .cv-interests {
-        grid-template-columns: 1fr;
+    .cv-interest {
+        /* One card, and enough of the next one to show there is a next one. */
+        flex: 0 0 84%;
+        padding: 24px 18px;
     }
 
-    .cv-interest {
-        padding: 24px 18px;
+    .cv-interest-dot {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* On a touch screen the rail is a swipe and the dots are the position: eight
+   dots and two arrows do not fit across a phone without the arrows wrapping
+   onto a line of their own or shrinking below a thumb. */
+@media (hover: none) {
+    .cv-interest-steps {
+        display: none;
     }
 }
 
@@ -2184,9 +2335,9 @@
    ----------------------------------------------------------------------------
    Seventy-six statements about how the work gets done. They used to be pill
    chips, which is the form a keyword cloud takes — fine for tags nobody reads
-   individually, wrong for claims. Here the claims run down the page one per
-   line, separated by hairlines, under a card that names the area they belong
-   to: the typography of a reference document rather than of a tag list.
+   individually, wrong for claims. Here the group name holds its own column and
+   the claims run down the page one per line, separated by hairlines: the
+   typography of a reference document rather than of a tag list.
    ========================================================================= */
 
 .practice-out {
@@ -2385,175 +2536,8 @@
     color: var(--color-text-secondary);
 }
 
-/* ============================================================================
-   THE SIX AREAS AS A CAROUSEL
-   ----------------------------------------------------------------------------
-   The index was a column of tabs down the left, which is a table of contents:
-   it asked the reader to scroll back up to change area, and on a phone it was a
-   screen of index above the answer. A rail of cards across the top says "there
-   are more" the way a shelf you cannot see the end of does, and it hands the
-   whole width to the panel, which fits three columns of rows instead of one.
-
-   It is still a tablist, not a slideshow: every area is one tap, one arrow key
-   or one press of a rail arrow away, and only one panel is ever in the
-   document.
-   ========================================================================= */
-
-.practice-explorer {
-    display: grid;
-    gap: 26px;
-}
-
-/* The arrows appear only when there is something to slide. Six cards that fit
-   on a wide screen would get a row of two buttons that move nothing, which is
-   worse than no buttons at all. */
-.practice-rail-nav {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.practice-rail-step {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--color-border-primary);
-    border-radius: 50%;
-    background: transparent;
-    color: var(--color-text-secondary);
-    cursor: pointer;
-    transition: color var(--transition-base), border-color var(--transition-base),
-        opacity var(--transition-base);
-}
-
-.practice-rail-step svg {
-    width: 17px;
-    height: 17px;
-}
-
-.practice-rail-step:disabled {
-    opacity: 0.3;
-    cursor: default;
-}
-
-.practice-rail-step:focus-visible {
-    outline: 2px solid var(--color-border-hover);
-    outline-offset: 2px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .practice-rail-step:hover:not(:disabled) {
-        color: var(--color-text-primary);
-        border-color: var(--color-border-hover);
-    }
-}
-
-/* The rail. `contain` on the x axis is what keeps a swipe that starts inside it
-   from being read as the browser's back gesture, and the scrollbar is hidden
-   because six cards are the scrollbar. */
-.practice-rail {
-    position: relative;
-    display: flex;
-    gap: 14px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 4px;
-    /* The padding gives the focus ring and the snap edge somewhere to go; the
-       negative margin takes it back so the first card lines up with the
-       heading above it. */
-    padding: 4px 4px 16px;
-    margin: 0 -4px;
-    scrollbar-width: none;
-}
-
-.practice-rail::-webkit-scrollbar {
-    display: none;
-}
-
-.practice-card {
-    display: flex;
-    align-items: center;
-    flex: 0 0 auto;
-    width: clamp(200px, 25vw, 272px);
-    min-height: 88px;
-    padding: 18px 20px;
-    border: 1px solid var(--color-border-primary);
-    border-radius: var(--radius-lg);
-    background: transparent;
-    color: var(--color-text-secondary);
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    line-height: 1.35;
-    text-align: left;
-    cursor: pointer;
-    scroll-snap-align: center;
-    transition: color var(--transition-base), border-color var(--transition-base),
-        background var(--transition-base);
-}
-
-/* Six of these names wrap onto two or three lines in a 240px card, and
-   unbalanced wrapping puts all three words of a short name on the last line. */
-.practice-card-name {
-    display: block;
-    text-wrap: balance;
-}
-
-.practice-card:hover {
-    color: var(--color-text-primary);
-    border-color: var(--color-border-hover);
-}
-
-/* The open area is the only filled card. On the stack the selected tab is a
-   pill; a card has room to say so without raising its voice. */
-.practice-card[aria-selected='true'] {
-    background: var(--color-bg-card);
-    border-color: var(--color-border-hover);
-    color: var(--color-text-primary);
-}
-
-.practice-card:focus-visible {
-    outline: 2px solid var(--color-border-hover);
-    outline-offset: 2px;
-}
-
-/* On a phone each card takes most of the width, so the next one is always a
-   thumb away, and the rail bleeds to the edge of the screen the way the rest of
-   the page does. A carousel that stops short of the edge reads as a list that
-   ran out of items. */
-@media (max-width: 860px) {
-    .practice-explorer {
-        gap: 18px;
-    }
-
-    .practice-rail {
-        gap: 10px;
-        margin: 0 -24px;
-        padding: 4px 24px 14px;
-        scroll-padding-inline: 24px;
-    }
-
-    .practice-card {
-        width: min(74vw, 260px);
-        min-height: 76px;
-        padding: 16px 18px;
-        font-size: 0.88rem;
-    }
-
-    /* A thumb, not a cursor: 44px is the smallest target that is reliably
-       hit on a phone, and on a phone these two are the only arrows there are. */
-    .practice-rail-step {
-        width: 44px;
-        height: 44px;
-    }
-}
-
-/* What the area you picked is for. The area name is already in the rail, so the
-   panel opens with the reason rather than repeating the heading — the same
+/* What the area you picked is for. The group name is already in the index, so
+   the panel opens with the reason rather than repeating the heading — the same
    arrangement as a shelf note above the books. */
 .practice-note {
     margin: 0 0 30px;
@@ -2567,8 +2551,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    /* As many columns of rows as the width fits — three on a desktop, one on a
-       phone. Columns of rows, not columns of text: each entry is short enough
+    /* Two columns of rows, not two columns of text: each entry is short enough
        that one per full-width line would leave most of the row empty. */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

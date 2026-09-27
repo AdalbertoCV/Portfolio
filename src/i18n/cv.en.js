@@ -122,8 +122,6 @@ const cvEn = {
       'Not a list of courses: this is what is already in use. What follows is what I bring to an architecture conversation, a code review, a weekly and a delivery.',
 
     practice: {
-      prevArea: 'Previous area',
-      nextArea: 'Next area',
       systems: 'Systems design and architecture',
       systemsLede:
         'The part that decides where the data lives, what fails first and what it costs a year from now.',
@@ -360,6 +358,8 @@ const cvEn = {
     interestsKicker: 'Interests',
     interestsTitle: 'Where the way I think comes from',
     interestsLede: 'Each develops a capability that carries over into the technical work, and several of them bear directly on what I build and on what basis.',
+    interestsPrev: 'Previous subject',
+    interestsNext: 'Next subject',
     interests: {
       innovation: {
         title: 'Constant innovation and foresight',

@@ -139,8 +139,6 @@ const cvEs = {
        Reagrupado sin perder un solo ítem: los que cambiaron de grupo aparecen
        ahora en el que les corresponde. */
     practice: {
-      prevArea: 'Área anterior',
-      nextArea: 'Área siguiente',
       systems: 'Diseño de sistemas y arquitectura',
       systemsLede:
         'La parte que decide dónde viven los datos, qué falla primero y qué cuesta dentro de un año.',
@@ -377,6 +375,8 @@ const cvEs = {
     interestsKicker: 'Intereses',
     interestsTitle: 'De dónde sale la forma en que pienso',
     interestsLede: 'Cada uno desarrolla una capacidad que se traslada al trabajo técnico, y varios de ellos influyen directamente en qué construyo y con qué criterio.',
+    interestsPrev: 'Tema anterior',
+    interestsNext: 'Tema siguiente',
     interests: {
       innovation: {
         title: 'Innovación constante y prospectiva',
