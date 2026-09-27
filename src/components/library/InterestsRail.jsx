@@ -55,6 +55,32 @@ const InterestsRail = () => {
     rail.scrollTo({ left: Math.min(card.offsetLeft, max), behavior: 'smooth' });
   }, [index]);
 
+  // A row of eight cards is as tall as the tallest of the eight, so a subject
+  // shorter than the longest one leaves under it a hole the size of the
+  // difference — which on a phone, where the cards are taller, is as tall as a
+  // card and sits between the subject and the shelves. The rail is given the
+  // height of the card being read instead, so the card ends where its content
+  // ends and what is under it is the page's own air. Re-measured whenever the
+  // card changes and whenever that card changes size, because the same text is
+  // a different height on a different width or with a different font loaded.
+  useEffect(() => {
+    const rail = railRef.current;
+    const card = rail && rail.children[index];
+    if (!rail || !card) return undefined;
+
+    const fit = () => {
+      const { paddingTop, paddingBottom } = getComputedStyle(rail);
+      const air = (parseFloat(paddingTop) || 0) + (parseFloat(paddingBottom) || 0);
+      rail.style.height = `${card.offsetHeight + air}px`;
+    };
+
+    fit();
+    if (typeof ResizeObserver === 'undefined') return undefined;
+    const observer = new ResizeObserver(fit);
+    observer.observe(card);
+    return () => observer.disconnect();
+  }, [index]);
+
   // A swipe that slides the strip while the dots still say "one" is a carousel
   // that lies about where it is. The card the rail comes to rest against is the
   // one that becomes current, once it has stopped moving.

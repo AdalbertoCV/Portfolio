@@ -1742,8 +1742,7 @@
     /* The card ends where its content ends. Stretched to the tallest of the
        eight, a short subject left a plate with a pocket of empty colour under
        its tags; starting at the top instead keeps the card the size of what is
-       in it, and the rail still measures the tallest so nothing below it moves
-       when you swipe. */
+       in it, and the height below is set in script to the card in view. */
     align-items: flex-start;
     gap: 20px;
     overflow-x: auto;
@@ -1754,6 +1753,16 @@
        side padding, so a card at 100% lines up with the heading above it. */
     padding: 4px 0 18px;
     scrollbar-width: none;
+    /* The height is measured in script to the card in view, and slides rather
+       than jumps, so the shelves below do not leap when a short subject gives
+       way to a long one. */
+    transition: height 0.24s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cv-interests {
+        transition: none;
+    }
 }
 
 .cv-interests::-webkit-scrollbar {
@@ -2705,20 +2714,19 @@
     scroll-margin-top: calc(var(--navbar-h, 96px) + 16px);
 }
 
-/* Air between the two halves of this page. The interests and the shelves used
-   to be separated by the empty bottom of a card stretched to the tallest of the
-   eight; the card is now the size of its own content, so the space between the
-   subjects and the SoundCloud shelves is this rule's job. */
+/* Air between the two halves of this page. The card ends where its content ends
+   and the rail is now the size of it, so this is all the space there is between
+   the shelves of SoundCloud and a subject: the page's own 72px rhythm plus a
+   little, because one ends on a list of books and the next is a heading. */
 #library .brand-section + .brand-section {
-    padding-top: 108px;
+    padding-top: 88px;
 }
 
-/* A phone is a different measurement: the cards there are taller, so the rail
-   already leaves more room under a short subject, and 108px on top of it is an
-   ocean between two things that are one scroll apart. */
+/* A phone is a different measurement, and 88px is a canyon between two things
+   that are one scroll apart. */
 @media (max-width: 768px) {
     #library .brand-section + .brand-section {
-        padding-top: 76px;
+        padding-top: 72px;
     }
 }
 
