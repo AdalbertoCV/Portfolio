@@ -1630,8 +1630,11 @@
     /* The rail, not the card, is what gets a measure: a card wider than the
        measure of its own text is a line of a hundred and forty characters
        above a drawing, and the rail has to be the width of the card or the next
-       card would sit beside it. */
+       card would sit beside it. Centred, so the card and the row of dots and
+       arrows read as one object in the middle of the section rather than a
+       column pushed against the heading above it. */
     max-width: 660px;
+    margin-inline: auto;
 }
 
 /* The dots on the left, the arrows on the right: position on one side, movement
