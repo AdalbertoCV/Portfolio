@@ -1739,6 +1739,12 @@
 .cv-interests {
     position: relative;
     display: flex;
+    /* The card ends where its content ends. Stretched to the tallest of the
+       eight, a short subject left a plate with a pocket of empty colour under
+       its tags; starting at the top instead keeps the card the size of what is
+       in it, and the rail still measures the tallest so nothing below it moves
+       when you swipe. */
+    align-items: flex-start;
     gap: 20px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
