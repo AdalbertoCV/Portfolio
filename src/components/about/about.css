@@ -1782,13 +1782,20 @@
     text-align: left;
 }
 
-/* A fixed gap, not a pinned bottom. The cards are all the height of the tallest
-   one, so sending the tags to the bottom turned the difference between the
-   longest and the shortest of eight texts into a hole above the tags that
-   changed size on every subject. Ten pixels over the paragraph's own twenty
-   gives the tags their own band and is the same distance on all eight. */
+/* A fixed gap, not a pinned bottom and not a band. The cards are all the height
+   of the tallest one, so sending the tags to the bottom turned the difference
+   between the longest and the shortest of eight texts into a hole above them
+   that changed size on every subject. */
 .cv-interest .brand-chips {
-    margin-top: 10px;
+    margin-top: 0;
+}
+
+/* The last block before the tags gives up its bottom margin, which is the only
+   way to close the gap without closing the one between a paragraph and the link
+   that follows it. :has() is what knows which block is the last one. */
+.cv-interest p:has(+ .brand-chips),
+.cv-interest .cv-interest-link:has(+ .brand-chips) {
+    margin-bottom: 0;
 }
 
 /* ----------------------------------------------------------------------------
@@ -1814,13 +1821,14 @@
     --tone-ink: color-mix(in srgb, var(--tone) 70%, #1a1a1a);
 }
 
-/* The scene: a tinted plate the width of the card, the drawing in the tone.
-   The plate takes its height from the width of the card rather than from a
-   fixed number: a 104px strip across a card that fills a 1180px section is a
-   letterbox, and one ratio for every width keeps the drawing the same size
-   relative to the card. The floor keeps a phone from getting a slit. */
+/* The scene: a tinted plate above the title, the drawing in the tone. It is
+   capped to the measure of the words under it, so the drawing sits centred
+   over the text it belongs to instead of floating in the middle of a card that
+   fills the section, and the ratio gives it its height instead of a fixed
+   number of pixels that is a letterbox at one width and a wall at another. */
 .interest-art {
-    aspect-ratio: 4.5 / 1;
+    max-width: 68ch;
+    aspect-ratio: 4 / 1;
     min-height: 104px;
     margin: -6px -4px 22px;
     border-radius: var(--radius-md);
@@ -1836,7 +1844,7 @@
 .interest-art svg {
     /* The drawings are 120x64 with no width or height of their own, so a height
        in points is what tells the browser how wide to draw them. */
-    height: 70%;
+    height: 80%;
     width: auto;
     overflow: visible;
 }
