@@ -1084,6 +1084,8 @@ import siweaviateIcon from '../../images/tech/weaviate.png';
 import siairbyteIcon from '../../images/tech/airbyte.svg';
 
 import sieclipseIcon from '../../images/tech/eclipse.svg';
+// Spyder: the S and the web, without the light tile the repository draws them on.
+import sispyderIcon from '../../images/tech/spyder.svg';
 
 const TECH_GROUPS = [
   {
@@ -2252,6 +2254,7 @@ const TECH_GROUPS = [
       { name: 'Typst', icon: sitypstIcon, mono: true },
       { name: 'Neovim', icon: sineovimIcon, mono: true },
       { name: 'Eclipse', icon: sieclipseIcon, mono: true },
+      { name: 'Spyder', icon: sispyderIcon, mono: true },
       { name: 'Just', icon: sijustIcon, mono: true },
       { name: 'Jujutsu', icon: sijujutsuIcon, mono: true },
       { name: 'Task', icon: sitaskIcon, mono: true },
