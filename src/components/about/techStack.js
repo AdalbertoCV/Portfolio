@@ -1061,6 +1061,28 @@ import siomnirouteIcon from '../../images/tech/omniroute.svg';
 // MetaMask: the fox, flattened to black from its full-colour mark.
 import simetamaskIcon from '../../images/tech/metamask.svg';
 
+// The 2026 LLM-ops intake. Marks are cut down to silhouettes from each project's own
+// avatar or favicon; Phi-3 carries Microsoft's mark, since Phi has none of its own.
+import siphi3Icon from '../../images/tech/phi3.png';
+import siflowiseIcon from '../../images/tech/flowise.png';
+import sitxtaiIcon from '../../images/tech/txtai.png';
+import siscrapegraphaiIcon from '../../images/tech/scrapegraphai.png';
+import siapifyIcon from '../../images/tech/apify.png';
+import siarizeIcon from '../../images/tech/arize.png';
+import sitrulensIcon from '../../images/tech/trulens.png';
+import sideepevalIcon from '../../images/tech/deepeval.png';
+import sigiskardIcon from '../../images/tech/giskard.png';
+import siuptrainIcon from '../../images/tech/uptrain.png';
+import sievidentlyIcon from '../../images/tech/evidently.png';
+import siprompthubIcon from '../../images/tech/prompthub.png';
+import siflowgptIcon from '../../images/tech/flowgpt.png';
+import sipromptperfectIcon from '../../images/tech/promptperfect.png';
+import siaiprmIcon from '../../images/tech/aiprm.png';
+import sipromptbaseIcon from '../../images/tech/promptbase.png';
+import sitextgradIcon from '../../images/tech/textgrad.png';
+import siweaviateIcon from '../../images/tech/weaviate.png';
+import siairbyteIcon from '../../images/tech/airbyte.svg';
+
 const TECH_GROUPS = [
   {
     // The Stars: every technology with a public project behind it, moved up
@@ -1348,6 +1370,23 @@ const TECH_GROUPS = [
       { name: 'Browserbase', icon: sibrowserbaseIcon, mono: true },
       { name: 'Reducto', icon: sireductoIcon, flat: true },
       { name: 'Strands Agents', icon: sistrandsagentsIcon, mono: true },
+      { name: 'Phi-3', icon: siphi3Icon, flat: true },
+      { name: 'Flowise', icon: siflowiseIcon, flat: true },
+      { name: 'txtai', icon: sitxtaiIcon, flat: true },
+      { name: 'ScrapeGraphAI', icon: siscrapegraphaiIcon, flat: true },
+      { name: 'Apify', icon: siapifyIcon, flat: true },
+      { name: 'Arize', icon: siarizeIcon, flat: true },
+      { name: 'TruLens', icon: sitrulensIcon, flat: true },
+      { name: 'DeepEval', icon: sideepevalIcon, flat: true },
+      { name: 'Giskard', icon: sigiskardIcon, flat: true },
+      { name: 'UpTrain', icon: siuptrainIcon, flat: true },
+      { name: 'Evidently AI', icon: sievidentlyIcon, flat: true },
+      { name: 'PromptHub', icon: siprompthubIcon, flat: true },
+      { name: 'FlowGPT', icon: siflowgptIcon, flat: true },
+      { name: 'Prompt Perfect', icon: sipromptperfectIcon, flat: true },
+      { name: 'AIPRM', icon: siaiprmIcon, flat: true },
+      { name: 'PromptBase', icon: sipromptbaseIcon, flat: true },
+      { name: 'TextGrad', icon: sitextgradIcon, flat: true },
       // Tech week, the top-up.
       { name: 'Cohere', icon: sicohereIcon, mono: true },
       { name: 'Exa', icon: siexaIcon, mono: true },
@@ -1767,6 +1806,7 @@ const TECH_GROUPS = [
       { name: 'Cassandra', icon: apachecassandraIcon, mono: true },
       { name: 'Elasticsearch', icon: elasticsearchIcon, mono: true },
       { name: 'DuckDB', icon: duckdbIcon, mono: true },
+      { name: 'Airbyte', icon: siairbyteIcon, mono: true },
       { name: 'Databricks', icon: databricksIcon, mono: true },
       { name: 'BigQuery', icon: googlebigqueryIcon, mono: true },
       { name: 'Trino', icon: trinoIcon, mono: true },
@@ -1776,6 +1816,7 @@ const TECH_GROUPS = [
       { name: 'InfluxDB', icon: influxdbIcon, mono: true },
       { name: 'Qdrant', icon: qdrantIcon, mono: true },
       { name: 'Milvus', icon: milvusIcon, mono: true },
+      { name: 'Weaviate', icon: siweaviateIcon, flat: true },
       { name: 'SQLAlchemy', icon: sqlalchemyIcon, mono: true },
       { name: 'MinIO', icon: minioIcon, mono: true },
       { name: 'Hadoop', icon: apachehadoopIcon, mono: true },

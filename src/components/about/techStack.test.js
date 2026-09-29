@@ -37,10 +37,10 @@ test('no technology appears twice on the wall', () => {
 // Every star that left a group was replaced by one of the same kind, so the
 // groups kept their sizes and The Stars came on top: 1080 before, plus 21,
 // plus Prezi, Greptile, Dropbox, Windows Autopilot, Beautiful Soup, Fabrix.ai
-// Gentle AI, Ichigo, Gamma, Fathom, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
+// Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
 // and six of mathematics on the frontier, and the fractal omniverse.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1114 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1133 + TECH_GROUPS[0].items.length);
 });
 
 test('Prezi is on the wall as a tool', () => {
@@ -81,6 +81,14 @@ test('Ichigo is on the wall, with the agents and models I work with', () => {
 test('Gamma is with the agents and models I work with, and Fathom with the meeting tools beside Fireflies.ai and Otter.ai', () => {
   expect(names(TECH_GROUPS.find((group) => group.id === 'aitools'))).toEqual(expect.arrayContaining(['Gamma', 'Fireflies.ai']));
   expect(TECH_GROUPS.flatMap(names)).toContain('Fathom');
+});
+
+test('the LLM-ops intake is on the wall: agents and evals with the agent bench, Weaviate and Airbyte with data', () => {
+  const inGroup = (id) => names(TECH_GROUPS.find((group) => group.id === id));
+  ['Phi-3', 'Flowise', 'txtai', 'ScrapeGraphAI', 'Apify', 'Arize', 'TruLens', 'DeepEval', 'Giskard', 'UpTrain', 'Evidently AI', 'PromptHub', 'FlowGPT', 'Prompt Perfect', 'AIPRM', 'PromptBase', 'TextGrad'].forEach((name) =>
+    expect(inGroup('agents')).toContain(name),
+  );
+  ['Weaviate', 'Airbyte'].forEach((name) => expect(inGroup('data')).toContain(name));
 });
 
 test('Kilo Code and OmniRoute are with the agents and models I work with, and MetaMask with the tools', () => {
