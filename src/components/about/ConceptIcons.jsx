@@ -1855,6 +1855,99 @@ const ICONS = {
       <path d="M7 5h10M5 7v10M19 7v10M7 19h10M6.4 6.4l4.5 4.5M17.6 6.4l-4.5 4.5M6.4 17.6l4.5-4.5M17.6 17.6l-4.5-4.5" />
     </svg>
   ),
+
+  // The C4 model: the same system at four zoom levels, each box opening into
+  // the next — context, containers, components, code.
+  c4Model: (
+    <svg {...base}>
+      <rect x="2.5" y="2.5" width="19" height="19" rx="2.4" />
+      <rect x="6" y="6" width="12" height="12" rx="1.8" />
+      <rect x="9.2" y="9.2" width="5.6" height="5.6" rx="1.2" />
+    </svg>
+  ),
+
+  // UML: a parent class over two that inherit from it, the hollow triangle
+  // pointing up at what they extend.
+  uml: (
+    <svg {...base}>
+      <rect x="8" y="2.6" width="8" height="5.4" rx="1.2" />
+      <path d="M8 5.3h8" />
+      <path d="M12 8l-1.5 2.4h3z" />
+      <path d="M12 10.4v2.2M6 12.6h12M6 12.6V15M18 12.6V15" />
+      <rect x="2.6" y="15" width="6.8" height="5.6" rx="1.2" />
+      <rect x="14.6" y="15" width="6.8" height="5.6" rx="1.2" />
+    </svg>
+  ),
+
+  // A sequence diagram: two lifelines, a call across and the reply back.
+  sequenceDiagram: (
+    <svg {...base}>
+      <rect x="2.6" y="2.6" width="7.6" height="3.4" rx="1" />
+      <rect x="13.8" y="2.6" width="7.6" height="3.4" rx="1" />
+      <path d="M6.4 6v14.6M17.6 6v14.6" strokeDasharray="1.8 1.6" />
+      <path d="M6.4 10.4h10.4M14.8 8.8l1.8 1.6-1.8 1.6" />
+      <path d="M17.6 16.4H7.2M9 14.8l-1.8 1.6L9 18" />
+    </svg>
+  ),
+
+  // An entity-relationship diagram: two tables and the crow's foot that says
+  // one of them has many of the other.
+  erDiagram: (
+    <svg {...base}>
+      <rect x="2.4" y="3.2" width="8.4" height="7.2" rx="1.2" />
+      <path d="M2.4 6.4h8.4" />
+      <rect x="13.2" y="13.6" width="8.4" height="7.2" rx="1.2" />
+      <path d="M13.2 16.8h8.4" />
+      <path d="M10.8 7.2h2.4a2.4 2.4 0 0 1 2.4 2.4v1.8" />
+      <path d="M13.6 11.4l2 2.2 2-2.2" />
+    </svg>
+  ),
+
+  // A flowchart: start, a decision, an end.
+  flowchart: (
+    <svg {...base}>
+      <rect x="8.2" y="2.2" width="7.6" height="3.6" rx="1.8" />
+      <path d="M12 5.8v1.8" />
+      <path d="M12 7.6l4.4 3.8L12 15.2 7.6 11.4z" />
+      <path d="M12 15.2V17" />
+      <rect x="8.2" y="17" width="7.6" height="4" rx="1.2" />
+      <path d="M16.4 11.4h3.4V19" />
+    </svg>
+  ),
+
+  // BPMN: a process read left to right — the event that starts it, the work,
+  // and the event that ends it.
+  bpmn: (
+    <svg {...base}>
+      <circle cx="3.8" cy="12" r="1.8" />
+      <path d="M5.6 12H7" />
+      <rect x="7" y="8.2" width="8" height="7.6" rx="1.8" />
+      <path d="M15 12h3" />
+      <circle cx="20.2" cy="12" r="1.8" strokeWidth="2.8" />
+    </svg>
+  ),
+
+  // Event storming: notes on a wall, in the order things happen, and the
+  // line of time under them.
+  eventStorming: (
+    <svg {...base}>
+      <rect x="2" y="7.6" width="6" height="6" rx="1" />
+      <rect x="9" y="3.6" width="6" height="6" rx="1" />
+      <rect x="16" y="9.6" width="6" height="6" rx="1" />
+      <path d="M2.6 19.6h18.8M18.4 17.4l3 2.2-3 2.2" />
+    </svg>
+  ),
+
+  // An architecture decision record: the page, and the tick that says it was
+  // decided.
+  adr: (
+    <svg {...base}>
+      <path d="M6 3h9l3 3v15H6z" />
+      <path d="M15 3v3h3" />
+      <path d="M9 8h3.4" />
+      <path d="m8.8 14 2.2 2.2 4.2-4.6" />
+    </svg>
+  ),
 };
 
 const ConceptIcon = ({ name, className }) => {

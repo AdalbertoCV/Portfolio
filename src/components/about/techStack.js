@@ -1117,6 +1117,42 @@ import siawsglueIcon from '../../images/tech/awsglue.svg';
 import siamazonredshiftIcon from '../../images/tech/amazonredshift.svg';
 import siawslakeformationIcon from '../../images/tech/awslakeformation.svg';
 
+// The diagrams intake: diagrams as code and as canvas, and the docs and API
+// references they end up in. The PNGs are cut to silhouettes from each project's
+// own avatar or favicon.
+import sidrawioIcon from '../../images/tech/drawio.svg';
+import sigraphvizIcon from '../../images/tech/graphviz.png';
+import silikec4Icon from '../../images/tech/likec4.png';
+import siicepanelIcon from '../../images/tech/icepanel.png';
+import siterrastructIcon from '../../images/tech/terrastruct.png';
+import siilographIcon from '../../images/tech/ilograph.png';
+import sicloudcraftIcon from '../../images/tech/cloudcraft.png';
+import sibrainboardIcon from '../../images/tech/brainboard.png';
+import siwhimsicalIcon from '../../images/tech/whimsical.png';
+import simermaidchartIcon from '../../images/tech/mermaidchart.png';
+import sidbdiagramIcon from '../../images/tech/dbdiagram.png';
+import sidrawdbIcon from '../../images/tech/drawdb.png';
+import siwavedromIcon from '../../images/tech/wavedrom.png';
+import sinomnomlIcon from '../../images/tech/nomnoml.png';
+import sivegaIcon from '../../images/tech/vega.svg';
+import siobservableIcon from '../../images/tech/observable.svg';
+import siasciidoctorIcon from '../../images/tech/asciidoctor.svg';
+import sidoxygenIcon from '../../images/tech/doxygen.svg';
+import sipandocIcon from '../../images/tech/pandoc.svg';
+import simdbookIcon from '../../images/tech/mdbook.svg';
+import sijekyllIcon from '../../images/tech/jekyll.svg';
+import sinextraIcon from '../../images/tech/nextra.svg';
+import sidocsifyIcon from '../../images/tech/docsify.svg';
+import sibookstackIcon from '../../images/tech/bookstack.svg';
+import sioutlineIcon from '../../images/tech/outline.svg';
+import sicodaIcon from '../../images/tech/coda.svg';
+import siopenapiIcon from '../../images/tech/openapi.svg';
+import siasyncapiIcon from '../../images/tech/asyncapi.png';
+import siredoclyIcon from '../../images/tech/redocly.png';
+import siscalarIcon from '../../images/tech/scalar.png';
+import sistoplightIcon from '../../images/tech/stoplight.png';
+import sireadmeIcon from '../../images/tech/readme.svg';
+
 const TECH_GROUPS = [
   {
     // The Stars: every technology with a public project behind it, moved up
@@ -2381,6 +2417,47 @@ const TECH_GROUPS = [
       { name: 'Lucidchart', icon: silucidchartIcon, flat: true },
       { name: 'yEd', icon: siyedIcon, mono: true },
       { name: 'Gliffy', icon: sigliffyIcon, flat: true },
+      // The notations, then the tools that draw and publish them.
+      { name: 'C4 model', concept: 'c4Model' },
+      { name: 'UML', concept: 'uml' },
+      { name: 'Sequence diagrams', concept: 'sequenceDiagram' },
+      { name: 'ER diagrams', concept: 'erDiagram' },
+      { name: 'Flowcharts', concept: 'flowchart' },
+      { name: 'BPMN', concept: 'bpmn' },
+      { name: 'Event storming', concept: 'eventStorming' },
+      { name: 'Architecture decision records', concept: 'adr' },
+      { name: 'draw.io', icon: sidrawioIcon, mono: true },
+      { name: 'Graphviz', icon: sigraphvizIcon, flat: true },
+      { name: 'LikeC4', icon: silikec4Icon, flat: true },
+      { name: 'IcePanel', icon: siicepanelIcon, flat: true },
+      { name: 'Terrastruct', icon: siterrastructIcon, flat: true },
+      { name: 'Ilograph', icon: siilographIcon, flat: true },
+      { name: 'Cloudcraft', icon: sicloudcraftIcon, flat: true },
+      { name: 'Brainboard', icon: sibrainboardIcon, flat: true },
+      { name: 'Whimsical', icon: siwhimsicalIcon, flat: true },
+      { name: 'Mermaid Chart', icon: simermaidchartIcon, flat: true },
+      { name: 'dbdiagram.io', icon: sidbdiagramIcon, flat: true },
+      { name: 'DrawDB', icon: sidrawdbIcon, flat: true },
+      { name: 'WaveDrom', icon: siwavedromIcon, flat: true },
+      { name: 'Nomnoml', icon: sinomnomlIcon, flat: true },
+      { name: 'Vega', icon: sivegaIcon, mono: true },
+      { name: 'Observable', icon: siobservableIcon, mono: true },
+      { name: 'AsciiDoc', icon: siasciidoctorIcon, mono: true },
+      { name: 'Doxygen', icon: sidoxygenIcon, mono: true },
+      { name: 'Pandoc', icon: sipandocIcon, mono: true },
+      { name: 'mdBook', icon: simdbookIcon, mono: true },
+      { name: 'Jekyll', icon: sijekyllIcon, mono: true },
+      { name: 'Nextra', icon: sinextraIcon, mono: true },
+      { name: 'Docsify', icon: sidocsifyIcon, mono: true },
+      { name: 'BookStack', icon: sibookstackIcon, mono: true },
+      { name: 'Outline', icon: sioutlineIcon, mono: true },
+      { name: 'Coda', icon: sicodaIcon, mono: true },
+      { name: 'OpenAPI', icon: siopenapiIcon, mono: true },
+      { name: 'AsyncAPI', icon: siasyncapiIcon, flat: true },
+      { name: 'Redocly', icon: siredoclyIcon, flat: true },
+      { name: 'Scalar', icon: siscalarIcon, flat: true },
+      { name: 'Stoplight', icon: sistoplightIcon, flat: true },
+      { name: 'ReadMe', icon: sireadmeIcon, mono: true },
     ],
   },
   {
