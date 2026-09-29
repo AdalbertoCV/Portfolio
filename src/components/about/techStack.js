@@ -1083,6 +1083,8 @@ import sitextgradIcon from '../../images/tech/textgrad.png';
 import siweaviateIcon from '../../images/tech/weaviate.png';
 import siairbyteIcon from '../../images/tech/airbyte.svg';
 
+import sieclipseIcon from '../../images/tech/eclipse.svg';
+
 const TECH_GROUPS = [
   {
     // The Stars: every technology with a public project behind it, moved up
@@ -2249,6 +2251,7 @@ const TECH_GROUPS = [
       { name: 'Playwright', icon: siplaywrightIcon, mono: true },
       { name: 'Typst', icon: sitypstIcon, mono: true },
       { name: 'Neovim', icon: sineovimIcon, mono: true },
+      { name: 'Eclipse', icon: sieclipseIcon, mono: true },
       { name: 'Just', icon: sijustIcon, mono: true },
       { name: 'Jujutsu', icon: sijujutsuIcon, mono: true },
       { name: 'Task', icon: sitaskIcon, mono: true },
