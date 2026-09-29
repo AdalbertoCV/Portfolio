@@ -478,8 +478,9 @@ const About = () => {
             career that a certificate cannot record: who I went as. */}
         <Reveal className="cv-events">
           <h3 className="brand-stack-title">{t('cv.eventsLabel')}</h3>
+          <div className="cv-event-list">
           {EVENTS.map((event) => (
-            <article className="cv-event" key={event.key}>
+            <article className="cv-event" key={event.key} data-wide={event.paragraphs === 2 ? 'true' : undefined}>
               <span className="cv-event-mark">
                 <img src={event.mark} alt="" aria-hidden="true" loading="lazy" />
               </span>
@@ -513,6 +514,7 @@ const About = () => {
               </div>
             </article>
           ))}
+          </div>
         </Reveal>
       </Section>
 

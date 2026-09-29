@@ -1327,18 +1327,24 @@
    CERTIFICATIONS
    ========================================================================= */
 
-/* Flex rather than a fixed grid: a card with prose takes the whole row, and
-   the short cards left over share whatever row they land in instead of
-   sitting in two narrow tracks with the rest of the row empty. */
+/* Two columns. Every credential now carries a written-up context, and a card
+   that took the whole row left the right half of the page empty beside a
+   68-character paragraph. Two cards per row keep the line length and use the
+   width; the icon moves beside the title so a card is shorter as well as
+   narrower. */
 .cv-certs {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     margin-bottom: 36px;
 }
 
 .cv-cert {
-    flex: 1 1 220px;
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: 14px;
+    align-content: stretch;
     padding: 24px 22px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
@@ -1347,18 +1353,20 @@
 }
 
 .cv-cert-icon {
+    grid-row: 1 / span 2;
     width: 28px;
     height: 28px;
     color: var(--color-text-tertiary);
-    margin-bottom: 14px;
+    margin: 0;
 }
 
 .cv-cert h3 {
+    grid-column: 2;
     font-size: 0.98rem;
     letter-spacing: -0.02em;
     line-height: 1.35;
     color: var(--color-text-primary);
-    margin: 0 0 8px;
+    margin: 0 0 4px;
 }
 
 .cv-cert-issuer {
@@ -1368,20 +1376,28 @@
     margin: 0;
 }
 
-/* A credential with a written-up context needs room for prose, so it takes the
-   full row instead of sitting in a 220px column next to bare cards. */
-.cv-cert[data-detail] {
-    flex-basis: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.cv-cert > .cv-cert-issuer {
+    grid-column: 2;
+}
+
+/* The prose and the links sit under the icon and the title, across the whole
+   card, and the prose row takes the slack so links line up along the bottom of
+   a row of cards whatever the length of the text above them. */
+.cv-cert > .cv-cert-body {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+.cv-cert > .cv-cert-links {
+    grid-column: 1 / -1;
+    grid-row: 4;
 }
 
 .cv-cert-body {
     font-size: 0.92rem;
     line-height: 1.65;
     color: var(--color-text-secondary);
-    margin: 12px 0 0;
+    margin: 14px 0 0;
     max-width: 68ch;
 }
 
@@ -1392,7 +1408,6 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 4px 22px;
-    margin-top: auto;
     padding-top: 14px;
 }
 
@@ -1445,20 +1460,26 @@
     margin-top: 36px;
 }
 
-/* 4px between cards read as one block cut into three. The gap is bigger than
-   the space under the heading now, so the three cards group together and each
-   one still reads as its own thing. */
-.cv-event + .cv-event {
-    margin-top: 18px;
+/* Two columns, with the long entry across the top. The cards used to stack,
+   each the full width of the page with a wordmark on the left and a paragraph
+   in a column beside it. Three equal columns were tried first and left the two
+   short entries half empty under the one with two paragraphs, so the long one
+   takes the first row, laid out wide, and the two short ones share the second,
+   with the plate on top of each and the copy under it. */
+.cv-event-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 4px;
 }
 
 .cv-event {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 22px;
-    margin-top: 4px;
-    padding: 24px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin: 0;
+    padding: 22px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border-primary);
     background: var(--color-bg-card);
@@ -1479,7 +1500,7 @@
     place-items: center;
     flex: 0 0 auto;
     box-sizing: border-box;
-    width: 180px;
+    width: 100%;
     height: 76px;
     padding: 18px;
     border-radius: var(--radius-md);
@@ -1499,7 +1520,7 @@
 }
 
 .cv-event-copy {
-    flex: 1 1 260px;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1518,7 +1539,37 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 8px 26px;
-    margin-top: 18px;
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+/* The one with two paragraphs: plate beside the copy, and the paragraphs side
+   by side under the title, so a long entry is wide instead of tall. */
+.cv-event[data-wide] {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 26px;
+}
+
+.cv-event[data-wide] .cv-event-mark {
+    width: 220px;
+    height: 92px;
+}
+
+.cv-event[data-wide] .cv-event-copy {
+    display: grid;
+    /* The first paragraph is the long one, so it gets the wider column and the
+       two end at about the same height. */
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    column-gap: 36px;
+    align-items: start;
+}
+
+.cv-event[data-wide] .cv-event-copy h4,
+.cv-event[data-wide] .cv-event-copy .cv-cert-issuer,
+.cv-event[data-wide] .cv-event-links {
+    grid-column: 1 / -1;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1528,15 +1579,92 @@
     }
 }
 
-@media (max-width: 600px) {
-    .cv-event-mark {
-        width: 150px;
+/* Between a phone and a wide screen the three columns get too narrow for the
+   prose, and two would orphan the third. One column, with each card turned back
+   into mark-beside-copy, is the layout that still uses the width. */
+@media (max-width: 1000px) {
+    .cv-event-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-event,
+    .cv-event[data-wide] {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .cv-event-mark,
+    .cv-event[data-wide] .cv-event-mark {
+        width: 180px;
+        height: 76px;
+    }
+
+    .cv-event[data-wide] .cv-event-copy {
+        display: flex;
+    }
+
+    .cv-event-links {
+        margin-top: 0;
+        padding-top: 18px;
+    }
+}
+
+/* A phone gets a different arrangement rather than a squeezed one. The
+   credentials stay a single compact column, but the events become a rail:
+   swipe sideways through three cards instead of scrolling past three screens
+   of them, with the next card peeking in to say there is one. The rail bleeds
+   to the screen edge past the 16px page gutter and snaps to it. */
+@media (max-width: 720px) {
+    .cv-certs {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .cv-cert {
+        padding: 18px 18px 20px;
+        column-gap: 12px;
+    }
+
+    .cv-event-list {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        align-items: flex-start;
+        margin: 4px -16px 0;
+        padding: 2px 16px 10px;
+        scroll-padding-inline: 16px;
+        scrollbar-width: none;
+    }
+
+    .cv-event-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cv-event,
+    .cv-event[data-wide] {
+        flex: 0 0 84%;
+        flex-direction: column;
+        gap: 16px;
+        padding: 18px;
+        scroll-snap-align: start;
+    }
+
+    .cv-event-mark,
+    .cv-event[data-wide] .cv-event-mark {
+        width: 100%;
         height: 66px;
         padding: 15px;
     }
 
     .cv-event-mark img {
         max-height: 36px;
+    }
+
+    .cv-event-links {
+        margin-top: 0;
     }
 }
 
@@ -1570,8 +1698,10 @@
         padding: 22px 18px;
     }
 
+    /* Two thumbnails per row, not one each at full width: they open at full
+       size on tap, so the row only has to identify them. */
     .cv-proof {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 8px);
     }
 }
 
