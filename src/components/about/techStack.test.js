@@ -37,10 +37,10 @@ test('no technology appears twice on the wall', () => {
 // Every star that left a group was replaced by one of the same kind, so the
 // groups kept their sizes and The Stars came on top: 1080 before, plus 21,
 // plus Prezi, Greptile, Dropbox, Windows Autopilot, Beautiful Soup, Fabrix.ai
-// Gentle AI, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
+// Gentle AI, Ichigo, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
 // and six of mathematics on the frontier, and the fractal omniverse.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1111 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1112 +TECH_GROUPS[0].items.length);
 });
 
 test('Prezi is on the wall as a tool', () => {
@@ -71,6 +71,11 @@ test('Fabrix.ai is on the wall, with the agents and models I work with', () => {
 test('Gentle AI is on the wall, with the agents and models I work with', () => {
   const aitools = TECH_GROUPS.find((group) => group.id === 'aitools');
   expect(names(aitools)).toContain('Gentle AI');
+});
+
+test('Ichigo is on the wall, with the agents and models I work with', () => {
+  const aitools = TECH_GROUPS.find((group) => group.id === 'aitools');
+  expect(names(aitools)).toContain('Ichigo');
 });
 
 test('Kilo Code and OmniRoute are with the agents and models I work with, and MetaMask with the tools', () => {

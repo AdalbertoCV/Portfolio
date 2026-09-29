@@ -1048,6 +1048,8 @@ import siwindowsautopilotIcon from '../../images/tech/windowsautopilot.svg';
 import sifabrixaiIcon from '../../images/tech/fabrixai.png';
 // Gentle AI: the neon rose from Gentleman Programming's own brand assets.
 import sigentleaiIcon from '../../images/tech/gentleai.png';
+// Ichigo: the strawberry llama from Homebrew Research's own repository art.
+import siichigoIcon from '../../images/tech/ichigo.png';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1500,6 +1502,7 @@ const TECH_GROUPS = [
       { name: 'Greptile', icon: sigreptileIcon, mono: true },
       { name: 'Fabrix.ai', icon: sifabrixaiIcon, flat: true },
       { name: 'Gentle AI', icon: sigentleaiIcon, flat: true },
+      { name: 'Ichigo', icon: siichigoIcon, flat: true },
       { name: 'Kilo Code', icon: sikilocodeIcon, mono: true },
       { name: 'OmniRoute', icon: siomnirouteIcon, mono: true },
     ],
