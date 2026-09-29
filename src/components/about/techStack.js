@@ -1153,6 +1153,69 @@ import siscalarIcon from '../../images/tech/scalar.png';
 import sistoplightIcon from '../../images/tech/stoplight.png';
 import sireadmeIcon from '../../images/tech/readme.svg';
 
+// The balance pass for Collaboration, Learning and the Network lab: each got its
+// practices drawn as concepts, and vendor marks flattened to one tone.
+import siairtableIcon from '../../images/tech/airtable.svg';
+import sitodoistIcon from '../../images/tech/todoist.svg';
+import sishortcutIcon from '../../images/tech/shortcut.svg';
+import sicaldotcomIcon from '../../images/tech/caldotcom.svg';
+import sitypeformIcon from '../../images/tech/typeform.svg';
+import sigooglechatIcon from '../../images/tech/googlechat.svg';
+import sigoogledriveIcon from '../../images/tech/googledrive.svg';
+import sigooglecalendarIcon from '../../images/tech/googlecalendar.svg';
+import sigmailIcon from '../../images/tech/gmail.svg';
+import siprotonmailIcon from '../../images/tech/protonmail.svg';
+import siboxIcon from '../../images/tech/box.svg';
+import sisignalIcon from '../../images/tech/signal.svg';
+import simatrixIcon from '../../images/tech/matrix.svg';
+import sijitsiIcon from '../../images/tech/jitsi.svg';
+import sidiscourseIcon from '../../images/tech/discourse.svg';
+import siintercomIcon from '../../images/tech/intercom.svg';
+import sizendeskIcon from '../../images/tech/zendesk.svg';
+import sihelpscoutIcon from '../../images/tech/helpscout.svg';
+import silivechatIcon from '../../images/tech/livechat.svg';
+import sizohoIcon from '../../images/tech/zoho.svg';
+import sibrilliantIcon from '../../images/tech/brilliant.png';
+import sideeplearningaiIcon from '../../images/tech/deeplearningai.png';
+import sifastaiIcon from '../../images/tech/fastai.png';
+import sidatacampIcon from '../../images/tech/datacamp.svg';
+import sieducativeIcon from '../../images/tech/educative.svg';
+import siskillshareIcon from '../../images/tech/skillshare.svg';
+import siduolingoIcon from '../../images/tech/duolingo.svg';
+import sirealpythonIcon from '../../images/tech/realpython.png';
+import sifireshipIcon from '../../images/tech/fireship.png';
+import siyoutubeIcon from '../../images/tech/youtube.svg';
+import sitedIcon from '../../images/tech/ted.svg';
+import siwikipediaIcon from '../../images/tech/wikipedia.svg';
+import siwolframIcon from '../../images/tech/wolfram.png';
+import sidesmosIcon from '../../images/tech/desmos.png';
+import sigeogebraIcon from '../../images/tech/geogebra.png';
+import sioverleafIcon from '../../images/tech/overleaf.svg';
+import sireadwiseIcon from '../../images/tech/readwise.png';
+import sifeedlyIcon from '../../images/tech/feedly.svg';
+import siycombinatorIcon from '../../images/tech/ycombinator.svg';
+import sigoodreadsIcon from '../../images/tech/goodreads.svg';
+import siaudibleIcon from '../../images/tech/audible.svg';
+import sioreillyIcon from '../../images/tech/oreilly.svg';
+import siciscoIcon from '../../images/tech/cisco.svg';
+import siubiquitiIcon from '../../images/tech/ubiquiti.svg';
+import sitplinkIcon from '../../images/tech/tplink.svg';
+import sizerotierIcon from '../../images/tech/zerotier.svg';
+import siadguardIcon from '../../images/tech/adguard.svg';
+import sisynologyIcon from '../../images/tech/synology.svg';
+import siqnapIcon from '../../images/tech/qnap.svg';
+import siunraidIcon from '../../images/tech/unraid.svg';
+import sisyncthingIcon from '../../images/tech/syncthing.svg';
+import siplexIcon from '../../images/tech/plex.svg';
+import siembyIcon from '../../images/tech/emby.svg';
+import sisonarrIcon from '../../images/tech/sonarr.svg';
+import siradarrIcon from '../../images/tech/radarr.svg';
+import sifrigateIcon from '../../images/tech/frigate.svg';
+import sihomebridgeIcon from '../../images/tech/homebridge.svg';
+import siesphomeIcon from '../../images/tech/esphome.svg';
+import sizigbeeIcon from '../../images/tech/zigbee.svg';
+import siicingaIcon from '../../images/tech/icinga.svg';
+
 const TECH_GROUPS = [
   {
     // The Stars: every technology with a public project behind it, moved up
@@ -1766,6 +1829,33 @@ const TECH_GROUPS = [
       // Third intake.
       { name: 'UniFi', icon: siunifiIcon, mono: true },
       { name: 'ngrok', icon: singrokIcon, flat: true },
+      // The lab: the ideas that hold a network together, then what runs on it.
+      { name: 'VLANs', concept: 'vlan' },
+      { name: 'VPN tunnels', concept: 'vpnTunnel' },
+      { name: 'Reverse proxy', concept: 'reverseProxy' },
+      { name: 'Firewalls', concept: 'firewall' },
+      { name: 'Load balancing', concept: 'loadBalancer' },
+      { name: 'Zero trust', concept: 'zeroTrust' },
+      { name: 'Subnetting', concept: 'subnetting' },
+      { name: 'NAT', concept: 'nat' },
+      { name: 'Cisco', icon: siciscoIcon, mono: true },
+      { name: 'Ubiquiti', icon: siubiquitiIcon, mono: true },
+      { name: 'TP-Link', icon: sitplinkIcon, mono: true },
+      { name: 'ZeroTier', icon: sizerotierIcon, mono: true },
+      { name: 'AdGuard', icon: siadguardIcon, mono: true },
+      { name: 'Synology', icon: sisynologyIcon, mono: true },
+      { name: 'QNAP', icon: siqnapIcon, mono: true },
+      { name: 'Unraid', icon: siunraidIcon, mono: true },
+      { name: 'Syncthing', icon: sisyncthingIcon, mono: true },
+      { name: 'Plex', icon: siplexIcon, mono: true },
+      { name: 'Emby', icon: siembyIcon, mono: true },
+      { name: 'Sonarr', icon: sisonarrIcon, mono: true },
+      { name: 'Radarr', icon: siradarrIcon, mono: true },
+      { name: 'Frigate', icon: sifrigateIcon, mono: true },
+      { name: 'Homebridge', icon: sihomebridgeIcon, mono: true },
+      { name: 'ESPHome', icon: siesphomeIcon, mono: true },
+      { name: 'Zigbee', icon: sizigbeeIcon, mono: true },
+      { name: 'Icinga', icon: siicingaIcon, mono: true },
     ],
   },
   {
@@ -2501,6 +2591,35 @@ const TECH_GROUPS = [
       { name: 'Anytype', icon: sianytypeIcon, mono: true },
       { name: 'Capacities', icon: sicapacitiesIcon, flat: true },
       { name: 'Udacity', icon: siudacityIcon, mono: true },
+      // How it gets learned: the habits, then the places.
+      { name: 'Spaced repetition', concept: 'spacedRepetition' },
+      { name: 'Learning in public', concept: 'learnInPublic' },
+      { name: 'Deliberate practice', concept: 'deliberatePractice' },
+      { name: 'Feynman technique', concept: 'feynman' },
+      { name: 'Reading papers', concept: 'paperReading' },
+      { name: 'Code katas', concept: 'kata' },
+      { name: 'Brilliant', icon: sibrilliantIcon, flat: true },
+      { name: 'DeepLearning.AI', icon: sideeplearningaiIcon, flat: true },
+      { name: 'fast.ai', icon: sifastaiIcon, flat: true },
+      { name: 'DataCamp', icon: sidatacampIcon, mono: true },
+      { name: 'Educative', icon: sieducativeIcon, mono: true },
+      { name: 'Skillshare', icon: siskillshareIcon, mono: true },
+      { name: 'Duolingo', icon: siduolingoIcon, mono: true },
+      { name: 'Real Python', icon: sirealpythonIcon, flat: true },
+      { name: 'Fireship', icon: sifireshipIcon, flat: true },
+      { name: 'YouTube', icon: siyoutubeIcon, mono: true },
+      { name: 'TED', icon: sitedIcon, mono: true },
+      { name: 'Wikipedia', icon: siwikipediaIcon, mono: true },
+      { name: 'Wolfram', icon: siwolframIcon, flat: true },
+      { name: 'Desmos', icon: sidesmosIcon, flat: true },
+      { name: 'GeoGebra', icon: sigeogebraIcon, flat: true },
+      { name: 'Overleaf', icon: sioverleafIcon, mono: true },
+      { name: 'Readwise', icon: sireadwiseIcon, flat: true },
+      { name: 'Feedly', icon: sifeedlyIcon, mono: true },
+      { name: 'Hacker News', icon: siycombinatorIcon, mono: true },
+      { name: 'Goodreads', icon: sigoodreadsIcon, mono: true },
+      { name: 'Audible', icon: siaudibleIcon, mono: true },
+      { name: "O'Reilly", icon: sioreillyIcon, mono: true },
     ],
   },
   {
@@ -2536,6 +2655,32 @@ const TECH_GROUPS = [
       { name: 'Twilio', icon: sitwilioIcon, mono: true },
       { name: 'Prezi', icon: sipreziIcon, mono: true },
       { name: 'Dropbox', icon: sidropboxIcon, mono: true },
+      // How work moves between people: the practices, then the tools.
+      { name: 'Async-first work', concept: 'asyncFirst' },
+      { name: 'Retrospectives', concept: 'retro' },
+      { name: 'Pair programming', concept: 'pairing' },
+      { name: 'Code review', concept: 'codeReview' },
+      { name: 'RFCs', concept: 'rfc' },
+      { name: 'Airtable', icon: siairtableIcon, mono: true },
+      { name: 'Todoist', icon: sitodoistIcon, mono: true },
+      { name: 'Shortcut', icon: sishortcutIcon, mono: true },
+      { name: 'Cal.com', icon: sicaldotcomIcon, mono: true },
+      { name: 'Typeform', icon: sitypeformIcon, mono: true },
+      { name: 'Google Chat', icon: sigooglechatIcon, mono: true },
+      { name: 'Google Drive', icon: sigoogledriveIcon, mono: true },
+      { name: 'Google Calendar', icon: sigooglecalendarIcon, mono: true },
+      { name: 'Gmail', icon: sigmailIcon, mono: true },
+      { name: 'Proton Mail', icon: siprotonmailIcon, mono: true },
+      { name: 'Box', icon: siboxIcon, mono: true },
+      { name: 'Signal', icon: sisignalIcon, mono: true },
+      { name: 'Matrix', icon: simatrixIcon, mono: true },
+      { name: 'Jitsi', icon: sijitsiIcon, mono: true },
+      { name: 'Discourse', icon: sidiscourseIcon, mono: true },
+      { name: 'Intercom', icon: siintercomIcon, mono: true },
+      { name: 'Zendesk', icon: sizendeskIcon, mono: true },
+      { name: 'Help Scout', icon: sihelpscoutIcon, mono: true },
+      { name: 'LiveChat', icon: silivechatIcon, mono: true },
+      { name: 'Zoho', icon: sizohoIcon, mono: true },
     ],
   },
   {

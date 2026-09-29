@@ -37,10 +37,10 @@ test('no technology appears twice on the wall', () => {
 // Every star that left a group was replaced by one of the same kind, so the
 // groups kept their sizes and The Stars came on top: 1080 before, plus 21,
 // plus Prezi, Greptile, Dropbox, Windows Autopilot, Beautiful Soup, Fabrix.ai
-// Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, thirty-three for the data lake, and forty for diagrams, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
+// Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, thirty-three for the data lake, forty for diagrams, and 79 across collaboration, learning and the lab, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
 // and six of mathematics on the frontier, and the fractal omniverse.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1209 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1288 + TECH_GROUPS[0].items.length);
 });
 
 test('Prezi is on the wall as a tool', () => {
@@ -103,6 +103,14 @@ test('diagrams got the notations, the diagram-as-code tools and the API docs', (
   ['C4 model', 'UML', 'Sequence diagrams', 'Architecture decision records', 'draw.io', 'Graphviz', 'LikeC4', 'Terrastruct', 'Mermaid Chart', 'Doxygen', 'OpenAPI', 'Scalar'].forEach((name) =>
     expect(diagrams).toContain(name),
   );
+});
+
+test('collaboration, learning and the network lab were brought up beside the big groups', () => {
+  const inGroup = (id) => names(TECH_GROUPS.find((group) => group.id === id));
+  expect(inGroup('collab')).toEqual(expect.arrayContaining(['Async-first work', 'Code review', 'Airtable', 'Signal']));
+  expect(inGroup('learning')).toEqual(expect.arrayContaining(['Spaced repetition', 'Code katas', 'Brilliant', 'YouTube']));
+  expect(inGroup('netlab')).toEqual(expect.arrayContaining(['VLANs', 'Zero trust', 'Cisco', 'Synology']));
+  ['collab', 'learning', 'netlab'].forEach((id) => expect(inGroup(id).length).toBeGreaterThanOrEqual(50));
 });
 
 test('Kilo Code and OmniRoute are with the agents and models I work with, and MetaMask with the tools', () => {

@@ -1948,6 +1948,198 @@ const ICONS = {
       <path d="m8.8 14 2.2 2.2 4.2-4.6" />
     </svg>
   ),
+
+  // Async-first: a message sent, and the clock that says nobody has to be
+  // there when it lands.
+  asyncFirst: (
+    <svg {...base}>
+      <rect x="2.6" y="3" width="12.6" height="10" rx="2.2" />
+      <path d="M6 13v3.4l3.2-3.4" />
+      <path d="M6 7h5.8" />
+      <circle cx="17" cy="16" r="4.4" />
+      <path d="M17 13.8v2.3l1.6 1" />
+    </svg>
+  ),
+
+  // A retrospective: the loop, looked at from outside so the next one is
+  // better than the last.
+  retro: (
+    <svg {...base}>
+      <path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3" />
+      <path d="M18.6 3.6v3.8h-3.8" />
+      <path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3" />
+      <path d="M5.4 20.4v-3.8h3.8" />
+    </svg>
+  ),
+
+  // Pair programming: two heads, one problem, one line under both of them.
+  pairing: (
+    <svg {...base}>
+      <circle cx="7.6" cy="7" r="2.6" />
+      <circle cx="16.4" cy="7" r="2.6" />
+      <path d="M3.2 16.4c.4-2.8 2.2-4.4 4.4-4.4s4 1.6 4.4 4.4" />
+      <path d="M12 16.4c.4-2.8 2.2-4.4 4.4-4.4s4 1.6 4.4 4.4" />
+      <path d="M3 20.4h18" />
+    </svg>
+  ),
+
+  // Code review: a diff, one line added, one removed, and the tick.
+  codeReview: (
+    <svg {...base}>
+      <rect x="3" y="3" width="18" height="18" rx="2.4" />
+      <path d="M7 9h5M9.5 6.5v5" />
+      <path d="M7 16h5" />
+      <path d="m14.6 15.4 1.8 1.8 3-3.4" />
+    </svg>
+  ),
+
+  // An RFC: the proposal in front, and the earlier draft it replaces still
+  // showing behind it.
+  rfc: (
+    <svg {...base}>
+      <path d="M8.4 6V3.4h8.6l3.6 3.6v11.6H17.4" strokeDasharray="2 1.7" />
+      <rect x="3.4" y="6.4" width="13.4" height="14.2" rx="1.8" />
+      <path d="M6.8 11h6.6M6.8 14.4h6.6M6.8 17.6h3.4" />
+    </svg>
+  ),
+
+  // Spaced repetition: the forgetting curve, and the reviews that keep
+  // catching it before it reaches the floor.
+  spacedRepetition: (
+    <svg {...base}>
+      <path d="M3 4.6c2 8.6 6 11.4 18 11.4" />
+      <path d="M3.4 20.6v-3M7.6 20.6v-3M13 20.6v-3M20.6 20.6v-3" />
+      <circle cx="7.6" cy="11.4" r="0.9" />
+      <circle cx="13" cy="14.6" r="0.9" />
+    </svg>
+  ),
+
+  // Learning in public: what you learned, said out loud, to whoever is
+  // listening.
+  learnInPublic: (
+    <svg {...base}>
+      <path d="M4 9.4v5.2h3l6.2 4.2V5.2L7 9.4z" />
+      <path d="M16.2 9.2a4.2 4.2 0 0 1 0 5.6" />
+      <path d="M18.8 6.6a8 8 0 0 1 0 10.8" />
+    </svg>
+  ),
+
+  // Deliberate practice: a target, and an arrow aimed at the ring just
+  // outside what already works.
+  deliberatePractice: (
+    <svg {...base}>
+      <circle cx="11" cy="13" r="8" />
+      <circle cx="11" cy="13" r="4.4" />
+      <circle cx="11" cy="13" r="1" fill="currentColor" stroke="none" />
+      <path d="m12.6 11.4 7.4-7.4M16.6 4H20v3.4" />
+    </svg>
+  ),
+
+  // The Feynman technique: explain it on a board as if to someone new, and
+  // wherever you stall is the gap.
+  feynman: (
+    <svg {...base}>
+      <rect x="2.6" y="3.4" width="18.8" height="12.4" rx="1.8" />
+      <path d="M6.4 11.2c1.4-3 2.6 2.6 4 0s2.6 2.6 4 0" />
+      <path d="M7.6 8h4" />
+      <path d="m8.4 20.6 2-4.8M15.6 20.6l-2-4.8" />
+    </svg>
+  ),
+
+  // Reading papers: the book open, the two halves of a spread.
+  paperReading: (
+    <svg {...base}>
+      <path d="M12 6.6C10 5 7 4.6 3.4 5v13c3.6-.4 6.6 0 8.6 1.6 2-1.6 5-2 8.6-1.6V5c-3.6-.4-6.6 0-8.6 1.6z" />
+      <path d="M12 6.6v13" />
+      <path d="M6 9h3.2M6 12h3.2M15 9h3M15 12h3" />
+    </svg>
+  ),
+
+  // A code kata: the same form, run again until it stops being effort.
+  kata: (
+    <svg {...base}>
+      <path d="M12 12c-2-3-3.6-4.4-5.6-4.4a4.4 4.4 0 0 0 0 8.8c2 0 3.6-1.4 5.6-4.4zm0 0c2 3 3.6 4.4 5.6 4.4a4.4 4.4 0 0 0 0-8.8c-2 0-3.6 1.4-5.6 4.4z" />
+    </svg>
+  ),
+
+  // VLANs: one switch, cut into lanes that cannot see each other.
+  vlan: (
+    <svg {...base}>
+      <rect x="2.6" y="8" width="18.8" height="8" rx="2" />
+      <path d="M9 8v8M15 8v8" strokeDasharray="1.8 1.6" />
+      <path d="M5.8 12h.01M12 12h.01M18.2 12h.01" />
+      <path d="M5.8 4.6v3.4M12 4.6v3.4M18.2 4.6v3.4" />
+    </svg>
+  ),
+
+  // A VPN tunnel: two ends joined by a tube, and the lock in the middle of it.
+  vpnTunnel: (
+    <svg {...base}>
+      <path d="M4.6 7.6h14.8M4.6 16.4h14.8" />
+      <path d="M4.6 7.6a4.4 4.4 0 0 0 0 8.8M19.4 7.6a4.4 4.4 0 0 1 0 8.8" />
+      <rect x="9.6" y="11" width="4.8" height="4" rx="1" />
+      <path d="M10.6 11V9.8a1.4 1.4 0 0 1 2.8 0V11" />
+    </svg>
+  ),
+
+  // A reverse proxy: one door in front, and however many servers behind it.
+  reverseProxy: (
+    <svg {...base}>
+      <path d="M2.6 12h5" />
+      <rect x="7.6" y="9.2" width="4.8" height="5.6" rx="1.2" />
+      <path d="M12.4 12h2.4l3.6-5.4M14.8 12h3.6M14.8 12l3.6 5.4" />
+      <circle cx="19.8" cy="6.6" r="1.4" />
+      <circle cx="19.8" cy="12" r="1.4" />
+      <circle cx="19.8" cy="17.4" r="1.4" />
+    </svg>
+  ),
+
+  // A firewall, drawn as the wall it is named for.
+  firewall: (
+    <svg {...base}>
+      <rect x="3" y="4.4" width="18" height="15.2" rx="1.8" />
+      <path d="M3 9.5h18M3 14.5h18" />
+      <path d="M12 4.4v5.1M7.5 9.5v5M16.5 9.5v5M12 14.5v5.1" />
+    </svg>
+  ),
+
+  // Load balancing: one entrance, three places the request might go.
+  loadBalancer: (
+    <svg {...base}>
+      <circle cx="12" cy="4.8" r="2" />
+      <path d="M12 6.8V10M12 10H5.4v3.6M12 10v3.6M12 10h6.6v3.6" />
+      <rect x="2.8" y="13.6" width="5.2" height="5.4" rx="1.2" />
+      <rect x="9.4" y="13.6" width="5.2" height="5.4" rx="1.2" />
+      <rect x="16" y="13.6" width="5.2" height="5.4" rx="1.2" />
+    </svg>
+  ),
+
+  // Zero trust: the shield, with a keyhole, because being inside the network
+  // proves nothing.
+  zeroTrust: (
+    <svg {...base}>
+      <path d="M12 2.8l7.6 2.8v5.6c0 4.6-3.2 8.2-7.6 10-4.4-1.8-7.6-5.4-7.6-10V5.6z" />
+      <circle cx="12" cy="10.6" r="1.8" />
+      <path d="M12 12.4v3" />
+    </svg>
+  ),
+
+  // Subnetting: an address block halved, and one of the halves halved again.
+  subnetting: (
+    <svg {...base}>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M12 3v18M3 12h18" />
+      <path d="M7.5 3v9M3 7.5h9" />
+    </svg>
+  ),
+
+  // NAT: the private address goes out, the public one comes back.
+  nat: (
+    <svg {...base}>
+      <path d="M4 8h14M14.6 4.6 18 8l-3.4 3.4" />
+      <path d="M20 16H6M9.4 12.6 6 16l3.4 3.4" />
+    </svg>
+  ),
 };
 
 const ConceptIcon = ({ name, className }) => {
