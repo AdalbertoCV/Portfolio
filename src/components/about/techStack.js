@@ -1086,6 +1086,9 @@ import siairbyteIcon from '../../images/tech/airbyte.svg';
 import sieclipseIcon from '../../images/tech/eclipse.svg';
 // Spyder: the S and the web, without the light tile the repository draws them on.
 import sispyderIcon from '../../images/tech/spyder.svg';
+// dots: the wordmark from OpenAI's launch art, keyed out of its black ground. The
+// glow is dropped; the letters are what survive as a silhouette.
+import sidotsIcon from '../../images/tech/openaidots.png';
 
 const TECH_GROUPS = [
   {
@@ -1427,6 +1430,7 @@ const TECH_GROUPS = [
     items: [
       { name: 'Claude Code', icon: claudeIcon, mono: true },
       { name: 'Codex', icon: openaiIcon, mono: true },
+      { name: 'dots (OpenAI)', icon: sidotsIcon, flat: true },
       { name: 'Cursor', icon: cursorIcon, mono: true },
       { name: 'GitHub Copilot', icon: copilotIcon, mono: true },
       // These three ship their own artwork and none of them invert. OpenCode's
