@@ -1745,6 +1745,116 @@ const ICONS = {
       <path d="M11.6 12h1.2l1-2.8 1.4 5.2 1.2-4 1 2.8 1-1.8 1 1.6h1" />
     </svg>
   ),
+
+  // The data lake: every source flowing in as it is, and one wide body of
+  // water to keep it in, unshaped until someone needs it.
+  dataLake: (
+    <svg {...base}>
+      <ellipse cx="12" cy="15" rx="9" ry="4.6" />
+      <path d="M6.6 15c1.2-.9 2.4-.9 3.5 0s2.4.9 3.5 0 2.4-.9 3.5 0" />
+      <path d="M5 4.2l3 6M12 3v7M19 4.2l-3 6" />
+    </svg>
+  ),
+
+  // The lakehouse: a roof over the water, which is the whole idea — the
+  // structure and the transactions of a warehouse on top of the lake's storage.
+  lakehouse: (
+    <svg {...base}>
+      <path d="M3.6 10.4 12 3.6l8.4 6.8" />
+      <path d="M5.6 9.4v4.2M18.4 9.4v4.2" />
+      <path d="M3.4 16.2c1.6-1.2 3.2-1.2 4.8 0s3.2 1.2 4.8 0 3.2-1.2 4.8 0 1.6.8 2.2.4" />
+      <path d="M3.4 20c1.6-1.2 3.2-1.2 4.8 0s3.2 1.2 4.8 0 3.2-1.2 4.8 0 1.6.8 2.2.4" />
+    </svg>
+  ),
+
+  // Bronze, silver, gold: three tiers, each one taller because each is
+  // cleaner than the one before it.
+  medallion: (
+    <svg {...base}>
+      <rect x="2.4" y="14.6" width="5" height="6" rx="1.2" />
+      <rect x="9.5" y="9.8" width="5" height="10.8" rx="1.2" />
+      <rect x="16.6" y="4.4" width="5" height="16.2" rx="1.2" />
+      <path d="M7.7 17.6h1.6M14.8 15.2h1.6" />
+    </svg>
+  ),
+
+  // Schema on read: the page sits there as raw text, and the frame is only
+  // drawn around it at the moment somebody reads it.
+  schemaOnRead: (
+    <svg {...base}>
+      <path d="M6 3h8l4 4v14H6z" />
+      <path d="M14 3v4h4" />
+      <rect x="8.4" y="10.6" width="7.2" height="7" rx="1" strokeDasharray="2 1.6" />
+      <path d="M10.4 13h3.2M10.4 15.4h2" />
+    </svg>
+  ),
+
+  // A catalogue card and the lens that finds it: what is in the lake, and
+  // who to ask about it.
+  dataCatalog: (
+    <svg {...base}>
+      <rect x="3" y="3.6" width="12.6" height="16.8" rx="2" />
+      <path d="M6.4 8.4h5.8M6.4 12h3.4" />
+      <circle cx="16.4" cy="15.4" r="3.4" />
+      <path d="m18.9 17.9 2.5 2.5" />
+    </svg>
+  ),
+
+  // Lineage: two sources merge into one table and it fans out to two
+  // consumers, so a wrong number can be walked back to where it started.
+  dataLineage: (
+    <svg {...base}>
+      <circle cx="4.6" cy="6" r="1.9" />
+      <circle cx="4.6" cy="18" r="1.9" />
+      <circle cx="12" cy="12" r="1.9" />
+      <circle cx="19.4" cy="6" r="1.9" />
+      <circle cx="19.4" cy="18" r="1.9" />
+      <path d="M6.3 6.9 10.4 11M6.3 17.1 10.4 13M13.6 11l4.1-4.1M13.6 13l4.1 4.1" />
+    </svg>
+  ),
+
+  // Columnar storage: a table stored by column, so a query that wants one of
+  // them reads one stripe rather than the whole thing.
+  columnar: (
+    <svg {...base}>
+      <rect x="3" y="3.4" width="18" height="17.2" rx="2" />
+      <path d="M9 3.4v17.2M15 3.4v17.2" />
+      <path d="M10.8 8h2.4M10.8 12h2.4M10.8 16h2.4" />
+    </svg>
+  ),
+
+  // Partitioning: one dataset cut into slabs along a key, so the query
+  // only opens the slab it needs.
+  partitioning: (
+    <svg {...base}>
+      <rect x="3" y="3.4" width="18" height="4.4" rx="1.4" />
+      <rect x="3" y="9.8" width="18" height="4.4" rx="1.4" />
+      <rect x="3" y="16.2" width="18" height="4.4" rx="1.4" />
+      <path d="M6.4 5.6h.01M6.4 12h.01M6.4 18.4h.01" />
+    </svg>
+  ),
+
+  // Time travel: the table as it was, by snapshot — a clock running backwards.
+  timeTravel: (
+    <svg {...base}>
+      <path d="M3.6 12a8.4 8.4 0 1 0 2.5-6" />
+      <path d="M3.6 4.6v4.2h4.2" />
+      <path d="M12 7.6V12l3 2" />
+    </svg>
+  ),
+
+  // Data mesh: no central lake, just domains that each own their data and
+  // publish it to the others.
+  dataMesh: (
+    <svg {...base}>
+      <circle cx="5" cy="5" r="2" />
+      <circle cx="19" cy="5" r="2" />
+      <circle cx="5" cy="19" r="2" />
+      <circle cx="19" cy="19" r="2" />
+      <circle cx="12" cy="12" r="1.6" />
+      <path d="M7 5h10M5 7v10M19 7v10M7 19h10M6.4 6.4l4.5 4.5M17.6 6.4l-4.5 4.5M6.4 17.6l4.5-4.5M17.6 17.6l-4.5-4.5" />
+    </svg>
+  ),
 };
 
 const ConceptIcon = ({ name, className }) => {

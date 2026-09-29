@@ -37,10 +37,10 @@ test('no technology appears twice on the wall', () => {
 // Every star that left a group was replaced by one of the same kind, so the
 // groups kept their sizes and The Stars came on top: 1080 before, plus 21,
 // plus Prezi, Greptile, Dropbox, Windows Autopilot, Beautiful Soup, Fabrix.ai
-// Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
+// Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, and thirty-three for the data lake, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
 // and six of mathematics on the frontier, and the fractal omniverse.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1136 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1169 + TECH_GROUPS[0].items.length);
 });
 
 test('Prezi is on the wall as a tool', () => {
@@ -89,6 +89,13 @@ test('the LLM-ops intake is on the wall: agents and evals with the agent bench, 
     expect(inGroup('agents')).toContain(name),
   );
   ['Weaviate', 'Airbyte'].forEach((name) => expect(inGroup('data')).toContain(name));
+});
+
+test('the data lake is on the wall: the concepts, the table formats, the catalogs and the object stores', () => {
+  const data = names(TECH_GROUPS.find((group) => group.id === 'data'));
+  ['Data lake', 'Lakehouse', 'Medallion architecture', 'Schema-on-read', 'Data catalog', 'Data lineage', 'Columnar storage', 'Partitioning', 'Time travel', 'Data mesh', 'Delta Lake', 'Apache Hudi', 'Unity Catalog', 'Apache Parquet', 'Amazon S3', 'AWS Lake Formation'].forEach((name) =>
+    expect(data).toContain(name),
+  );
 });
 
 test('Kilo Code and OmniRoute are with the agents and models I work with, and MetaMask with the tools', () => {

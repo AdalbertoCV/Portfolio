@@ -1090,6 +1090,33 @@ import sispyderIcon from '../../images/tech/spyder.svg';
 // glow is dropped; the letters are what survive as a silhouette.
 import sidotsIcon from '../../images/tech/openaidots.png';
 
+// The data-lake intake. Table formats, catalogs, engines and the cloud's object
+// stores; the AWS marks are the glyphs without their gradient tiles, and the PNGs
+// are cut to silhouettes from each project's own avatar.
+import sideltalakeIcon from '../../images/tech/deltalake.png';
+import siapachehudiIcon from '../../images/tech/apachehudi.png';
+import siprojectnessieIcon from '../../images/tech/projectnessie.png';
+import siunitycatalogIcon from '../../images/tech/unitycatalog.png';
+import sidremioIcon from '../../images/tech/dremio.png';
+import sistarrocksIcon from '../../images/tech/starrocks.png';
+import silakefsIcon from '../../images/tech/lakefs.png';
+import sidatahubIcon from '../../images/tech/datahub.png';
+import siopenmetadataIcon from '../../images/tech/openmetadata.png';
+import sigreatexpectationsIcon from '../../images/tech/greatexpectations.png';
+import siapacheparquetIcon from '../../images/tech/apacheparquet.svg';
+import siapacheavroIcon from '../../images/tech/apacheavro.svg';
+import siapachehiveIcon from '../../images/tech/apachehive.svg';
+import siprestoIcon from '../../images/tech/presto.svg';
+import siapachekylinIcon from '../../images/tech/apachekylin.svg';
+import sicephIcon from '../../images/tech/ceph.svg';
+import siclouderaIcon from '../../images/tech/cloudera.svg';
+import sigooglecloudstorageIcon from '../../images/tech/googlecloudstorage.svg';
+import siamazons3Icon from '../../images/tech/amazons3.svg';
+import siamazonathenaIcon from '../../images/tech/amazonathena.svg';
+import siawsglueIcon from '../../images/tech/awsglue.svg';
+import siamazonredshiftIcon from '../../images/tech/amazonredshift.svg';
+import siawslakeformationIcon from '../../images/tech/awslakeformation.svg';
+
 const TECH_GROUPS = [
   {
     // The Stars: every technology with a public project behind it, moved up
@@ -1871,6 +1898,40 @@ const TECH_GROUPS = [
       { name: 'ScyllaDB', icon: siscylladbIcon, mono: true },
       { name: 'CouchDB', icon: sicouchdbIcon, mono: true },
       { name: 'Beautiful Soup', concept: 'soup' },
+      // The data lake: the ideas first, then what they are built from.
+      { name: 'Data lake', concept: 'dataLake' },
+      { name: 'Lakehouse', concept: 'lakehouse' },
+      { name: 'Medallion architecture', concept: 'medallion' },
+      { name: 'Schema-on-read', concept: 'schemaOnRead' },
+      { name: 'Data catalog', concept: 'dataCatalog' },
+      { name: 'Data lineage', concept: 'dataLineage' },
+      { name: 'Columnar storage', concept: 'columnar' },
+      { name: 'Partitioning', concept: 'partitioning' },
+      { name: 'Time travel', concept: 'timeTravel' },
+      { name: 'Data mesh', concept: 'dataMesh' },
+      { name: 'Delta Lake', icon: sideltalakeIcon, flat: true },
+      { name: 'Apache Hudi', icon: siapachehudiIcon, flat: true },
+      { name: 'Project Nessie', icon: siprojectnessieIcon, flat: true },
+      { name: 'Unity Catalog', icon: siunitycatalogIcon, flat: true },
+      { name: 'Dremio', icon: sidremioIcon, flat: true },
+      { name: 'StarRocks', icon: sistarrocksIcon, flat: true },
+      { name: 'lakeFS', icon: silakefsIcon, flat: true },
+      { name: 'DataHub', icon: sidatahubIcon, flat: true },
+      { name: 'OpenMetadata', icon: siopenmetadataIcon, flat: true },
+      { name: 'Great Expectations', icon: sigreatexpectationsIcon, flat: true },
+      { name: 'Apache Parquet', icon: siapacheparquetIcon, mono: true },
+      { name: 'Apache Avro', icon: siapacheavroIcon, mono: true },
+      { name: 'Apache Hive', icon: siapachehiveIcon, mono: true },
+      { name: 'Presto', icon: siprestoIcon, mono: true },
+      { name: 'Apache Kylin', icon: siapachekylinIcon, mono: true },
+      { name: 'Ceph', icon: sicephIcon, mono: true },
+      { name: 'Cloudera', icon: siclouderaIcon, mono: true },
+      { name: 'Google Cloud Storage', icon: sigooglecloudstorageIcon, mono: true },
+      { name: 'Amazon S3', icon: siamazons3Icon, mono: true },
+      { name: 'Amazon Athena', icon: siamazonathenaIcon, mono: true },
+      { name: 'AWS Glue', icon: siawsglueIcon, mono: true },
+      { name: 'Amazon Redshift', icon: siamazonredshiftIcon, mono: true },
+      { name: 'AWS Lake Formation', icon: siawslakeformationIcon, mono: true },
     ],
   },
   {
