@@ -1050,6 +1050,10 @@ import sifabrixaiIcon from '../../images/tech/fabrixai.png';
 import sigentleaiIcon from '../../images/tech/gentleai.png';
 // Ichigo: the strawberry llama from Homebrew Research's own repository art.
 import siichigoIcon from '../../images/tech/ichigo.png';
+// Gamma: the mark cut from the app's own favicon, without the gradient disc.
+import sigammaIcon from '../../images/tech/gamma.svg';
+// Fathom: the AI notetaker's mark, keyed out of its own black favicon tile.
+import sifathomIcon from '../../images/tech/fathom.png';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1503,6 +1507,7 @@ const TECH_GROUPS = [
       { name: 'Fabrix.ai', icon: sifabrixaiIcon, flat: true },
       { name: 'Gentle AI', icon: sigentleaiIcon, flat: true },
       { name: 'Ichigo', icon: siichigoIcon, flat: true },
+      { name: 'Gamma', icon: sigammaIcon, mono: true },
       { name: 'Kilo Code', icon: sikilocodeIcon, mono: true },
       { name: 'OmniRoute', icon: siomnirouteIcon, mono: true },
     ],
@@ -2332,6 +2337,7 @@ const TECH_GROUPS = [
       { name: 'Rocket.Chat', icon: sirocketchatIcon, flat: true },
       { name: 'Element', icon: sielementIcon, mono: true },
       { name: 'Otter.ai', icon: siotteraiIcon, flat: true },
+      { name: 'Fathom', icon: sifathomIcon, flat: true },
       { name: 'Zipdev', icon: sizipdevIcon, flat: true },
       // Tech week, the top-up.
       { name: 'Basecamp', icon: sibasecampIcon, mono: true },
