@@ -15,6 +15,7 @@ const CertsRail = ({ onProof }) => {
   const items = CERT_ITEMS.map((cert) => ({
     ...cert,
     label: t(`cv.certs.${cert.key}.name`),
+    meta: `${t(`cv.certs.${cert.key}.issuer`)} · ${t(`cv.certs.${cert.key}.year`)}`,
     group: cert.domain,
   }));
   const groups = CERT_DOMAINS.map((id) => ({ id, label: t(`cv.certDomains.${id}`) }));

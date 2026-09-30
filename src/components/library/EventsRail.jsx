@@ -18,6 +18,7 @@ const EventsRail = () => {
   const items = EVENT_ITEMS.map((event) => ({
     ...event,
     label: t(`cv.events.${event.key}.name`),
+    meta: `${t(`cv.events.${event.key}.issuer`)} · ${t(`cv.events.${event.key}.year`)}`,
     group: String(event.year),
   }));
   // Newest year first, the way the cards are.

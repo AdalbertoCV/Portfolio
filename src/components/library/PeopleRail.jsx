@@ -24,6 +24,7 @@ const PeopleRail = () => {
       key: person.id,
       tone: person.glow,
       label: person.name,
+      meta: orgs.length ? orgs.join(' · ') : t('cv.peopleOther'),
       orgs,
       group: orgs[0] || OTHER,
       person,

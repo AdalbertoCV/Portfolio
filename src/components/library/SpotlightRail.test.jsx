@@ -118,8 +118,9 @@ test('the events are a rail with a map beside it, on the right', () => {
 });
 
 test('the people are a rail with a network beside it, on the left, and nobody is quoted', () => {
-  // jsdom has no matchMedia, and the avatars ask whether motion is reduced.
-  window.matchMedia = () => ({ matches: true });
+  // jsdom has no matchMedia, and the avatars ask whether motion is reduced. Only
+  // that query matches: the window is not a phone.
+  window.matchMedia = (query) => ({ matches: /reduced-motion/.test(query) });
   const { container } = inApp(<PeopleRail />);
   expect(container.querySelectorAll('.cv-interest')).toHaveLength(REFERENCES.length);
   expect(container.querySelector('.cv-net')).not.toBeNull();
@@ -142,5 +143,44 @@ test('every event and person has what the drawings need', () => {
   REFERENCES.forEach(({ glow, roles }) => {
     expect(glow).toMatch(/^#[0-9a-f]{6}$/i);
     expect(roles.length).toBeGreaterThan(0);
+  });
+});
+
+// On a phone the rail is a list: short rows, and only the one the reader opens
+// shows its card, in place.
+describe('as a list on a phone', () => {
+  const original = window.matchMedia;
+  beforeEach(() => {
+    window.matchMedia = (query) => ({ matches: /max-width/.test(query), addEventListener() {}, removeEventListener() {} });
+  });
+  afterEach(() => {
+    window.matchMedia = original;
+  });
+
+  test('every item is a closed row, and opening one closes the last', () => {
+    const { container } = renderMany({ items: many.slice(0, 5) });
+    expect(container.querySelector('.cv-interests')).toBeNull();
+    const rows = container.querySelectorAll('.cv-acc-head button');
+    expect(rows).toHaveLength(5);
+    expect(container.querySelectorAll('.cv-acc-body')).toHaveLength(0);
+    fireEvent.click(rows[2]);
+    expect(container.querySelectorAll('.cv-acc-body')).toHaveLength(1);
+    expect(rows[2]).toHaveAttribute('aria-expanded', 'true');
+    // The drawing follows the row that was opened.
+    expect(screen.getByTestId('panel')).toHaveTextContent('5:item-2');
+    fireEvent.click(rows[4]);
+    expect(container.querySelectorAll('.cv-acc-body')).toHaveLength(1);
+    expect(rows[2]).toHaveAttribute('aria-expanded', 'false');
+    expect(rows[4]).toHaveAttribute('aria-expanded', 'true');
+    // Tapping the open row closes it.
+    fireEvent.click(rows[4]);
+    expect(container.querySelectorAll('.cv-acc-body')).toHaveLength(0);
+  });
+
+  test('the credentials, the events and the people all become lists', () => {
+    const { container } = inApp(<CertsRail onProof={() => {}} />);
+    expect(container.querySelectorAll('.cv-acc-item')).toHaveLength(CERT_ITEMS.length);
+    // A closed row says who issued it and when, without opening it.
+    expect(container.querySelector('.cv-acc-meta')).toHaveTextContent(en.cv.certs.icp.issuer);
   });
 });

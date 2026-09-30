@@ -2362,6 +2362,150 @@
     }
 }
 
+/* ----------------------------------------------------------------------------
+   THE RAILS AS A LIST (phones and narrow windows) — SpotlightRail, compact
+   Every card is taller than a phone screen, so a rail meant going back up to its
+   controls to turn it. Here each item is a short row, the drawing sits on top
+   once, and only the row the reader opens shows its card, in place. Nothing is
+   paged and nothing moves by itself; the section is as tall as the rows until
+   something is opened.
+   ------------------------------------------------------------------------- */
+
+.cv-interests-live--list {
+    gap: 16px;
+}
+
+.cv-acc {
+    display: grid;
+    gap: 10px;
+}
+
+.cv-acc-item {
+    border-radius: var(--radius-lg);
+    border: 1px solid color-mix(in srgb, var(--tone) 22%, var(--color-border-primary));
+    background:
+        radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--tone) 10%, transparent), transparent 62%),
+        var(--color-bg-card);
+    overflow: hidden;
+    transition: border-color var(--transition-base);
+}
+
+.cv-acc-item.is-open {
+    border-color: color-mix(in srgb, var(--tone) 45%, var(--color-border-primary));
+}
+
+/* The heading is the button: one target across the whole row, with room for a
+   thumb. */
+.cv-acc-head {
+    margin: 0;
+    font: inherit;
+}
+
+.cv-acc-head button {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 62px;
+    padding: 14px 18px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.cv-acc-head button:focus-visible {
+    outline: 2px solid var(--color-border-hover);
+    outline-offset: -3px;
+    border-radius: var(--radius-lg);
+}
+
+.cv-acc-head i {
+    flex: none;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--tone);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--tone) 18%, transparent);
+}
+
+.cv-acc-name {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.cv-acc-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+}
+
+.cv-acc-meta {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+}
+
+.cv-acc-chevron {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    color: var(--color-text-tertiary);
+    transition: transform var(--transition-base);
+}
+
+.cv-acc-item.is-open .cv-acc-chevron {
+    transform: rotate(180deg);
+}
+
+/* The open card is the same card, without its own frame: the row already has
+   one. Its title is in the row above, so it is not said twice. The class is
+   cv-interest on purpose, so every rule that styles the content of a card
+   (paragraphs, plates, links, chips) applies in here unchanged. */
+.cv-acc-body.cv-interest {
+    flex: none;
+    min-height: 0;
+    padding: 0 18px 20px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.cv-acc-body > h3 {
+    display: none;
+}
+
+/* What the closed row already says is not said again inside it: the issuer and
+   the year of a credential, and the place and date of an event. */
+.cv-acc-body .cert-plate,
+.cv-acc-body .event-meta {
+    display: none;
+}
+
+.cv-acc-body .interest-art,
+.cv-acc-body .cert-plate,
+.cv-acc-body .event-plate,
+.cv-acc-body .ref-plate {
+    margin: 0 0 18px;
+}
+
+@media (max-width: 560px) {
+    .cv-interests-live--list .cv-mind {
+        height: 190px;
+    }
+}
+
 /* ============================================================================
    SHORTCUTS
    ----------------------------------------------------------------------------

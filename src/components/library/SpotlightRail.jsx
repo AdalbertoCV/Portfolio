@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Reveal } from '../brand/parts';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { ArrowLeft, ArrowRight, Chevron, Reveal } from '../brand/parts';
 
 // One card at a time, with a drawing beside it that listens to which card it is.
 // This is the engine the interest cards were built on, lifted out so that the
@@ -34,6 +34,22 @@ export const useLive = () => {
   return [ref, live];
 };
 
+// True on a phone or a narrow window, where the rail becomes a list. Follows the
+// window, because a phone turned on its side is a different width.
+const COMPACT = '(max-width: 1079px)';
+const useCompact = () => {
+  const [compact, setCompact] = useState(() => Boolean(window.matchMedia?.(COMPACT).matches));
+  useEffect(() => {
+    const query = window.matchMedia?.(COMPACT);
+    if (!query) return undefined;
+    const on = () => setCompact(query.matches);
+    on();
+    query.addEventListener?.('change', on);
+    return () => query.removeEventListener?.('change', on);
+  }, []);
+  return compact;
+};
+
 const pad = (n, width) => String(n).padStart(width, '0');
 
 const SpotlightRail = ({
@@ -50,6 +66,11 @@ const SpotlightRail = ({
   renderPanel,
 }) => {
   const [liveRef, live] = useLive();
+  const compact = useCompact();
+  // In the list, which row is open. Nothing at first: the section is a few short
+  // rows, and the reader opens the one they want.
+  const [open, setOpen] = useState(null);
+  const anchor = useRef(null);
   const railRef = useRef(null);
   const settle = useRef(null);
   // Which card is on screen. The first one, so the section is never a rail with
@@ -159,10 +180,80 @@ const SpotlightRail = ({
   const pick = (id) => {
     setGroup(id);
     setIndex(0);
+    setOpen(null);
   };
+
+  // One row opens at a time, in place. When the row that was open is above the
+  // one just tapped, closing it would pull the tapped row up the screen, away
+  // from the thumb. So the row's distance from the top of the screen is noted
+  // before the change and put back right after it, in the same frame: the row
+  // stays where it was tapped and nothing is seen to move.
+  const toggle = (position, node) => {
+    anchor.current = { node, top: node.getBoundingClientRect().top };
+    setOpen((now) => (now === position ? null : position));
+    setIndex(position);
+  };
+  useLayoutEffect(() => {
+    const held = anchor.current;
+    anchor.current = null;
+    if (!held || !held.node.isConnected) return;
+    const delta = held.node.getBoundingClientRect().top - held.top;
+    if (Math.abs(delta) > 1) window.scrollBy(0, delta);
+  }, [open]);
 
   const filtered = groups && groups.length > 1 && items.length > dotsMax;
   const width = String(items.length).length;
+
+  if (compact) {
+    return (
+      // A list, not a rail. On a phone every card is taller than the screen, so a
+      // rail meant going back up to the controls to turn it. Here each item is a
+      // short row and only the one the reader opens shows its card, in place. The
+      // drawing stays on top, once, and follows whichever row was opened last.
+      <div ref={liveRef} className={`cv-interests-live cv-interests-live--list${live ? ' is-live' : ''}${className ? ` ${className}` : ''}`}>
+        {renderPanel({ index: at, live, item: current, count, items: visible })}
+        <div className="cv-acc">
+          {filtered ? (
+            <div className="cv-spot-filter" role="group">
+              {[{ id: 'all', label: allLabel }, ...groups].map(({ id, label }) => (
+                <button type="button" key={id} className="cv-spot-chip" aria-pressed={group === id} onClick={() => pick(id)}>
+                  {label}
+                </button>
+              ))}
+            </div>
+          ) : null}
+          {visible.map((item, position) => {
+            const isOpen = open === position;
+            return (
+              <article className={`cv-acc-item${isOpen ? ' is-open' : ''}`} key={item.key} style={{ '--tone': item.tone }}>
+                <h3 className="cv-acc-head">
+                  <button
+                    type="button"
+                    id={idOf('dot', item.key)}
+                    aria-expanded={isOpen}
+                    aria-controls={idOf('card', item.key)}
+                    onClick={(event) => toggle(position, event.currentTarget)}
+                  >
+                    <i aria-hidden="true" />
+                    <span className="cv-acc-name">
+                      <span className="cv-acc-title">{item.label}</span>
+                      {item.meta ? <span className="cv-acc-meta">{item.meta}</span> : null}
+                    </span>
+                    <Chevron className="cv-acc-chevron" />
+                  </button>
+                </h3>
+                {isOpen ? (
+                  <div id={idOf('card', item.key)} className="cv-acc-body cv-interest" role="region" aria-labelledby={idOf('dot', item.key)}>
+                    {renderCard(item, position)}
+                  </div>
+                ) : null}
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 
   return (
     // The live flag sits on a wrapper, not on the Reveal: Reveal adds its own
