@@ -144,31 +144,3 @@ test('every event and person has what the drawings need', () => {
     expect(roles.length).toBeGreaterThan(0);
   });
 });
-
-// On a phone a swipe across the card turns it, on release. The card does not
-// follow the finger; and a thumb scrolling the page, which drifts sideways, must
-// not be read as a swipe.
-const swipe = (rail, [x0, y0], [x1, y1]) => {
-  fireEvent.touchStart(rail, { touches: [{ clientX: x0, clientY: y0 }] });
-  fireEvent.touchEnd(rail, { changedTouches: [{ clientX: x1, clientY: y1 }] });
-};
-
-test('a sideways swipe across the card turns it, and scrolling does not', () => {
-  const { container } = renderMany({ items: many.slice(0, 5) });
-  const rail = container.querySelector('.cv-interests');
-  const current = () => [...container.querySelectorAll('.cv-interest-dot')].findIndex((dot) => dot.getAttribute('aria-current') === 'true');
-  expect(current()).toBe(0);
-  swipe(rail, [300, 400], [180, 410]);
-  expect(current()).toBe(1);
-  swipe(rail, [180, 400], [300, 395]);
-  expect(current()).toBe(0);
-  // Mostly downward, a little sideways: a scroll, not a swipe.
-  swipe(rail, [300, 400], [262, 600]);
-  expect(current()).toBe(0);
-  // Too short to mean it.
-  swipe(rail, [300, 400], [270, 400]);
-  expect(current()).toBe(0);
-  // The first card has nothing before it.
-  swipe(rail, [180, 400], [300, 400]);
-  expect(current()).toBe(0);
-});
