@@ -89,6 +89,7 @@ const cvEs = {
     // adorno.
     bot: {
       exampleLabel: 'Ejemplo',
+      more: 'Ver lo que le enseñé y un día con él',
       title: 'Le enseñé a un bot a trabajar como yo',
       lede:
         'Durante meses, con lo que sé de flujos agénticos, construí un agente sobre mis propias decisiones y mi metodología de trabajo. Hoy hace 10× lo que yo solo sacaba en Radii. No fue magia ni un prompt ingenioso: fue sentarme a enseñarle.',
@@ -129,6 +130,10 @@ const cvEs = {
         body: 'Todo tiene potencial de probarse, y casi siempre lo pruebo: primero en mi propio trabajo, donde se nota rápido si algo sirve o no. De todo lo que voy probando me quedo con lo mejor —lo que de verdad aguanta en producción— y descarto el resto. Tomo ideas de donde salen, las desarrollo hasta convertirlas en tecnología y proyectos propios, y me subo a la ola en lugar de esperarla.',
       },
     },
+    listsMore: 'Ver las áreas y sus prácticas',
+    showLess: 'Mostrar menos',
+    profileMore: 'Seguir leyendo',
+    peulMore: 'Ver el centro de idiomas',
     listsLabel: 'Habilidades blandas y áreas del día a día',
     listsLede:
       'No es una lista de cursos: es lo que ya está en uso. Esto es lo que traigo a una conversación de arquitectura, a una revisión de código, a una weekly y a una entrega.',

@@ -77,6 +77,7 @@ const cvEn = {
     // See the note in the Spanish file. Same text, same single number.
     bot: {
       exampleLabel: 'Example',
+      more: 'See what I taught it and a day with it',
       title: 'I taught a bot to work the way I do',
       lede:
         'Over months, using what I know about agentic workflows, I built an agent on my own decisions and my own methodology. It now gets through 10× what I used to get through alone at Radii. It was not magic and it was not a clever prompt: it was sitting down and teaching it.',
@@ -117,6 +118,10 @@ const cvEn = {
         body: 'Everything has the potential to be tried, and I usually try it — first in my own work, where it becomes obvious quickly whether something holds up or not. Out of everything I try, I keep the best — what actually survives in production — and drop the rest. I take ideas from wherever they come from, develop them until they are technology and projects of my own, and ride the wave instead of waiting for it.',
       },
     },
+    listsMore: 'See the areas and their practices',
+    showLess: 'Show less',
+    profileMore: 'Keep reading',
+    peulMore: 'See the language school',
     listsLabel: 'Soft skills and the areas I work in daily',
     listsLede:
       'Not a list of courses: this is what is already in use. What follows is what I bring to an architecture conversation, a code review, a weekly and a delivery.',

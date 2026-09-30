@@ -8,7 +8,7 @@ import GitHubLogo from '../../images/GitHub.png';
 import YoutubeLogo from '../../images/Youtube.png';
 import UAZLogo from '../../images/UAZ.webp';
 import { useTranslation } from '../../i18n/I18nProvider';
-import { ArrowRight, Reveal, Section } from '../brand/parts';
+import { ArrowRight, Collapsible, Reveal, Section } from '../brand/parts';
 import {
   CONTACT_EMAIL,
   CV_FILENAME,
@@ -203,7 +203,10 @@ const About = () => {
       <Section kicker={t('cv.profileKicker')} title={t('cv.profileTitle')}>
         <Reveal>
           <p className="brand-p brand-lead-p">{t('cv.profileBody')}</p>
-          <p className="brand-p">{t('cv.profileBody2')}</p>
+          {/* The second paragraph opens from a button on a phone. */}
+          <Collapsible label={t('cv.profileMore')} closeLabel={t('cv.showLess')}>
+            <p className="brand-p">{t('cv.profileBody2')}</p>
+          </Collapsible>
         </Reveal>
       </Section>
 
@@ -266,29 +269,33 @@ const About = () => {
               </div>
             </div>
 
-            <div className="bot-cols">
-              <div className="bot-group">
-                <h3>{t('cv.bot.taughtLabel')}</h3>
-                <ul className="bot-taught">
-                  {tl('cv.bot.taught').map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+            {/* On a phone the story stops at the bot and its claim; what it was
+                taught and what a day with it looks like open from a button. */}
+            <Collapsible label={t('cv.bot.more')} closeLabel={t('cv.showLess')}>
+              <div className="bot-cols">
+                <div className="bot-group">
+                  <h3>{t('cv.bot.taughtLabel')}</h3>
+                  <ul className="bot-taught">
+                    {tl('cv.bot.taught').map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="bot-group">
+                  <h3>{t('cv.bot.dayLabel')}</h3>
+                  <ol className="bot-day">
+                    {tl('cv.bot.day').map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ol>
+                </div>
               </div>
 
-              <div className="bot-group">
-                <h3>{t('cv.bot.dayLabel')}</h3>
-                <ol className="bot-day">
-                  {tl('cv.bot.day').map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ol>
-              </div>
-            </div>
-
-            <p className="bot-close">
-              <b>{t('cv.bot.closeLead')}</b> {t('cv.bot.close')}
-            </p>
+              <p className="bot-close">
+                <b>{t('cv.bot.closeLead')}</b> {t('cv.bot.close')}
+              </p>
+            </Collapsible>
           </div>
         </Reveal>
 
@@ -301,7 +308,10 @@ const About = () => {
         </Reveal>
 
         <Reveal>
-          <PracticeExplorer />
+          {/* The areas and their rows open from a button on a phone. */}
+          <Collapsible label={t('cv.listsMore')} closeLabel={t('cv.showLess')}>
+            <PracticeExplorer />
+          </Collapsible>
         </Reveal>
 
         {/* The one place on the site where the judgement this section claims
@@ -349,11 +359,13 @@ const About = () => {
             {/* The language school, under the degree rather than beside it:
                 same university, smaller claim, and it is the thing the C1 in
                 the panel to the right is actually standing on. */}
-            <article className="cv-edu-minor">
-              <h3>{t('cv.peul.name')}</h3>
-              <p className="cv-edu-meta">{t('cv.peul.meta')}</p>
-              <p className="cv-edu-body">{t('cv.peul.body')}</p>
-            </article>
+            <Collapsible label={t('cv.peulMore')} closeLabel={t('cv.showLess')}>
+              <article className="cv-edu-minor">
+                <h3>{t('cv.peul.name')}</h3>
+                <p className="cv-edu-meta">{t('cv.peul.meta')}</p>
+                <p className="cv-edu-body">{t('cv.peul.body')}</p>
+              </article>
+            </Collapsible>
           </div>
 
           <aside className="cv-languages">

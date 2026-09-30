@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { CONTACT_EMAIL } from '../../site';
@@ -62,6 +62,47 @@ export const Reveal = ({ as: Tag = 'div', stagger = false, className = '', child
     <Tag ref={ref} className={classes} {...rest}>
       {children}
     </Tag>
+  );
+};
+
+/**
+ * True while the window matches the query. Follows the window, because a phone
+ * turned on its side is a different width. jsdom has no matchMedia, so it is
+ * false there and the wide layout renders.
+ */
+export const useMedia = (query) => {
+  const [matches, setMatches] = useState(() => Boolean(window.matchMedia?.(query).matches));
+  useEffect(() => {
+    const list = window.matchMedia?.(query);
+    if (!list) return undefined;
+    const on = () => setMatches(list.matches);
+    on();
+    list.addEventListener?.('change', on);
+    return () => list.removeEventListener?.('change', on);
+  }, [query]);
+  return matches;
+};
+
+/**
+ * A long block that a phone gets as a summary. On a wide screen it is just its
+ * children, exactly as if it were not here. On a phone the children are not
+ * rendered until the reader asks for them with the button, which sits where the
+ * block would start, so the page below stays a few lines under the summary
+ * instead of a few screens. The button keeps its place when the block opens, so
+ * the reader can close it from the same spot.
+ */
+export const Collapsible = ({ label, closeLabel, children, query = '(max-width: 768px)' }) => {
+  const narrow = useMedia(query);
+  const [open, setOpen] = useState(false);
+  if (!narrow) return children;
+  return (
+    <div className={`collapsible${open ? ' is-open' : ''}`}>
+      <button type="button" className="collapsible-toggle" aria-expanded={open} onClick={() => setOpen((now) => !now)}>
+        {open ? closeLabel : label}
+        <Chevron />
+      </button>
+      {open ? <div className="collapsible-body">{children}</div> : null}
+    </div>
   );
 };
 

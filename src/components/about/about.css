@@ -2363,6 +2363,113 @@
 }
 
 /* ----------------------------------------------------------------------------
+   COLLAPSIBLE — a long block as a summary on a phone (Collapsible in parts.jsx)
+   The button is a full-width row with room for a thumb, in the quiet style of the
+   rows it sits among, and it stays where it is when the block opens.
+   ------------------------------------------------------------------------- */
+
+.collapsible {
+    display: grid;
+    gap: 22px;
+}
+
+.collapsible-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 18px;
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-card);
+    color: var(--color-text-primary);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.collapsible-toggle svg {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    color: var(--color-text-tertiary);
+    transition: transform var(--transition-base);
+}
+
+.collapsible.is-open .collapsible-toggle svg {
+    transform: rotate(180deg);
+}
+
+.collapsible-toggle:focus-visible {
+    outline: 2px solid var(--color-border-hover);
+    outline-offset: 2px;
+}
+
+.collapsible-body {
+    display: grid;
+    gap: 26px;
+}
+
+/* ----------------------------------------------------------------------------
+   THE ABOUT PAGE ON A PHONE — the same content at a phone's density
+   The page was laid out once, for a wide screen, and a phone got it narrower: the
+   same 72px between sections, the same section heads, the same long paragraphs,
+   fifteen screens of it. Here it gets a phone's own rhythm: tighter gaps, smaller
+   heads, and the blocks that run long held to a few lines with the rest one tap
+   away. Nothing is removed; it is all still there.
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .cv-page .brand-section {
+        padding-top: 46px;
+    }
+
+    .cv-page .brand-section-head {
+        margin-bottom: 22px;
+    }
+
+    .cv-page .brand-kicker {
+        margin-bottom: 10px;
+    }
+
+    .cv-page .brand-h2 {
+        font-size: 1.5rem;
+        line-height: 1.16;
+        margin-bottom: 10px;
+    }
+
+    .cv-page .brand-p {
+        font-size: 0.96rem;
+        line-height: 1.65;
+        margin-bottom: 12px;
+    }
+
+    /* "Now": a link card each, so a sentence of description is enough. */
+    .cv-page .cv-now-card {
+        padding: 18px 18px 16px;
+    }
+
+    .cv-page .cv-now-card p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    /* The degree is a link card to its own page, which tells the rest. */
+    .cv-page .cv-edu .cv-edu-body {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+}
+
+/* ----------------------------------------------------------------------------
    THE RAILS AS A LIST (phones and narrow windows) — SpotlightRail, compact
    Every card is taller than a phone screen, so a rail meant going back up to its
    controls to turn it. Here each item is a short row, the drawing sits on top
