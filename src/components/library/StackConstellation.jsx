@@ -205,6 +205,9 @@ const StackConstellation = ({ groups, active, query, live, onSelect }) => {
     };
 
     const draw = (now) => {
+      // A canvas with no size (a page swapped out from under it, a hidden tab) has
+      // nothing to draw on, and a gradient on it throws.
+      if (!(width > 1) || !(height > 1)) return;
       if (document.hidden) {
         last = now;
         return;

@@ -223,7 +223,13 @@
     position: relative;
 }
 
+/* A role far down the page is not drawn until the reader is close to it: its cover
+   has an animation that loops, and thirty of them were running at once with one on
+   screen. content-visibility skips the style, layout and paint of what is off
+   screen, and the size it reserves in the meantime is the last one it had. */
 .timeline-item {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 460px;
     position: relative;
 }
 

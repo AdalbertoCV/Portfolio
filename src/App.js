@@ -4,27 +4,11 @@ import './styles/brand.css';
 import './styles/marks.css';
 import './styles/hub.css';
 import About from './components/about/about';
-import Experience from './components/experience/experience';
 import Navbar from './components/navigation/navbar';
 import SiteFooter from './components/navigation/SiteFooter';
 import RouteMeta from './components/navigation/RouteMeta';
 import SkipLink from './components/navigation/SkipLink';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
-import MyProjects from './components/projects/projects';
-import StackPage from './components/stack/StackPage';
-import Ventures from './components/ventures/ventures';
-import RadiiPage from './components/brand/RadiiPage';
-import StackSelectPage from './components/brand/StackSelectPage';
-import MoonphasePage from './components/brand/MoonphasePage';
-import EvodepsPage from './components/brand/EvodepsPage';
-import FreelancePage from './components/brand/FreelancePage';
-import LabsolPage from './components/brand/LabsolPage';
-import CasePage from './components/brand/CasePage';
-import UazPage from './components/brand/UazPage';
-import ContactPage from './components/contact/ContactPage';
-import Decisions from './components/decisions/Decisions';
-import Study from './components/study/Study';
-import Changelog from './components/changelog/Changelog';
 import Terminal from './components/terminal/Terminal';
 import Backdrop from './components/brand/Backdrop';
 import { ScrollRail, useShownLocation } from './components/navigation/Transitions';
@@ -35,6 +19,64 @@ import { I18nProvider, useTranslation } from './i18n/I18nProvider';
 // to read about the work, and most of them will never open this route.
 const Play = lazy(() => import('./components/play/Play'));
 
+// Every other page, too. The home page is what most visitors open first, and it
+// was arriving with the code of the stack wall, the catalogue, the brand stories
+// and the decision log inside the same file, which a phone has to download and
+// run before it can paint a face. Each of those is its own chunk now, fetched
+// when the page is asked for — and, once the home page has painted and the
+// browser is idle, fetched anyway (see prefetchPages below), so that going to
+// the next page is as quick as it was when everything was in one file.
+const loaders = {
+  Experience: () => import('./components/experience/experience'),
+  MyProjects: () => import('./components/projects/projects'),
+  StackPage: () => import('./components/stack/StackPage'),
+  Ventures: () => import('./components/ventures/ventures'),
+  RadiiPage: () => import('./components/brand/RadiiPage'),
+  StackSelectPage: () => import('./components/brand/StackSelectPage'),
+  MoonphasePage: () => import('./components/brand/MoonphasePage'),
+  EvodepsPage: () => import('./components/brand/EvodepsPage'),
+  FreelancePage: () => import('./components/brand/FreelancePage'),
+  LabsolPage: () => import('./components/brand/LabsolPage'),
+  CasePage: () => import('./components/brand/CasePage'),
+  UazPage: () => import('./components/brand/UazPage'),
+  ContactPage: () => import('./components/contact/ContactPage'),
+  Decisions: () => import('./components/decisions/Decisions'),
+  Study: () => import('./components/study/Study'),
+  Changelog: () => import('./components/changelog/Changelog'),
+};
+const Experience = lazy(loaders.Experience);
+const MyProjects = lazy(loaders.MyProjects);
+const StackPage = lazy(loaders.StackPage);
+const Ventures = lazy(loaders.Ventures);
+const RadiiPage = lazy(loaders.RadiiPage);
+const StackSelectPage = lazy(loaders.StackSelectPage);
+const MoonphasePage = lazy(loaders.MoonphasePage);
+const EvodepsPage = lazy(loaders.EvodepsPage);
+const FreelancePage = lazy(loaders.FreelancePage);
+const LabsolPage = lazy(loaders.LabsolPage);
+const CasePage = lazy(loaders.CasePage);
+const UazPage = lazy(loaders.UazPage);
+const ContactPage = lazy(loaders.ContactPage);
+const Decisions = lazy(loaders.Decisions);
+const Study = lazy(loaders.Study);
+const Changelog = lazy(loaders.Changelog);
+
+// Once the page has loaded and the browser has nothing better to do, fetch the
+// other pages' code one by one, in the order a reader is most likely to go. They
+// come down at idle priority and never compete with what is on screen.
+const prefetchPages = () => {
+  const order = ['Experience', 'MyProjects', 'StackPage', 'Ventures', 'ContactPage', 'Decisions', 'Study', 'RadiiPage'];
+  const rest = Object.keys(loaders).filter((name) => !order.includes(name));
+  const queue = [...order, ...rest];
+  const idle = window.requestIdleCallback || ((callback) => window.setTimeout(callback, 1500));
+  const next = () => {
+    const name = queue.shift();
+    if (!name) return;
+    loaders[name]().catch(() => {}).finally(() => idle(next));
+  };
+  idle(next);
+};
+
 /* Every route renders from one location, and it is not the router's. It is the
    one the browser is currently showing, which lags the router's by exactly one
    view transition — see components/navigation/Transitions.jsx. Pulling the
@@ -42,6 +84,15 @@ const Play = lazy(() => import('./components/play/Play'));
    live inside the Router. */
 const Pages = () => {
   const shown = useShownLocation();
+
+  useEffect(() => {
+    if (document.readyState === 'complete') {
+      prefetchPages();
+      return undefined;
+    }
+    window.addEventListener('load', prefetchPages, { once: true });
+    return () => window.removeEventListener('load', prefetchPages);
+  }, []);
 
   // React Router keeps the scroll position across route changes, so moving from
   // a long page to a short one leaves the reader clamped partway down the new
@@ -63,6 +114,9 @@ const Pages = () => {
 
   return (
     <main id="main">
+      {/* No fallback: the page being left stays on screen until the next one's code
+          has arrived, and with the prefetch below that is almost never a wait. */}
+      <Suspense fallback={null}>
       <Routes location={shown}>
         <Route path="/" element={<About />} />
         <Route path="/experience" element={<Experience />} />
@@ -112,6 +166,7 @@ const Pages = () => {
           }
         />
       </Routes>
+      </Suspense>
     </main>
   );
 };

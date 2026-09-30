@@ -19,9 +19,37 @@
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      Not render-blocking: a stylesheet in the head holds the first paint until it
+      has come back from Google, and the faces use display=swap anyway, so the page
+      paints in the system font and the faces swap in. media=print is the standard
+      way to ask for it without blocking; the noscript keeps it for no-JS.
+    -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Cinzel:wght@600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Cinzel:wght@600&display=swap"
+      />
+    </noscript>
+    <!--
+      The portrait on the home page is the largest thing on the first screen. The
+      app renders it from script, which is why the browser would otherwise learn
+      it exists only after the bundle has run; this says so from the HTML, with the
+      same sizes the page uses so the right file is the one fetched.
+    -->
+    <link
+      rel="preload"
+      as="image"
+      href="%PUBLIC_URL%/about/me-840.webp"
+      imagesrcset="%PUBLIC_URL%/about/me-480.webp 480w, %PUBLIC_URL%/about/me-840.webp 840w"
+      imagesizes="(max-width: 860px) 142px, (max-width: 1100px) 33vw, 420px"
+      fetchpriority="high"
     />
     <!--
       This is the only metadata a link unfurler ever sees. The app is a

@@ -106,6 +106,43 @@ export const Collapsible = ({ label, closeLabel, children, query = '(max-width: 
   );
 };
 
+/**
+ * Holds the rendering of a block of page until it is near. The home page is long,
+ * and a phone was building every section of it (and the drawings inside them)
+ * before it could paint the first one. A block wrapped in this is a blank of the
+ * height it is expected to be until the reader is within a screen or so of it, or
+ * a few seconds have passed and the browser has had time to paint what is first;
+ * then it mounts, and stays. The timer is what keeps the content in the page for
+ * anything that does not scroll, and `after` staggers the blocks so they do not
+ * all arrive in one long task. Without IntersectionObserver (jsdom, old browsers)
+ * it renders at once.
+ */
+export const WhenNear = ({ children, minHeight = 600, after = 3000, margin = '1400px 0px' }) => {
+  const ref = useRef(null);
+  const [mounted, setMounted] = useState(typeof IntersectionObserver === 'undefined');
+
+  useEffect(() => {
+    if (mounted) return undefined;
+    const node = ref.current;
+    const observer = node
+      ? new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) setMounted(true);
+          },
+          { rootMargin: margin },
+        )
+      : null;
+    observer?.observe(node);
+    const timer = window.setTimeout(() => setMounted(true), after);
+    return () => {
+      observer?.disconnect();
+      window.clearTimeout(timer);
+    };
+  }, [mounted, margin, after]);
+
+  return mounted ? children : <div ref={ref} style={{ minHeight }} aria-hidden="true" />;
+};
+
 /* ------------------------------------------------------------------ icons */
 
 export const ArrowLeft = () => (

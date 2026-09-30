@@ -271,6 +271,9 @@ const NeuralMind = ({ index, live }) => {
     const sy = (y) => oy + y * scale;
 
     const draw = (now) => {
+      // A canvas with no size (a page swapped out from under it, a hidden tab) has
+      // nothing to draw on, and a gradient on it throws.
+      if (!(width > 1) || !(height > 1)) return;
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
       frame += 1;
