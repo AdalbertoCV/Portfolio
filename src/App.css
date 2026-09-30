@@ -9,8 +9,11 @@
     --color-bg-card-hover: #4a4a4a;
 
     --color-text-primary: #ffffff;
-    --color-text-secondary: #b8b8b8;
-    --color-text-tertiary: #808080;
+    /* Secondary and tertiary text sit straight on the aurora behind the page, in the
+       places where there is no card under it, so they are brighter than they were
+       (#b8b8b8 and #808080): a mid grey over a violet or magenta glow is lost. */
+    --color-text-secondary: #d2d2d8;
+    --color-text-tertiary: #a8a8b0;
 
     --color-accent-primary: #ffffff;
     --color-accent-secondary: #e0e0e0;
@@ -93,8 +96,10 @@
     --color-bg-card-hover: #fafafa;
 
     --color-text-primary: #0f0f10;
-    --color-text-secondary: #52525b;
-    --color-text-tertiary: #71717a;
+    /* Darker than they were (#52525b and #71717a) for the same reason: pastel
+       ribbons behind bare text took the contrast out of the lighter greys. */
+    --color-text-secondary: #3b3b43;
+    --color-text-tertiary: #54545e;
 
     --color-accent-primary: #0f0f10;
     --color-accent-secondary: #27272a;
@@ -169,6 +174,10 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     color: var(--color-text-primary);
+    /* One step heavier than regular: body text sits over a moving background now,
+       and thin strokes are the first thing it swallows. Headings, buttons and labels
+       state their own weights. */
+    font-weight: 500;
 }
 
 /* Grain texture overlay. A pre-rendered noise tile, not an SVG feTurbulence filter:
