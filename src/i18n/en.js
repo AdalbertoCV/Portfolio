@@ -212,6 +212,7 @@ const en = {
         today: 'I would do it the same way again. The platform runs on AWS today and carries no compatibility debt to the cloud we left.',
       },
     },
+    treeCount: 'decisions',
     more: 'I add entries as decisions settle. The ones here have already been paid for — they are calls that have been running for a while, not proposals.',
     back: 'Back',
   },

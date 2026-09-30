@@ -214,6 +214,7 @@ const es = {
         today: 'Lo volvería a hacer igual. La plataforma corre hoy sobre AWS y no quedó deuda de compatibilidad con la nube que dejamos.',
       },
     },
+    treeCount: 'decisiones',
     more: 'Voy agregando entradas conforme las decisiones se decantan. Las que están aquí ya se pagaron: son decisiones que llevan tiempo corriendo, no propuestas.',
     back: 'Regresar',
   },
