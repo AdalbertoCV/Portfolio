@@ -2362,6 +2362,41 @@
     }
 }
 
+/* ----------------------------------------------------------------------------
+   THE RAILS ON A PHONE
+   On a desktop the controls sit above the card, next to the drawing, and the two
+   are in view together. On a phone the card is taller than the screen, so the
+   controls above it were a scroll away from the place the reader finishes: the
+   end of the card. They go under it, in one row, dots on the left and the arrows
+   where a thumb already is. The drawing stays on top and says which one this is.
+   A swipe across the card turns it too (see SpotlightRail).
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 1079px) {
+    .cv-interest-rail > .cv-spot-filter {
+        order: 0;
+    }
+
+    .cv-interest-rail > .cv-interests {
+        order: 1;
+    }
+
+    .cv-interest-rail > .cv-interest-nav {
+        order: 2;
+    }
+
+    .cv-spot .cv-interest-nav {
+        flex-wrap: nowrap;
+    }
+
+    /* The rails with a handful of dots keep them on the same line as the
+       arrows. The interests, with eight, still need the whole row for theirs. */
+    .cv-spot .cv-interest-dots {
+        flex: 0 1 auto;
+        min-width: 0;
+    }
+}
+
 /* ============================================================================
    SHORTCUTS
    ----------------------------------------------------------------------------

@@ -137,12 +137,49 @@ const SpotlightRail = ({
 
   useEffect(() => () => clearTimeout(settle.current), []);
 
+  // On a phone the controls are under the card, where the reading ends, and a
+  // card is taller than the screen. So turning to another one would leave the
+  // reader looking at the middle of it, or at the foot of a shorter one. When the
+  // top of the section is above the navbar, take the page back up to it. Nothing
+  // on the page moves on its own: this happens once, because of a tap.
+  const bringIntoView = () => {
+    const wrap = liveRef.current;
+    if (!wrap || !window.matchMedia?.('(max-width: 1079px)').matches) return;
+    const navbar = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--navbar-h')) || 96;
+    const top = wrap.getBoundingClientRect().top;
+    if (top < navbar) window.scrollTo({ top: window.scrollY + top - navbar - 12, behavior: 'smooth' });
+  };
+
+  const go = (next) => {
+    setIndex(next);
+    bringIntoView();
+  };
+
   // The arrows stop at the ends: a rail that jumps from the last card back to
   // the first is a cut, not a slide.
   const step = (delta) => {
     const next = at + delta;
     if (next < 0 || next >= count) return;
-    setIndex(next);
+    go(next);
+  };
+
+  // A swipe across the card turns it, on release. The card does not follow the
+  // finger: it holds still and is replaced, the way the arrows replace it. The
+  // gesture has to be mostly sideways and long enough that a thumb scrolling the
+  // page, which drifts, is never read as one.
+  const touch = useRef(null);
+  const onTouchStart = (event) => {
+    const point = event.touches[0];
+    touch.current = { x: point.clientX, y: point.clientY };
+  };
+  const onTouchEnd = (event) => {
+    const start = touch.current;
+    touch.current = null;
+    if (!start) return;
+    const point = event.changedTouches[0];
+    const dx = point.clientX - start.x;
+    const dy = point.clientY - start.y;
+    if (Math.abs(dx) > 56 && Math.abs(dx) > Math.abs(dy) * 1.6) step(dx < 0 ? 1 : -1);
   };
 
   // Arrow keys on the dots, which is what a row of position markers is
@@ -203,7 +240,7 @@ const SpotlightRail = ({
                   style={{ '--tone': item.tone }}
                   aria-label={item.label}
                   aria-current={at === position ? 'true' : undefined}
-                  onClick={() => setIndex(position)}
+                  onClick={() => go(position)}
                   onKeyDown={(event) => walkDots(event, position)}
                 />
               ))}
@@ -237,7 +274,13 @@ const SpotlightRail = ({
           </div>
         </div>
 
-        <div className="cv-interests" ref={railRef} onScroll={onScroll}>
+        <div
+          className="cv-interests"
+          ref={railRef}
+          onScroll={onScroll}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
           {visible.map((item, position) => (
             <article
               className="cv-interest"
