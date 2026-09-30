@@ -4,8 +4,11 @@ import { useTranslation } from '../../i18n/I18nProvider';
 import { StackSelectMark } from '../marks/StackSelectMark';
 import { MoonphaseMark } from '../marks/MoonphaseMark';
 import { ArrowRight, Reveal } from '../brand/parts';
+import { useLive } from '../library/SpotlightRail';
 import ProjectsMosaic from '../projects/ProjectsMosaic';
 import VenturesPlan from './VenturesPlan';
+import VenturesOrbit from './VenturesOrbit';
+import { STAGES } from './plan';
 
 // The two companies Adalberto founded, as opposed to the roles on /experience
 // where someone else hired him. The split is the whole point of this page
@@ -32,6 +35,13 @@ const VENTURES = [
 const Ventures = () => {
   const { t } = useTranslation();
   const { hash } = useLocation();
+  const [orbitRef, orbitLive] = useLive();
+  const orbitLabels = {
+    moonphase: t('plan.names.moonphase'),
+    stackselect: t('plan.names.stackselect'),
+    freelance: 'Freelance',
+    stages: STAGES.map((stage) => `${t(`plan.stages.${stage.id}.name`)} · ${t(`plan.stages.${stage.id}.window`)}`),
+  };
 
   // The chips on each company's page land here. App resets the scroll to the
   // top on every route change and its effect runs after this one, so the jump
@@ -48,6 +58,17 @@ const Ventures = () => {
         <span className="hub-badge">{t('ventures.badge')}</span>
         <h1 className="hub-title">{t('ventures.title')}</h1>
         <p className="hub-lede">{t('ventures.lede')}</p>
+      </Reveal>
+
+      {/* The two companies as two systems, one orbit per stage of the plan below. */}
+      <Reveal>
+        <div ref={orbitRef}>
+          <VenturesOrbit
+            live={orbitLive}
+            labels={orbitLabels}
+            onSelect={() => document.getElementById('plan')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+          />
+        </div>
       </Reveal>
 
       <Reveal className="venture-grid" stagger>

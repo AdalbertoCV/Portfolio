@@ -2526,3 +2526,74 @@ ol.timeline.reveal {
 @media (prefers-reduced-motion: reduce) {
     .when-near { animation: none; }
 }
+
+/* ----------------------------------------------------------------------------
+   THE TWO COMPANIES AS TWO SYSTEMS (VenturesOrbit.jsx)
+   A dark instrument panel in both themes, like the catalogue's: a screen
+   showing the work, and a screen is dark whatever the room is. In the flow of
+   the page; nothing on it follows the scroll.
+   ------------------------------------------------------------------------- */
+
+.vo-panel {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    margin: 0 0 32px;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    background:
+        radial-gradient(34% 80% at 25% 48%, rgba(167, 139, 250, 0.12), transparent 70%),
+        radial-gradient(34% 80% at 75% 48%, rgba(52, 211, 153, 0.1), transparent 70%),
+        radial-gradient(14% 40% at 50% 48%, rgba(245, 185, 66, 0.1), transparent 70%),
+        linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px) 0 0 / 22px 22px,
+        linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px) 0 0 / 22px 22px,
+        #07090d;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.55), 0 18px 40px -24px rgba(0, 0, 0, 0.6);
+}
+
+.vo-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 3px);
+    mix-blend-mode: multiply;
+}
+
+.vo-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: pan-y;
+}
+
+/* The stage under the pointer. Nothing when there is nothing to say. */
+.vo-tag {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 24px;
+    max-width: calc(100% - 48px);
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(226, 232, 240, 0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    .vo-panel { height: 300px; }
+}
+
+@media (max-width: 560px) {
+    .vo-panel { height: 240px; margin-bottom: 24px; }
+}
