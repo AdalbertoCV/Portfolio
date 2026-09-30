@@ -1098,21 +1098,59 @@
    one card alone on the second row, which reads as a mistake; three leaves two,
    which reads as a row. It is also the count that stays tidy as the list grows:
    six is 3+3, seven is 3+3+1 only once. */
-.refs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+/* The credential card's plate, for a person: the little screen with the figure on
+   it, and who they worked with beside it. */
+.ref-plate {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    height: 84px;
+    margin: -6px -4px 22px;
+    padding: 0 22px;
+    border-radius: var(--radius-md);
+    background:
+        radial-gradient(60% 90% at 50% 100%, color-mix(in srgb, var(--tone) 16%, transparent), transparent 70%),
+        color-mix(in srgb, var(--tone) 7%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tone) 16%, transparent);
 }
 
-.ref-card {
+.ref-plate .ref-mark {
+    flex: none;
+    margin: 0;
+}
+
+.cv-interest .ref-plate-meta {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 26px 24px 8px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border-primary);
-    background: var(--color-bg-card);
-    transition: border-color var(--transition-base), transform var(--transition-base);
+    gap: 3px;
+    margin: 0;
+}
+
+.ref-plate-meta b {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+}
+
+.ref-plate-meta span {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+}
+
+.cv-interest .ref-roles {
+    margin: 0 0 20px;
+}
+
+.cv-interest .people-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 26px;
+    margin: 0;
 }
 
 /* The plate the figure stands on. Dark in both themes and rounded rather
@@ -1310,17 +1348,6 @@
     width: 13px;
     height: 13px;
     transition: transform var(--transition-base);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .ref-card:hover {
-        border-color: var(--color-border-hover);
-        transform: translateY(-3px);
-    }
-
-    .ref-links a:hover svg {
-        transform: translate(2px, -2px);
-    }
 }
 
 /* ============================================================================

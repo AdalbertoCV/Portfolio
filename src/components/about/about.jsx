@@ -8,7 +8,7 @@ import GitHubLogo from '../../images/GitHub.png';
 import YoutubeLogo from '../../images/Youtube.png';
 import UAZLogo from '../../images/UAZ.webp';
 import { useTranslation } from '../../i18n/I18nProvider';
-import { ArrowRight, ArrowUpRight, Reveal, Section } from '../brand/parts';
+import { ArrowRight, Reveal, Section } from '../brand/parts';
 import {
   CONTACT_EMAIL,
   CV_FILENAME,
@@ -17,11 +17,10 @@ import {
   LINKEDIN,
   YOUTUBE,
 } from '../../site';
-import REFERENCES from './references';
-import RefHacker from './RefHacker';
 import WorkBot from './WorkBot';
 import CertsRail from '../library/CertsRail';
 import EventsRail from '../library/EventsRail';
+import PeopleRail from '../library/PeopleRail';
 import TimelineStrip from './TimelineStrip';
 import PracticeExplorer from './PracticeExplorer';
 import ConceptIcon from './ConceptIcons';
@@ -402,36 +401,7 @@ const About = () => {
         title={t('cv.referencesTitle')}
         lede={t('cv.referencesLede')}
       >
-        <Reveal className="refs" stagger>
-          {REFERENCES.map(({ id, name, figure, glow, roles, site, linkedin }) => (
-            <article className="ref-card" key={id}>
-              <RefHacker name={name} figure={figure} glow={glow} />
-              <h3 className="ref-name">{name}</h3>
-              <div className="ref-roles">
-                {roles.map(({ id: roleId, org }) => (
-                  <p className="ref-role" key={roleId}>
-                    {t(`cv.references.${roleId}`)}
-                    {/* A role can stand without a company, when the company is
-                        not known. */}
-                    {org ? <span className="ref-org">{org}</span> : null}
-                  </p>
-                ))}
-              </div>
-              <div className="ref-links">
-                <a href={linkedin} target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                  <ArrowUpRight />
-                </a>
-                {site ? (
-                  <a href={site} target="_blank" rel="noopener noreferrer">
-                    {t('cv.referencesSite')}
-                    <ArrowUpRight />
-                  </a>
-                ) : null}
-              </div>
-            </article>
-          ))}
-        </Reveal>
+        <PeopleRail />
       </Section>
 
       <Reveal className="hub-teaser">

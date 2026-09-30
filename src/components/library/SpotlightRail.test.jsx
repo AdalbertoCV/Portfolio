@@ -3,8 +3,12 @@ import { MemoryRouter } from 'react-router-dom';
 import { I18nProvider } from '../../i18n/I18nProvider';
 import en from '../../i18n/en';
 import { CERT_ITEMS } from '../about/certsData';
+import { EVENT_ITEMS } from '../about/eventsData';
+import REFERENCES from '../about/references';
 import SpotlightRail from './SpotlightRail';
 import CertsRail from './CertsRail';
+import EventsRail from './EventsRail';
+import PeopleRail from './PeopleRail';
 
 const many = Array.from({ length: 30 }, (_, i) => ({
   key: `item-${i}`,
@@ -90,5 +94,53 @@ test('every credential has a year, a tone and text in both languages', () => {
     expect(Number.isInteger(year)).toBe(true);
     expect(tone).toMatch(/^#[0-9a-f]{6}$/i);
     expect(en.cv.certs[key].name).toBeTruthy();
+  });
+});
+
+const inApp = (node) =>
+  render(
+    <I18nProvider>
+      <MemoryRouter>{node}</MemoryRouter>
+    </I18nProvider>,
+  );
+
+test('the events are a rail with a map beside it, on the right', () => {
+  const { container } = inApp(<EventsRail />);
+  expect(container.querySelectorAll('.cv-interest')).toHaveLength(EVENT_ITEMS.length);
+  expect(container.querySelector('.cv-map')).not.toBeNull();
+  // The drawing alternates sides down the page: certificates left, events right.
+  expect(container.querySelector('.cv-spot--flip')).not.toBeNull();
+  // Nothing was lost in the move: the long entry keeps both paragraphs and the
+  // link to the project it turned into.
+  const rbr = document.getElementById('event-card-rbr');
+  expect(rbr.querySelectorAll('p').length).toBeGreaterThanOrEqual(3);
+  expect(rbr.querySelector('a[href="/projects"]')).not.toBeNull();
+});
+
+test('the people are a rail with a network beside it, on the left, and nobody is quoted', () => {
+  // jsdom has no matchMedia, and the avatars ask whether motion is reduced.
+  window.matchMedia = () => ({ matches: true });
+  const { container } = inApp(<PeopleRail />);
+  expect(container.querySelectorAll('.cv-interest')).toHaveLength(REFERENCES.length);
+  expect(container.querySelector('.cv-net')).not.toBeNull();
+  expect(container.querySelector('.cv-spot--flip')).toBeNull();
+  // Every card still hands over a LinkedIn link.
+  REFERENCES.forEach(({ id, linkedin }) => {
+    const card = document.getElementById(`person-card-${id}`);
+    expect(card.querySelector(`a[href="${linkedin}"]`)).not.toBeNull();
+  });
+});
+
+test('every event and person has what the drawings need', () => {
+  EVENT_ITEMS.forEach(({ lon, lat, when, tone, city }) => {
+    expect(lon).toBeLessThan(-80);
+    expect(lat).toBeGreaterThan(14);
+    expect(Number.isFinite(when)).toBe(true);
+    expect(tone).toMatch(/^#[0-9a-f]{6}$/i);
+    expect(city).toBeTruthy();
+  });
+  REFERENCES.forEach(({ glow, roles }) => {
+    expect(glow).toMatch(/^#[0-9a-f]{6}$/i);
+    expect(roles.length).toBeGreaterThan(0);
   });
 });

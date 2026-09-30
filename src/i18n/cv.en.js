@@ -241,6 +241,15 @@ const cvEn = {
     referencesLede:
       'People who have worked with me. They are here with their own links rather than with a sentence I wrote for them: whatever they have to say about my work, they can say it themselves.',
     referencesSite: 'Portfolio',
+    peoplePrev: 'Previous person',
+    peopleNext: 'Next person',
+    peopleAll: 'All',
+    peopleOther: 'Independent',
+    peopleTag: 'Collaboration',
+    netPerson: 'person',
+    netPeople: 'people',
+    netOrg: 'organisation',
+    netOrgs: 'organisations',
     references: {
       cesar: 'CTO at',
       viky: 'Software engineer at',

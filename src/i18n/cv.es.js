@@ -258,6 +258,15 @@ const cvEs = {
     referencesLede:
       'Gente que ha trabajado conmigo. Están aquí con sus propios enlaces y no con una frase que yo les haya puesto: lo que tengan que decir de mi trabajo, que lo digan ellos.',
     referencesSite: 'Portafolio',
+    peoplePrev: 'Persona anterior',
+    peopleNext: 'Persona siguiente',
+    peopleAll: 'Todas',
+    peopleOther: 'Independiente',
+    peopleTag: 'Colaboración',
+    netPerson: 'persona',
+    netPeople: 'personas',
+    netOrg: 'organización',
+    netOrgs: 'organizaciones',
     references: {
       cesar: 'CTO en',
       viky: 'Ingeniera de software en',
