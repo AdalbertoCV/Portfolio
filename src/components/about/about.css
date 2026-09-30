@@ -1368,174 +1368,131 @@
     margin: 0;
 }
 
-/* Events sit below the credentials in the same section. One card, laid out as
-   mark + prose so the organiser's wordmark reads as the identity of the thing
-   rather than as decoration on top of it. */
-.cv-events {
-    margin-top: 36px;
-}
-
-/* 4px between cards read as one block cut into three. The gap is bigger than
-   the space under the heading now, so the three cards group together and each
-   one still reads as its own thing. */
-.cv-event + .cv-event {
-    margin-top: 18px;
-}
-
-.cv-event {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 22px;
-    margin-top: 4px;
-    padding: 24px 22px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border-primary);
-    background: var(--color-bg-card);
-    transition: border-color var(--transition-base), transform var(--transition-base);
-}
-
-/* The official wordmark is drawn in #e5e5e5 — near-white, and invisible on a
-   light card. Rather than repaint someone else's logo, it keeps its real
-   colour and gets the dark ground it was drawn for, in both themes. */
-/* A fixed plate, not a fixed width. The three wordmarks have very different
-   proportions — Release Before Ready and InnovaFest are long and low, Talent
-   Land is a near-square lockup — so sizing them all to one width made Talent
-   Land twice as tall as the others and its plate towered over them. Constrain
-   both sides instead: every plate is the same rectangle and each mark fits
-   inside it, the long ones limited by width and the square one by height. */
-.cv-event-mark {
+/* The organiser's wordmark is drawn in #e5e5e5 — near-white, and invisible on a
+   light card. Rather than repaint someone else's logo, it keeps its real colour
+   and gets the dark ground it was drawn for, in both themes. A fixed plate, not a
+   fixed width: the wordmarks have very different proportions, so each one is
+   limited by the plate on whichever side it reaches first. */
+.event-plate {
     display: grid;
     place-items: center;
-    flex: 0 0 auto;
     box-sizing: border-box;
-    width: 180px;
-    height: 76px;
-    padding: 18px;
+    height: 84px;
+    margin: -6px -4px 22px;
+    padding: 20px;
     border-radius: var(--radius-md);
     background: #101010;
+    border: 1px solid color-mix(in srgb, var(--tone) 30%, #101010);
 }
 
-.cv-event-mark img {
+.event-plate img {
     display: block;
     width: auto;
     height: auto;
     max-width: 100%;
     /* In px, not 100%: a percentage max-height resolves against a grid area
-       that has no definite height of its own, so the tall lockup ignored it
-       and kept overflowing the plate. */
+       with no definite height of its own. */
     max-height: 40px;
     object-fit: contain;
 }
 
-.cv-event-copy {
-    flex: 1 1 260px;
+.cv-interest .event-meta {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 12px;
+    margin: -4px 0 16px;
 }
 
-.cv-event-copy h4 {
-    font-size: 0.98rem;
-    letter-spacing: -0.02em;
-    line-height: 1.35;
-    color: var(--color-text-primary);
-    margin: 0 0 8px;
+.event-meta b {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
 }
 
-.cv-event-links {
+.event-meta span {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+}
+
+.cv-interest .event-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px 26px;
-    margin-top: 18px;
+    margin: 0;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .cv-event:hover {
-        border-color: var(--color-border-hover);
-        transform: translateY(-3px);
-    }
+/* The route log at the foot of the map: the events in the order the cards are
+   in, the one in view lit. It fills the part of a tall panel the country does
+   not, and it is the one thing there that grows with the list. Desktop only: on a
+   phone the panel is a strip with no room under the map. */
+.cv-map-log {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    left: 26px;
+    bottom: 46px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 7px;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(226, 232, 240, 0.42);
+    pointer-events: none;
 }
 
-@media (max-width: 600px) {
-    .cv-event-mark {
-        width: 150px;
-        height: 66px;
-        padding: 15px;
-    }
-
-    .cv-event-mark img {
-        max-height: 36px;
-    }
+.cv-map-log li {
+    display: grid;
+    grid-template-columns: 4.2ch 1fr;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.4s ease;
 }
 
-/* Desktop only. A wide screen has the room to lay the credentials and the
-   events out in a grid instead of one long column; below this width the page
-   keeps the stacked layout it always had, which is the right one for a phone
-   or a narrow window. */
-@media (min-width: 1001px) {
-    /* Events: the long entry across the top with its two paragraphs side by
-       side, the two short ones sharing the row under it, plate on top of each
-       and the copy beneath. */
-    .cv-event-list {
+.cv-map-log li::before {
+    content: "";
+    grid-column: 1;
+    grid-row: 1;
+    width: 0;
+    height: 1px;
+    background: var(--tone);
+    transition: width 0.4s ease;
+}
+
+.cv-map-log b {
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+.cv-map-log li.is-on {
+    color: color-mix(in srgb, var(--tone) 55%, #e2e8f0);
+}
+
+@media (min-width: 1080px) {
+    .cv-map-log {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 4px;
+    }
+}
+
+/* Alternating sides down the page: the credentials keep the drawing on the left,
+   the events put it on the right, and the people put it on the left again. Only
+   where there are two columns; over the card on a phone nothing changes. */
+@media (min-width: 1080px) {
+    .cv-interests-live.cv-spot--flip {
+        grid-template-columns: minmax(0, 660px) minmax(0, 1fr);
     }
 
-    .cv-event + .cv-event {
-        margin-top: 0;
-    }
-
-    .cv-event {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: stretch;
-        gap: 18px;
-        margin: 0;
-        padding: 22px;
-    }
-
-    .cv-event-mark {
-        width: 100%;
-    }
-
-    .cv-event-copy {
-        flex: 1 1 auto;
-    }
-
-    .cv-event-links {
-        margin-top: auto;
-        padding-top: 18px;
-    }
-
-    .cv-event[data-wide] {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 26px;
-    }
-
-    .cv-event[data-wide] .cv-event-mark {
-        width: 220px;
-        height: 92px;
-    }
-
-    .cv-event[data-wide] .cv-event-copy {
-        display: grid;
-        /* The first paragraph is the long one, so it gets the wider column and
-           the two end at about the same height. */
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-        column-gap: 36px;
-        align-items: start;
-    }
-
-    .cv-event[data-wide] .cv-event-copy h4,
-    .cv-event[data-wide] .cv-event-copy .cv-cert-issuer,
-    .cv-event[data-wide] .cv-event-links {
-        grid-column: 1 / -1;
+    .cv-interests-live.cv-spot--flip .cv-mind {
+        order: 2;
     }
 }
 

@@ -311,6 +311,8 @@ const cvEs = {
 
     certsKicker: 'Certificaciones',
     certsTitle: 'Certificaciones y logros',
+    certsLede:
+      'Lo que estudié fuera de la carrera y lo que presenté ante otros. Cada estrella del cielo es una credencial, colocada en el orden en que la obtuve.',
     certs: {
       icp: {
         name: 'Web 3.0 — Internet Computer',
@@ -356,6 +358,16 @@ const cvEs = {
     skyStars: 'estrellas',
 
     eventsLabel: 'Eventos',
+    eventsKicker: 'Eventos',
+    eventsTitle: 'Eventos y encuentros',
+    eventsLede:
+      'Los lugares donde estuve en persona: hackathones, congresos y encuentros de talento. No son credenciales, pero registran lo que un certificado no puede: con qué papel fui. Cada pin del mapa es uno de ellos.',
+    eventsPrev: 'Evento anterior',
+    eventsNext: 'Evento siguiente',
+    eventsAll: 'Todos',
+    mapEvents: 'eventos',
+    mapCity: 'ciudad',
+    mapCities: 'ciudades',
     events: {
       rbr: {
         name: 'Release Before Ready',

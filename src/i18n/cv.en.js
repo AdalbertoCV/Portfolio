@@ -294,6 +294,8 @@ const cvEn = {
 
     certsKicker: 'Certifications',
     certsTitle: 'Certifications and achievements',
+    certsLede:
+      'What I studied outside the degree and what I presented to others. Each star in the sky is a credential, placed in the order I earned it.',
     certs: {
       icp: {
         name: 'Web 3.0 — Internet Computer',
@@ -339,6 +341,16 @@ const cvEn = {
     skyStars: 'stars',
 
     eventsLabel: 'Events',
+    eventsKicker: 'Events',
+    eventsTitle: 'Events and meetups',
+    eventsLede:
+      'The places I was in person: hackathons, conferences and talent gatherings. They are not credentials, but they record what a certificate cannot: what I went as. Every pin on the map is one of them.',
+    eventsPrev: 'Previous event',
+    eventsNext: 'Next event',
+    eventsAll: 'All',
+    mapEvents: 'events',
+    mapCity: 'city',
+    mapCities: 'cities',
     events: {
       rbr: {
         name: 'Release Before Ready',

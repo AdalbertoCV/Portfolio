@@ -7,9 +7,6 @@ import mailLogo from '../../images/Mail.jpg';
 import GitHubLogo from '../../images/GitHub.png';
 import YoutubeLogo from '../../images/Youtube.png';
 import UAZLogo from '../../images/UAZ.webp';
-import rbrMark from '../../images/releasebeforeready.svg';
-import innovafestMark from '../../images/innovafest.svg';
-import talentlandMark from '../../images/talentland.svg';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowRight, ArrowUpRight, Reveal, Section } from '../brand/parts';
 import {
@@ -24,26 +21,12 @@ import REFERENCES from './references';
 import RefHacker from './RefHacker';
 import WorkBot from './WorkBot';
 import CertsRail from '../library/CertsRail';
+import EventsRail from '../library/EventsRail';
 import TimelineStrip from './TimelineStrip';
 import PracticeExplorer from './PracticeExplorer';
 import ConceptIcon from './ConceptIcons';
 import { openTerminal } from '../terminal/Terminal';
 import './about.css';
-
-// The events, newest first. Each one is a wordmark, a line of copy and at
-// most two destinations: the event itself, and — where the day produced
-// something catalogued here — the project it turned into.
-const EVENTS = [
-  {
-    key: 'rbr',
-    mark: rbrMark,
-    url: 'https://www.releasebeforeready.com/es/eventos',
-    project: '/projects',
-    paragraphs: 2,
-  },
-  { key: 'innovafest', mark: innovafestMark, url: 'https://innovafest.mx/encuentros/queretaro' },
-  { key: 'talentland', mark: talentlandMark, url: 'https://www.talent-land.mx/' },
-];
 
 const SOCIALS = [
   { href: `mailto:${CONTACT_EMAIL}`, img: mailLogo, label: 'Email', external: false },
@@ -392,57 +375,21 @@ const About = () => {
       </Section>
 
       {/* -------------------------------------------------------------- certs */}
-      <Section kicker={t('cv.certsKicker')} title={t('cv.certsTitle')}>
+      <Section kicker={t('cv.certsKicker')} title={t('cv.certsTitle')} lede={t('cv.certsLede')}>
         {/* One credential at a time, with the sky that grows as the list does.
             The constancias are inside the cards now: a certificate and the
             paper it was issued on are one thing, and once there are many of
             them a separate row of thumbnails would be a second list to keep in
             step with the first. */}
         <CertsRail onProof={setActiveImage} />
+      </Section>
 
-        {/* Rooms I was in. Not credentials — which is why they sit after the
-            certificates rather than among them — but they are the part of a
-            career that a certificate cannot record: who I went as. */}
-        <Reveal className="cv-events">
-          <h3 className="brand-stack-title">{t('cv.eventsLabel')}</h3>
-          <div className="cv-event-list">
-          {EVENTS.map((event) => (
-            <article className="cv-event" key={event.key} data-wide={event.paragraphs === 2 ? 'true' : undefined}>
-              <span className="cv-event-mark">
-                <img src={event.mark} alt="" aria-hidden="true" loading="lazy" />
-              </span>
-              <div className="cv-event-copy">
-                <h4>{t(`cv.events.${event.key}.name`)}</h4>
-                <p className="cv-cert-issuer">
-                  {t(`cv.events.${event.key}.issuer`)} · {t(`cv.events.${event.key}.year`)}
-                </p>
-                <p className="cv-cert-body">{t(`cv.events.${event.key}.body`)}</p>
-                {event.paragraphs === 2 ? (
-                  <p className="cv-cert-body">{t(`cv.events.${event.key}.body2`)}</p>
-                ) : null}
-                <div className="cv-event-links">
-                  <a
-                    className="cv-interest-link"
-                    href={event.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t(`cv.events.${event.key}.link`)}
-                    <ArrowUpRight />
-                  </a>
-                  {/* Only where the day produced something catalogued here. */}
-                  {event.project ? (
-                    <Link className="cv-interest-link" to={event.project}>
-                      {t(`cv.events.${event.key}.projectLink`)}
-                      <ArrowRight />
-                    </Link>
-                  ) : null}
-                </div>
-              </div>
-            </article>
-          ))}
-          </div>
-        </Reveal>
+      {/* -------------------------------------------------------------- events */}
+      {/* Rooms I was in. Not credentials — which is why they are a section of
+          their own after the certificates rather than among them — but they are
+          the part of a career that a certificate cannot record: who I went as. */}
+      <Section kicker={t('cv.eventsKicker')} title={t('cv.eventsTitle')} lede={t('cv.eventsLede')}>
+        <EventsRail />
       </Section>
 
       {/* ---------------------------------------------------------- references */}
