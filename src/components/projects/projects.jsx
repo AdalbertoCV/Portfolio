@@ -5,6 +5,8 @@ import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowRight, ArrowUpRight, Reveal } from '../brand/parts';
 import StackTiles from '../stack/StackTiles';
 import ProjectCard from './ProjectCard';
+import ProjectsOrbit from './ProjectsOrbit';
+import { useLive } from '../library/SpotlightRail';
 import { languageColor } from './ProjectGlyph';
 import CATALOGUE, { LANGUAGES, PROJECT_COUNT } from './catalogue';
 import './projects.css';
@@ -85,6 +87,7 @@ const MyProjects = () => {
   // filtered view can be sent to somebody, and a stack tile on the About page
   // can link straight to the projects that back it.
   const [params, setParams] = useSearchParams();
+  const [orbitRef, orbitLive] = useLive();
   const query = params.get('stack') || '';
   const language = params.get('lang') || '';
   const tech = params.get('tech') || '';
@@ -236,6 +239,15 @@ const MyProjects = () => {
           <strong>{filtering ? `${shown} / ${PROJECT_COUNT}` : PROJECT_COUNT}</strong>{' '}
           {t('repos.countLabel')}
         </p>
+      </Reveal>
+
+      {/* The catalogue as a system, straight under the title: every project a
+          planet, the technologies they share the bridges between them. Wired to
+          the filters right under it, and in the flow of the page. */}
+      <Reveal>
+        <div ref={orbitRef}>
+          <ProjectsOrbit query={query} language={language} tech={tech} live={orbitLive} onSelect={setFilter} />
+        </div>
       </Reveal>
 
       <Reveal className="projects-filter">
