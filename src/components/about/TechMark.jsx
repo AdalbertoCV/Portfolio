@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { monogram } from './techStack';
 import { PROJECT_TECH } from '../projects/catalogue';
 import ConceptIcon from './ConceptIcons';
+import { rankFor } from './ranks';
 
 /**
  * One technology: its mark, its name, and — where the catalogue can prove it —
@@ -13,6 +14,9 @@ import ConceptIcon from './ConceptIcons';
  */
 const TechMark = ({ item, t }) => {
   const built = PROJECT_TECH[item.name];
+  // Its rank on the ladder of The Stars, from how many projects stand behind it.
+  // The tile carries it whether it is in its own row or in a search result.
+  const rank = built ? rankFor(built) : null;
   // One tile needs its label translated rather than taken from its own name:
   // the parenthesis is the joke, and the joke is in Spanish.
   const label = item.labelKey ? t(item.labelKey) : item.name;
@@ -50,7 +54,7 @@ const TechMark = ({ item, t }) => {
   );
 
   return (
-    <li className={`stack-mark${built ? ' is-linked' : ''}`}>
+    <li className={`stack-mark${built ? ' is-linked' : ''}`} data-rank={rank ? rank.id : undefined}>
       {built ? (
         <Link
           className="stack-mark-link"

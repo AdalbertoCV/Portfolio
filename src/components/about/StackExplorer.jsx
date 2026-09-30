@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from '../../i18n/I18nProvider';
 import TECH_GROUPS from './techStack';
 import TechMark from './TechMark';
+import StarsRanks from './StarsRanks';
 import { searchStack } from './stackSearch';
 
 // The stack wall: an index of groups, one group in the panel, and a search
@@ -175,11 +176,17 @@ const StackExplorer = ({ group: givenGroup, onGroupChange, query: givenQuery, on
             aria-labelledby={`stack-tab-${group}`}
             key={group}
           >
-            <ul className="stack-marks">
-              {(TECH_GROUPS.find((entry) => entry.id === group)?.items || []).map((item) => (
-                <TechMark item={item} t={t} key={item.name} />
-              ))}
-            </ul>
+            {group === 'stars' ? (
+              // The group of technologies with projects behind them is a ladder:
+              // a row per rank, from the most used to the least.
+              <StarsRanks items={TECH_GROUPS.find((entry) => entry.id === group)?.items || []} t={t} />
+            ) : (
+              <ul className="stack-marks">
+                {(TECH_GROUPS.find((entry) => entry.id === group)?.items || []).map((item) => (
+                  <TechMark item={item} t={t} key={item.name} />
+                ))}
+              </ul>
+            )}
           </div>
         )}
       </div>
