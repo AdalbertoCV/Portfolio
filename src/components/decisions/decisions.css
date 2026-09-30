@@ -63,16 +63,6 @@
     margin-top: 34px;
 }
 
-/* The date and its scene stay in view while a long entry is read, so the margin is
-   never a blank column beside the text. Only where it is a column: on a narrow
-   screen it is a row above the entry. */
-@media (min-width: 901px) {
-    .dec-meta {
-        position: sticky;
-        top: calc(var(--navbar-h, 120px) + 28px);
-    }
-}
-
 .dec-meta {
     display: flex;
     flex-direction: column;
