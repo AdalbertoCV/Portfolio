@@ -16,12 +16,25 @@ const SearchIcon = () => (
   </svg>
 );
 
-const StackExplorer = () => {
+// The group in the panel and the search can be driven from outside (the page
+// puts a constellation of the whole stack above this, wired to both); with no
+// props the explorer keeps its own and works on its own, as it always did.
+const StackExplorer = ({ group: givenGroup, onGroupChange, query: givenQuery, onQueryChange } = {}) => {
   const { t } = useTranslation();
   // Which group the panel shows. The first one, so the section is never an
   // empty frame waiting to be clicked — and it is The Stars.
-  const [group, setGroup] = useState(TECH_GROUPS[0].id);
-  const [query, setQuery] = useState('');
+  const [ownGroup, setOwnGroup] = useState(TECH_GROUPS[0].id);
+  const [ownQuery, setOwnQuery] = useState('');
+  const group = givenGroup ?? ownGroup;
+  const query = givenQuery ?? ownQuery;
+  const setGroup = (id) => {
+    setOwnGroup(id);
+    onGroupChange?.(id);
+  };
+  const setQuery = (value) => {
+    setOwnQuery(value);
+    onQueryChange?.(value);
+  };
   const inputRef = useRef(null);
 
   const results = searchStack(TECH_GROUPS, query);
