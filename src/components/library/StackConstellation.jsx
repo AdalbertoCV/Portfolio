@@ -135,7 +135,6 @@ const StackConstellation = ({ groups, active, query, live, onSelect }) => {
   const canvasRef = useRef(null);
   const stateRef = useRef({ active, query, burst: null, onSelect });
   const activeIndex = Math.max(0, groups.findIndex((group) => group.id === active));
-  const total = groups.reduce((sum, group) => sum + group.items.length, 0);
 
   useEffect(() => {
     stateRef.current.onSelect = onSelect;
@@ -523,9 +522,6 @@ const StackConstellation = ({ groups, active, query, live, onSelect }) => {
       <span className="cv-mind-tag cv-mind-tag--subject">
         <i />
         {t(`skills.groups.${groups[activeIndex]?.id}`)}
-      </span>
-      <span className="cv-mind-tag cv-mind-tag--rate">
-        <b>{total}</b> {t('cv.constellationTech')} · <b>{groups.length}</b> {t('cv.constellationAreas')}
       </span>
     </div>
   );

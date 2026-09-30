@@ -79,9 +79,9 @@ test('the constellation of the whole stack sits above the explorer', () => {
   expect(explorer).not.toBeNull();
   // Earlier in the document, so it is the first thing under the title.
   expect(sky.compareDocumentPosition(explorer) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-  const total = TECH_GROUPS.reduce((sum, group) => sum + group.items.length, 0);
-  expect(sky.querySelector('.cv-mind-tag--rate')).toHaveTextContent(String(total));
-  expect(sky.querySelector('.cv-mind-tag--rate')).toHaveTextContent(String(TECH_GROUPS.length));
+  // No count on it, of technologies or of areas: a number invites counting.
+  expect(sky.querySelector('.cv-mind-tag--rate')).toBeNull();
+  expect(sky.textContent).not.toMatch(/\d/);
 });
 
 test('opening an area in the explorer is what the constellation shows', () => {
