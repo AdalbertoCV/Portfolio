@@ -2469,6 +2469,75 @@
     }
 }
 
+/* The opening and the people, tightened further on a phone. The opening is one
+   screen of name, claim, buttons and links; it keeps all of them and gives back
+   the air between them. The people are six short rows under a drawing, so the
+   rows and the drawing are a little smaller and the lede holds to a few lines.
+   The touch targets stay at 44px and up. */
+@media (max-width: 600px) {
+    .cv-page .hero {
+        padding: 0 0 20px;
+    }
+
+    .cv-page .hero-portrait {
+        width: clamp(92px, 27vw, 112px);
+    }
+
+    .cv-page .hero-status {
+        margin-top: 18px;
+    }
+
+    .cv-page .hero-role {
+        margin-top: 10px;
+        font-size: 0.98rem;
+    }
+
+    .cv-page .hero-claim {
+        margin-top: 10px;
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .cv-page .hero-meta {
+        margin-top: 12px;
+    }
+
+    .cv-page .hero .cv-actions {
+        margin-top: 16px;
+    }
+
+    .cv-page .hero .cv-socials {
+        margin-top: 14px;
+    }
+
+    .cv-page .brand-section-head > .brand-p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+
+    /* Under .cv-page, so they outrank the list rules that come after this block. */
+    .cv-page .cv-interests-live--list .cv-mind {
+        height: 176px;
+    }
+
+    /* The network is the one drawing with nodes down to its bottom edge, where the
+       count sat on top of them. */
+    .cv-page .cv-net .cv-mind-tag--rate {
+        display: none;
+    }
+
+    .cv-page .cv-acc {
+        gap: 8px;
+    }
+
+    .cv-page .cv-acc-head button {
+        min-height: 54px;
+        padding: 10px 16px;
+    }
+}
+
 /* ----------------------------------------------------------------------------
    THE RAILS AS A LIST (phones and narrow windows) — SpotlightRail, compact
    Every card is taller than a phone screen, so a rail meant going back up to its

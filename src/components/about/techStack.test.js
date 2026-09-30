@@ -130,3 +130,10 @@ test('mathematics is on the frontier', () => {
   const frontier = TECH_GROUPS.find((group) => group.id === 'frontier');
   ['Complex analysis', 'Topology', 'Number theory'].forEach((name) => expect(names(frontier)).toContain(name));
 });
+
+// Depot is on the wall under its domain, so a search for "depot.dev" finds it as
+// well as a search for "depot" (see stackSearch: punctuation is ignored).
+test('depot.dev is on the wall, with cloud and DevOps', () => {
+  const cloud = TECH_GROUPS.find((group) => group.id === 'cloud');
+  expect(names(cloud)).toContain('depot.dev');
+});

@@ -1774,7 +1774,7 @@ const TECH_GROUPS = [
       { name: 'Open Policy Agent', icon: siopenpolicyagentIcon, mono: true },
       { name: 'Kratix', icon: sikratixIcon, flat: true },
       { name: 'Humanitec', icon: sihumanitecIcon, flat: true },
-      { name: 'Depot', icon: sidepotIcon, mono: true },
+      { name: 'depot.dev', icon: sidepotIcon, mono: true },
       // The last nine.
       { name: 'Grafana Loki', icon: sigrafanalokiIcon, mono: true },
       { name: 'Rancher Desktop', icon: sirancherdesktopIcon, mono: true },
