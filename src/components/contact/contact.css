@@ -483,3 +483,8 @@
         display: none;
     }
 }
+
+/* The standard panel right under the page head needs air above it. */
+.contact-head ~ .reveal .scene-panel {
+    margin-top: 32px;
+}

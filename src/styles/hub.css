@@ -2528,13 +2528,13 @@ ol.timeline.reveal {
 }
 
 /* ----------------------------------------------------------------------------
-   THE TWO COMPANIES AS TWO SYSTEMS (VenturesOrbit.jsx)
-   A dark instrument panel in both themes, like the catalogue's: a screen
-   showing the work, and a screen is dark whatever the room is. In the flow of
-   the page; nothing on it follows the scroll.
+   THE STANDARD PANEL AT THE HEAD OF A PAGE (brand/Scene.jsx)
+   A dark instrument panel in both themes: a screen showing the work, and a
+   screen is dark whatever the room is. In the flow of the page; nothing on it
+   follows the scroll. --scene-wash is the page's own tint.
    ------------------------------------------------------------------------- */
 
-.vo-panel {
+.scene-panel {
     position: relative;
     width: 100%;
     height: 340px;
@@ -2544,16 +2544,14 @@ ol.timeline.reveal {
     border-radius: var(--radius-lg);
     border: 1px solid rgba(148, 163, 184, 0.2);
     background:
-        radial-gradient(34% 80% at 25% 48%, rgba(167, 139, 250, 0.12), transparent 70%),
-        radial-gradient(34% 80% at 75% 48%, rgba(52, 211, 153, 0.1), transparent 70%),
-        radial-gradient(14% 40% at 50% 48%, rgba(245, 185, 66, 0.1), transparent 70%),
+        var(--scene-wash, linear-gradient(transparent, transparent)),
         linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px) 0 0 / 22px 22px,
         linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px) 0 0 / 22px 22px,
         #07090d;
     box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.55), 0 18px 40px -24px rgba(0, 0, 0, 0.6);
 }
 
-.vo-panel::after {
+.scene-panel::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -2563,7 +2561,7 @@ ol.timeline.reveal {
     mix-blend-mode: multiply;
 }
 
-.vo-canvas {
+.scene-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -2572,8 +2570,8 @@ ol.timeline.reveal {
     touch-action: pan-y;
 }
 
-/* The stage under the pointer. Nothing when there is nothing to say. */
-.vo-tag {
+/* What the pointer is on. Nothing when there is nothing to say. */
+.scene-tag {
     position: absolute;
     z-index: 2;
     top: 20px;
@@ -2591,9 +2589,9 @@ ol.timeline.reveal {
 }
 
 @media (max-width: 900px) {
-    .vo-panel { height: 300px; }
+    .scene-panel { height: 300px; }
 }
 
 @media (max-width: 560px) {
-    .vo-panel { height: 240px; margin-bottom: 24px; }
+    .scene-panel { height: 250px; margin-bottom: 24px; }
 }

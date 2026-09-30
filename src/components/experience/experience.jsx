@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import labsolLogo from '../../images/Labsol.png';
 import radii from '../../images/radii.webp';
 import evodeps from '../../images/evodeps.png';
@@ -6,6 +6,8 @@ import { useTranslation } from '../../i18n/I18nProvider';
 import { ArrowRight, ArrowUpRight, Reveal } from '../brand/parts';
 import RadiiArt from '../marks/RadiiArt';
 import VenturesRoadmap from '../ventures/VenturesRoadmap';
+import { useLive } from '../library/SpotlightRail';
+import ExperiencePath, { PATH } from './ExperiencePath';
 import { CaseArt, CaseMark, EvodepsArt, FreelanceArt, FreelanceMark, LabsolArt } from '../marks/RoleArt';
 
 // Roles where someone else did the hiring, plus CASE — which was not a job at
@@ -61,8 +63,26 @@ const ROLES = [
 
 const RADII_URL = 'https://www.radii.com.mx/es';
 
+// Where each light on the path leads, and the dictionary path of its words.
+const STORY = {
+  case: { base: 'experience.case', to: '/case', short: 'CASE' },
+  labsol: { base: 'experience.labsol', to: '/labsol', short: 'Labsol' },
+  freelance: { base: 'experience.freelance', to: '/freelance', short: 'Freelance' },
+  evodeps: { base: 'evodeps', to: '/evodeps', short: 'Evodeps' },
+  radii: { base: 'experience.radii', to: '/radii', short: 'Radii' },
+};
+
 const Experience = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [pathRef, pathLive] = useLive();
+  const names = {};
+  const tags = {};
+  PATH.forEach((id) => {
+    // The label under a light is the short name; the full one is in the tag.
+    names[id] = STORY[id].short;
+    tags[id] = `${t(`${STORY[id].base}.company`)} · ${t(`${STORY[id].base}.period`)}`;
+  });
 
   return (
     <div className="hub-page">
@@ -70,6 +90,13 @@ const Experience = () => {
         <span className="hub-badge">{t('timeline.badge')}</span>
         <h1 className="hub-title">{t('timeline.title')}</h1>
         <p className="hub-lede">{t('timeline.lede')}</p>
+      </Reveal>
+
+      {/* The roles in the order they happened, as one climb. */}
+      <Reveal>
+        <div ref={pathRef}>
+          <ExperiencePath live={pathLive} names={names} tags={tags} onSelect={(id) => navigate(STORY[id].to)} />
+        </div>
       </Reveal>
 
       {/* Radii is the headline act, so it gets its own colour world and a card

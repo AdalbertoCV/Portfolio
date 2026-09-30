@@ -3,7 +3,9 @@ import { useTranslation } from '../../i18n/I18nProvider';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Reveal, Section } from '../brand/parts';
 import { CONTACT_EMAIL } from '../../site';
+import { useLive } from '../library/SpotlightRail';
 import Hacker from './Hacker';
+import ContactSignal, { SIGNAL_REASONS } from './ContactSignal';
 import './contact.css';
 
 /* ==========================================================================
@@ -49,6 +51,11 @@ const FIELDS = [
 
 const ContactPage = () => {
   const { t } = useTranslation();
+  const [signalRef, signalLive] = useLive();
+  const titles = {};
+  SIGNAL_REASONS.forEach((id) => {
+    titles[id] = t(`contact.reasons.${id}.title`);
+  });
   // 'idle' | 'sending' | 'sent' | 'error'
   const [status, setStatus] = useState('idle');
   // He only follows a caret inside this form. Without the scope he would
@@ -91,6 +98,18 @@ const ContactPage = () => {
           {CONTACT_EMAIL}
           <ArrowUpRight />
         </a>
+      </Reveal>
+
+      {/* The reasons to write, around the place they arrive. */}
+      <Reveal>
+        <div ref={signalRef}>
+          <ContactSignal
+            live={signalLive}
+            titles={titles}
+            email={CONTACT_EMAIL}
+            onSelect={() => document.querySelector('.contact-card')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+          />
+        </div>
       </Reveal>
 
       <Section kicker={t('contact.reasonsKicker')} title={t('contact.reasonsTitle')}>
