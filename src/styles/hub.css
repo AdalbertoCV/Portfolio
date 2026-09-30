@@ -2512,3 +2512,17 @@ ol.timeline.reveal {
         width: 100%;
     }
 }
+
+/* Sections mounted by WhenNear arrive with a short fade, never as a pop. */
+.when-near {
+    animation: when-near-in 0.7s ease both;
+}
+
+@keyframes when-near-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .when-near { animation: none; }
+}

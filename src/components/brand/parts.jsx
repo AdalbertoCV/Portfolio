@@ -117,7 +117,7 @@ export const Collapsible = ({ label, closeLabel, children, query = '(max-width: 
  * all arrive in one long task. Without IntersectionObserver (jsdom, old browsers)
  * it renders at once.
  */
-export const WhenNear = ({ children, minHeight = 600, after = 3000, margin = '1400px 0px' }) => {
+export const WhenNear = ({ children, minHeight = 600, after = 3000, margin = '2400px 0px' }) => {
   const ref = useRef(null);
   const [mounted, setMounted] = useState(typeof IntersectionObserver === 'undefined');
 
@@ -140,7 +140,7 @@ export const WhenNear = ({ children, minHeight = 600, after = 3000, margin = '14
     };
   }, [mounted, margin, after]);
 
-  return mounted ? children : <div ref={ref} style={{ minHeight }} aria-hidden="true" />;
+  return mounted ? <div className="when-near">{children}</div> : <div ref={ref} style={{ minHeight }} aria-hidden="true" />;
 };
 
 /* ------------------------------------------------------------------ icons */

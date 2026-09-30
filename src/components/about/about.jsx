@@ -348,7 +348,7 @@ const About = () => {
       </WhenNear>
 
       {/* ----------------------------------------------- education + languages */}
-      <WhenNear minHeight={800} after={3100}>
+      <WhenNear minHeight={800} after={2600}>
       <Section kicker={t('cv.educationKicker')} title={t('education.heading').replace(':', '')}>
           <Reveal className="cv-split">
             <div className="cv-edu-column">
@@ -403,7 +403,7 @@ const About = () => {
       </WhenNear>
 
       {/* -------------------------------------------------------------- certs */}
-      <WhenNear minHeight={800} after={3600}>
+      <WhenNear minHeight={800} after={2600}>
       <Section kicker={t('cv.certsKicker')} title={t('cv.certsTitle')} lede={t('cv.certsLede')}>
           {/* One credential at a time, with the sky that grows as the list does.
               The constancias are inside the cards now: a certificate and the
@@ -418,7 +418,7 @@ const About = () => {
       {/* Rooms I was in. Not credentials — which is why they are a section of
           their own after the certificates rather than among them — but they are
           the part of a career that a certificate cannot record: who I went as. */}
-      <WhenNear minHeight={800} after={4100}>
+      <WhenNear minHeight={800} after={2600}>
       <Section kicker={t('cv.eventsKicker')} title={t('cv.eventsTitle')} lede={t('cv.eventsLede')}>
           <EventsRail />
         </Section>
@@ -429,7 +429,7 @@ const About = () => {
           in the room. Nobody here is quoted: none of them was asked for a
           sentence, so the section hands over their links instead of putting
           words in their mouths. */}
-      <WhenNear minHeight={700} after={4600}>
+      <WhenNear minHeight={700} after={2600}>
       <Section
           kicker={t('cv.referencesKicker')}
           title={t('cv.referencesTitle')}
