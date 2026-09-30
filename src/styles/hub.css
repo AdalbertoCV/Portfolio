@@ -2595,3 +2595,24 @@ ol.timeline.reveal {
 @media (max-width: 560px) {
     .scene-panel { height: 250px; margin-bottom: 24px; }
 }
+
+/* The heading between the path and the first role. */
+.path-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 16px;
+    margin: 8px 0 20px;
+}
+
+.path-title .brand-h2 {
+    margin: 0;
+}
+
+.path-years {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+}

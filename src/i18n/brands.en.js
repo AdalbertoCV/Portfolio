@@ -7,6 +7,8 @@ const brandsEn = {
     title: 'Five fronts, one standard',
     lede: 'Five fronts carrying responsibility for the outcome: an AI-powered manufacturing platform, a custom development house, an independent client portfolio, the public laboratory where my professional training began, and two years of peer mentoring on the subjects the degree is built on.',
     featuredLabel: 'Current focus',
+    pathTitle: 'My career',
+    pathYears: '3+ years of experience',
     present: 'Present',
     readStory: 'Read the full story',
     visitSite: 'Visit site',

@@ -8,6 +8,8 @@ const brandsEs = {
     title: 'Cinco frentes, un mismo criterio',
     lede: 'Cinco frentes con responsabilidad sobre el resultado: una plataforma de manufactura con IA, una casa de desarrollo a medida, cartera propia de clientes, el laboratorio público donde inició mi formación profesional, y dos años de mentoría entre pares sobre las materias que sostienen la carrera.',
     featuredLabel: 'Foco actual',
+    pathTitle: 'Mi trayectoria',
+    pathYears: '3+ años de experiencia',
     present: 'Actualidad',
     readStory: 'Ver la historia completa',
     visitSite: 'Visitar sitio',

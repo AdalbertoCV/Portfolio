@@ -99,6 +99,11 @@ const Experience = () => {
         </div>
       </Reveal>
 
+      <Reveal className="path-title">
+        <h2 className="brand-h2">{t('timeline.pathTitle')}</h2>
+        <span className="path-years">{t('timeline.pathYears')}</span>
+      </Reveal>
+
       {/* Radii is the headline act, so it gets its own colour world and a card
           roughly three times the visual weight of a timeline row. Anything less
           and "current focus" is a claim the layout contradicts. */}
