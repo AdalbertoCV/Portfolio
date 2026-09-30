@@ -326,7 +326,17 @@ const cvEn = {
     },
     educationCta: 'See the degree in full',
     certsProofLabel: 'Credentials',
-    certsProofHint: 'Tap a credential to enlarge it',
+    certsProofHint: 'Tap the credential to enlarge it',
+    certsPrev: 'Previous credential',
+    certsNext: 'Next credential',
+    certsAll: 'All',
+    certDomains: {
+      web3: 'Web3',
+      ai: 'AI',
+      emerging: 'Emerging tech',
+      research: 'Research',
+    },
+    skyStars: 'stars',
 
     eventsLabel: 'Events',
     events: {

@@ -7,8 +7,6 @@ import mailLogo from '../../images/Mail.jpg';
 import GitHubLogo from '../../images/GitHub.png';
 import YoutubeLogo from '../../images/Youtube.png';
 import UAZLogo from '../../images/UAZ.webp';
-import someceImage from '../../images/Achievements/constancia1.webp';
-import ICPImage from '../../images/Achievements/constancia2.webp';
 import rbrMark from '../../images/releasebeforeready.svg';
 import innovafestMark from '../../images/innovafest.svg';
 import talentlandMark from '../../images/talentland.svg';
@@ -25,6 +23,7 @@ import {
 import REFERENCES from './references';
 import RefHacker from './RefHacker';
 import WorkBot from './WorkBot';
+import CertsRail from '../library/CertsRail';
 import TimelineStrip from './TimelineStrip';
 import PracticeExplorer from './PracticeExplorer';
 import ConceptIcon from './ConceptIcons';
@@ -75,22 +74,6 @@ const PRINCIPLES = [
   { id: 'innovation', icon: 'radar' },
 ];
 
-const CERT_KEYS = ['icp', 'langchain', 'santander', 'somece'];
-
-/* A certificate only carries links when there is something published to point
-   at. SOMECE has two: the proceedings the paper appears in, and the recording
-   of the talk itself — which is the one thing on that channel that is evidence
-   of a claim this page already makes, rather than a video. */
-const CERT_LINKS = {
-  somece: [
-    {
-      id: 'paper',
-      href: 'https://www.google.com.mx/books/edition/Proleg%C3%B3menos_de_la_Inteligencia_Artific/m-I2EQAAQBAJ?hl=es&gbpv=1&pg=PA111&printsec=frontcover',
-    },
-    { id: 'talk', href: 'https://www.youtube.com/watch?v=WPH80wfQbXg' },
-  ],
-};
-
 const About = () => {
   const { t, tl } = useTranslation();
   const [activeImage, setActiveImage] = useState(null);
@@ -106,11 +89,6 @@ const About = () => {
       'font-weight:400'
     );
   }, []);
-
-  const certificates = [
-    { key: 'icp', src: ICPImage, label: t('cv.certs.icp.name') },
-    { key: 'somece', src: someceImage, label: t('cv.certs.somece.name') },
-  ];
 
   return (
     <div className="cv-page">
@@ -415,63 +393,12 @@ const About = () => {
 
       {/* -------------------------------------------------------------- certs */}
       <Section kicker={t('cv.certsKicker')} title={t('cv.certsTitle')}>
-        <Reveal className="cv-certs" stagger>
-          {CERT_KEYS.map((key) => {
-            /* translate() hands back the key itself on a miss, so a card
-               without a written-up context renders as the plain credential. */
-            const body = t(`cv.certs.${key}.body`);
-            const hasBody = body !== `cv.certs.${key}.body`;
-
-            return (
-              <article className="cv-cert" key={key} data-detail={hasBody ? 'true' : undefined}>
-                <svg className="cv-cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="9" r="5.5" />
-                  <path d="m8.2 13.6-1.4 7L12 18l5.2 2.6-1.4-7" />
-                </svg>
-                <h3>{t(`cv.certs.${key}.name`)}</h3>
-                <p className="cv-cert-issuer">
-                  {t(`cv.certs.${key}.issuer`)} · {t(`cv.certs.${key}.year`)}
-                </p>
-                {hasBody && <p className="cv-cert-body">{body}</p>}
-                {CERT_LINKS[key] ? (
-                  <div className="cv-cert-links">
-                    {CERT_LINKS[key].map(({ id, href }) => (
-                      <a
-                        className="cv-interest-link cv-cert-link"
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        key={id}
-                      >
-                        {t(`cv.certs.${key}.links.${id}`)}
-                        <ArrowUpRight />
-                      </a>
-                    ))}
-                  </div>
-                ) : null}
-              </article>
-            );
-          })}
-        </Reveal>
-
-        <Reveal className="cv-proofs">
-          <h3 className="brand-stack-title">{t('cv.certsProofLabel')}</h3>
-          <p className="brand-values-hint">{t('cv.certsProofHint')}</p>
-          <div className="cv-proof-row">
-            {certificates.map(({ key, src, label }) => (
-              <button
-                type="button"
-                className="cv-proof"
-                key={key}
-                onClick={() => setActiveImage({ src, label })}
-                aria-label={label}
-              >
-                <img src={src} alt={label} loading="lazy" />
-              </button>
-            ))}
-          </div>
-        </Reveal>
+        {/* One credential at a time, with the sky that grows as the list does.
+            The constancias are inside the cards now: a certificate and the
+            paper it was issued on are one thing, and once there are many of
+            them a separate row of thumbnails would be a second list to keep in
+            step with the first. */}
+        <CertsRail onProof={setActiveImage} />
 
         {/* Rooms I was in. Not credentials — which is why they sit after the
             certificates rather than among them — but they are the part of a

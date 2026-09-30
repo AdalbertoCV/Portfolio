@@ -1327,40 +1327,6 @@
    CERTIFICATIONS
    ========================================================================= */
 
-/* Flex rather than a fixed grid: a card with prose takes the whole row, and
-   the short cards left over share whatever row they land in instead of
-   sitting in two narrow tracks with the rest of the row empty. */
-.cv-certs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 36px;
-}
-
-.cv-cert {
-    flex: 1 1 220px;
-    padding: 24px 22px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border-primary);
-    background: var(--color-bg-card);
-    transition: border-color var(--transition-base), transform var(--transition-base);
-}
-
-.cv-cert-icon {
-    width: 28px;
-    height: 28px;
-    color: var(--color-text-tertiary);
-    margin-bottom: 14px;
-}
-
-.cv-cert h3 {
-    font-size: 0.98rem;
-    letter-spacing: -0.02em;
-    line-height: 1.35;
-    color: var(--color-text-primary);
-    margin: 0 0 8px;
-}
-
 .cv-cert-issuer {
     font-size: 0.82rem;
     font-weight: 500;
@@ -1400,42 +1366,6 @@
    only ever one. */
 .cv-cert-link {
     margin: 0;
-}
-
-.cv-proof-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 4px;
-}
-
-.cv-proof {
-    padding: 0;
-    border: 1px solid var(--color-border-primary);
-    border-radius: var(--radius-md);
-    background: var(--color-bg-tertiary);
-    overflow: hidden;
-    cursor: zoom-in;
-    flex: 0 1 300px;
-    transition: border-color var(--transition-base), transform var(--transition-base);
-}
-
-.cv-proof img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .cv-cert:hover {
-        border-color: var(--color-border-hover);
-        transform: translateY(-3px);
-    }
-
-    .cv-proof:hover {
-        border-color: var(--color-border-hover);
-        transform: translateY(-2px);
-    }
 }
 
 /* Events sit below the credentials in the same section. One card, laid out as
@@ -1545,54 +1475,6 @@
    keeps the stacked layout it always had, which is the right one for a phone
    or a narrow window. */
 @media (min-width: 1001px) {
-    /* Two across, with the icon beside the title. Every credential carries a
-       written-up context, and a card that took the whole row left the right
-       half of the page empty beside a 68-character paragraph. */
-    .cv-certs {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    .cv-cert,
-    .cv-cert[data-detail] {
-        display: grid;
-        grid-template-columns: 28px minmax(0, 1fr);
-        grid-template-rows: auto auto 1fr auto;
-        column-gap: 14px;
-        align-content: stretch;
-        align-items: start;
-        flex-basis: auto;
-    }
-
-    .cv-cert-icon {
-        grid-row: 1 / span 2;
-        margin: 0;
-    }
-
-    .cv-cert h3 {
-        grid-column: 2;
-        margin: 0 0 4px;
-    }
-
-    .cv-cert > .cv-cert-issuer {
-        grid-column: 2;
-    }
-
-    /* The prose row takes the slack, so the links line up along the bottom of
-       a row of cards whatever the length of the text above them. */
-    .cv-cert > .cv-cert-body {
-        grid-column: 1 / -1;
-        grid-row: 3;
-        margin-top: 14px;
-    }
-
-    .cv-cert > .cv-cert-links {
-        grid-column: 1 / -1;
-        grid-row: 4;
-        margin-top: 0;
-    }
-
     /* Events: the long entry across the top with its two paragraphs side by
        side, the two short ones sharing the row under it, plate on top of each
        and the copy beneath. */
@@ -1657,6 +1539,174 @@
     }
 }
 
+/* ----------------------------------------------------------------------------
+   THE CREDENTIAL CARD — the plate at the top and the constancia inside it
+   The cards are the interest rail's (see SpotlightRail); what is here is what a
+   credential has that an interest does not: who issued it, when, and the paper
+   it was issued on.
+   ------------------------------------------------------------------------- */
+
+.cert-plate {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 84px;
+    margin: -6px -4px 22px;
+    padding: 0 22px;
+    border-radius: var(--radius-md);
+    background:
+        radial-gradient(60% 90% at 50% 100%, color-mix(in srgb, var(--tone) 16%, transparent), transparent 70%),
+        color-mix(in srgb, var(--tone) 7%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tone) 16%, transparent);
+    color: var(--tone-ink);
+}
+
+.cert-plate-icon {
+    flex: none;
+    width: 38px;
+    height: 38px;
+}
+
+.cv-interest .cert-plate-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 0;
+}
+
+.cert-plate-meta b {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+}
+
+.cert-plate-meta span {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+}
+
+.cv-interest .cv-cert-links {
+    margin: 0 0 20px;
+    padding-top: 0;
+}
+
+/* The paper itself, at a size that identifies it; a tap opens it at full size. */
+/* The drawing is the height of the card, always. On a desktop it is the column
+   beside the rail and the grid stretches it to the rail's own height, so it can
+   have no height of its own: the floor that the brain's panel keeps (420px) is
+   lifted here, and moved to the card instead, so the card is never shorter than
+   a drawing can be drawn in and the two grow together. */
+@media (min-width: 1080px) {
+    .cv-spot .cv-mind {
+        min-height: 0;
+    }
+
+    .cv-spot .cv-interest {
+        min-height: 340px;
+    }
+}
+
+.cert-proof {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    margin-top: 0;
+    padding: 0;
+    text-align: left;
+    overflow: hidden;
+    cursor: zoom-in;
+    border-radius: var(--radius-md);
+    border: 1px solid color-mix(in srgb, var(--tone) 22%, var(--color-border-primary));
+    background: var(--color-bg-tertiary);
+    transition: border-color var(--transition-base);
+}
+
+.cert-proof img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.cert-proof span {
+    display: block;
+    padding: 9px 12px;
+    font-size: 0.74rem;
+    color: var(--color-text-tertiary);
+    border-top: 1px solid color-mix(in srgb, var(--tone) 16%, var(--color-border-primary));
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cert-proof:hover {
+        border-color: color-mix(in srgb, var(--tone) 55%, var(--color-border-primary));
+    }
+}
+
+/* ----------------------------------------------------------------------------
+   MANY CARDS — filters and the counter (SpotlightRail)
+   A row of dots carries a handful of cards. Past that the rail narrows by kind
+   with chips and says where the reader is with a counter, so a list of forty is
+   still one card, one row of controls and a drawing.
+   ------------------------------------------------------------------------- */
+
+.cv-spot-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cv-spot-chip {
+    padding: 6px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-primary);
+    background: transparent;
+    color: var(--color-text-secondary);
+    font: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: color var(--transition-base), border-color var(--transition-base),
+        background var(--transition-base);
+}
+
+.cv-spot-chip[aria-pressed='true'] {
+    color: var(--color-text-primary);
+    border-color: var(--color-border-hover);
+    background: var(--color-bg-tertiary);
+}
+
+.cv-spot-chip:focus-visible {
+    outline: 2px solid var(--color-border-hover);
+    outline-offset: 2px;
+}
+
+.cv-spot-count {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 0;
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--color-text-tertiary);
+    font-variant-numeric: tabular-nums;
+}
+
+.cv-spot-count b {
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--color-text-primary);
+    border-bottom: 2px solid var(--tone, var(--color-border-hover));
+}
+
+.cv-spot-count em {
+    font-style: normal;
+    margin-left: 6px;
+}
+
 /* ============================================================================
    RESPONSIVE
    ========================================================================= */
@@ -1687,9 +1737,6 @@
         padding: 22px 18px;
     }
 
-    .cv-proof {
-        flex: 1 1 100%;
-    }
 }
 
 @media (max-width: 420px) {

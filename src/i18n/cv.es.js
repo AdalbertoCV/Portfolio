@@ -343,7 +343,17 @@ const cvEs = {
     },
     educationCta: 'Ver la carrera a fondo',
     certsProofLabel: 'Constancias',
-    certsProofHint: 'Toca una constancia para ampliarla',
+    certsProofHint: 'Toca la constancia para ampliarla',
+    certsPrev: 'Certificación anterior',
+    certsNext: 'Certificación siguiente',
+    certsAll: 'Todas',
+    certDomains: {
+      web3: 'Web3',
+      ai: 'IA',
+      emerging: 'Tecnologías emergentes',
+      research: 'Investigación',
+    },
+    skyStars: 'estrellas',
 
     eventsLabel: 'Eventos',
     events: {
