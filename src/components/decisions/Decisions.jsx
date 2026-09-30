@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from '../../i18n/I18nProvider';
 import { Reveal } from '../brand/parts';
-import ENTRIES, { TONES } from './entries';
-import DecisionTree from './DecisionTree';
+import ENTRIES from './entries';
+import DecisionArt from './DecisionArt';
 import { useLive } from '../library/SpotlightRail';
 import './decisions.css';
 
@@ -44,42 +43,9 @@ const useGoBack = () => {
 const Decisions = () => {
   const { t, tl } = useTranslation();
   const goBack = useGoBack();
+  // The scenes loop, and a loop nobody can see is work for nothing: they run only
+  // while the log is on screen.
   const [liveRef, live] = useLive();
-  const [active, setActive] = useState(0);
-  const listRef = useRef(null);
-
-  // The tree beside the log follows the entry being read: whichever one crosses
-  // a line a little above the middle of the screen is the current one. Between
-  // two entries nothing crosses it, and the last one stays.
-  useEffect(() => {
-    const list = listRef.current;
-    if (!list || typeof IntersectionObserver === 'undefined') return undefined;
-    const observer = new IntersectionObserver(
-      (hits) => {
-        hits.forEach((hit) => {
-          if (hit.isIntersecting) setActive(Number(hit.target.dataset.index));
-        });
-      },
-      { rootMargin: '-38% 0px -52% 0px' },
-    );
-    [...list.children].forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, []);
-
-  // A node in the tree takes the reader to its entry.
-  const goTo = useCallback((index) => {
-    const node = listRef.current?.children[index];
-    if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, []);
-
-  const treeEntries = ENTRIES.map(({ id, date, where }) => ({
-    id,
-    tone: TONES[where] || '#22d3ee',
-    year: /^\d/.test(date) ? date : t(`decisions.dates.${date}`),
-    short: where.toUpperCase(),
-    options: tl(`decisions.items.${id}.options`).length,
-    title: t(`decisions.items.${id}.title`),
-  }));
 
   return (
     <div className="dec-page">
@@ -90,27 +56,15 @@ const Decisions = () => {
         <p className="dec-note">{t('decisions.note')}</p>
       </Reveal>
 
-      <div ref={liveRef} className="dec-layout">
-      <DecisionTree
-        entries={treeEntries}
-        active={active}
-        live={live}
-        onSelect={goTo}
-        subject={treeEntries[active] ? `${treeEntries[active].year} · ${t(`decisions.where.${ENTRIES[active].where}`)}` : ""}
-        meta={
-          <>
-            <b>{treeEntries.length}</b> {t('decisions.treeCount')}
-          </>
-        }
-      />
-      <ol className="dec-list" ref={listRef}>
-        {ENTRIES.map(({ id, date, where, tags }, index) => (
-          <Reveal as="li" className="dec-entry" key={id} data-index={index} id={`decision-${id}`}>
+      <ol ref={liveRef} className={`dec-list${live ? ' is-live' : ''}`}>
+        {ENTRIES.map(({ id, date, where, tags }) => (
+          <Reveal as="li" className="dec-entry" key={id}>
             <div className="dec-meta">
               <span className="dec-date">
                 {/^\d/.test(date) ? date : t(`decisions.dates.${date}`)}
               </span>
               <span className="dec-where">{t(`decisions.where.${where}`)}</span>
+              <DecisionArt name={id} where={where} />
             </div>
 
             <div className="dec-body">
@@ -148,7 +102,6 @@ const Decisions = () => {
           </Reveal>
         ))}
       </ol>
-      </div>
 
       <Reveal className="dec-foot">
         <p className="dec-more">{t('decisions.more')}</p>

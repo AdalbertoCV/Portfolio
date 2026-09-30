@@ -43,183 +43,6 @@
     color: var(--color-text-tertiary);
 }
 
-/* ----------------------------------------------------------- the tree
-   The drawing beside the log (DecisionTree.jsx): a dark instrument panel in both
-   themes, because it is a screen showing the decisions and a screen is dark
-   whatever the room is. The tone of the entry in view reaches its border and its
-   label, the rest of the colour is drawn in the canvas. Self-contained on
-   purpose: this page must not depend on the styles of a page it does not load.
-
-   On a desktop it is a column held in view while the log scrolls past it; on a
-   tablet and a phone it is a strip between the introduction and the entries,
-   which is enough to say what the page is a picture of.
-   ------------------------------------------------------------------------- */
-
-.dec-layout {
-    display: grid;
-    gap: 28px;
-}
-
-.dec-tree {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    isolation: isolate;
-    border-radius: var(--radius-lg);
-    border: 1px solid color-mix(in srgb, var(--tone) 26%, rgba(148, 163, 184, 0.16));
-    background:
-        radial-gradient(70% 90% at 30% 50%, color-mix(in srgb, var(--tone) 9%, transparent), transparent 70%),
-        linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px) 0 0 / 22px 22px,
-        linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px) 0 0 / 22px 22px,
-        #07090d;
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.55), 0 18px 40px -24px rgba(0, 0, 0, 0.6);
-    transition: border-color 0.5s ease;
-}
-
-/* The corners of a viewfinder, in the tone of the entry. */
-.dec-tree::before {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    z-index: 1;
-    pointer-events: none;
-    --c: color-mix(in srgb, var(--tone) 70%, transparent);
-    background:
-        linear-gradient(var(--c), var(--c)) top left / 14px 1px,
-        linear-gradient(var(--c), var(--c)) top left / 1px 14px,
-        linear-gradient(var(--c), var(--c)) top right / 14px 1px,
-        linear-gradient(var(--c), var(--c)) top right / 1px 14px,
-        linear-gradient(var(--c), var(--c)) bottom left / 14px 1px,
-        linear-gradient(var(--c), var(--c)) bottom left / 1px 14px,
-        linear-gradient(var(--c), var(--c)) bottom right / 14px 1px,
-        linear-gradient(var(--c), var(--c)) bottom right / 1px 14px;
-    background-repeat: no-repeat;
-}
-
-.dec-tree::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px);
-    mix-blend-mode: multiply;
-}
-
-.dec-tree-canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    touch-action: pan-y;
-}
-
-.dec-tree-tag {
-    position: absolute;
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    max-width: calc(100% - 56px);
-    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(226, 232, 240, 0.72);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    pointer-events: none;
-}
-
-.dec-tree-tag--subject {
-    top: 22px;
-    left: 26px;
-    color: color-mix(in srgb, var(--tone) 55%, #e2e8f0);
-}
-
-.dec-tree-tag--subject i {
-    flex: none;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--tone);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--tone) 22%, transparent);
-}
-
-.dec-tree-tag--meta {
-    right: 26px;
-    bottom: 20px;
-}
-
-.dec-tree-tag--meta b {
-    font-weight: 500;
-    color: #e2e8f0;
-    font-variant-numeric: tabular-nums;
-}
-
-@media (min-width: 1080px) {
-    .dec-layout {
-        grid-template-columns: 380px minmax(0, 1fr);
-        gap: 56px;
-        align-items: start;
-    }
-
-    /* Held in view while the log passes it, under the navbar and above the foot
-       of the window, whatever the height of the window is. */
-    .dec-tree {
-        position: sticky;
-        top: calc(var(--navbar-h, 120px) + 24px);
-        height: min(600px, calc(100vh - var(--navbar-h, 120px) - 56px));
-        min-height: 360px;
-    }
-
-    /* The date column had 240px to itself, most of it empty. With the tree
-       beside the log the meta sits above the body instead, and the body has the
-       whole width of its column. */
-    .dec-layout .dec-entry {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
-    }
-
-    .dec-layout .dec-meta {
-        flex-direction: row;
-        align-items: baseline;
-        gap: 14px;
-    }
-}
-
-.dec-entry {
-    scroll-margin-top: calc(var(--navbar-h, 120px) + 24px);
-}
-
-@media (max-width: 560px) {
-    .dec-tree {
-        height: 210px;
-        border-radius: var(--radius-md);
-    }
-
-    .dec-tree::before {
-        inset: 9px;
-    }
-
-    .dec-tree-tag {
-        font-size: 0.62rem;
-    }
-
-    .dec-tree-tag--subject {
-        top: 17px;
-        left: 20px;
-    }
-
-    .dec-tree-tag--meta {
-        right: 20px;
-        bottom: 15px;
-    }
-}
-
 /* ---------------------------------------------------------------- entries */
 
 .dec-list {
@@ -238,6 +61,16 @@
 
 .dec-entry + .dec-entry {
     margin-top: 34px;
+}
+
+/* The date and its scene stay in view while a long entry is read, so the margin is
+   never a blank column beside the text. Only where it is a column: on a narrow
+   screen it is a row above the entry. */
+@media (min-width: 901px) {
+    .dec-meta {
+        position: sticky;
+        top: calc(var(--navbar-h, 120px) + 28px);
+    }
 }
 
 .dec-meta {
@@ -353,6 +186,211 @@
     color: var(--color-text-tertiary);
 }
 
+/* ------------------------------------------------------------ the scenes
+   A small moving picture per decision, in the margin under the date, in the tone
+   of the room the call was made in. The plate is the same one the interest cards
+   use, at the size of a margin note. Paused unless the log is on screen, and
+   still under reduced motion.
+   ------------------------------------------------------------------------- */
+
+.dec-art {
+    --tone-ink: var(--tone);
+    display: grid;
+    place-items: center;
+    width: 148px;
+    height: 84px;
+    margin-top: 18px;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    color: var(--tone-ink);
+    background:
+        radial-gradient(60% 90% at 50% 100%, color-mix(in srgb, var(--tone) 16%, transparent), transparent 70%),
+        color-mix(in srgb, var(--tone) 7%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tone) 16%, transparent);
+}
+
+:root[data-theme='light'] .dec-art {
+    --tone-ink: color-mix(in srgb, var(--tone) 70%, #1a1a1a);
+}
+
+.dec-art svg {
+    height: 62px;
+    width: auto;
+    overflow: visible;
+}
+
+.dec-art * {
+    animation-play-state: paused;
+}
+
+.dec-list.is-live .dec-art * {
+    animation-play-state: running;
+}
+
+/* cloud: packets cross, the far cloud fills in, the near one thins out. */
+.da-packet {
+    opacity: 0;
+    animation: daPacket 1.9s ease-in-out infinite;
+}
+
+.da-cloud-old {
+    animation: daLeave 1.9s ease-in-out infinite;
+}
+
+.da-cloud-new {
+    animation: daArrive 1.9s ease-in-out infinite;
+}
+
+@keyframes daPacket {
+    0% { transform: translateX(0); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translateX(28px); opacity: 0; }
+}
+
+@keyframes daLeave {
+    0%, 100% { opacity: 1; }
+    60% { opacity: 0.35; }
+}
+
+@keyframes daArrive {
+    0%, 100% { opacity: 0.4; }
+    70% { opacity: 1; }
+}
+
+/* quoter: the curve draws through the points and lands on a price. */
+.da-dot {
+    animation: daBlink 3.2s ease-in-out infinite;
+}
+
+.da-curve {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    animation: daCurve 3.2s ease-in-out infinite;
+}
+
+.da-end {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: daLand 3.2s ease-in-out infinite;
+}
+
+@keyframes daBlink {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes daCurve {
+    0% { stroke-dashoffset: 1; }
+    55%, 90% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -1; }
+}
+
+@keyframes daLand {
+    0%, 50% { transform: scale(0); opacity: 0; }
+    62% { transform: scale(1.4); opacity: 1; }
+    72%, 90% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+/* services: one block gives way to separate services, then they are linked. */
+.da-monolith {
+    animation: daMonolith 3.4s ease-in-out infinite;
+}
+
+.da-service {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: daSplit 3.4s ease-in-out infinite;
+}
+
+.da-service-b {
+    animation-delay: 0.12s;
+}
+
+.da-service-c {
+    animation-delay: 0.24s;
+}
+
+.da-link {
+    animation: daLinks 3.4s ease-in-out infinite;
+}
+
+@keyframes daMonolith {
+    0% { opacity: 0.9; }
+    24%, 84% { opacity: 0; }
+    100% { opacity: 0.9; }
+}
+
+@keyframes daSplit {
+    0%, 12% { transform: translate(var(--dx), var(--dy)) scale(0.55); opacity: 0; }
+    38%, 84% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--dx), var(--dy)) scale(0.55); opacity: 0; }
+}
+
+@keyframes daLinks {
+    0%, 36% { opacity: 0; }
+    52%, 84% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* parallel: two lanes, two speeds, at the same time. */
+.da-lane {
+    opacity: 0;
+}
+
+.da-lane-a {
+    animation: daLane 2.25s linear infinite;
+}
+
+.da-lane-b {
+    animation: daLane 2.8s linear infinite;
+}
+
+@keyframes daLane {
+    0% { transform: translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { transform: translateX(84px); opacity: 0; }
+}
+
+/* breadth: the tips of the fan breathe, and one goes deep. */
+.da-tip {
+    animation: daBlink 2.6s ease-in-out infinite;
+}
+
+.da-deep {
+    stroke-dasharray: 1;
+    animation: daDeep 3.6s ease-in-out infinite;
+}
+
+.da-deep-end {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: daLand 3.6s ease-in-out infinite;
+}
+
+@keyframes daDeep {
+    0% { stroke-dashoffset: 1; }
+    55%, 88% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dec-art * {
+        animation: none !important;
+    }
+
+    .da-packet,
+    .da-lane {
+        opacity: 0.7;
+    }
+
+    .da-monolith {
+        opacity: 0;
+    }
+}
+
 /* ----------------------------------------------------------------- the end */
 
 .dec-foot {
@@ -410,7 +448,20 @@
     .dec-meta {
         flex-direction: row;
         align-items: baseline;
+        flex-wrap: wrap;
         gap: 14px;
+    }
+
+    /* Beside the date instead of under it, and smaller: a phone has no margin
+       column, only the row the date is on. */
+    .dec-art {
+        width: 104px;
+        height: 60px;
+        margin: 0 0 0 auto;
+    }
+
+    .dec-art svg {
+        height: 44px;
     }
 }
 

@@ -16,17 +16,6 @@
    dictionary for the ones that are still running.
    ======================================================================== */
 
-// One tone per room, so the tree beside the log and the entry it lights are the
-// same colour. The rooms without an entry yet are here so the next one does not
-// need a code change.
-export const TONES = {
-  radii: '#22d3ee',
-  rbr: '#34d399',
-  own: '#facc15',
-  personal: '#f472b6',
-  freelance: '#fb923c',
-};
-
 const ENTRIES = [
   {
     id: 'cloud',
