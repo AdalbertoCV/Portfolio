@@ -1,16 +1,16 @@
 /*
- * The ranks of The Stars. A technology's rank is how many projects stand behind
- * it in the catalogue (PROJECT_TECH), the way a rank in a game is how much you
- * have played: the more work behind a mark, the higher it sits and the more it
- * shines. The thresholds live here so moving one is moving one number, and the
- * rows of the panel, the emblems and the tiles all read the same list.
+ * The ranks of The Stars, which are colours and nothing else. A technology's rank
+ * is how many projects stand behind it in the catalogue (PROJECT_TECH), the way a
+ * rank in a game is how much you have played, and it shows as the colour of its
+ * tile: a border in the rank's gradient and the count in the same colour. There
+ * is no league name on the page, no row, no divider and no change of size: the
+ * tiles are in one grid, in the order they were already in (most used first), and
+ * the colour is all that says how much work is behind each.
  *
  * Highest first. A technology has the first rank whose `min` it reaches, so the
- * last entry's `min` of 1 is what "has any project at all" means.
- *
- * `tone` and `deep` are the two ends of the rank's gradient. The rank is shown by
- * colour alone (and by the size of the tile), never by name: the ids are for the
- * code and for a screen reader.
+ * last entry's `min` of 1 is what "has any project at all" means. `tone` and
+ * `deep` are the two ends of the gradient; the ids are for the code and for a
+ * screen reader. Moving a threshold is moving one number.
  */
 export const RANKS = [
   { id: 'diamond', min: 6, tone: '#8feaff', deep: '#2bb0e6' },

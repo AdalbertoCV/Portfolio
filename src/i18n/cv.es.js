@@ -66,13 +66,6 @@ const cvEs = {
     skillsTitle: 'Tecnologías que uso, pruebo y exploro',
     skillsLede: 'Primero, las estrellas: las tecnologías con proyectos públicos detrás, cada una enlazada a ese trabajo. El resto lo uso en proyectos bajo NDA o personales, o son herramientas que tengo en el radar y que estoy probando.',
     skillsReceipt: 'proyectos con',
-    ranks: {
-      diamond: 'Diamante',
-      gold: 'Oro',
-      silver: 'Plata',
-      bronze: 'Bronce',
-      iron: 'Hierro',
-    },
     skillsSearchLabel: 'Buscar tecnologías',
     skillsSearchPlaceholder: 'Buscar tecnologías…',
     skillsSearchResults: 'Resultados de la búsqueda',

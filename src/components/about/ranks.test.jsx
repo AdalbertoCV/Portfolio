@@ -1,7 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nProvider } from '../../i18n/I18nProvider';
-import en from '../../i18n/en';
 import TECH_GROUPS from './techStack';
 import StackExplorer from './StackExplorer';
 import { PROJECT_TECH } from '../projects/catalogue';
@@ -31,29 +30,21 @@ test('the ranks run highest first, with thresholds strictly falling', () => {
   RANKS.slice(1).forEach((rank, i) => expect(rank.min).toBeLessThan(RANKS[i].min));
 });
 
-test('The Stars open as a ladder, most used first, every tile in the rank its count earns', () => {
+// Colour and nothing else: one grid, in the order it was already in, with no
+// rows, dividers, names or labels; only the tile carries its rank.
+test('The Stars stay one grid, and each tile carries the colour its count earns', () => {
   const { container } = renderExplorer();
-  const rows = [...container.querySelectorAll('.rank-row')];
-  expect(rows.length).toBeGreaterThan(1);
-  // Rows come in the order of the ladder.
-  const order = rows.map((row) => RANKS.findIndex((rank) => rank.id === row.dataset.rank));
-  expect(order).toEqual([...order].sort((a, b) => a - b));
-  // Every tile sits in the row its count puts it in.
-  rows.forEach((row) => {
-    row.querySelectorAll('.stack-mark').forEach((tile) => {
-      expect(tile.dataset.rank).toBe(row.dataset.rank);
-    });
-  });
-  // And Python and Django, the most used, are in the top rank.
-  const top = rows[0];
-  expect(top.dataset.rank).toBe('diamond');
-  expect(top).toHaveTextContent('Python');
-  // The rank is colour alone: the league names are not on the page, only given to
-  // a screen reader.
-  expect(screen.queryByText(en.cv.ranks.diamond)).toBeNull();
-  expect(top).toHaveAttribute('aria-label', en.cv.ranks.diamond);
+  expect(container.querySelectorAll('.stack-marks')).toHaveLength(1);
+  expect(container.querySelector('.rank-row')).toBeNull();
+  expect(container.querySelector('.rank-rule')).toBeNull();
   expect(container.querySelector('.rank-name')).toBeNull();
-  expect(container.querySelector('.rank-emblem')).toBeNull();
+  const tiles = [...container.querySelectorAll('.stack-mark')];
+  expect(tiles.length).toBe(TECH_GROUPS[0].items.length);
+  TECH_GROUPS[0].items.forEach((item, i) => {
+    expect(tiles[i].dataset.rank).toBe(rankFor(PROJECT_TECH[item.name] || 0)?.id);
+  });
+  // Most used first, as before: the first tile is in the top rank.
+  expect(tiles[0].dataset.rank).toBe('diamond');
 });
 
 test('every technology in The Stars has a rank', () => {
