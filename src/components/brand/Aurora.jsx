@@ -138,7 +138,10 @@ const Aurora = () => {
         // Many thin steps rather than a few wide ones: each is a little wider and
         // a little fainter than the next, and together they are a soft edge.
         const widths = narrow ? [190, 150, 112, 76, 42] : [270, 230, 192, 156, 122, 90, 60, 34];
-        widths.forEach((w, k) => {
+        // A plain loop, not forEach: a function made inside the loop over the ribbons
+        // is what the linter (and so the production build) refuses.
+        for (let k = 0; k < widths.length; k += 1) {
+          const w = widths[k];
           const alpha = look.glow * (0.16 + k * 0.085);
           const grad = ctx.createLinearGradient(0, 0, width, 0);
           grad.addColorStop(0, rgba(tone, alpha * 0.25));
@@ -152,7 +155,7 @@ const Aurora = () => {
           ctx.beginPath();
           points.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
           ctx.stroke();
-        });
+        }
       }
 
       // --- The grid lines, very faint, and the pulses that run along them.
