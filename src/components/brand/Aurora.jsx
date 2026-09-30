@@ -74,6 +74,7 @@ const Aurora = () => {
     let started = false;
     let last = 0;
     let idleId = 0;
+    let paintWatch = null;
     let timer = 0;
     const pulses = [];
     let nextPulse = 0;
@@ -265,21 +266,40 @@ const Aurora = () => {
       else raf = requestAnimationFrame(loop);
     };
 
-    // Not before the page has painted what matters and the browser is idle: the
-    // first paint, and the image that is the largest thing on the first screen, are
-    // what this must never slow down. So it waits until a few seconds into the
-    // visit (measured from the navigation, so a slow load does not make it wait any
-    // longer than it has to), and then for an idle moment.
-    const SETTLE = 3200;
-    const begin = () => {
-      const wait = Math.max(0, SETTLE - performance.now());
-      timer = window.setTimeout(() => {
-        if (window.requestIdleCallback) idleId = window.requestIdleCallback(start, { timeout: 2000 });
-        else start();
-      }, wait);
+    // As soon as the page has something on it, and not before. The first screen has
+    // to appear without this, but it must not wait for this either: a background
+    // that only shows up after a few seconds, or once the reader has scrolled, is a
+    // background that is not there. So it starts when the first content has been
+    // painted (a short beat later, in an idle moment), and in any case no later than
+    // a second and a half after the page mounts, which is what covers a browser that
+    // does not report the paint.
+    let waited = false;
+    const go = () => {
+      if (waited) return;
+      waited = true;
+      if (window.requestIdleCallback) idleId = window.requestIdleCallback(start, { timeout: 300 });
+      else start();
     };
-    if (document.readyState === 'complete') begin();
-    else window.addEventListener('load', begin, { once: true });
+    const begin = () => {
+      timer = window.setTimeout(go, 1500);
+      const painted = performance.getEntriesByName?.('first-contentful-paint')?.length;
+      if (painted) {
+        window.setTimeout(go, 200);
+      } else if (typeof PerformanceObserver !== 'undefined') {
+        try {
+          paintWatch = new PerformanceObserver((list) => {
+            if (list.getEntries().some((entry) => entry.name === 'first-contentful-paint')) {
+              window.setTimeout(go, 250);
+              paintWatch.disconnect();
+            }
+          });
+          paintWatch.observe({ type: 'paint', buffered: true });
+        } catch (error) {
+          // The timer above is the fallback.
+        }
+      }
+    };
+    begin();
 
     const onResize = () => {
       if (!started) return;
@@ -318,7 +338,7 @@ const Aurora = () => {
       cancelAnimationFrame(raf);
       if (idleId && window.cancelIdleCallback) window.cancelIdleCallback(idleId);
       window.clearTimeout(timer);
-      window.removeEventListener('load', begin);
+      paintWatch?.disconnect();
       window.removeEventListener('resize', onResize);
       window.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerleave', onLeave);

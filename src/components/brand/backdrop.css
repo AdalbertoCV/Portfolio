@@ -34,7 +34,7 @@
     display: block;
     /* It fades up when the canvas starts, so it arrives instead of appearing. */
     opacity: 0;
-    transition: opacity 1.6s ease;
+    transition: opacity 1.1s ease;
 }
 
 .aurora.is-on {
