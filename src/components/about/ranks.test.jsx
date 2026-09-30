@@ -5,7 +5,7 @@ import en from '../../i18n/en';
 import TECH_GROUPS from './techStack';
 import StackExplorer from './StackExplorer';
 import { PROJECT_TECH } from '../projects/catalogue';
-import { RANKS, rankFor, rankSpan } from './ranks';
+import { RANKS, rankFor } from './ranks';
 
 const renderExplorer = () =>
   render(
@@ -29,8 +29,6 @@ test('a technology has the highest rank whose threshold it reaches', () => {
 
 test('the ranks run highest first, with thresholds strictly falling', () => {
   RANKS.slice(1).forEach((rank, i) => expect(rank.min).toBeLessThan(RANKS[i].min));
-  expect(rankSpan(RANKS[0]).max).toBeNull();
-  expect(rankSpan(RANKS.find((rank) => rank.id === 'bronze'))).toEqual({ min: 2, max: 3 });
 });
 
 test('The Stars open as a ladder, most used first, every tile in the rank its count earns', () => {
@@ -50,7 +48,12 @@ test('The Stars open as a ladder, most used first, every tile in the rank its co
   const top = rows[0];
   expect(top.dataset.rank).toBe('diamond');
   expect(top).toHaveTextContent('Python');
-  expect(screen.getByText(en.cv.ranks.diamond)).toBeInTheDocument();
+  // The rank is colour alone: the league names are not on the page, only given to
+  // a screen reader.
+  expect(screen.queryByText(en.cv.ranks.diamond)).toBeNull();
+  expect(top).toHaveAttribute('aria-label', en.cv.ranks.diamond);
+  expect(container.querySelector('.rank-name')).toBeNull();
+  expect(container.querySelector('.rank-emblem')).toBeNull();
 });
 
 test('every technology in The Stars has a rank', () => {

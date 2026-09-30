@@ -66,8 +66,6 @@ const cvEn = {
       bronze: 'Bronze',
       iron: 'Iron',
     },
-    ranksProject: 'project',
-    ranksProjects: 'projects',
     skillsSearchLabel: 'Search technologies',
     skillsSearchPlaceholder: 'Search technologies…',
     skillsSearchResults: 'Search results',

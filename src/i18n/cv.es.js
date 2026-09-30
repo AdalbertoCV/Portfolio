@@ -73,8 +73,6 @@ const cvEs = {
       bronze: 'Bronce',
       iron: 'Hierro',
     },
-    ranksProject: 'proyecto',
-    ranksProjects: 'proyectos',
     skillsSearchLabel: 'Buscar tecnologías',
     skillsSearchPlaceholder: 'Buscar tecnologías…',
     skillsSearchResults: 'Resultados de la búsqueda',
