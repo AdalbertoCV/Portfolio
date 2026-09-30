@@ -622,11 +622,11 @@
 
 /* --------------------------------------------------------------- the index */
 
+/* Fixed in the flow of the page, not riding down it beside the reader: nothing on
+   this site moves with the scroll. */
 .stack-index {
     display: flex;
     flex-direction: column;
-    position: sticky;
-    top: calc(var(--navbar-h, 120px) + 24px);
 }
 
 .stack-tab {
