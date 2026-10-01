@@ -1175,6 +1175,18 @@ import sipaddlepaddleIcon from '../../images/tech/paddlepaddle.svg';
 import siplotlyIcon from '../../images/tech/plotly.svg';
 import silightningIcon from '../../images/tech/lightning.svg';
 import sipytorchlightningIcon from '../../images/tech/pytorchlightning.svg';
+// More for data: from Simple Icons.
+import siapachedruidIcon from '../../images/tech/apachedruid.svg';
+import siapachenifiIcon from '../../images/tech/apachenifi.svg';
+import silookerIcon from '../../images/tech/looker.svg';
+import sitableauIcon from '../../images/tech/tableau.svg';
+import sipowerbiIcon from '../../images/tech/powerbi.svg';
+import siqlikIcon from '../../images/tech/qlik.svg';
+import sitidbIcon from '../../images/tech/tidb.svg';
+import sicouchbaseIcon from '../../images/tech/couchbase.svg';
+import siarangodbIcon from '../../images/tech/arangodb.svg';
+import siplanetscaleIcon from '../../images/tech/planetscale.svg';
+import siamazondynamodbIcon from '../../images/tech/amazondynamodb.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2159,6 +2171,17 @@ const TECH_GROUPS = [
       { name: 'MySQL', icon: mysql, mono: true },
       { name: 'MongoDB', icon: mongodb, mono: true },
       { name: 'Redis', icon: redis, mono: true },
+      { name: 'Apache Druid', icon: siapachedruidIcon, mono: true },
+      { name: 'Apache NiFi', icon: siapachenifiIcon, mono: true },
+      { name: 'Looker', icon: silookerIcon, mono: true },
+      { name: 'Tableau', icon: sitableauIcon, mono: true },
+      { name: 'Power BI', icon: sipowerbiIcon, mono: true },
+      { name: 'Qlik', icon: siqlikIcon, mono: true },
+      { name: 'TiDB', icon: sitidbIcon, mono: true },
+      { name: 'Couchbase', icon: sicouchbaseIcon, mono: true },
+      { name: 'ArangoDB', icon: siarangodbIcon, mono: true },
+      { name: 'PlanetScale', icon: siplanetscaleIcon, mono: true },
+      { name: 'Amazon DynamoDB', icon: siamazondynamodbIcon, mono: true },
       { name: 'SQLite', icon: sqlite, mono: true },
       { name: 'Supabase', icon: supabaseIcon, mono: true },
       // The pipeline, in the order it runs: orchestration, processing,
