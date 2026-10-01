@@ -1094,9 +1094,19 @@ import siairbyteIcon from '../../images/tech/airbyte.svg';
 import sieclipseIcon from '../../images/tech/eclipse.svg';
 // Spyder: the S and the web, without the light tile the repository draws them on.
 import sispyderIcon from '../../images/tech/spyder.svg';
-// dots: the wordmark from OpenAI's launch art, keyed out of its black ground. The
-// glow is dropped; the letters are what survive as a silhouette.
-import sidotsIcon from '../../images/tech/openaidots.png';
+// dots: the little characters OpenAI gave its agents (a cloud, a bean, a triangle),
+// redrawn single-tone, because the product is those faces and not a wordmark.
+import sidotsIcon from '../../images/tech/openaidots.svg';
+// Stable Diffusion WebUI: Stability AI's S, from LobeHub's icon set.
+import sistablediffusionIcon from '../../images/tech/stablediffusion.svg';
+// AI21 Labs: the mark from LobeHub's icon set, already single-tone.
+import siai21Icon from '../../images/tech/ai21.svg';
+// Guardrails AI: the bowl from its favicon, redrawn single-tone.
+import siguardrailsaiIcon from '../../images/tech/guardrailsai.svg';
+// MGX: the four blobs from its favicon, single-tone by filter.
+import simgxIcon from '../../images/tech/mgx.svg';
+// Relevance AI: the square and the circle from its favicon, without the tile.
+import sirelevanceaiIcon from '../../images/tech/relevanceai.svg';
 
 // The data-lake intake. Table formats, catalogs, engines and the cloud's object
 // stores; the AWS marks are the glyphs without their gradient tiles, and the PNGs
@@ -1531,6 +1541,8 @@ const TECH_GROUPS = [
       { name: 'TextGrad', icon: sitextgradIcon, flat: true },
       // Tech week, the top-up.
       { name: 'Cohere', icon: sicohereIcon, mono: true },
+      { name: 'AI21 Labs', icon: siai21Icon, mono: true },
+      { name: 'Guardrails AI', icon: siguardrailsaiIcon, mono: true },
       { name: 'Voyage AI', icon: sivoyageaiIcon, mono: true },
       { name: 'Exa', icon: siexaIcon, mono: true },
       { name: 'LibreChat', icon: silibrechatIcon, mono: true },
@@ -1568,7 +1580,7 @@ const TECH_GROUPS = [
     items: [
       { name: 'Claude Code', icon: claudeIcon, mono: true },
       { name: 'Codex', icon: openaiIcon, mono: true },
-      { name: 'dots (OpenAI)', icon: sidotsIcon, flat: true },
+      { name: 'dots (OpenAI)', icon: sidotsIcon, mono: true },
       { name: 'Cursor', icon: cursorIcon, mono: true },
       { name: 'GitHub Copilot', icon: copilotIcon, mono: true },
       // These three ship their own artwork and none of them invert. OpenCode's
@@ -1646,6 +1658,8 @@ const TECH_GROUPS = [
       // moving, which is the closest thing on this wall to what Radii does.
       { name: 'Accio', icon: siaccioIcon, mono: true },
       { name: 'Manus', icon: simanusIcon, mono: true },
+      { name: 'MGX', icon: simgxIcon, flat: true },
+      { name: 'Relevance AI', icon: sirelevanceaiIcon, mono: true },
       { name: 'Activepieces', icon: siactivepiecesIcon, mono: true },
       { name: 'Windmill', icon: siwindmillIcon, mono: true },
       { name: 'Skywork', icon: siskyworkIcon, mono: true },
@@ -2276,6 +2290,7 @@ const TECH_GROUPS = [
       // 2026 intake: things worth trying, not things already shipped.
       { name: 'LiveKit', icon: silivekitIcon, mono: true },
       { name: 'ComfyUI', icon: sicomfyuiIcon, mono: true },
+      { name: 'Stable Diffusion WebUI', icon: sistablediffusionIcon, mono: true },
       { name: 'Babylon.js', icon: sibabylondotjsIcon, mono: true },
       { name: 'PlayCanvas', icon: siplaycanvasIcon, mono: true },
       { name: 'Remotion', icon: siremotionIcon, mono: true },
