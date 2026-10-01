@@ -1256,6 +1256,17 @@ import siinertiaIcon from '../../images/tech/inertia.svg';
 import silivewireIcon from '../../images/tech/livewire.svg';
 import siblazorIcon from '../../images/tech/blazor.svg';
 import sijsrIcon from '../../images/tech/jsr.svg';
+// More for web: from Simple Icons.
+import sitypo3Icon from '../../images/tech/typo3.svg';
+import siumbracoIcon from '../../images/tech/umbraco.svg';
+import sinodebbIcon from '../../images/tech/nodebb.svg';
+import simoodleIcon from '../../images/tech/moodle.svg';
+import sierpnextIcon from '../../images/tech/erpnext.svg';
+import sisendgridIcon from '../../images/tech/sendgrid.svg';
+import simailgunIcon from '../../images/tech/mailgun.svg';
+import sibrevoIcon from '../../images/tech/brevo.svg';
+import sisalesforceIcon from '../../images/tech/salesforce.svg';
+import sipaddleIcon from '../../images/tech/paddle.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2544,6 +2555,16 @@ const TECH_GROUPS = [
     id: 'web',
     items: [
       { name: 'WordPress', icon: wordpressIcon, mono: true },
+      { name: 'TYPO3', icon: sitypo3Icon, mono: true },
+      { name: 'Umbraco', icon: siumbracoIcon, mono: true },
+      { name: 'NodeBB', icon: sinodebbIcon, mono: true },
+      { name: 'Moodle', icon: simoodleIcon, mono: true },
+      { name: 'ERPNext', icon: sierpnextIcon, mono: true },
+      { name: 'SendGrid', icon: sisendgridIcon, mono: true },
+      { name: 'Mailgun', icon: simailgunIcon, mono: true },
+      { name: 'Brevo', icon: sibrevoIcon, mono: true },
+      { name: 'Salesforce', icon: sisalesforceIcon, mono: true },
+      { name: 'Paddle', icon: sipaddleIcon, mono: true },
       { name: 'WooCommerce', icon: woocommerceIcon, mono: true },
       { name: 'Elementor', icon: elementorIcon, mono: true },
       { name: 'Payments & checkout', concept: 'payments' },
