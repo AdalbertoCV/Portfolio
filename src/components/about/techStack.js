@@ -1327,6 +1327,9 @@ import siwindowsterminalIcon from '../../images/tech/windowsterminal.svg';
 import sionedriveIcon from '../../images/tech/onedrive.svg';
 import siicloudIcon from '../../images/tech/icloud.svg';
 import sircloneIcon from '../../images/tech/rclone.svg';
+// More for diagrams: from Simple Icons.
+import sicamundaIcon from '../../images/tech/camunda.svg';
+import sicytoscapedotjsIcon from '../../images/tech/cytoscapedotjs.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -3032,6 +3035,8 @@ const TECH_GROUPS = [
       // Drawing the system, then writing it down.
       // The tech-week intake.
       { name: 'PlantUML', icon: siplantumlIcon, flat: true },
+      { name: 'Camunda', icon: sicamundaIcon, mono: true },
+      { name: 'Cytoscape.js', icon: sicytoscapedotjsIcon, mono: true },
       { name: 'Mermaid', icon: simermaidIcon, mono: true },
       { name: 'D2', icon: sid2Icon, mono: true },
       { name: 'Kroki', icon: sikrokiIcon, flat: true },
