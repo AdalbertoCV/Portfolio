@@ -1170,6 +1170,11 @@ import siknexdotjsIcon from '../../images/tech/knexdotjs.svg';
 import simongooseIcon from '../../images/tech/mongoose.svg';
 import sizeromqIcon from '../../images/tech/zeromq.svg';
 import sijsonwebtokensIcon from '../../images/tech/jsonwebtokens.svg';
+// More for ai: from Simple Icons.
+import sipaddlepaddleIcon from '../../images/tech/paddlepaddle.svg';
+import siplotlyIcon from '../../images/tech/plotly.svg';
+import silightningIcon from '../../images/tech/lightning.svg';
+import sipytorchlightningIcon from '../../images/tech/pytorchlightning.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1549,6 +1554,10 @@ const TECH_GROUPS = [
     id: 'ai',
     items: [
       { name: 'LangChain', icon: langchain, mono: true },
+      { name: 'PaddlePaddle', icon: sipaddlepaddleIcon, mono: true },
+      { name: 'Plotly', icon: siplotlyIcon, mono: true },
+      { name: 'Lightning', icon: silightningIcon, mono: true },
+      { name: 'PyTorch Lightning', icon: sipytorchlightningIcon, mono: true },
       { name: 'AI Agents', concept: 'agents' },
       { name: 'LLM & RAG', concept: 'rag' },
       { name: 'Machine Learning', concept: 'ml' },
