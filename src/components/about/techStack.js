@@ -1330,6 +1330,23 @@ import sircloneIcon from '../../images/tech/rclone.svg';
 // More for diagrams: from Simple Icons.
 import sicamundaIcon from '../../images/tech/camunda.svg';
 import sicytoscapedotjsIcon from '../../images/tech/cytoscapedotjs.svg';
+// More for learning: from Simple Icons.
+import sicodeforcesIcon from '../../images/tech/codeforces.svg';
+import sigeeksforgeeksIcon from '../../images/tech/geeksforgeeks.svg';
+import sieggheadIcon from '../../images/tech/egghead.svg';
+import sipacktIcon from '../../images/tech/packt.svg';
+import sigooglescholarIcon from '../../images/tech/googlescholar.svg';
+import siresearchgateIcon from '../../images/tech/researchgate.svg';
+import siorcidIcon from '../../images/tech/orcid.svg';
+import simediumIcon from '../../images/tech/medium.svg';
+import sidevdottoIcon from '../../images/tech/devdotto.svg';
+import sihashnodeIcon from '../../images/tech/hashnode.svg';
+import sisubstackIcon from '../../images/tech/substack.svg';
+import siredditIcon from '../../images/tech/reddit.svg';
+import sistackexchangeIcon from '../../images/tech/stackexchange.svg';
+import sihackerearthIcon from '../../images/tech/hackerearth.svg';
+import sitopcoderIcon from '../../images/tech/topcoder.svg';
+import sicodechefIcon from '../../images/tech/codechef.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -3102,6 +3119,22 @@ const TECH_GROUPS = [
       // Where the knowledge actually comes from.
       // The tech-week intake.
       { name: 'Platzi', icon: siplatziIcon, mono: true },
+      { name: 'Codeforces', icon: sicodeforcesIcon, mono: true },
+      { name: 'GeeksforGeeks', icon: sigeeksforgeeksIcon, mono: true },
+      { name: 'egghead', icon: sieggheadIcon, mono: true },
+      { name: 'Packt', icon: sipacktIcon, mono: true },
+      { name: 'Google Scholar', icon: sigooglescholarIcon, mono: true },
+      { name: 'ResearchGate', icon: siresearchgateIcon, mono: true },
+      { name: 'ORCID', icon: siorcidIcon, mono: true },
+      { name: 'Medium', icon: simediumIcon, mono: true },
+      { name: 'DEV', icon: sidevdottoIcon, mono: true },
+      { name: 'Hashnode', icon: sihashnodeIcon, mono: true },
+      { name: 'Substack', icon: sisubstackIcon, mono: true },
+      { name: 'Reddit', icon: siredditIcon, mono: true },
+      { name: 'Stack Exchange', icon: sistackexchangeIcon, mono: true },
+      { name: 'HackerEarth', icon: sihackerearthIcon, mono: true },
+      { name: 'Topcoder', icon: sitopcoderIcon, mono: true },
+      { name: 'CodeChef', icon: sicodechefIcon, mono: true },
       { name: 'Udemy', icon: siudemyIcon, mono: true },
       { name: 'W3Schools', icon: siw3schoolsIcon, mono: true },
       { name: 'Stack Overflow', icon: sistackoverflowIcon, mono: true },
