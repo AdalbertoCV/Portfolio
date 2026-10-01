@@ -1078,6 +1078,41 @@ import sihunyuanIcon from '../../images/tech/hunyuan.svg';
 import siassemblyaiIcon from '../../images/tech/assemblyai.svg';
 import silumaIcon from '../../images/tech/luma.svg';
 import sisoraIcon from '../../images/tech/sora.svg';
+// Vector and search engines, CI/CD, platform and observability: from Simple Icons.
+import sisinglestoreIcon from '../../images/tech/singlestore.svg';
+import siapachesolrIcon from '../../images/tech/apachesolr.svg';
+import siapacheluceneIcon from '../../images/tech/apachelucene.svg';
+import sivespaIcon from '../../images/tech/vespa.svg';
+import sicircleciIcon from '../../images/tech/circleci.svg';
+import sibuildkiteIcon from '../../images/tech/buildkite.svg';
+import sidroneIcon from '../../images/tech/drone.svg';
+import siteamcityIcon from '../../images/tech/teamcity.svg';
+import sioctopusdeployIcon from '../../images/tech/octopusdeploy.svg';
+import sispinnakerIcon from '../../images/tech/spinnaker.svg';
+import siskaffoldIcon from '../../images/tech/skaffold.svg';
+import sisonarqubeserverIcon from '../../images/tech/sonarqubeserver.svg';
+import sidependabotIcon from '../../images/tech/dependabot.svg';
+import sisonatypeIcon from '../../images/tech/sonatype.svg';
+import sijfrogIcon from '../../images/tech/jfrog.svg';
+import sichefIcon from '../../images/tech/chef.svg';
+import sipuppetIcon from '../../images/tech/puppet.svg';
+import sisaltprojectIcon from '../../images/tech/saltproject.svg';
+import sicontainerdIcon from '../../images/tech/containerd.svg';
+import sietcdIcon from '../../images/tech/etcd.svg';
+import silonghornIcon from '../../images/tech/longhorn.svg';
+import sirookIcon from '../../images/tech/rook.svg';
+import silinkerdIcon from '../../images/tech/linkerd.svg';
+import sienvoyproxyIcon from '../../images/tech/envoyproxy.svg';
+import sikongIcon from '../../images/tech/kong.svg';
+import siopenfaasIcon from '../../images/tech/openfaas.svg';
+import sipagerdutyIcon from '../../images/tech/pagerduty.svg';
+import siopsgenieIcon from '../../images/tech/opsgenie.svg';
+import sinewrelicIcon from '../../images/tech/newrelic.svg';
+import sidynatraceIcon from '../../images/tech/dynatrace.svg';
+import sikibanaIcon from '../../images/tech/kibana.svg';
+import silogstashIcon from '../../images/tech/logstash.svg';
+import sifluentdIcon from '../../images/tech/fluentd.svg';
+import sithanosIcon from '../../images/tech/thanos.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1761,11 +1796,33 @@ const TECH_GROUPS = [
       { name: 'Cloud security', concept: 'cloudSecurity' },
       { name: 'FinOps', concept: 'finops' },
       { name: 'Terraform', icon: terraformIcon, mono: true },
+      { name: 'Chef', icon: sichefIcon, mono: true },
+      { name: 'Puppet', icon: sipuppetIcon, mono: true },
+      { name: 'SaltStack', icon: sisaltprojectIcon, mono: true },
+      { name: 'containerd', icon: sicontainerdIcon, mono: true },
+      { name: 'etcd', icon: sietcdIcon, mono: true },
+      { name: 'Longhorn', icon: silonghornIcon, mono: true },
+      { name: 'Rook', icon: sirookIcon, mono: true },
+      { name: 'Linkerd', icon: silinkerdIcon, mono: true },
+      { name: 'Envoy', icon: sienvoyproxyIcon, mono: true },
+      { name: 'Kong', icon: sikongIcon, mono: true },
+      { name: 'OpenFaaS', icon: siopenfaasIcon, mono: true },
       { name: 'Pulumi', icon: pulumiIcon, mono: true },
       { name: 'Ansible', icon: ansibleIcon, mono: true },
       { name: 'GitHub Actions', icon: githubactionsIcon, mono: true },
       { name: 'GitLab CI', icon: gitlabIcon, mono: true },
       { name: 'Jenkins', icon: jenkinsIcon, mono: true },
+      { name: 'CircleCI', icon: sicircleciIcon, mono: true },
+      { name: 'Buildkite', icon: sibuildkiteIcon, mono: true },
+      { name: 'Drone', icon: sidroneIcon, mono: true },
+      { name: 'TeamCity', icon: siteamcityIcon, mono: true },
+      { name: 'Octopus Deploy', icon: sioctopusdeployIcon, mono: true },
+      { name: 'Spinnaker', icon: sispinnakerIcon, mono: true },
+      { name: 'Skaffold', icon: siskaffoldIcon, mono: true },
+      { name: 'SonarQube', icon: sisonarqubeserverIcon, mono: true },
+      { name: 'Dependabot', icon: sidependabotIcon, mono: true },
+      { name: 'Sonatype Nexus', icon: sisonatypeIcon, mono: true },
+      { name: 'JFrog Artifactory', icon: sijfrogIcon, mono: true },
       { name: 'Argo CD', icon: argoIcon, mono: true },
       { name: 'Helm', icon: helmIcon, mono: true },
       { name: 'Google Cloud', icon: googlecloudIcon, mono: true },
@@ -1786,6 +1843,14 @@ const TECH_GROUPS = [
       { name: 'Traefik', icon: traefikproxyIcon, mono: true },
       { name: 'Prometheus', icon: prometheusIcon, mono: true },
       { name: 'Grafana', icon: grafanaIcon, mono: true },
+      { name: 'PagerDuty', icon: sipagerdutyIcon, mono: true },
+      { name: 'Opsgenie', icon: siopsgenieIcon, mono: true },
+      { name: 'New Relic', icon: sinewrelicIcon, mono: true },
+      { name: 'Dynatrace', icon: sidynatraceIcon, mono: true },
+      { name: 'Kibana', icon: sikibanaIcon, mono: true },
+      { name: 'Logstash', icon: silogstashIcon, mono: true },
+      { name: 'Fluentd', icon: sifluentdIcon, mono: true },
+      { name: 'Thanos', icon: sithanosIcon, mono: true },
       { name: 'OpenTelemetry', icon: opentelemetryIcon, mono: true },
       { name: 'Sentry', icon: sentryIcon, mono: true },
       { name: 'Datadog', icon: datadogIcon, mono: true },
@@ -2031,6 +2096,10 @@ const TECH_GROUPS = [
       { name: 'TimescaleDB', icon: timescaleIcon, mono: true },
       { name: 'InfluxDB', icon: influxdbIcon, mono: true },
       { name: 'Qdrant', icon: qdrantIcon, mono: true },
+      { name: 'SingleStore', icon: sisinglestoreIcon, mono: true },
+      { name: 'Apache Solr', icon: siapachesolrIcon, mono: true },
+      { name: 'Apache Lucene', icon: siapacheluceneIcon, mono: true },
+      { name: 'Vespa', icon: sivespaIcon, mono: true },
       { name: 'Milvus', icon: milvusIcon, mono: true },
       { name: 'Weaviate', icon: siweaviateIcon, flat: true },
       { name: 'SQLAlchemy', icon: sqlalchemyIcon, mono: true },
