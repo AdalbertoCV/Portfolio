@@ -1209,6 +1209,15 @@ import sinutanixIcon from '../../images/tech/nutanix.svg';
 import sivmwareIcon from '../../images/tech/vmware.svg';
 import sicaproverIcon from '../../images/tech/caprover.svg';
 import siamazoneksIcon from '../../images/tech/amazoneks.svg';
+// More for netlab: from Simple Icons.
+import sifortinetIcon from '../../images/tech/fortinet.svg';
+import sipaloaltonetworksIcon from '../../images/tech/paloaltonetworks.svg';
+import siapacheIcon from '../../images/tech/apache.svg';
+import sinetgearIcon from '../../images/tech/netgear.svg';
+import sihuaweiIcon from '../../images/tech/huawei.svg';
+import siteamviewerIcon from '../../images/tech/teamviewer.svg';
+import sianydeskIcon from '../../images/tech/anydesk.svg';
+import sifilezillaIcon from '../../images/tech/filezilla.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2056,6 +2065,14 @@ const TECH_GROUPS = [
       // The network bench and the homelab it runs on.
       // The tech-week intake.
       { name: 'GNS3', icon: signs3Icon, mono: true },
+      { name: 'Fortinet', icon: sifortinetIcon, mono: true },
+      { name: 'Palo Alto Networks', icon: sipaloaltonetworksIcon, mono: true },
+      { name: 'Apache HTTP Server', icon: siapacheIcon, mono: true },
+      { name: 'Netgear', icon: sinetgearIcon, mono: true },
+      { name: 'Huawei', icon: sihuaweiIcon, mono: true },
+      { name: 'TeamViewer', icon: siteamviewerIcon, mono: true },
+      { name: 'AnyDesk', icon: sianydeskIcon, mono: true },
+      { name: 'FileZilla', icon: sifilezillaIcon, mono: true },
       { name: 'PuTTY', icon: siputtyIcon, mono: true },
       { name: 'Netdata', icon: sinetdataIcon, mono: true },
       { name: 'Zabbix', icon: sizabbixIcon, mono: true },
