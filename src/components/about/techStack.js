@@ -1298,6 +1298,35 @@ import sisiemensIcon from '../../images/tech/siemens.svg';
 import siopenhabIcon from '../../images/tech/openhab.svg';
 import sibluetoothIcon from '../../images/tech/bluetooth.svg';
 import simqttIcon from '../../images/tech/mqtt.svg';
+// More for tools: from Simple Icons.
+import sivisualstudiocodeIcon from '../../images/tech/visualstudiocode.svg';
+import siintellijideaIcon from '../../images/tech/intellijidea.svg';
+import sipycharmIcon from '../../images/tech/pycharm.svg';
+import siwebstormIcon from '../../images/tech/webstorm.svg';
+import sixcodeIcon from '../../images/tech/xcode.svg';
+import sivimIcon from '../../images/tech/vim.svg';
+import signuemacsIcon from '../../images/tech/gnuemacs.svg';
+import sisublimetextIcon from '../../images/tech/sublimetext.svg';
+import sijetbrainsIcon from '../../images/tech/jetbrains.svg';
+import siiterm2Icon from '../../images/tech/iterm2.svg';
+import sialacrittyIcon from '../../images/tech/alacritty.svg';
+import siweztermIcon from '../../images/tech/wezterm.svg';
+import sihomebrewIcon from '../../images/tech/homebrew.svg';
+import sichocolateyIcon from '../../images/tech/chocolatey.svg';
+import sihttpieIcon from '../../images/tech/httpie.svg';
+import sicurlIcon from '../../images/tech/curl.svg';
+import sialfredIcon from '../../images/tech/alfred.svg';
+import sibitbucketIcon from '../../images/tech/bitbucket.svg';
+import sicodebergIcon from '../../images/tech/codeberg.svg';
+import sisourcetreeIcon from '../../images/tech/sourcetree.svg';
+import sigitkrakenIcon from '../../images/tech/gitkraken.svg';
+import sizshIcon from '../../images/tech/zsh.svg';
+import sifishshellIcon from '../../images/tech/fishshell.svg';
+import sipowershellIcon from '../../images/tech/powershell.svg';
+import siwindowsterminalIcon from '../../images/tech/windowsterminal.svg';
+import sionedriveIcon from '../../images/tech/onedrive.svg';
+import siicloudIcon from '../../images/tech/icloud.svg';
+import sircloneIcon from '../../images/tech/rclone.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2866,6 +2895,34 @@ const TECH_GROUPS = [
     id: 'tools',
     items: [
       { name: 'Git', icon: git, mono: true },
+      { name: 'Visual Studio Code', icon: sivisualstudiocodeIcon, mono: true },
+      { name: 'IntelliJ IDEA', icon: siintellijideaIcon, mono: true },
+      { name: 'PyCharm', icon: sipycharmIcon, mono: true },
+      { name: 'WebStorm', icon: siwebstormIcon, mono: true },
+      { name: 'Xcode', icon: sixcodeIcon, mono: true },
+      { name: 'Vim', icon: sivimIcon, mono: true },
+      { name: 'GNU Emacs', icon: signuemacsIcon, mono: true },
+      { name: 'Sublime Text', icon: sisublimetextIcon, mono: true },
+      { name: 'JetBrains', icon: sijetbrainsIcon, mono: true },
+      { name: 'iTerm2', icon: siiterm2Icon, mono: true },
+      { name: 'Alacritty', icon: sialacrittyIcon, mono: true },
+      { name: 'WezTerm', icon: siweztermIcon, mono: true },
+      { name: 'Homebrew', icon: sihomebrewIcon, mono: true },
+      { name: 'Chocolatey', icon: sichocolateyIcon, mono: true },
+      { name: 'HTTPie', icon: sihttpieIcon, mono: true },
+      { name: 'curl', icon: sicurlIcon, mono: true },
+      { name: 'Alfred', icon: sialfredIcon, mono: true },
+      { name: 'Bitbucket', icon: sibitbucketIcon, mono: true },
+      { name: 'Codeberg', icon: sicodebergIcon, mono: true },
+      { name: 'Sourcetree', icon: sisourcetreeIcon, mono: true },
+      { name: 'GitKraken', icon: sigitkrakenIcon, mono: true },
+      { name: 'Zsh', icon: sizshIcon, mono: true },
+      { name: 'fish', icon: sifishshellIcon, mono: true },
+      { name: 'PowerShell', icon: sipowershellIcon, mono: true },
+      { name: 'Windows Terminal', icon: siwindowsterminalIcon, mono: true },
+      { name: 'OneDrive', icon: sionedriveIcon, mono: true },
+      { name: 'iCloud', icon: siicloudIcon, mono: true },
+      { name: 'rclone', icon: sircloneIcon, mono: true },
       { name: 'GitHub', icon: github, mono: true },
       { name: 'Postman', icon: postman, mono: true },
       { name: 'Figma', icon: figma, mono: true },
