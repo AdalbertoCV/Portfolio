@@ -1284,6 +1284,20 @@ import sisteamIcon from '../../images/tech/steam.svg';
 import siepicgamesIcon from '../../images/tech/epicgames.svg';
 import sisfmlIcon from '../../images/tech/sfml.svg';
 import siblockbenchIcon from '../../images/tech/blockbench.svg';
+// More for hardware: from Simple Icons.
+import sistmicroelectronicsIcon from '../../images/tech/stmicroelectronics.svg';
+import siarmIcon from '../../images/tech/arm.svg';
+import siriscvIcon from '../../images/tech/riscv.svg';
+import siintelIcon from '../../images/tech/intel.svg';
+import siamdIcon from '../../images/tech/amd.svg';
+import siqualcommIcon from '../../images/tech/qualcomm.svg';
+import sithingiverseIcon from '../../images/tech/thingiverse.svg';
+import siprintablesIcon from '../../images/tech/printables.svg';
+import sinxpIcon from '../../images/tech/nxp.svg';
+import sisiemensIcon from '../../images/tech/siemens.svg';
+import siopenhabIcon from '../../images/tech/openhab.svg';
+import sibluetoothIcon from '../../images/tech/bluetooth.svg';
+import simqttIcon from '../../images/tech/mqtt.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2750,6 +2764,19 @@ const TECH_GROUPS = [
       // Where the software meets something that moves or gets made.
       // The tech-week intake.
       { name: 'ROS', icon: sirosIcon, mono: true },
+      { name: 'STMicroelectronics', icon: sistmicroelectronicsIcon, mono: true },
+      { name: 'Arm', icon: siarmIcon, mono: true },
+      { name: 'RISC-V', icon: siriscvIcon, mono: true },
+      { name: 'Intel', icon: siintelIcon, mono: true },
+      { name: 'AMD', icon: siamdIcon, mono: true },
+      { name: 'Qualcomm', icon: siqualcommIcon, mono: true },
+      { name: 'Thingiverse', icon: sithingiverseIcon, mono: true },
+      { name: 'Printables', icon: siprintablesIcon, mono: true },
+      { name: 'NXP', icon: sinxpIcon, mono: true },
+      { name: 'Siemens', icon: sisiemensIcon, mono: true },
+      { name: 'openHAB', icon: siopenhabIcon, mono: true },
+      { name: 'Bluetooth', icon: sibluetoothIcon, mono: true },
+      { name: 'MQTT', icon: simqttIcon, mono: true },
       { name: 'Gazebo', icon: sigazeboIcon, mono: true },
       { name: 'MoveIt', icon: simoveitIcon, flat: true },
       { name: 'PlotJuggler', icon: siplotjugglerIcon, flat: true },
