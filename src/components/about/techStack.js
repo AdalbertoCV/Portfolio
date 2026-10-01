@@ -1054,6 +1054,14 @@ import siichigoIcon from '../../images/tech/ichigo.png';
 import sigammaIcon from '../../images/tech/gamma.svg';
 // Fathom: the AI notetaker's mark, keyed out of its own black favicon tile.
 import sifathomIcon from '../../images/tech/fathom.png';
+// SBERT: the molecule from sbert.net's own logo, redrawn single-tone.
+import sisbertIcon from '../../images/tech/sbert.svg';
+// Voyage AI: the V from LobeHub's icon set, already single-tone.
+import sivoyageaiIcon from '../../images/tech/voyageai.svg';
+// MegaParse: the octopus from the project's own repository art.
+import simegaparseIcon from '../../images/tech/megaparse.png';
+// LlamaParse: the llama from LlamaIndex's docs favicon, without its black tile.
+import sillamaparseIcon from '../../images/tech/llamaparse.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1417,6 +1425,7 @@ const TECH_GROUPS = [
       { name: 'Multi-agent', concept: 'multiAgent' },
       { name: 'TensorFlow', icon: tensorflowIcon, mono: true },
       { name: 'Hugging Face', icon: huggingfaceIcon, mono: true },
+      { name: 'SBERT', icon: sisbertIcon, mono: true },
       { name: 'pandas', icon: pandasIcon, mono: true },
       { name: 'Google Colab', icon: colabIcon, mono: true },
       { name: 'Kaggle', icon: kaggleIcon, mono: true },
@@ -1522,6 +1531,7 @@ const TECH_GROUPS = [
       { name: 'TextGrad', icon: sitextgradIcon, flat: true },
       // Tech week, the top-up.
       { name: 'Cohere', icon: sicohereIcon, mono: true },
+      { name: 'Voyage AI', icon: sivoyageaiIcon, mono: true },
       { name: 'Exa', icon: siexaIcon, mono: true },
       { name: 'LibreChat', icon: silibrechatIcon, mono: true },
       { name: 'OpenSpec', icon: siopenspecIcon, flat: true },
@@ -1540,6 +1550,8 @@ const TECH_GROUPS = [
       { name: 'Tavily', icon: sitavilyIcon, mono: true },
       { name: 'Crawl4AI', icon: sicrawl4aiIcon, mono: true },
       { name: 'Docling', icon: sidoclingIcon, mono: true },
+      { name: 'LlamaParse', icon: sillamaparseIcon, flat: true },
+      { name: 'MegaParse', icon: simegaparseIcon, flat: true },
       { name: 'E2B', icon: sie2bIcon, flat: true },
       { name: 'Smithery', icon: sismitheryIcon, mono: true },
       { name: 'Chainlit', icon: sichainlitIcon, flat: true },

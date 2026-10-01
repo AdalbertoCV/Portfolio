@@ -40,7 +40,7 @@ test('no technology appears twice on the wall', () => {
 // Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, thirty-three for the data lake, forty for diagrams, and 79 across collaboration, learning and the lab, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
 // and six of mathematics on the frontier, and the fractal omniverse.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1288 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1292 + TECH_GROUPS[0].items.length);
 });
 
 test('Prezi is on the wall as a tool', () => {
@@ -136,4 +136,9 @@ test('mathematics is on the frontier', () => {
 test('depot.dev is on the wall, with cloud and DevOps', () => {
   const cloud = TECH_GROUPS.find((group) => group.id === 'cloud');
   expect(names(cloud)).toContain('depot.dev');
+});
+
+test('SBERT and Voyage AI are with the models, LlamaParse and MegaParse with the document parsers beside Docling', () => {
+  const all = TECH_GROUPS.flatMap(names);
+  ['SBERT', 'Voyage AI', 'LlamaParse', 'MegaParse', 'Docling', 'Together AI'].forEach((name) => expect(all).toContain(name));
 });
