@@ -1218,6 +1218,20 @@ import sihuaweiIcon from '../../images/tech/huawei.svg';
 import siteamviewerIcon from '../../images/tech/teamviewer.svg';
 import sianydeskIcon from '../../images/tech/anydesk.svg';
 import sifilezillaIcon from '../../images/tech/filezilla.svg';
+// More for security: from Simple Icons.
+import silastpassIcon from '../../images/tech/lastpass.svg';
+import siprotonIcon from '../../images/tech/proton.svg';
+import siprotonvpnIcon from '../../images/tech/protonvpn.svg';
+import sinordvpnIcon from '../../images/tech/nordvpn.svg';
+import sizapIcon from '../../images/tech/zap.svg';
+import sicryptomatorIcon from '../../images/tech/cryptomator.svg';
+import siauthyIcon from '../../images/tech/authy.svg';
+import sibitdefenderIcon from '../../images/tech/bitdefender.svg';
+import sikasperskyIcon from '../../images/tech/kaspersky.svg';
+import simalwarebytesIcon from '../../images/tech/malwarebytes.svg';
+import siavastIcon from '../../images/tech/avast.svg';
+import sisonarcloudIcon from '../../images/tech/sonarcloud.svg';
+import sicheckmarxIcon from '../../images/tech/checkmarx.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2145,6 +2159,19 @@ const TECH_GROUPS = [
     id: 'security',
     items: [
       { name: 'Kali Linux', icon: kaliIcon, mono: true },
+      { name: 'LastPass', icon: silastpassIcon, mono: true },
+      { name: 'Proton', icon: siprotonIcon, mono: true },
+      { name: 'Proton VPN', icon: siprotonvpnIcon, mono: true },
+      { name: 'NordVPN', icon: sinordvpnIcon, mono: true },
+      { name: 'ZAP', icon: sizapIcon, mono: true },
+      { name: 'Cryptomator', icon: sicryptomatorIcon, mono: true },
+      { name: 'Authy', icon: siauthyIcon, mono: true },
+      { name: 'Bitdefender', icon: sibitdefenderIcon, mono: true },
+      { name: 'Kaspersky', icon: sikasperskyIcon, mono: true },
+      { name: 'Malwarebytes', icon: simalwarebytesIcon, mono: true },
+      { name: 'Avast', icon: siavastIcon, mono: true },
+      { name: 'SonarCloud', icon: sisonarcloudIcon, mono: true },
+      { name: 'Checkmarx', icon: sicheckmarxIcon, mono: true },
       { name: 'Wireshark', icon: wiresharkIcon, mono: true },
       { name: 'Burp Suite', icon: burpIcon, mono: true },
       { name: 'Metasploit', icon: metasploitIcon, mono: true },
