@@ -1267,6 +1267,23 @@ import simailgunIcon from '../../images/tech/mailgun.svg';
 import sibrevoIcon from '../../images/tech/brevo.svg';
 import sisalesforceIcon from '../../images/tech/salesforce.svg';
 import sipaddleIcon from '../../images/tech/paddle.svg';
+// More for media: from Simple Icons.
+import siaffinityIcon from '../../images/tech/affinity.svg';
+import siautodeskIcon from '../../images/tech/autodesk.svg';
+import sicinema4dIcon from '../../images/tech/cinema4d.svg';
+import sigamemakerIcon from '../../images/tech/gamemaker.svg';
+import siconstruct3Icon from '../../images/tech/construct3.svg';
+import sivlcmediaplayerIcon from '../../images/tech/vlcmediaplayer.svg';
+import sishotcutIcon from '../../images/tech/shotcut.svg';
+import sispotifyIcon from '../../images/tech/spotify.svg';
+import sisoundcloudIcon from '../../images/tech/soundcloud.svg';
+import sibandcampIcon from '../../images/tech/bandcamp.svg';
+import sitwitchIcon from '../../images/tech/twitch.svg';
+import sivimeoIcon from '../../images/tech/vimeo.svg';
+import sisteamIcon from '../../images/tech/steam.svg';
+import siepicgamesIcon from '../../images/tech/epicgames.svg';
+import sisfmlIcon from '../../images/tech/sfml.svg';
+import siblockbenchIcon from '../../images/tech/blockbench.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2637,6 +2654,22 @@ const TECH_GROUPS = [
       { name: 'Unreal Engine', icon: unrealengineIcon, mono: true },
       { name: 'Godot', icon: godotengineIcon, mono: true },
       { name: 'Blender', icon: blenderIcon, mono: true },
+      { name: 'Affinity', icon: siaffinityIcon, mono: true },
+      { name: 'Autodesk', icon: siautodeskIcon, mono: true },
+      { name: 'Cinema 4D', icon: sicinema4dIcon, mono: true },
+      { name: 'GameMaker', icon: sigamemakerIcon, mono: true },
+      { name: 'Construct 3', icon: siconstruct3Icon, mono: true },
+      { name: 'VLC', icon: sivlcmediaplayerIcon, mono: true },
+      { name: 'Shotcut', icon: sishotcutIcon, mono: true },
+      { name: 'Spotify', icon: sispotifyIcon, mono: true },
+      { name: 'SoundCloud', icon: sisoundcloudIcon, mono: true },
+      { name: 'Bandcamp', icon: sibandcampIcon, mono: true },
+      { name: 'Twitch', icon: sitwitchIcon, mono: true },
+      { name: 'Vimeo', icon: sivimeoIcon, mono: true },
+      { name: 'Steam', icon: sisteamIcon, mono: true },
+      { name: 'Epic Games', icon: siepicgamesIcon, mono: true },
+      { name: 'SFML', icon: sisfmlIcon, mono: true },
+      { name: 'Blockbench', icon: siblockbenchIcon, mono: true },
       { name: 'Aseprite', icon: asepriteIcon, mono: true },
       { name: 'Rive', icon: riveIcon, mono: true },
       { name: 'Lottie', icon: lottiefilesIcon, mono: true },
