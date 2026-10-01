@@ -1187,6 +1187,28 @@ import sicouchbaseIcon from '../../images/tech/couchbase.svg';
 import siarangodbIcon from '../../images/tech/arangodb.svg';
 import siplanetscaleIcon from '../../images/tech/planetscale.svg';
 import siamazondynamodbIcon from '../../images/tech/amazondynamodb.svg';
+// More for cloud: from Simple Icons.
+import siovhIcon from '../../images/tech/ovh.svg';
+import siscalewayIcon from '../../images/tech/scaleway.svg';
+import sihetznerIcon from '../../images/tech/hetzner.svg';
+import siibmcloudIcon from '../../images/tech/ibmcloud.svg';
+import sialibabacloudIcon from '../../images/tech/alibabacloud.svg';
+import sitencentqqIcon from '../../images/tech/tencentqq.svg';
+import sifastlyIcon from '../../images/tech/fastly.svg';
+import siakamaiIcon from '../../images/tech/akamai.svg';
+import sikoyebIcon from '../../images/tech/koyeb.svg';
+import siplatformdotshIcon from '../../images/tech/platformdotsh.svg';
+import siupcloudIcon from '../../images/tech/upcloud.svg';
+import sibackblazeIcon from '../../images/tech/backblaze.svg';
+import siwasabiIcon from '../../images/tech/wasabi.svg';
+import sibunnydotnetIcon from '../../images/tech/bunnydotnet.svg';
+import siawslambdaIcon from '../../images/tech/awslambda.svg';
+import siamazonec2Icon from '../../images/tech/amazonec2.svg';
+import siopenstackIcon from '../../images/tech/openstack.svg';
+import sinutanixIcon from '../../images/tech/nutanix.svg';
+import sivmwareIcon from '../../images/tech/vmware.svg';
+import sicaproverIcon from '../../images/tech/caprover.svg';
+import siamazoneksIcon from '../../images/tech/amazoneks.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1879,6 +1901,27 @@ const TECH_GROUPS = [
     id: 'cloud',
     items: [
       { name: 'Azure', icon: azure, mono: true },
+      { name: 'OVHcloud', icon: siovhIcon, mono: true },
+      { name: 'Scaleway', icon: siscalewayIcon, mono: true },
+      { name: 'Hetzner', icon: sihetznerIcon, mono: true },
+      { name: 'IBM Cloud', icon: siibmcloudIcon, mono: true },
+      { name: 'Alibaba Cloud', icon: sialibabacloudIcon, mono: true },
+      { name: 'Tencent', icon: sitencentqqIcon, mono: true },
+      { name: 'Fastly', icon: sifastlyIcon, mono: true },
+      { name: 'Akamai', icon: siakamaiIcon, mono: true },
+      { name: 'Koyeb', icon: sikoyebIcon, mono: true },
+      { name: 'Platform.sh', icon: siplatformdotshIcon, mono: true },
+      { name: 'UpCloud', icon: siupcloudIcon, mono: true },
+      { name: 'Backblaze', icon: sibackblazeIcon, mono: true },
+      { name: 'Wasabi', icon: siwasabiIcon, mono: true },
+      { name: 'Bunny.net', icon: sibunnydotnetIcon, mono: true },
+      { name: 'AWS Lambda', icon: siawslambdaIcon, mono: true },
+      { name: 'Amazon EC2', icon: siamazonec2Icon, mono: true },
+      { name: 'OpenStack', icon: siopenstackIcon, mono: true },
+      { name: 'Nutanix', icon: sinutanixIcon, mono: true },
+      { name: 'VMware', icon: sivmwareIcon, mono: true },
+      { name: 'CapRover', icon: sicaproverIcon, mono: true },
+      { name: 'Amazon EKS', icon: siamazoneksIcon, mono: true },
       { name: 'Linux', icon: linux, mono: true },
       // Where things actually get deployed, from a push-to-deploy PaaS down to
       // a bare VPS that has to be provisioned by hand. All four marks are
