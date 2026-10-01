@@ -37,15 +37,19 @@ export const useReveal = () => {
           observer.unobserve(entry.target);
         });
       },
-      // Fires slightly before the element is fully on screen, so the motion has
-      // finished by the time the reader's eye arrives.
+      // Fires just before the element reaches the screen, so the motion is
+      // already under way as it enters and has finished by the time the
+      // reader's eye arrives. It used to wait until the element was 10% of a
+      // screen INTO view, so at an ordinary scroll the reader met blank space,
+      // then the content fading in late, and the page felt like it was running
+      // away from its own animations.
       //
       // threshold stays at 0: a ratio threshold is a share of the ELEMENT, and
       // a section taller than the viewport can never reach it — on a phone the
       // interests grid runs to ~6700px against an 800px screen, so 0.1 was
       // unreachable and the whole section stayed at opacity 0. The rootMargin
       // below already supplies the early trigger that the threshold was for.
-      { rootMargin: '0px 0px -10% 0px', threshold: 0 }
+      { rootMargin: '0px 0px 15% 0px', threshold: 0 }
     );
 
     observer.observe(node);

@@ -11,6 +11,7 @@ import SkipLink from './components/navigation/SkipLink';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import Terminal from './components/terminal/Terminal';
 import Backdrop from './components/brand/Backdrop';
+import pauseOffscreen from './components/brand/pauseOffscreen';
 import { ScrollRail, useShownLocation } from './components/navigation/Transitions';
 import { ThemeProvider } from './theme/ThemeProvider';
 import { I18nProvider, useTranslation } from './i18n/I18nProvider';
@@ -84,6 +85,8 @@ const prefetchPages = () => {
    live inside the Router. */
 const Pages = () => {
   const shown = useShownLocation();
+
+  useEffect(() => pauseOffscreen(), []);
 
   useEffect(() => {
     if (document.readyState === 'complete') {

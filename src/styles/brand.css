@@ -940,9 +940,9 @@
 
 .reveal {
     opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(14px);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal.is-visible {
@@ -950,12 +950,14 @@
     transform: none;
 }
 
-/* Children stagger behind their revealed parent. */
+/* Children stagger behind their revealed parent. Short steps: the whole group
+   has landed in under a second, so a reader scrolling at an ordinary pace
+   never meets a card that is still on its way in. */
 .reveal-stagger > * {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(12px);
+    transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal-stagger.is-visible > * {
@@ -963,14 +965,21 @@
     transform: none;
 }
 
-.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
-.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.12s; }
-.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.19s; }
-.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.26s; }
-.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.33s; }
-.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.4s; }
-.reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 0.47s; }
-.reveal-stagger.is-visible > *:nth-child(8) { transition-delay: 0.54s; }
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.04s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.08s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.12s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.16s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.2s; }
+.reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 0.24s; }
+.reveal-stagger.is-visible > *:nth-child(8) { transition-delay: 0.28s; }
+
+/* A drawing off screen holds still (see brand/pauseOffscreen.js): it costs the
+   scroll nothing, and it starts moving where the reader can see it. */
+svg[data-offscreen],
+svg[data-offscreen] * {
+    animation-play-state: paused !important;
+}
 
 /* ============================================================================
    RESPONSIVE
