@@ -1157,6 +1157,19 @@ import siwolframmathematicaIcon from '../../images/tech/wolframmathematica.svg';
 import siswayIcon from '../../images/tech/sway.svg';
 import siqtIcon from '../../images/tech/qt.svg';
 import sigtkIcon from '../../images/tech/gtk.svg';
+// More for backend: from Simple Icons.
+import sicodeigniterIcon from '../../images/tech/codeigniter.svg';
+import sicakephpIcon from '../../images/tech/cakephp.svg';
+import siyiiIcon from '../../images/tech/yii.svg';
+import sifalconIcon from '../../images/tech/falcon.svg';
+import simeteorIcon from '../../images/tech/meteor.svg';
+import siredwoodjsIcon from '../../images/tech/redwoodjs.svg';
+import siapollographqlIcon from '../../images/tech/apollographql.svg';
+import sitypeormIcon from '../../images/tech/typeorm.svg';
+import siknexdotjsIcon from '../../images/tech/knexdotjs.svg';
+import simongooseIcon from '../../images/tech/mongoose.svg';
+import sizeromqIcon from '../../images/tech/zeromq.svg';
+import sijsonwebtokensIcon from '../../images/tech/jsonwebtokens.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1435,6 +1448,18 @@ const TECH_GROUPS = [
     items: [
       { name: 'Django REST', icon: djangorest, mono: true },
       { name: 'Node.js', icon: nodeIcon, mono: true },
+      { name: 'CodeIgniter', icon: sicodeigniterIcon, mono: true },
+      { name: 'CakePHP', icon: sicakephpIcon, mono: true },
+      { name: 'Yii', icon: siyiiIcon, mono: true },
+      { name: 'Falcon', icon: sifalconIcon, mono: true },
+      { name: 'Meteor', icon: simeteorIcon, mono: true },
+      { name: 'RedwoodJS', icon: siredwoodjsIcon, mono: true },
+      { name: 'Apollo GraphQL', icon: siapollographqlIcon, mono: true },
+      { name: 'TypeORM', icon: sitypeormIcon, mono: true },
+      { name: 'Knex.js', icon: siknexdotjsIcon, mono: true },
+      { name: 'Mongoose', icon: simongooseIcon, mono: true },
+      { name: 'ZeroMQ', icon: sizeromqIcon, mono: true },
+      { name: 'JSON Web Tokens', icon: sijsonwebtokensIcon, mono: true },
       { name: 'AdonisJS', icon: adonisIcon, mono: true },
       { name: 'Express', icon: expressIcon, mono: true },
       { name: 'Flask', icon: flaskIcon, mono: true },
