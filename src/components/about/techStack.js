@@ -1151,6 +1151,12 @@ import siaugmentcodeIcon from '../../images/tech/augmentcode.svg';
 import siglamaIcon from '../../images/tech/glama.svg';
 import sia2aIcon from '../../images/tech/a2a.svg';
 import siaguiIcon from '../../images/tech/agui.svg';
+// Languages and runtimes: from Simple Icons.
+import sicoffeescriptIcon from '../../images/tech/coffeescript.svg';
+import siwolframmathematicaIcon from '../../images/tech/wolframmathematica.svg';
+import siswayIcon from '../../images/tech/sway.svg';
+import siqtIcon from '../../images/tech/qt.svg';
+import sigtkIcon from '../../images/tech/gtk.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1359,6 +1365,11 @@ const TECH_GROUPS = [
     id: 'languages',
     items: [
       { name: 'TypeScript', icon: typescriptIcon, mono: true },
+      { name: 'CoffeeScript', icon: sicoffeescriptIcon, mono: true },
+      { name: 'Mathematica', icon: siwolframmathematicaIcon, mono: true },
+      { name: 'Sway', icon: siswayIcon, mono: true },
+      { name: 'Qt', icon: siqtIcon, mono: true },
+      { name: 'GTK', icon: sigtkIcon, mono: true },
       { name: 'Go', icon: goIcon, mono: true },
       { name: 'PHP', icon: phpIcon, mono: true },
       // The systems end: C and C++ where the code has to answer to the
