@@ -1145,6 +1145,12 @@ import sistrykerIcon from '../../images/tech/stryker.svg';
 import sijasmineIcon from '../../images/tech/jasmine.svg';
 import sitestcafeIcon from '../../images/tech/testcafe.svg';
 import sigatlingIcon from '../../images/tech/gatling.svg';
+// Agent and MCP tooling: Brave, Augment, Glama, A2A and AG-UI marks from their own sites.
+import sibravesearchIcon from '../../images/tech/bravesearch.svg';
+import siaugmentcodeIcon from '../../images/tech/augmentcode.svg';
+import siglamaIcon from '../../images/tech/glama.svg';
+import sia2aIcon from '../../images/tech/a2a.svg';
+import siaguiIcon from '../../images/tech/agui.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1644,12 +1650,16 @@ const TECH_GROUPS = [
       { name: 'LangSmith', icon: silangsmithIcon, mono: true },
       { name: 'Jina AI', icon: sijinaaiIcon, mono: true },
       { name: 'Tavily', icon: sitavilyIcon, mono: true },
+      { name: 'Brave Search', icon: sibravesearchIcon, mono: true },
       { name: 'Crawl4AI', icon: sicrawl4aiIcon, mono: true },
       { name: 'Docling', icon: sidoclingIcon, mono: true },
       { name: 'LlamaParse', icon: sillamaparseIcon, flat: true },
       { name: 'MegaParse', icon: simegaparseIcon, flat: true },
       { name: 'E2B', icon: sie2bIcon, flat: true },
       { name: 'Smithery', icon: sismitheryIcon, mono: true },
+      { name: 'Glama', icon: siglamaIcon, mono: true },
+      { name: 'A2A', icon: sia2aIcon, mono: true },
+      { name: 'AG-UI', icon: siaguiIcon, mono: true },
       { name: 'Chainlit', icon: sichainlitIcon, flat: true },
       { name: 'Open WebUI', icon: siopenwebuiIcon, mono: true },
       { name: 'MLX', icon: simlxIcon, flat: true },
@@ -1689,6 +1699,7 @@ const TECH_GROUPS = [
       { name: 'n8n', icon: n8nIcon, mono: true },
       { name: 'Herdr', icon: herdrIcon, mono: true },
       { name: 'Cline', icon: clineIcon, mono: true },
+      { name: 'Augment Code', icon: siaugmentcodeIcon, mono: true },
       { name: 'Windsurf', icon: windsurfIcon, mono: true },
       { name: 'Zed', icon: zedindustriesIcon, mono: true },
       { name: 'Gemini CLI', icon: googlegeminiIcon, mono: true },
