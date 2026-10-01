@@ -1347,6 +1347,21 @@ import sistackexchangeIcon from '../../images/tech/stackexchange.svg';
 import sihackerearthIcon from '../../images/tech/hackerearth.svg';
 import sitopcoderIcon from '../../images/tech/topcoder.svg';
 import sicodechefIcon from '../../images/tech/codechef.svg';
+// More for collab: from Simple Icons.
+import siskypeIcon from '../../images/tech/skype.svg';
+import siwebexIcon from '../../images/tech/webex.svg';
+import siticktickIcon from '../../images/tech/ticktick.svg';
+import sievernoteIcon from '../../images/tech/evernote.svg';
+import siredmineIcon from '../../images/tech/redmine.svg';
+import siopenprojectIcon from '../../images/tech/openproject.svg';
+import sibigbluebuttonIcon from '../../images/tech/bigbluebutton.svg';
+import sionlyofficeIcon from '../../images/tech/onlyoffice.svg';
+import silibreofficeIcon from '../../images/tech/libreoffice.svg';
+import sigoogledocsIcon from '../../images/tech/googledocs.svg';
+import sigooglesheetsIcon from '../../images/tech/googlesheets.svg';
+import simicrosoftofficeIcon from '../../images/tech/microsoftoffice.svg';
+import simicrosoftwordIcon from '../../images/tech/microsoftword.svg';
+import simicrosoftexcelIcon from '../../images/tech/microsoftexcel.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -3206,6 +3221,20 @@ const TECH_GROUPS = [
     items: [
       // How the work gets done with other people.
       { name: 'Plane', icon: siplaneIcon, flat: true },
+      { name: 'Skype', icon: siskypeIcon, mono: true },
+      { name: 'Webex', icon: siwebexIcon, mono: true },
+      { name: 'TickTick', icon: siticktickIcon, mono: true },
+      { name: 'Evernote', icon: sievernoteIcon, mono: true },
+      { name: 'Redmine', icon: siredmineIcon, mono: true },
+      { name: 'OpenProject', icon: siopenprojectIcon, mono: true },
+      { name: 'BigBlueButton', icon: sibigbluebuttonIcon, mono: true },
+      { name: 'ONLYOFFICE', icon: sionlyofficeIcon, mono: true },
+      { name: 'LibreOffice', icon: silibreofficeIcon, mono: true },
+      { name: 'Google Docs', icon: sigoogledocsIcon, mono: true },
+      { name: 'Google Sheets', icon: sigooglesheetsIcon, mono: true },
+      { name: 'Microsoft Office', icon: simicrosoftofficeIcon, mono: true },
+      { name: 'Microsoft Word', icon: simicrosoftwordIcon, mono: true },
+      { name: 'Microsoft Excel', icon: simicrosoftexcelIcon, mono: true },
       // The tech-week intake.
       { name: 'Google Meet', icon: sigooglemeetIcon, mono: true },
       { name: 'Loom', icon: siloomIcon, mono: true },
