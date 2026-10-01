@@ -1113,6 +1113,38 @@ import sikibanaIcon from '../../images/tech/kibana.svg';
 import silogstashIcon from '../../images/tech/logstash.svg';
 import sifluentdIcon from '../../images/tech/fluentd.svg';
 import sithanosIcon from '../../images/tech/thanos.svg';
+// Frontend libraries and visual testing, test runners and load tools: from Simple Icons.
+import sistencilIcon from '../../images/tech/stencil.svg';
+import sirollupdotjsIcon from '../../images/tech/rollupdotjs.svg';
+import sidaisyuiIcon from '../../images/tech/daisyui.svg';
+import sibulmaIcon from '../../images/tech/bulma.svg';
+import sistyledcomponentsIcon from '../../images/tech/styledcomponents.svg';
+import sid3dotjsIcon from '../../images/tech/d3dotjs.svg';
+import sichartdotjsIcon from '../../images/tech/chartdotjs.svg';
+import siapacheechartsIcon from '../../images/tech/apacheecharts.svg';
+import sireactrouterIcon from '../../images/tech/reactrouter.svg';
+import siwebcomponentsdotorgIcon from '../../images/tech/webcomponentsdotorg.svg';
+import sichromaticIcon from '../../images/tech/chromatic.svg';
+import sipercyIcon from '../../images/tech/percy.svg';
+import simochaIcon from '../../images/tech/mocha.svg';
+import sichaiIcon from '../../images/tech/chai.svg';
+import sipytestIcon from '../../images/tech/pytest.svg';
+import sijunit5Icon from '../../images/tech/junit5.svg';
+import sicucumberIcon from '../../images/tech/cucumber.svg';
+import silocustIcon from '../../images/tech/locust.svg';
+import siapachejmeterIcon from '../../images/tech/apachejmeter.svg';
+import sipuppeteerIcon from '../../images/tech/puppeteer.svg';
+import siwebdriverioIcon from '../../images/tech/webdriverio.svg';
+import siappiumIcon from '../../images/tech/appium.svg';
+import sirobotframeworkIcon from '../../images/tech/robotframework.svg';
+import sisaucelabsIcon from '../../images/tech/saucelabs.svg';
+import sicoverallsIcon from '../../images/tech/coveralls.svg';
+import simockserviceworkerIcon from '../../images/tech/mockserviceworker.svg';
+import sihypothesisIcon from '../../images/tech/hypothesis.svg';
+import sistrykerIcon from '../../images/tech/stryker.svg';
+import sijasmineIcon from '../../images/tech/jasmine.svg';
+import sitestcafeIcon from '../../images/tech/testcafe.svg';
+import sigatlingIcon from '../../images/tech/gatling.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2209,6 +2241,18 @@ const TECH_GROUPS = [
       { name: 'D3', icon: d3Icon, mono: true },
       { name: 'Framer Motion', icon: framerIcon, mono: true },
       { name: 'Storybook', icon: storybookIcon, mono: true },
+      { name: 'Stencil', icon: sistencilIcon, mono: true },
+      { name: 'Rollup', icon: sirollupdotjsIcon, mono: true },
+      { name: 'daisyUI', icon: sidaisyuiIcon, mono: true },
+      { name: 'Bulma', icon: sibulmaIcon, mono: true },
+      { name: 'styled-components', icon: sistyledcomponentsIcon, mono: true },
+      { name: 'D3.js', icon: sid3dotjsIcon, mono: true },
+      { name: 'Chart.js', icon: sichartdotjsIcon, mono: true },
+      { name: 'Apache ECharts', icon: siapacheechartsIcon, mono: true },
+      { name: 'React Router', icon: sireactrouterIcon, mono: true },
+      { name: 'Web Components', icon: siwebcomponentsdotorgIcon, mono: true },
+      { name: 'Chromatic', icon: sichromaticIcon, mono: true },
+      { name: 'Percy', icon: sipercyIcon, mono: true },
       { name: 'shadcn/ui', icon: shadcnuiIcon, mono: true },
       { name: 'MUI', icon: muiIcon, mono: true },
       { name: 'Chakra UI', icon: chakrauiIcon, mono: true },
@@ -2543,6 +2587,25 @@ const TECH_GROUPS = [
       { name: 'ESLint', icon: eslintIcon, mono: true },
       { name: 'Prettier', icon: prettierIcon, mono: true },
       { name: 'Cypress', icon: cypressIcon, mono: true },
+      { name: 'Mocha', icon: simochaIcon, mono: true },
+      { name: 'Chai', icon: sichaiIcon, mono: true },
+      { name: 'pytest', icon: sipytestIcon, mono: true },
+      { name: 'JUnit 5', icon: sijunit5Icon, mono: true },
+      { name: 'Cucumber', icon: sicucumberIcon, mono: true },
+      { name: 'Locust', icon: silocustIcon, mono: true },
+      { name: 'Apache JMeter', icon: siapachejmeterIcon, mono: true },
+      { name: 'Puppeteer', icon: sipuppeteerIcon, mono: true },
+      { name: 'WebdriverIO', icon: siwebdriverioIcon, mono: true },
+      { name: 'Appium', icon: siappiumIcon, mono: true },
+      { name: 'Robot Framework', icon: sirobotframeworkIcon, mono: true },
+      { name: 'Sauce Labs', icon: sisaucelabsIcon, mono: true },
+      { name: 'Coveralls', icon: sicoverallsIcon, mono: true },
+      { name: 'MSW', icon: simockserviceworkerIcon, mono: true },
+      { name: 'Hypothesis', icon: sihypothesisIcon, mono: true },
+      { name: 'Stryker', icon: sistrykerIcon, mono: true },
+      { name: 'Jasmine', icon: sijasmineIcon, mono: true },
+      { name: 'TestCafe', icon: sitestcafeIcon, mono: true },
+      { name: 'Gatling', icon: sigatlingIcon, mono: true },
       { name: 'Jest', icon: jestIcon, mono: true },
       { name: 'Vitest', icon: vitestIcon, mono: true },
       { name: 'Testing Library', icon: testinglibraryIcon, mono: true },

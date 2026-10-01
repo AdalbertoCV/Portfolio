@@ -40,7 +40,7 @@ test('no technology appears twice on the wall', () => {
 // Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, thirty-three for the data lake, forty for diagrams, and 79 across collaboration, learning and the lab, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
 // and six of mathematics on the frontier, and the fractal omniverse.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1346 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1377 + TECH_GROUPS[0].items.length);
 });
 
 test('Prezi is on the wall as a tool', () => {
@@ -156,4 +156,9 @@ test('inference hosts, model labs and tools added to the wall', () => {
 test('vector and search engines, CI/CD, platform and observability tools added to the wall', () => {
   const all = TECH_GROUPS.flatMap(names);
   ['Vespa', 'Apache Solr', 'CircleCI', 'Spinnaker', 'Kong', 'Envoy', 'PagerDuty', 'Fluentd'].forEach((name) => expect(all).toContain(name));
+});
+
+test('frontend libraries and testing tools added to the wall', () => {
+  const all = TECH_GROUPS.flatMap(names);
+  ['D3.js', 'Chart.js', 'Chromatic', 'pytest', 'Puppeteer', 'Appium', 'Gatling'].forEach((name) => expect(all).toContain(name));
 });
