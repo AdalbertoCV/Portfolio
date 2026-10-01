@@ -1232,6 +1232,30 @@ import simalwarebytesIcon from '../../images/tech/malwarebytes.svg';
 import siavastIcon from '../../images/tech/avast.svg';
 import sisonarcloudIcon from '../../images/tech/sonarcloud.svg';
 import sicheckmarxIcon from '../../images/tech/checkmarx.svg';
+// More for frontend: from Simple Icons.
+import sivuetifyIcon from '../../images/tech/vuetify.svg';
+import siquasarIcon from '../../images/tech/quasar.svg';
+import sinativescriptIcon from '../../images/tech/nativescript.svg';
+import simobxIcon from '../../images/tech/mobx.svg';
+import sixstateIcon from '../../images/tech/xstate.svg';
+import siswrIcon from '../../images/tech/swr.svg';
+import siaxiosIcon from '../../images/tech/axios.svg';
+import sistylelintIcon from '../../images/tech/stylelint.svg';
+import sireactbootstrapIcon from '../../images/tech/reactbootstrap.svg';
+import sisemanticuireactIcon from '../../images/tech/semanticuireact.svg';
+import siantdesignIcon from '../../images/tech/antdesign.svg';
+import siprismicIcon from '../../images/tech/prismic.svg';
+import sii18nextIcon from '../../images/tech/i18next.svg';
+import siprosemirrorIcon from '../../images/tech/prosemirror.svg';
+import sicodemirrorIcon from '../../images/tech/codemirror.svg';
+import sianimedotjsIcon from '../../images/tech/animedotjs.svg';
+import sijqueryIcon from '../../images/tech/jquery.svg';
+import sibackbonedotjsIcon from '../../images/tech/backbonedotjs.svg';
+import sistimulusIcon from '../../images/tech/stimulus.svg';
+import siinertiaIcon from '../../images/tech/inertia.svg';
+import silivewireIcon from '../../images/tech/livewire.svg';
+import siblazorIcon from '../../images/tech/blazor.svg';
+import sijsrIcon from '../../images/tech/jsr.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -2386,6 +2410,29 @@ const TECH_GROUPS = [
     id: 'frontend',
     items: [
       { name: 'Next.js', icon: nextIcon, mono: true },
+      { name: 'Vuetify', icon: sivuetifyIcon, mono: true },
+      { name: 'Quasar', icon: siquasarIcon, mono: true },
+      { name: 'NativeScript', icon: sinativescriptIcon, mono: true },
+      { name: 'MobX', icon: simobxIcon, mono: true },
+      { name: 'XState', icon: sixstateIcon, mono: true },
+      { name: 'SWR', icon: siswrIcon, mono: true },
+      { name: 'Axios', icon: siaxiosIcon, mono: true },
+      { name: 'Stylelint', icon: sistylelintIcon, mono: true },
+      { name: 'React Bootstrap', icon: sireactbootstrapIcon, mono: true },
+      { name: 'Semantic UI React', icon: sisemanticuireactIcon, mono: true },
+      { name: 'Ant Design', icon: siantdesignIcon, mono: true },
+      { name: 'Prismic', icon: siprismicIcon, mono: true },
+      { name: 'i18next', icon: sii18nextIcon, mono: true },
+      { name: 'ProseMirror', icon: siprosemirrorIcon, mono: true },
+      { name: 'CodeMirror', icon: sicodemirrorIcon, mono: true },
+      { name: 'Anime.js', icon: sianimedotjsIcon, mono: true },
+      { name: 'jQuery', icon: sijqueryIcon, mono: true },
+      { name: 'Backbone.js', icon: sibackbonedotjsIcon, mono: true },
+      { name: 'Stimulus', icon: sistimulusIcon, mono: true },
+      { name: 'Inertia.js', icon: siinertiaIcon, mono: true },
+      { name: 'Livewire', icon: silivewireIcon, mono: true },
+      { name: 'Blazor', icon: siblazorIcon, mono: true },
+      { name: 'JSR', icon: sijsrIcon, mono: true },
       { name: 'Vue', icon: vueIcon, mono: true },
       { name: 'Angular', icon: angularIcon, mono: true },
       { name: 'Astro', icon: astroIcon, mono: true },
