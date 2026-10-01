@@ -1062,6 +1062,22 @@ import sivoyageaiIcon from '../../images/tech/voyageai.svg';
 import simegaparseIcon from '../../images/tech/megaparse.png';
 // LlamaParse: the llama from LlamaIndex's docs favicon, without its black tile.
 import sillamaparseIcon from '../../images/tech/llamaparse.svg';
+// More inference hosts, model labs and tools, all from LobeHub's icon set.
+import silangsmithIcon from '../../images/tech/langsmith.svg';
+import sifireworksIcon from '../../images/tech/fireworks.svg';
+import sisambanovaIcon from '../../images/tech/sambanova.svg';
+import sideepinfraIcon from '../../images/tech/deepinfra.svg';
+import sihyperbolicIcon from '../../images/tech/hyperbolic.svg';
+import sinebiusIcon from '../../images/tech/nebius.svg';
+import sinovitaIcon from '../../images/tech/novita.svg';
+import sianyscaleIcon from '../../images/tech/anyscale.svg';
+import silambdaIcon from '../../images/tech/lambda.svg';
+import sinvidiaIcon from '../../images/tech/nvidia.svg';
+import sizhipuIcon from '../../images/tech/zhipu.svg';
+import sihunyuanIcon from '../../images/tech/hunyuan.svg';
+import siassemblyaiIcon from '../../images/tech/assemblyai.svg';
+import silumaIcon from '../../images/tech/luma.svg';
+import sisoraIcon from '../../images/tech/sora.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
@@ -1558,6 +1574,7 @@ const TECH_GROUPS = [
       { name: 'Agenta', icon: siagentaIcon, flat: true },
       { name: 'Humanloop', icon: sihumanloopIcon, mono: true },
       { name: 'PromptLayer', icon: sipromptlayerIcon, flat: true },
+      { name: 'LangSmith', icon: silangsmithIcon, mono: true },
       { name: 'Jina AI', icon: sijinaaiIcon, mono: true },
       { name: 'Tavily', icon: sitavilyIcon, mono: true },
       { name: 'Crawl4AI', icon: sicrawl4aiIcon, mono: true },
@@ -1612,6 +1629,9 @@ const TECH_GROUPS = [
       { name: 'OpenRouter', icon: openrouterIcon, mono: true },
       { name: 'Replicate', icon: replicateIcon, mono: true },
       { name: 'Mistral', icon: mistralaiIcon, mono: true },
+      { name: 'Zhipu AI', icon: sizhipuIcon, mono: true },
+      { name: 'Hunyuan', icon: sihunyuanIcon, mono: true },
+      { name: 'AssemblyAI', icon: siassemblyaiIcon, mono: true },
       { name: 'Perplexity', icon: perplexityIcon, mono: true },
       // Meta has not published a mark for Muse, so the tile carries Meta's own,
       // the way Codex carries OpenAI's and NemoClaw carries NVIDIA's. The name
@@ -1671,6 +1691,15 @@ const TECH_GROUPS = [
       { name: 'Cerebras', icon: sicerebrasIcon, mono: true },
       { name: 'Baseten', icon: sibasetenIcon, mono: true },
       { name: 'Together AI', icon: sitogetherIcon, mono: true },
+      { name: 'Fireworks AI', icon: sifireworksIcon, mono: true },
+      { name: 'SambaNova', icon: sisambanovaIcon, mono: true },
+      { name: 'DeepInfra', icon: sideepinfraIcon, mono: true },
+      { name: 'Hyperbolic', icon: sihyperbolicIcon, mono: true },
+      { name: 'Nebius', icon: sinebiusIcon, mono: true },
+      { name: 'Novita AI', icon: sinovitaIcon, mono: true },
+      { name: 'Anyscale', icon: sianyscaleIcon, mono: true },
+      { name: 'Lambda', icon: silambdaIcon, mono: true },
+      { name: 'NVIDIA', icon: sinvidiaIcon, mono: true },
       { name: 'Sticklight', icon: sisticklightIcon, mono: true },
       // The agent bench, 2026.
       { name: 'Gemma', icon: sigemmaIcon, mono: true },
@@ -2314,6 +2343,8 @@ const TECH_GROUPS = [
       { name: 'ZBrush', icon: sizbrushIcon, flat: true },
       { name: 'Midjourney', icon: simidjourneyIcon, mono: true },
       { name: 'Runway', icon: sirunwayIcon, mono: true },
+      { name: 'Luma AI', icon: silumaIcon, mono: true },
+      { name: 'Sora', icon: sisoraIcon, mono: true },
       { name: 'Pika', icon: sipikaIcon, mono: true },
       { name: 'Udio', icon: siudioIcon, mono: true },
       { name: 'Ideogram', icon: siideogramIcon, mono: true },
