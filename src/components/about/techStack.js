@@ -1364,6 +1364,9 @@ import simicrosoftwordIcon from '../../images/tech/microsoftword.svg';
 import simicrosoftexcelIcon from '../../images/tech/microsoftexcel.svg';
 // Kilo Code: the mark from LobeHub's icon set, already single-tone.
 import sikilocodeIcon from '../../images/tech/kilocode.svg';
+// Agentic Rank: its [AR] favicon, the monospace letters redrawn as single-tone
+// strokes and lifted out of the dark tile.
+import siagenticrankIcon from '../../images/tech/agenticrank.svg';
 // OmniRoute: the router glyph lifted out of its red app tile (selfh.st icons).
 import siomnirouteIcon from '../../images/tech/omniroute.svg';
 // MetaMask: the fox, flattened to black from its full-colour mark.
@@ -2048,6 +2051,7 @@ const TECH_GROUPS = [
       { name: 'Gamma', icon: sigammaIcon, mono: true },
       { name: 'Kilo Code', icon: sikilocodeIcon, mono: true },
       { name: 'OmniRoute', icon: siomnirouteIcon, mono: true },
+      { name: 'Agentic Rank', icon: siagenticrankIcon, mono: true },
     ],
   },
   {

@@ -37,10 +37,10 @@ test('no technology appears twice on the wall', () => {
 // Every star that left a group was replaced by one of the same kind, so the
 // groups kept their sizes and The Stars came on top: 1080 before, plus 21,
 // plus Prezi, Greptile, Dropbox, Windows Autopilot, Beautiful Soup, Fabrix.ai
-// Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, thirty-three for the data lake, forty for diagrams, and 79 across collaboration, learning and the lab, Kilo Code, OmniRoute and MetaMask, and fourteen fields of science
+// Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, thirty-three for the data lake, forty for diagrams, and 79 across collaboration, learning and the lab, Kilo Code, OmniRoute, Agentic Rank and MetaMask, and fourteen fields of science
 // and six of mathematics on the frontier, and the fractal omniverse.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1578 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1579 + TECH_GROUPS[0].items.length);
 });
 
 test('Prezi is on the wall as a tool', () => {
