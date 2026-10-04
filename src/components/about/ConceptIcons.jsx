@@ -2207,6 +2207,113 @@ const ICONS = {
     </svg>
   ),
 
+  // NFTs: an image whose frame carries a token id — the picture is ordinary,
+  // the provenance is the thing being held.
+  nft: (
+    <svg {...base}>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 16.5l5-5 4 4 2.5-2.5L21 19" />
+      <circle cx="15.5" cy="7.5" r="1.6" />
+      <path d="M16 21v-2.5h5" />
+    </svg>
+  ),
+
+  // DAOs: members around a contract, each with a vote that lands on it.
+  dao: (
+    <svg {...base}>
+      <rect x="9" y="9" width="6" height="6" rx="1.2" />
+      <circle cx="12" cy="3.5" r="1.6" />
+      <circle cx="20.5" cy="12" r="1.6" />
+      <circle cx="12" cy="20.5" r="1.6" />
+      <circle cx="3.5" cy="12" r="1.6" />
+      <path d="M12 5.1V9M18.9 12H15M12 18.9V15M5.1 12H9" />
+    </svg>
+  ),
+
+  // Layer 2 rollups: many transactions rolled into one batch posted to the
+  // chain underneath.
+  rollup: (
+    <svg {...base}>
+      <path d="M3 20.5h18" />
+      <rect x="8" y="14" width="8" height="4" rx="1" />
+      <path d="M4.5 4h3M10.5 4h3M16.5 4h3M4.5 7.5h3M10.5 7.5h3M16.5 7.5h3" />
+      <path d="M6 9.5l4.5 3.5M12 9.5v3.5M18 9.5l-4.5 3.5" />
+    </svg>
+  ),
+
+  // Stablecoins: a coin held level against the line it is pegged to.
+  stablecoin: (
+    <svg {...base}>
+      <circle cx="12" cy="11" r="6.5" />
+      <path d="M13.8 8.6c-.5-.6-1.1-.9-1.9-.9-1.1 0-1.9.6-1.9 1.5 0 2 3.9 1.1 3.9 3.2 0 .9-.9 1.6-2 1.6-.9 0-1.6-.4-2.1-1M12 6.6v1.1M12 14v1.1" />
+      <path d="M2.5 20.5h19" strokeDasharray="1.8 1.6" />
+    </svg>
+  ),
+
+  // Tokenomics: a supply split into allocations — who holds what, and when
+  // it unlocks.
+  tokenomics: (
+    <svg {...base}>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 3.5V12l6 6" />
+      <path d="M12 12H3.5" />
+    </svg>
+  ),
+
+  // Custody: a key behind a shield — whoever holds it holds the asset.
+  custody: (
+    <svg {...base}>
+      <path d="M12 2.8 19.5 5.8v5.6c0 4.6-3.2 8.2-7.5 9.8-4.3-1.6-7.5-5.2-7.5-9.8V5.8z" />
+      <circle cx="12" cy="10" r="2.2" />
+      <path d="M12 12.2v4.3M12 14.6h1.8" />
+    </svg>
+  ),
+
+  // Backtesting: a strategy replayed against a price history that already
+  // happened, with the clock running backwards.
+  backtesting: (
+    <svg {...base}>
+      <path d="M3 20.5h18" />
+      <path d="M4 16.5l4-4.5 3 2.5 4-5.5 5 3.5" />
+      <path d="M7.5 4.5a4.5 4.5 0 1 1-1.3 3.2" />
+      <path d="M5.5 4.8 6.2 7.7l2.8-.8" />
+    </svg>
+  ),
+
+  // Risk management in trading: an entry, the stop below it and the target
+  // above — the loss is decided before the trade is taken.
+  tradingRisk: (
+    <svg {...base}>
+      <path d="M3 5.5h18" strokeDasharray="1.8 1.6" />
+      <path d="M3 18.5h18" strokeDasharray="1.8 1.6" />
+      <path d="M3 12h7" />
+      <path d="M10 12l3-3.5 2.5 2 3.5-4.5" />
+      <circle cx="10" cy="12" r="1.3" />
+    </svg>
+  ),
+
+  // On-chain analytics: a magnifier over a chain of blocks — reading the
+  // ledger itself instead of what is said about it.
+  onchain: (
+    <svg {...base}>
+      <rect x="2.5" y="4" width="5" height="5" rx="1" />
+      <rect x="9.5" y="4" width="5" height="5" rx="1" />
+      <path d="M7.5 6.5h2M14.5 6.5h2.5" />
+      <circle cx="15" cy="15" r="4" />
+      <path d="M18 18l3.5 3.5" />
+    </svg>
+  ),
+
+  // Order books and market making: bids stacked against asks, with the
+  // spread between them where a market maker lives.
+  orderBook: (
+    <svg {...base}>
+      <path d="M3 4.5h8M3 8h6M3 11.5h4" />
+      <path d="M21 12.5h-4M21 16h-6M21 19.5h-8" />
+      <path d="M12 3v18" strokeDasharray="1.8 1.6" />
+    </svg>
+  ),
+
   // Algorithmic trading: a price line with the order the rule placed on it —
   // the decision to buy written down before the price arrives.
   algoTrading: (

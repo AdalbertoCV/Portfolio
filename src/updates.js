@@ -18,8 +18,8 @@
 const UPDATES = [
   {
     date: '2026-10-04',
-    es: 'Blockchain, cripto y trading en el muro, más YouAgent, Engraphis, SmythOS, Omarchy, LAMs y SAMs',
-    en: 'Blockchain, crypto and trading on the wall, plus YouAgent, Engraphis, SmythOS, Omarchy, LAMs and SAMs',
+    es: 'Blockchain, cripto y trading en el muro —60 tecnologías, con Hyperliquid y Phantom—, más YouAgent, Engraphis, SmythOS, Omarchy, LAMs y SAMs',
+    en: 'Blockchain, crypto and trading on the wall — 60 of them, Hyperliquid and Phantom included — plus YouAgent, Engraphis, SmythOS, Omarchy, LAMs and SAMs',
   },
   {
     date: '2026-10-03',

@@ -1565,6 +1565,41 @@ import siastraquantIcon from '../../images/tech/astraquant.svg';
 import siresnurIcon from '../../images/tech/resnur.png';
 import sismythosIcon from '../../images/tech/smythos.png';
 import siomarchyIcon from '../../images/tech/omarchy.png';
+// The web3 group, filled out to the size of its neighbours. Phantom is its
+// own ghost, taken from the favicon and flattened; Hyperliquid only ships a
+// raster mark, so it is flattened like the others and carries `flat`.
+import sicardanoIcon from '../../images/tech/cardano.svg';
+import sipolkadotIcon from '../../images/tech/polkadot.svg';
+import sioptimismIcon from '../../images/tech/optimism.svg';
+import sinearIcon from '../../images/tech/near.svg';
+import sixrpIcon from '../../images/tech/xrp.svg';
+import silitecoinIcon from '../../images/tech/litecoin.svg';
+import sidogecoinIcon from '../../images/tech/dogecoin.svg';
+import simoneroIcon from '../../images/tech/monero.svg';
+import sizcashIcon from '../../images/tech/zcash.svg';
+import sibitcoincashIcon from '../../images/tech/bitcoincash.svg';
+import sistellarIcon from '../../images/tech/stellar.svg';
+import sialgorandIcon from '../../images/tech/algorand.svg';
+import sihederaIcon from '../../images/tech/hedera.svg';
+import sisuiIcon from '../../images/tech/sui.svg';
+import sitonIcon from '../../images/tech/ton.svg';
+import siipfsIcon from '../../images/tech/ipfs.svg';
+import siinternetcomputerIcon from '../../images/tech/internetcomputer.svg';
+import sihyperledgerIcon from '../../images/tech/hyperledger.svg';
+import sialchemyIcon from '../../images/tech/alchemy.svg';
+import sithirdwebIcon from '../../images/tech/thirdweb.svg';
+import siwagmiIcon from '../../images/tech/wagmi.svg';
+import siwalletconnectIcon from '../../images/tech/walletconnect.svg';
+import sitrezorIcon from '../../images/tech/trezor.svg';
+import siokxIcon from '../../images/tech/okx.svg';
+import sikucoinIcon from '../../images/tech/kucoin.svg';
+import sigmxIcon from '../../images/tech/gmx.svg';
+import sicoinmarketcapIcon from '../../images/tech/coinmarketcap.svg';
+import sirobinhoodIcon from '../../images/tech/robinhood.svg';
+import siquantconnectIcon from '../../images/tech/quantconnect.svg';
+import siphantomIcon from '../../images/tech/phantom.svg';
+import sihyperliquidIcon from '../../images/tech/hyperliquid.png';
+import siiotaIcon from '../../images/tech/iota.svg';
 
 const TECH_GROUPS = [
   {
@@ -2771,28 +2806,76 @@ const TECH_GROUPS = [
   },
   {
     // The markets side of the interests page made concrete: the chains, the
-    // tooling that talks to them, where the assets are traded, and how a
-    // market is read. MetaMask and Solidity keep their places in tools and
-    // languages; this group adds what was missing around them.
+    // tooling that talks to them, where the assets are held and traded, and
+    // how a market is read. MetaMask and Solidity keep their places in tools
+    // and languages; this group adds what was missing around them.
     id: 'web3',
     items: [
+      // The chains.
       { name: 'Bitcoin', icon: sibitcoinIcon, mono: true },
       { name: 'Ethereum', icon: siethereumIcon, mono: true },
       { name: 'Solana', icon: sisolanaIcon, mono: true },
-      { name: 'Polygon', icon: sipolygonIcon, mono: true },
+      { name: 'Cardano', icon: sicardanoIcon, mono: true },
+      { name: 'Polkadot', icon: sipolkadotIcon, mono: true },
       { name: 'BNB Chain', icon: sibnbchainIcon, mono: true },
-      { name: 'Chainlink', icon: sichainlinkIcon, mono: true },
+      { name: 'Polygon', icon: sipolygonIcon, mono: true },
+      { name: 'Optimism', icon: sioptimismIcon, mono: true },
+      { name: 'NEAR', icon: sinearIcon, mono: true },
+      { name: 'Sui', icon: sisuiIcon, mono: true },
+      { name: 'TON', icon: sitonIcon, mono: true },
+      { name: 'Hedera', icon: sihederaIcon, mono: true },
+      { name: 'Algorand', icon: sialgorandIcon, mono: true },
+      { name: 'Stellar', icon: sistellarIcon, mono: true },
+      { name: 'XRP', icon: sixrpIcon, mono: true },
+      { name: 'Internet Computer', icon: siinternetcomputerIcon, mono: true },
+      { name: 'IOTA', icon: siiotaIcon, mono: true },
+      { name: 'Hyperledger', icon: sihyperledgerIcon, mono: true },
+      { name: 'Layer 2 rollups', concept: 'rollup' },
+      // The coins that are not a platform: payments, privacy, and the forks.
+      { name: 'Litecoin', icon: silitecoinIcon, mono: true },
+      { name: 'Bitcoin Cash', icon: sibitcoincashIcon, mono: true },
+      { name: 'Dogecoin', icon: sidogecoinIcon, mono: true },
+      { name: 'Monero', icon: simoneroIcon, mono: true },
+      { name: 'Zcash', icon: sizcashIcon, mono: true },
       { name: 'Tether', icon: sitetherIcon, mono: true },
+      { name: 'Stablecoins', concept: 'stablecoin' },
+      // Building on them.
       { name: 'Smart contracts', concept: 'smartContract' },
       { name: 'OpenZeppelin', icon: siopenzeppelinIcon, mono: true },
       { name: 'ethers.js', icon: siethersIcon, mono: true },
       { name: 'Web3.js', icon: siweb3jsIcon, mono: true },
+      { name: 'wagmi', icon: siwagmiIcon, mono: true },
+      { name: 'thirdweb', icon: sithirdwebIcon, mono: true },
+      { name: 'Alchemy', icon: sialchemyIcon, mono: true },
+      { name: 'Chainlink', icon: sichainlinkIcon, mono: true },
+      { name: 'IPFS', icon: siipfsIcon, mono: true },
+      { name: 'WalletConnect', icon: siwalletconnectIcon, mono: true },
+      { name: 'Tokenomics', concept: 'tokenomics' },
+      { name: 'DAOs', concept: 'dao' },
+      { name: 'NFTs', concept: 'nft' },
+      // Holding them.
+      { name: 'Phantom', icon: siphantomIcon, mono: true },
+      { name: 'Trezor', icon: sitrezorIcon, mono: true },
+      { name: 'Self-custody', concept: 'custody' },
+      // Trading them.
       { name: 'DeFi', concept: 'defi' },
+      { name: 'Hyperliquid', icon: sihyperliquidIcon, flat: true },
+      { name: 'GMX', icon: sigmxIcon, mono: true },
       { name: 'Binance', icon: sibinanceIcon, mono: true },
       { name: 'Coinbase', icon: sicoinbaseIcon, mono: true },
+      { name: 'OKX', icon: siokxIcon, mono: true },
+      { name: 'KuCoin', icon: sikucoinIcon, mono: true },
+      { name: 'Robinhood', icon: sirobinhoodIcon, mono: true },
+      { name: 'Order books & market making', concept: 'orderBook' },
+      // Reading the market.
       { name: 'TradingView', icon: sitradingviewIcon, mono: true },
+      { name: 'CoinMarketCap', icon: sicoinmarketcapIcon, mono: true },
+      { name: 'On-chain analytics', concept: 'onchain' },
       { name: 'Technical analysis', concept: 'technicalAnalysis' },
       { name: 'Algorithmic trading', concept: 'algoTrading' },
+      { name: 'Backtesting', concept: 'backtesting' },
+      { name: 'QuantConnect', icon: siquantconnectIcon, mono: true },
+      { name: 'Trading risk management', concept: 'tradingRisk' },
       // An LLM investment committee with fail-closed risk gates in front of
       // the exchange: algorithmic trading with agents in the loop.
       { name: 'AstraQuant', icon: siastraquantIcon, mono: true },
