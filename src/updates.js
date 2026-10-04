@@ -17,6 +17,11 @@
 
 const UPDATES = [
   {
+    date: '2026-10-04',
+    es: 'Blockchain, cripto y trading en el muro, más YouAgent, Engraphis, SmythOS, Omarchy, LAMs y SAMs',
+    en: 'Blockchain, crypto and trading on the wall, plus YouAgent, Engraphis, SmythOS, Omarchy, LAMs and SAMs',
+  },
+  {
     date: '2026-10-03',
     es: 'agentify-repo entra al catálogo: una skill open source que deja cualquier repo listo para agentes',
     en: 'agentify-repo joins the catalogue: an open-source skill that makes any repo agent-ready',

@@ -1536,6 +1536,35 @@ import sihomebridgeIcon from '../../images/tech/homebridge.svg';
 import siesphomeIcon from '../../images/tech/esphome.svg';
 import sizigbeeIcon from '../../images/tech/zigbee.svg';
 import siicingaIcon from '../../images/tech/icinga.svg';
+// The October intake. YouAgent is youagent.me's own mark flattened to black;
+// Engraphis is redrawn as a silhouette from its app icon (two hexagons, the
+// spokes and the core), which only ships as a dark-ground PNG; Decisions is
+// the square symbol lifted out of its wordmark. The chain and market marks
+// are Simple Icons' single-tone versions.
+import siyouagentIcon from '../../images/tech/youagent.svg';
+import siengraphisIcon from '../../images/tech/engraphis.svg';
+import sidecisionsIcon from '../../images/tech/decisions.svg';
+import sibitcoinIcon from '../../images/tech/bitcoin.svg';
+import siethereumIcon from '../../images/tech/ethereum.svg';
+import sisolanaIcon from '../../images/tech/solana.svg';
+import sipolygonIcon from '../../images/tech/polygon.svg';
+import sichainlinkIcon from '../../images/tech/chainlink.svg';
+import sibnbchainIcon from '../../images/tech/bnbchain.svg';
+import sitetherIcon from '../../images/tech/tether.svg';
+import sibinanceIcon from '../../images/tech/binance.svg';
+import sicoinbaseIcon from '../../images/tech/coinbase.svg';
+import sitradingviewIcon from '../../images/tech/tradingview.svg';
+import siopenzeppelinIcon from '../../images/tech/openzeppelin.svg';
+import siethersIcon from '../../images/tech/ethers.svg';
+import siweb3jsIcon from '../../images/tech/web3dotjs.svg';
+// AstraQuant's compass star is redrawn as a silhouette from its favicon,
+// which is a full-colour app tile. Resnur, SmythOS and Omarchy only publish
+// raster marks, flattened to black here (painted pixels to black, light
+// fills dropped), so they carry `flat`.
+import siastraquantIcon from '../../images/tech/astraquant.svg';
+import siresnurIcon from '../../images/tech/resnur.png';
+import sismythosIcon from '../../images/tech/smythos.png';
+import siomarchyIcon from '../../images/tech/omarchy.png';
 
 const TECH_GROUPS = [
   {
@@ -1750,6 +1779,10 @@ const TECH_GROUPS = [
       { name: 'PyTorch Lightning', icon: sipytorchlightningIcon, mono: true },
       { name: 'AI Agents', concept: 'agents' },
       { name: 'LLM & RAG', concept: 'rag' },
+      // The other two letters people put next to LLM: models whose output is
+      // an action in an interface, and models whose output is a mask.
+      { name: 'Large action models (LAMs)', concept: 'lam' },
+      { name: 'Segment Anything (SAMs)', concept: 'sam' },
       { name: 'Machine Learning', concept: 'ml' },
       // Not a synonym for the line above it: machine learning covers the
       // classical methods too — the stroke classifier in the catalogue is a
@@ -1828,6 +1861,13 @@ const TECH_GROUPS = [
       // The agent-engineering bench: frameworks, memory, tools, evals.
       // The agent bench, 2026.
       { name: 'Supermemory', icon: sisupermemoryIcon, flat: true },
+      // Local-first memory for coding agents, inspectable rather than a vector
+      // store you have to trust.
+      { name: 'Engraphis', icon: siengraphisIcon, mono: true },
+      // Process automation where rules, workflows, people and agents share one
+      // orchestration layer.
+      { name: 'Decisions', icon: sidecisionsIcon, mono: true },
+      { name: 'SmythOS Studio', icon: sismythosIcon, flat: true },
       { name: 'FastMCP', icon: sifastmcpIcon, flat: true },
       { name: 'Browser Use', icon: sibrowseruseIcon, flat: true },
       { name: 'Firecrawl', icon: sifirecrawlIcon, mono: true },
@@ -2052,6 +2092,7 @@ const TECH_GROUPS = [
       { name: 'Kilo Code', icon: sikilocodeIcon, mono: true },
       { name: 'OmniRoute', icon: siomnirouteIcon, mono: true },
       { name: 'Agentic Rank', icon: siagenticrankIcon, mono: true },
+      { name: 'YouAgent', icon: siyouagentIcon, mono: true },
     ],
   },
   {
@@ -2080,6 +2121,7 @@ const TECH_GROUPS = [
       { name: 'CapRover', icon: sicaproverIcon, mono: true },
       { name: 'Amazon EKS', icon: siamazoneksIcon, mono: true },
       { name: 'Linux', icon: linux, mono: true },
+      { name: 'Omarchy', icon: siomarchyIcon, flat: true },
       // Where things actually get deployed, from a push-to-deploy PaaS down to
       // a bare VPS that has to be provisioned by hand. All four marks are
       // simple-icons monochrome, so the dark-mode inversion covers them.
@@ -2728,6 +2770,35 @@ const TECH_GROUPS = [
     ],
   },
   {
+    // The markets side of the interests page made concrete: the chains, the
+    // tooling that talks to them, where the assets are traded, and how a
+    // market is read. MetaMask and Solidity keep their places in tools and
+    // languages; this group adds what was missing around them.
+    id: 'web3',
+    items: [
+      { name: 'Bitcoin', icon: sibitcoinIcon, mono: true },
+      { name: 'Ethereum', icon: siethereumIcon, mono: true },
+      { name: 'Solana', icon: sisolanaIcon, mono: true },
+      { name: 'Polygon', icon: sipolygonIcon, mono: true },
+      { name: 'BNB Chain', icon: sibnbchainIcon, mono: true },
+      { name: 'Chainlink', icon: sichainlinkIcon, mono: true },
+      { name: 'Tether', icon: sitetherIcon, mono: true },
+      { name: 'Smart contracts', concept: 'smartContract' },
+      { name: 'OpenZeppelin', icon: siopenzeppelinIcon, mono: true },
+      { name: 'ethers.js', icon: siethersIcon, mono: true },
+      { name: 'Web3.js', icon: siweb3jsIcon, mono: true },
+      { name: 'DeFi', concept: 'defi' },
+      { name: 'Binance', icon: sibinanceIcon, mono: true },
+      { name: 'Coinbase', icon: sicoinbaseIcon, mono: true },
+      { name: 'TradingView', icon: sitradingviewIcon, mono: true },
+      { name: 'Technical analysis', concept: 'technicalAnalysis' },
+      { name: 'Algorithmic trading', concept: 'algoTrading' },
+      // An LLM investment committee with fail-closed risk gates in front of
+      // the exchange: algorithmic trading with agents in the loop.
+      { name: 'AstraQuant', icon: siastraquantIcon, mono: true },
+    ],
+  },
+  {
     // Engines, 3D, video, audio and raster/vector. The half of the craft that
     // produces something to look at rather than something to call.
     id: 'media',
@@ -3138,6 +3209,7 @@ const TECH_GROUPS = [
       // Where the knowledge actually comes from.
       // The tech-week intake.
       { name: 'Platzi', icon: siplatziIcon, mono: true },
+      { name: 'Resnur AI', icon: siresnurIcon, flat: true },
       { name: 'Codeforces', icon: sicodeforcesIcon, mono: true },
       { name: 'GeeksforGeeks', icon: sigeeksforgeeksIcon, mono: true },
       { name: 'egghead', icon: sieggheadIcon, mono: true },
@@ -3164,6 +3236,9 @@ const TECH_GROUPS = [
       { name: 'MDN Web Docs', icon: simdnwebdocsIcon, mono: true },
       { name: 'Exercism', icon: siexercismIcon, mono: true },
       { name: 'LeetCode', icon: sileetcodeIcon, mono: true },
+      // Not the site: the list that groups its problems by pattern, so the
+      // practice is recognising the shape rather than memorising answers.
+      { name: 'LeetCode Patterns', concept: 'leetcodePatterns' },
       { name: 'HackerRank', icon: sihackerrankIcon, mono: true },
       { name: 'Codecademy', icon: sicodecademyIcon, mono: true },
       { name: 'Pluralsight', icon: sipluralsightIcon, mono: true },

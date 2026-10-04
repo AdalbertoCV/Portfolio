@@ -2140,6 +2140,83 @@ const ICONS = {
       <path d="M20 16H6M9.4 12.6 6 16l3.4 3.4" />
     </svg>
   ),
+
+  // Large action models: a chat bubble whose answer is a cursor clicking —
+  // the model's output is an action taken in an interface, not text.
+  lam: (
+    <svg {...base}>
+      <path d="M3.5 4.5h11a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5H8l-3 2.5V12h-1.5A1.5 1.5 0 0 1 2 10.5V6a1.5 1.5 0 0 1 1.5-1.5z" />
+      <path d="M13 13.5l7 2.6-3 1.1-1.1 3z" />
+      <path d="M17 17.2l2.8 2.8" />
+    </svg>
+  ),
+
+  // Segment Anything: a point prompt on an image and the mask that comes
+  // back around the object it landed on.
+  sam: (
+    <svg {...base}>
+      <rect x="2.5" y="3.5" width="19" height="17" rx="2" />
+      <path d="M7.5 15.5c-1.4-2.6.2-6 3.2-6.6 2.6-.6 5.6.8 6 3.6.4 2.6-1.6 4.6-4.4 4.8-2 .2-3.9-.2-4.8-1.8z" strokeDasharray="1.8 1.6" />
+      <circle cx="12" cy="12.8" r="1.2" fill="currentColor" />
+    </svg>
+  ),
+
+  // LeetCode Patterns: an array with a sliding window over it — the pattern
+  // that stands for all the others, because the point of the list is to see
+  // the shape of a problem before writing a line of it.
+  leetcodePatterns: (
+    <svg {...base}>
+      <path d="M2.5 10h19v5h-19zM6.3 10v5M10.1 10v5M13.9 10v5M17.7 10v5" />
+      <path d="M8.6 7.5h8.8v10H8.6z" strokeDasharray="1.6 1.6" />
+      <path d="M11 4.5h4M13.5 3l1.5 1.5-1.5 1.5" />
+    </svg>
+  ),
+
+  // A smart contract: a document whose last line is code, sealed into a
+  // block — the terms and their execution are the same artefact.
+  smartContract: (
+    <svg {...base}>
+      <path d="M5 3.5h9.5L18 7v6" />
+      <path d="M14.5 3.5V7H18" />
+      <path d="M5 3.5V20h7" />
+      <path d="M8 9h6M8 12h4" />
+      <path d="M8.4 15.8 7 17.2l1.4 1.4" />
+      <rect x="14" y="15" width="6.5" height="6.5" rx="1.4" />
+    </svg>
+  ),
+
+  // DeFi: two pools and the swap between them — finance where the
+  // counterparty is a contract rather than a bank.
+  defi: (
+    <svg {...base}>
+      <circle cx="6.5" cy="12" r="4" />
+      <circle cx="17.5" cy="12" r="4" />
+      <path d="M9.5 7.6c1.6-1.4 3.4-1.4 5 0M13.4 6.2l1.1 1.4-1.6.8" />
+      <path d="M14.5 16.4c-1.6 1.4-3.4 1.4-5 0M10.6 17.8l-1.1-1.4 1.6-.8" />
+    </svg>
+  ),
+
+  // Technical analysis: candlesticks — open, close, the wicks of the high and
+  // the low — which is how a market reads before any indicator touches it.
+  technicalAnalysis: (
+    <svg {...base}>
+      <path d="M6 4v3M6 13v3M12 8v3M12 17v3M18 3v2.5M18 11.5V14" />
+      <rect x="4" y="7" width="4" height="6" rx="0.8" />
+      <rect x="10" y="11" width="4" height="6" rx="0.8" />
+      <rect x="16" y="5.5" width="4" height="6" rx="0.8" />
+    </svg>
+  ),
+
+  // Algorithmic trading: a price line with the order the rule placed on it —
+  // the decision to buy written down before the price arrives.
+  algoTrading: (
+    <svg {...base}>
+      <path d="M3 20.5h18" />
+      <path d="M3.5 17l4.5-5 3.5 3 4-6.5 4.5 3" />
+      <path d="M14.5 4.5h6M14.5 4.5l1.4-1.4M14.5 4.5l1.4 1.4" />
+      <circle cx="15.5" cy="8.5" r="1.4" />
+    </svg>
+  ),
 };
 
 const ConceptIcon = ({ name, className }) => {

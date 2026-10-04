@@ -431,7 +431,7 @@ const cvEs = {
       business: {
         title: 'Negocio, startups y capital',
         body: 'Dirigir dos empresas propias exige comprender la dimensión que no es técnica: cómo se financia lo que se construye, qué distingue un negocio viable de un sistema bien hecho, y en qué casos la decisión correcta no corresponde al criterio de ingeniería. Sigo de cerca el capital de riesgo, los procesos de levantamiento de fondos y la estructuración de compañías más allá de su primer producto.',
-        body2: 'El mismo interés se extiende al e-commerce y a los mercados. Del lado del comercio es el detalle operativo de una tienda que tiene que vender: catálogo, checkout, pagos, conversión y los números que indican si algo de eso funcionó. Del lado de los mercados son las criptomonedas, los activos digitales y la inversión — clases de activo, riesgo, custodia y la infraestructura que los sostiene, que es el punto donde la lectura financiera y la de ingeniería dejan de ser temas separados.',
+        body2: 'El mismo interés se extiende al e-commerce y a los mercados. Del lado del comercio es el detalle operativo de una tienda que tiene que vender: catálogo, checkout, pagos, conversión y los números que indican si algo de eso funcionó. Del lado de los mercados son las criptomonedas, el blockchain, los activos digitales, el trading y la inversión — clases de activo, riesgo, custodia, cómo se lee un mercado y la infraestructura que los sostiene, que es el punto donde la lectura financiera y la de ingeniería dejan de ser temas separados.',
         tags: [
           'Startups',
           'Fundraising',
@@ -441,6 +441,8 @@ const cvEs = {
           'Fintech e inversiones',
           'E-commerce',
           'Criptomonedas',
+          'Blockchain y Web3',
+          'Trading',
           'Activos digitales',
           'Mercados e inversión',
         ],

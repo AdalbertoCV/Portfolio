@@ -574,6 +574,7 @@ const es = {
       data: 'Datos',
       frontend: 'Frontend y móvil',
       web: 'CMS, e-commerce y web',
+      web3: 'Blockchain, cripto y trading',
       media: 'Videojuegos, animación y multimedia',
       hardware: 'Hardware, robótica y manufactura',
       tools: 'Herramientas y práctica',

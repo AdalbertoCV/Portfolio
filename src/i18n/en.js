@@ -573,6 +573,7 @@ const en = {
       data: 'Data',
       frontend: 'Frontend & mobile',
       web: 'CMS, e-commerce & web',
+      web3: 'Blockchain, crypto & trading',
       media: 'Games, animation & multimedia',
       hardware: 'Hardware, robotics & manufacturing',
       tools: 'Tooling & practice',

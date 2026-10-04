@@ -414,7 +414,7 @@ const cvEn = {
       business: {
         title: 'Business, startups and capital',
         body: 'Running two companies of my own requires understanding the dimension that is not technical: how the work gets funded, what separates a viable business from a well-built system, and where the correct decision does not follow from engineering criteria. I follow venture capital, fundraising processes, and how companies are structured to outlast their first product.',
-        body2: 'The same interest runs through e-commerce and through markets. On the commerce side it is the operating detail of a store that has to sell: catalogue, checkout, payments, conversion and the numbers that say whether any of it worked. On the market side it is crypto, digital assets and investing — asset classes, risk, custody and the infrastructure underneath them, which is the point where the financial reading and the engineering one stop being separate subjects.',
+        body2: 'The same interest runs through e-commerce and through markets. On the commerce side it is the operating detail of a store that has to sell: catalogue, checkout, payments, conversion and the numbers that say whether any of it worked. On the market side it is crypto, blockchain, digital assets, trading and investing — asset classes, risk, custody, how a market is read and the infrastructure underneath them, which is the point where the financial reading and the engineering one stop being separate subjects.',
         tags: [
           'Startups',
           'Fundraising',
@@ -424,6 +424,8 @@ const cvEn = {
           'Fintech and investing',
           'E-commerce',
           'Cryptocurrency',
+          'Blockchain and Web3',
+          'Trading',
           'Digital assets',
           'Markets and investing',
         ],
