@@ -712,9 +712,88 @@ const AcompanarCover = () => (
   </Cover>
 );
 
+/* agentify-repo — the mark, and the file it writes.
+
+   The left is the project's own logo: an "A" drawn as a commit graph whose
+   crossbar is a check. The right is the part of an AGENTS.md that matters,
+   the command table, filling in one row at a time the way the skill fills it
+   — every row gets a status only after the command has actually run. Three
+   pass; the last one fails, because a skill that only ever reports green is
+   not checking anything. */
+
+const AGENTS_ROWS = [
+  { cmd: 'npm ci', ok: true },
+  { cmd: 'mvn -B verify', ok: true },
+  { cmd: 'pytest -q', ok: true },
+  { cmd: 'verify-sync.sh', ok: false },
+];
+
+const AgentifyCover = () => (
+  <Cover id="cov-agentify" from="#0b1020" to="#4338ca">
+    {/* The mark. */}
+    <g transform="translate(26 30) scale(0.78)">
+      <rect width="128" height="128" rx="30" fill="rgba(11,16,32,0.7)" stroke="rgba(255,255,255,0.18)" strokeWidth="2" />
+      <path d="M34 100 L64 28 L94 100" stroke="#67e8f9" strokeWidth="10" />
+      <path d="M46 74 L58 85 L82 61" stroke="#34d399" strokeWidth="9" />
+      <g fill="#0b1020" strokeWidth="5">
+        <circle cx="64" cy="28" r="8" stroke="#a78bfa" />
+        <circle cx="34" cy="100" r="7.5" stroke="#22d3ee" />
+        <circle cx="94" cy="100" r="7.5" stroke="#8b5cf6" />
+      </g>
+      <path
+        d="M101 20 Q102.6 27.4 110 29 Q102.6 30.6 101 38 Q99.4 30.6 92 29 Q99.4 27.4 101 20 Z"
+        fill="#fbbf24"
+        stroke="none"
+      />
+    </g>
+
+    <Label x={150} y={34} anchor="start" size={10} o={0.85}>
+      AGENTS.md
+    </Label>
+
+    {/* The command table, written a row at a time. */}
+    {AGENTS_ROWS.map(({ cmd, ok }, i) => (
+      <g key={cmd} className="cov-write" style={{ animationDelay: `${i * 0.8}s` }}>
+        <rect
+          x={150}
+          y={44 + i * 26}
+          width={226}
+          height={20}
+          rx="5"
+          fill="rgba(255,255,255,0.1)"
+          stroke="rgba(255,255,255,0.28)"
+        />
+        <text
+          x={160}
+          y={58 + i * 26}
+          fill="#ffffff"
+          stroke="none"
+          fontFamily="ui-monospace, SFMono-Regular, Menlo, monospace"
+          fontSize="10"
+        >
+          {cmd}
+        </text>
+        <text
+          x={366}
+          y={58 + i * 26}
+          textAnchor="end"
+          fill={ok ? '#34d399' : '#fbbf24'}
+          stroke="none"
+          fontFamily="ui-monospace, SFMono-Regular, Menlo, monospace"
+          fontSize="10"
+          fontWeight="700"
+        >
+          {ok ? '✓ verified' : '✗ fails'}
+        </text>
+      </g>
+    ))}
+  </Cover>
+);
+
 const COVERS = {
   play: PlayCover,
   acompanar: AcompanarCover,
+  agentify: AgentifyCover,
   etl: EtlCover,
   pubsub: PubSubCover,
   sockets: SocketsCover,

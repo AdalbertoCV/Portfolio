@@ -17,6 +17,11 @@
 
 const UPDATES = [
   {
+    date: '2026-10-03',
+    es: 'agentify-repo entra al catálogo: una skill open source que deja cualquier repo listo para agentes',
+    en: 'agentify-repo joins the catalogue: an open-source skill that makes any repo agent-ready',
+  },
+  {
     date: '2026-09-25',
     es: 'El plan de operaciones de Moonphase y StackSelect, por etapas, en Ventures',
     en: 'The operating plan for Moonphase and StackSelect, stage by stage, in Ventures',

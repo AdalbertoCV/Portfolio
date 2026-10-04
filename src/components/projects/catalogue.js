@@ -123,6 +123,14 @@ const CATALOGUE = [
         tags: ['Demucs', 'PyTorch', 'librosa', 'Audio DSP'],
       },
       {
+        key: 'agentify',
+        copy: 'repos.items.agentify',
+        name: 'agentify-repo',
+        url: `${OWNER}/agentify-repo`,
+        language: 'Python',
+        tags: ['Python', 'Agent Skills', 'AGENTS.md', 'Docker'],
+      },
+      {
         key: 'etl',
         copy: 'repos.items.etl',
         name: 'ETL-Equipo4',
