@@ -1566,11 +1566,19 @@ import siresnurIcon from '../../images/tech/resnur.png';
 import sismythosIcon from '../../images/tech/smythos.png';
 import siomarchyIcon from '../../images/tech/omarchy.png';
 // llm-d only ships a colour wordmark, so its three-hexagon cluster is redrawn
-// as a stroke silhouette. ArtCraft's seven Crafting apps carry the suite's
-// own mark: each app icon is a full-colour engraving with nothing to flatten.
+// as a stroke silhouette. Each of ArtCraft's seven Crafting apps has its own
+// icon, an animal engraved on a coloured tile; flattened they would be black
+// squares, so they carry `gray` and keep the engraving in greyscale.
 // The Adobe marks are Simple Icons' single-tone versions.
 import sillmdIcon from '../../images/tech/llmd.svg';
 import siartcraftIcon from '../../images/tech/artcraft.svg';
+import siphotocraftIcon from '../../images/tech/photocraft.webp';
+import sivectorcraftIcon from '../../images/tech/vectorcraft.webp';
+import sifilmcraftIcon from '../../images/tech/filmcraft.webp';
+import silightcraftIcon from '../../images/tech/lightcraft.webp';
+import siprintcraftIcon from '../../images/tech/printcraft.webp';
+import sieffectcraftIcon from '../../images/tech/effectcraft.webp';
+import sidesigncraftIcon from '../../images/tech/designcraft.webp';
 import siadobephotoshopIcon from '../../images/tech/adobephotoshop.svg';
 import siadobeillustratorIcon from '../../images/tech/adobeillustrator.svg';
 import siadobelightroomIcon from '../../images/tech/adobelightroom.svg';
@@ -3005,13 +3013,13 @@ const TECH_GROUPS = [
       // And the open-source answer to it: ArtCraft's Crafting apps, one per
       // Adobe app, in Rust, no subscription.
       { name: 'ArtCraft', icon: siartcraftIcon, mono: true },
-      { name: 'PhotoCraft', icon: siartcraftIcon, mono: true },
-      { name: 'VectorCraft', icon: siartcraftIcon, mono: true },
-      { name: 'FilmCraft', icon: siartcraftIcon, mono: true },
-      { name: 'LightCraft', icon: siartcraftIcon, mono: true },
-      { name: 'PrintCraft', icon: siartcraftIcon, mono: true },
-      { name: 'EffectCraft', icon: siartcraftIcon, mono: true },
-      { name: 'DesignCraft', icon: siartcraftIcon, mono: true },
+      { name: 'PhotoCraft', icon: siphotocraftIcon, gray: true },
+      { name: 'VectorCraft', icon: sivectorcraftIcon, gray: true },
+      { name: 'FilmCraft', icon: sifilmcraftIcon, gray: true },
+      { name: 'LightCraft', icon: silightcraftIcon, gray: true },
+      { name: 'PrintCraft', icon: siprintcraftIcon, gray: true },
+      { name: 'EffectCraft', icon: sieffectcraftIcon, gray: true },
+      { name: 'DesignCraft', icon: sidesigncraftIcon, gray: true },
     ],
   },
   {

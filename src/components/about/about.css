@@ -754,6 +754,13 @@
     filter: grayscale(1) brightness(0) invert(1);
 }
 
+/* Marks that are pictures on an opaque tile: flattening would leave a black
+   square, so they only lose their colour. The tile reads on either ground. */
+.tech-icon[data-gray='true'] {
+    filter: grayscale(1);
+    border-radius: 6px;
+}
+
 .stack-mark .tech-name {
     font-size: 0.78rem;
     font-weight: 500;

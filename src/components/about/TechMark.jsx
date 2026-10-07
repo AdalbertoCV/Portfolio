@@ -33,6 +33,7 @@ const TechMark = ({ item, t }) => {
             loading="lazy"
             data-mono={item.mono ? 'true' : undefined}
             data-flat={item.flat ? 'true' : undefined}
+            data-gray={item.gray ? 'true' : undefined}
           />
         ) : item.concept ? (
           <ConceptIcon className="tech-concept" name={item.concept} />
