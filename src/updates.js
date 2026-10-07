@@ -18,8 +18,8 @@
 const UPDATES = [
   {
     date: '2026-10-06',
-    es: 'Adobe y su respuesta open source en el muro: Photoshop, Illustrator, Lightroom y los Crafting apps de ArtCraft, más llm-d',
-    en: 'Adobe and its open-source answer on the wall: Photoshop, Illustrator, Lightroom and ArtCraft\'s Crafting apps, plus llm-d',
+    es: 'Adobe y su respuesta open source en el muro: Photoshop, Illustrator, Lightroom y los Crafting apps de ArtCraft, más llm-d y agentify-repo',
+    en: 'Adobe and its open-source answer on the wall: Photoshop, Illustrator, Lightroom and ArtCraft\'s Crafting apps, plus llm-d and agentify-repo',
   },
   {
     date: '2026-10-04',

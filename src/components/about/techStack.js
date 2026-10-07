@@ -535,6 +535,9 @@ import sibasetenIcon from '../../images/tech/baseten.svg';
 import sitogetherIcon from '../../images/tech/together.svg';
 import sisticklightIcon from '../../images/tech/sticklight.svg';
 import siarchifyIcon from '../../images/tech/archify.svg';
+// agentify-repo is my own skill: its mark (the commit-graph "A" with a check
+// for a crossbar, the same one on its project cover) in one ink.
+import siagentifyIcon from '../../images/tech/agentify.svg';
 import siponytailIcon from '../../images/tech/ponytail.svg';
 import sisuperpowersIcon from '../../images/tech/superpowers.svg';
 import simintlifyIcon from '../../images/tech/mintlify.svg';
@@ -3235,6 +3238,9 @@ const TECH_GROUPS = [
       { name: 'Superpowers', icon: sisuperpowersIcon, mono: true },
       { name: 'Mintlify', icon: simintlifyIcon, mono: true },
       { name: 'Context7', icon: sicontext7Icon, flat: true },
+      // And the one I wrote: it makes any repo agent-ready and only writes a
+      // command into AGENTS.md after running it.
+      { name: 'agentify-repo', icon: siagentifyIcon, mono: true },
       // The tech-week intake.
       { name: 'Starship', icon: sistarshipIcon, mono: true },
       { name: 'Nix', icon: sinixIcon, flat: true },
