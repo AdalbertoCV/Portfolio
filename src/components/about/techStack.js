@@ -1565,6 +1565,19 @@ import siastraquantIcon from '../../images/tech/astraquant.svg';
 import siresnurIcon from '../../images/tech/resnur.png';
 import sismythosIcon from '../../images/tech/smythos.png';
 import siomarchyIcon from '../../images/tech/omarchy.png';
+// llm-d only ships a colour wordmark, so its three-hexagon cluster is redrawn
+// as a stroke silhouette. ArtCraft's seven Crafting apps carry the suite's
+// own mark: each app icon is a full-colour engraving with nothing to flatten.
+// The Adobe marks are Simple Icons' single-tone versions.
+import sillmdIcon from '../../images/tech/llmd.svg';
+import siartcraftIcon from '../../images/tech/artcraft.svg';
+import siadobephotoshopIcon from '../../images/tech/adobephotoshop.svg';
+import siadobeillustratorIcon from '../../images/tech/adobeillustrator.svg';
+import siadobelightroomIcon from '../../images/tech/adobelightroom.svg';
+import siadobeindesignIcon from '../../images/tech/adobeindesign.svg';
+import siadobeacrobatIcon from '../../images/tech/adobeacrobatreader.svg';
+import siadobexdIcon from '../../images/tech/adobexd.svg';
+import siadobecreativecloudIcon from '../../images/tech/adobecreativecloud.svg';
 // The web3 group, filled out to the size of its neighbours. Phantom is its
 // own ghost, taken from the favicon and flattened; Hyperliquid only ships a
 // raster mark, so it is flattened like the others and carries `flat`.
@@ -1862,6 +1875,9 @@ const TECH_GROUPS = [
       { name: 'Langfuse', icon: silangfuseIcon, mono: true },
       { name: 'spaCy', icon: sispacyIcon, mono: true },
       { name: 'SGLang', icon: sisglangIcon, flat: true },
+      // vLLM spread across a Kubernetes cluster: cache-aware routing and
+      // prefill split from decode, for when one server is no longer enough.
+      { name: 'llm-d', icon: sillmdIcon, mono: true },
       { name: 'DVC', icon: sidvcIcon, mono: true },
       { name: 'Unsloth', icon: siunslothIcon, flat: true },
       // Agents, and what makes one persistent: Hermes runs on your own box
@@ -2978,6 +2994,24 @@ const TECH_GROUPS = [
       { name: 'Marvelous Designer', icon: simarvelousdesignerIcon, flat: true },
       // In for the star this group sent up to The Stars.
       { name: 'PixiJS', icon: sipixijsIcon, mono: true },
+      // The rest of Creative Cloud, beside Premiere, After Effects and Firefly.
+      { name: 'Adobe Creative Cloud', icon: siadobecreativecloudIcon, mono: true },
+      { name: 'Photoshop', icon: siadobephotoshopIcon, mono: true },
+      { name: 'Illustrator', icon: siadobeillustratorIcon, mono: true },
+      { name: 'Lightroom', icon: siadobelightroomIcon, mono: true },
+      { name: 'InDesign', icon: siadobeindesignIcon, mono: true },
+      { name: 'Acrobat', icon: siadobeacrobatIcon, mono: true },
+      { name: 'Adobe XD', icon: siadobexdIcon, mono: true },
+      // And the open-source answer to it: ArtCraft's Crafting apps, one per
+      // Adobe app, in Rust, no subscription.
+      { name: 'ArtCraft', icon: siartcraftIcon, mono: true },
+      { name: 'PhotoCraft', icon: siartcraftIcon, mono: true },
+      { name: 'VectorCraft', icon: siartcraftIcon, mono: true },
+      { name: 'FilmCraft', icon: siartcraftIcon, mono: true },
+      { name: 'LightCraft', icon: siartcraftIcon, mono: true },
+      { name: 'PrintCraft', icon: siartcraftIcon, mono: true },
+      { name: 'EffectCraft', icon: siartcraftIcon, mono: true },
+      { name: 'DesignCraft', icon: siartcraftIcon, mono: true },
     ],
   },
   {

@@ -17,6 +17,11 @@
 
 const UPDATES = [
   {
+    date: '2026-10-06',
+    es: 'Adobe y su respuesta open source en el muro: Photoshop, Illustrator, Lightroom y los Crafting apps de ArtCraft, más llm-d',
+    en: 'Adobe and its open-source answer on the wall: Photoshop, Illustrator, Lightroom and ArtCraft\'s Crafting apps, plus llm-d',
+  },
+  {
     date: '2026-10-04',
     es: 'Blockchain, cripto y trading en el muro —60 tecnologías, con Hyperliquid y Phantom—, más YouAgent, Engraphis, SmythOS, Omarchy, LAMs y SAMs',
     en: 'Blockchain, crypto and trading on the wall — 60 of them, Hyperliquid and Phantom included — plus YouAgent, Engraphis, SmythOS, Omarchy, LAMs and SAMs',

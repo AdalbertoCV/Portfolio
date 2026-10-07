@@ -40,9 +40,10 @@ test('no technology appears twice on the wall', () => {
 // Gentle AI, Ichigo, Gamma, Fathom, nineteen LLM-ops names, Eclipse, Spyder, dots, thirty-three for the data lake, forty for diagrams, and 79 across collaboration, learning and the lab, Kilo Code, OmniRoute, Agentic Rank and MetaMask, and fourteen fields of science
 // and six of mathematics on the frontier, and the fractal omniverse, and YouAgent, Engraphis, Decisions,
 // LeetCode Patterns, LAMs, SAMs, SmythOS Studio, Resnur AI and Omarchy, and sixty for blockchain,
-// crypto and trading, Hyperliquid and Phantom among them.
+// crypto and trading, Hyperliquid and Phantom among them, and llm-d, seven Adobe apps and ArtCraft
+// with its seven Crafting apps.
 test('the groups kept their sizes and The Stars added to the wall', () => {
-  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1648 + TECH_GROUPS[0].items.length);
+  expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1664 + TECH_GROUPS[0].items.length);
 });
 
 test('Prezi is on the wall as a tool', () => {
