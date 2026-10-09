@@ -535,6 +535,8 @@ import sibasetenIcon from '../../images/tech/baseten.svg';
 import sitogetherIcon from '../../images/tech/together.svg';
 import sisticklightIcon from '../../images/tech/sticklight.svg';
 import siarchifyIcon from '../../images/tech/archify.svg';
+import sit3codeIcon from '../../images/tech/t3code.svg';
+import sifacepluginIcon from '../../images/tech/faceplugin.png';
 // agentify-repo is my own skill: its mark (the commit-graph "A" with a check
 // for a crossbar, the same one on its project cover) in one ink.
 import siagentifyIcon from '../../images/tech/agentify.svg';
@@ -1915,6 +1917,9 @@ const TECH_GROUPS = [
       // In for the star this group sent up to The Stars.
       { name: 'Numba', icon: sinumbaIcon, mono: true },
       { name: 'Anaconda', icon: sianacondaIcon, mono: true },
+      // On-premise face recognition and liveness SDKs; the FP mark only
+      // exists as a gradient PNG, so it is flattened by filter.
+      { name: 'FacePlugin', icon: sifacepluginIcon, flat: true },
     ],
   },
   {
@@ -2155,6 +2160,9 @@ const TECH_GROUPS = [
       { name: 'OmniRoute', icon: siomnirouteIcon, mono: true },
       { name: 'Agentic Rank', icon: siagenticrankIcon, mono: true },
       { name: 'YouAgent', icon: siyouagentIcon, mono: true },
+      // Theo's GUI over the agent CLIs above: worktrees per thread, a diff
+      // viewer, and Codex or Claude Code doing the work underneath.
+      { name: 'T3 Code', icon: sit3codeIcon, mono: true },
     ],
   },
   {
