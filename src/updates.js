@@ -18,6 +18,11 @@
 const UPDATES = [
   {
     date: '2026-10-20',
+    es: 'Radii Lab entra al catálogo: el banco de herramientas de IA de Radii, con seis capturas',
+    en: "Radii Lab joins the catalogue: Radii's AI workbench, with six screenshots",
+  },
+  {
+    date: '2026-10-20',
     es: 'Anatomy y Harness² en el muro, junto a las otras skills de agentes',
     en: 'Anatomy and Harness² on the wall, beside the other agent skills',
   },

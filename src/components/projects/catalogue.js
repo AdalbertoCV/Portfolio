@@ -29,6 +29,12 @@ import tcc3 from '../../images/Projects/tcc3.webp';
 import radii1 from '../../images/Projects/radii1.webp';
 import radii2 from '../../images/Projects/radii2.webp';
 import radii3 from '../../images/Projects/radii3.webp';
+import radiilab1 from '../../images/Projects/radiilab1.webp';
+import radiilab2 from '../../images/Projects/radiilab2.webp';
+import radiilab3 from '../../images/Projects/radiilab3.webp';
+import radiilab4 from '../../images/Projects/radiilab4.webp';
+import radiilab5 from '../../images/Projects/radiilab5.webp';
+import radiilab6 from '../../images/Projects/radiilab6.webp';
 import pbienestar1 from '../../images/Projects/PuntoBienestar1.webp';
 import pbienestar2 from '../../images/Projects/PuntoBienestar2.webp';
 import pbienestar3 from '../../images/Projects/PuntoBienestar3.webp';
@@ -53,6 +59,18 @@ const CATALOGUE = [
         language: 'Python',
         tags: ['Django', 'FastAPI', 'AWS', 'Kubernetes', 'LangGraph', 'PostgreSQL', 'React'],
         shots: [radii1, radii2, radii3],
+      },
+      {
+        // The AI workbench inside Radii: one part on the bench and every tool
+        // around it. Same private code, so the link opens the product too.
+        key: 'radiilab',
+        copy: 'repos.items.radiilab',
+        name: 'Radii Lab',
+        url: 'https://www.radii.com.mx/es',
+        linkLabel: 'repos.viewProduct',
+        language: 'TypeScript',
+        tags: ['React', 'three.js', 'pdf.js', 'Django', 'Celery', 'LLMs'],
+        shots: [radiilab1, radiilab2, radiilab3, radiilab4, radiilab5, radiilab6],
       },
     ],
   },

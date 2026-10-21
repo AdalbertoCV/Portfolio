@@ -542,6 +542,8 @@ import sifacepluginIcon from '../../images/tech/faceplugin.png';
 import siagentifyIcon from '../../images/tech/agentify.svg';
 // Anatomy ships no mark of its own (its favicon is a plain dot), so this is an
 // exploded isometric cube in one ink: the kind of figure it draws.
+import sidelphiIcon from '../../images/tech/delphi.svg';
+import sivertxIcon from '../../images/tech/vertx.svg';
 import sianatomyIcon from '../../images/tech/anatomy.svg';
 import siharness2Icon from '../../images/tech/harness2.png';
 import siponytailIcon from '../../images/tech/ponytail.svg';
@@ -1661,12 +1663,17 @@ const TECH_GROUPS = [
       { name: 'Strudel', icon: sistrudelIcon, flat: true },
       { name: 'Selenium', icon: selenium, mono: true },
       { name: 'Behave', concept: 'bdd' },
+      // Radii Lab brought these two up: its front is TypeScript, its tools run
+      // on Celery workers.
+      { name: 'TypeScript', icon: typescriptIcon, mono: true },
+      { name: 'Celery', icon: celeryIcon, mono: true },
     ],
   },
   {
     id: 'languages',
     items: [
-      { name: 'TypeScript', icon: typescriptIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Delphi', icon: sidelphiIcon, mono: true },
       { name: 'CoffeeScript', icon: sicoffeescriptIcon, mono: true },
       { name: 'Mathematica', icon: siwolframmathematicaIcon, mono: true },
       { name: 'Sway', icon: siswayIcon, mono: true },
@@ -1777,7 +1784,8 @@ const TECH_GROUPS = [
       { name: 'tRPC', icon: trpcIcon, mono: true },
       { name: 'Deno', icon: denoIcon, mono: true },
       { name: 'Bun', icon: bunIcon, mono: true },
-      { name: 'Celery', icon: celeryIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Vert.x', icon: sivertxIcon, mono: true },
       { name: 'Hono', icon: honoIcon, mono: true },
       { name: 'Symfony', icon: symfonyIcon, mono: true },
       { name: 'Socket.IO', icon: socketdotioIcon, mono: true },

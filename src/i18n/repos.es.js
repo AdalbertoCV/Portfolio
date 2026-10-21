@@ -41,6 +41,10 @@ const reposEs = {
         title: 'Radii',
         body: 'La plataforma donde trabajo todos los días: subes un CAD y regresa cotizado, con material, post-procesamiento, certificaciones y fecha de entrega. Mi parte es el backend —servicios en Django y FastAPI, workers de Celery, agentes sobre LangGraph que leen la geometría, y el motor que arma el precio— corriendo en AWS sobre Kubernetes. El código es privado; lo que se abre aquí es el producto.',
       },
+      radiilab: {
+        title: 'Radii Lab',
+        body: 'El banco de herramientas de IA dentro de Radii: pones una pieza —su plano, su modelo 3D o los dos— y todas las herramientas trabajan sobre ella sin salir de la pantalla. DFM que lee cada feature y lo revisa con IA hasta el plan de maquinado, un STEP reconstruido desde un plano 2D y verificado en ciclos, diseño de piezas por prompt con versiones, quitar logos, revisión de plano con Copilot, reporte de calidad, cotización instantánea y envío. Empezó como experimento interno y ya lo usan los clientes premium. Para mí es el compendio: el lugar donde pruebo de verdad cada tecnología de IA que me interesa.',
+      },
       nocturno: {
         title: 'Nocturno 108',
         body: 'Pista de jazz-hop compuesta como código en Strudel, con reproductor propio: motor de audio sintetizado desde cero sobre Web Audio —sin samples ni librerías externas—, avatar sincronizado al pulso, piano-roll en tiempo real y mezcladora.',

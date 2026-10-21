@@ -41,7 +41,7 @@ test('no technology appears twice on the wall', () => {
 // and six of mathematics on the frontier, and the fractal omniverse, and YouAgent, Engraphis, Decisions,
 // LeetCode Patterns, LAMs, SAMs, SmythOS Studio, Resnur AI and Omarchy, and sixty for blockchain,
 // crypto and trading, Hyperliquid and Phantom among them, and llm-d, seven Adobe apps and ArtCraft
-// with its seven Crafting apps, and agentify-repo, and T3 Code and FacePlugin, and Anatomy and Harness².
+// with its seven Crafting apps, and agentify-repo, and T3 Code and FacePlugin, and Anatomy and Harness², and Delphi and Vert.x in for TypeScript and Celery.
 test('the groups kept their sizes and The Stars added to the wall', () => {
   expect(TECH_GROUPS.reduce((total, group) => total + group.items.length, 0)).toBe(1669 + TECH_GROUPS[0].items.length);
 });
