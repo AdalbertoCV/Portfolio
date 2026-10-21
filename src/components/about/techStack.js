@@ -540,6 +540,10 @@ import sifacepluginIcon from '../../images/tech/faceplugin.png';
 // agentify-repo is my own skill: its mark (the commit-graph "A" with a check
 // for a crossbar, the same one on its project cover) in one ink.
 import siagentifyIcon from '../../images/tech/agentify.svg';
+// Anatomy ships no mark of its own (its favicon is a plain dot), so this is an
+// exploded isometric cube in one ink: the kind of figure it draws.
+import sianatomyIcon from '../../images/tech/anatomy.svg';
+import siharness2Icon from '../../images/tech/harness2.png';
 import siponytailIcon from '../../images/tech/ponytail.svg';
 import sisuperpowersIcon from '../../images/tech/superpowers.svg';
 import simintlifyIcon from '../../images/tech/mintlify.svg';
@@ -3249,6 +3253,11 @@ const TECH_GROUPS = [
       // And the one I wrote: it makes any repo agent-ready and only writes a
       // command into AGENTS.md after running it.
       { name: 'agentify-repo', icon: siagentifyIcon, mono: true },
+      // Anatomy explains a machine, a model or an algorithm by building it as
+      // an isometric figure you can turn and press. Harness² rewrites the
+      // harness around an agent instead of the model's weights.
+      { name: 'Anatomy', icon: sianatomyIcon, mono: true },
+      { name: 'Harness²', icon: siharness2Icon, flat: true },
       // The tech-week intake.
       { name: 'Starship', icon: sistarshipIcon, mono: true },
       { name: 'Nix', icon: sinixIcon, flat: true },

@@ -17,6 +17,11 @@
 
 const UPDATES = [
   {
+    date: '2026-10-20',
+    es: 'Anatomy y Harness² en el muro, junto a las otras skills de agentes',
+    en: 'Anatomy and Harness² on the wall, beside the other agent skills',
+  },
+  {
     date: '2026-10-09',
     es: 'T3 Code y FacePlugin en el muro',
     en: 'T3 Code and FacePlugin on the wall',
