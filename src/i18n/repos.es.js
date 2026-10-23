@@ -61,6 +61,10 @@ const reposEs = {
         title: 'agentify-repo',
         body: 'Una skill open source para agentes de IA que deja cualquier repositorio listo para trabajar con ellos desde el primer día. En lugar de un AGENTS.md lleno de lo que el agente ya podía leer solo, recolecta los hechos del repo, ejecuta los comandos reales —en Docker si hace falta— y documenta únicamente lo verificado: qué funciona, qué falla y las trampas que no se ven en el código. Nunca copia secretos, nunca borra lo que escribió una persona y valida su propio resultado antes de entregarlo.',
       },
+      agentifywf: {
+        title: 'Agentify-Workflow',
+        body: 'Una app de escritorio para trabajar con un agente de código tickets que tocan varios repositorios. Cada ticket es una sesión: sus propios worktrees de git, una base clonada de una copia madre ya migrada en un segundo, puertos privados, el agente en una terminal real, un navegador sobre la app de la sesión y el diff, todo en una ventana. Migra sólo cuando la rama trae migraciones nuevas, hace rebase sobre main y te deja resolver conflictos bloque por bloque o pasárselos al agente, hace que el agente escriba tickets en Linear o GitHub Issues, y borra una sesión paso a paso sin tocar nada que no hayas confirmado.',
+      },
       etl: {
         title: 'ETL → Dgraph',
         body: 'Pipeline que consolida cuatro formatos heterogéneos —CSV, XML, HTM y TXT— en una sola base de grafos Dgraph, orquestado con Luigi y servido a través de un dashboard analítico en Dash.',

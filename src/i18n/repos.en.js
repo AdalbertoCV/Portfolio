@@ -59,6 +59,10 @@ const reposEn = {
         title: 'agentify-repo',
         body: 'An open-source agent skill that makes any repository ready for AI coding agents on day one. Instead of an AGENTS.md full of what the agent could have read by itself, it collects the repo\'s facts, runs the real commands — in Docker when the toolchain is missing — and documents only what was verified: what works, what fails, and the traps the code doesn\'t show. It never copies secrets, never deletes what a person wrote, and validates its own output before handing it over.',
       },
+      agentifywf: {
+        title: 'Agentify-Workflow',
+        body: 'A desktop app for working tickets that span several repositories with a coding agent. Every ticket is a session: its own git worktrees, a database cloned from a migrated golden copy in about a second, private ports, the agent in a real terminal, a browser on the session’s app and the diff, all in one window. It migrates only when the branch brings new migrations, rebases onto main and lets you resolve conflicts block by block or hand them to the agent, has the agent write tickets in Linear or GitHub Issues, and deletes a session step by step without touching anything you did not confirm.',
+      },
       etl: {
         title: 'ETL → Dgraph',
         body: 'A pipeline consolidating four heterogeneous formats — CSV, XML, HTM and TXT — into one Dgraph graph database, orchestrated with Luigi and served through an analytics dashboard in Dash.',

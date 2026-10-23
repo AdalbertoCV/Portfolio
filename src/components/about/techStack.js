@@ -366,6 +366,7 @@ import sassIcon from '../../images/tech/sass.svg';
 import lessIcon from '../../images/tech/less.svg';
 import electronIcon from '../../images/tech/electron.svg';
 import tauriIcon from '../../images/tech/tauri.svg';
+import siwailsIcon from '../../images/tech/wails.svg';
 import expoIcon from '../../images/tech/expo.svg';
 import ionicIcon from '../../images/tech/ionic.svg';
 import capacitorIcon from '../../images/tech/capacitor.svg';
@@ -1643,11 +1644,13 @@ const TECH_GROUPS = [
     items: [
       { name: 'Python', icon: python, mono: true },
       { name: 'Django', icon: django, mono: true },
-      { name: 'Java', icon: java, mono: true },
-      { name: 'JavaScript', icon: javascript, mono: true },
       { name: 'PostgreSQL', icon: postgresql, mono: true },
       { name: 'React', icon: react, mono: true },
+      { name: 'Java', icon: java, mono: true },
+      { name: 'JavaScript', icon: javascript, mono: true },
       { name: 'Docker', icon: docker, mono: true },
+      // Radii Lab brought it up and Agentify-Workflow is written in it too.
+      { name: 'TypeScript', icon: typescriptIcon, mono: true },
       { name: 'C#', icon: csharp, mono: true },
       { name: 'R', icon: rIcon, mono: true },
       { name: 'Spring Boot', icon: spring, mono: true },
@@ -1663,10 +1666,10 @@ const TECH_GROUPS = [
       { name: 'Strudel', icon: sistrudelIcon, flat: true },
       { name: 'Selenium', icon: selenium, mono: true },
       { name: 'Behave', concept: 'bdd' },
-      // Radii Lab brought these two up: its front is TypeScript, its tools run
-      // on Celery workers.
-      { name: 'TypeScript', icon: typescriptIcon, mono: true },
+      // Radii Lab brought this one up: its tools run on Celery workers.
       { name: 'Celery', icon: celeryIcon, mono: true },
+      // Agentify-Workflow brought this one up: it is an Electron desktop app.
+      { name: 'Electron', icon: electronIcon, mono: true },
     ],
   },
   {
@@ -2705,7 +2708,8 @@ const TECH_GROUPS = [
       { name: 'Chakra UI', icon: chakrauiIcon, mono: true },
       { name: 'Sass', icon: sassIcon, mono: true },
       { name: 'Less', icon: lessIcon, mono: true },
-      { name: 'Electron', icon: electronIcon, mono: true },
+      // In for the star this group sent up to The Stars.
+      { name: 'Wails', icon: siwailsIcon, mono: true },
       { name: 'Tauri', icon: tauriIcon, mono: true },
       { name: 'Expo', icon: expoIcon, mono: true },
       { name: 'Ionic', icon: ionicIcon, mono: true },

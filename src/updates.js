@@ -17,6 +17,11 @@
 
 const UPDATES = [
   {
+    date: '2026-10-23',
+    es: 'Agentify-Workflow entra al catálogo: una sesión por ticket para trabajar con agentes en varios repos, con cinco capturas',
+    en: 'Agentify-Workflow joins the catalogue: one session per ticket for working with agents across repos, with five screenshots',
+  },
+  {
     date: '2026-10-20',
     es: 'Radii Lab entra al catálogo: el banco de herramientas de IA de Radii, con seis capturas',
     en: "Radii Lab joins the catalogue: Radii's AI workbench, with six screenshots",

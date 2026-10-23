@@ -35,6 +35,11 @@ import radiilab3 from '../../images/Projects/radiilab3.webp';
 import radiilab4 from '../../images/Projects/radiilab4.webp';
 import radiilab5 from '../../images/Projects/radiilab5.webp';
 import radiilab6 from '../../images/Projects/radiilab6.webp';
+import agentifywf1 from '../../images/Projects/agentifywf1.webp';
+import agentifywf2 from '../../images/Projects/agentifywf2.webp';
+import agentifywf3 from '../../images/Projects/agentifywf3.webp';
+import agentifywf4 from '../../images/Projects/agentifywf4.webp';
+import agentifywf5 from '../../images/Projects/agentifywf5.webp';
 import pbienestar1 from '../../images/Projects/PuntoBienestar1.webp';
 import pbienestar2 from '../../images/Projects/PuntoBienestar2.webp';
 import pbienestar3 from '../../images/Projects/PuntoBienestar3.webp';
@@ -147,6 +152,17 @@ const CATALOGUE = [
         url: `${OWNER}/agentify-repo`,
         language: 'Python',
         tags: ['Python', 'Agent Skills', 'AGENTS.md', 'Docker'],
+      },
+      {
+        // agentify-repo readies one repo for an agent; this is the desk where
+        // the agent then works a ticket across several of them.
+        key: 'agentifywf',
+        copy: 'repos.items.agentifywf',
+        name: 'Agentify-Workflow',
+        url: `${OWNER}/Agentify-Workflow`,
+        language: 'TypeScript',
+        tags: ['Electron', 'React', 'git worktrees', 'PostgreSQL', 'Coding agents'],
+        shots: [agentifywf1, agentifywf2, agentifywf3, agentifywf4, agentifywf5],
       },
       {
         key: 'etl',
