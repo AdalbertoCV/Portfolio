@@ -39,7 +39,6 @@ import agentifywf1 from '../../images/Projects/agentifywf1.webp';
 import agentifywf2 from '../../images/Projects/agentifywf2.webp';
 import agentifywf3 from '../../images/Projects/agentifywf3.webp';
 import agentifywf4 from '../../images/Projects/agentifywf4.webp';
-import agentifywf5 from '../../images/Projects/agentifywf5.webp';
 import pbienestar1 from '../../images/Projects/PuntoBienestar1.webp';
 import pbienestar2 from '../../images/Projects/PuntoBienestar2.webp';
 import pbienestar3 from '../../images/Projects/PuntoBienestar3.webp';
@@ -162,7 +161,7 @@ const CATALOGUE = [
         url: `${OWNER}/Agentify-Workflow`,
         language: 'TypeScript',
         tags: ['Electron', 'React', 'git worktrees', 'PostgreSQL', 'Coding agents'],
-        shots: [agentifywf1, agentifywf2, agentifywf3, agentifywf4, agentifywf5],
+        shots: [agentifywf1, agentifywf2, agentifywf3, agentifywf4],
       },
       {
         key: 'etl',
