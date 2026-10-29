@@ -58,7 +58,7 @@ const reposEs = {
         body: 'Le pone acompañamiento —piano, vibráfono, arpegios de guitarra, bajo y percusión— a una grabación casera de voz y guitarra sin volver a tocarla. Los generadores de música con IA rehacen la canción entera, voz incluida; este hace lo contrario: separa la pista con Demucs, encuentra el pulso con Beat This!, saca los acordes y afina cada nota a la afinación real de la guitarra, y escribe los instrumentos encima de la grabación que ya existe. La mezcla final agacha el acompañamiento bajo la voz y normaliza a −14 LUFS.',
       },
       agentify: {
-        title: 'agentify-repo',
+        title: 'Agentify-Repo',
         body: 'Una skill open source para agentes de IA que deja cualquier repositorio listo para trabajar con ellos desde el primer día. En lugar de un AGENTS.md lleno de lo que el agente ya podía leer solo, recolecta los hechos del repo, ejecuta los comandos reales —en Docker si hace falta— y documenta únicamente lo verificado: qué funciona, qué falla y las trampas que no se ven en el código. Nunca copia secretos, nunca borra lo que escribió una persona y valida su propio resultado antes de entregarlo.',
       },
       agentifywf: {

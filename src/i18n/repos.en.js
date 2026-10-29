@@ -56,7 +56,7 @@ const reposEn = {
         body: 'Puts an accompaniment — piano, vibraphone, guitar arpeggios, bass and percussion — onto a home recording of voice and guitar without replaying it. AI music generators remake the whole song, vocal included; this does the opposite: it separates the take with Demucs, finds the pulse with Beat This!, reads the chords and tunes every added note to the guitar\'s actual tuning, then writes the instruments over the recording that already exists. The final mix ducks the accompaniment under the vocal and normalises to −14 LUFS.',
       },
       agentify: {
-        title: 'agentify-repo',
+        title: 'Agentify-Repo',
         body: 'An open-source agent skill that makes any repository ready for AI coding agents on day one. Instead of an AGENTS.md full of what the agent could have read by itself, it collects the repo\'s facts, runs the real commands — in Docker when the toolchain is missing — and documents only what was verified: what works, what fails, and the traps the code doesn\'t show. It never copies secrets, never deletes what a person wrote, and validates its own output before handing it over.',
       },
       agentifywf: {

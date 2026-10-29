@@ -147,8 +147,8 @@ const CATALOGUE = [
       {
         key: 'agentify',
         copy: 'repos.items.agentify',
-        name: 'agentify-repo',
-        url: `${OWNER}/agentify-repo`,
+        name: 'Agentify-Repo',
+        url: `${OWNER}/Agentify-Repo`,
         language: 'Python',
         tags: ['Python', 'Agent Skills', 'AGENTS.md', 'Docker'],
       },

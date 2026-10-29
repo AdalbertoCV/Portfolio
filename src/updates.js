@@ -38,8 +38,8 @@ const UPDATES = [
   },
   {
     date: '2026-10-06',
-    es: 'Adobe y su respuesta open source en el muro: Photoshop, Illustrator, Lightroom y los Crafting apps de ArtCraft, más llm-d y agentify-repo',
-    en: 'Adobe and its open-source answer on the wall: Photoshop, Illustrator, Lightroom and ArtCraft\'s Crafting apps, plus llm-d and agentify-repo',
+    es: 'Adobe y su respuesta open source en el muro: Photoshop, Illustrator, Lightroom y los Crafting apps de ArtCraft, más llm-d y Agentify-Repo',
+    en: 'Adobe and its open-source answer on the wall: Photoshop, Illustrator, Lightroom and ArtCraft\'s Crafting apps, plus llm-d and Agentify-Repo',
   },
   {
     date: '2026-10-04',
@@ -48,8 +48,8 @@ const UPDATES = [
   },
   {
     date: '2026-10-03',
-    es: 'agentify-repo entra al catálogo: una skill open source que deja cualquier repo listo para agentes',
-    en: 'agentify-repo joins the catalogue: an open-source skill that makes any repo agent-ready',
+    es: 'Agentify-Repo entra al catálogo: una skill open source que deja cualquier repo listo para agentes',
+    en: 'Agentify-Repo joins the catalogue: an open-source skill that makes any repo agent-ready',
   },
   {
     date: '2026-09-25',

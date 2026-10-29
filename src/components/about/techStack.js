@@ -3264,7 +3264,7 @@ const TECH_GROUPS = [
       { name: 'Context7', icon: sicontext7Icon, flat: true },
       // And the one I wrote: it makes any repo agent-ready and only writes a
       // command into AGENTS.md after running it.
-      { name: 'agentify-repo', icon: siagentifyIcon, mono: true },
+      { name: 'Agentify-Repo', icon: siagentifyIcon, mono: true },
       // Anatomy explains a machine, a model or an algorithm by building it as
       // an isometric figure you can turn and press. Harness² rewrites the
       // harness around an agent instead of the model's weights.
